@@ -1,0 +1,267 @@
+/* ==========================================
+   LEDYVAS WEBSITE
+   Professional Base Stylesheet
+   ========================================== */
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#ffffff;
+    color:#1b2b40;
+    line-height:1.6;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* HEADER */
+
+.header{
+    position:sticky;
+    top:0;
+    background:#fff;
+    border-bottom:1px solid #e7edf5;
+    z-index:1000;
+}
+
+.header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    min-height:90px;
+    gap:30px;
+}
+
+.logo img{
+    width:190px;
+}
+
+.menu{
+    display:flex;
+    gap:28px;
+}
+
+.menu a{
+    font-weight:600;
+    transition:.25s;
+}
+
+.menu a:hover{
+    color:#1475c9;
+}
+
+.languages select{
+    padding:10px 14px;
+    border:1px solid #d7dfeb;
+    border-radius:8px;
+    background:#fff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:700px;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(135deg,#eef7ff,#ffffff);
+}
+
+.hero-content{
+    max-width:760px;
+}
+
+.hero-tag{
+    display:inline-block;
+    padding:8px 18px;
+    background:#e8f4ff;
+    color:#1475c9;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:68px;
+    line-height:1.05;
+    color:#0f2e52;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:22px;
+    color:#5d6c80;
+    margin-bottom:40px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.button,
+.button-secondary{
+    padding:16px 34px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.button{
+    background:#1475c9;
+    color:#fff;
+}
+
+.button:hover{
+    background:#0d5ea6;
+}
+
+.button-secondary{
+    border:2px solid #1475c9;
+    color:#1475c9;
+}
+
+.button-secondary:hover{
+    background:#1475c9;
+    color:#fff;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 0;
+}
+
+h2{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:60px;
+}
+
+/* FEATURES */
+
+.features-grid,
+.industry-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.feature-card,
+.industry-card{
+    background:#fff;
+    border:1px solid #e6edf6;
+    border-radius:18px;
+    padding:35px;
+    transition:.25s;
+}
+
+.feature-card:hover,
+.industry-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.feature-card h3{
+    margin-bottom:15px;
+    color:#0f2e52;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    background:#f6fbff;
+}
+
+.cta p{
+    max-width:700px;
+    margin:20px auto 40px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0f2e52;
+    color:#fff;
+    text-align:center;
+    padding:35px 0;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.header .container{
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:20px 0;
+}
+
+.menu{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero{
+    text-align:center;
+}
+
+.hero-content{
+    margin:auto;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.button,
+.button-secondary{
+    width:100%;
+    text-align:center;
+}
+
+.logo img{
+    width:160px;
+}
+
+}
