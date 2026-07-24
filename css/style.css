@@ -449,6 +449,51 @@ footer{
     margin-top:8px;
 }
 
+.footer-links-secondary{
+    font-size:13px;
+    opacity:.65;
+    margin-bottom:10px;
+    gap:18px;
+}
+
+.footer-links-secondary a:hover{
+    opacity:1;
+}
+
+/* LEGAL PAGES */
+
+.legal-content{
+    max-width:800px;
+    margin:0 auto;
+}
+
+.legal-content h2{
+    text-align:left;
+    margin:50px 0 16px;
+    font-size:24px;
+}
+
+.legal-content h2:first-child{
+    margin-top:0;
+}
+
+.legal-content p,
+.legal-content li{
+    color:#5d6c80;
+    margin-bottom:14px;
+}
+
+.legal-content ul{
+    list-style:disc;
+    padding-left:22px;
+}
+
+.legal-updated{
+    color:#5d6c80;
+    font-size:14px;
+    margin-bottom:40px;
+}
+
 /* RESPONSIVE */
 
 @media(max-width:900px){
