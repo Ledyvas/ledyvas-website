@@ -494,6 +494,74 @@ footer{
     margin-bottom:40px;
 }
 
+/* FUNDADOR */
+
+.founder-photo{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    margin:0 auto 24px;
+    display:block;
+    border:4px solid #fff;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.founder-photo-placeholder{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    margin:0 auto 24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eef7ff;
+    color:#1475c9;
+    font-size:52px;
+}
+
+.tag-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.tag-list span{
+    background:#eef7ff;
+    color:#1475c9;
+    padding:8px 16px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.country-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.country-list span{
+    background:#fff;
+    border:1px solid #e6edf6;
+    padding:8px 18px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:600;
+    color:#0f2e52;
+}
+
+.founder-quote{
+    border-left:4px solid #1475c9;
+    padding:4px 0 4px 24px;
+    font-size:19px;
+    font-style:italic;
+    color:#0f2e52;
+    margin:20px 0 30px;
+}
+
 /* RESPONSIVE */
 
 @media(max-width:900px){
