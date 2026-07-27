@@ -1,19 +1,285 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=es/index.html">
-    <link rel="canonical" href="es/index.html">
-    <title>Ledyvas | Software de Gestión Empresarial</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledyvas — Software de Gestión Empresarial</title>
+<meta name="description" content="Ledyvas reúne compras, ventas, inventario, producción y reportes en una única plataforma. Gestiona tu negocio con confianza, simplicidad e inteligencia.">
+<link rel="icon" href="assets/img/logo-full.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
 
-    <p>Redirigiendo a <a href="es/index.html">Ledyvas</a>...</p>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="assets/img/logo-full.png" alt="Ledyvas — Business Management Software"></a>
+    <nav class="nav-horizontal">
+      <a href="index.html">Inicio</a>
+      <a href="software.html">Software</a>
+      <a href="soluciones.html">Soluciones</a>
+      <a href="sectores.html">Sectores</a>
+      <a href="precios.html">Precios</a>
+      <a href="descargas.html">Descargas</a>
+      <a href="empresa.html">Empresa</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <a href="precios.html" class="btn btn-outline">Comprar ahora</a>
+      <a href="descargas.html" class="btn btn-primary">Prueba gratuita</a>
+      <button class="hamburger" data-nav-toggle aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
 
+<div class="nav-overlay">
+  <div class="nav-overlay-top">
+    <a href="index.html" class="brand"><img src="assets/img/logo-full.png" alt="Ledyvas"></a>
+    <button class="hamburger" data-nav-toggle aria-label="Cerrar menú"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-overlay-body">
+    <nav class="nav-links">
+      <a href="index.html">Inicio <small>01</small></a>
+      <a href="software.html">Software <small>02</small></a>
+      <a href="soluciones.html">Soluciones <small>03</small></a>
+      <a href="sectores.html">Sectores <small>04</small></a>
+      <a href="precios.html">Precios <small>05</small></a>
+      <a href="descargas.html">Descargas <small>06</small></a>
+      <a href="empresa.html">Empresa <small>07</small></a>
+      <a href="contacto.html">Contacto <small>08</small></a>
+    </nav>
+    <div class="nav-side">
+      <div>
+        <div class="nav-side-title">Idioma</div>
+        <div class="lang-switch">
+          <button class="active">ES</button>
+          <button title="Próximamente" disabled>IT</button>
+          <button title="Próximamente" disabled>EN</button>
+          <button title="Próximamente" disabled>FR</button>
+          <button title="Próximamente" disabled>PT</button>
+        </div>
+      </div>
+      <div>
+        <div class="nav-side-title">Empieza ahora</div>
+        <a href="descargas.html" class="btn btn-gold btn-block">Prueba gratuita 7 días</a>
+        <div style="height:10px"></div>
+        <a href="precios.html" class="btn btn-outline-light btn-block">Comprar ahora</a>
+      </div>
+      <div>
+        <div class="nav-side-title">Contacto</div>
+        <div class="nav-contact">
+          <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>
+          <span>Respuesta en 48 horas laborables</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Business Management Software</span>
+        <h1>Una plataforma.<br>Control total.</h1>
+        <p class="lede">Gestiona tu negocio con confianza, simplicidad e inteligencia. Ledyvas reúne todas las herramientas que necesitas para administrar tu empresa desde una única plataforma.</p>
+        <div class="cta-row">
+          <a href="descargas.html" class="btn btn-primary btn-lg">Prueba gratuita 7 días</a>
+          <a href="software.html" class="btn btn-outline btn-lg">Descubrir el software</a>
+        </div>
+        <div class="trust-row">
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Sin tarjeta de crédito</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Acceso completo</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Cancela cuando quieras</span>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="assets/img/dashboard-hero.png" alt="Panel principal de Ledyvas">
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué Ledyvas -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <h3>Completo</h3>
+          <p>Todos tus procesos en una sola plataforma integrada. Sin herramientas desconectadas ni datos duplicados.</p>
+        </div>
+        <div class="card">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h3>Rápido</h3>
+          <p>Interfaz intuitiva y fácil de usar. Ahorra tiempo en el día a día y concéntrate en lo que importa.</p>
+        </div>
+        <div class="card">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/></svg></div>
+          <h3>Fiable</h3>
+          <p>Datos protegidos, accesos por roles y copias de seguridad automáticas. Tu información, siempre segura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué puedes gestionar -->
+  <section class="bg-gray">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Todo conectado</span>
+        <h2>¿Qué puedes gestionar con Ledyvas?</h2>
+        <p class="lede" style="margin-left:auto;margin-right:auto;">Módulos potentes que trabajan como un único sistema, con la información sincronizada en toda tu empresa.</p>
+      </div>
+      <div class="grid-3">
+        <a href="software.html" class="card">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div>
+          <h3>Productos</h3>
+          <p>Organiza tu catálogo, categorías y precios en un solo lugar.</p>
+        </a>
+        <a href="software.html" class="card">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg></div>
+          <h3>Compras</h3>
+          <p>Controla proveedores, pedidos, costos y entradas de mercancía.</p>
+        </a>
+        <a href="software.html" class="card">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+          <h3>Ventas</h3>
+          <p>Registra ventas, genera documentos y analiza el rendimiento.</p>
+        </a>
+        <a href="software.html" class="card">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
+          <h3>Inventario</h3>
+          <p>Conoce el estado real de tu stock y evita pérdidas o faltantes.</p>
+        </a>
+        <a href="software.html" class="card">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div>
+          <h3>Reportes</h3>
+          <p>Informes detallados y precisos, listos en segundos.</p>
+        </a>
+        <a href="software.html" class="card">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <h3>Business Intelligence</h3>
+          <p>Convierte tus datos en información útil para decidir mejor.</p>
+        </a>
+      </div>
+      <div class="text-center" style="margin-top:44px;">
+        <a href="software.html" class="btn btn-outline">Ver todos los módulos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sectores -->
+  <section>
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Soluciones para tu industria</span>
+        <h2>Diseñado para tu negocio</h2>
+        <p class="lede" style="margin-left:auto;margin-right:auto;">Ledyvas se adapta a distintos tipos de empresas y necesidades operativas.</p>
+      </div>
+      <div class="grid-4">
+        <a href="sectores.html" class="sector-card">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 2v7c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+          <h3>Food Service</h3>
+          <p>Restaurantes, bares, cafeterías y catering.</p>
+          <span class="card-link">Ver más →</span>
+        </a>
+        <a href="sectores.html" class="sector-card">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <h3>Retail</h3>
+          <p>Tiendas, supermercados y comercios minoristas.</p>
+          <span class="card-link">Ver más →</span>
+        </a>
+        <a href="sectores.html" class="sector-card">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88"/><path d="M14.47 14.48 20 20"/><path d="M8.12 8.12 12 12"/></svg></div>
+          <h3>Beauty</h3>
+          <p>Salones de belleza, barberías y centros estéticos.</p>
+          <span class="card-link">Ver más →</span>
+        </a>
+        <a href="sectores.html" class="sector-card">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+          <h3>Business Services</h3>
+          <p>Oficinas, consultoras, agencias y servicios profesionales.</p>
+          <span class="card-link">Ver más →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>¿Listo para simplificar tu negocio?</h2>
+          <p>Empieza tu prueba gratuita hoy mismo y descubre cómo Ledyvas te ayuda a crecer con control y confianza.</p>
+        </div>
+        <div class="cta-row">
+          <a href="descargas.html" class="btn btn-gold btn-lg">Prueba gratuita 7 días</a>
+          <a href="contacto.html" class="btn btn-outline-light btn-lg">Solicitar demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="assets/img/logo-full.png" alt="Ledyvas"></a>
+        <p>Software de gestión empresarial todo en uno. Compras, ventas, inventario, producción y reportes desde una única plataforma.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="soluciones.html">Soluciones</a></li>
+          <li><a href="sectores.html">Sectores</a></li>
+          <li><a href="precios.html">Precios</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="empresa.html">Sobre nosotros</a></li>
+          <li><a href="empresa.html#fundador">Fundador</a></li>
+          <li><a href="empresa.html#opiniones">Opiniones</a></li>
+          <li><a href="empresa.html#faq">Preguntas frecuentes</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="descargas.html">Descargas</a></li>
+          <li><a href="portal-cliente.html">Portal del cliente</a></li>
+          <li><a href="descargas.html">Prueba gratuita</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:info@ledyvas.com">info@ledyvas.com</a></li>
+          <li><span style="font-size:14px;">Respuesta en 48h laborables</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledyvas. Todos los derechos reservados.</span>
+      <div class="footer-legal">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
-
 </html>
