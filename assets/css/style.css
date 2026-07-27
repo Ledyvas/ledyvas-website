@@ -333,6 +333,12 @@ section { padding: 88px 0; }
 .card h3 { margin-bottom: 8px; }
 .card p { font-size: 14.5px; }
 
+.doc-toc { margin: 18px 0 26px; }
+.doc-toc li { position: relative; padding-left: 20px; font-size: 14px; color: var(--gray-500); line-height: 1.6; margin-bottom: 7px; }
+.doc-toc li::before { content: ""; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--royal); }
+.doc-toc-light li { color: rgba(255,255,255,0.65); }
+.doc-toc-light li::before { background: var(--gold-light); }
+
 .card-link {
   display: inline-flex;
   align-items: center;
