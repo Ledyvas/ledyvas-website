@@ -111,6 +111,34 @@ p { margin: 0; color: var(--gray-500); }
 .trust-row span { display: flex; align-items: center; gap: 7px; font-size: 14px; color: var(--gray-500); }
 .trust-row svg { flex: none; color: var(--royal); }
 
+/* ---------- Banner de construcción ---------- */
+.construction-banner {
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px 44px 10px 16px;
+  text-align: center;
+  position: relative;
+}
+.construction-banner span { opacity: 0.85; }
+.construction-banner-close {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--navy);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  opacity: 0.7;
+}
+.construction-banner-close:hover { opacity: 1; }
+.construction-banner.hidden { display: none; }
+
 /* ---------- Header / hamburger nav ---------- */
 header.site-header {
   position: sticky;
