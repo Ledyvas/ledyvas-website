@@ -513,6 +513,7 @@ footer.site-footer { background: var(--gray-100); border-top: 1px solid var(--gr
 .price-old {
   position: relative;
   display: inline-block;
+  white-space: nowrap;
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--gray-500);
@@ -632,6 +633,8 @@ form.contact-form { background: var(--gray-50); border: 1px solid var(--gray-300
   .cta-band .cta-row { width: 100%; }
   .cta-band .btn { flex: 1; }
   .price-card { padding: 36px 26px; }
+  .price-old { font-size: 1.4rem; }
+  .price-value { font-size: 3.2rem; }
   .form-row { grid-template-columns: 1fr; }
   .header-actions .btn-outline { display: none; }
 }
