@@ -451,7 +451,7 @@ section { padding: 88px 0; }
 footer.site-footer { background: var(--gray-100); border-top: 1px solid var(--gray-300); padding: 72px 0 30px; }
 .footer-top { display: grid; grid-template-columns: 1.6fr repeat(4, 1fr); gap: 32px; padding-bottom: 50px; }
 .footer-brand .brand { margin-bottom: 16px; }
-.footer-brand img { height: 40px; }
+.footer-brand img { height: 52px; }
 .footer-brand p { font-size: 14px; max-width: 280px; margin-top: 14px; }
 .footer-col h4 { font-size: 14px; margin-bottom: 18px; color: var(--navy); }
 .footer-col ul { display: flex; flex-direction: column; gap: 11px; }
