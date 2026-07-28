@@ -128,7 +128,7 @@ header.site-header {
   justify-content: space-between;
 }
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand img { height: 60px; width: auto; }
+.brand img { height: 44px; width: auto; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-text .name { font-size: 22px; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; }
 .brand-text .tag { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; color: var(--gray-500); text-transform: uppercase; }
@@ -291,8 +291,11 @@ body.nav-open { overflow: hidden; }
 .hero-media-full { margin-top: 64px; max-width: 980px; margin-left: auto; margin-right: auto; }
 .hero-media-full img { border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
 
-.hero-logo-media { display: flex; align-items: center; justify-content: center; }
-.hero-logo-media img { width: 100%; max-width: 420px; height: auto; border-radius: 0; }
+.hero-logo-media { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; }
+.hero-logo-media img { width: 160px; height: auto; border-radius: 0; }
+.hero-logo-text { display: flex; flex-direction: column; gap: 10px; }
+.hero-logo-name { font-size: 2.6rem; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
+.hero-logo-tag { font-size: 15px; font-weight: 600; letter-spacing: 0.14em; color: var(--gray-500); text-transform: uppercase; }
 
 /* ---------- Sections ---------- */
 section { padding: 88px 0; }
@@ -448,7 +451,7 @@ section { padding: 88px 0; }
 footer.site-footer { background: var(--gray-100); border-top: 1px solid var(--gray-300); padding: 72px 0 30px; }
 .footer-top { display: grid; grid-template-columns: 1.6fr repeat(4, 1fr); gap: 32px; padding-bottom: 50px; }
 .footer-brand .brand { margin-bottom: 16px; }
-.footer-brand img { height: 50px; }
+.footer-brand img { height: 40px; }
 .footer-brand p { font-size: 14px; max-width: 280px; margin-top: 14px; }
 .footer-col h4 { font-size: 14px; margin-bottom: 18px; color: var(--navy); }
 .footer-col ul { display: flex; flex-direction: column; gap: 11px; }
@@ -619,8 +622,9 @@ form.contact-form { background: var(--gray-50); border: 1px solid var(--gray-300
 
 @media (max-width: 640px) {
   :root { --header-h: 76px; }
-  .brand img { height: 48px; }
+  .brand img { height: 36px; }
   .brand-text .name { font-size: 18px; }
+  .brand-text .tag { display: none; }
   section { padding: 60px 0; }
   .grid-3, .grid-4, .grid-2, .req-list { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: repeat(2, 1fr); gap: 30px 20px; }
