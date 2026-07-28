@@ -291,6 +291,9 @@ body.nav-open { overflow: hidden; }
 .hero-media-full { margin-top: 64px; max-width: 980px; margin-left: auto; margin-right: auto; }
 .hero-media-full img { border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
 
+.hero-logo-media { display: flex; align-items: center; justify-content: center; }
+.hero-logo-media img { width: 100%; max-width: 420px; height: auto; border-radius: 0; }
+
 /* ---------- Sections ---------- */
 section { padding: 88px 0; }
 .section-tight { padding: 64px 0; }
