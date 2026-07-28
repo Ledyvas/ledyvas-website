@@ -286,11 +286,8 @@ body.nav-open { overflow: hidden; }
 .hero-media img { border-radius: var(--radius-lg); }
 .hero-media { position: relative; }
 
-.hero-centered { max-width: 720px; margin: 0 auto; text-align: center; }
-.hero-centered .lede { margin-left: auto; margin-right: auto; }
-.hero-centered .cta-row,
-.hero-centered .trust-row { justify-content: center; }
-.hero-logo { width: 130px; height: auto; margin: 0 auto 32px; }
+.hero-centered { max-width: 720px; }
+.hero-logo { width: 130px; height: auto; margin: 0 0 32px; }
 .hero-media-full { margin-top: 64px; max-width: 980px; margin-left: auto; margin-right: auto; }
 .hero-media-full img { border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
 
