@@ -499,7 +499,7 @@ footer.site-footer { background: var(--gray-100); border-top: 1px solid var(--gr
   margin-top: 16px;
 }
 .price-row { display: flex; align-items: baseline; justify-content: center; gap: 14px; margin: 14px 0 4px; }
-.price-old { font-size: 1.8rem; font-weight: 600; color: var(--gray-300); text-decoration: line-through; text-decoration-color: var(--gray-500); }
+.price-old { font-size: 1.8rem; font-weight: 600; color: var(--gray-500); text-decoration: line-through; text-decoration-color: var(--gray-500); text-decoration-thickness: 1.5px; }
 .price-value { font-size: 4.2rem; font-weight: 800; color: var(--navy); letter-spacing: -0.03em; margin: 0; }
 .price-value sup { font-size: 1.6rem; vertical-align: super; margin-left: 4px; color: var(--royal); }
 .price-note { font-size: 14px; color: var(--gray-500); margin-bottom: 30px; }
