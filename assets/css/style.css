@@ -210,6 +210,14 @@ header.site-header {
 }
 .lang-dropdown-menu a:hover { background: var(--gray-100); color: var(--royal); }
 
+.lang-dropdown-toggle .fi,
+.lang-dropdown-menu .fi,
+.lang-switch .fi {
+  vertical-align: -1.5px;
+  margin-right: 4px;
+  border-radius: 2px;
+}
+
 /* Menu horizontal (escritorio) — el hamburguesa queda solo para pantallas
    angostas, donde 8 enlaces no entran en el header. */
 .nav-horizontal { display: none; align-items: center; gap: 24px; margin: 0 auto; }
