@@ -54,6 +54,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Selector de idioma — escritorio (dropdown en el header)
+  document.querySelectorAll('.lang-dropdown').forEach((dropdown) => {
+    const toggle = dropdown.querySelector('[data-lang-toggle]');
+    if (!toggle) return;
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.contains('open');
+      document.querySelectorAll('.lang-dropdown.open').forEach((d) => d.classList.remove('open'));
+      if (!isOpen) dropdown.classList.add('open');
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.lang-dropdown.open').forEach((d) => d.classList.remove('open'));
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.lang-dropdown.open').forEach((d) => d.classList.remove('open'));
+    }
+  });
+
   // Acordeón FAQ
   document.querySelectorAll('.faq-item').forEach((item) => {
     const q = item.querySelector('.faq-q');
