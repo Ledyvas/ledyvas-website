@@ -1,0 +1,154 @@
+/* Widget de chat de soporte con IA -- reusa la paleta/tipografía del sitio
+   (assets/css/style.css: --navy, --royal, --gold). Cargar este archivo
+   solo en páginas donde chat-widget.js también esté incluido. */
+
+.ledyvas-chat-bubble {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: none;
+  background: var(--royal, #1E4FAF);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(11, 31, 58, 0.25);
+  z-index: 9999;
+  transition: transform 0.15s ease;
+}
+.ledyvas-chat-bubble:hover {
+  transform: scale(1.06);
+  background: var(--navy, #0B1F3A);
+}
+
+.ledyvas-chat-panel {
+  position: fixed;
+  right: 22px;
+  bottom: 92px;
+  width: 340px;
+  max-width: calc(100vw - 44px);
+  height: 460px;
+  max-height: calc(100vh - 140px);
+  background: #fff;
+  border-radius: var(--radius-lg, 22px);
+  box-shadow: 0 24px 64px rgba(11, 31, 58, 0.24);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9999;
+  font-family: var(--font-sans, "Inter", sans-serif);
+}
+
+.ledyvas-chat-header {
+  background: var(--navy, #0B1F3A);
+  color: #fff;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ledyvas-chat-title strong {
+  display: block;
+  font-size: 14.5px;
+}
+.ledyvas-chat-title span {
+  display: block;
+  font-size: 11.5px;
+  color: var(--gold-light, #E8C66A);
+  margin-top: 2px;
+}
+.ledyvas-chat-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.ledyvas-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--gray-50, #FAFBFC);
+}
+
+.ledyvas-chat-msg {
+  max-width: 84%;
+  padding: 9px 12px;
+  border-radius: 14px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+.ledyvas-chat-msg-assistant {
+  align-self: flex-start;
+  background: #fff;
+  border: 1px solid var(--gray-300, #C7CDD6);
+  color: var(--gray-900, #0B1F3A);
+  border-bottom-left-radius: 4px;
+}
+.ledyvas-chat-msg-user {
+  align-self: flex-end;
+  background: var(--royal, #1E4FAF);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+.ledyvas-chat-typing {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.ledyvas-chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid var(--gray-300, #C7CDD6);
+  background: #fff;
+}
+.ledyvas-chat-form input {
+  flex: 1;
+  border: 1px solid var(--gray-300, #C7CDD6);
+  border-radius: var(--radius-sm, 8px);
+  padding: 9px 11px;
+  font-size: 13.5px;
+  font-family: inherit;
+}
+.ledyvas-chat-form input:focus {
+  outline: none;
+  border-color: var(--royal, #1E4FAF);
+}
+.ledyvas-chat-form button {
+  background: var(--gold, #C89B3C);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm, 8px);
+  padding: 9px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ledyvas-chat-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+@media (max-width: 480px) {
+  .ledyvas-chat-panel {
+    right: 10px;
+    left: 10px;
+    width: auto;
+  }
+  .ledyvas-chat-bubble {
+    right: 16px;
+    bottom: 16px;
+  }
+}
