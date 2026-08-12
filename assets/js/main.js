@@ -1,19 +1,6 @@
 // LEDYVAS — interacciones del sitio
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Banner de construcción (se recuerda si el visitante lo cerró)
-  const banner = document.getElementById('construction-banner');
-  const bannerClose = document.getElementById('construction-banner-close');
-  if (banner && bannerClose) {
-    if (localStorage.getItem('ledyvas-construction-banner-closed') === '1') {
-      banner.classList.add('hidden');
-    }
-    bannerClose.addEventListener('click', () => {
-      banner.classList.add('hidden');
-      localStorage.setItem('ledyvas-construction-banner-closed', '1');
-    });
-  }
-
   // Menú hamburguesa (header + overlay)
   const toggles = document.querySelectorAll('[data-nav-toggle]');
   const overlay = document.querySelector('.nav-overlay');
