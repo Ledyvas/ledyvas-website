@@ -614,6 +614,12 @@ footer.site-footer { background: var(--gray-100); border-top: 1px solid var(--gr
 .price-value { font-size: 4.2rem; font-weight: 800; color: var(--navy); letter-spacing: -0.03em; margin: 0; }
 .price-value sup { font-size: 1.6rem; vertical-align: super; margin-left: 4px; color: var(--royal); }
 .price-note { font-size: 14px; color: var(--gray-500); margin-bottom: 30px; }
+.price-scarcity {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--royal);
+  margin-top: 8px;
+}
 .price-features { text-align: left; display: flex; flex-direction: column; gap: 14px; margin: 30px 0; }
 .price-features li { display: flex; gap: 12px; font-size: 15px; color: var(--gray-700); align-items: flex-start; }
 .price-features svg { flex: none; color: var(--royal); margin-top: 2px; }
