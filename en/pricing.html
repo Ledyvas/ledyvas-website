@@ -1,11 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<!-- Google tag (gtag.js) con Consent Mode v2 -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': (typeof localStorage !== 'undefined' && localStorage.getItem('ledyvas-cookie-consent') === 'accepted') ? 'granted' : 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<script>
   gtag("js", new Date());
   gtag("config", "G-DYMN29KT3X");
 </script>
@@ -21,6 +29,16 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+
+<div class="cookie-consent-banner" id="cookie-consent-banner" hidden>
+  <div class="cookie-consent-inner">
+    <p>We use cookies to understand how this site is used (Google Analytics). You can accept or reject this tracking. <a href="privacy.html">Learn more</a></p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookie-consent-reject" class="btn btn-outline">Reject</button>
+      <button type="button" id="cookie-consent-accept" class="btn btn-primary">Accept</button>
+    </div>
+  </div>
+</div>
 
 <header class="site-header">
   <div class="container header-inner">

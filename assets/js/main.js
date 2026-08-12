@@ -1,6 +1,38 @@
 // LEDYVAS — interacciones del sitio
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Banner de consentimiento de cookies (GDPR / Consent Mode v2).
+  // El default "denied" ya se fija en el <head> de cada página, antes de
+  // que gtag.js cargue -- esto solo maneja la UI y el "update" del consent
+  // real según lo que elija el visitante.
+  const cookieBanner = document.getElementById('cookie-consent-banner');
+  const cookieAccept = document.getElementById('cookie-consent-accept');
+  const cookieReject = document.getElementById('cookie-consent-reject');
+  const COOKIE_CONSENT_KEY = 'ledyvas-cookie-consent';
+
+  if (cookieBanner && cookieAccept && cookieReject) {
+    const existingChoice = localStorage.getItem(COOKIE_CONSENT_KEY);
+    if (existingChoice !== 'accepted' && existingChoice !== 'rejected') {
+      cookieBanner.hidden = false;
+    }
+
+    cookieAccept.addEventListener('click', () => {
+      localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+      cookieBanner.hidden = true;
+    });
+
+    cookieReject.addEventListener('click', () => {
+      localStorage.setItem(COOKIE_CONSENT_KEY, 'rejected');
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { analytics_storage: 'denied' });
+      }
+      cookieBanner.hidden = true;
+    });
+  }
+
   // Menú hamburguesa (header + overlay)
   const toggles = document.querySelectorAll('[data-nav-toggle]');
   const overlay = document.querySelector('.nav-overlay');

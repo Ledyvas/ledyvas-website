@@ -1,11 +1,19 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<!-- Google tag (gtag.js) con Consent Mode v2 -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': (typeof localStorage !== 'undefined' && localStorage.getItem('ledyvas-cookie-consent') === 'accepted') ? 'granted' : 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<script>
   gtag("js", new Date());
   gtag("config", "G-DYMN29KT3X");
 </script>
@@ -21,6 +29,16 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+
+<div class="cookie-consent-banner" id="cookie-consent-banner" hidden>
+  <div class="cookie-consent-inner">
+    <p>Nous utilisons des cookies pour comprendre comment ce site est utilisé (Google Analytics). Vous pouvez accepter ou refuser ce suivi. <a href="confidentialite.html">En savoir plus</a></p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookie-consent-reject" class="btn btn-outline">Refuser</button>
+      <button type="button" id="cookie-consent-accept" class="btn btn-primary">Accepter</button>
+    </div>
+  </div>
+</div>
 
 <header class="site-header">
   <div class="container header-inner">
@@ -121,7 +139,7 @@
 
         <h2>3. Données que nous collectons nous-mêmes</h2>
         <p>Nous collectons les données que vous nous fournissez volontairement en nous contactant par email (par exemple, pour le support ou pour acheter une licence) : votre nom, votre adresse email et le contenu de votre message.</p>
-        <p style="margin-top:12px;">De plus, ce site web utilise <strong>Google Analytics</strong> pour comprendre comment le site est utilisé (pages visitées, temps passé, localisation approximative et type d'appareil). Google Analytics utilise des cookies et peut collecter votre adresse IP. Vous pouvez consulter la politique de confidentialité de Google sur <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>. Nous travaillons actuellement à l'ajout d'un panneau de gestion des cookies pour que vous puissiez accepter ou refuser ce suivi.</p>
+        <p style="margin-top:12px;">De plus, ce site web utilise <strong>Google Analytics</strong> pour comprendre comment le site est utilisé (pages visitées, temps passé, localisation approximative et type d'appareil). Google Analytics utilise des cookies et peut collecter votre adresse IP. Vous pouvez consulter la politique de confidentialité de Google sur <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>. Dès votre arrivée sur le site, un panneau vous permet d'accepter ou de refuser ce suivi — votre choix est mémorisé pour vos prochaines visites, et vous pouvez le modifier en effaçant les données de ce site dans votre navigateur.</p>
 
         <h2>4. Utilisation de vos données de contact</h2>
         <p>Nous utilisons les données que vous nous envoyez uniquement pour répondre à votre demande, vous fournir du support ou gérer votre achat de licence. Nous ne partageons ni ne vendons ces informations à des tiers.</p>
