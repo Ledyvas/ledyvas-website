@@ -538,6 +538,10 @@ section { padding: 88px 0; }
   background: linear-gradient(100deg, var(--navy) 35%, rgba(11,31,58,0.55) 100%);
 }
 .bg-navy-photo .container { position: relative; z-index: 1; }
+.bg-navy-photo h2, .bg-navy-photo h3 { color: var(--white); }
+.bg-navy-photo p { color: rgba(255,255,255,0.68); }
+.bg-navy-photo .eyebrow { color: var(--gold-light); }
+.bg-navy-photo .badge-list span { color: var(--gold-light); background: rgba(255,255,255,0.08); }
 
 /* ---------- CTA band ---------- */
 .cta-band {
