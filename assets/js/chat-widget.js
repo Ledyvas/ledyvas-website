@@ -3,7 +3,7 @@
 // La URL de abajo se completa recién cuando el backend esté publicado --
 // hasta entonces este archivo no se incluye en ninguna página real.
 (function () {
-  const CHAT_API_URL = "REEMPLAZAR_CON_LA_URL_DEL_WORKER";
+  const CHAT_API_URL = "https://carnival-series-modules-poker.trycloudflare.com/chat";
 
   if (!CHAT_API_URL || CHAT_API_URL.indexOf("REEMPLAZAR") === 0) {
     console.warn("Ledyvas chat widget: falta configurar CHAT_API_URL en chat-widget.js");
