@@ -398,6 +398,8 @@ body.nav-open { overflow: hidden; }
 .hero-logo { width: 130px; height: auto; margin: 0 0 32px; }
 .hero-media-full { margin-top: 64px; max-width: 980px; margin-left: auto; margin-right: auto; }
 .hero-media-full img { border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+.sector-card-excursiones { max-width: 980px; margin: 28px auto 0; text-align: center; }
+.sector-card-excursiones .icon-circle { margin-left: auto; margin-right: auto; }
 
 .hero-logo-media { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; }
 .hero-logo-media img { width: 160px; height: auto; border-radius: 0; }
