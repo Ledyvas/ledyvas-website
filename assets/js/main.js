@@ -104,14 +104,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Formulario de contacto (sin backend todavía — feedback visual)
+  // Formulario de contacto (Web3Forms)
   const form = document.querySelector('.contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const success = document.querySelector('.form-success');
-      form.style.display = 'none';
-      if (success) success.classList.add('show');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
+      }
+      let errorEl = form.querySelector('.form-error');
+      if (errorEl) errorEl.remove();
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: formData,
+        });
+        const result = await response.json();
+        if (result.success) {
+          const success = document.querySelector('.form-success');
+          form.style.display = 'none';
+          if (success) success.classList.add('show');
+        } else {
+          throw new Error(result.message || 'Error desconocido');
+        }
+      } catch (err) {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+        const note = form.querySelector('.form-note');
+        const msg = document.createElement('p');
+        msg.className = 'form-error';
+        msg.style.color = '#c0392b';
+        msg.style.fontSize = '13px';
+        msg.style.textAlign = 'center';
+        msg.style.marginTop = '10px';
+        msg.textContent = 'No se pudo enviar el mensaje. Probá de nuevo o escribinos directo a info@ledyvas.com.';
+        if (note) note.insertAdjacentElement('afterend', msg);
+        else form.appendChild(msg);
+      }
     });
   }
 

@@ -609,8 +609,20 @@ footer.site-footer { background: var(--gray-100); border-top: 1px solid var(--gr
 .legal ul li::before { content: ""; position: absolute; left: 0; top: 11px; width: 7px; height: 7px; border-radius: 2px; background: var(--gold); }
 
 /* ---------- Pricing ---------- */
+.price-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  align-items: stretch;
+}
+.price-cards-grid .price-card { margin: 0; }
+@media (max-width: 900px) {
+  .price-cards-grid { flex-direction: column; align-items: center; }
+}
 .price-card {
   max-width: 480px;
+  width: 100%;
   margin: 0 auto;
   background: var(--white);
   border: 1.5px solid var(--gray-300);
@@ -619,6 +631,19 @@ footer.site-footer { background: var(--gray-100); border-top: 1px solid var(--gr
   text-align: center;
   box-shadow: var(--shadow-lg);
 }
+.price-card.price-card-featured {
+  border-color: var(--gold);
+  border-width: 2px;
+  box-shadow: 0 20px 45px -12px rgba(212, 163, 61, 0.35);
+}
+.price-card-tier-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+.price-card-featured .price-card-tier-label { color: var(--gold); }
 .price-card .icon-circle { margin: 0 auto 22px; }
 .price-launch-badge {
   display: inline-block;
