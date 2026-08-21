@@ -4,6 +4,7 @@
    ========================================================================== */
 
 :root {
+  color-scheme: light only;
   --navy: #0B1F3A;
   --royal: #1E4FAF;
   --royal-light: #4472D6;
@@ -656,7 +657,7 @@ footer.site-footer { background: var(--gray-100); border-top: 1px solid var(--gr
   border-radius: 999px;
   margin-top: 16px;
 }
-.price-row { display: flex; align-items: baseline; justify-content: center; gap: 14px; margin: 14px 0 4px; }
+.price-row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 8px 14px; margin: 14px 0 4px; }
 .price-old {
   position: relative;
   display: inline-block;
