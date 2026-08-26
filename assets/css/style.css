@@ -418,6 +418,35 @@ body.nav-open { overflow: hidden; }
 .hero-media img { border-radius: var(--radius-lg); }
 .hero-media { position: relative; }
 
+/* Marco tipo "ventana de navegador" para capturas reales del software --
+   sin foto de escritorio ni composicion (eso se veia pegado, sin
+   simetria/profundidad real). Solo forma y sombra via CSS, cero riesgo de
+   desalineacion. */
+.app-screenshot-frame {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(11, 31, 58, 0.35), 0 10px 24px -8px rgba(11, 31, 58, 0.18);
+  border: 1px solid var(--gray-300);
+  background: var(--white);
+}
+.app-screenshot-chrome {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 16px;
+  background: #E8EAED;
+}
+.app-screenshot-chrome span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #D0D3D8;
+}
+.app-screenshot-chrome span:nth-child(1) { background: #FF5F57; }
+.app-screenshot-chrome span:nth-child(2) { background: #FEBC2E; }
+.app-screenshot-chrome span:nth-child(3) { background: #28C840; }
+.app-screenshot-frame img { display: block; width: 100%; height: auto; border-radius: 0; }
+
 .hero-centered { max-width: 720px; }
 .hero-logo { width: 130px; height: auto; margin: 0 0 32px; }
 .hero-media-full { margin-top: 64px; max-width: 980px; margin-left: auto; margin-right: auto; }
