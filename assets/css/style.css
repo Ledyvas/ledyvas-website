@@ -195,6 +195,11 @@ header.site-header {
 .header-actions .btn-primary { display: none; }
 .header-actions .hamburger { margin-left: 4px; }
 
+.header-social-links { display: flex; align-items: center; gap: 12px; }
+.header-social-links a { display: flex; color: var(--gray-500); transition: color 0.2s ease; }
+.header-social-links a:hover { color: var(--royal); }
+.header-social-links svg { width: 19px; height: 19px; }
+
 /* Selector de idioma — escritorio (visible junto al header, no depende del menú hamburguesa) */
 .lang-dropdown { position: relative; display: none; }
 .lang-dropdown-toggle {
