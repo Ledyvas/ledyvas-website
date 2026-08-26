@@ -195,10 +195,20 @@ header.site-header {
 .header-actions .btn-primary { display: none; }
 .header-actions .hamburger { margin-left: 4px; }
 
-.header-social-links { display: flex; align-items: center; gap: 12px; }
-.header-social-links a { display: flex; color: var(--gray-500); transition: color 0.2s ease; }
-.header-social-links a:hover { color: var(--royal); }
-.header-social-links svg { width: 19px; height: 19px; }
+.header-social-links { display: flex; align-items: center; gap: 8px; }
+.header-social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(30, 79, 175, 0.08);
+  color: var(--royal);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.header-social-links a:hover { background: var(--royal); color: var(--white); transform: translateY(-2px); }
+.header-social-links svg { width: 17px; height: 17px; }
 
 /* Selector de idioma — escritorio (visible junto al header, no depende del menú hamburguesa) */
 .lang-dropdown { position: relative; display: none; }
@@ -406,7 +416,7 @@ body.nav-open { overflow: hidden; }
 .hero-logo { width: 130px; height: auto; margin: 0 0 32px; }
 .hero-media-full { margin-top: 64px; max-width: 980px; margin-left: auto; margin-right: auto; }
 .hero-media-full img { border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
-.sector-card-excursiones { max-width: 620px; margin: 28px auto 0; }
+.sector-card-excursiones { max-width: 380px; margin: 28px auto 0; }
 
 .hero-logo-media { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; }
 .hero-logo-media img { width: 160px; height: auto; border-radius: 0; }
