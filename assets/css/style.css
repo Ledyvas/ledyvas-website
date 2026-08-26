@@ -743,6 +743,26 @@ form.contact-form { background: var(--gray-50); border: 1px solid var(--gray-300
 .form-success.show { display: block; }
 .form-success .icon-circle { margin: 0 auto 18px; background: rgba(30,79,175,0.1); }
 
+/* ---------- Modal: solicitar prueba gratis (descargas) ---------- */
+.trial-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(11,31,58,0.55); z-index: 200; align-items: center; justify-content: center; padding: 20px; }
+.trial-modal-overlay.show { display: flex; }
+.trial-modal { background: var(--white); border-radius: var(--radius-lg); padding: 36px; max-width: 440px; width: 100%; position: relative; box-shadow: var(--shadow-md); }
+.trial-modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; color: var(--gray-500); font-size: 22px; line-height: 1; padding: 4px; }
+.trial-modal-close:hover { color: var(--navy); }
+.trial-modal h3 { margin-bottom: 8px; }
+.trial-modal p.trial-modal-lede { color: var(--gray-500); font-size: 14.5px; margin-bottom: 22px; }
+.trial-modal .field { margin-bottom: 16px; }
+.trial-modal .honeypot-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.trial-modal-error { display: none; font-size: 13.5px; color: #b3261e; background: rgba(179,38,30,0.08); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; }
+.trial-modal-error.show { display: block; }
+.trial-modal-success { display: none; text-align: center; }
+.trial-modal-success.show { display: block; }
+.trial-modal-success .icon-circle { margin: 0 auto 18px; background: rgba(30,79,175,0.1); }
+.trial-modal-success p { margin-bottom: 18px; }
+.trial-modal-form.hide { display: none; }
+.trial-modal button[type="submit"] { width: 100%; }
+.trial-modal button[type="submit"][disabled] { opacity: 0.6; cursor: not-allowed; }
+
 /* ---------- Requirements list (descargas) ---------- */
 .req-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .req-item { display: flex; align-items: center; gap: 12px; padding: 16px 20px; background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius-sm); font-size: 14.5px; color: var(--gray-700); }
