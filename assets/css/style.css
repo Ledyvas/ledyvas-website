@@ -210,6 +210,12 @@ header.site-header {
 .header-social-links a:hover { background: var(--royal); color: var(--white); transform: translateY(-2px); }
 .header-social-links svg { width: 17px; height: 17px; }
 
+/* Colores de marca reales (antes las dos usaban el azul del sitio) */
+.header-social-links a[href*="instagram.com"] { color: #E1306C; background: rgba(225, 48, 108, 0.1); }
+.header-social-links a[href*="instagram.com"]:hover { background: #E1306C; color: var(--white); }
+.header-social-links a[href*="linkedin.com"] { color: #0A66C2; background: rgba(10, 102, 194, 0.1); }
+.header-social-links a[href*="linkedin.com"]:hover { background: #0A66C2; color: var(--white); }
+
 /* Selector de idioma — escritorio (visible junto al header, no depende del menú hamburguesa) */
 .lang-dropdown { position: relative; display: none; }
 .lang-dropdown-toggle {
