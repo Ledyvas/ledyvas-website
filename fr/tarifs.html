@@ -29,6 +29,13 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
 <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/chat-widget.css">
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  Paddle.Initialize({ token: "live_d35d123e6fae2f6f950e93cdd82" });
+  function openPaddleCheckout(priceId) {
+    Paddle.Checkout.open({ items: [{ priceId: priceId, quantity: 1 }] });
+  }
+</script>
 </head>
 <body>
 
@@ -156,6 +163,8 @@
           <a href="telechargements.html" class="btn btn-primary btn-lg btn-block">Télécharger Ledyvas</a>
           <div style="height:12px"></div>
           <a href="https://ledyvas.gumroad.com/l/buktve" target="_blank" rel="noopener" class="btn btn-outline btn-lg btn-block">Acheter maintenant</a>
+          <div style="height:12px"></div>
+          <button type="button" onclick="openPaddleCheckout('pri_01m16ryj6pjcpvjcfnpw9e4jcy')" class="btn btn-outline btn-lg btn-block">Acheter avec Paddle</button>
         </div>
 
         <div class="price-card price-card-featured">
@@ -178,6 +187,8 @@
           <a href="telechargements.html" class="btn btn-primary btn-lg btn-block">Télécharger Ledyvas</a>
           <div style="height:12px"></div>
           <a href="https://ledyvas.gumroad.com/l/buktve" target="_blank" rel="noopener" class="btn btn-outline btn-lg btn-block">Acheter maintenant</a>
+          <div style="height:12px"></div>
+          <button type="button" onclick="openPaddleCheckout('pri_01m16s5x2rdd2eapgdpcsqwega')" class="btn btn-outline btn-lg btn-block">Acheter avec Paddle</button>
         </div>
 
       </div>
