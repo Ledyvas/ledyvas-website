@@ -866,3 +866,43 @@ form.contact-form { background: var(--gray-50); border: 1px solid var(--gray-300
   .form-row { grid-template-columns: 1fr; }
   .header-actions .btn-outline { display: none; }
 }
+
+/* Insignias de compra alternativas (Paddle / Microsoft Store) -- fila
+   discreta debajo del botón principal de Gumroad, en vez de botones
+   grandes apilados. Agregado 2026-09-01. */
+.payment-alt-label {
+  font-size: 12.5px;
+  color: var(--gray-500);
+  text-align: center;
+  margin: 16px 0 8px;
+}
+.payment-badges-row {
+  display: flex;
+  gap: 8px;
+}
+.payment-badge {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--gray-300);
+  border-left: 3px solid var(--gray-300);
+  background: var(--white);
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--gray-700);
+  text-decoration: none;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.payment-badge:hover {
+  box-shadow: 0 4px 12px rgba(11, 31, 58, 0.1);
+  transform: translateY(-1px);
+}
+.payment-badge svg { flex: none; }
+.payment-badge-paddle { border-left-color: #6E4CFF; }
+.payment-badge-microsoft { border-left-color: #F25022; }
