@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="es">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': (typeof localStorage !== 'undefined' && localStorage.getItem('ledyvas-cookie-consent') === 'accepted') ? 'granted' : 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<script>
+  gtag("js", new Date());
+  gtag("config", "G-DYMN29KT3X");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual Profesional Completo — Ledyvas</title>
+<meta name="description" content="Documentación profesional de Ledyvas: arquitectura, base de datos cifrada, licencia, flujo de datos, el motor de Fórmula por PAX, y las reglas de negocio de cada módulo en detalle.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="canonical" href="https://ledyvas.com/manual-profesional.html">
+<link rel="alternate" hreflang="es" href="https://ledyvas.com/manual-profesional.html">
+<link rel="alternate" hreflang="it" href="https://ledyvas.com/it/manuale-professionale.html">
+<link rel="alternate" hreflang="en" href="https://ledyvas.com/en/professional-manual.html">
+<link rel="alternate" hreflang="fr" href="https://ledyvas.com/fr/manuel-professionnel.html">
+<link rel="alternate" hreflang="pt" href="https://ledyvas.com/pt/manual-profissional.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/chat-widget.css">
+<style>
+  .manual-layout { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; padding: 40px 0 80px; }
+  .manual-toc { position: sticky; top: calc(var(--header-h, 84px) + 20px); font-size: 14px; max-height: calc(100vh - 120px); overflow-y: auto; }
+  .manual-toc h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin: 0 0 12px; }
+  .manual-toc a { display: block; padding: 5px 0 5px 12px; color: var(--gray-700); border-left: 2px solid var(--gray-300); line-height: 1.35; text-decoration: none; }
+  .manual-toc a:hover { color: var(--royal); border-left-color: var(--royal); }
+  .manual-body { max-width: 760px; }
+  .manual-body h2 { font-size: 1.6rem; margin: 52px 0 14px; scroll-margin-top: 100px; padding-top: 8px; border-top: 1px solid var(--gray-300); }
+  .manual-body h2:first-of-type { border-top: 0; margin-top: 0; }
+  .manual-body h3 { font-size: 1.12rem; margin: 28px 0 8px; color: var(--navy); }
+  .manual-body p { color: var(--gray-700); line-height: 1.7; margin: 0 0 14px; }
+  .manual-body ul, .manual-body ol { color: var(--gray-700); line-height: 1.7; margin: 0 0 16px; padding-left: 22px; }
+  .manual-body li { margin-bottom: 6px; }
+  .manual-body strong { color: var(--navy); font-weight: 600; }
+  .manual-body code { background: var(--gray-100); border: 1px solid var(--gray-300); border-radius: 4px; padding: 1px 5px; font-size: 0.9em; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; color: var(--navy); }
+  .callout { border-left: 3px solid var(--gold); background: var(--gray-100); border-radius: 6px; padding: 14px 18px; margin: 18px 0; }
+  .callout p { margin: 0; color: var(--gray-700); }
+  .callout.warn { border-left-color: #c0392b; }
+  .callout strong { display: block; margin-bottom: 4px; }
+  .manual-body table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14.5px; }
+  .manual-body th, .manual-body td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--gray-300); vertical-align: top; }
+  .manual-body th { color: var(--navy); font-weight: 600; }
+  .manual-intro-note { font-size: 14px; color: var(--gray-500); margin-bottom: 24px; }
+  @media (max-width: 900px) {
+    .manual-layout { grid-template-columns: 1fr; gap: 0; }
+    .manual-toc { position: static; max-height: none; margin-bottom: 32px; border: 1px solid var(--gray-300); border-radius: 8px; padding: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cookie-consent-banner" id="cookie-consent-banner" hidden>
+  <div class="cookie-consent-inner">
+    <p>Usamos cookies para entender cómo se usa este sitio (Google Analytics). Podés aceptar o rechazar este seguimiento. <a href="privacidad.html">Más información</a></p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookie-consent-reject" class="btn btn-outline">Rechazar</button>
+      <button type="button" id="cookie-consent-accept" class="btn btn-primary">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <nav class="nav-horizontal">
+      <a href="index.html">Inicio</a>
+      <a href="software.html">Software</a>
+      <a href="soluciones.html">Soluciones</a>
+      <a href="sectores.html">Sectores</a>
+      <a href="precios.html">Precios</a>
+      <a href="descargas.html">Descargas</a>
+      <a href="empresa.html">Empresa</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <a href="precios.html" class="btn btn-outline">Comprar ahora</a>
+      <a href="descargas.html" class="btn btn-primary">Prueba gratuita</a>
+      <div class="lang-dropdown">
+      <button class="lang-dropdown-toggle" data-lang-toggle type="button" aria-haspopup="true" aria-expanded="false"><span class="fi fi-es"></span> ES<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-dropdown-menu">
+    <a href="/it/manuale-professionale.html"><span class="fi fi-it"></span> IT</a>
+    <a href="/en/professional-manual.html"><span class="fi fi-gb"></span> EN</a>
+    <a href="/fr/manuel-professionnel.html"><span class="fi fi-fr"></span> FR</a>
+    <a href="/pt/manual-profissional.html"><span class="fi fi-pt"></span> PT</a>
+      </div>
+    </div>
+    <button class="hamburger" data-nav-toggle aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay">
+  <div class="nav-overlay-top">
+    <a href="index.html" class="brand"><img src="assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <button class="hamburger" data-nav-toggle aria-label="Cerrar menú"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-overlay-body">
+    <nav class="nav-links">
+      <a href="index.html">Inicio <small>01</small></a>
+      <a href="software.html">Software <small>02</small></a>
+      <a href="soluciones.html">Soluciones <small>03</small></a>
+      <a href="sectores.html">Sectores <small>04</small></a>
+      <a href="precios.html">Precios <small>05</small></a>
+      <a href="descargas.html">Descargas <small>06</small></a>
+      <a href="empresa.html">Empresa <small>07</small></a>
+      <a href="contacto.html">Contacto <small>08</small></a>
+    </nav>
+    <div class="nav-side">
+      <div>
+        <div class="nav-side-title">Idioma</div>
+        <div class="lang-switch">
+          <button class="active"><span class="fi fi-es"></span> ES</button>
+          <a href="/it/manuale-professionale.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid var(--gray-300);color:var(--gray-700);"><span class="fi fi-it"></span> IT</a>
+          <a href="/en/professional-manual.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid var(--gray-300);color:var(--gray-700);"><span class="fi fi-gb"></span> EN</a>
+          <a href="/fr/manuel-professionnel.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid var(--gray-300);color:var(--gray-700);"><span class="fi fi-fr"></span> FR</a>
+          <a href="/pt/manual-profissional.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid var(--gray-300);color:var(--gray-700);"><span class="fi fi-pt"></span> PT</a>
+        </div>
+      </div>
+      <div>
+        <div class="nav-side-title">Empieza ahora</div>
+        <a href="descargas.html" class="btn btn-gold btn-block">Descargar Ledyvas</a>
+        <div style="height:10px"></div>
+        <a href="precios.html" class="btn btn-outline-light btn-block">Comprar ahora</a>
+      </div>
+      <div>
+        <div class="nav-side-title">Contacto</div>
+        <div class="nav-contact">
+          <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>
+          <span>Respuesta en 48 horas laborables</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+        <span class="eyebrow">Documentación</span>
+        <h1>Manual Profesional Completo</h1>
+        <p class="lede" style="margin-left:auto;margin-right:auto;">La lógica interna de Ledyvas: arquitectura, seguridad, el flujo de datos completo, el motor de Fórmula por PAX y las reglas de negocio de cada módulo. Para quien administra el sistema o necesita entender por qué los números dan lo que dan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="manual-layout">
+
+        <aside class="manual-toc">
+          <h4>Contenido</h4>
+          <a href="#arquitectura">1. Arquitectura general</a>
+          <a href="#licencia">2. Licencia y cifrado</a>
+          <a href="#datos">3. Base de datos y migraciones</a>
+          <a href="#catalogo">4. Catálogo y relaciones</a>
+          <a href="#formula">5. El motor de Fórmula por PAX</a>
+          <a href="#compra">6. Compra: cómo entra el stock</a>
+          <a href="#centro-logistico">7. Centro Logístico y las Ventas</a>
+          <a href="#venta-consumidor">8. Venta a Consumidor y stock del revendedor</a>
+          <a href="#categorias-especiales">9. Bebidas, Mono Uso y Combustible</a>
+          <a href="#garrafones">10. Garrafones de combustible</a>
+          <a href="#control-diario">11. Control Diario</a>
+          <a href="#consolidados">12. Cómo se calcula cada Consolidado</a>
+          <a href="#recetas">13. Recetas y Producción</a>
+          <a href="#flotas">14. Equipos y Consolidado de Flotas</a>
+          <a href="#usuarios">15. Multiusuario, roles y acceso</a>
+          <a href="#stock-negativo">16. Stock negativo: decisión de diseño</a>
+          <a href="#mantenimiento">17. Copia de seguridad y Borrado Maestro</a>
+          <a href="#i18n">18. Idiomas y moneda</a>
+          <a href="#asistente">19. Asistente de IA</a>
+          <a href="#invariantes">20. Reglas de negocio clave</a>
+          <a href="#faq">21. Preguntas técnicas frecuentes</a>
+        </aside>
+
+        <div class="manual-body">
+          <p class="manual-intro-note">Este manual explica el <em>por qué</em> y el <em>cómo</em> internos. Para la guía de uso paso a paso, ver el <a href="manual-usuario.html">Manual de Usuario</a>.</p>
+
+          <h2 id="arquitectura">1. Arquitectura general</h2>
+          <p>Ledyvas es una aplicación de escritorio construida sobre Electron. Corre 100&nbsp;% en la máquina del cliente — no hay servidor de aplicación ni base de datos en la nube. Lo único que Ledyvas consulta por internet es un servidor de licencias (un Cloudflare Worker), y solo cada tanto.</p>
+          <ul>
+            <li><strong>Proceso principal:</strong> arranca la app, valida la licencia, abre la base de datos y conecta todos los módulos antes de mostrar la interfaz.</li>
+            <li><strong>Interfaz:</strong> HTML/CSS/JavaScript sin framework. Cada pantalla es una vista que se carga bajo demanda al navegar.</li>
+            <li><strong>Puente único:</strong> la interfaz nunca toca la base de datos directamente. Todo pasa por una capa de servicios con validación, transacciones y cálculos.</li>
+            <li><strong>Modo portátil:</strong> la base de datos vive en una carpeta <code>Data</code> al lado del ejecutable. Podés copiar la carpeta entera a otra computadora o a un disco externo.</li>
+          </ul>
+
+          <h2 id="licencia">2. Licencia y cifrado</h2>
+          <p>Ledyvas se activa con un código de licencia contra el servidor de licencias. La validación usa <strong>firma criptográfica asimétrica</strong> (Ed25519): la clave privada vive solo en el servidor, así que la app no podría falsificar una licencia aunque alguien la descompilara.</p>
+          <ul>
+            <li><strong>Margen offline:</strong> tras activar, Ledyvas funciona varios días sin conexión. Revalida sola en segundo plano cada vez que hay internet. Solo si el margen vence y no hay conexión, la app pide reconectarse.</li>
+            <li><strong>Transferencia:</strong> la licencia se puede mover a otra máquina. El servidor exige <strong>una sola máquina activa a la vez</strong> (huella de hardware); al activar en una PC nueva, la anterior queda desactivada.</li>
+            <li><strong>Base de datos cifrada:</strong> el archivo <code>opshield.db</code> está cifrado. La clave se deriva del código de licencia mediante PBKDF2 con 210.000 iteraciones (estándar OWASP). Si roban la laptop, nadie abre la base sin la licencia. Como la clave viaja con la licencia y no con el hardware, la misma licencia reactivada en otra PC vuelve a abrir el mismo archivo — por eso podés mover la carpeta entre computadoras.</li>
+          </ul>
+
+          <h2 id="datos">3. Base de datos y migraciones</h2>
+          <p>Ledyvas usa un único archivo SQLite. El esquema evoluciona por <strong>migraciones numeradas y ordenadas</strong>: cada actualización de la app trae migraciones nuevas que se aplican solas, una vez, en el primer arranque, dentro de su propia transacción. Nunca se modifica una migración ya aplicada; se agrega una nueva.</p>
+          <p>Al arrancar, Ledyvas también hace un punto de control del registro de escritura (WAL) y lo repite en segundo plano cada tanto — esto evita que el archivo de trabajo crezca sin control en sesiones largas.</p>
+
+          <h2 id="catalogo">4. Catálogo y relaciones</h2>
+          <p>El catálogo es la base de todo. Se carga una vez y se referencia en cada operación posterior por su <strong>identificador interno estable</strong>, nunca por su nombre — por eso podés renombrar un producto, un destino o una categoría en cualquier momento sin romper el historial.</p>
+          <table>
+            <tr><th>Entidad</th><th>Rol</th><th>Se relaciona con</th></tr>
+            <tr><td>Producto</td><td>Artículo que se compra, vende o produce. Tiene categoría, subcategoría, unidad, costo, código de barras.</td><td>Compras, Ventas, Recetas, Fórmula, Inventario</td></tr>
+            <tr><td>Categoría / Subcategoría</td><td>Clasifican el producto. Definen agrupación en Compra/Inventario y a qué "familia" pertenece (Alimentos, Bebidas, Mono Uso, Combustible…).</td><td>Producto, Fórmula, Consolidados</td></tr>
+            <tr><td>Proveedor</td><td>A quién se le compra. Puede tener una lista de productos que suministra con su costo (referencia).</td><td>Compra</td></tr>
+            <tr><td>Cliente</td><td>A quién se le vende. Si es "revendedor", tiene stock propio.</td><td>Venta a Consumidor, Destino</td></tr>
+            <tr><td>Destino</td><td>Punto de distribución. Puede tener un cliente-revendedor vinculado y un precio de venta por PAX.</td><td>Fórmula, Centro Logístico, Margen por Destino</td></tr>
+            <tr><td>Equipo</td><td>Vehículo o embarcación. Tipo (barco/terrestre) y grupo (compañía/alquilado).</td><td>Combustible, Consolidado de Flotas</td></tr>
+          </table>
+
+          <h2 id="formula">5. El motor de Fórmula por PAX</h2>
+          <p>Solo con Modo Excursión activo. La Fórmula traduce "cuánta gente vas a atender" en "cuánto comprar y despachar".</p>
+          <ol>
+            <li>Se configura una <strong>matriz de Valor</strong>: por cada combinación producto × destino, cuánto consume una persona (ej. 0,25 kg de arroz por PAX en el destino X).</li>
+            <li>Cada día se carga el <strong>PAX</strong> por destino.</li>
+            <li>La corrida calcula, por línea (destino × producto): <code>Requerida = Valor × PAX</code>.</li>
+            <li>De la Requerida se restan tres ajustes que se cargan por destino: <strong>Existencia</strong> (lo que el destino ya tiene), <strong>Devolución</strong> (lo que devolvió) e <strong>Inventario en Playa</strong> (conteo físico en el punto). El resultado es el <strong>Despacho</strong> de esa línea (nunca negativo).</li>
+            <li>Para saber cuánto <em>comprar</em> en total, se suma el Despacho de todos los destinos de cada producto (redondeando cada línea hacia arriba, porque no se entrega una fracción a un restaurante) y se resta una sola vez el <strong>Inventario de Almacén</strong> (stock compartido que ya hay en el Centro Logístico).</li>
+          </ol>
+          <p><strong>Compra Asistida A (Alimentos) y B (Bebidas)</strong> solo ejecutan este cálculo — son una propuesta. No generan ninguna compra real ni tocan el inventario. La pantalla <strong>Compra</strong> es la única que confirma.</p>
+          <div class="callout">
+            <p><strong>Mono Uso (Desechables) por destino</strong>Los artículos de Mono Uso se calculan dentro de la Fórmula de Alimentos y se despachan por destino igual que los Alimentos, aunque para el seguimiento de stock físico se llevan junto con Bebidas y Combustible.</p>
+          </div>
+
+          <h2 id="compra">6. Compra: cómo entra el stock</h2>
+          <p>La pantalla Compra es el <strong>único punto</strong> del sistema que genera una compra real. Al confirmar, dentro de una única transacción atómica:</p>
+          <ol>
+            <li>Se inserta el documento de compra (proveedor, fecha, líneas).</li>
+            <li>Se suma la cantidad a <code>current_stock</code> de cada producto, de forma síncrona.</li>
+            <li>Se registra un movimiento en el historial (<code>stock_movements</code>) con producto, cantidad, costo, fecha y usuario — trazabilidad completa.</li>
+            <li>Se sincroniza el módulo Control Diario para ese día/categoría.</li>
+            <li>Si el producto es de Bebidas, Mono Uso o Combustible, se transfiere solo al seguimiento interno de esas categorías dentro de Centro Logístico.</li>
+          </ol>
+          <p>Anular o modificar una compra revierte todo lo anterior sobre la fecha original del documento, no sobre la fecha de hoy. Ledyvas <strong>no bloquea</strong> la anulación aunque el stock quede negativo (ver sección 16).</p>
+          <div class="callout warn">
+            <p><strong>Comprar no es vender</strong>La Compra solo hace <em>entrar</em> mercadería. El reparto a los destinos es un proceso independiente (Centro Logístico). Se puede comprar 1.000 y despachar 700.</p>
+          </div>
+
+          <h2 id="centro-logistico">7. Centro Logístico y las Ventas</h2>
+          <p>Centro Logístico es el <strong>único almacén</strong> del sistema. Desde ahí se vende/despacha a los destinos. Cada sección de venta (Venta a Restaurantes = Alimentos + Mono Uso; Venta a Embarcaciones = Bebidas) tiene su <strong>propio PAX</strong>, independiente del PAX de Compra — el PAX de Compra y el de Venta no se pisan entre sí (comprar y vender son procesos separados).</p>
+          <p>Al confirmar una venta, por cada destino con algo calculado se genera una <strong>transferencia real</strong>: descuenta <code>current_stock</code>, acredita el stock del cliente-revendedor de ese destino, y registra el movimiento — todo dentro de una sola transacción (si falla un destino, se revierte todo). El despacho por destino usa la misma fórmula ajustada por Existencia/Devolución/Inventario en Playa que la Compra.</p>
+          <p>La venta valida el stock y avisa qué falta, pero <strong>no impide confirmar</strong> — la operación no se interrumpe.</p>
+
+          <h2 id="venta-consumidor">8. Venta a Consumidor y stock del revendedor</h2>
+          <p>Cada cliente marcado como "revendedor" tiene un balance de stock propio (<code>reseller_stock</code>). Se acredita cuando el Centro Logístico le despacha, y se descuenta cuando ese revendedor vende al consumidor final en la pantalla Venta a Consumidor.</p>
+          <ul>
+            <li>Al confirmar una venta desde Centro Logístico se crea automáticamente un <strong>borrador</strong> de Venta a Consumidor por destino. El borrador existe, se puede editar, pero no descuenta stock hasta que se confirma explícitamente.</li>
+            <li>Las líneas de Bebidas de embarcaciones no llevan precio de venta propio (el cobro del paquete por PAX se registra una sola vez del lado de Alimentos, para no contar el ingreso dos veces). Se muestran como registro de costo, no como pérdida.</li>
+            <li><strong>Reventa</strong> es solo un reporte de lo ya despachado — no genera movimientos.</li>
+          </ul>
+
+          <h2 id="categorias-especiales">9. Bebidas, Mono Uso y Combustible</h2>
+          <p>Estas tres familias <strong>no tienen almacén ni pantalla aparte</strong>. Viven dentro de Centro Logístico con un seguimiento de stock propio:</p>
+          <ul>
+            <li>Se transfieren solas a ese seguimiento al confirmar una Compra (en vez de sumarse al stock general de productos).</li>
+            <li>Desde Centro Logístico se registran sus ventas, ajustes, salidas/consumo y devoluciones, cada una con su tipo de movimiento y su historial.</li>
+            <li>Bebidas se subdivide en Alcohólicas / No Alcohólicas.</li>
+            <li>La vista "Devolución del Día" consolida todas las devoluciones (Bebidas por subgrupo, Consumibles, Combustible) en un solo lugar, y ese stock devuelto reduce automáticamente la sugerencia de compra del día siguiente.</li>
+          </ul>
+          <p>En los Consolidados, estas familias <strong>no se reparten por destino</strong>: se llevan como costo general (excepto Mono Uso, que sí se despacha por destino — ver sección 5).</p>
+
+          <h2 id="garrafones">10. Garrafones de combustible</h2>
+          <p>Para negocios que además del inventario en galones manejan combustible/aceite en garrafones físicos (5, 7, 9, 10 y 18 GL). Es un inventario paralelo que <strong>sincroniza solo</strong> con el inventario en galones — nunca hay que cargar nada dos veces.</p>
+          <table>
+            <tr><th>Operación</th><th>Efecto</th></tr>
+            <tr><td>Compra</td><td>Suma garrafones (por capacidad y cantidad exacta, o con una sugerencia de reparto óptimo dados los galones que necesitás) y suma los galones equivalentes al inventario general.</td></tr>
+            <tr><td>Venta / despacho</td><td>Resta garrafones asignándolos a un equipo, y resta los galones del inventario.</td></tr>
+            <tr><td>Devolución</td><td>Llena (suma completo), parcial (suma los galones reales que trae) o vacía (no suma combustible, solo devuelve el envase).</td></tr>
+            <tr><td>Ajuste</td><td>Corrige el conteo tras un inventario físico. Pide el valor correcto por capacidad/estado y un motivo, y queda auditado.</td></tr>
+          </table>
+          <p>Tiene su propio Cierre de Día (<code>Inicial + Compras − Vendido + Devuelto = Final</code>) e Historial completo. La visualización se puede alternar entre Galones y Litros; lo guardado en la base nunca cambia de unidad.</p>
+
+          <h2 id="control-diario">11. Control Diario</h2>
+          <p>Es una capa de <strong>reconciliación</strong>, separada del stock real. Registra, por día/categoría/producto: inicial, compras, despachos (por equipo/destino), devoluciones y el conteo físico.</p>
+          <p><code>Final calculado = Inicial + Compras − (Despachado − Devuelto)</code>. Si hay conteo físico cargado, ese es el número verificado y se usa como <strong>inicial del día siguiente</strong> — así una diferencia entre lo teórico y lo real se corrige sola y no se arrastra.</p>
+          <p>Las compras y despachos reales sincronizan Control Diario automáticamente; también se puede editar a mano.</p>
+
+          <h2 id="consolidados">12. Cómo se calcula cada Consolidado</h2>
+          <h3>Resumen Diario / Consolidado Operacional</h3>
+          <p>El costo operativo <strong>total</strong> del negocio en el período: la Compra real confirmada (por categoría, con los buckets Gasolina/Aceite separados) más los <strong>costos manuales configurables</strong> por rubro (alquiler, sueldos, comisiones, etc. — se administran en Configuración, no son un listado fijo). Muestra además: PAX del período, total de gasto, costo por PAX, y una tabla estadística <strong>PAX Promedio por Destino</strong> (promedio de PAX vendido por día a cada destino, contando solo los días con venta real). Esa tabla es puramente informativa — no entra en ningún cálculo de costo.</p>
+          <h3>Margen por Destino</h3>
+          <p>Solo con Modo Excursión. Costo, venta y margen por cada destino, <strong>únicamente</strong> para lo que pasó por Centro Logístico (transferencias reales). El costo está congelado en cada transferencia; la venta usa el precio guardado en la transferencia. Bebidas y Combustible no aparecen por destino (se muestran aparte como "otros costos del período").</p>
+          <h3>Consolidado de Flotas</h3>
+          <p>Consumo de combustible por equipo. En modo semanal usa promedio ponderado por cantidad (un día de mucho consumo pesa más que uno de poco). Montos en moneda local o dólares según la tasa configurada.</p>
+
+          <h2 id="recetas">13. Recetas y Producción</h2>
+          <p>Una receta define, para un producto terminado, cuánto lleva de cada ingrediente. El ingrediente puede estar en una unidad distinta a la del producto en el catálogo (gramos en la receta, kilos en Productos) — Ledyvas convierte automáticamente por familia de unidad (peso, volumen) antes de calcular costo y consumo.</p>
+          <p>Al <strong>producir</strong>, dentro de una transacción:</p>
+          <ol>
+            <li>Se descuenta cada ingrediente del stock según la cantidad convertida × lotes.</li>
+            <li>Se suma el producto terminado (porciones × lotes).</li>
+            <li>Se recalcula el <strong>costo del producto terminado</strong> como promedio ponderado entre el stock que ya había (a su costo anterior) y lo recién producido (al costo por porción de la receta). Si la receta no tiene ingredientes costeados, no se pisa el costo real anterior.</li>
+          </ol>
+          <p>Así el producto terminado tiene siempre un costo real: vale lo correcto en Inventario y se puede vender sin que la validación lo bloquee por costo cero.</p>
+
+          <h2 id="flotas">14. Equipos y Consolidado de Flotas</h2>
+          <p>Equipos es el padrón de vehículos/embarcaciones. Cada uno con código automático, tipo (barco/terrestre) y grupo (de la compañía / alquilados). Se usan para atribuir despachos de combustible y ventas por unidad, que después alimentan el Consolidado de Flotas (ver sección 12).</p>
+
+          <h2 id="usuarios">15. Multiusuario, roles y acceso</h2>
+          <p>Ledyvas tiene un sistema de usuarios con 5 roles: Gerencia, Compra, Venta, Almacén, Contabilidad. Las contraseñas se guardan solo como hash (scrypt), nunca en texto plano.</p>
+          <div class="callout">
+            <p><strong>Modo libre (sin login)</strong>Por decisión del dueño, Ledyvas hoy <em>no exige usuario ni contraseña</em> para entrar — se abre directo con acceso total. El concepto de "usuario actual" y los roles siguen existiendo: sirven para "Cambiar de usuario" (que filtra qué pantallas se ven en el menú) y para dejar registrado quién hizo cada operación. No hay ninguna pantalla de inicio de sesión bloqueante.</p>
+          </div>
+
+          <h2 id="stock-negativo">16. Stock negativo: decisión de diseño</h2>
+          <p>Ledyvas <strong>nunca bloquea</strong> confirmar una venta, un despacho, una producción o la anulación de una compra por falta de stock. Es una decisión explícita: no interrumpir la operación del negocio. Un stock negativo no es un error del programa — se corrige con el botón <strong>Ajustar Stock</strong> de esa fila (en Productos o Inventario), que pide el valor correcto y un motivo y lo deja auditado.</p>
+          <p>Única excepción: la <strong>Devolución</strong> de mercadería de un revendedor sí valida que no devuelva más de lo que recibió (físicamente no tiene sentido).</p>
+
+          <h2 id="mantenimiento">17. Copia de seguridad y Borrado Maestro</h2>
+          <p><strong>Copia de Seguridad</strong> (en Inicio): guarda una copia completa del archivo de base de datos con un clic.</p>
+          <p><strong>Borrado Maestro</strong> (en Inicio, "Modo de Prueba"): borra Compras, Ventas y Transferencias <strong>desde una fecha elegida en adelante</strong> — nunca antes de esa fecha, y nunca el catálogo (Productos, Clientes, Proveedores, Destinos). Pide escribir "BORRAR TODO". Cada documento se borra usando el mismo mecanismo que la anulación individual, así que las reversiones de stock quedan consistentes. Sirve para limpiar datos de prueba antes de operar en serio.</p>
+
+          <h2 id="i18n">18. Idiomas y moneda</h2>
+          <p>Ledyvas está traducido a español, italiano, inglés, francés y portugués. El idioma se cambia en caliente con las banderas, sin reiniciar. La moneda del negocio se define en Configuración y gobierna todos los montos; la tasa de cambio a dólares (configurable) se usa en los reportes de flota.</p>
+
+          <h2 id="asistente">19. Asistente de IA</h2>
+          <p>El asistente dentro de la app responde preguntas de uso. Arquitectura:</p>
+          <ul>
+            <li>La app envía la pregunta (y el historial reciente) junto con su licencia y huella de hardware al servidor de licencias.</li>
+            <li>El servidor valida la licencia, aplica un límite de 40 preguntas por día por licencia (red de seguridad de costo), y recién entonces llama al modelo de lenguaje.</li>
+            <li><strong>La clave del proveedor de IA nunca está en la app ni en el instalador</strong> — vive solo como secret del servidor.</li>
+            <li>El asistente responde siempre en el idioma en que se le escribe, entre los 5 idiomas soportados.</li>
+          </ul>
+
+          <h2 id="invariantes">20. Reglas de negocio clave</h2>
+          <ul>
+            <li><strong>Comprar ≠ vender.</strong> La Compra solo suma stock. El reparto a destinos es independiente.</li>
+            <li><strong>Un solo almacén.</strong> Centro Logístico. No existe ningún depósito ni "almacén satélite" separado.</li>
+            <li><strong>Compra Asistida solo calcula.</strong> Nunca genera una compra real.</li>
+            <li><strong>Identificadores estables.</strong> Todo se referencia por id interno; los nombres se pueden cambiar sin romper nada.</li>
+            <li><strong>Todo movimiento de stock queda auditado</strong> en el historial, con fecha real del documento (no la de hoy).</li>
+            <li><strong>El stock nunca frena la operación</strong> (salvo la Devolución de revendedor).</li>
+            <li><strong>El conteo físico manda.</strong> En Control Diario, el conteo real corrige el teórico y se arrastra como inicial del día siguiente.</li>
+          </ul>
+
+          <h2 id="faq">21. Preguntas técnicas frecuentes</h2>
+          <h3>¿Puedo mover la instalación a otra computadora?</h3>
+          <p>Sí. Copiá la carpeta entera (programa + carpeta <code>Data</code>) y activá la licencia en la máquina nueva. La licencia se transfiere sola (la anterior queda desactivada). Como la clave de cifrado deriva de la licencia, la base se abre en la PC nueva.</p>
+          <h3>¿Los datos están en la nube?</h3>
+          <p>No. Todo está en tu máquina, en un archivo cifrado. Hacé copias de seguridad seguido.</p>
+          <h3>¿Por qué un producto producido valía cero y ahora no?</h3>
+          <p>Producir ahora calcula el costo real del producto terminado (promedio ponderado). Antes había que cargarlo a mano.</p>
+          <h3>¿Por qué la Venta a Restaurantes ahora ofrece Mono Uso?</h3>
+          <p>Los Desechables/Mono Uso se despachan por destino como los Alimentos. Necesitan tener su Valor cargado en la Fórmula (Compra Asistida A) y su costo en Productos.</p>
+          <h3>¿Qué pasa si borro un producto que está en una receta?</h3>
+          <p>Ledyvas te avisa antes de confirmar en cuántas recetas y líneas de Fórmula se usa. Si lo borrás, se quita de ahí y esas recetas recalculan su costo. Si el producto tiene compras/ventas reales, no se borra: se desactiva.</p>
+          <h3>Si algo no está cubierto acá</h3>
+          <p>Escribí a <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-gray">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;max-width:640px;">
+        <span class="eyebrow">¿Recién empezás?</span>
+        <h2>Manual de Usuario</h2>
+        <p class="lede">Si lo que buscás es la guía paso a paso para usar Ledyvas en el día a día, empezá por el Manual de Usuario.</p>
+        <div class="cta-row" style="justify-content:center;">
+          <a href="manual-usuario.html" class="btn btn-primary">Ver Manual de Usuario</a>
+          <a href="contacto.html" class="btn btn-outline">Contactar soporte</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="assets/img/logo-icon.png" alt="Ledyvas"></a>
+        <p>Software de gestión empresarial todo en uno. Compras, ventas, inventario, producción y reportes desde una única plataforma.</p>
+        <a href="https://www.instagram.com/ledyvas/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Ledyvas en Instagram">Instagram</a>
+        <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="soluciones.html">Soluciones</a></li>
+          <li><a href="sectores.html">Sectores</a></li>
+          <li><a href="precios.html">Precios</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="empresa.html">Sobre nosotros</a></li>
+          <li><a href="empresa.html#fundador">Fundador</a></li>
+          <li><a href="empresa.html#opiniones">Opiniones</a></li>
+          <li><a href="empresa.html#faq">Preguntas frecuentes</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="descargas.html">Descargas</a></li>
+          <li><a href="documentacion.html">Documentación</a></li>
+          <li><a href="portal-cliente.html">Portal del cliente</a></li>
+          <li><a href="descargas.html">Prueba gratuita</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:info@ledyvas.com">info@ledyvas.com</a></li>
+          <li><span style="font-size:14px;">Respuesta en 48h laborables</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledyvas. Todos los derechos reservados.</span>
+      <div class="footer-legal">
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="terminos.html">Términos y condiciones</a>
+        <a href="eula.html">Licencia de uso (EULA)</a>
+        <a href="cookies.html">Política de cookies</a>
+        <a href="reembolsos.html">Política de reembolsos</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/chat-widget.js" defer></script>
+</body>
+</html>

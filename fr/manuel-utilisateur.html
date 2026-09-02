@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': (typeof localStorage !== 'undefined' && localStorage.getItem('ledyvas-cookie-consent') === 'accepted') ? 'granted' : 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<script>
+  gtag("js", new Date());
+  gtag("config", "G-DYMN29KT3X");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manuel d'Utilisateur — Ledyvas</title>
+<meta name="description" content="Manuel d'utilisateur de Ledyvas : comment installer, activer et utiliser chaque module pas à pas, avec un exemple de journée complète et les questions fréquentes.">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="canonical" href="https://ledyvas.com/fr/manuel-utilisateur.html">
+<link rel="alternate" hreflang="es" href="https://ledyvas.com/manual-usuario.html">
+<link rel="alternate" hreflang="it" href="https://ledyvas.com/it/manuale-utente.html">
+<link rel="alternate" hreflang="en" href="https://ledyvas.com/en/user-manual.html">
+<link rel="alternate" hreflang="fr" href="https://ledyvas.com/fr/manuel-utilisateur.html">
+<link rel="alternate" hreflang="pt" href="https://ledyvas.com/pt/manual-do-usuario.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/chat-widget.css">
+<style>
+  .manual-layout { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; padding: 40px 0 80px; }
+  .manual-toc { position: sticky; top: calc(var(--header-h, 84px) + 20px); font-size: 14px; max-height: calc(100vh - 120px); overflow-y: auto; }
+  .manual-toc h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin: 0 0 12px; }
+  .manual-toc a { display: block; padding: 5px 0 5px 12px; color: var(--gray-700); border-left: 2px solid var(--gray-300); line-height: 1.35; text-decoration: none; }
+  .manual-toc a:hover { color: var(--royal); border-left-color: var(--royal); }
+  .manual-body { max-width: 760px; }
+  .manual-body h2 { font-size: 1.6rem; margin: 52px 0 14px; scroll-margin-top: 100px; padding-top: 8px; border-top: 1px solid var(--gray-300); }
+  .manual-body h2:first-of-type { border-top: 0; margin-top: 0; }
+  .manual-body h3 { font-size: 1.12rem; margin: 28px 0 8px; color: var(--navy); }
+  .manual-body p { color: var(--gray-700); line-height: 1.7; margin: 0 0 14px; }
+  .manual-body ul, .manual-body ol { color: var(--gray-700); line-height: 1.7; margin: 0 0 16px; padding-left: 22px; }
+  .manual-body li { margin-bottom: 6px; }
+  .manual-body strong { color: var(--navy); font-weight: 600; }
+  .manual-body ol.steps { counter-reset: step; list-style: none; padding-left: 0; }
+  .manual-body ol.steps > li { counter-increment: step; position: relative; padding-left: 40px; margin-bottom: 12px; }
+  .manual-body ol.steps > li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--royal); color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .callout { border-left: 3px solid var(--gold); background: var(--gray-100); border-radius: 6px; padding: 14px 18px; margin: 18px 0; }
+  .callout p { margin: 0; color: var(--gray-700); }
+  .callout.warn { border-left-color: #c0392b; }
+  .callout strong { display: block; margin-bottom: 4px; }
+  .manual-body table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14.5px; }
+  .manual-body th, .manual-body td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--gray-300); vertical-align: top; }
+  .manual-body th { color: var(--navy); font-weight: 600; }
+  .manual-intro-note { font-size: 14px; color: var(--gray-500); margin-bottom: 24px; }
+  @media (max-width: 900px) {
+    .manual-layout { grid-template-columns: 1fr; gap: 0; }
+    .manual-toc { position: static; max-height: none; margin-bottom: 32px; border: 1px solid var(--gray-300); border-radius: 8px; padding: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cookie-consent-banner" id="cookie-consent-banner" hidden>
+  <div class="cookie-consent-inner">
+    <p>Nous utilisons des cookies pour comprendre comment ce site est utilisé (Google Analytics). Vous pouvez accepter ou refuser ce suivi. <a href="confidentialite.html">En savoir plus</a></p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookie-consent-reject" class="btn btn-outline">Refuser</button>
+      <button type="button" id="cookie-consent-accept" class="btn btn-primary">Accepter</button>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <nav class="nav-horizontal">
+      <a href="index.html">Accueil</a>
+      <a href="logiciel.html">Logiciel</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="secteurs.html">Secteurs</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="telechargements.html">Téléchargements</a>
+      <a href="entreprise.html">Entreprise</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="tarifs.html" class="btn btn-outline">Acheter maintenant</a>
+      <a href="telechargements.html" class="btn btn-primary">Essai gratuit</a>
+      <div class="lang-dropdown">
+      <button class="lang-dropdown-toggle" data-lang-toggle type="button" aria-haspopup="true" aria-expanded="false"><span class="fi fi-fr"></span> FR<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-dropdown-menu">
+    <a href="/manual-usuario.html"><span class="fi fi-es"></span> ES</a>
+    <a href="/it/manuale-utente.html"><span class="fi fi-it"></span> IT</a>
+    <a href="/en/user-manual.html"><span class="fi fi-gb"></span> EN</a>
+    <a href="/pt/manual-do-usuario.html"><span class="fi fi-pt"></span> PT</a>
+      </div>
+    </div>
+    <div class="header-social-links">
+      <a href="https://www.instagram.com/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas sur Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas sur LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+    <button class="hamburger" data-nav-toggle aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay">
+  <div class="nav-overlay-top">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <button class="hamburger" data-nav-toggle aria-label="Fermer le menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-overlay-body">
+    <nav class="nav-links">
+      <a href="index.html">Accueil <small>01</small></a>
+      <a href="logiciel.html">Logiciel <small>02</small></a>
+      <a href="solutions.html">Solutions <small>03</small></a>
+      <a href="secteurs.html">Secteurs <small>04</small></a>
+      <a href="tarifs.html">Tarifs <small>05</small></a>
+      <a href="telechargements.html">Téléchargements <small>06</small></a>
+      <a href="entreprise.html">Entreprise <small>07</small></a>
+      <a href="contact.html">Contact <small>08</small></a>
+    </nav>
+    <div class="nav-side">
+      <div>
+        <div class="nav-side-title">Langue</div>
+        <div class="lang-switch">
+          <a href="/manual-usuario.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-es"></span> ES</a>
+          <a href="/it/manuale-utente.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-it"></span> IT</a>
+          <a href="/en/user-manual.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-gb"></span> EN</a>
+          <button class="active"><span class="fi fi-fr"></span> FR</button>
+          <a href="/pt/manual-do-usuario.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-pt"></span> PT</a>
+        </div>
+      </div>
+      <div>
+        <div class="nav-side-title">Commencer maintenant</div>
+        <a href="telechargements.html" class="btn btn-gold btn-block">Télécharger Ledyvas</a>
+        <div style="height:10px"></div>
+        <a href="tarifs.html" class="btn btn-outline-light btn-block">Acheter maintenant</a>
+      </div>
+      <div>
+        <div class="nav-side-title">Contact</div>
+        <div class="nav-contact">
+          <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>
+          <span>Réponse sous 48 heures ouvrées</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+        <span class="eyebrow">Documentation</span>
+        <h1>Manuel d'Utilisateur</h1>
+        <p class="lede" style="margin-left:auto;margin-right:auto;">Comment installer, activer et utiliser chaque module de Ledyvas, pas à pas. À la fin, un exemple de journée complète de travail et les questions les plus fréquentes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="manual-layout">
+
+        <aside class="manual-toc">
+          <h4>Contenu</h4>
+          <a href="#install">1. Installation et premier démarrage</a>
+          <a href="#access">2. Ouvrir Ledyvas et les utilisateurs</a>
+          <a href="#language">3. Langue, devise et mode d'activité</a>
+          <a href="#catalog">4. Le catalogue : Produits, Fournisseurs, Clients, Destinations</a>
+          <a href="#assisted">5. Achat Assisté A et B</a>
+          <a href="#purchase">6. Achat (c'est ici qu'on achète vraiment)</a>
+          <a href="#logistics">7. Centre Logistique</a>
+          <a href="#consumer-sale">8. Vente au Consommateur</a>
+          <a href="#resale">9. Revente</a>
+          <a href="#inventory">10. Inventaire</a>
+          <a href="#daily-control">11. Contrôle Journalier</a>
+          <a href="#fuel">12. Carburant et Bidons</a>
+          <a href="#equipment">13. Équipements et Consolidé des Flottes</a>
+          <a href="#consolidated">14. Les Consolidés</a>
+          <a href="#recipes">15. Recettes et Production</a>
+          <a href="#price-comparison">16. Comparaison de Prix</a>
+          <a href="#reports">17. Rapports et Business Intelligence</a>
+          <a href="#settings">18. Paramètres</a>
+          <a href="#maintenance">19. Sauvegarde et Suppression Maître</a>
+          <a href="#assistant">20. Assistant IA</a>
+          <a href="#example-day">21. Une journée complète en exemple</a>
+          <a href="#faq">22. Questions fréquentes</a>
+        </aside>
+
+        <div class="manual-body">
+          <p class="manual-intro-note">Nous vous recommandons de lire ce manuel avec Ledyvas ouvert à côté, en essayant chaque étape au fur et à mesure. Ledyvas ne demande aucune connaissance technique : chaque écran est conçu pour que n'importe qui dans l'équipe puisse l'utiliser après une formation simple.</p>
+
+          <h2 id="install">1. Installation et premier démarrage</h2>
+          <p>Ledyvas est un programme de bureau pour Windows. Il se télécharge depuis <a href="telechargements.html">ledyvas.com/téléchargements</a> comme un seul fichier.</p>
+          <ol class="steps">
+            <li>Téléchargez <strong>Ledyvas</strong> depuis la page Téléchargements.</li>
+            <li>Ouvrez le fichier téléchargé. Si Windows affiche un avertissement « éditeur inconnu », choisissez <strong>Informations complémentaires → Exécuter quand même</strong> (Ledyvas est sûr ; l'avertissement apparaît parce que nous n'avons pas encore de certificat de signature payant).</li>
+            <li>La première fois, Ledyvas demande le <strong>code de licence</strong> reçu à l'achat (ou celui de l'essai gratuit). Collez-le et cliquez sur <strong>Activer</strong>. Internet n'est nécessaire que pour cette étape.</li>
+            <li>C'est fait. Ledyvas s'ouvre et vous pouvez commencer à charger vos données.</li>
+          </ol>
+          <div class="callout">
+            <p><strong>À propos de la licence</strong>Après l'activation, Ledyvas fonctionne hors ligne la plupart du temps. Il se revalide en arrière-plan dès qu'il y a Internet (avec plusieurs jours de marge). Si « Connexion Internet requise » apparaît un jour, connectez-vous et cliquez sur <strong>Réessayer</strong>. La licence peut être déplacée vers un autre ordinateur quand vous voulez (une active à la fois).</p>
+          </div>
+          <p>Toutes vos données sont enregistrées dans un dossier <strong>Data</strong> à côté du programme, dans un fichier chiffré. Personne ne peut l'ouvrir sans votre licence.</p>
+
+          <h2 id="access">2. Ouvrir Ledyvas et les utilisateurs</h2>
+          <p>Ledyvas <strong>ne demande ni identifiant ni mot de passe</strong> pour entrer. Il s'ouvre directement, avec un accès complet à tout le système (rôle Direction).</p>
+          <h3>Et si mon équipe a plusieurs personnes avec des permissions différentes ?</h3>
+          <p>Vous pouvez créer un utilisateur par employé, avec un <strong>rôle</strong> qui définit les écrans qu'il voit dans le menu. Les utilisateurs se créent dans <strong>Paramètres → Utilisateurs</strong>.</p>
+          <table>
+            <tr><th>Rôle</th><th>Ce qu'il voit dans le menu</th></tr>
+            <tr><td>Direction</td><td>Tout le système, sans restrictions.</td></tr>
+            <tr><td>Achats</td><td>Achat, Fournisseurs, Achat Assisté.</td></tr>
+            <tr><td>Ventes</td><td>Centre Logistique, Clients, Vente au Consommateur.</td></tr>
+            <tr><td>Entrepôt</td><td>Produits, Inventaire, Contrôle Journalier.</td></tr>
+            <tr><td>Comptabilité</td><td>Rapports et consolidés.</td></tr>
+          </table>
+          <p>Pour voir l'application en tant qu'un rôle précis, cliquez sur le <strong>menu avec votre nom</strong> en haut à droite et choisissez <strong>Changer d'utilisateur</strong>. Le changement est instantané et ne demande pas non plus de mot de passe. Il n'y a aucun écran de connexion qui bloque l'utilisation à un moment quelconque.</p>
+
+          <h2 id="language">3. Langue, devise et mode d'activité</h2>
+          <p><strong>Langue :</strong> Ledyvas est disponible en espagnol, italien, anglais, français et portugais. Elle se change avec les <strong>boutons drapeaux</strong> en haut de l'écran, à tout moment, sans redémarrer.</p>
+          <p><strong>Devise :</strong> se configure dans <strong>Paramètres</strong>. Tous les montants du système utilisent cette devise. Dans les rapports de flotte, vous pouvez aussi voir les totaux en dollars US, avec un taux de change que vous définissez.</p>
+          <p><strong>Mode d'activité (Mode Excursion / Tourisme) :</strong> dans Paramètres, vous pouvez activer ou désactiver le Mode Excursion.</p>
+          <ul>
+            <li><strong>Activé :</strong> Ledyvas ajoute les concepts d'une opération touristique — les 12 destinations officielles, la Formule par PAX (nombre de personnes), l'Achat Assisté A et B, et le rapport Marge par Destination.</li>
+            <li><strong>Désactivé :</strong> Ledyvas fonctionne comme un ERP générique d'achats / inventaire / ventes pour tout commerce de détail (mode, quincaillerie, pharmacie, cosmétique, n'importe quoi).</li>
+          </ul>
+
+          <h2 id="catalog">4. Le catalogue : Produits, Fournisseurs, Clients, Destinations</h2>
+          <p>Avant d'acheter ou de vendre quoi que ce soit, chargez une fois les informations de base de l'activité. Elles sont ensuite réutilisées partout ailleurs.</p>
+
+          <h3>Produits</h3>
+          <p>Chaque article que votre activité achète, vend ou produit.</p>
+          <ol class="steps">
+            <li>Menu latéral → <strong>Produits</strong> → bouton <strong>Nouveau</strong>.</li>
+            <li>Renseignez le nom, la catégorie, la sous-catégorie, l'unité de mesure (unité, kilo, carton, gallon…) et le coût.</li>
+            <li>Si vous avez une douchette code-barres, scannez le code directement dans le champ — cela fonctionne comme si vous le tapiez.</li>
+            <li>Enregistrez.</li>
+          </ol>
+          <p>Les produits sont automatiquement organisés par <strong>Catégorie → Sous-catégorie</strong> dans la liste, avec des sous-totaux. Chaque ligne a trois boutons : <strong>Modifier</strong>, <strong>Ajuster le Stock</strong> et <strong>Supprimer</strong>.</p>
+          <ul>
+            <li><strong>Ajuster le Stock :</strong> corrige le nombre à la main après un comptage physique. Il demande la valeur correcte et un motif, et c'est enregistré dans l'historique des mouvements — le motif du changement n'est jamais perdu.</li>
+            <li><strong>Supprimer :</strong> avant de confirmer, Ledyvas vous avertit <em>où</em> ce produit est utilisé (dans combien de recettes, lignes de Formule, prix par destination) et que le supprimer le retire de là. Si le produit a déjà des achats ou des ventes réels, il n'est pas supprimé entièrement : il est <strong>désactivé</strong> (marqué « Inactif ») pour ne pas casser l'historique comptable.</li>
+          </ul>
+
+          <h3>Fournisseurs</h3>
+          <p>Menu latéral → <strong>Fournisseurs</strong> → <strong>Nouveau</strong>. Renseignez les coordonnées. Dans la section <strong>« Produits fournis »</strong>, vous pouvez lister ce que vous achetez à ce fournisseur et à quel coût — une référence pour vous rappeler à qui acheter chaque chose.</p>
+
+          <h3>Clients</h3>
+          <p>Menu latéral → <strong>Clients</strong> → <strong>Nouveau</strong>. Ce sont les personnes ou les entreprises à qui vous vendez au final. Cochez <strong>« est un revendeur »</strong> si ce client reçoit des distributions et garde son propre stock (par exemple, chacune de vos destinations a généralement un client-revendeur associé).</p>
+
+          <h3>Destinations</h3>
+          <p>Les points auxquels votre activité distribue la marchandise (restaurants, plages, clients finaux).</p>
+          <ul>
+            <li>Vous pouvez <strong>renommer</strong> n'importe quelle destination à tout moment sans perdre l'historique des ventes précédentes.</li>
+            <li>Avec le Mode Excursion, il y a 12 destinations officielles pour l'Alimentaire. Les Boissons utilisent un groupe séparé (organisé par bateau ou type d'excursion) — choisi avec le sélecteur <strong>Périmètre</strong> lors de la création ou de la modification d'une destination.</li>
+            <li>Sans le Mode Excursion, vous créez les destinations dont vous avez besoin.</li>
+          </ul>
+
+          <h2 id="assisted">5. Achat Assisté A et B</h2>
+          <p class="manual-intro-note">Uniquement avec le Mode Excursion activé. Ils sont dans <strong>Accès Rapides</strong>, sous le menu principal.</p>
+          <p>L'Achat Assisté <strong>A (Alimentaire)</strong> et <strong>B (Boissons)</strong> vous aident à calculer automatiquement combien acheter selon le nombre de personnes que vous allez servir.</p>
+          <ol class="steps">
+            <li>Ouvrez l'Achat Assisté A (ou B).</li>
+            <li>Choisissez la date.</li>
+            <li>Saisissez le <strong>PAX</strong> (nombre de personnes) pour chaque destination pour ce jour.</li>
+            <li>Configurez une fois la matrice <strong>« Valeur par produit × destination »</strong> (combien une personne consomme de chaque produit dans chaque destination). Vous pouvez coller un bloc copié directement depuis Excel, même plusieurs lignes et colonnes à la fois.</li>
+            <li>Ledyvas calcule combien il faut de chaque produit.</li>
+          </ol>
+          <p>Vous pouvez aussi saisir, par destination, le <strong>Stock Existant / Retour / Inventaire sur la Plage</strong> — ce que la destination a déjà sous la main, pour ne pas acheter ni expédier plus que nécessaire.</p>
+          <div class="callout warn">
+            <p><strong>Important</strong>L'Achat Assisté <em>ne fait que calculer une proposition</em>. Il n'achète rien et ne touche pas l'inventaire. Pour acheter vraiment, il faut aller à l'écran <strong>Achat</strong> (étape 6), qui importe cette proposition tout seul à l'ouverture.</p>
+          </div>
+
+          <h2 id="purchase">6. Achat (c'est ici qu'on achète vraiment)</h2>
+          <p>C'est le <strong>seul endroit du système</strong> où un achat est réellement confirmé et ajoute du stock réel.</p>
+          <ol class="steps">
+            <li>Menu latéral → <strong>Achat</strong>. Choisissez la date.</li>
+            <li>Si vous utilisez le Mode Excursion, Ledyvas importe déjà la proposition calculée dans l'Achat Assisté A et B, regroupée par Catégorie et Sous-catégorie avec des sous-totaux.</li>
+            <li>Vérifiez la liste. Vous pouvez changer n'importe quelle quantité à la main, retirer un produit que vous ne voulez pas acheter, ou en ajouter un nouveau qui n'y était pas (en le cherchant par nom ou en scannant son code-barres).</li>
+            <li>Vous pouvez coller un bloc de prix copié directement depuis Excel — même au format Comptabilité (avec un symbole de devise et des tirets pour le zéro).</li>
+            <li>Quand tout est comme vous le voulez, cliquez sur <strong>Confirmer et Générer l'Achat</strong>.</li>
+          </ol>
+          <p>Dès que vous confirmez, l'avis <strong>« Achat Confirmé »</strong> apparaît et le stock de chaque produit augmente réellement — visible tout de suite dans l'Inventaire et les Produits. Si vous vous êtes trompé, annulez l'achat depuis la section <strong>« Achats confirmés à cette date »</strong>, sur le même écran, et le stock se corrige tout seul.</p>
+          <div class="callout">
+            <p><strong>Acheter n'est pas vendre</strong>L'Achat fait seulement <em>entrer</em> la marchandise. La distribuer aux destinations est une étape à part (Centre Logistique). Vous pouvez acheter 1 000 unités et n'en expédier que 700, en gardant 300 en stock.</p>
+          </div>
+
+          <h2 id="logistics">7. Centre Logistique</h2>
+          <p>D'ici vous vendez et expédiez la marchandise vers les destinations. C'est le seul entrepôt du système — il n'y a aucun dépôt à part. Il a plusieurs sections sur le même écran.</p>
+
+          <h3>Vente aux Restaurants (Alimentaire et Usage Unique)</h3>
+          <ol class="steps">
+            <li>Ouvrez le <strong>Centre Logistique</strong>.</li>
+            <li>Saisissez (ou vérifiez) le <strong>PAX</strong> de chaque destination. Ledyvas calcule combien expédier de chaque produit à partir de la Formule.</li>
+            <li>Saisissez, le cas échéant, le Stock Existant / Retour / Inventaire sur la Plage de chaque destination, pour déduire ce qu'il n'est plus nécessaire d'expédier.</li>
+            <li>Vérifiez la fiche de chaque destination avec le détail des produits et des quantités.</li>
+            <li>Cliquez sur <strong>Confirmer la Vente</strong>.</li>
+          </ol>
+          <p>À la confirmation, une livraison réelle est générée vers chaque destination et le stock est déduit. L'avis <strong>« Vente Confirmée »</strong> apparaît. Si un produit n'a pas assez de stock (parce qu'il n'a pas encore été acheté), Ledyvas vous indique exactement lequel manque avant de vous laisser confirmer — vous <strong>pouvez tout de même confirmer</strong> si vous voulez (le stock passera en négatif jusqu'à ce que vous achetiez).</p>
+
+          <h3>Vente aux Bateaux (Boissons)</h3>
+          <p>Même mécanisme que l'Alimentaire, mais pour le groupe de destinations des Boissons.</p>
+
+          <h3>Boissons, Usage Unique et Carburant</h3>
+          <p>Il n'y a aucun entrepôt ni écran séparé pour ces catégories. Tout vit dans le Centre Logistique, avec son propre suivi de stock : elles s'y transfèrent toutes seules à la confirmation d'un Achat. Depuis le même Centre Logistique, vous enregistrez leurs ventes, ajustements de stock, sorties/consommations et retours, avec leur propre historique de mouvements. Les Boissons se divisent en <strong>Alcoolisées / Non Alcoolisées</strong>. Il y a une vue <strong>« Retours du Jour »</strong> qui rassemble tous les retours (Boissons, Consommables, Carburant) en un seul endroit.</p>
+
+          <h3>Mouvements manuels</h3>
+          <p>Pour tout ajustement ponctuel de stock qui ne passe pas par le calcul automatique (une entrée, une sortie, un transfert ou une correction isolée), enregistrez-le directement ici.</p>
+          <p>Chaque section a son propre bouton d'<strong>Impression</strong> et de <strong>Capture d'écran</strong> — si vous imprimez depuis Restaurants, cela ne sort pas mélangé avec Boissons ni Carburant.</p>
+
+          <h2 id="consumer-sale">8. Vente au Consommateur</h2>
+          <p>La vente finale de la destination au client ou au touriste, avec son propre prix et sa marge.</p>
+          <ul>
+            <li>Elle peut être <strong>générée automatiquement comme brouillon</strong> à partir de ce qui a déjà été expédié dans le Centre Logistique. Vous vérifiez les quantités et le prix, et confirmez.</li>
+            <li>Ou elle se saisit à la main : vous choisissez le revendeur, ajoutez des produits (à la main ou en scannant), fixez le prix et confirmez.</li>
+          </ul>
+          <p>Les lignes de Boissons des bateaux n'ont pas de prix de vente propre — l'encaissement du forfait par PAX est enregistré une seule fois côté Alimentaire, pour ne pas compter le revenu deux fois. Elles s'affichent comme <strong>« Inclus dans le forfait du Centre Logistique »</strong>, pas comme une perte.</p>
+
+          <h2 id="resale">9. Revente</h2>
+          <p>Affiche la distribution déjà effectuée depuis le Centre Logistique vers les destinations, regroupée par catégorie. C'est <strong>en lecture seule / un rapport</strong> — elle ne génère aucun nouveau mouvement.</p>
+
+          <h2 id="inventory">10. Inventaire</h2>
+          <p>Le stock actuel de chaque produit, regroupé par Catégorie et Sous-catégorie avec des sous-totaux (même critère que l'Achat). Il inclut le stock de Boissons, Usage Unique et Carburant suivi dans le Centre Logistique.</p>
+          <p>Les lignes avec une quantité ou un coût <strong>négatif</strong> sont marquées en rouge. Elles se corrigent avec le bouton <strong>Ajuster le Stock</strong> de cette ligne, comme dans Produits.</p>
+
+          <h2 id="daily-control">11. Contrôle Journalier</h2>
+          <p>La clôture de fin de journée par catégorie : <strong>Initial + Achats − Expédition + Retour = Final</strong>, comparé au comptage physique réel.</p>
+          <ol class="steps">
+            <li>Choisissez la date et la catégorie.</li>
+            <li>La colonne <strong>Produit</strong> reste fixe à gauche pendant que vous vous déplacez dans les autres colonnes.</li>
+            <li>En fin de journée, renseignez le <strong>Comptage Physique</strong> (ce que vous avez compté à la main). Ledyvas utilise ce nombre vérifié comme initial du jour suivant.</li>
+          </ol>
+
+          <h2 id="fuel">12. Carburant et Bidons</h2>
+          <p>Dans <strong>Contrôle Journalier → Carburant</strong>.</p>
+          <h3>Carburant général (en gallons)</h3>
+          <ul>
+            <li>Dans le tableau du haut, saisissez la quantité de carburant entrée ce jour-là (colonne Achats) et le prix du jour.</li>
+            <li>Dans le tableau du bas, saisissez la quantité vendue/expédiée à chaque équipement (véhicule ou bateau) et la quantité retournée s'il en restait.</li>
+            <li>Avec le sélecteur <strong>Gallons / Litres</strong>, vous pouvez tout voir dans l'unité que vous préférez — c'est uniquement pour le confort, Ledyvas garde toujours la donnée réelle en interne.</li>
+          </ul>
+          <h3>Bidons</h3>
+          <p>Pour les activités qui gèrent le carburant ou l'huile en bidons physiques (5, 7, 9, 10 et 18 GL), en plus du stock général en gallons. Cela permet de :</p>
+          <ul>
+            <li><strong>Acheter</strong> des bidons : par capacité et quantité exacte, ou en demandant à Ledyvas une suggestion du nombre de gallons dont vous avez besoin et de la meilleure façon de les répartir en bidons.</li>
+            <li><strong>Vendre / expédier</strong> à un véhicule, un bateau ou un équipement précis.</li>
+            <li><strong>Retourner</strong> : plein, partiel (en indiquant les gallons réels qu'il contient) ou vide.</li>
+            <li><strong>Ajuster</strong> : pour corriger le comptage après un inventaire physique. Cela demande la valeur correcte par capacité/état et un motif, comme Ajuster le Stock.</li>
+          </ul>
+          <p>Il a sa propre Clôture de Journée (<strong>Initial + Achats − Vendu + Retourné = Final</strong>) et un historique complet des mouvements. Tout se synchronise tout seul avec le stock général en gallons — rien ne doit être saisi deux fois.</p>
+
+          <h2 id="equipment">13. Équipements et Consolidé des Flottes</h2>
+          <h3>Équipements</h3>
+          <p>La liste des véhicules et bateaux de l'entreprise, en propriété ou loués.</p>
+          <ol class="steps">
+            <li>Menu latéral → <strong>Équipements</strong> → <strong>Nouveau</strong>. Ledyvas attribue un code automatique.</li>
+            <li>Choisissez le type (<strong>Bateau</strong> ou <strong>Terrestre</strong>) et le groupe (<strong>Entreprise</strong> ou <strong>Loués</strong>).</li>
+          </ol>
+          <p>Les équipements servent à attribuer les expéditions de carburant et les ventes par unité.</p>
+          <h3>Consolidé des Flottes</h3>
+          <p>Un rapport de consommation de carburant par équipement, en mode <strong>Journalier</strong> ou <strong>Hebdomadaire</strong> (avec coût moyen par jour et répartition des carburants à prix moyen pondéré). Vous pouvez voir les montants en devise locale ou en dollars US, selon le taux de change configuré.</p>
+
+          <h2 id="consolidated">14. Les Consolidés</h2>
+          <table>
+            <tr><th>Écran</th><th>Ce qu'il affiche</th></tr>
+            <tr><td>Résumé Journalier</td><td>Le coût opérationnel total de l'activité pour un jour : achats réels + coûts manuels par catégorie.</td></tr>
+            <tr><td>Consolidé Opérationnel</td><td>La même chose pour une période choisie, avec des graphiques par catégorie, le PAX de la période, la dépense totale et le coût par PAX. Il inclut un tableau statistique <strong>« PAX Moyen par Destination »</strong> (moyenne des PAX vendus par jour à chaque destination, uniquement les jours avec une vente réelle).</td></tr>
+            <tr><td>Marge par Destination <span style="color:var(--gray-500);">(Mode Excursion uniquement)</span></td><td>Coût, ventes et marge par destination, uniquement pour ce qui est passé par le Centre Logistique. Boissons, Usage Unique et Carburant ne sont pas répartis par destination : ils sont portés à part comme coût général.</td></tr>
+            <tr><td>Consolidé Opérationnel → coûts manuels</td><td>Les postes de coût (loyer, salaires, commissions, etc.) se configurent librement dans Paramètres : ils peuvent être renommés, ajoutés ou supprimés. Ce n'est pas une liste fixe.</td></tr>
+          </table>
+
+          <h2 id="recipes">15. Recettes et Production</h2>
+          <p>Pour les activités qui fabriquent ou préparent des produits à partir d'autres (un plat avec plusieurs ingrédients, une sauce, du pain…).</p>
+          <h3>Recettes</h3>
+          <p>Définit combien de chaque ingrédient entre dans un produit fini. L'ingrédient peut être écrit dans une unité différente de celle du produit dans le catalogue (grammes dans la recette, kilos dans Produits) — Ledyvas convertit automatiquement. Chaque recette a une pastille de couleur par catégorie pour les distinguer d'un coup d'œil.</p>
+          <h3>Production</h3>
+          <ol class="steps">
+            <li>Menu latéral (Accès Rapides) → <strong>Production</strong>.</li>
+            <li>Choisissez la recette et combien de lots produire (ou combien de personnes vous allez servir, et Ledyvas calcule les lots).</li>
+            <li>Cliquez sur <strong>Produire</strong>.</li>
+          </ol>
+          <p>En produisant, Ledyvas déduit les ingrédients du stock, ajoute le produit fini, et calcule pour le produit fini son <strong>coût réel</strong> (moyenne pondérée entre ce qui était déjà là et ce qui vient d'être produit). Ainsi le produit fini vaut le bon montant dans l'Inventaire et peut être vendu sans problème.</p>
+
+          <h2 id="price-comparison">16. Comparaison de Prix</h2>
+          <p>Vous chargez plusieurs fournisseurs et leurs prix pour une liste de produits. Ledyvas indique lequel est le moins cher par produit et par total, et affiche le <strong>pourcentage de différence</strong> — combien vous économisez en choisissant le moins cher.</p>
+
+          <h2 id="reports">17. Rapports et Business Intelligence</h2>
+          <p><strong>Rapports :</strong> listes historiques exportables des achats, ventes, inventaire, etc.</p>
+          <p><strong>Business Intelligence :</strong> analyses et tendances sur ces mêmes données (consommations historiques, projections), pensé pour les décisions d'entreprise, pas pour saisir des données.</p>
+
+          <h2 id="settings">18. Paramètres</h2>
+          <p>D'ici vous gérez :</p>
+          <ul>
+            <li>Le <strong>Mode Excursion / Tourisme</strong> (activer / désactiver).</li>
+            <li>La <strong>devise</strong> de l'activité et le taux de change vers les dollars US.</li>
+            <li>Les <strong>Catégories et Sous-catégories</strong> de produits : renommer, ajouter, supprimer.</li>
+            <li>Les <strong>Coûts Opérationnels</strong> manuels affichés dans le Consolidé Opérationnel : renommer, ajouter, supprimer librement.</li>
+            <li>Les <strong>Utilisateurs</strong> de l'entreprise (nom et rôle).</li>
+          </ul>
+
+          <h2 id="maintenance">19. Sauvegarde et Suppression Maître</h2>
+          <p>Les deux outils sont sur l'écran <strong>Accueil</strong>.</p>
+          <h3>Sauvegarde</h3>
+          <p>Enregistre une copie complète de votre base de données en un clic. Faites-la souvent, surtout avant de charger beaucoup d'informations.</p>
+          <h3>Suppression Maître (Mode Test)</h3>
+          <p>Supprime les Achats, Ventes et Transferts <strong>à partir d'une date que vous choisissez</strong> — jamais avant cette date, et jamais le catalogue (Produits, Clients, Fournisseurs, Destinations). Elle demande de taper <strong>« TOUT SUPPRIMER »</strong> pour confirmer. Elle sert à nettoyer les données de test avant de commencer les opérations réelles, pas pour l'usage quotidien.</p>
+
+          <h2 id="assistant">20. Assistant IA</h2>
+          <p>En bas à droite, il y a un bouton d'assistant IA. Vous pouvez lui demander n'importe quoi sur l'utilisation de Ledyvas — dans l'une des 5 langues, et il répond dans la même langue. Il a une limite de 40 questions par jour et par licence, pensée comme un filet de sécurité sur les coûts, pas comme une restriction d'usage normal.</p>
+
+          <h2 id="example-day">21. Une journée complète en exemple</h2>
+          <p>Une journée type d'une opération avec le Mode Excursion :</p>
+          <ol class="steps">
+            <li><strong>Le matin</strong> — Dans l'Achat Assisté A et B : saisissez le PAX de chaque destination pour aujourd'hui. Ledyvas calcule la proposition d'achat.</li>
+            <li>Dans <strong>Achat</strong> : il s'ouvre avec la proposition déjà chargée. Vous la vérifiez, ajustez ce qu'il faut, et cliquez sur <strong>Confirmer et Générer l'Achat</strong>. Le stock augmente.</li>
+            <li>Dans <strong>Centre Logistique → Vente aux Restaurants</strong> : vérifiez le PAX, confirmez la vente à chaque destination. Le stock est déduit.</li>
+            <li>Répétez dans <strong>Vente aux Bateaux</strong> pour les boissons, et saisissez le carburant du jour dans la section Carburant.</li>
+            <li><strong>Pendant la journée</strong> — Dans <strong>Vente au Consommateur</strong> : confirmez les brouillons de vente générés automatiquement, ou saisissez des ventes à la main.</li>
+            <li><strong>À la clôture</strong> — Dans <strong>Contrôle Journalier</strong> : saisissez le comptage physique de chaque catégorie.</li>
+            <li>Vérifiez le résultat du jour dans <strong>Résumé Journalier</strong> et <strong>Marge par Destination</strong>.</li>
+            <li>Faites une <strong>Sauvegarde</strong> depuis l'écran Accueil.</li>
+          </ol>
+
+          <h2 id="faq">22. Questions fréquentes</h2>
+          <h3>J'ai acheté mais le stock n'apparaît pas</h3>
+          <p>Vérifiez que vous avez cliqué sur <strong>« Confirmer et Générer l'Achat »</strong> sur l'écran Achat, pas seulement ajouté la ligne. Saisir le PAX et voir la proposition n'achète rien.</p>
+          <h3>Mon inventaire apparaît en rouge ou en négatif</h3>
+          <p>Ledyvas ne bloque pas la confirmation d'une vente, d'une expédition, d'une production ou d'une annulation d'achat même si le stock passe en négatif — c'est un choix de conception pour ne pas interrompre l'opération, pas une erreur. Corrigez le nombre avec le bouton <strong>Ajuster le Stock</strong> de cette ligne.</p>
+          <h3>Quelle est la différence entre Achat et Achat Assisté ?</h3>
+          <p>L'Achat Assisté ne fait que <em>calculer</em> une proposition selon le PAX. L'Achat est celui qui <em>achète vraiment</em> et ajoute du stock.</p>
+          <h3>Puis-je utiliser Ledyvas pour une activité qui n'est pas du tourisme ?</h3>
+          <p>Oui. Désactivez le Mode Excursion dans Paramètres et Ledyvas fonctionne comme un ERP générique d'achats, d'inventaire et de ventes pour tout commerce de détail.</p>
+          <h3>Comment changer la langue ?</h3>
+          <p>Avec les boutons drapeaux en haut de l'écran. Le changement est instantané, sans redémarrage.</p>
+          <h3>L'application demande une connexion Internet</h3>
+          <p>Ledyvas revalide la licence de temps en temps. Connectez-vous à Internet et cliquez sur <strong>Réessayer</strong>. Vous avez plusieurs jours de marge hors ligne.</p>
+          <h3>Comment ajouter un employé avec des permissions limitées ?</h3>
+          <p>Paramètres → Utilisateurs → créez l'utilisateur avec son rôle. Puis, depuis le menu avec votre nom (en haut à droite), « Changer d'utilisateur ».</p>
+          <h3>Comment supprimer les données de test avant de commencer pour de vrai ?</h3>
+          <p>Accueil → Suppression Maître → choisissez la date à partir de laquelle supprimer → tapez « TOUT SUPPRIMER ».</p>
+          <h3>Si quelque chose n'est pas couvert ici</h3>
+          <p>Écrivez-nous à <a href="mailto:info@ledyvas.com">info@ledyvas.com</a> et nous répondrons sous 48 heures ouvrées, ou demandez à l'assistant IA dans l'application.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-gray">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;max-width:640px;">
+        <span class="eyebrow">Besoin de plus de détail ?</span>
+        <h2>Manuel Professionnel Complet</h2>
+        <p class="lede">Si vous administrez Ledyvas ou avez besoin de comprendre la logique interne de chaque module plus en profondeur, le Manuel Professionnel couvre l'architecture, le flux de données et les règles métier en détail.</p>
+        <div class="cta-row" style="justify-content:center;">
+          <a href="manuel-professionnel.html" class="btn btn-primary">Voir le Manuel Professionnel</a>
+          <a href="contact.html" class="btn btn-outline">Contacter le support</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+        <p>Logiciel de gestion d'entreprise tout-en-un. Achats, ventes, inventaire, production et rapports depuis une seule plateforme.</p>
+        <a href="https://www.instagram.com/ledyvas/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Ledyvas sur Instagram">Instagram</a>
+        <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>Produit</h4>
+        <ul>
+          <li><a href="logiciel.html">Logiciel</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="secteurs.html">Secteurs</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Entreprise</h4>
+        <ul>
+          <li><a href="entreprise.html">À propos</a></li>
+          <li><a href="entreprise.html#fondateur">Fondateur</a></li>
+          <li><a href="entreprise.html#avis">Avis</a></li>
+          <li><a href="entreprise.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="telechargements.html">Téléchargements</a></li>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="portail-client.html">Portail client</a></li>
+          <li><a href="telechargements.html">Essai gratuit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@ledyvas.com">info@ledyvas.com</a></li>
+          <li><span style="font-size:14px;">Réponse sous 48h ouvrées</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledyvas. Tous droits réservés.</span>
+      <div class="footer-legal">
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="conditions.html">Conditions générales</a>
+        <a href="eula.html">Licence d'utilisation (EULA)</a>
+        <a href="remboursements.html">Politique de remboursement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/chat-widget.js" defer></script>
+</body>
+</html>
