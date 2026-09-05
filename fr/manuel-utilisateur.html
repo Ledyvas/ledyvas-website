@@ -401,8 +401,8 @@
             <p>Trois choses à savoir :</p>
             <ul>
               <li>Le numéro fiscal, le téléphone, l'e-mail et l'adresse de vos fournisseurs/clients ne sortent complets que si vous les avez saisis dans Ledyvas. Certains champs propres à chaque plateforme (commune dans Alegra) sont une liste fermée à choisir à la main lors de l'import.</li>
-              <li>Dans <strong>Zoho Books</strong>, les transactions passent par le fichier <code>asientos.csv</code> (Comptable → Écritures manuelles → Importer → « Écritures »), pas par <code>banco.csv</code>. Les écritures arrivent en <strong>brouillon</strong> pour que vous puissiez les vérifier avant de les publier.</li>
-              <li>Les écritures utilisent des noms de compte du plan comptable. Par défaut, Ledyvas utilise 5 comptes standard qui existent déjà dans Zoho ; si dans « Plan comptable » vous envoyez une catégorie vers un autre compte, ce compte doit exister dans votre logiciel avant l'import.</li>
+              <li>Dans <strong>Zoho Books</strong> et <strong>Odoo</strong>, les transactions passent par le fichier <code>asientos.csv</code> (Zoho : Comptable → Écritures manuelles → Importer → « Écritures » ; Odoo : Comptabilité → Pièces comptables → Importer), pas par <code>banco.csv</code>. Les écritures arrivent en <strong>brouillon</strong> pour que vous puissiez les vérifier avant de les publier.</li>
+              <li>Les écritures utilisent des noms de compte du plan comptable. Par défaut, Ledyvas utilise 5 comptes standard qui existent déjà dans Zoho ; pour <strong>Odoo</strong>, ces noms ne correspondent presque jamais à votre plan — avant d'exporter, ouvrez « Plan comptable » dans Ledyvas et indiquez le nom exact de chaque compte de votre Odoo. Odoo demande aussi un « Journal » : le fichier contient « Operaciones varias » par défaut (changez-le là si votre Odoo est dans une autre langue).</li>
             </ul>
           </div>
 

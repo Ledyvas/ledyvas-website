@@ -401,8 +401,8 @@
             <p>Three things to know:</p>
             <ul>
               <li>The tax ID, phone, email and address of your suppliers/customers only come out complete if you entered them in Ledyvas. Some platform-specific fields (municipality in Alegra) are a closed list you pick by hand when importing.</li>
-              <li>In <strong>Zoho Books</strong>, transactions go through the <code>asientos.csv</code> file (Accountant → Manual Journals → Import → "Journals"), not through <code>banco.csv</code>. Journal entries come in as a <strong>draft</strong> so you can review them before publishing.</li>
-              <li>Journal entries use chart-of-account names. By default Ledyvas uses 5 standard accounts that already exist in Zoho; if in "Chart of accounts" you send a category to a different account, that account must exist in your software before importing.</li>
+              <li>In <strong>Zoho Books</strong> and <strong>Odoo</strong>, transactions go through the <code>asientos.csv</code> file (Zoho: Accountant → Manual Journals → Import → "Journals"; Odoo: Accounting → Journal Entries → Import), not through <code>banco.csv</code>. Journal entries come in as a <strong>draft</strong> so you can review them before publishing.</li>
+              <li>Journal entries use chart-of-account names. By default Ledyvas uses 5 standard accounts that already exist in Zoho; for <strong>Odoo</strong> those names almost never match your chart — before exporting, open "Chart of accounts" in Ledyvas and set the exact name of each Odoo account. Odoo also needs a "Journal": the file carries "Operaciones varias" by default (change it there if your Odoo is in another language).</li>
             </ul>
           </div>
 

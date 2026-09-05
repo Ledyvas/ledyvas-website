@@ -397,8 +397,8 @@
             <p>Tres cosas a saber:</p>
             <ul>
               <li>El RNC, teléfono, email y dirección de tus proveedores/clientes solo salen completos si los cargaste en Ledyvas. Algún campo propio de cada plataforma (municipio en Alegra) es una lista cerrada que se elige a mano al importar.</li>
-              <li>En <strong>Zoho Books</strong> las transacciones van por el archivo <code>asientos.csv</code> (Contable → Diarios manuales → Importar → "Diarios"), no por <code>banco.csv</code>. Los asientos entran como <strong>borrador</strong> para que los revises antes de publicarlos.</li>
-              <li>Los asientos usan nombres de cuenta contable. Por defecto Ledyvas usa 5 cuentas estándar que ya existen en Zoho; si en "Plan de cuentas" mandás una categoría a otra cuenta, esa cuenta tiene que existir en tu software antes de importar.</li>
+              <li>En <strong>Zoho Books</strong> y <strong>Odoo</strong> las transacciones van por el archivo <code>asientos.csv</code> (en Zoho: Contable → Diarios manuales → Importar → "Diarios"; en Odoo: Contabilidad → Asientos contables → Importar), no por <code>banco.csv</code>. Los asientos entran como <strong>borrador</strong> para que los revises antes de publicarlos.</li>
+              <li>Los asientos usan nombres de cuenta contable. Por defecto Ledyvas usa 5 cuentas estándar que ya existen en Zoho; para <strong>Odoo</strong>, esos nombres casi nunca coinciden con tu plan de cuentas — antes de exportar, entrá a "Plan de cuentas" en Ledyvas y poné el nombre exacto de cada cuenta de tu Odoo. Odoo además pide un "Diario": el archivo trae "Operaciones varias" por defecto (si tu Odoo está en otro idioma, cambialo ahí mismo).</li>
             </ul>
           </div>
 

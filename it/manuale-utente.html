@@ -401,8 +401,8 @@
             <p>Tre cose da sapere:</p>
             <ul>
               <li>Codice fiscale, telefono, email e indirizzo dei fornitori/clienti escono completi solo se li hai inseriti in Ledyvas. Alcuni campi propri di ogni piattaforma (comune in Alegra) sono un elenco chiuso da scegliere a mano durante l'importazione.</li>
-              <li>In <strong>Zoho Books</strong> le transazioni passano dal file <code>asientos.csv</code> (Contabile → Registrazioni manuali → Importa → "Registrazioni"), non da <code>banco.csv</code>. Le registrazioni entrano come <strong>bozza</strong> per poterle controllare prima di pubblicarle.</li>
-              <li>Le registrazioni usano nomi di conto del piano contabile. Per impostazione predefinita Ledyvas usa 5 conti standard già presenti in Zoho; se in "Piano dei conti" invii una categoria a un altro conto, quel conto deve esistere nel tuo software prima di importare.</li>
+              <li>In <strong>Zoho Books</strong> e <strong>Odoo</strong> le transazioni passano dal file <code>asientos.csv</code> (Zoho: Contabile → Registrazioni manuali → Importa → "Registrazioni"; Odoo: Contabilità → Registrazioni contabili → Importa), non da <code>banco.csv</code>. Le registrazioni entrano come <strong>bozza</strong> per poterle controllare prima di pubblicarle.</li>
+              <li>Le registrazioni usano nomi di conto del piano contabile. Per impostazione predefinita Ledyvas usa 5 conti standard già presenti in Zoho; per <strong>Odoo</strong> quei nomi quasi mai coincidono con il tuo piano — prima di esportare, apri "Piano dei conti" in Ledyvas e imposta il nome esatto di ogni conto del tuo Odoo. Odoo richiede inoltre un "Registro" (Journal): il file contiene "Operaciones varias" per impostazione predefinita (cambialo lì se il tuo Odoo è in un'altra lingua).</li>
             </ul>
           </div>
 
