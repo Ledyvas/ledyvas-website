@@ -396,6 +396,15 @@
           <h2 id="reports">17. Relatórios e Business Intelligence</h2>
           <p><strong>Relatórios:</strong> listagens históricas exportáveis de compras, vendas, estoque, etc.</p>
           <p><strong>Business Intelligence:</strong> análises e tendências sobre esses mesmos dados (consumos históricos, projeções), pensado para decisões de negócio, não para lançar dados.</p>
+          <div class="callout">
+            <p><strong>Em breve: Exportar para Contabilidade</strong>O Ledyvas não faz contabilidade nem impostos — isso é trabalho do seu software contábil. Vamos lançar, como atualização gratuita, uma tela que gera automaticamente os arquivos prontos para importar no <strong>QuickBooks, Alegra, Zoho Books e Odoo</strong> (compras, vendas, banco, lançamentos contábeis e dados mestres de fornecedores/clientes/produtos), com um <code>LEEME.txt</code> que traz os passos exatos de importação para cada plataforma. Enquanto isso, use Relatórios → exportar para Excel e entregue ao seu contador.</p>
+            <p>Três coisas a saber:</p>
+            <ul>
+              <li>O CNPJ/RNC, telefone, e-mail e endereço dos seus fornecedores/clientes só saem completos se você os cadastrou no Ledyvas. Alguns campos próprios de cada plataforma (município no Alegra) são uma lista fechada escolhida à mão na importação.</li>
+              <li>No <strong>Zoho Books</strong>, as transações vão pelo arquivo <code>asientos.csv</code> (Contador → Diários manuais → Importar → "Diários"), não pelo <code>banco.csv</code>. Os lançamentos entram como <strong>rascunho</strong> para você revisar antes de publicar.</li>
+              <li>Os lançamentos usam nomes de conta do plano de contas. Por padrão o Ledyvas usa 5 contas padrão que já existem no Zoho; se em "Plano de contas" você mandar uma categoria para outra conta, essa conta precisa existir no seu software antes de importar.</li>
+            </ul>
+          </div>
 
           <h2 id="settings">18. Configuração</h2>
           <p>Daqui você gerencia:</p>

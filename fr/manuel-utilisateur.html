@@ -396,6 +396,15 @@
           <h2 id="reports">17. Rapports et Business Intelligence</h2>
           <p><strong>Rapports :</strong> listes historiques exportables des achats, ventes, inventaire, etc.</p>
           <p><strong>Business Intelligence :</strong> analyses et tendances sur ces mêmes données (consommations historiques, projections), pensé pour les décisions d'entreprise, pas pour saisir des données.</p>
+          <div class="callout">
+            <p><strong>Bientôt : Exporter vers la comptabilité</strong>Ledyvas ne gère ni la comptabilité ni les impôts — c'est le rôle de votre logiciel comptable. Nous allons publier, en mise à jour gratuite, un écran qui génère automatiquement des fichiers prêts à importer dans <strong>QuickBooks, Alegra, Zoho Books et Odoo</strong> (achats, ventes, banque, écritures comptables et données maîtres fournisseurs/clients/produits), avec un <code>LEEME.txt</code> contenant les étapes d'import exactes pour chaque plateforme. En attendant, utilisez Rapports → exporter vers Excel et donnez-le à votre comptable.</p>
+            <p>Trois choses à savoir :</p>
+            <ul>
+              <li>Le numéro fiscal, le téléphone, l'e-mail et l'adresse de vos fournisseurs/clients ne sortent complets que si vous les avez saisis dans Ledyvas. Certains champs propres à chaque plateforme (commune dans Alegra) sont une liste fermée à choisir à la main lors de l'import.</li>
+              <li>Dans <strong>Zoho Books</strong>, les transactions passent par le fichier <code>asientos.csv</code> (Comptable → Écritures manuelles → Importer → « Écritures »), pas par <code>banco.csv</code>. Les écritures arrivent en <strong>brouillon</strong> pour que vous puissiez les vérifier avant de les publier.</li>
+              <li>Les écritures utilisent des noms de compte du plan comptable. Par défaut, Ledyvas utilise 5 comptes standard qui existent déjà dans Zoho ; si dans « Plan comptable » vous envoyez une catégorie vers un autre compte, ce compte doit exister dans votre logiciel avant l'import.</li>
+            </ul>
+          </div>
 
           <h2 id="settings">18. Paramètres</h2>
           <p>D'ici vous gérez :</p>

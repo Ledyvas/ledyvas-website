@@ -396,6 +396,15 @@
           <h2 id="reports">17. Report e Business Intelligence</h2>
           <p><strong>Report:</strong> elenchi storici esportabili di acquisti, vendite, magazzino, ecc.</p>
           <p><strong>Business Intelligence:</strong> analisi e tendenze sugli stessi dati (consumi storici, proiezioni), pensato per le decisioni di business, non per inserire dati.</p>
+          <div class="callout">
+            <p><strong>In arrivo: Esporta in Contabilità</strong>Ledyvas non gestisce la contabilità né le imposte — questo lo fa il tuo software contabile. Stiamo per rilasciare, come aggiornamento gratuito, una schermata che genera automaticamente i file pronti per l'importazione in <strong>QuickBooks, Alegra, Zoho Books e Odoo</strong> (acquisti, vendite, banca, registrazioni contabili e anagrafiche di fornitori/clienti/prodotti), con un <code>LEEME.txt</code> che contiene i passaggi di importazione esatti per ogni piattaforma. Nel frattempo, usa Report → esporta in Excel e dallo al tuo commercialista.</p>
+            <p>Tre cose da sapere:</p>
+            <ul>
+              <li>Codice fiscale, telefono, email e indirizzo dei fornitori/clienti escono completi solo se li hai inseriti in Ledyvas. Alcuni campi propri di ogni piattaforma (comune in Alegra) sono un elenco chiuso da scegliere a mano durante l'importazione.</li>
+              <li>In <strong>Zoho Books</strong> le transazioni passano dal file <code>asientos.csv</code> (Contabile → Registrazioni manuali → Importa → "Registrazioni"), non da <code>banco.csv</code>. Le registrazioni entrano come <strong>bozza</strong> per poterle controllare prima di pubblicarle.</li>
+              <li>Le registrazioni usano nomi di conto del piano contabile. Per impostazione predefinita Ledyvas usa 5 conti standard già presenti in Zoho; se in "Piano dei conti" invii una categoria a un altro conto, quel conto deve esistere nel tuo software prima di importare.</li>
+            </ul>
+          </div>
 
           <h2 id="settings">18. Configurazione</h2>
           <p>Da qui gestisci:</p>

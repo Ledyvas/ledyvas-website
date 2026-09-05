@@ -396,6 +396,15 @@
           <h2 id="reports">17. Reports and Business Intelligence</h2>
           <p><strong>Reports:</strong> exportable historical listings of purchases, sales, inventory, etc.</p>
           <p><strong>Business Intelligence:</strong> analytics and trends over those same data (historical consumption, projections), designed for business decisions, not for entering data.</p>
+          <div class="callout">
+            <p><strong>Coming soon: Export to Accounting</strong>Ledyvas does not handle accounting or taxes — that is your accounting software's job. We are about to release, as a free update, a screen that automatically generates files ready to import into <strong>QuickBooks, Alegra, Zoho Books and Odoo</strong> (purchases, sales, bank, journal entries, and supplier/customer/product master data), with a <code>LEEME.txt</code> containing the exact import steps for each platform. In the meantime, use Reports → export to Excel and give it to your accountant.</p>
+            <p>Three things to know:</p>
+            <ul>
+              <li>The tax ID, phone, email and address of your suppliers/customers only come out complete if you entered them in Ledyvas. Some platform-specific fields (municipality in Alegra) are a closed list you pick by hand when importing.</li>
+              <li>In <strong>Zoho Books</strong>, transactions go through the <code>asientos.csv</code> file (Accountant → Manual Journals → Import → "Journals"), not through <code>banco.csv</code>. Journal entries come in as a <strong>draft</strong> so you can review them before publishing.</li>
+              <li>Journal entries use chart-of-account names. By default Ledyvas uses 5 standard accounts that already exist in Zoho; if in "Chart of accounts" you send a category to a different account, that account must exist in your software before importing.</li>
+            </ul>
+          </div>
 
           <h2 id="settings">18. Settings</h2>
           <p>From here you manage:</p>
