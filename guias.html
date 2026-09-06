@@ -20,13 +20,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guías de gestión para negocios y establecimientos | Ledyvas</title>
-<meta name="description" content="Guías prácticas sobre software de gestión para restaurantes, comercios y operadores de excursiones turísticas: compras, inventario, costos y reportes.">
-<link rel="icon" href="assets/img/favicon.png">
+<meta name="description" content="Guías prácticas sobre software de gestión para restaurantes, catering, comercios y operadores de excursiones turísticas: compras, inventario, costos y reportes.">
+<link rel="icon" href="/assets/img/favicon.png">
 <link rel="canonical" href="https://ledyvas.com/guias.html">
+<link rel="alternate" hreflang="es" href="https://ledyvas.com/guias.html">
+<link rel="alternate" hreflang="en" href="https://ledyvas.com/en/guides.html">
+<link rel="alternate" hreflang="it" href="https://ledyvas.com/it/guide.html">
+<link rel="alternate" hreflang="fr" href="https://ledyvas.com/fr/guides.html">
+<link rel="alternate" hreflang="pt" href="https://ledyvas.com/pt/guias.html">
+<link rel="alternate" hreflang="x-default" href="https://ledyvas.com/guias.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css">
 <style>
   .guia-main { padding-top: 48px; }
   .guia-wrap { max-width: 760px; margin: 0 auto; padding: 0 20px 80px; }
@@ -41,10 +47,7 @@
   .guia-body ul, .guia-body ol { margin: 0 0 18px; padding-left: 22px; }
   .guia-body li { margin-bottom: 8px; }
   .guia-body strong { color: var(--navy, #0B1F3A); }
-  .guia-cta {
-    background: var(--soft, #eef2fb); border: 1px solid var(--gray-200, #e5e7eb);
-    border-radius: 14px; padding: 26px 28px; margin: 40px 0 12px;
-  }
+  .guia-cta { background: var(--soft, #eef2fb); border: 1px solid var(--gray-200, #e5e7eb); border-radius: 14px; padding: 26px 28px; margin: 40px 0 12px; }
   .guia-cta h3 { margin: 0 0 8px; font-size: 1.15rem; }
   .guia-cta p { margin: 0 0 16px; color: var(--gray-700, #374151); }
   .guia-cta .btn { margin-right: 10px; }
@@ -52,10 +55,7 @@
   .guia-related h2 { font-size: 1.1rem; margin: 0 0 10px; }
   .guia-related a { display: block; margin-bottom: 6px; }
   .guias-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
-  .guia-card {
-    background: #fff; border: 1px solid var(--gray-200, #e5e7eb); border-radius: 14px;
-    padding: 24px; display: flex; flex-direction: column;
-  }
+  .guia-card { background: #fff; border: 1px solid var(--gray-200, #e5e7eb); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; }
   .guia-card h3 { margin: 0 0 8px; font-size: 1.12rem; }
   .guia-card p { margin: 0 0 16px; color: var(--gray-600, #4b5563); font-size: 0.96rem; flex: 1; }
 </style>
@@ -88,8 +88,21 @@
     <div class="header-actions">
       <a href="precios.html" class="btn btn-outline">Comprar ahora</a>
       <a href="descargas.html" class="btn btn-primary">Prueba gratuita</a>
+      <div class="lang-dropdown">
+      <button class="lang-dropdown-toggle" data-lang-toggle type="button" aria-haspopup="true" aria-expanded="false"><span class="fi fi-es"></span> ES<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-dropdown-menu">
+    <a href="/it/settori.html"><span class="fi fi-it"></span> IT</a>
+    <a href="/en/industries.html"><span class="fi fi-gb"></span> EN</a>
+    <a href="/fr/secteurs.html"><span class="fi fi-fr"></span> FR</a>
+    <a href="/pt/setores.html"><span class="fi fi-pt"></span> PT</a>
+      </div>
+    </div>
+    <div class="header-social-links">
+      <a href="https://www.instagram.com/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas en Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas en LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
     </div>
     <button class="hamburger" data-nav-toggle aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
@@ -111,6 +124,16 @@
     </nav>
     <div class="nav-side">
       <div>
+        <div class="nav-side-title">Idioma</div>
+        <div class="lang-switch">
+          <button class="active"><span class="fi fi-es"></span> ES</button>
+          <a href="/it/settori.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid var(--gray-300);color:var(--gray-700);"><span class="fi fi-it"></span> IT</a>
+          <a href="/en/industries.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid var(--gray-300);color:var(--gray-700);"><span class="fi fi-gb"></span> EN</a>
+          <a href="/fr/secteurs.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid var(--gray-300);color:var(--gray-700);"><span class="fi fi-fr"></span> FR</a>
+          <a href="/pt/setores.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid var(--gray-300);color:var(--gray-700);"><span class="fi fi-pt"></span> PT</a>
+        </div>
+      </div>
+      <div>
         <div class="nav-side-title">Empieza ahora</div>
         <a href="descargas.html" class="btn btn-gold btn-block">Descargar Ledyvas</a>
         <div style="height:10px"></div>
@@ -127,9 +150,10 @@
   </div>
 </div>
 
+
 <main class="guia-main">
   <div class="guia-wrap" style="max-width:900px">
-    <p class="guia-crumbs"><a href="index.html">Inicio</a> › Guías</p>
+    <p class="guia-crumbs"><a href="index.html">Inicio</a> &rsaquo; Guías</p>
     <h1>Guías de gestión</h1>
     <p class="guia-lede">Cómo llevar las compras, el inventario y los costos de un negocio de verdad, sin planillas que no cuadran.</p>
     <div class="guias-grid">
@@ -139,13 +163,13 @@
         <a href="guia-software-establecimientos.html" class="btn btn-outline">Leer la guía</a>
       </div>
       <div class="guia-card">
-        <h3><a href="guia-software-restaurantes.html">Software de gestión para restaurantes: guía práctica</a></h3>
-        <p>En un restaurante, la plata no se pierde en la caja: se pierde en la cocina. Esta guía explica qué controla un software de gestión para restaurantes y cómo te ayuda a saber tu costo real.</p>
+        <h3><a href="guia-software-restaurantes.html">Software de gestión para restaurantes y catering: guía práctica</a></h3>
+        <p>En un restaurante, la plata no se pierde en la caja: se pierde en la cocina. Esta guía explica qué controla un software de gestión para restaurantes y servicios de catering, y cómo te ayuda a saber tu costo real.</p>
         <a href="guia-software-restaurantes.html" class="btn btn-outline">Leer la guía</a>
       </div>
       <div class="guia-card">
         <h3><a href="guia-software-excursiones-turisticas.html">Software para operadores de excursiones turísticas</a></h3>
-        <p>Un operador de excursiones no gestiona como una tienda: todo se mueve por los PAX del día. Esta guía explica qué necesita un software pensado para ese negocio.</p>
+        <p>Un operador de excursiones no gestiona como una tienda: todo se mueve por los PAX del día. Esta guía explica qué necesita un software pensado para ese negocio, incluido el catering a bordo.</p>
         <a href="guia-software-excursiones-turisticas.html" class="btn btn-outline">Leer la guía</a>
       </div>
     </div>
@@ -187,7 +211,7 @@
           <li><a href="descargas.html">Descargas</a></li>
           <li><a href="documentacion.html">Documentación</a></li>
           <li><a href="portal-cliente.html">Portal del cliente</a></li>
-          <li><a href="distribuidores.html">Programa de socios</a></li>
+          <li><a href="descargas.html">Prueba gratuita</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -211,6 +235,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

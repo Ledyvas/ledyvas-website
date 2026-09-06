@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<!-- Google tag (gtag.js) con Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': (typeof localStorage !== 'undefined' && localStorage.getItem('ledyvas-cookie-consent') === 'accepted') ? 'granted' : 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<script>
+  gtag("js", new Date());
+  gtag("config", "G-DYMN29KT3X");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logiciel de gestion pour restaurants et traiteurs : achats, stock et coûts | Ledyvas</title>
+<meta name="description" content="Guide pratique du logiciel pour restaurants, bars, cafés et traiteurs : recettes et food cost, stock d'ingrédients, clôture de journée, pertes et marge par plat.">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="canonical" href="https://ledyvas.com/fr/guide-logiciel-restaurant.html">
+<link rel="alternate" hreflang="es" href="https://ledyvas.com/guia-software-restaurantes.html">
+<link rel="alternate" hreflang="en" href="https://ledyvas.com/en/guide-restaurant-management-software.html">
+<link rel="alternate" hreflang="it" href="https://ledyvas.com/it/guida-software-gestione-ristoranti.html">
+<link rel="alternate" hreflang="fr" href="https://ledyvas.com/fr/guide-logiciel-restaurant.html">
+<link rel="alternate" hreflang="pt" href="https://ledyvas.com/pt/guia-software-gestao-restaurantes.html">
+<link rel="alternate" hreflang="x-default" href="https://ledyvas.com/guia-software-restaurantes.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  .guia-main { padding-top: 48px; }
+  .guia-wrap { max-width: 760px; margin: 0 auto; padding: 0 20px 80px; }
+  .guia-crumbs { font-size: 13px; color: var(--gray-500, #6b7280); margin-bottom: 18px; }
+  .guia-crumbs a { color: inherit; }
+  .guia-main h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); line-height: 1.15; margin: 0 0 14px; }
+  .guia-lede { font-size: 1.15rem; line-height: 1.6; color: var(--gray-700, #374151); margin: 0 0 8px; }
+  .guia-body { font-size: 1.03rem; line-height: 1.72; }
+  .guia-body h2 { font-size: 1.4rem; margin: 40px 0 12px; }
+  .guia-body h3 { font-size: 1.1rem; margin: 26px 0 8px; }
+  .guia-body p { margin: 0 0 16px; }
+  .guia-body ul, .guia-body ol { margin: 0 0 18px; padding-left: 22px; }
+  .guia-body li { margin-bottom: 8px; }
+  .guia-body strong { color: var(--navy, #0B1F3A); }
+  .guia-cta { background: var(--soft, #eef2fb); border: 1px solid var(--gray-200, #e5e7eb); border-radius: 14px; padding: 26px 28px; margin: 40px 0 12px; }
+  .guia-cta h3 { margin: 0 0 8px; font-size: 1.15rem; }
+  .guia-cta p { margin: 0 0 16px; color: var(--gray-700, #374151); }
+  .guia-cta .btn { margin-right: 10px; }
+  .guia-related { border-top: 1px solid var(--gray-200, #e5e7eb); margin-top: 44px; padding-top: 22px; }
+  .guia-related h2 { font-size: 1.1rem; margin: 0 0 10px; }
+  .guia-related a { display: block; margin-bottom: 6px; }
+  .guias-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+  .guia-card { background: #fff; border: 1px solid var(--gray-200, #e5e7eb); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; }
+  .guia-card h3 { margin: 0 0 8px; font-size: 1.12rem; }
+  .guia-card p { margin: 0 0 16px; color: var(--gray-600, #4b5563); font-size: 0.96rem; flex: 1; }
+</style>
+</head>
+<body>
+
+<div class="cookie-consent-banner" id="cookie-consent-banner" hidden>
+  <div class="cookie-consent-inner">
+    <p>Nous utilisons des cookies pour comprendre comment ce site est utilisé (Google Analytics). Vous pouvez accepter ou refuser ce suivi. <a href="confidentialite.html">En savoir plus</a></p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookie-consent-reject" class="btn btn-outline">Refuser</button>
+      <button type="button" id="cookie-consent-accept" class="btn btn-primary">Accepter</button>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <nav class="nav-horizontal">
+      <a href="index.html">Accueil</a>
+      <a href="logiciel.html">Logiciel</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="secteurs.html">Secteurs</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="telechargements.html">Téléchargements</a>
+      <a href="entreprise.html">Entreprise</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="tarifs.html" class="btn btn-outline">Acheter maintenant</a>
+      <a href="telechargements.html" class="btn btn-primary">Essai gratuit</a>
+      <div class="lang-dropdown">
+      <button class="lang-dropdown-toggle" data-lang-toggle type="button" aria-haspopup="true" aria-expanded="false"><span class="fi fi-fr"></span> FR<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-dropdown-menu">
+    <a href="/software.html"><span class="fi fi-es"></span> ES</a>
+    <a href="/it/software.html"><span class="fi fi-it"></span> IT</a>
+    <a href="/en/software.html"><span class="fi fi-gb"></span> EN</a>
+    <a href="/pt/software.html"><span class="fi fi-pt"></span> PT</a>
+      </div>
+    </div>
+    <div class="header-social-links">
+      <a href="https://www.instagram.com/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas en Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas en LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+    <button class="hamburger" data-nav-toggle aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay">
+  <div class="nav-overlay-top">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <button class="hamburger" data-nav-toggle aria-label="Fermer le menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-overlay-body">
+    <nav class="nav-links">
+      <a href="index.html">Accueil <small>01</small></a>
+      <a href="logiciel.html">Logiciel <small>02</small></a>
+      <a href="solutions.html">Solutions <small>03</small></a>
+      <a href="secteurs.html">Secteurs <small>04</small></a>
+      <a href="tarifs.html">Tarifs <small>05</small></a>
+      <a href="telechargements.html">Téléchargements <small>06</small></a>
+      <a href="entreprise.html">Entreprise <small>07</small></a>
+      <a href="contact.html">Contact <small>08</small></a>
+    </nav>
+    <div class="nav-side">
+      <div>
+        <div class="nav-side-title">Langue</div>
+        <div class="lang-switch">
+          <a href="/software.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-es"></span> ES</a>
+          <a href="/it/software.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-it"></span> IT</a>
+          <a href="/en/software.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-gb"></span> EN</a>
+          <button class="active"><span class="fi fi-fr"></span> FR</button>
+          <a href="/pt/software.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-pt"></span> PT</a>
+        </div>
+      </div>
+      <div>
+        <div class="nav-side-title">Commencer maintenant</div>
+        <a href="telechargements.html" class="btn btn-gold btn-block">Essai gratuit de 14 jours</a>
+        <div style="height:10px"></div>
+        <a href="tarifs.html" class="btn btn-outline-light btn-block">Acheter maintenant</a>
+      </div>
+      <div>
+        <div class="nav-side-title">Contact</div>
+        <div class="nav-contact">
+          <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>
+          <span>Réponse sous 48 heures ouvrées</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<main class="guia-main">
+  <div class="guia-wrap">
+    <p class="guia-crumbs"><a href="index.html">Accueil</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Logiciel pour restaurants</p>
+    <h1>Logiciel de gestion pour restaurants et traiteurs : guide pratique</h1>
+    <p class="guia-lede">Dans un restaurant, l'argent ne se perd pas à la caisse : il se perd en cuisine. Ce guide explique ce que contrôle un logiciel pour restaurants et traiteurs et comment il vous aide à connaître votre coût réel.</p>
+    <article class="guia-body">
+
+      <h2>Le vrai problème d'un restaurant sans système</h2>
+      <p>Un restaurant ou un traiteur peut avoir un gros chiffre d'affaires et peu de bénéfice. La raison est presque toujours la même : le <strong>food cost</strong> —ce que coûtent les ingrédients de chaque plat ou de chaque événement— est estimé à l'œil. Vous achetez trop et cela périme ; vous achetez trop peu et il manque au pire moment ; les ingrédients partent en pertes, en portions mal calibrées ou en vol, et personne ne le voit car il n'y a rien à quoi comparer. En fin de mois, le gérant regarde la banque et ne comprend pas pourquoi ça ne tombe pas juste.</p>
+
+      <h2>Ce que contrôle un bon logiciel pour restaurants</h2>
+      <ul>
+        <li><strong>Achats auprès des fournisseurs :</strong> chaque achat d'ingrédients avec son coût, qui met à jour le stock.</li>
+        <li><strong>Recettes et fiches techniques :</strong> la liste des ingrédients de chaque plat et son coût calculé.</li>
+        <li><strong>Production :</strong> quand vous cuisinez un lot (une sauce, du pain, une pâte), il déduit les ingrédients et ajoute le produit fini.</li>
+        <li><strong>Stock d'ingrédients :</strong> le stock réel de chaque ingrédient, en temps réel.</li>
+        <li><strong>Ventes et caisse :</strong> ce qui sort en salle, à l'événement traiteur ou en livraison, et le mouvement de caisse du service.</li>
+        <li><strong>Clôture de journée :</strong> le comptage physique contre le théorique, pour voir la perte réelle.</li>
+        <li><strong>Carburant et livraison</strong>, si vous faites votre propre livraison ou portez les plats aux événements en véhicule.</li>
+      </ul>
+
+      <h2>Recettes et food cost : le cœur du système</h2>
+      <p>La clé d'un logiciel pour restaurant, c'est la recette. Vous saisissez une fois ce que contient chaque plat —200 g de viande, 50 g de fromage, un pain— et le système calcule son coût avec les prix d'achat actuels. Quand vous vendez ce plat, il déduit ces ingrédients du stock. Ainsi, sans compter à la main, vous savez :</p>
+      <ul>
+        <li>Combien vous coûte chaque plat et quelle marge il laisse.</li>
+        <li>Quels plats vous font gagner et lesquels vous vendez presque sans bénéfice.</li>
+        <li>Combien d'ingrédients vous devriez avoir d'après ce que vous avez vendu (le "théorique").</li>
+        <li>Le coût par couvert d'un menu traiteur avant d'envoyer le devis.</li>
+      </ul>
+
+      <h2>La clôture de journée : là où la perte apparaît</h2>
+      <p>En fin de service, vous faites un comptage physique rapide des ingrédients critiques. Le système sait déjà combien vous devriez avoir (acheté moins vendu). L'écart entre le comptage réel et le théorique est votre <strong>perte</strong> : casse, portions mal calibrées, offerts non enregistrés ou vol. Le voir tous les jours, ne serait-ce que sur trois ou quatre ingrédients, change l'exploitation.</p>
+
+      <h2>Plusieurs établissements</h2>
+      <p>Si vous avez plusieurs établissements, une franchise ou plusieurs activités (salle + traiteur), le système doit vous laisser voir chacun séparément et aussi consolidé, sans additionner des tableurs à la main.</p>
+
+      <h2>Comment Ledyvas le fait</h2>
+      <p>Ledyvas pour restaurants et traiteurs couvre les achats, les fournisseurs, les recettes, la production, le stock d'ingrédients, les ventes, la caisse, le contrôle du carburant et la clôture de journée, avec utilisateurs et permissions. Il s'installe sous Windows, fonctionne sans connexion permanente et se paie une seule fois. Il exporte vers QuickBooks, Alegra, Zoho Books, Odoo et Xero.</p>
+      <p>Il dispose aussi d'un mode pour organisateurs d'excursions —où la nourriture et les boissons se calculent par PAX du jour— que l'on peut activer ou laisser désactivé. <a href="telechargements.html">Téléchargez l'essai gratuit</a> et testez-le avec la carte et les fournisseurs réels de votre restaurant ou service traiteur.</p>
+    
+      <div class="guia-cta">
+        <h3>Essayez Ledyvas gratuitement</h3>
+        <p>Installez Ledyvas sur votre PC Windows et utilisez-le sans limite de temps en mode essai. Sans carte, sans engagement.</p>
+        <a href="telechargements.html" class="btn btn-primary">Télécharger l'essai</a>
+        <a href="tarifs.html" class="btn btn-outline">Voir les tarifs</a>
+      </div>
+    </article>
+    <div class="guia-related">
+      <h2>À lire ensuite</h2>
+      <a href="guide-logiciel-gestion-entreprise.html">Logiciel de gestion : ce que c'est et comment le choisir</a>
+      <a href="guide-logiciel-excursions-touristiques.html">Logiciel pour organisateurs d'excursions touristiques</a>
+      <a href="secteurs.html">Ledyvas par secteur : Food Service, Retail, Beauty et plus</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+        <p>Logiciel de gestion d'entreprise tout-en-un. Achats, ventes, inventaire, production et rapports depuis une seule plateforme.</p>
+        <a href="https://www.instagram.com/ledyvas/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Ledyvas on Instagram">Instagram</a>
+        <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>Produit</h4>
+        <ul>
+          <li><a href="logiciel.html">Logiciel</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="secteurs.html">Secteurs</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Entreprise</h4>
+        <ul>
+          <li><a href="entreprise.html">À propos</a></li>
+          <li><a href="entreprise.html#fondateur">Fondateur</a></li>
+          <li><a href="entreprise.html#avis">Avis</a></li>
+          <li><a href="entreprise.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="guides.html">Guides</a></li>
+          <li><a href="telechargements.html">Téléchargements</a></li>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="portail-client.html">Portail client</a></li>
+          <li><a href="telechargements.html">Essai gratuit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@ledyvas.com">info@ledyvas.com</a></li>
+          <li><span style="font-size:14px;">Réponse sous 48h ouvrées</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledyvas. Tous droits réservés.</span>
+      <div class="footer-legal">
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="conditions.html">Conditions générales</a>
+        <a href="eula.html">Licence d'utilisation (EULA)</a>
+        <a href="remboursements.html">Politique de remboursement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
