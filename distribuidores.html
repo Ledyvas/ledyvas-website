@@ -103,6 +103,18 @@
     <p style="margin-top:22px"><a class="d-btn" href="/" data-i18n="back"></a></p>
   </section>
 
+  <!-- ============ VISTA 4: no califica (amable) ============ -->
+  <section id="view-declined" hidden>
+    <div class="d-note" style="border-left-color:var(--royal);background:var(--gray-100);color:var(--gray-700);padding:22px 24px">
+      <h2 style="margin:0 0 8px;font-size:19px;color:var(--navy)" data-i18n="decl.t"></h2>
+      <p id="decl-body" style="margin:0 0 14px"></p>
+      <p id="decl-reasons-label" style="margin:0 0 6px;font-weight:600" hidden></p>
+      <ul id="decl-reasons" style="margin:0;padding-left:20px"></ul>
+      <p style="margin:14px 0 0;font-size:12.5px;color:var(--gray-500)" data-i18n="decl.retry"></p>
+    </div>
+    <p style="margin-top:22px"><a class="d-btn" href="/" data-i18n="back"></a></p>
+  </section>
+
   <p class="d-foot"><a href="/" data-i18n="back"></a></p>
 </main>
 
@@ -137,7 +149,7 @@
   }
 
   function show(id) {
-    ["view-choose", "view-form", "view-sent"].forEach(function (v) {
+    ["view-choose", "view-form", "view-sent", "view-declined"].forEach(function (v) {
       document.getElementById(v).hidden = (v !== id);
     });
   }
@@ -245,12 +257,36 @@
     });
   }
 
+  function roleName() { return T.t("admin.app.role." + role); }
+
   function goSent(form, verdict) {
     var email = (form.elements["email"] && form.elements["email"].value) || "—";
     document.getElementById("sent-msg").textContent =
       T.t("form.sent.d", { email: email }) +
-      (verdict ? "  " + T.t("scr.result." + verdict) : "");
+      (verdict === "apto" ? "  " + T.t("scr.result.apto") : "");
     show("view-sent");
+    window.scrollTo(0, 0);
+  }
+
+  function goDeclined(reasons) {
+    document.getElementById("decl-body").textContent = T.t("decl.body", { role: roleName() });
+    var ul = document.getElementById("decl-reasons");
+    var lbl = document.getElementById("decl-reasons-label");
+    ul.innerHTML = "";
+    var list = Array.isArray(reasons) ? reasons.filter(Boolean).slice(0, 3) : [];
+    if (list.length) {
+      lbl.textContent = T.t("decl.reasons");
+      lbl.hidden = false;
+      list.forEach(function (r) {
+        var li = document.createElement("li");
+        li.style.marginBottom = "4px";
+        li.textContent = r;
+        ul.appendChild(li);
+      });
+    } else {
+      lbl.hidden = true;
+    }
+    show("view-declined");
     window.scrollTo(0, 0);
   }
 
@@ -311,7 +347,11 @@
       })
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (j) {
-          goSent(form, (j && j.ok && j.veredicto) ? j.veredicto : null);
+          if (j && j.ok && j.veredicto === "no_cumple") {
+            goDeclined(j.motivos_candidato);
+          } else {
+            goSent(form, (j && j.ok && j.veredicto) ? j.veredicto : null);
+          }
         })
         .catch(function () { goSent(form, null); })
         .then(function () { busy = false; btn.disabled = false; btn.textContent = origLabel; });
