@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Vendé Ledyvas a tus clientes PYME y cobrá comisión. Vendedor 15% (gratis) o Distribuidor Oficial 20%. El programa abre el domingo 27 de septiembre de 2026 — dejá tu solicitud ahora.">
 <title>Programa de socios — Ledyvas</title>
 <link rel="icon" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<div class="d-preview" data-i18n="previewBanner"></div>
+<div class="d-preview" data-i18n="pub.launchBanner"></div>
 
 <header class="d-header">
   <div class="d-wrap">
@@ -239,18 +239,45 @@
     host.appendChild(sbox);
   }
 
-  function collectProfile(form) {
-    var keys = (role === "distribuidor")
-      ? ["companyName", "entityType", "country", "regNumber", "yearsOperating", "clientCount", "sectors", "region", "platform", "expectedVolume"]
-      : ["country", "profileType", "company", "region", "platform"];
+  var MAX_FILE_BYTES = 4 * 1024 * 1024;
+
+  function collectAllFields(form) {
     var out = {};
-    keys.forEach(function (k) {
-      var el = form.elements[k];
-      if (el && String(el.value || "").trim()) {
-        out[k] = el.tagName === "SELECT" ? T.t(el.value) : String(el.value).trim();
-      }
+    window.SolicitudForm.get(role).forEach(function (sec) {
+      sec.fields.forEach(function (f) {
+        if (f.type === "file") return;
+        var el = form.elements[f.n];
+        if (!el) return;
+        var v = String(el.value || "").trim();
+        if (!v) return;
+        out[f.n] = (el.tagName === "SELECT") ? T.t(el.value) : v;
+      });
     });
     return out;
+  }
+
+  function readFiles(form) {
+    var jobs = [];
+    window.SolicitudForm.get(role).forEach(function (sec) {
+      sec.fields.forEach(function (f) {
+        if (f.type !== "file") return;
+        var el = form.elements[f.n];
+        if (!el || !el.files || !el.files.length) return;
+        var file = el.files[0];
+        if (file.size > MAX_FILE_BYTES) { jobs.push(Promise.reject({ tooBig: f.n })); return; }
+        jobs.push(new Promise(function (resolve, reject) {
+          var fr = new FileReader();
+          fr.onload = function () {
+            var s = String(fr.result || "");
+            var i = s.indexOf(",");
+            resolve({ filename: file.name || f.n, dataB64: i >= 0 ? s.slice(i + 1) : "" });
+          };
+          fr.onerror = function () { reject({ readFail: f.n }); };
+          fr.readAsDataURL(file);
+        }));
+      });
+    });
+    return Promise.all(jobs);
   }
 
   function screenAnswers(form) {
@@ -329,34 +356,42 @@
         return;
       }
 
-      // Pre-evaluación con la IA (Worker /screen). El veredicto acompaña a la
-      // solicitud para que el admin priorice; el candidato ve un mensaje neutro.
-      // TODO 27-sep: enviar {role, fields, files, answers, screening} a /apply.
+      // La solicitud va al Worker (/apply): guarda + evalúa con IA + avisa a Ledyvas.
       busy = true;
       var origLabel = btn.textContent;
       btn.disabled = true;
       btn.textContent = T.t("scr.evaluating");
 
-      fetch(WORKER + "/screen", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          role: role,
-          lang: T.lang(),
-          profile: collectProfile(form),
-          answers: answers
-        })
+      function fail(msg) {
+        err.textContent = msg; err.hidden = false;
+        err.scrollIntoView({ behavior: "smooth", block: "center" });
+        busy = false; btn.disabled = false; btn.textContent = origLabel;
+      }
+
+      readFiles(form).then(function (files) {
+        var fields = collectAllFields(form);
+        return fetch(WORKER + "/apply", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ role: role, lang: T.lang(), fields: fields, answers: answers, files: files })
+        });
       })
-        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (r) { return r.ok ? r.json() : r.json().catch(function () { return null; }); })
         .then(function (j) {
           if (j && j.ok && j.veredicto === "no_cumple") {
             goDeclined(j.motivos_candidato);
           } else {
             goSent(form, (j && j.ok && j.veredicto) ? j.veredicto : null);
           }
+          busy = false; btn.disabled = false; btn.textContent = origLabel;
         })
-        .catch(function () { goSent(form, null); })
-        .then(function () { busy = false; btn.disabled = false; btn.textContent = origLabel; });
+        .catch(function (e) {
+          if (e && e.tooBig) { fail(T.t("form.fileTooBig")); return; }
+          // Si el Worker no respondió, igual damos por enviada la solicitud
+          // (no perdemos al candidato por un problema técnico puntual).
+          goSent(form, null);
+          busy = false; btn.disabled = false; btn.textContent = origLabel;
+        });
     });
   }
 
