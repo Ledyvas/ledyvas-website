@@ -48,7 +48,9 @@
       <p class="d-governs" id="ct-governs"></p>
     </article>
 
-    <div class="d-sign-box">
+    <div class="d-note" id="ct-review-only" hidden data-i18n="sig.reviewOnly"></div>
+
+    <div class="d-sign-box" id="ct-sign-box">
       <h3 data-i18n="sig.title"></h3>
       <p class="d-sub" id="ct-for"></p>
 
@@ -181,13 +183,20 @@
   applyStaticI18n();
   renderLang();
 
-  // En preview aceptamos DEMO-TOKEN o cualquier token no vacío.
-  if (!params.get("rol") || (!token && token !== "")) {
+  if (!params.get("rol")) {
     show("ct-invalid");
     return;
   }
   renderContract();
-  bindSign();
+  // Sin token = vista de revisión (el Vendedor / Distribuidor lee el contrato
+  // antes de aplicar). El recuadro de firma solo aparece con el enlace de un
+  // solo uso que Ledyvas envía tras aprobar la solicitud.
+  if (token) {
+    bindSign();
+  } else {
+    document.getElementById("ct-sign-box").hidden = true;
+    document.getElementById("ct-review-only").hidden = false;
+  }
   show("ct-main");
 })();
 </script>

@@ -56,7 +56,21 @@
           <li data-i18n="pub.how.2"></li>
           <li data-i18n="pub.how.3"></li>
           <li data-i18n="pub.how.4"></li>
+          <li data-i18n="pub.how.5"></li>
         </ol>
+      </div>
+    </div>
+
+    <div class="d-card" style="margin-top:26px">
+      <div class="d-card-head"><h2 data-i18n="pub.demo.t"></h2></div>
+      <div style="padding:6px 20px 20px">
+        <p data-i18n="pub.demo.d"></p>
+        <p style="margin-top:12px"><a class="d-btn small" href="descargas.html" data-i18n="pub.demo.trialBtn"></a></p>
+        <p style="margin-top:18px" data-i18n="pub.demo.contractsIntro"></p>
+        <p style="margin-top:8px">
+          <a class="d-btn small" href="contrato.html?rol=vendedor" data-i18n="pub.demo.readVendedor"></a>
+          <a class="d-btn small" href="contrato.html?rol=distribuidor" data-i18n="pub.demo.readDistribuidor" style="margin-left:8px"></a>
+        </p>
       </div>
     </div>
 
@@ -101,6 +115,10 @@
       <h2 data-i18n="form.sent.t"></h2>
       <p id="sent-msg"></p>
     </div>
+    <p id="sent-trial" hidden style="margin-top:16px">
+      <span data-i18n="form.sent.trialHint"></span>
+      <a class="d-btn small" href="descargas.html" data-i18n="pub.demo.trialBtn" style="margin-left:8px"></a>
+    </p>
     <p style="margin-top:22px"><a class="d-btn" href="/" data-i18n="back"></a></p>
   </section>
 
@@ -293,6 +311,9 @@
     document.getElementById("sent-msg").textContent =
       T.t("form.sent.d", { email: email }) +
       (verdict === "apto" ? "  " + T.t("scr.result.apto") : "");
+    // La prueba gratis queda disponible para el distribuidor una vez enviada
+    // y evaluada la solicitud (mientras espera la aprobación final).
+    document.getElementById("sent-trial").hidden = (role !== "distribuidor");
     show("view-sent");
     window.scrollTo(0, 0);
   }
