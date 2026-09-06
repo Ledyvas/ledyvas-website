@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Programa de socios — Ledyvas</title>
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/distribuidores.css">
+</head>
+<body>
+
+<div class="d-preview" data-i18n="previewBanner"></div>
+
+<header class="d-header">
+  <div class="d-wrap">
+    <div>
+      <div class="d-brand">
+        <img src="assets/img/logo-icon.png" alt="Ledyvas">
+        <div class="d-brand-txt">Ledyvas<span data-i18n="pub.brandTag"></span></div>
+      </div>
+      <h1 id="pg-title"></h1>
+      <p class="d-sub" id="pg-sub"></p>
+    </div>
+    <div class="d-lang" id="pg-lang"></div>
+  </div>
+</header>
+
+<main class="d-wrap">
+
+  <!-- ============ VISTA 1: elección de rol ============ -->
+  <section id="view-choose" hidden>
+    <p class="d-lead" data-i18n="pub.lead"></p>
+
+    <div class="d-roles">
+      <div class="d-role-card">
+        <h3 data-i18n="pub.role.vendedor.t"></h3>
+        <p data-i18n="pub.role.vendedor.d"></p>
+        <a class="d-btn primary" href="?rol=vendedor" data-i18n="pub.apply"></a>
+      </div>
+      <div class="d-role-card">
+        <h3 data-i18n="pub.role.distribuidor.t"></h3>
+        <p data-i18n="pub.role.distribuidor.d"></p>
+        <a class="d-btn primary" href="?rol=distribuidor" data-i18n="pub.apply"></a>
+      </div>
+    </div>
+
+    <div class="d-card" style="margin-top:34px">
+      <div class="d-card-head"><h2 data-i18n="pub.how.t"></h2></div>
+      <div style="padding:6px 20px 20px">
+        <ol class="d-steps">
+          <li data-i18n="pub.how.1"></li>
+          <li data-i18n="pub.how.2"></li>
+          <li data-i18n="pub.how.3"></li>
+          <li data-i18n="pub.how.4"></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="d-card" style="margin-top:26px">
+      <div class="d-card-head"><h2 data-i18n="pub.faq.t"></h2></div>
+      <div class="d-faq" style="padding:6px 20px 14px">
+        <details><summary data-i18n="pub.faq.q1"></summary><p data-i18n="pub.faq.a1"></p></details>
+        <details><summary data-i18n="pub.faq.q2"></summary><p data-i18n="pub.faq.a2"></p></details>
+        <details><summary data-i18n="pub.faq.q3"></summary><p data-i18n="pub.faq.a3"></p></details>
+        <details><summary data-i18n="pub.faq.q4"></summary><p data-i18n="pub.faq.a4"></p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISTA 2: formulario ============ -->
+  <section id="view-form" hidden>
+    <p class="d-lead" id="frm-intro"></p>
+    <p style="margin-top:10px"><a class="d-btn small" href="distribuidores.html" data-i18n="form.switchRole"></a></p>
+
+    <form class="d-form" id="frm" novalidate>
+      <div id="frm-sections"></div>
+
+      <label class="d-consent">
+        <input type="checkbox" id="frm-consent">
+        <span data-i18n="form.consent"></span>
+      </label>
+
+      <div class="d-form-error" id="frm-error" hidden></div>
+
+      <div class="d-form-foot">
+        <button type="submit" class="d-btn primary" data-i18n="form.submit"></button>
+        <span class="d-privacy" data-i18n="form.privacy"></span>
+      </div>
+      <div class="d-note" data-i18n="form.previewNote"></div>
+    </form>
+  </section>
+
+  <!-- ============ VISTA 3: enviado ============ -->
+  <section id="view-sent" hidden>
+    <div class="d-success">
+      <h2 data-i18n="form.sent.t"></h2>
+      <p id="sent-msg"></p>
+    </div>
+    <p style="margin-top:22px"><a class="d-btn" href="/" data-i18n="back"></a></p>
+  </section>
+
+  <p class="d-foot"><a href="/" data-i18n="back"></a></p>
+</main>
+
+<script src="assets/js/distribuidores-i18n.js"></script>
+<script src="assets/js/solicitud-form.js"></script>
+<script>
+(function () {
+  "use strict";
+  var T = window.DistI18n;
+  var params = new URLSearchParams(location.search);
+  var rawRole = params.get("rol");
+  var role = (rawRole === "vendedor" || rawRole === "distribuidor") ? rawRole : null;
+
+  function applyStaticI18n() {
+    document.documentElement.lang = T.lang();
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      el.textContent = T.t(el.getAttribute("data-i18n"));
+    });
+  }
+
+  function renderLang() {
+    var box = document.getElementById("pg-lang");
+    box.innerHTML = "";
+    T.SUPPORTED.forEach(function (code) {
+      var b = document.createElement("button");
+      b.textContent = code;
+      if (code === T.lang()) b.setAttribute("aria-current", "true");
+      b.addEventListener("click", function () { T.setLang(code); });
+      box.appendChild(b);
+    });
+  }
+
+  function show(id) {
+    ["view-choose", "view-form", "view-sent"].forEach(function (v) {
+      document.getElementById(v).hidden = (v !== id);
+    });
+  }
+
+  // ---- field renderer ----
+  function fieldEl(f) {
+    var wrap = document.createElement("div");
+    wrap.className = "d-field wide";
+
+    var label = document.createElement("label");
+    label.textContent = T.t(f.k);
+    if (f.req) {
+      var star = document.createElement("span");
+      star.className = "d-req"; star.textContent = "*";
+      star.title = T.t("form.required");
+      label.appendChild(star);
+    }
+    wrap.appendChild(label);
+
+    var input;
+    if (f.type === "select") {
+      input = document.createElement("select");
+      var ph = document.createElement("option");
+      ph.value = ""; ph.textContent = "—";
+      input.appendChild(ph);
+      (f.opts || []).forEach(function (ok) {
+        var o = document.createElement("option");
+        o.value = ok; o.textContent = T.t(ok);
+        input.appendChild(o);
+      });
+    } else if (f.type === "textarea") {
+      input = document.createElement("textarea");
+    } else {
+      input = document.createElement("input");
+      input.type = (f.type === "file") ? "file" : f.type;
+    }
+    input.name = f.n;
+    if (f.req) input.required = true;
+    wrap.appendChild(input);
+
+    if (f.hint) {
+      var hint = document.createElement("span");
+      hint.className = "d-hint";
+      hint.textContent = T.t(f.hint);
+      wrap.appendChild(hint);
+    }
+    return wrap;
+  }
+
+  function renderForm() {
+    document.getElementById("frm-intro").textContent = T.t("form.intro." + role);
+    var host = document.getElementById("frm-sections");
+    host.innerHTML = "";
+    window.SolicitudForm.get(role).forEach(function (sec) {
+      var box = document.createElement("div");
+      box.className = "d-form-sec";
+      var h = document.createElement("h3");
+      h.textContent = T.t(sec.sec);
+      box.appendChild(h);
+      var grid = document.createElement("div");
+      grid.className = "d-form-grid";
+      sec.fields.forEach(function (f) { grid.appendChild(fieldEl(f)); });
+      box.appendChild(grid);
+      host.appendChild(box);
+    });
+  }
+
+  function bindForm() {
+    var form = document.getElementById("frm");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var err = document.getElementById("frm-error");
+      err.hidden = true;
+
+      var missing = window.SolicitudForm.get(role).some(function (sec) {
+        return sec.fields.some(function (f) {
+          if (!f.req) return false;
+          var el = form.elements[f.n];
+          if (!el) return false;
+          if (f.type === "file") return !el.files || !el.files.length;
+          return !String(el.value || "").trim();
+        });
+      });
+      var consent = document.getElementById("frm-consent").checked;
+
+      if (missing || !consent) {
+        err.textContent = T.t("form.missing");
+        err.hidden = false;
+        err.scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+
+      // TODO 27-sep: POST multipart al Worker:
+      //   POST https://<worker>/apply  { role, fields..., files }
+      //   → el Worker guarda la solicitud como "pendiente de verificación",
+      //     manda un email de verificación al candidato y avisa al admin.
+      var email = (form.elements["email"] && form.elements["email"].value) || "—";
+      document.getElementById("sent-msg").textContent = T.t("form.sent.d", { email: email });
+      show("view-sent");
+      window.scrollTo(0, 0);
+    });
+  }
+
+  // ---- boot ----
+  applyStaticI18n();
+  renderLang();
+
+  if (role) {
+    document.getElementById("pg-title").textContent = T.t("form.title." + role);
+    document.getElementById("pg-sub").textContent = "";
+    document.title = T.t("form.title." + role) + " — Ledyvas";
+    renderForm();
+    bindForm();
+    show("view-form");
+  } else {
+    document.getElementById("pg-title").textContent = T.t("pub.title");
+    document.getElementById("pg-sub").textContent = T.t("pub.role.q");
+    document.title = T.t("pub.title") + " — Ledyvas";
+    show("view-choose");
+  }
+})();
+</script>
+</body>
+</html>

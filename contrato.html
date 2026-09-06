@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Contrato — Ledyvas</title>
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/distribuidores.css">
+</head>
+<body>
+
+<div class="d-preview" data-i18n="previewBanner"></div>
+
+<header class="d-header">
+  <div class="d-wrap">
+    <div>
+      <div class="d-brand">
+        <img src="assets/img/logo-icon.png" alt="Ledyvas">
+        <div class="d-brand-txt">Ledyvas<span data-i18n="pub.brandTag"></span></div>
+      </div>
+      <h1 data-i18n="sig.title"></h1>
+      <p class="d-sub" data-i18n="sig.subtitle"></p>
+    </div>
+    <div class="d-lang" id="ct-lang"></div>
+  </div>
+</header>
+
+<main class="d-wrap">
+
+  <!-- enlace inválido -->
+  <section id="ct-invalid" hidden>
+    <div class="d-note" style="border-left-color:var(--bad);color:var(--bad)" data-i18n="sig.invalid"></div>
+    <p style="margin-top:22px"><a class="d-btn" href="/" data-i18n="back"></a></p>
+  </section>
+
+  <!-- contrato + firma -->
+  <section id="ct-main" class="d-contract" hidden>
+    <div class="d-contract-draft" id="ct-draft"></div>
+
+    <article class="d-contract-body">
+      <h2 id="ct-title"></h2>
+      <p class="d-parties" id="ct-parties"></p>
+      <div id="ct-clauses"></div>
+      <p class="d-governs" id="ct-governs"></p>
+    </article>
+
+    <div class="d-sign-box">
+      <h3 data-i18n="sig.title"></h3>
+      <p class="d-sub" id="ct-for"></p>
+
+      <label class="d-consent">
+        <input type="checkbox" id="ct-accept">
+        <span data-i18n="sig.accept"></span>
+      </label>
+
+      <div class="d-field" style="margin-top:14px;max-width:420px">
+        <label id="ct-name-label"></label>
+        <input type="text" id="ct-name" autocomplete="name">
+      </div>
+
+      <div class="d-form-error" id="ct-error" hidden></div>
+
+      <div class="d-form-foot">
+        <button type="button" class="d-btn primary" id="ct-sign" data-i18n="sig.sign"></button>
+      </div>
+      <div class="d-note" data-i18n="sig.previewNote"></div>
+    </div>
+  </section>
+
+  <!-- firmado -->
+  <section id="ct-done" hidden>
+    <div class="d-success">
+      <h2 data-i18n="sig.done.t"></h2>
+      <p id="ct-done-msg"></p>
+    </div>
+    <p class="d-governs" id="ct-record" style="margin-top:14px"></p>
+    <p style="margin-top:22px"><a class="d-btn" href="/" data-i18n="back"></a></p>
+  </section>
+
+  <p class="d-foot"><a href="/" data-i18n="back"></a></p>
+</main>
+
+<script src="assets/js/distribuidores-i18n.js"></script>
+<script src="assets/js/contrato-texto.js"></script>
+<script>
+(function () {
+  "use strict";
+  var T = window.DistI18n;
+  var C = window.ContratoTexto;
+  var params = new URLSearchParams(location.search);
+  var role = C.role(params.get("rol"));
+  var token = params.get("t") || "";
+
+  function applyStaticI18n() {
+    document.documentElement.lang = T.lang();
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      el.textContent = T.t(el.getAttribute("data-i18n"));
+    });
+    document.title = T.t("sig.title") + " — Ledyvas";
+  }
+
+  function renderLang() {
+    var box = document.getElementById("ct-lang");
+    box.innerHTML = "";
+    T.SUPPORTED.forEach(function (code) {
+      var b = document.createElement("button");
+      b.textContent = code;
+      if (code === T.lang()) b.setAttribute("aria-current", "true");
+      b.addEventListener("click", function () { T.setLang(code); });
+      box.appendChild(b);
+    });
+  }
+
+  function show(id) {
+    ["ct-invalid", "ct-main", "ct-done"].forEach(function (v) {
+      document.getElementById(v).hidden = (v !== id);
+    });
+  }
+
+  function renderContract() {
+    var lang = T.lang();
+    var meta = C.meta(lang);
+
+    document.getElementById("ct-draft").textContent = meta.draft;
+    document.getElementById("ct-title").textContent = C.title(role, lang);
+    document.getElementById("ct-parties").innerHTML = C.parties(role, lang);
+
+    var host = document.getElementById("ct-clauses");
+    host.innerHTML = "";
+    C.clauses(role, lang).forEach(function (cl) {
+      var d = document.createElement("div");
+      d.className = "d-clause";
+      var h = document.createElement("h4");
+      h.textContent = cl.t;
+      var p = document.createElement("p");
+      p.innerHTML = cl.b;
+      d.appendChild(h); d.appendChild(p);
+      host.appendChild(d);
+    });
+
+    document.getElementById("ct-governs").textContent = meta.governs || "";
+
+    document.getElementById("ct-for").textContent =
+      T.t("sig.for") + ": " + T.t("admin.app.role." + role);
+    document.getElementById("ct-name-label").textContent =
+      T.t(role === "distribuidor" ? "sig.typeNameDist" : "sig.typeName");
+  }
+
+  function bindSign() {
+    document.getElementById("ct-sign").addEventListener("click", function () {
+      var err = document.getElementById("ct-error");
+      err.hidden = true;
+      var ok = document.getElementById("ct-accept").checked;
+      var name = document.getElementById("ct-name").value.trim();
+      if (!ok || name.length < 3) {
+        err.textContent = T.t("sig.needBoth");
+        err.hidden = false;
+        return;
+      }
+
+      // TODO 27-sep: POST al Worker:
+      //   POST https://<worker>/sign  { token, role, lang, typedName, acceptedAt }
+      //   → el Worker verifica el token (un solo uso), registra fecha/hora/IP,
+      //     guarda el PDF del contrato firmado, activa el código y manda el
+      //     email con el link /panel?t=<token-del-panel>.
+      var when = new Date().toLocaleString(T.lang() === "en" ? "en-GB" : T.lang());
+      document.getElementById("ct-done-msg").textContent =
+        T.t("sig.done.d", { email: "—" });
+      document.getElementById("ct-record").textContent =
+        T.t("sig.record", { when: when }) + "  ·  " + name;
+      show("ct-done");
+      window.scrollTo(0, 0);
+    });
+  }
+
+  // ---- boot ----
+  applyStaticI18n();
+  renderLang();
+
+  // En preview aceptamos DEMO-TOKEN o cualquier token no vacío.
+  if (!params.get("rol") || (!token && token !== "")) {
+    show("ct-invalid");
+    return;
+  }
+  renderContract();
+  bindSign();
+  show("ct-main");
+})();
+</script>
+</body>
+</html>
