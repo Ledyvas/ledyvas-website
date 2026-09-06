@@ -17,6 +17,7 @@
       "money": "US$",
       "product.simple": "Ledyvas Simple",
       "product.horeca": "Ledyvas HORECA",
+      "product.turismo": "Ledyvas Turismo",
       "back": "Volver a ledyvas.com",
 
       "panel.title": "Panel del Distribuidor",
@@ -239,6 +240,7 @@
       "money": "US$",
       "product.simple": "Ledyvas Simple",
       "product.horeca": "Ledyvas HORECA",
+      "product.turismo": "Ledyvas Turismo",
       "back": "Back to ledyvas.com",
 
       "panel.title": "Distributor Dashboard",
@@ -461,6 +463,7 @@
       "money": "US$",
       "product.simple": "Ledyvas Simple",
       "product.horeca": "Ledyvas HORECA",
+      "product.turismo": "Ledyvas Turismo",
       "back": "Torna a ledyvas.com",
 
       "panel.title": "Pannello del Distributore",
@@ -683,6 +686,7 @@
       "money": "US$",
       "product.simple": "Ledyvas Simple",
       "product.horeca": "Ledyvas HORECA",
+      "product.turismo": "Ledyvas Turismo",
       "back": "Retour à ledyvas.com",
 
       "panel.title": "Tableau de bord du distributeur",
@@ -905,6 +909,7 @@
       "money": "US$",
       "product.simple": "Ledyvas Simple",
       "product.horeca": "Ledyvas HORECA",
+      "product.turismo": "Ledyvas Turismo",
       "back": "Voltar a ledyvas.com",
 
       "panel.title": "Painel do Distribuidor",
