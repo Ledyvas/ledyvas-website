@@ -103,6 +103,8 @@
       "pub.faq.a3": "Es un contrato real con pago de comisiones al exterior. Necesitamos verificar tu identidad (o la de tu empresa) antes de firmar.",
       "pub.faq.q4": "¿Cuándo arranca el programa?",
       "pub.faq.a4": "El programa se activa después del 27 de septiembre de 2026. Podés dejar tu solicitud desde ahora.",
+      "pub.faq.q5": "¿Ledyvas compite con QuickBooks, Xero, Zoho, Alegra u Odoo?",
+      "pub.faq.a5": "No. Ledyvas no reemplaza al software contable — es su aliado. El cliente PYME lleva su operación diaria en Ledyvas (compras, inventario, ventas, caja, combustible) y al cierre exporta todo ordenado al software del contador. Para vos, contador o consultor, es menos horas ordenando Excel y datos que cuadran; para el cliente, una operación bajo control. Los 6 gigantes hacen la contabilidad; Ledyvas hace que llegue limpia.",
 
       "form.title.vendedor": "Solicitud de vendedor",
       "form.title.distribuidor": "Solicitud de distribuidor oficial",
@@ -353,6 +355,8 @@
       "pub.faq.a3": "This is a real contract with commission payments abroad. We need to verify your identity (or your company's) before signing.",
       "pub.faq.q4": "When does the program start?",
       "pub.faq.a4": "The program goes live after 27 September 2026. You can submit your application now.",
+      "pub.faq.q5": "Does Ledyvas compete with QuickBooks, Xero, Zoho, Alegra or Odoo?",
+      "pub.faq.a5": "No. Ledyvas does not replace the accounting software — it is its ally. The SMB client runs day-to-day operations in Ledyvas (purchases, inventory, sales, cash, fuel) and at period close exports everything, tidy, to the accountant's software. For you, an accountant or consultant, that means fewer hours cleaning up spreadsheets and numbers that reconcile; for the client, operations under control. The 6 giants do the accounting; Ledyvas makes sure it arrives clean.",
 
       "form.title.vendedor": "Sales rep application",
       "form.title.distribuidor": "Official distributor application",
@@ -603,6 +607,8 @@
       "pub.faq.a3": "È un contratto reale con pagamento di commissioni all'estero. Dobbiamo verificare la tua identità (o quella della tua azienda) prima di firmare.",
       "pub.faq.q4": "Quando parte il programma?",
       "pub.faq.a4": "Il programma si attiva dopo il 27 settembre 2026. Puoi inviare la candidatura fin da ora.",
+      "pub.faq.q5": "Ledyvas è concorrente di QuickBooks, Xero, Zoho, Alegra o Odoo?",
+      "pub.faq.a5": "No. Ledyvas non sostituisce il software contabile — ne è l'alleato. Il cliente PMI gestisce l'operatività quotidiana in Ledyvas (acquisti, magazzino, vendite, cassa, carburante) e alla chiusura esporta tutto ordinato nel software del commercialista. Per te, commercialista o consulente, significa meno ore a sistemare fogli Excel e numeri che tornano; per il cliente, un'operatività sotto controllo. I 6 giganti fanno la contabilità; Ledyvas fa in modo che arrivi pulita.",
 
       "form.title.vendedor": "Candidatura venditore",
       "form.title.distribuidor": "Candidatura distributore ufficiale",
@@ -853,6 +859,8 @@
       "pub.faq.a3": "C'est un vrai contrat avec versement de commissions à l'étranger. Nous devons vérifier votre identité (ou celle de votre entreprise) avant de signer.",
       "pub.faq.q4": "Quand le programme démarre-t-il ?",
       "pub.faq.a4": "Le programme est activé après le 27 septembre 2026. Vous pouvez déposer votre candidature dès maintenant.",
+      "pub.faq.q5": "Ledyvas concurrence-t-il QuickBooks, Xero, Zoho, Alegra ou Odoo ?",
+      "pub.faq.a5": "Non. Ledyvas ne remplace pas le logiciel comptable — il en est l'allié. Le client PME gère son activité quotidienne dans Ledyvas (achats, stock, ventes, caisse, carburant) et, à la clôture, exporte tout, bien rangé, vers le logiciel du comptable. Pour vous, comptable ou consultant, cela veut dire moins d'heures à nettoyer des tableurs et des chiffres qui se recoupent ; pour le client, une activité maîtrisée. Les 6 géants font la comptabilité ; Ledyvas fait qu'elle arrive propre.",
 
       "form.title.vendedor": "Candidature vendeur",
       "form.title.distribuidor": "Candidature distributeur officiel",
@@ -1103,6 +1111,8 @@
       "pub.faq.a3": "É um contrato real com pagamento de comissões ao exterior. Precisamos verificar a sua identidade (ou a da sua empresa) antes de assinar.",
       "pub.faq.q4": "Quando começa o programa?",
       "pub.faq.a4": "O programa é ativado depois de 27 de setembro de 2026. Você já pode enviar a sua candidatura.",
+      "pub.faq.q5": "A Ledyvas compete com o QuickBooks, Xero, Zoho, Alegra ou Odoo?",
+      "pub.faq.a5": "Não. A Ledyvas não substitui o software de contabilidade — é o seu aliado. O cliente PME gere a operação diária na Ledyvas (compras, stock, vendas, caixa, combustível) e, no fecho, exporta tudo organizado para o software do contabilista. Para você, contabilista ou consultor, são menos horas a arrumar folhas de Excel e números que batem certo; para o cliente, uma operação sob controlo. Os 6 gigantes fazem a contabilidade; a Ledyvas faz com que ela chegue limpa.",
 
       "form.title.vendedor": "Candidatura de vendedor",
       "form.title.distribuidor": "Candidatura de distribuidor oficial",
