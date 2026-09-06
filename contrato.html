@@ -94,7 +94,7 @@
   var T = window.DistI18n;
   var C = window.ContratoTexto;
   var params = new URLSearchParams(location.search);
-  var role = C.role(params.get("rol"));
+  var role = C.role();   // único contrato: Distribuidor Oficial
   var token = params.get("t") || "";
 
   function applyStaticI18n() {
@@ -183,14 +183,10 @@
   applyStaticI18n();
   renderLang();
 
-  if (!params.get("rol")) {
-    show("ct-invalid");
-    return;
-  }
   renderContract();
-  // Sin token = vista de revisión (el Vendedor / Distribuidor lee el contrato
-  // antes de aplicar). El recuadro de firma solo aparece con el enlace de un
-  // solo uso que Ledyvas envía tras aprobar la solicitud.
+  // Sin token = vista de revisión (el Distribuidor lee el contrato antes de
+  // aplicar). El recuadro de firma solo aparece con el enlace de un solo uso
+  // que Ledyvas envía tras aprobar la solicitud.
   if (token) {
     bindSign();
   } else {

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Vendé Ledyvas a tus clientes PYME y cobrá comisión. Vendedor 15% (gratis) o Distribuidor Oficial 20%. El programa abre el domingo 27 de septiembre de 2026 — dejá tu solicitud ahora.">
+<meta name="description" content="Convertite en Distribuidor Oficial de Ledyvas: vendé el ERP a empresas de tu país y cobrá el 20% de comisión. Territorio exclusivo. El programa abre el domingo 27 de septiembre de 2026 — dejá tu solicitud ahora.">
 <title>Programa de Distribución — Ledyvas</title>
 <link rel="icon" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,11 +37,6 @@
 
     <div class="d-roles">
       <div class="d-role-card">
-        <h3 data-i18n="pub.role.vendedor.t"></h3>
-        <p data-i18n="pub.role.vendedor.d"></p>
-        <a class="d-btn primary" href="?rol=vendedor" data-i18n="pub.apply"></a>
-      </div>
-      <div class="d-role-card">
         <h3 data-i18n="pub.role.distribuidor.t"></h3>
         <p data-i18n="pub.role.distribuidor.d"></p>
         <a class="d-btn primary" href="?rol=distribuidor" data-i18n="pub.apply"></a>
@@ -68,8 +63,7 @@
         <p style="margin-top:12px"><a class="d-btn small" href="descargas.html" data-i18n="pub.demo.trialBtn"></a></p>
         <p style="margin-top:18px" data-i18n="pub.demo.contractsIntro"></p>
         <p style="margin-top:8px">
-          <a class="d-btn small" href="contrato.html?rol=vendedor" data-i18n="pub.demo.readVendedor"></a>
-          <a class="d-btn small" href="contrato.html?rol=distribuidor" data-i18n="pub.demo.readDistribuidor" style="margin-left:8px"></a>
+          <a class="d-btn small" href="contrato.html?rol=distribuidor" data-i18n="pub.demo.readDistribuidor"></a>
         </p>
       </div>
     </div>
@@ -104,7 +98,7 @@
   <!-- ============ VISTA 2: formulario ============ -->
   <section id="view-form" hidden>
     <p class="d-lead" id="frm-intro"></p>
-    <p style="margin-top:10px"><a class="d-btn small" href="distribuidores.html" data-i18n="form.switchRole"></a></p>
+    <p style="margin-top:10px"><a class="d-btn small" href="distribuidores.html" data-i18n="back"></a></p>
 
     <form class="d-form" id="frm" novalidate>
       <div id="frm-sections"></div>
@@ -161,8 +155,7 @@
   var T = window.DistI18n;
   var WORKER = "https://ledyvas-license-server.ledyvas.workers.dev";
   var params = new URLSearchParams(location.search);
-  var rawRole = params.get("rol");
-  var role = (rawRole === "vendedor" || rawRole === "distribuidor") ? rawRole : null;
+  var role = (params.get("rol") === "distribuidor") ? "distribuidor" : null;
 
   function applyStaticI18n() {
     document.documentElement.lang = T.lang();
@@ -328,7 +321,7 @@
       (verdict === "apto" ? "  " + T.t("scr.result.apto") : "");
     // La prueba gratis queda disponible para el distribuidor una vez enviada
     // y evaluada la solicitud (mientras espera la aprobación final).
-    document.getElementById("sent-trial").hidden = (role !== "distribuidor");
+    document.getElementById("sent-trial").hidden = false;
     show("view-sent");
     window.scrollTo(0, 0);
   }
@@ -444,7 +437,7 @@
     show("view-form");
   } else {
     document.getElementById("pg-title").textContent = T.t("pub.title");
-    document.getElementById("pg-sub").textContent = T.t("pub.role.q");
+    document.getElementById("pg-sub").textContent = "";
     document.title = T.t("pub.title") + " — Ledyvas";
     show("view-choose");
   }
