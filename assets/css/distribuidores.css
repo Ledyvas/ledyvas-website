@@ -292,3 +292,50 @@ table.d-table tbody tr:hover { background: var(--gray-50); }
 }
 .d-sign-box h3 { margin: 0 0 4px; font-size: 16px; }
 .d-sign-box .d-sub { margin: 0 0 16px; font-size: 13px; color: var(--gray-500); }
+
+/* ==========================================================================
+   Chat del programa de socios (socios-chat.js)
+   ========================================================================== */
+.sc-root { position: fixed; right: 18px; bottom: 18px; z-index: 80; font-family: var(--font-sans); }
+.sc-fab {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--royal); color: var(--white); border: none; cursor: pointer;
+  font: inherit; font-size: 13.5px; font-weight: 600;
+  padding: 11px 16px; border-radius: 999px; box-shadow: var(--shadow-md);
+}
+.sc-fab:hover { background: var(--navy); }
+.sc-panel {
+  position: absolute; right: 0; bottom: 54px;
+  width: min(360px, calc(100vw - 36px));
+  background: var(--white); border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-md);
+  display: none; flex-direction: column; overflow: hidden;
+}
+.sc-root.sc-open .sc-panel { display: flex; }
+.sc-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px; background: var(--navy); color: var(--white);
+}
+.sc-title { font-size: 13.5px; font-weight: 600; }
+.sc-close { background: none; border: none; color: rgba(255,255,255,.8); font-size: 22px; line-height: 1; cursor: pointer; padding: 0 4px; }
+.sc-close:hover { color: var(--white); }
+.sc-log {
+  padding: 14px; display: flex; flex-direction: column; gap: 10px;
+  height: 340px; overflow-y: auto; background: var(--gray-50);
+}
+.sc-msg { font-size: 13.5px; line-height: 1.5; padding: 9px 12px; border-radius: 12px; max-width: 88%; white-space: pre-wrap; word-wrap: break-word; }
+.sc-user { align-self: flex-end; background: var(--royal); color: var(--white); border-bottom-right-radius: 4px; }
+.sc-bot { align-self: flex-start; background: var(--white); border: 1px solid var(--gray-200); color: var(--gray-900); border-bottom-left-radius: 4px; }
+.sc-form { display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--gray-200); }
+.sc-input { flex: 1; font: inherit; font-size: 13.5px; padding: 9px 11px; border: 1px solid var(--gray-300); border-radius: 8px; }
+.sc-input:focus { outline: 2px solid color-mix(in srgb, var(--royal) 40%, transparent); border-color: var(--royal); }
+.sc-send { font: inherit; font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 8px; border: none; background: var(--royal); color: var(--white); cursor: pointer; }
+.sc-send:hover { background: var(--navy); }
+.sc-send:disabled { opacity: .5; cursor: default; }
+.sc-disclaimer { margin: 0; padding: 0 12px 12px; font-size: 11px; color: var(--gray-500); background: var(--white); }
+
+@media (max-width: 640px) {
+  .sc-root { right: 12px; bottom: 12px; }
+  .sc-fab-label { display: none; }
+  .sc-fab { padding: 12px; }
+}
