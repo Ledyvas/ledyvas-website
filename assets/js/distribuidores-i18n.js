@@ -229,7 +229,30 @@
       "admin.app.status.signed": "Firmado · activo",
       "admin.app.approved": "Aprobada. Se envió el contrato a {name}.",
       "admin.app.rejected": "Solicitud de {name} rechazada.",
-      "admin.app.empty": "No hay solicitudes."
+      "admin.app.empty": "No hay solicitudes.",
+
+      "scr.sec": "Evaluación — 5 preguntas",
+      "scr.intro": "Respondé con tus palabras, sé concreto. Un asistente de Ledyvas revisa estas respuestas junto con tu solicitud.",
+      "scr.evaluating": "Evaluando tus respuestas…",
+      "scr.result.apto": "Tu perfil encaja con lo que buscamos. Te escribimos para el siguiente paso.",
+      "scr.result.a_revisar": "Gracias. Un responsable de Ledyvas va a revisar tu solicitud y te escribe.",
+      "scr.result.no_cumple": "Gracias. Un responsable de Ledyvas va a revisar tu solicitud y te escribe.",
+      "scr.missing": "Respondé las 5 preguntas con al menos una frase cada una.",
+      "admin.app.screening": "Evaluación IA",
+      "admin.app.scr.apto": "Apto",
+      "admin.app.scr.a_revisar": "A revisar",
+      "admin.app.scr.no_cumple": "No cumple",
+
+      "q.v.1": "Contá tu experiencia vendiendo software o SaaS a empresas: qué vendiste, a quién y con qué resultados.",
+      "q.v.2": "¿Trabajaste antes con clientes PYME (restaurantes, hoteles, comercios)? Describí el tipo de cliente y qué hacías.",
+      "q.v.3": "Explicá con tus palabras qué es un ERP y qué diferencia hay entre un software que se compra una vez y uno por suscripción (SaaS).",
+      "q.v.4": "¿Qué formación o título tenés (contabilidad, administración, sistemas, ventas)? ¿Terminado o en curso?",
+      "q.v.5": "¿Cómo pensás conseguir tus primeros 3 clientes para Ledyvas en tu zona? Sé concreto.",
+      "q.d.1": "Describí tu empresa: qué hace, desde cuándo, cuántas personas y qué tipo de clientes atiende.",
+      "q.d.2": "¿Cuántos clientes PYME activos tenés hoy y en qué sectores (HORECA, retail, turismo, otros)?",
+      "q.d.3": "¿Qué software de gestión o contable revendés o implementás hoy? ¿Cómo das el soporte de primer nivel?",
+      "q.d.4": "¿Quién de tu equipo se capacitaría en Ledyvas y qué experiencia tiene en implementación de software?",
+      "q.d.5": "¿Qué volumen de licencias de Ledyvas estimás vender en 12 meses y en qué territorio? Justificá el número."
     },
 
     en: {
@@ -452,7 +475,30 @@
       "admin.app.status.signed": "Signed · active",
       "admin.app.approved": "Approved. Contract sent to {name}.",
       "admin.app.rejected": "{name}'s application rejected.",
-      "admin.app.empty": "No applications."
+      "admin.app.empty": "No applications.",
+
+      "scr.sec": "Assessment — 5 questions",
+      "scr.intro": "Answer in your own words, be specific. A Ledyvas assistant reviews these answers together with your application.",
+      "scr.evaluating": "Assessing your answers…",
+      "scr.result.apto": "Your profile fits what we are looking for. We will write to you about the next step.",
+      "scr.result.a_revisar": "Thank you. A Ledyvas manager will review your application and get back to you.",
+      "scr.result.no_cumple": "Thank you. A Ledyvas manager will review your application and get back to you.",
+      "scr.missing": "Answer all 5 questions with at least one sentence each.",
+      "admin.app.screening": "AI assessment",
+      "admin.app.scr.apto": "Fit",
+      "admin.app.scr.a_revisar": "Review",
+      "admin.app.scr.no_cumple": "No fit",
+
+      "q.v.1": "Describe your experience selling software or SaaS to companies: what you sold, to whom, and with what results.",
+      "q.v.2": "Have you worked with SMB clients before (restaurants, hotels, shops)? Describe the type of client and what you did.",
+      "q.v.3": "Explain in your own words what an ERP is and the difference between software bought once and software by subscription (SaaS).",
+      "q.v.4": "What training or degree do you have (accounting, business, IT, sales)? Completed or in progress?",
+      "q.v.5": "How do you plan to get your first 3 Ledyvas clients in your area? Be specific.",
+      "q.d.1": "Describe your company: what it does, since when, how many people, and what type of clients it serves.",
+      "q.d.2": "How many active SMB clients do you have today, and in which sectors (HORECA, retail, tourism, other)?",
+      "q.d.3": "What management or accounting software do you resell or implement today? How do you provide first-level support?",
+      "q.d.4": "Who on your team would be trained on Ledyvas, and what software-implementation experience do they have?",
+      "q.d.5": "How many Ledyvas licences do you estimate selling in 12 months and in which territory? Justify the number."
     },
 
     it: {
@@ -675,7 +721,30 @@
       "admin.app.status.signed": "Firmato · attivo",
       "admin.app.approved": "Approvata. Contratto inviato a {name}.",
       "admin.app.rejected": "Candidatura di {name} rifiutata.",
-      "admin.app.empty": "Nessuna candidatura."
+      "admin.app.empty": "Nessuna candidatura.",
+
+      "scr.sec": "Valutazione — 5 domande",
+      "scr.intro": "Rispondi con parole tue, sii concreto. Un assistente di Ledyvas esamina queste risposte insieme alla tua candidatura.",
+      "scr.evaluating": "Valutazione delle tue risposte in corso…",
+      "scr.result.apto": "Il tuo profilo corrisponde a ciò che cerchiamo. Ti scriviamo per il passo successivo.",
+      "scr.result.a_revisar": "Grazie. Un responsabile di Ledyvas esaminerà la tua candidatura e ti contatterà.",
+      "scr.result.no_cumple": "Grazie. Un responsabile di Ledyvas esaminerà la tua candidatura e ti contatterà.",
+      "scr.missing": "Rispondi a tutte e 5 le domande con almeno una frase ciascuna.",
+      "admin.app.screening": "Valutazione IA",
+      "admin.app.scr.apto": "Idoneo",
+      "admin.app.scr.a_revisar": "Da valutare",
+      "admin.app.scr.no_cumple": "Non idoneo",
+
+      "q.v.1": "Racconta la tua esperienza nella vendita di software o SaaS alle aziende: cosa hai venduto, a chi e con quali risultati.",
+      "q.v.2": "Hai già lavorato con clienti PMI (ristoranti, hotel, negozi)? Descrivi il tipo di cliente e cosa facevi.",
+      "q.v.3": "Spiega con parole tue cos'è un ERP e che differenza c'è tra un software che si compra una volta e uno in abbonamento (SaaS).",
+      "q.v.4": "Che formazione o titolo hai (contabilità, amministrazione, informatica, vendite)? Concluso o in corso?",
+      "q.v.5": "Come pensi di ottenere i tuoi primi 3 clienti per Ledyvas nella tua zona? Sii concreto.",
+      "q.d.1": "Descrivi la tua azienda: cosa fa, da quando, quante persone e che tipo di clienti serve.",
+      "q.d.2": "Quanti clienti PMI attivi hai oggi e in quali settori (HORECA, retail, turismo, altro)?",
+      "q.d.3": "Quale software gestionale o contabile rivendi o implementi oggi? Come fornisci il supporto di primo livello?",
+      "q.d.4": "Chi del tuo team verrebbe formato su Ledyvas e che esperienza ha nell'implementazione di software?",
+      "q.d.5": "Che volume di licenze Ledyvas stimi di vendere in 12 mesi e in quale territorio? Motiva il numero."
     },
 
     fr: {
@@ -898,7 +967,30 @@
       "admin.app.status.signed": "Signé · actif",
       "admin.app.approved": "Approuvée. Contrat envoyé à {name}.",
       "admin.app.rejected": "Candidature de {name} rejetée.",
-      "admin.app.empty": "Aucune candidature."
+      "admin.app.empty": "Aucune candidature.",
+
+      "scr.sec": "Évaluation — 5 questions",
+      "scr.intro": "Répondez avec vos propres mots, soyez précis. Un assistant Ledyvas examine ces réponses avec votre candidature.",
+      "scr.evaluating": "Évaluation de vos réponses…",
+      "scr.result.apto": "Votre profil correspond à ce que nous recherchons. Nous vous écrivons pour la suite.",
+      "scr.result.a_revisar": "Merci. Un responsable Ledyvas examinera votre candidature et vous recontactera.",
+      "scr.result.no_cumple": "Merci. Un responsable Ledyvas examinera votre candidature et vous recontactera.",
+      "scr.missing": "Répondez aux 5 questions avec au moins une phrase chacune.",
+      "admin.app.screening": "Évaluation IA",
+      "admin.app.scr.apto": "Adéquat",
+      "admin.app.scr.a_revisar": "À examiner",
+      "admin.app.scr.no_cumple": "Non adéquat",
+
+      "q.v.1": "Décrivez votre expérience de vente de logiciels ou de SaaS aux entreprises : ce que vous avez vendu, à qui et avec quels résultats.",
+      "q.v.2": "Avez-vous déjà travaillé avec des clients PME (restaurants, hôtels, commerces) ? Décrivez le type de client et ce que vous faisiez.",
+      "q.v.3": "Expliquez avec vos mots ce qu'est un ERP et la différence entre un logiciel acheté une fois et un logiciel par abonnement (SaaS).",
+      "q.v.4": "Quelle formation ou diplôme avez-vous (comptabilité, gestion, informatique, vente) ? Terminé ou en cours ?",
+      "q.v.5": "Comment comptez-vous obtenir vos 3 premiers clients Ledyvas dans votre région ? Soyez précis.",
+      "q.d.1": "Décrivez votre entreprise : ce qu'elle fait, depuis quand, combien de personnes et quel type de clients elle sert.",
+      "q.d.2": "Combien de clients PME actifs avez-vous aujourd'hui et dans quels secteurs (CHR, commerce, tourisme, autre) ?",
+      "q.d.3": "Quel logiciel de gestion ou de comptabilité revendez-vous ou déployez-vous aujourd'hui ? Comment assurez-vous le support de premier niveau ?",
+      "q.d.4": "Qui de votre équipe serait formé à Ledyvas et quelle expérience a-t-il en déploiement de logiciels ?",
+      "q.d.5": "Quel volume de licences Ledyvas estimez-vous vendre en 12 mois et sur quel territoire ? Justifiez le chiffre."
     },
 
     pt: {
@@ -1121,7 +1213,30 @@
       "admin.app.status.signed": "Assinado · ativo",
       "admin.app.approved": "Aprovada. Contrato enviado para {name}.",
       "admin.app.rejected": "Candidatura de {name} rejeitada.",
-      "admin.app.empty": "Não há candidaturas."
+      "admin.app.empty": "Não há candidaturas.",
+
+      "scr.sec": "Avaliação — 5 perguntas",
+      "scr.intro": "Responda com as suas palavras, seja concreto. Um assistente da Ledyvas analisa estas respostas junto com a sua candidatura.",
+      "scr.evaluating": "A avaliar as suas respostas…",
+      "scr.result.apto": "O seu perfil encaixa no que procuramos. Vamos escrever para você sobre o próximo passo.",
+      "scr.result.a_revisar": "Obrigado. Um responsável da Ledyvas vai analisar a sua candidatura e entrar em contato.",
+      "scr.result.no_cumple": "Obrigado. Um responsável da Ledyvas vai analisar a sua candidatura e entrar em contato.",
+      "scr.missing": "Responda às 5 perguntas com pelo menos uma frase cada.",
+      "admin.app.screening": "Avaliação IA",
+      "admin.app.scr.apto": "Apto",
+      "admin.app.scr.a_revisar": "A rever",
+      "admin.app.scr.no_cumple": "Não apto",
+
+      "q.v.1": "Conte a sua experiência vendendo software ou SaaS a empresas: o que vendeu, a quem e com que resultados.",
+      "q.v.2": "Já trabalhou com clientes PME (restaurantes, hotéis, comércios)? Descreva o tipo de cliente e o que fazia.",
+      "q.v.3": "Explique com as suas palavras o que é um ERP e a diferença entre um software comprado uma vez e um por assinatura (SaaS).",
+      "q.v.4": "Que formação ou título tem (contabilidade, administração, informática, vendas)? Concluído ou em curso?",
+      "q.v.5": "Como pensa conseguir os seus primeiros 3 clientes para a Ledyvas na sua zona? Seja concreto.",
+      "q.d.1": "Descreva a sua empresa: o que faz, desde quando, quantas pessoas e que tipo de clientes atende.",
+      "q.d.2": "Quantos clientes PME ativos tem hoje e em que setores (HORECA, retalho, turismo, outros)?",
+      "q.d.3": "Que software de gestão ou contabilístico revende ou implementa hoje? Como dá o suporte de primeiro nível?",
+      "q.d.4": "Quem da sua equipa seria formado em Ledyvas e que experiência tem em implementação de software?",
+      "q.d.5": "Que volume de licenças Ledyvas estima vender em 12 meses e em que território? Justifique o número."
     }
   };
 

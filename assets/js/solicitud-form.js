@@ -86,7 +86,13 @@
     ]}
   ];
 
+  // Preguntas de pre-evaluación (las responde el candidato en texto libre;
+  // la IA del Worker las evalúa). Claves i18n de la pregunta.
+  var SCREEN_VENDEDOR = ["q.v.1", "q.v.2", "q.v.3", "q.v.4", "q.v.5"];
+  var SCREEN_DISTRIBUIDOR = ["q.d.1", "q.d.2", "q.d.3", "q.d.4", "q.d.5"];
+
   window.SolicitudForm = {
-    get: function (role) { return role === "distribuidor" ? DISTRIBUIDOR : VENDEDOR; }
+    get: function (role) { return role === "distribuidor" ? DISTRIBUIDOR : VENDEDOR; },
+    screening: function (role) { return role === "distribuidor" ? SCREEN_DISTRIBUIDOR : SCREEN_VENDEDOR; }
   };
 })();

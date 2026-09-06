@@ -127,10 +127,10 @@
     //   POST /admin/applications/:id/approve  → genera token de firma + email
     //   POST /admin/applications/:id/reject
     applications: [
-      { id: "a1", date: "2026-09-04", name: "Lucía Fernández",        role: "vendedor",     country: "España",           contact: "lucia.f@example.com",  status: "pending" },
-      { id: "a2", date: "2026-09-03", name: "Contadores Pérez SRL",   role: "distribuidor", country: "Rep. Dominicana",  contact: "info@perezsrl.do",     status: "pending" },
-      { id: "a3", date: "2026-09-02", name: "Rahul Mehta",            role: "vendedor",     country: "India",            contact: "rahul.m@example.com",  status: "contract" },
-      { id: "a4", date: "2026-08-30", name: "SoftStore Lisboa Lda",   role: "distribuidor", country: "Portugal",         contact: "geral@softstore.pt",   status: "signed" }
+      { id: "a1", date: "2026-09-04", name: "Lucía Fernández",      role: "vendedor",     country: "España",          contact: "lucia.f@example.com", status: "pending",  screening: { veredicto: "apto",      nota_admin: "Contadora con 4 años en un estudio, ya vende Alegra a PYMEs de hostelería. Entiende SaaS. Plan de captación concreto. Riesgo bajo." } },
+      { id: "a2", date: "2026-09-03", name: "Contadores Pérez SRL", role: "distribuidor", country: "Rep. Dominicana", contact: "info@perezsrl.do",    status: "pending",  screening: { veredicto: "a_revisar", nota_admin: "Estudio contable real con ~30 clientes, pero nunca revendió software y no detalla quién daría soporte. Pedir aclaración antes de avanzar." } },
+      { id: "a3", date: "2026-09-02", name: "Rahul Mehta",          role: "vendedor",     country: "India",           contact: "rahul.m@example.com", status: "contract", screening: { veredicto: "apto",      nota_admin: "5 años vendiendo SaaS B2B, cartera de restaurantes. Sólido." } },
+      { id: "a4", date: "2026-08-30", name: "SoftStore Lisboa Lda", role: "distribuidor", country: "Portugal",        contact: "geral@softstore.pt",  status: "signed",   screening: { veredicto: "apto",      nota_admin: "Reseller de software con equipo técnico y referencias comerciales verificables." } }
     ],
     distributors: [
       { name: "María Reyes",      code: "MARIA-DR",   region: "Rep. Dominicana", sales: 11, earned: 2235, pending: 745, status: "active" },
@@ -226,6 +226,21 @@
 
       var st = document.createElement("td");
       st.appendChild(appStatusBadge(a.status));
+      if (a.screening && a.screening.veredicto) {
+        var v = a.screening.veredicto;
+        var sb = document.createElement("span");
+        sb.className = "d-badge " + (v === "apto" ? "active" : v === "no_cumple" ? "expired" : "trial");
+        sb.style.marginLeft = "6px";
+        sb.textContent = T.t("admin.app.screening") + ": " + T.t("admin.app.scr." + v);
+        if (a.screening.nota_admin) sb.title = a.screening.nota_admin;
+        st.appendChild(sb);
+        if (a.screening.nota_admin) {
+          var note = document.createElement("div");
+          note.style.cssText = "font-size:12px;color:var(--gray-500);margin-top:5px;max-width:340px;line-height:1.4";
+          note.textContent = a.screening.nota_admin;
+          st.appendChild(note);
+        }
+      }
       tr.appendChild(st);
 
       var act = document.createElement("td");

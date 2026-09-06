@@ -112,6 +112,7 @@
 (function () {
   "use strict";
   var T = window.DistI18n;
+  var WORKER = "https://ledyvas-license-server.ledyvas.workers.dev";
   var params = new URLSearchParams(location.search);
   var rawRole = params.get("rol");
   var role = (rawRole === "vendedor" || rawRole === "distribuidor") ? rawRole : null;
@@ -186,6 +187,8 @@
     return wrap;
   }
 
+  var SCREEN_KEYS = [];
+
   function renderForm() {
     document.getElementById("frm-intro").textContent = T.t("form.intro." + role);
     var host = document.getElementById("frm-sections");
@@ -202,12 +205,63 @@
       box.appendChild(grid);
       host.appendChild(box);
     });
+
+    // ---- sección de pre-evaluación (5 preguntas, texto libre) ----
+    SCREEN_KEYS = window.SolicitudForm.screening(role);
+    var sbox = document.createElement("div");
+    sbox.className = "d-form-sec";
+    var sh = document.createElement("h3");
+    sh.textContent = T.t("scr.sec");
+    var si = document.createElement("p");
+    si.className = "d-hint"; si.style.marginTop = "2px";
+    si.textContent = T.t("scr.intro");
+    sbox.appendChild(sh); sbox.appendChild(si);
+    var sgrid = document.createElement("div");
+    sgrid.className = "d-form-grid";
+    SCREEN_KEYS.forEach(function (qk, i) {
+      sgrid.appendChild(fieldEl({ n: "scr_" + (i + 1), k: qk, type: "textarea", req: true }));
+    });
+    sbox.appendChild(sgrid);
+    host.appendChild(sbox);
+  }
+
+  function collectProfile(form) {
+    var keys = (role === "distribuidor")
+      ? ["companyName", "entityType", "country", "regNumber", "yearsOperating", "clientCount", "sectors", "region", "platform", "expectedVolume"]
+      : ["country", "profileType", "company", "region", "platform"];
+    var out = {};
+    keys.forEach(function (k) {
+      var el = form.elements[k];
+      if (el && String(el.value || "").trim()) {
+        out[k] = el.tagName === "SELECT" ? T.t(el.value) : String(el.value).trim();
+      }
+    });
+    return out;
+  }
+
+  function screenAnswers(form) {
+    return SCREEN_KEYS.map(function (qk, i) {
+      return { q: T.t(qk), a: String((form.elements["scr_" + (i + 1)] || {}).value || "").trim() };
+    });
+  }
+
+  function goSent(form, verdict) {
+    var email = (form.elements["email"] && form.elements["email"].value) || "—";
+    document.getElementById("sent-msg").textContent =
+      T.t("form.sent.d", { email: email }) +
+      (verdict ? "  " + T.t("scr.result." + verdict) : "");
+    show("view-sent");
+    window.scrollTo(0, 0);
   }
 
   function bindForm() {
     var form = document.getElementById("frm");
+    var btn = form.querySelector("button[type=submit]");
+    var busy = false;
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      if (busy) return;
       var err = document.getElementById("frm-error");
       err.hidden = true;
 
@@ -220,23 +274,47 @@
           return !String(el.value || "").trim();
         });
       });
+      var answers = screenAnswers(form);
+      var scrMissing = answers.filter(function (x) {
+        return x.a.replace(/\s+/g, " ").length >= 40;
+      }).length < answers.length;
       var consent = document.getElementById("frm-consent").checked;
 
       if (missing || !consent) {
-        err.textContent = T.t("form.missing");
-        err.hidden = false;
+        err.textContent = T.t("form.missing"); err.hidden = false;
+        err.scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+      if (scrMissing) {
+        err.textContent = T.t("scr.missing"); err.hidden = false;
         err.scrollIntoView({ behavior: "smooth", block: "center" });
         return;
       }
 
-      // TODO 27-sep: POST multipart al Worker:
-      //   POST https://<worker>/apply  { role, fields..., files }
-      //   → el Worker guarda la solicitud como "pendiente de verificación",
-      //     manda un email de verificación al candidato y avisa al admin.
-      var email = (form.elements["email"] && form.elements["email"].value) || "—";
-      document.getElementById("sent-msg").textContent = T.t("form.sent.d", { email: email });
-      show("view-sent");
-      window.scrollTo(0, 0);
+      // Pre-evaluación con la IA (Worker /screen). El veredicto acompaña a la
+      // solicitud para que el admin priorice; el candidato ve un mensaje neutro.
+      // TODO 27-sep: enviar {role, fields, files, answers, screening} a /apply.
+      busy = true;
+      var origLabel = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = T.t("scr.evaluating");
+
+      fetch(WORKER + "/screen", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          role: role,
+          lang: T.lang(),
+          profile: collectProfile(form),
+          answers: answers
+        })
+      })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (j) {
+          goSent(form, (j && j.ok && j.veredicto) ? j.veredicto : null);
+        })
+        .catch(function () { goSent(form, null); })
+        .then(function () { busy = false; btn.disabled = false; btn.textContent = origLabel; });
     });
   }
 
