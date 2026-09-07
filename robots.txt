@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /distribuidores.html
 Disallow: /contrato.html
+Disallow: /correos-reclutamiento.html
 Disallow: /panel.html
 Disallow: /admin.html
 

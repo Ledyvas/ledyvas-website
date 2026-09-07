@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Correos de reclutamiento — Ledyvas</title>
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/distribuidores.css">
+<style>
+  .cr-toolbar { display:flex; flex-wrap:wrap; gap:18px; align-items:center; margin:8px 0 20px }
+  .cr-group { display:flex; gap:6px; align-items:center }
+  .cr-group b { font-size:12px; color:var(--gray-500); text-transform:uppercase; letter-spacing:.04em; margin-right:2px }
+  .cr-btn { padding:7px 13px; border:1px solid var(--gray-300); background:#fff; color:var(--gray-700);
+    border-radius:7px; font:600 13px Inter,sans-serif; cursor:pointer }
+  .cr-btn[aria-current="true"] { background:var(--navy); color:#fff; border-color:var(--navy) }
+  .cr-field { margin:16px 0 }
+  .cr-field label { display:flex; justify-content:space-between; align-items:baseline;
+    font:600 12px Inter,sans-serif; color:var(--gray-500); text-transform:uppercase; letter-spacing:.04em; margin-bottom:5px }
+  .cr-copy { text-transform:none; letter-spacing:0; font-size:12px; padding:4px 10px; border:1px solid var(--gray-300);
+    background:#fff; color:var(--royal); border-radius:6px; cursor:pointer }
+  .cr-copy.ok { background:#e7f6ec; color:#1b7a3d; border-color:#bfe6cc }
+  .cr-subject { padding:11px 14px; border:1px solid var(--gray-300); border-radius:8px; background:#fff;
+    font:500 14px Inter,sans-serif }
+  .cr-body { width:100%; min-height:420px; padding:14px 16px; border:1px solid var(--gray-300); border-radius:8px;
+    background:#fff; font:13.5px/1.6 "SFMono-Regular",Menlo,Consolas,monospace; white-space:pre-wrap; resize:vertical }
+  .cr-note { border-left:3px solid var(--gold); background:var(--gray-100); color:var(--gray-700);
+    padding:12px 16px; border-radius:6px; font-size:13px; margin:6px 0 18px }
+</style>
+</head>
+<body>
+
+<div class="d-preview">Uso interno — plantillas de la campaña de reclutamiento. Personalizá <code>[nombre]</code> / <code>[empresa]</code> y el enlace de baja antes de enviar.</div>
+
+<header class="d-header">
+  <div class="d-wrap">
+    <div>
+      <div class="d-brand">
+        <img src="assets/img/logo-icon.png" alt="Ledyvas">
+        <div class="d-brand-txt">Ledyvas<span>Programa de Distribución</span></div>
+      </div>
+      <h1>Correos de reclutamiento</h1>
+      <p class="d-sub">Primer contacto + recordatorio · Contrato A (ingreso alto) / Contrato B (resto) · 5 idiomas.</p>
+    </div>
+  </div>
+</header>
+
+<main class="d-wrap">
+
+  <div class="cr-note">
+    <b>Contrato A</b> = países de ingreso alto (US$ 89 / US$ 169 la cuota del cliente · US$ 17,80 / US$ 33,80 tu comisión).
+    <b>Contrato B</b> = el resto (US$ 29 / US$ 59 · US$ 5,80 / US$ 11,80). El correo A o B según el país del contacto.
+    El <code>[enlace de baja]</code> es obligatorio (RGPD / CASL) — ponelo cuando exista el mecanismo real de opt-out.
+  </div>
+
+  <div class="cr-toolbar">
+    <div class="cr-group" id="cr-langs"><b>Idioma</b></div>
+    <div class="cr-group" id="cr-tiers"><b>Contrato</b></div>
+    <div class="cr-group" id="cr-which"><b>Correo</b></div>
+  </div>
+
+  <div class="cr-field">
+    <label>Asunto <button type="button" class="cr-copy" data-copy="subject">Copiar</button></label>
+    <div class="cr-subject" id="cr-subject"></div>
+  </div>
+
+  <div class="cr-field">
+    <label>Cuerpo <button type="button" class="cr-copy" data-copy="body">Copiar</button></label>
+    <textarea class="cr-body" id="cr-body" spellcheck="false"></textarea>
+  </div>
+
+  <p class="d-foot"><a href="/">Volver a ledyvas.com</a></p>
+</main>
+
+<script src="assets/js/correos-texto.js"></script>
+<script>
+(function () {
+  "use strict";
+  var C = window.CorreosTexto;
+  var state = { lang: "es", tier: "A", which: "first" };
+
+  var LANG_LABEL = { es: "ES", en: "EN", it: "IT", fr: "FR", pt: "PT" };
+  var WHICH_LABEL = { first: "1er contacto", reminder: "Recordatorio" };
+
+  function seg(hostId, items, key) {
+    var host = document.getElementById(hostId);
+    items.forEach(function (it) {
+      var b = document.createElement("button");
+      b.className = "cr-btn";
+      b.type = "button";
+      b.textContent = it.label;
+      b.setAttribute("data-val", it.val);
+      if (state[key] === it.val) b.setAttribute("aria-current", "true");
+      b.addEventListener("click", function () {
+        state[key] = it.val;
+        host.querySelectorAll(".cr-btn").forEach(function (x) { x.removeAttribute("aria-current"); });
+        b.setAttribute("aria-current", "true");
+        render();
+      });
+      host.appendChild(b);
+    });
+  }
+
+  function render() {
+    var m = C.build(state.lang, state.tier, state.which);
+    document.getElementById("cr-subject").textContent = m.subject;
+    document.getElementById("cr-body").value = m.body;
+    document.documentElement.lang = state.lang;
+  }
+
+  seg("cr-langs", C.langs.map(function (l) { return { label: LANG_LABEL[l], val: l }; }), "lang");
+  seg("cr-tiers", [{ label: "A", val: "A" }, { label: "B", val: "B" }], "tier");
+  seg("cr-which", [{ label: WHICH_LABEL.first, val: "first" }, { label: WHICH_LABEL.reminder, val: "reminder" }], "which");
+
+  document.querySelectorAll(".cr-copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var what = btn.getAttribute("data-copy");
+      var txt = (what === "subject")
+        ? document.getElementById("cr-subject").textContent
+        : document.getElementById("cr-body").value;
+      var done = function () {
+        var orig = btn.textContent;
+        btn.textContent = "Copiado ✓";
+        btn.classList.add("ok");
+        setTimeout(function () { btn.textContent = orig; btn.classList.remove("ok"); }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(done, function () {});
+      } else {
+        var ta = document.createElement("textarea");
+        ta.value = txt; document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
