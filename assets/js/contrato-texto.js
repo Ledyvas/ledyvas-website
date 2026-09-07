@@ -16,15 +16,19 @@
    (DPA + Cláusulas Contractuales Tipo de la UE + exclusión de la Ley 173 y de la
    agencia), firma electrónica avanzada (cláusula 21). El asesor legal firmó su
    declaración de respaldo del texto español el 2026-09-06.
-   La versión en ESPAÑOL rige (ley de la República Dominicana). Las traducciones
-   a en/it/fr/pt y la separación real de contratos A/B por país quedan pendientes
-   — hasta entonces todas apuntan a la versión en español. Usado por contrato.html.
+   La versión en ESPAÑOL rige (ley de la República Dominicana).
+   Separación real de contratos A/B por país APLICADA (2026-09-07): la cláusula 3
+   es lo único que cambia (A = ingreso alto US$89/US$169, B = resto US$29/US$59).
+   contrato.html?...&tier=alto -> Contrato A · &tier=resto -> Contrato B · sin
+   tier -> vista combinada (para lectura pública). Las traducciones a en/it/fr/pt
+   siguen pendientes — hasta entonces todos los idiomas muestran el español.
+   Usado por contrato.html.
    ========================================================================== */
 (function () {
   "use strict";
 
   var META = {
-    es: { draft: "Texto español validado por el asesor legal (declaración de respaldo del 2026-09-06). Pendiente: separación de contratos A/B por país y traducciones oficiales.", governs: "" },
+    es: { draft: "Texto español validado por el asesor legal (declaración de respaldo del 2026-09-06). La versión en español es la que rige. Traducciones oficiales a en/it/fr/pt pendientes.", governs: "" },
     en: { draft: "DRAFT — subject to legal review. The final wording is not translated yet; the governing Spanish version is shown below.", governs: "The Spanish version prevails (law of the Dominican Republic). Translations will be added once the final wording is confirmed." },
     it: { draft: "BOZZA — soggetta a revisione legale. Il testo definitivo non è ancora tradotto; di seguito la versione spagnola che fa fede.", governs: "Prevale la versione in spagnolo (legge della Repubblica Dominicana). Le traduzioni saranno aggiunte una volta confermato il testo definitivo." },
     fr: { draft: "PROJET — sous réserve d'une révision juridique. Le texte définitif n'est pas encore traduit ; la version espagnole qui fait foi est affichée ci-dessous.", governs: "La version espagnole prévaut (droit de la République dominicaine). Les traductions seront ajoutées une fois le texte définitif confirmé." },
@@ -41,10 +45,16 @@
     }
   };
 
+  // La cláusula 3 es lo ÚNICO que cambia entre el Contrato A (países de ingreso
+  // alto) y el Contrato B (el resto). El resto del articulado es idéntico.
+  var CLAUSE3_A = "El Promotor promueve dos ediciones de Ledyvas Enterprise: <b>Ledyvas Simple</b> y <b>Ledyvas Completo</b> (HORECA / Turismo). Por corresponder el país de residencia fiscal del Promotor —acreditado con sus documentos fiscales al firmar— a la categoría de <b>ingreso alto</b> conforme al Anexo A, la cuota mensual que paga cada cliente es de <b>US$ 89</b> (Simple) / <b>US$ 169</b> (Completo) por mes. Este renglón se fija al momento de la firma y <b>no varía durante la vigencia del contrato</b> aunque cambien las clasificaciones internacionales. Los precios pueden ajustarse con un preaviso de sesenta (60) días a los clientes activos y al Promotor. Las cuotas se expresan y se cobran en dólares de los Estados Unidos. <b>Una (1) suscripción habilita una (1) instalación de Ledyvas en un (1) equipo o local, con usuarios ilimitados</b>; un cliente con varios locales contrata una suscripción por local. La instalación es autónoma y opera sobre datos locales: <b>no es un sistema en red multiequipo</b>. El acceso concurrente desde varios equipos o sucursales en la nube no forma parte de esta versión.";
+  var CLAUSE3_B = "El Promotor promueve dos ediciones de Ledyvas Enterprise: <b>Ledyvas Simple</b> y <b>Ledyvas Completo</b> (HORECA / Turismo). Por corresponder el país de residencia fiscal del Promotor —acreditado con sus documentos fiscales al firmar— a un país <b>no clasificado como de ingreso alto</b> conforme al Anexo A, la cuota mensual que paga cada cliente es de <b>US$ 29</b> (Simple) / <b>US$ 59</b> (Completo) por mes. Este renglón se fija al momento de la firma y <b>no varía durante la vigencia del contrato</b> aunque cambien las clasificaciones internacionales. Los precios pueden ajustarse con un preaviso de sesenta (60) días a los clientes activos y al Promotor. Las cuotas se expresan y se cobran en dólares de los Estados Unidos. <b>Una (1) suscripción habilita una (1) instalación de Ledyvas en un (1) equipo o local, con usuarios ilimitados</b>; un cliente con varios locales contrata una suscripción por local. La instalación es autónoma y opera sobre datos locales: <b>no es un sistema en red multiequipo</b>. El acceso concurrente desde varios equipos o sucursales en la nube no forma parte de esta versión.";
+  var CLAUSE3_COMBINED = "El Promotor promueve dos ediciones de Ledyvas Enterprise: <b>Ledyvas Simple</b> y <b>Ledyvas Completo</b> (HORECA / Turismo). La cuota mensual que paga cada cliente la fija Ledyvas <b>según el país de residencia fiscal del Promotor</b>, acreditado con sus documentos fiscales al firmar: para países de ingreso alto (según el Anexo A), <b>US$ 89</b> (Simple) / <b>US$ 169</b> (Completo) por mes; para cualquier otro país, <b>US$ 29</b> (Simple) / <b>US$ 59</b> (Completo) por mes. El renglón aplicable se fija al momento de la firma y <b>no varía durante la vigencia del contrato</b> aunque cambien clasificaciones internacionales. Los precios pueden ajustarse con un preaviso de sesenta (60) días a los clientes activos y al Promotor. Las cuotas se expresan y se cobran en dólares de los Estados Unidos. <b>Una (1) suscripción habilita una (1) instalación de Ledyvas en un (1) equipo o local, con usuarios ilimitados</b>; un cliente con varios locales contrata una suscripción por local. La instalación es autónoma y opera sobre datos locales: <b>no es un sistema en red multiequipo</b>. El acceso concurrente desde varios equipos o sucursales en la nube no forma parte de esta versión. <i>(En producción, el Promotor firma el Contrato A o el B según el país de su residencia fiscal; ambos son idénticos salvo esta cláusula.)</i>";
+
   var C_ES = [
     { t: "1. Objeto y designación", b: "Ledyvas designa al Promotor Independiente para <b>promover, dar de alta y acompañar</b> a clientes finales que contraten <b>Ledyvas Enterprise</b> bajo la modalidad de <b>suscripción mensual</b>, dentro del territorio indicado en la ficha de firma. El Promotor Independiente actúa por cuenta propia, <b>sin poder de representación, sin facultad de obligar a Ledyvas frente a terceros ni de cobrar en su nombre</b>. <b>No compra, no revende, no almacena licencias y no percibe pagos de los clientes.</b> Cada cliente se suscribe directamente con Ledyvas y le paga a Ledyvas. Su ingreso proviene únicamente de la comisión recurrente de la cláusula 5; no recibe compensación por incorporar a otros promotores. Ledyvas no garantiza ningún nivel de ingresos." },
     { t: "2. Ámbito territorial", b: "El territorio del Promotor es el indicado en la ficha de firma. La designación es <b>exclusiva</b> dentro de ese territorio: Ledyvas no nombrará a otro Distribuidor Oficial para la misma zona mientras el Promotor cumpla la cuota de la cláusula 14. Toda suscripción de un cliente con domicilio en ese territorio se atribuye al Promotor. El territorio se dimensiona al mercado real y a la capacidad del Promotor (habitualmente un área metropolitana o una zona urbana acotada, no una provincia ni un país). Ledyvas conserva el derecho de vender Ledyvas Pro directamente en cualquier lugar." },
-    { t: "3. Producto, ediciones y precios", b: "El Promotor promueve dos ediciones de Ledyvas Enterprise: <b>Ledyvas Simple</b> y <b>Ledyvas Completo</b> (HORECA / Turismo). La cuota mensual que paga cada cliente la fija Ledyvas <b>según el país de residencia fiscal del Promotor</b>, acreditado con sus documentos fiscales al firmar: para países de ingreso alto (según el Anexo A), <b>US$ 89</b> (Simple) / <b>US$ 169</b> (Completo) por mes; para cualquier otro país, <b>US$ 29</b> (Simple) / <b>US$ 59</b> (Completo) por mes. El renglón aplicable se fija al momento de la firma y <b>no varía durante la vigencia del contrato</b> aunque cambien clasificaciones internacionales. Los precios pueden ajustarse con un preaviso de sesenta (60) días a los clientes activos y al Promotor. Las cuotas se expresan y se cobran en dólares de los Estados Unidos. <b>Una (1) suscripción habilita una (1) instalación de Ledyvas en un (1) equipo o local, con usuarios ilimitados</b>; un cliente con varios locales contrata una suscripción por local. La instalación es autónoma y opera sobre datos locales: <b>no es un sistema en red multiequipo</b>. El acceso concurrente desde varios equipos o sucursales en la nube no forma parte de esta versión. <i>(En producción, el Promotor firma el Contrato A o el B según su país; ambos son idénticos salvo esta cláusula.)</i>" },
+    { t: "3. Producto, ediciones y precios", b: CLAUSE3_COMBINED },
     { t: "4. Alta de una suscripción", b: "El Promotor registra al cliente desde su panel de control, con los datos del cliente y su edición (Simple o Completo). El cliente confirma la contratación y registra su medio de pago (tarjeta) en la plataforma de Ledyvas. <b>Ledyvas cobra la cuota mensual directamente al cliente y le emite el comprobante fiscal correspondiente.</b> Para clientes fuera de la República Dominicana la operación es exportación de servicios (Art. 344 del Código Tributario y Art. 14 literal j del Decreto 293-11), exenta de ITBIS. Para clientes domiciliados en la República Dominicana, la cuota lleva el 18% de ITBIS aplicable. Ledyvas cobra la primera cuota y activa la suscripción; la clave de activación se emite <b>solo tras el cobro efectivo de la primera cuota</b>. El Promotor no cobra al cliente ni le emite factura por la cuota." },
     { t: "5. Comisión recurrente del Promotor", b: "Por cada suscripción activa que le sea atribuida, el Promotor percibe una <b>comisión del veinte por ciento (20%) de cada cuota mensual efectivamente cobrada</b> por Ledyvas al cliente, mientras la suscripción se mantenga activa y al día. Si en un mes el cliente no paga, no se genera comisión por ese mes para ese cliente. La comisión no incluye impuestos indirectos que el Promotor deba aplicar según su normativa." },
     { t: "6. Liquidación y pago de la comisión", b: "Ledyvas pone a disposición del Promotor, dentro de los primeros diez (10) días de cada mes, un <b>informe del mes anterior</b>: suscripciones activas atribuidas, cuotas cobradas y comisión devengada. El Promotor emite su factura a Ledyvas por ese importe, conforme a su normativa fiscal. Ledyvas abona la comisión dentro de los quince (15) días de recibida la factura conforme, por el medio de pago que el Promotor haya indicado. Ledyvas puede condicionar el pago a recibir la factura." },
@@ -69,16 +79,36 @@
     { t: "Anexo B · Sección II — Protección de datos (RGPD / GDPR y Ley 172-13)", b: "<b>2.1 Roles del tratamiento.</b> A los efectos del Reglamento General de Protección de Datos (RGPD — UE 2016/679) y de la Ley núm. 172-13 de la República Dominicana, el Promotor actúa como <b>responsable independiente del tratamiento</b> respecto de la captación inicial de los datos de los clientes potenciales de su territorio. Ledyvas pasa a ser responsable del tratamiento una vez que los datos se ingresan en su plataforma y el cliente formaliza su suscripción directa.<br><br><b>2.2 Cláusulas Contractuales Tipo (SCC).</b> Dado que la República Dominicana no cuenta con una decisión de adecuación de la Comisión Europea, las partes incorporan por referencia y se obligan bajo las Cláusulas Contractuales Tipo (módulo responsable a responsable) aprobadas por la Comisión Europea. El Promotor garantiza que dispone de base jurídica legítima (interés legítimo o consentimiento, según corresponda) para transferir los datos del cliente final a Ledyvas en la República Dominicana.<br><br><b>2.3 Obligaciones del Promotor.</b> El Promotor se compromete a: (a) implementar medidas de seguridad técnicas y organizativas adecuadas para evitar la pérdida, alteración o acceso no autorizado a los datos de los clientes durante la fase de captación; (b) notificar a Ledyvas de forma inmediata (máximo 48 horas) cualquier violación de seguridad o filtración de datos que involucre a clientes potenciales o activos de la plataforma Ledyvas; (c) atender con prontitud los derechos de acceso, rectificación, cancelación y oposición (ARCO) que ejerzan los titulares de los datos en su territorio, coordinando con Ledyvas cuando sea necesario.<br><br><b>2.4 Indemnidad por datos.</b> El Promotor mantendrá indemne a Ledyvas frente a cualquier sanción, multa administrativa o reclamación judicial interpuesta por las autoridades de protección de datos (de la Unión Europea, la Privacy Commissioner de Canadá u otras) que se derive del incumplimiento por parte del Promotor en los métodos de captación o en el envío de correos no solicitados (spam)." }
   ];
 
-  // Hasta que el abogado confirme el texto español final, todos los idiomas
-  // muestran la versión en español (la que rige). Se traducirá después.
-  var DISTRIBUIDOR = { es: C_ES, en: C_ES, it: C_ES, fr: C_ES, pt: C_ES };
-  var BY_ROLE = { distribuidor: DISTRIBUIDOR };
+  // Deriva las tres versiones (combinada / A ingreso alto / B resto) cambiando
+  // solo la cláusula 3 (índice 2). El resto del articulado se comparte.
+  function withClause3(text) {
+    return C_ES.map(function (cl, i) {
+      return (i === 2) ? { t: cl.t, b: text } : cl;
+    });
+  }
+  var C_ES_A = withClause3(CLAUSE3_A);
+  var C_ES_B = withClause3(CLAUSE3_B);
+
+  // Las traducciones a en/it/fr/pt quedan pendientes; hasta entonces todos los
+  // idiomas muestran la versión en español (la que rige — cláusula 21).
+  var VARIANTS = {
+    combinada: { es: C_ES,   en: C_ES,   it: C_ES,   fr: C_ES,   pt: C_ES },
+    A:         { es: C_ES_A, en: C_ES_A, it: C_ES_A, fr: C_ES_A, pt: C_ES_A },
+    B:         { es: C_ES_B, en: C_ES_B, it: C_ES_B, fr: C_ES_B, pt: C_ES_B }
+  };
+
+  // tier: "alto" -> Contrato A · "resto" -> Contrato B · cualquier otra cosa -> combinada
+  function pickVariant(tier) {
+    if (tier === "alto" || tier === "A" || tier === "a") return VARIANTS.A;
+    if (tier === "resto" || tier === "B" || tier === "b") return VARIANTS.B;
+    return VARIANTS.combinada;
+  }
 
   window.ContratoTexto = {
     role: function () { return "distribuidor"; },
     title: function (role, lang) { return (TITLES.distribuidor[lang] || TITLES.distribuidor.es); },
     meta: function (lang) { return META[lang] || META.es; },
     parties: function (role, lang) { var m = PARTIES.distribuidor; return m[lang] || m.es; },
-    clauses: function (role, lang) { var m = BY_ROLE.distribuidor; return m[lang] || m.es; }
+    clauses: function (role, lang, tier) { var m = pickVariant(tier); return m[lang] || m.es; }
   };
 })();

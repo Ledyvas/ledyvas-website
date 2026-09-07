@@ -96,6 +96,7 @@
   var params = new URLSearchParams(location.search);
   var role = C.role();   // único contrato: Distribuidor Oficial
   var token = params.get("t") || "";
+  var tier = params.get("tier") || "";   // "alto" -> Contrato A · "resto" -> Contrato B · vacío -> combinada
 
   function applyStaticI18n() {
     document.documentElement.lang = T.lang();
@@ -128,12 +129,15 @@
     var meta = C.meta(lang);
 
     document.getElementById("ct-draft").textContent = meta.draft;
-    document.getElementById("ct-title").textContent = C.title(role, lang);
+    var tierTag = (tier === "alto") ? "  ·  Contrato A (ingreso alto)"
+                : (tier === "resto") ? "  ·  Contrato B"
+                : "";
+    document.getElementById("ct-title").textContent = C.title(role, lang) + tierTag;
     document.getElementById("ct-parties").innerHTML = C.parties(role, lang);
 
     var host = document.getElementById("ct-clauses");
     host.innerHTML = "";
-    C.clauses(role, lang).forEach(function (cl) {
+    C.clauses(role, lang, tier).forEach(function (cl) {
       var d = document.createElement("div");
       d.className = "d-clause";
       var h = document.createElement("h4");
