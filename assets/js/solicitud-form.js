@@ -21,6 +21,7 @@
       { n: "website",        k: "f.website",        type: "url",  req: true }
     ]},
     { sec: "f.sec.fiscal", fields: [
+      { n: "fiscalCountry", k: "f.fiscalCountry", type: "text", hint: "f.fiscalCountry.hint", req: true },
       { n: "regNumber",   k: "f.regNumber",   type: "text", hint: "f.regNumber.hint", req: true },
       { n: "companyTaxId", k: "f.companyTaxId", type: "text", req: true },
       { n: "incorpFile",  k: "f.incorpFile",  type: "file", hint: "f.incorpFile.hint", req: true }
