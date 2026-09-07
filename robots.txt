@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /distribuidores.html
+Disallow: /contrato.html
+Disallow: /panel.html
+Disallow: /admin.html
 
 Sitemap: https://ledyvas.com/sitemap.xml
