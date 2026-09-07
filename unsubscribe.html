@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Ledyvas — Dar de baja</title>
+<link rel="icon" href="assets/img/favicon.png">
+<style>
+  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f7f7f5; color: #1c2733; margin: 0; min-height: 100vh; display: flex;
+    align-items: center; justify-content: center; padding: 24px; }
+  .card { background: #fff; border: 1px solid #e2ddd3; border-radius: 12px; padding: 34px 30px;
+    max-width: 460px; text-align: center; }
+  img { width: 40px; height: 40px; margin-bottom: 14px; }
+  h1 { font-size: 18px; margin: 0 0 10px; }
+  p { margin: 0 0 6px; color: #55636f; }
+  a { color: #1e4faf; }
+  .muted { font-size: 13px; color: #8a949e; margin-top: 14px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <img src="assets/img/logo-icon.png" alt="Ledyvas">
+  <h1 id="t">Procesando…</h1>
+  <p id="m"></p>
+  <p class="muted"><a href="/">ledyvas.com</a></p>
+</div>
+<script>
+(function () {
+  "use strict";
+  var WORKER = "https://ledyvas-license-server.ledyvas.workers.dev/unsubscribe";
+  var params = new URLSearchParams(location.search);
+  var email = (params.get("e") || params.get("email") || "").trim();
+  var langRaw = (params.get("lang") || navigator.language || "es").slice(0, 2).toLowerCase();
+  var lang = ["es", "en", "it", "fr", "pt"].indexOf(langRaw) !== -1 ? langRaw : "es";
+
+  var TXT = {
+    es: { title: "Te diste de baja", ok: "No volveremos a escribirte. Gracias.",
+      bad: "No pudimos identificar tu dirección. Escribí a info@ledyvas.com y te damos de baja a mano.",
+      err: "Hubo un problema. Escribí a info@ledyvas.com y te damos de baja a mano." },
+    en: { title: "You're unsubscribed", ok: "We won't email you again. Thank you.",
+      bad: "We could not identify your address. Email info@ledyvas.com and we'll remove you manually.",
+      err: "Something went wrong. Email info@ledyvas.com and we'll remove you manually." },
+    it: { title: "Disiscrizione completata", ok: "Non ti scriveremo più. Grazie.",
+      bad: "Non siamo riusciti a identificare il tuo indirizzo. Scrivi a info@ledyvas.com e ti rimuoviamo a mano.",
+      err: "Si è verificato un problema. Scrivi a info@ledyvas.com e ti rimuoviamo a mano." },
+    fr: { title: "Vous êtes désinscrit", ok: "Nous ne vous écrirons plus. Merci.",
+      bad: "Nous n'avons pas pu identifier votre adresse. Écrivez à info@ledyvas.com et nous vous retirerons manuellement.",
+      err: "Un problème est survenu. Écrivez à info@ledyvas.com et nous vous retirerons manuellement." },
+    pt: { title: "Subscrição cancelada", ok: "Não voltaremos a escrever-lhe. Obrigado.",
+      bad: "Não conseguimos identificar o seu endereço. Escreva para info@ledyvas.com e removemo-lo manualmente.",
+      err: "Ocorreu um problema. Escreva para info@ledyvas.com e removemo-lo manualmente." }
+  };
+  var t = TXT[lang];
+  document.documentElement.lang = lang;
+
+  // Quitar el email de la barra de direcciones / historial en cuanto lo leemos.
+  try { history.replaceState(null, "", location.pathname); } catch (e) {}
+
+  function show(title, msg) {
+    document.getElementById("t").textContent = title;
+    document.getElementById("m").textContent = msg;
+  }
+
+  if (!email || email.indexOf("@") === -1) { show(t.title, t.bad); return; }
+
+  fetch(WORKER, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ email: email })
+  })
+    .then(function (r) { return r.json().catch(function () { return null; }); })
+    .then(function (j) {
+      if (j && j.ok) show(t.title, t.ok);
+      else if (j && j.error === "invalid_email") show(t.title, t.bad);
+      else show(t.title, t.err);
+    })
+    .catch(function () { show(t.title, t.err); });
+})();
+</script>
+</body>
+</html>

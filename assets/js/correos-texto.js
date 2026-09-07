@@ -4,8 +4,11 @@
    tiene el primer contacto + el recordatorio; A y B solo cambian el párrafo de
    precios y la línea de comisión del recordatorio. Firma: "Equipo de Alianzas",
    dirección postal + enlace de baja (requisito RGPD/ePrivacy/CASL).
-   Placeholders a personalizar antes de enviar: [nombre]/[name], [empresa]/[company],
-   y el [enlace de baja] real cuando exista el mecanismo de opt-out.
+   Placeholders que reemplaza la herramienta de envío: [nombre]/[name],
+   [empresa]/[company] y [email] (dirección del destinatario, para el enlace de baja).
+   El opt-out es real: https://ledyvas.com/unsubscribe.html?e=[email] -> POST al
+   Worker (/unsubscribe) que guarda `unsub:<email>`. Leo baja la lista de supresión
+   con GET /admin/unsubscribes (Bearer) antes de cada envío.
    Español rige; en/it/fr/pt traducción de cortesía (2026-09-07).
    ========================================================================== */
 (function () {
@@ -25,12 +28,14 @@
     fr: "Cordialement,\nÉquipe Alliances · Ledyvas\ninfo@ledyvas.com · https://ledyvas.com · Leonardo Cosci, Westland Residences, La Romana, République dominicaine",
     pt: "Cumprimentos,\nEquipa de Alianças · Ledyvas\ninfo@ledyvas.com · https://ledyvas.com · Leonardo Cosci, Westland Residences, La Romana, República Dominicana"
   };
+  // [email] lo reemplaza la herramienta de envío por la dirección del destinatario
+  // (igual que [nombre]/[empresa]). El enlace da la baja en un solo clic.
   var OPTOUT = {
-    es: "Dar de baja / Unsubscribe: [enlace de baja]. La baja es de un solo clic y surte efecto de inmediato; no te volvemos a escribir.",
-    en: "Unsubscribe: [unsubscribe link]. Unsubscribing takes one click and is effective immediately; we will not email you again.",
-    it: "Annulla iscrizione / Unsubscribe: [link di disiscrizione]. La disiscrizione richiede un solo clic ed è immediata; non ti scriveremo più.",
-    fr: "Se désinscrire / Unsubscribe : [lien de désinscription]. La désinscription se fait en un clic et prend effet immédiatement ; nous ne vous écrirons plus.",
-    pt: "Cancelar subscrição / Unsubscribe: [link de cancelamento]. O cancelamento é feito com um clique e produz efeito imediato; não voltaremos a escrever-lhe."
+    es: "Dar de baja: https://ledyvas.com/unsubscribe.html?e=[email] — un solo clic, efecto inmediato; no te volvemos a escribir.",
+    en: "Unsubscribe: https://ledyvas.com/unsubscribe.html?e=[email] — one click, effective immediately; we will not email you again.",
+    it: "Annulla iscrizione: https://ledyvas.com/unsubscribe.html?e=[email] — un solo clic, effetto immediato; non ti scriveremo più.",
+    fr: "Se désinscrire : https://ledyvas.com/unsubscribe.html?e=[email] — un clic, effet immédiat ; nous ne vous écrirons plus.",
+    pt: "Cancelar subscrição: https://ledyvas.com/unsubscribe.html?e=[email] — um clique, efeito imediato; não voltaremos a escrever-lhe."
   };
 
   var DATA = {
@@ -54,7 +59,7 @@
         "· Ledyvas le cobra al cliente por tarjeta y te paga tu comisión cada mes. Vos das de alta y acompañás; el soporte técnico lo damos nosotros.\n" +
         "· Territorio de exclusividad para [empresa] en tu zona.\n\n" +
         "Todo está en https://ledyvas.com/distribuidores — al aprobarte recibís tu licencia de demostración, y tus clientes prueban 14 días gratis, descargables en www.ledyvas.com, antes de suscribirse.\n\n" +
-        "Si no es para vos, dar de baja / unsubscribe en un clic: [enlace de baja]. No te escribo más.\n\n" +
+        "Si no es para vos, date de baja en un clic: https://ledyvas.com/unsubscribe.html?e=[email]. No te escribo más.\n\n" +
         "{{SIG_SHORT}}",
       A: {
         pricePara: "Cuotas al cliente final: Ledyvas Simple US$ 89 al mes, Ledyvas Completo (hostelería y turismo) US$ 169 al mes. Tu comisión es el 20% de cada cuota (US$ 17,80 y US$ 33,80 por cliente al mes), de forma recurrente.",
@@ -85,7 +90,7 @@
         "· Ledyvas charges the client by card and pays you your commission each month. You onboard and support; we handle technical support.\n" +
         "· Exclusive territory for [company] in your area.\n\n" +
         "Everything is at https://ledyvas.com/distribuidores — on approval you receive your demo licence, and your clients try it free for 14 days, downloadable at www.ledyvas.com, before subscribing.\n\n" +
-        "If this isn't for you, unsubscribe in one click: [unsubscribe link]. I won't email you again.\n\n" +
+        "If this isn't for you, unsubscribe in one click: https://ledyvas.com/unsubscribe.html?e=[email]. I won't email you again.\n\n" +
         "{{SIG_SHORT}}",
       A: {
         pricePara: "End-client fees: Ledyvas Simple US$ 89 per month, Ledyvas Complete (hospitality and tourism) US$ 169 per month. Your commission is 20% of each fee (US$ 17.80 and US$ 33.80 per client per month), recurring.",
@@ -116,7 +121,7 @@
         "· Ledyvas addebita il cliente con carta e ti paga la commissione ogni mese. Tu attivi e assisti; il supporto tecnico lo diamo noi.\n" +
         "· Territorio in esclusiva per [azienda] nella tua zona.\n\n" +
         "Tutto è su https://ledyvas.com/distribuidores — all'approvazione ricevi la tua licenza dimostrativa, e i tuoi clienti provano gratis per 14 giorni, scaricabile su www.ledyvas.com, prima di abbonarsi.\n\n" +
-        "Se non fa per te, annulla l'iscrizione con un clic: [link di disiscrizione]. Non ti scrivo più.\n\n" +
+        "Se non fa per te, annulla l'iscrizione con un clic: https://ledyvas.com/unsubscribe.html?e=[email]. Non ti scrivo più.\n\n" +
         "{{SIG_SHORT}}",
       A: {
         pricePara: "Quote al cliente finale: Ledyvas Simple US$ 89 al mese, Ledyvas Completo (ristorazione e turismo) US$ 169 al mese. La tua commissione è il 20% di ogni quota (US$ 17,80 e US$ 33,80 per cliente al mese), in modo ricorrente.",
@@ -147,7 +152,7 @@
         "· Ledyvas facture le client par carte et vous verse votre commission chaque mois. Vous intégrez et accompagnez ; le support technique, c'est nous.\n" +
         "· Territoire exclusif pour [entreprise] dans votre zone.\n\n" +
         "Tout est sur https://ledyvas.com/distribuidores — une fois approuvé, vous recevez votre licence de démonstration, et vos clients l'essaient gratuitement pendant 14 jours, téléchargeable sur www.ledyvas.com, avant de souscrire.\n\n" +
-        "Si ce n'est pas pour vous, désinscrivez-vous en un clic : [lien de désinscription]. Je ne vous écrirai plus.\n\n" +
+        "Si ce n'est pas pour vous, désinscrivez-vous en un clic : https://ledyvas.com/unsubscribe.html?e=[email]. Je ne vous écrirai plus.\n\n" +
         "{{SIG_SHORT}}",
       A: {
         pricePara: "Redevances du client final : Ledyvas Simple 89 US$ par mois, Ledyvas Complet (hôtellerie et tourisme) 169 US$ par mois. Votre commission est de 20 % de chaque redevance (17,80 US$ et 33,80 US$ par client et par mois), de façon récurrente.",
@@ -178,7 +183,7 @@
         "· A Ledyvas cobra ao cliente por cartão e paga-lhe a comissão todos os meses. Você ativa e acompanha; o suporte técnico é connosco.\n" +
         "· Território exclusivo para [empresa] na sua zona.\n\n" +
         "Está tudo em https://ledyvas.com/distribuidores — ao ser aprovado, recebe a sua licença de demonstração, e os seus clientes testam 14 dias grátis, disponível em www.ledyvas.com, antes de subscrever.\n\n" +
-        "Se não é para si, cancele a subscrição com um clique: [link de cancelamento]. Não volto a escrever-lhe.\n\n" +
+        "Se não é para si, cancele a subscrição com um clique: https://ledyvas.com/unsubscribe.html?e=[email]. Não volto a escrever-lhe.\n\n" +
         "{{SIG_SHORT}}",
       A: {
         pricePara: "Mensalidades do cliente final: Ledyvas Simple US$ 89 por mês, Ledyvas Completo (hotelaria e turismo) US$ 169 por mês. A sua comissão é 20% de cada mensalidade (US$ 17,80 e US$ 33,80 por cliente por mês), de forma recorrente.",

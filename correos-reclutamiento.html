@@ -33,7 +33,7 @@
 </head>
 <body>
 
-<div class="d-preview">Uso interno — plantillas de la campaña de reclutamiento. Personalizá <code>[nombre]</code> / <code>[empresa]</code> y el enlace de baja antes de enviar.</div>
+<div class="d-preview">Uso interno — plantillas de la campaña de reclutamiento. Tu herramienta de envío reemplaza <code>[nombre]</code> / <code>[empresa]</code> / <code>[email]</code> (esta última va en el enlace de baja, ya funcional).</div>
 
 <header class="d-header">
   <div class="d-wrap">
@@ -53,7 +53,7 @@
   <div class="cr-note">
     <b>Contrato A</b> = países de ingreso alto (US$ 89 / US$ 169 la cuota del cliente · US$ 17,80 / US$ 33,80 tu comisión).
     <b>Contrato B</b> = el resto (US$ 29 / US$ 59 · US$ 5,80 / US$ 11,80). El correo A o B según el país del contacto.
-    El <code>[enlace de baja]</code> es obligatorio (RGPD / CASL) — ponelo cuando exista el mecanismo real de opt-out.
+    El enlace de baja (<code>ledyvas.com/unsubscribe.html?e=[email]</code>) ya funciona: da la baja en un clic y la registra. Antes de cada envío, bajá la lista de supresión: <code>GET /admin/unsubscribes</code> (Bearer ADMIN_SECRET) y quitá esos emails de tu lista.
   </div>
 
   <div class="cr-toolbar">
