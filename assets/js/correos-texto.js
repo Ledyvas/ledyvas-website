@@ -62,12 +62,12 @@
         "Si no es para usted, dese de baja en un clic: https://ledyvas.com/unsubscribe.html?e=[email]. No volveré a escribirle.\n\n" +
         "{{SIG_SHORT}}",
       A: {
-        pricePara: "Cuotas al cliente final: Ledyvas Simple US$ 89 al mes, Ledyvas Completo (hostelería y turismo) US$ 169 al mes. Su comisión es el 20% de cada cuota (US$ 17,80 y US$ 33,80 por cliente al mes), de forma recurrente.",
-        commLine: "· Sin cuota de alta ni coste de entrada. Cobra el 20% de la cuota mensual de cada cliente, de forma recurrente, mientras siga activo (US$ 17,80/mes por cliente Simple, US$ 33,80/mes por cliente Completo)."
+        pricePara: "La cuota mensual del cliente y, con ella, su comisión, dependen del país de residencia fiscal de su empresa. El importe exacto se le comunica junto con el formulario de adhesión, según el documento registrado. Su comisión es siempre el 20% de cada cuota, de forma recurrente.",
+        commLine: "· Sin cuota de alta ni coste de entrada. Cobra el 20% de la cuota mensual de cada cliente, de forma recurrente, mientras siga activo."
       },
       B: {
-        pricePara: "Cuotas al cliente final: Ledyvas Simple US$ 29 al mes, Ledyvas Completo (hostelería y turismo) US$ 59 al mes. Su comisión es el 20% de cada cuota (US$ 5,80 y US$ 11,80 por cliente al mes), de forma recurrente.",
-        commLine: "· Sin cuota de alta ni coste de entrada. Cobra el 20% de la cuota mensual de cada cliente, de forma recurrente, mientras siga activo (US$ 5,80/mes por cliente Simple, US$ 11,80/mes por cliente Completo)."
+        pricePara: "La cuota mensual del cliente y, con ella, su comisión, dependen del país de residencia fiscal de su empresa. El importe exacto se le comunica junto con el formulario de adhesión, según el documento registrado. Su comisión es siempre el 20% de cada cuota, de forma recurrente.",
+        commLine: "· Sin cuota de alta ni coste de entrada. Cobra el 20% de la cuota mensual de cada cliente, de forma recurrente, mientras siga activo."
       }
     },
     en: {
@@ -93,12 +93,12 @@
         "If this isn't for you, unsubscribe in one click: https://ledyvas.com/unsubscribe.html?e=[email]. I won't email you again.\n\n" +
         "{{SIG_SHORT}}",
       A: {
-        pricePara: "End-client fees: Ledyvas Simple US$ 89 per month, Ledyvas Complete (hospitality and tourism) US$ 169 per month. Your commission is 20% of each fee (US$ 17.80 and US$ 33.80 per client per month), recurring.",
-        commLine: "· No membership, no entry cost. You earn 20% of each client's monthly fee, recurring, for as long as they stay active (US$ 17.80/mo per Simple client, US$ 33.80/mo per Complete client)."
+        pricePara: "The client's monthly fee — and with it your commission — depend on your company's country of fiscal residence. The exact amount is sent to you with the adhesion form, based on your registered document. Your commission is always 20% of each fee, recurring.",
+        commLine: "· No membership, no entry cost. You earn 20% of each client's monthly fee, recurring, for as long as they stay active."
       },
       B: {
-        pricePara: "End-client fees: Ledyvas Simple US$ 29 per month, Ledyvas Complete (hospitality and tourism) US$ 59 per month. Your commission is 20% of each fee (US$ 5.80 and US$ 11.80 per client per month), recurring.",
-        commLine: "· No membership, no entry cost. You earn 20% of each client's monthly fee, recurring, for as long as they stay active (US$ 5.80/mo per Simple client, US$ 11.80/mo per Complete client)."
+        pricePara: "The client's monthly fee — and with it your commission — depend on your company's country of fiscal residence. The exact amount is sent to you with the adhesion form, based on your registered document. Your commission is always 20% of each fee, recurring.",
+        commLine: "· No membership, no entry cost. You earn 20% of each client's monthly fee, recurring, for as long as they stay active."
       }
     },
     it: {
@@ -124,12 +124,12 @@
         "Se non fa per te, annulla l'iscrizione con un clic: https://ledyvas.com/unsubscribe.html?e=[email]. Non ti scrivo più.\n\n" +
         "{{SIG_SHORT}}",
       A: {
-        pricePara: "Quote al cliente finale: Ledyvas Simple US$ 89 al mese, Ledyvas Completo (ristorazione e turismo) US$ 169 al mese. La tua commissione è il 20% di ogni quota (US$ 17,80 e US$ 33,80 per cliente al mese), in modo ricorrente.",
-        commLine: "· Nessuna quota di adesione, nessun costo d'ingresso. Incassi il 20% della quota mensile di ogni cliente, in modo ricorrente, finché resta attivo (US$ 17,80/mese per cliente Simple, US$ 33,80/mese per cliente Completo)."
+        pricePara: "La quota mensile del cliente — e con essa la tua commissione — dipendono dal paese di residenza fiscale della tua azienda. L'importo esatto ti viene comunicato insieme al modulo di adesione, in base al documento registrato. La tua commissione è sempre il 20% di ogni quota, in modo ricorrente.",
+        commLine: "· Nessuna quota di adesione, nessun costo d'ingresso. Incassi il 20% della quota mensile di ogni cliente, in modo ricorrente, finché resta attivo."
       },
       B: {
-        pricePara: "Quote al cliente finale: Ledyvas Simple US$ 29 al mese, Ledyvas Completo (ristorazione e turismo) US$ 59 al mese. La tua commissione è il 20% di ogni quota (US$ 5,80 e US$ 11,80 per cliente al mese), in modo ricorrente.",
-        commLine: "· Nessuna quota di adesione, nessun costo d'ingresso. Incassi il 20% della quota mensile di ogni cliente, in modo ricorrente, finché resta attivo (US$ 5,80/mese per cliente Simple, US$ 11,80/mese per cliente Completo)."
+        pricePara: "La quota mensile del cliente — e con essa la tua commissione — dipendono dal paese di residenza fiscale della tua azienda. L'importo esatto ti viene comunicato insieme al modulo di adesione, in base al documento registrato. La tua commissione è sempre il 20% di ogni quota, in modo ricorrente.",
+        commLine: "· Nessuna quota di adesione, nessun costo d'ingresso. Incassi il 20% della quota mensile di ogni cliente, in modo ricorrente, finché resta attivo."
       }
     },
     fr: {
@@ -155,12 +155,12 @@
         "Si ce n'est pas pour vous, désinscrivez-vous en un clic : https://ledyvas.com/unsubscribe.html?e=[email]. Je ne vous écrirai plus.\n\n" +
         "{{SIG_SHORT}}",
       A: {
-        pricePara: "Redevances du client final : Ledyvas Simple 89 US$ par mois, Ledyvas Complet (hôtellerie et tourisme) 169 US$ par mois. Votre commission est de 20 % de chaque redevance (17,80 US$ et 33,80 US$ par client et par mois), de façon récurrente.",
-        commLine: "· Pas d'adhésion, pas de frais d'entrée. Vous percevez 20 % de la redevance mensuelle de chaque client, de façon récurrente, tant qu'il reste actif (17,80 US$/mois par client Simple, 33,80 US$/mois par client Complet)."
+        pricePara: "La redevance mensuelle du client — et donc votre commission — dépendent du pays de résidence fiscale de votre entreprise. Le montant exact vous est communiqué avec le formulaire d'adhésion, d'après le document enregistré. Votre commission est toujours de 20 % de chaque redevance, de façon récurrente.",
+        commLine: "· Pas d'adhésion, pas de frais d'entrée. Vous percevez 20 % de la redevance mensuelle de chaque client, de façon récurrente, tant qu'il reste actif."
       },
       B: {
-        pricePara: "Redevances du client final : Ledyvas Simple 29 US$ par mois, Ledyvas Complet (hôtellerie et tourisme) 59 US$ par mois. Votre commission est de 20 % de chaque redevance (5,80 US$ et 11,80 US$ par client et par mois), de façon récurrente.",
-        commLine: "· Pas d'adhésion, pas de frais d'entrée. Vous percevez 20 % de la redevance mensuelle de chaque client, de façon récurrente, tant qu'il reste actif (5,80 US$/mois par client Simple, 11,80 US$/mois par client Complet)."
+        pricePara: "La redevance mensuelle du client — et donc votre commission — dépendent du pays de résidence fiscale de votre entreprise. Le montant exact vous est communiqué avec le formulaire d'adhésion, d'après le document enregistré. Votre commission est toujours de 20 % de chaque redevance, de façon récurrente.",
+        commLine: "· Pas d'adhésion, pas de frais d'entrée. Vous percevez 20 % de la redevance mensuelle de chaque client, de façon récurrente, tant qu'il reste actif."
       }
     },
     pt: {
@@ -186,12 +186,12 @@
         "Se não é para si, cancele a subscrição com um clique: https://ledyvas.com/unsubscribe.html?e=[email]. Não volto a escrever-lhe.\n\n" +
         "{{SIG_SHORT}}",
       A: {
-        pricePara: "Mensalidades do cliente final: Ledyvas Simple US$ 89 por mês, Ledyvas Completo (hotelaria e turismo) US$ 169 por mês. A sua comissão é 20% de cada mensalidade (US$ 17,80 e US$ 33,80 por cliente por mês), de forma recorrente.",
-        commLine: "· Sem mensalidade de adesão, sem custo de entrada. Recebe 20% da mensalidade de cada cliente, de forma recorrente, enquanto se mantiver ativo (US$ 17,80/mês por cliente Simple, US$ 33,80/mês por cliente Completo)."
+        pricePara: "A mensalidade do cliente — e com ela a sua comissão — dependem do país de residência fiscal da sua empresa. O valor exato é-lhe comunicado com o formulário de adesão, conforme o documento registado. A sua comissão é sempre 20% de cada mensalidade, de forma recorrente.",
+        commLine: "· Sem mensalidade de adesão, sem custo de entrada. Recebe 20% da mensalidade de cada cliente, de forma recorrente, enquanto se mantiver ativo."
       },
       B: {
-        pricePara: "Mensalidades do cliente final: Ledyvas Simple US$ 29 por mês, Ledyvas Completo (hotelaria e turismo) US$ 59 por mês. A sua comissão é 20% de cada mensalidade (US$ 5,80 e US$ 11,80 por cliente por mês), de forma recorrente.",
-        commLine: "· Sem mensalidade de adesão, sem custo de entrada. Recebe 20% da mensalidade de cada cliente, de forma recorrente, enquanto se mantiver ativo (US$ 5,80/mês por cliente Simple, US$ 11,80/mês por cliente Completo)."
+        pricePara: "A mensalidade do cliente — e com ela a sua comissão — dependem do país de residência fiscal da sua empresa. O valor exato é-lhe comunicado com o formulário de adesão, conforme o documento registado. A sua comissão é sempre 20% de cada mensalidade, de forma recorrente.",
+        commLine: "· Sem mensalidade de adesão, sem custo de entrada. Recebe 20% da mensalidade de cada cliente, de forma recorrente, enquanto se mantiver ativo."
       }
     }
   };
