@@ -10,359 +10,310 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/distribuidores.css">
+<style>
+  .adm-gate { max-width: 420px; margin: 90px auto; padding: 28px; background:#fff; border:1px solid var(--gray-200,#e5e7eb); border-radius:12px; }
+  .adm-gate input { width:100%; padding:11px 12px; font-size:15px; border:1px solid var(--gray-300,#cbd5e1); border-radius:8px; margin:10px 0 14px; }
+  .adm-note { font-size:13px; color:var(--gray-500,#6b7280); margin:14px 0; }
+  .adm-country-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:6px 18px; padding:4px 20px 18px; font-size:13.5px; }
+  .adm-country-grid b { font-variant-numeric: tabular-nums; }
+  .adm-modal-body { text-align:left; max-height:70vh; overflow:auto; }
+  .adm-modal-body h4 { margin:16px 0 6px; font-size:14px; color:var(--navy,#0B1F3A); }
+  .adm-kv { font-size:13.5px; line-height:1.7; }
+  .adm-kv span { color:var(--gray-500,#6b7280); }
+  .adm-q { font-size:13.5px; margin:0 0 12px; }
+  .adm-q b { display:block; color:var(--navy,#0B1F3A); font-weight:600; margin-bottom:2px; }
+  .adm-ia { background:var(--gray-100,#f3f4f6); border-radius:8px; padding:12px 14px; font-size:13.5px; line-height:1.5; }
+  .adm-refresh { font-size:13px; }
+</style>
 </head>
 <body>
 
-<div class="d-preview" data-i18n="previewBanner"></div>
+<div class="d-preview" id="adm-preview" hidden></div>
 
 <header class="d-header">
   <div class="d-wrap">
     <div>
       <div class="d-brand">
         <img src="assets/img/logo-icon.png" alt="Ledyvas">
-        <div class="d-brand-txt">Ledyvas<span data-i18n="admin.title"></span></div>
+        <div class="d-brand-txt">Ledyvas · Administración</div>
       </div>
-      <h1 data-i18n="admin.title"></h1>
-      <p class="d-sub" data-i18n="admin.sub"></p>
+      <h1>Solicitudes al Programa de Distribución</h1>
+      <p class="d-sub">Adhesiones recibidas desde ledyvas.com/distribuidores. El alta real (firma + panel) es posterior al 27-sep-2026.</p>
     </div>
-    <div class="d-lang" id="adm-lang"></div>
   </div>
 </header>
 
 <main class="d-wrap">
 
-  <div class="d-kpis" id="adm-kpis"></div>
-
-  <div class="d-card">
-    <div class="d-card-head"><h2 data-i18n="admin.app.title"></h2></div>
-    <div class="d-table-scroll">
-      <table class="d-table">
-        <thead>
-          <tr>
-            <th data-i18n="admin.app.col.date"></th>
-            <th data-i18n="admin.app.col.name"></th>
-            <th data-i18n="admin.app.col.role"></th>
-            <th data-i18n="admin.app.col.country"></th>
-            <th data-i18n="admin.app.col.contact"></th>
-            <th data-i18n="admin.app.col.status"></th>
-            <th data-i18n="admin.col.actions"></th>
-          </tr>
-        </thead>
-        <tbody id="adm-apps"></tbody>
-      </table>
-    </div>
+  <!-- Puerta de acceso -->
+  <div class="adm-gate" id="adm-gate">
+    <h2 style="margin:0 0 4px;font-size:18px">Acceso</h2>
+    <p class="adm-note">Pegá el ADMIN_SECRET del Worker. Se guarda solo en esta pestaña.</p>
+    <input type="password" id="adm-tok" placeholder="ADMIN_SECRET" autocomplete="off">
+    <button class="d-btn primary" id="adm-enter" style="width:100%">Entrar</button>
+    <p class="adm-note" id="adm-gate-err" style="color:var(--bad,#dc2626)" hidden></p>
   </div>
 
-  <div class="d-card">
-    <div class="d-card-head">
-      <h2 data-i18n="admin.distributors"></h2>
-      <div class="d-card-actions">
-        <button class="d-btn" id="adm-export" data-i18n="admin.export"></button>
-        <button class="d-btn primary" id="adm-new" data-i18n="admin.new"></button>
+  <div id="adm-app" hidden>
+
+    <div class="d-kpis" id="adm-kpis"></div>
+
+    <div class="d-card">
+      <div class="d-card-head">
+        <h2>Solicitudes <span id="adm-count" style="color:var(--gray-500,#6b7280);font-weight:500"></span></h2>
+        <div class="d-card-actions">
+          <button class="d-btn adm-refresh" id="adm-reload">Actualizar</button>
+          <button class="d-btn" id="adm-export">Exportar CSV</button>
+        </div>
+      </div>
+      <div class="d-table-scroll">
+        <table class="d-table">
+          <thead>
+            <tr>
+              <th>Fecha</th><th>Empresa</th><th>País (fiscal)</th><th>Email</th>
+              <th>Evaluación IA</th><th>Estado</th><th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="adm-apps"></tbody>
+        </table>
       </div>
     </div>
-    <div class="d-table-scroll">
-      <table class="d-table">
-        <thead>
-          <tr>
-            <th data-i18n="admin.col.name"></th>
-            <th data-i18n="admin.col.code"></th>
-            <th data-i18n="admin.col.region"></th>
-            <th class="num" data-i18n="admin.col.sales"></th>
-            <th class="num" data-i18n="admin.col.earned"></th>
-            <th class="num" data-i18n="admin.col.pending"></th>
-            <th data-i18n="admin.col.status"></th>
-            <th data-i18n="admin.col.actions"></th>
-          </tr>
-        </thead>
-        <tbody id="adm-rows"></tbody>
-      </table>
+
+    <div class="d-card">
+      <div class="d-card-head"><h2>Por país</h2></div>
+      <div class="adm-country-grid" id="adm-countries"></div>
     </div>
+
+    <div class="d-card">
+      <div class="d-card-head"><h2>Distribuidores activos</h2></div>
+      <p style="padding:6px 20px 20px;color:var(--gray-500,#6b7280);font-size:14px">
+        El alta de distribuidores (firma del contrato, código, comisiones y pagos) se gestiona por separado y empieza después del 27-sep-2026. Hasta entonces esta pantalla solo recibe y ordena las solicitudes.
+      </p>
+    </div>
+
   </div>
 
-  <p class="d-foot"><a href="/" data-i18n="back"></a></p>
+  <p class="d-foot"><a href="/">Volver a ledyvas.com</a></p>
 </main>
 
-<!-- Modal: nuevo distribuidor -->
+<!-- Modal: detalle de una solicitud -->
 <div class="d-modal-bg" id="adm-modal-bg">
-  <div class="d-modal">
-    <h3 data-i18n="admin.form.new"></h3>
-    <form id="adm-form">
-      <div class="d-field"><label data-i18n="admin.form.name"></label><input type="text" name="name" required></div>
-      <div class="d-field"><label data-i18n="admin.form.email"></label><input type="email" name="email" required></div>
-      <div class="d-field"><label data-i18n="admin.form.region"></label><input type="text" name="region"></div>
-      <div class="d-field"><label data-i18n="admin.form.payment"></label>
-        <select name="payment">
-          <option>PayPal</option>
-          <option>Wise</option>
-          <option>Wire / transferencia</option>
-        </select>
-      </div>
-      <div class="d-field"><label data-i18n="admin.form.commission"></label><input type="number" name="commission" value="15" min="0" max="100" step="1"></div>
-      <div class="d-modal-actions">
-        <button type="button" class="d-btn" id="adm-cancel" data-i18n="admin.form.cancel"></button>
-        <button type="submit" class="d-btn primary" data-i18n="admin.form.create"></button>
-      </div>
-    </form>
+  <div class="d-modal" style="max-width:640px">
+    <h3 id="adm-modal-title" style="margin:0 0 4px">Solicitud</h3>
+    <div class="adm-modal-body" id="adm-modal-body"></div>
+    <div class="d-modal-actions">
+      <button type="button" class="d-btn" id="adm-modal-close">Cerrar</button>
+    </div>
   </div>
 </div>
 
 <div class="d-toast" id="adm-toast"></div>
 
-<script src="assets/js/distribuidores-i18n.js"></script>
 <script>
 (function () {
   "use strict";
-  var T = window.DistI18n;
+  var WORKER = "https://ledyvas-license-server.ledyvas.workers.dev";
+  var TOK_KEY = "lyd_admin_tok";
+  var token = "";
+  var DATA = null;
 
-  // ------------------------------------------------------------------
-  // DATOS — de ejemplo. Después del 27-sep se reemplaza por llamadas al
-  // Worker: GET /admin?t=token (lista), POST /admin/distributor (alta),
-  // POST /admin/distributor/:code/pause, POST /admin/commission/mark-paid.
-  // ------------------------------------------------------------------
-  var DATA = {
-    kpis: { activeDistributors: 4, salesMonth: 9, salesTotal: 34, commDue: 1863 },
-    // Solicitudes pendientes de verificación. Después del 27-sep:
-    //   GET  /admin/applications?t=token
-    //   POST /admin/applications/:id/approve  → genera token de firma + email
-    //   POST /admin/applications/:id/reject
-    applications: [
-      { id: "a1", date: "2026-09-04", name: "Estudio Fernández & Asoc.", role: "distribuidor", country: "España",          contact: "lucia.f@example.com", status: "pending",  screening: { veredicto: "apto",      nota_admin: "Estudio contable con 4 años, ya vende Alegra a PYMEs de hostelería. Entiende SaaS. Plan de captación concreto. Riesgo bajo." } },
-      { id: "a2", date: "2026-09-03", name: "Contadores Pérez SRL", role: "distribuidor", country: "Rep. Dominicana", contact: "info@perezsrl.do",    status: "pending",  screening: { veredicto: "a_revisar", nota_admin: "Estudio contable real con ~30 clientes, pero nunca revendió software y no detalla quién daría soporte. Pedir aclaración antes de avanzar." } },
-      { id: "a3", date: "2026-09-02", name: "Mehta Software Solutions", role: "distribuidor", country: "India",           contact: "rahul.m@example.com", status: "contract", screening: { veredicto: "apto",      nota_admin: "5 años vendiendo SaaS B2B, cartera de restaurantes. Sólido." } },
-      { id: "a4", date: "2026-08-30", name: "SoftStore Lisboa Lda", role: "distribuidor", country: "Portugal",        contact: "geral@softstore.pt",  status: "signed",   screening: { veredicto: "apto",      nota_admin: "Reseller de software con equipo técnico y referencias comerciales verificables." } }
-    ],
-    distributors: [
-      { name: "María Reyes",      code: "MARIA-DR",   region: "Rep. Dominicana", sales: 11, earned: 2235, pending: 745, status: "active" },
-      { name: "Carlos Núñez",     code: "CNUNEZ-MX",  region: "México",          sales: 8,  earned: 1642, pending: 523, status: "active" },
-      { name: "Priya Nair",       code: "PNAIR-IN",   region: "India",           sales: 9,  earned: 1341, pending: 447, status: "active" },
-      { name: "James O'Brien",    code: "JOB-UK",     region: "Reino Unido",     sales: 4,  earned: 892,  pending: 148, status: "active" },
-      { name: "Ana Duarte",       code: "ADUARTE-PT", region: "Portugal",        sales: 2,  earned: 298,  pending: 0,   status: "paused" }
-    ]
-  };
+  var $ = function (id) { return document.getElementById(id); };
 
-  function money(n) { return T.t("money") + " " + Number(n || 0).toLocaleString(T.lang() === "en" ? "en-US" : T.lang()); }
-
-  function applyStaticI18n() {
-    document.documentElement.lang = T.lang();
-    document.querySelectorAll("[data-i18n]").forEach(function (el) { el.textContent = T.t(el.getAttribute("data-i18n")); });
-    document.title = T.t("admin.title") + " — Ledyvas";
+  function toast(msg) {
+    var el = $("adm-toast");
+    el.textContent = msg; el.classList.add("show");
+    clearTimeout(el._t); el._t = setTimeout(function () { el.classList.remove("show"); }, 2600);
   }
 
-  function renderLang() {
-    var box = document.getElementById("adm-lang");
-    box.innerHTML = "";
-    T.SUPPORTED.forEach(function (code) {
-      var b = document.createElement("button");
-      b.textContent = code;
-      if (code === T.lang()) b.setAttribute("aria-current", "true");
-      b.addEventListener("click", function () { T.setLang(code); });
-      box.appendChild(b);
+  function api(path, opts) {
+    opts = opts || {};
+    opts.headers = Object.assign({ "authorization": "Bearer " + token }, opts.headers || {});
+    return fetch(WORKER + path, opts).then(function (r) {
+      return r.json().then(function (j) { return { status: r.status, body: j }; });
     });
-  }
-
-  function renderKpis() {
-    var k = DATA.kpis;
-    var defs = [
-      { label: "admin.kpi.active",     value: k.activeDistributors },
-      { label: "admin.kpi.salesMonth", value: k.salesMonth, cls: "accent" },
-      { label: "admin.kpi.commDue",    value: money(k.commDue), cls: "warn" },
-      { label: "admin.kpi.salesTotal", value: k.salesTotal }
-    ];
-    var grid = document.getElementById("adm-kpis");
-    grid.innerHTML = "";
-    defs.forEach(function (d) {
-      var card = document.createElement("div");
-      card.className = "d-kpi" + (d.cls ? " " + d.cls : "");
-      card.innerHTML = '<div class="k-label"></div><div class="k-value"></div>';
-      card.querySelector(".k-label").textContent = T.t(d.label);
-      card.querySelector(".k-value").textContent = d.value;
-      grid.appendChild(card);
-    });
-  }
-
-  function recomputeKpis() {
-    DATA.kpis.activeDistributors = DATA.distributors.filter(function (x) { return x.status === "active"; }).length;
-    DATA.kpis.commDue = DATA.distributors.reduce(function (a, x) { return a + (x.pending || 0); }, 0);
-    DATA.kpis.salesTotal = DATA.distributors.reduce(function (a, x) { return a + (x.sales || 0); }, 0);
   }
 
   function fmtDate(iso) {
-    try { return new Date(iso + "T00:00:00").toLocaleDateString(T.lang() === "en" ? "en-GB" : T.lang(), { day: "2-digit", month: "short", year: "numeric" }); }
-    catch (e) { return iso; }
+    try { return new Date(iso).toLocaleString("es", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }); }
+    catch (e) { return iso || "—"; }
+  }
+  function fmtDay(iso) {
+    try { return new Date(iso).toLocaleDateString("es", { day: "2-digit", month: "short", year: "numeric" }); }
+    catch (e) { return (iso || "").slice(0, 10); }
   }
 
-  function appStatusBadge(s) {
-    var span = document.createElement("span");
-    if (s === "pending") { span.className = "d-badge trial"; span.textContent = T.t("admin.app.status.pending"); }
-    else if (s === "contract") { span.className = "d-badge never"; span.textContent = T.t("admin.app.status.contract"); }
-    else { span.className = "d-badge active"; span.textContent = T.t("admin.app.status.signed"); }
-    return span;
+  var VMAP = { apto: ["Apto", "active"], a_revisar: ["A revisar", "trial"], no_cumple: ["No cumple", "expired"] };
+  var SMAP = { pendiente: ["Pendiente", "trial"], contactado: ["Contactado", "never"], aprobado: ["Aprobado", "active"], rechazado: ["Rechazado", "expired"] };
+
+  function badge(text, cls) {
+    var s = document.createElement("span");
+    s.className = "d-badge " + (cls || "");
+    s.textContent = text;
+    return s;
+  }
+
+  function renderKpis() {
+    var byV = DATA.byVeredicto || {}, byS = DATA.byStatus || {};
+    var defs = [
+      { label: "Solicitudes recibidas", value: DATA.total || 0, cls: "accent" },
+      { label: "Pendientes", value: byS.pendiente || 0, cls: "warn" },
+      { label: "Aptas (IA)", value: byV.apto || 0, cls: "good" },
+      { label: "A revisar (IA)", value: byV.a_revisar || 0 },
+      { label: "No cumple (IA)", value: byV.no_cumple || 0 }
+    ];
+    var grid = $("adm-kpis");
+    grid.innerHTML = "";
+    defs.forEach(function (d) {
+      var c = document.createElement("div");
+      c.className = "d-kpi" + (d.cls ? " " + d.cls : "");
+      c.innerHTML = '<div class="k-label"></div><div class="k-value"></div>';
+      c.querySelector(".k-label").textContent = d.label;
+      c.querySelector(".k-value").textContent = d.value;
+      grid.appendChild(c);
+    });
+  }
+
+  function renderCountries() {
+    var box = $("adm-countries");
+    box.innerHTML = "";
+    var entries = Object.entries(DATA.byCountry || {}).sort(function (a, b) { return b[1] - a[1]; });
+    if (!entries.length) { box.innerHTML = '<div class="d-empty">Sin datos.</div>'; return; }
+    entries.forEach(function (e) {
+      var d = document.createElement("div");
+      d.innerHTML = "<b>" + e[1] + "</b> · " + e[0];
+      box.appendChild(d);
+    });
   }
 
   function renderApps() {
-    var tb = document.getElementById("adm-apps");
+    var list = (DATA.applications || []).slice().sort(function (a, b) {
+      return String(b.receivedAt || "").localeCompare(String(a.receivedAt || ""));
+    });
+    $("adm-count").textContent = "(" + list.length + ")";
+    var tb = $("adm-apps");
     tb.innerHTML = "";
-    var list = DATA.applications || [];
     if (!list.length) {
-      tb.innerHTML = '<tr><td colspan="7"><div class="d-empty">' + T.t("admin.app.empty") + "</div></td></tr>";
+      tb.innerHTML = '<tr><td colspan="7"><div class="d-empty">Todavía no entró ninguna solicitud.</div></td></tr>';
       return;
     }
     list.forEach(function (a) {
       var tr = document.createElement("tr");
-      function td(txt, cls) { var e = document.createElement("td"); if (cls) e.className = cls; e.textContent = txt; return e; }
-      tr.appendChild(td(fmtDate(a.date)));
-      tr.appendChild(td(a.name));
-
-      var rl = document.createElement("td");
-      var rb = document.createElement("span");
-      rb.className = "d-badge " + (a.role === "distribuidor" ? "active" : "trial");
-      rb.textContent = T.t("admin.app.role." + a.role);
-      rl.appendChild(rb);
-      tr.appendChild(rl);
-
+      function td(txt) { var e = document.createElement("td"); e.textContent = txt; return e; }
+      tr.appendChild(td(fmtDay(a.receivedAt)));
+      tr.appendChild(td(a.company || "—"));
       tr.appendChild(td(a.country || "—"));
-      tr.appendChild(td(a.contact || "—"));
+      tr.appendChild(td(a.email || "—"));
+
+      var v = document.createElement("td");
+      var vm = VMAP[a.veredicto] || ["—", ""];
+      v.appendChild(badge(vm[0] + (a.puntaje != null ? " · " + a.puntaje : ""), vm[1]));
+      tr.appendChild(v);
 
       var st = document.createElement("td");
-      st.appendChild(appStatusBadge(a.status));
-      if (a.screening && a.screening.veredicto) {
-        var v = a.screening.veredicto;
-        var sb = document.createElement("span");
-        sb.className = "d-badge " + (v === "apto" ? "active" : v === "no_cumple" ? "expired" : "trial");
-        sb.style.marginLeft = "6px";
-        sb.textContent = T.t("admin.app.screening") + ": " + T.t("admin.app.scr." + v);
-        if (a.screening.nota_admin) sb.title = a.screening.nota_admin;
-        st.appendChild(sb);
-        if (a.screening.nota_admin) {
-          var note = document.createElement("div");
-          note.style.cssText = "font-size:12px;color:var(--gray-500);margin-top:5px;max-width:340px;line-height:1.4";
-          note.textContent = a.screening.nota_admin;
-          st.appendChild(note);
-        }
-      }
+      var sm = SMAP[a.status || "pendiente"] || ["Pendiente", "trial"];
+      st.appendChild(badge(sm[0], sm[1]));
       tr.appendChild(st);
 
       var act = document.createElement("td");
-      var view = document.createElement("a");
-      view.className = "d-btn link";
-      view.textContent = T.t("admin.app.view");
-      view.href = "contrato.html?rol=" + a.role + "&t=DEMO-TOKEN";
-      view.target = "_blank"; view.rel = "noopener";
-      act.appendChild(view);
-
-      if (a.status === "pending") {
-        var ap = document.createElement("button");
-        ap.className = "d-btn link";
-        ap.textContent = T.t("admin.app.approve");
-        ap.addEventListener("click", function () {
-          a.status = "contract"; renderApps();
-          toast(T.t("admin.app.approved", { name: a.name }));
-          // TODO 27-sep: POST /admin/applications/:id/approve
-        });
-        act.appendChild(ap);
-
-        var rj = document.createElement("button");
-        rj.className = "d-btn link";
-        rj.style.color = "var(--bad)";
-        rj.textContent = T.t("admin.app.reject");
-        rj.addEventListener("click", function () {
-          DATA.applications = DATA.applications.filter(function (x) { return x.id !== a.id; });
-          renderApps();
-          toast(T.t("admin.app.rejected", { name: a.name }));
-          // TODO 27-sep: POST /admin/applications/:id/reject
-        });
-        act.appendChild(rj);
-      }
+      act.appendChild(actionBtn("Ver datos", function () { openDetail(a); }));
+      if (a.status !== "contactado") act.appendChild(actionBtn("Contactado", function () { setStatus(a, "contactado"); }));
+      if (a.status !== "aprobado") act.appendChild(actionBtn("Aprobar", function () { setStatus(a, "aprobado"); }));
+      if (a.status !== "rechazado") { var r = actionBtn("Rechazar", function () { setStatus(a, "rechazado"); }); r.style.color = "var(--bad,#dc2626)"; act.appendChild(r); }
       tr.appendChild(act);
 
       tb.appendChild(tr);
     });
   }
 
-  function toast(msg) {
-    var el = document.getElementById("adm-toast");
-    el.textContent = msg;
-    el.classList.add("show");
-    clearTimeout(el._t);
-    el._t = setTimeout(function () { el.classList.remove("show"); }, 2600);
+  function actionBtn(label, fn) {
+    var b = document.createElement("button");
+    b.className = "d-btn link";
+    b.textContent = label;
+    b.addEventListener("click", fn);
+    return b;
   }
 
-  function renderRows() {
-    var tb = document.getElementById("adm-rows");
-    tb.innerHTML = "";
-    DATA.distributors.forEach(function (d, i) {
-      var tr = document.createElement("tr");
-
-      function td(txt, cls) { var e = document.createElement("td"); if (cls) e.className = cls; e.textContent = txt; return e; }
-      tr.appendChild(td(d.name));
-      var code = td(d.code); code.style.fontFamily = 'ui-monospace, "SF Mono", Menlo, monospace'; code.style.fontSize = "12.5px"; tr.appendChild(code);
-      tr.appendChild(td(d.region || "—"));
-      tr.appendChild(td(String(d.sales), "num"));
-      tr.appendChild(td(money(d.earned), "num"));
-      tr.appendChild(td(d.pending ? money(d.pending) : "—", "num"));
-
-      var st = document.createElement("td");
-      var badge = document.createElement("span");
-      badge.className = "d-badge " + (d.status === "active" ? "active" : "paused");
-      badge.textContent = T.t(d.status === "active" ? "admin.status.active" : "admin.status.paused");
-      st.appendChild(badge);
-      tr.appendChild(st);
-
-      var act = document.createElement("td");
-      if (d.pending > 0) {
-        var pay = document.createElement("button");
-        pay.className = "d-btn link"; pay.textContent = T.t("admin.act.markPaid");
-        pay.addEventListener("click", function () {
-          d.pending = 0; recomputeKpis(); renderKpis(); renderRows();
-          toast(T.t("admin.paidDone", { name: d.name }));
-        });
-        act.appendChild(pay);
+  function setStatus(a, status) {
+    api("/admin/applications", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ id: a.id, receivedAt: a.receivedAt, status: status })
+    }).then(function (res) {
+      if (res.status === 200 && res.body.ok) {
+        a.status = status;
+        renderApps();
+        toast("Estado: " + (SMAP[status] ? SMAP[status][0] : status));
+      } else {
+        toast("No se pudo cambiar el estado (" + (res.body.error || res.status) + ")");
       }
-      var toggle = document.createElement("button");
-      toggle.className = "d-btn link";
-      toggle.textContent = T.t(d.status === "active" ? "admin.act.pause" : "admin.act.resume");
-      toggle.addEventListener("click", function () {
-        d.status = d.status === "active" ? "paused" : "active";
-        recomputeKpis(); renderKpis(); renderRows();
-        toast(T.t(d.status === "active" ? "admin.resumed" : "admin.paused", { name: d.name }));
-      });
-      act.appendChild(toggle);
-      tr.appendChild(act);
+    }).catch(function () { toast("Error de red."); });
+  }
 
-      tb.appendChild(tr);
+  function openDetail(a) {
+    var body = $("adm-modal-body");
+    $("adm-modal-title").textContent = (a.company || a.email || "Solicitud");
+    body.innerHTML = "<p class=\"adm-note\">Cargando…</p>";
+    $("adm-modal-bg").classList.add("open");
+    api("/admin/applications?id=" + encodeURIComponent(a.id) + "&receivedAt=" + encodeURIComponent(a.receivedAt))
+      .then(function (res) {
+        if (res.status !== 200 || !res.body.ok) { body.innerHTML = "<p>No se pudo cargar (" + (res.body.error || res.status) + ").</p>"; return; }
+        renderDetail(res.body.application);
+      }).catch(function () { body.innerHTML = "<p>Error de red.</p>"; });
+  }
+
+  function renderDetail(rec) {
+    var body = $("adm-modal-body");
+    var parts = [];
+    parts.push('<div class="adm-kv">' +
+      '<span>Recibida:</span> ' + fmtDate(rec.receivedAt) + '<br>' +
+      '<span>Email:</span> ' + esc(rec.email || "—") + '<br>' +
+      '<span>Idioma:</span> ' + esc(rec.lang || "—") + '<br>' +
+      '<span>Estado:</span> ' + esc((SMAP[rec.status] || ["Pendiente"])[0]) +
+      '</div>');
+
+    if (rec.screening) {
+      var sc = rec.screening;
+      var vm = VMAP[sc.veredicto] || ["—", ""];
+      parts.push('<h4>Evaluación de la IA</h4><div class="adm-ia"><b>' + esc(vm[0]) +
+        (sc.puntaje != null ? " · " + sc.puntaje + "/100" : "") + '</b><br>' +
+        esc(sc.nota_admin || "(sin nota)") + '</div>');
+    }
+
+    var fields = rec.fields || {};
+    var fk = Object.keys(fields).filter(function (k) { return String(fields[k] || "").trim() !== ""; });
+    if (fk.length) {
+      parts.push('<h4>Datos del formulario</h4><div class="adm-kv">' +
+        fk.map(function (k) { return '<span>' + esc(k) + ':</span> ' + esc(String(fields[k])); }).join("<br>") +
+        '</div>');
+    }
+
+    var ans = rec.answers || [];
+    if (ans.length) {
+      parts.push('<h4>Respuestas</h4>' + ans.map(function (x) {
+        return '<p class="adm-q"><b>' + esc(x.q || "") + '</b>' + esc(x.a || "") + '</p>';
+      }).join(""));
+    }
+
+    if (rec.attachments && rec.attachments.length) {
+      parts.push('<h4>Adjuntos</h4><p class="adm-note">' + rec.attachments.map(esc).join(", ") +
+        ' — se enviaron a tu correo con la solicitud (no se guardan acá).</p>');
+    }
+
+    body.innerHTML = parts.join("");
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
     });
   }
 
-  // ---- new distributor modal ----
-  var mbg = document.getElementById("adm-modal-bg");
-  document.getElementById("adm-new").addEventListener("click", function () { mbg.classList.add("open"); });
-  document.getElementById("adm-cancel").addEventListener("click", function () { mbg.classList.remove("open"); });
-  mbg.addEventListener("click", function (e) { if (e.target === mbg) mbg.classList.remove("open"); });
-
-  document.getElementById("adm-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    var f = e.target;
-    var name = f.name.value.trim();
-    var slug = name.toUpperCase().replace(/[^A-Z0-9]+/g, "").slice(0, 8) || "DIST";
-    var rand = Math.random().toString(36).slice(2, 5).toUpperCase();
-    var code = slug + "-" + rand;
-    DATA.distributors.unshift({
-      name: name, code: code, region: f.region.value.trim(),
-      sales: 0, earned: 0, pending: 0, status: "active"
-    });
-    // TODO 27-sep: POST al Worker → crea el registro, genera token, dispara el email de bienvenida con el link /panel?t=token
-    f.reset(); f.commission.value = "15";
-    mbg.classList.remove("open");
-    recomputeKpis(); renderKpis(); renderRows();
-    toast(T.t("admin.created", { code: code }));
-  });
-
-  // ---- export CSV ----
-  document.getElementById("adm-export").addEventListener("click", function () {
-    var head = [T.t("admin.col.name"), T.t("admin.col.code"), T.t("admin.col.region"), T.t("admin.col.sales"), T.t("admin.col.earned"), T.t("admin.col.pending"), T.t("admin.col.status")];
-    var rows = DATA.distributors.map(function (d) {
-      return [d.name, d.code, d.region, d.sales, d.earned, d.pending, T.t(d.status === "active" ? "admin.status.active" : "admin.status.paused")];
+  function exportCsv() {
+    var list = DATA.applications || [];
+    var head = ["Fecha", "Empresa", "Pais", "Email", "Veredicto IA", "Puntaje", "Estado"];
+    var rows = list.map(function (a) {
+      return [fmtDay(a.receivedAt), a.company || "", a.country || "", a.email || "",
+        (VMAP[a.veredicto] || [""])[0], a.puntaje != null ? a.puntaje : "", (SMAP[a.status || "pendiente"] || [""])[0]];
     });
     var csv = "﻿" + [head].concat(rows).map(function (r) {
       return r.map(function (c) { c = String(c == null ? "" : c); return /[",\n;]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c; }).join(",");
@@ -370,17 +321,42 @@
     var blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     var a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = "distribuidores-ledyvas.csv";
+    a.download = "solicitudes-distribucion-ledyvas.csv";
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
-  });
+  }
 
-  applyStaticI18n();
-  renderLang();
-  recomputeKpis();
-  renderKpis();
-  renderApps();
-  renderRows();
+  function load() {
+    api("/admin/applications").then(function (res) {
+      if (res.status === 401) { gateError("Token incorrecto."); sessionStorage.removeItem(TOK_KEY); showGate(); return; }
+      if (res.status !== 200 || !res.body.ok) { toast("Error al cargar (" + (res.body.error || res.status) + ")"); return; }
+      DATA = res.body;
+      $("adm-gate").hidden = true;
+      $("adm-app").hidden = false;
+      renderKpis(); renderCountries(); renderApps();
+    }).catch(function () { toast("Error de red. ¿Worker arriba?"); });
+  }
+
+  function showGate() { $("adm-gate").hidden = false; $("adm-app").hidden = true; }
+  function gateError(msg) { var e = $("adm-gate-err"); e.textContent = msg; e.hidden = false; }
+
+  // ---- eventos ----
+  $("adm-enter").addEventListener("click", function () {
+    token = ($("adm-tok").value || "").trim();
+    if (!token) { gateError("Pegá el token."); return; }
+    sessionStorage.setItem(TOK_KEY, token);
+    $("adm-gate-err").hidden = true;
+    load();
+  });
+  $("adm-tok").addEventListener("keydown", function (e) { if (e.key === "Enter") $("adm-enter").click(); });
+  $("adm-reload").addEventListener("click", load);
+  $("adm-export").addEventListener("click", exportCsv);
+  $("adm-modal-close").addEventListener("click", function () { $("adm-modal-bg").classList.remove("open"); });
+  $("adm-modal-bg").addEventListener("click", function (e) { if (e.target === this) this.classList.remove("open"); });
+
+  // ---- arranque ----
+  var saved = sessionStorage.getItem(TOK_KEY);
+  if (saved) { token = saved; load(); } else { showGate(); }
 })();
 </script>
 </body>
