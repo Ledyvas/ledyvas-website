@@ -9,6 +9,7 @@
   <url><loc>https://ledyvas.com/empresa.html</loc><priority>0.6</priority></url>
   <url><loc>https://ledyvas.com/contacto.html</loc><priority>0.6</priority></url>
   <url><loc>https://ledyvas.com/documentacion.html</loc><priority>0.5</priority></url>
+  <url><loc>https://ledyvas.com/ayuda-zoho-books.html</loc><priority>0.4</priority></url>
   <url><loc>https://ledyvas.com/portal-cliente.html</loc><priority>0.4</priority></url>
   <url><loc>https://ledyvas.com/privacidad.html</loc><priority>0.2</priority></url>
   <url><loc>https://ledyvas.com/terminos.html</loc><priority>0.2</priority></url>
@@ -56,6 +57,7 @@
   <url><loc>https://ledyvas.com/en/company.html</loc><priority>0.5</priority></url>
   <url><loc>https://ledyvas.com/en/contact.html</loc><priority>0.5</priority></url>
   <url><loc>https://ledyvas.com/en/documentation.html</loc><priority>0.4</priority></url>
+  <url><loc>https://ledyvas.com/en/help-zoho-books.html</loc><priority>0.4</priority></url>
   <url><loc>https://ledyvas.com/en/customer-portal.html</loc><priority>0.3</priority></url>
   <url><loc>https://ledyvas.com/en/privacy.html</loc><priority>0.2</priority></url>
   <url><loc>https://ledyvas.com/en/terms.html</loc><priority>0.2</priority></url>

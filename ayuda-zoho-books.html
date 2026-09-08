@@ -19,15 +19,23 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Documentación — Ledyvas</title>
-<meta name="description" content="Manuales de usuario de Ledyvas: guía básica de uso diario y documentación profesional completa de todos los módulos.">
-<link rel="icon" href="assets/img/favicon.png">
-<link rel="canonical" href="https://ledyvas.com/documentacion.html">
+<title>Ledyvas + Zoho Books — Ayuda</title>
+<meta name="description" content="Cómo conectar Ledyvas con Zoho Books, sincronizar compras y ventas como asientos en borrador, mapear el plan de cuentas y cómo se manejan los tokens OAuth.">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="canonical" href="https://ledyvas.com/ayuda-zoho-books.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  .zb-body h2 { margin-top: 40px; }
+  .zb-body h3 { margin-top: 24px; }
+  .zb-body ol, .zb-body ul { line-height: 1.7; }
+  .zb-body .callout { background: var(--gray); border-left: 3px solid var(--gold); padding: 14px 18px; border-radius: 8px; margin: 18px 0; }
+  .zb-faq dt { font-weight: 700; margin-top: 18px; }
+  .zb-faq dd { margin: 6px 0 0; color: var(--muted, #555); }
+</style>
 </head>
 <body>
 
@@ -61,7 +69,7 @@
       <button class="lang-dropdown-toggle" data-lang-toggle type="button" aria-haspopup="true" aria-expanded="false"><span class="fi fi-es"></span> ES<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="lang-dropdown-menu">
     <a href="/it/documentazione.html"><span class="fi fi-it"></span> IT</a>
-    <a href="/en/documentation.html"><span class="fi fi-gb"></span> EN</a>
+    <a href="/en/help-zoho-books.html"><span class="fi fi-gb"></span> EN</a>
     <a href="/fr/documentation.html"><span class="fi fi-fr"></span> FR</a>
     <a href="/pt/documentacao.html"><span class="fi fi-pt"></span> PT</a>
       </div>
@@ -96,7 +104,7 @@
         <div class="lang-switch">
           <button class="active"><span class="fi fi-es"></span> ES</button>
           <a href="/it/documentazione.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid var(--gray-300);color:var(--gray-700);"><span class="fi fi-it"></span> IT</a>
-          <a href="/en/documentation.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid var(--gray-300);color:var(--gray-700);"><span class="fi fi-gb"></span> EN</a>
+          <a href="/en/help-zoho-books.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid var(--gray-300);color:var(--gray-700);"><span class="fi fi-gb"></span> EN</a>
           <a href="/fr/documentation.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid var(--gray-300);color:var(--gray-700);"><span class="fi fi-fr"></span> FR</a>
           <a href="/pt/documentacao.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid var(--gray-300);color:var(--gray-700);"><span class="fi fi-pt"></span> PT</a>
         </div>
@@ -123,45 +131,83 @@
   <section class="page-hero">
     <div class="container">
       <div class="section-head center" style="margin-left:auto;margin-right:auto;">
-        <span class="eyebrow">Documentación</span>
-        <h1>Manuales de Ledyvas</h1>
-        <p class="lede" style="margin-left:auto;margin-right:auto;">Dos guías, según lo que necesite: una para empezar a usar Ledyvas hoy mismo, y otra con el detalle completo de cada módulo para quien administra el sistema.</p>
+        <span class="eyebrow">Ayuda de la integración</span>
+        <h1>Ledyvas + Zoho Books</h1>
+        <p class="lede" style="margin-left:auto;margin-right:auto;">Manda los asientos de partida doble de tus compras y ventas de Ledyvas directamente a Zoho Books — sin CSV ni carga manual. Los asientos entran como borrador para que el contador los revise.</p>
       </div>
     </div>
   </section>
 
   <section class="section-tight">
-    <div class="container">
-      <div class="grid-2">
+    <div class="container" style="max-width:760px;">
+      <div class="zb-body">
 
-        <div class="card" style="display:flex;flex-direction:column;">
-          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4a1 1 0 0 0-1-1H6.5A2.5 2.5 0 0 0 4 5.5v14Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20"/></svg></div>
-          <h3>Manual de Usuario Básico</h3>
-          <p>Guía rápida para instalar, activar y usar Ledyvas en el día a día: primer inicio, cada módulo explicado paso a paso, copias de seguridad y preguntas frecuentes.</p>
-          <ul class="doc-toc">
-            <li>Activación de licencia, sus datos e idiomas — antes de arrancar</li>
-            <li>Usuarios y roles (Gerencia, Compra, Venta, Almacén, Contabilidad)</li>
-            <li>Catálogo: Destinos, Clientes, Proveedores y Productos</li>
-            <li>Compra Asistida y Compra real, paso a paso</li>
-            <li>Centro Logístico, Ventas, Inventario, Control Diario y Flotas</li>
-            <li>Los 4 Consolidados explicados por separado, y preguntas frecuentes</li>
-          </ul>
-          <a href="manual-usuario.html" class="btn btn-primary btn-block" style="margin-top:auto;">Abrir Manual de Usuario</a>
-        </div>
+        <h2>Qué hace</h2>
+        <p>Ledyvas es un ERP de escritorio para pequeñas empresas de hostelería, turismo y comercio. Tu equipo lleva la operación del día dentro de Ledyvas — compras, inventario, ventas, caja, combustible y flotas — y esta integración empuja los asientos contables a Zoho Books a través de su API.</p>
+        <ul>
+          <li><strong>Asientos</strong> de partida doble, balanceados, para cada compra y venta, creados como <strong>borrador</strong>.</li>
+          <li>Opcionalmente crea los <strong>proveedores y clientes</strong> que falten en Zoho Books.</li>
+          <li><strong>Sin duplicados</strong>: cada documento se identifica por su referencia, en Ledyvas y contra Zoho, antes de crear nada.</li>
+          <li>Re-sincronizar un período es siempre seguro.</li>
+        </ul>
+        <div class="callout">El impuesto (IVA / ITBIS) <strong>no</strong> se sincroniza. Ledyvas no guarda el impuesto por separado; el contador lo aplica en Zoho Books.</div>
 
-        <div class="card" style="display:flex;flex-direction:column;background:var(--navy);border-color:var(--navy);">
-          <div class="icon-circle" style="background:rgba(232,198,106,0.14);color:var(--gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6l6 6v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M9 12h6M9 16h6M9 8h2"/></svg></div>
-          <h3 style="color:#fff;">Manual Profesional Completo</h3>
-          <p style="color:rgba(255,255,255,0.65);">Documentación oficial del sistema: arquitectura, lógica de negocio y reglas de cada módulo, pensada para quien administra Ledyvas o necesita entender el funcionamiento interno con detalle.</p>
-          <ul class="doc-toc doc-toc-light">
-            <li>Arquitectura, base de datos cifrada y licencia</li>
-            <li>Flujo de datos completo y el motor de Fórmula por PAX</li>
-            <li>Cada módulo: Compra, Centro Logístico, Ventas, Combustible y Flotas</li>
-            <li>Sistema multiusuario y roles</li>
-            <li>Seguridad, revocación de licencia y roadmap</li>
-          </ul>
-          <a href="manual-profesional.html" class="btn btn-gold btn-block" style="margin-top:auto;">Abrir Manual Profesional</a>
-        </div>
+        <h2>Cómo conectar</h2>
+        <ol>
+          <li>En Ledyvas, abre <strong>Acciones Rápidas → Sincronizar con Zoho Books</strong>.</li>
+          <li>Clic en <strong>Conectar con Zoho Books</strong>. Se abre el navegador con la pantalla de autorización de Zoho.</li>
+          <li>Aprueba el acceso. El navegador muestra <em>"Conectado"</em> y Ledyvas termina la configuración solo.</li>
+          <li>Si tu cuenta de Zoho tiene más de una organización, elige a cuál sincronizar.</li>
+        </ol>
+        <p>Ledyvas nunca ve tu contraseña de Zoho y nunca guarda la clave secreta del OAuth (esa vive solo en el servidor de Ledyvas). La conexión se puede revocar en cualquier momento desde Zoho, o desconectar desde dentro de Ledyvas.</p>
+
+        <h2>Cómo sincronizar</h2>
+        <ol>
+          <li>Elige un <strong>rango de fechas</strong> (Desde / Hasta).</li>
+          <li>Deja marcado "Crear también los proveedores y clientes que falten" si quieres que Ledyvas los cree en Zoho Books.</li>
+          <li>Opcional: abre <strong>Plan de cuentas</strong> y mapea cada categoría a una cuenta de Zoho (ver abajo).</li>
+          <li>Clic en <strong>Sincronizar ahora</strong>.</li>
+        </ol>
+        <p>El panel de resultado muestra cuántos asientos se crearon, cuántos se omitieron (ya estaban) y cuántos contactos se crearon. Las tres tarjetas de abajo — <em>Transacciones del período / Ya sincronizadas / A sincronizar</em> — se actualizan al cambiar el rango de fechas.</p>
+
+        <h2>Plan de cuentas</h2>
+        <p>Por defecto Ledyvas usa las cuentas de control estándar (Ventas, Costes de productos vendidos, Otros gastos, Fondos sin depositar) que ya existen en una organización nueva de Zoho Books, así que <strong>la primera sincronización funciona sin configurar nada</strong>.</p>
+        <p>Para mandar una categoría a una cuenta concreta, abre <strong>Plan de cuentas</strong>, elige la cuenta del desplegable de cada fila y clic en <strong>Guardar plan de cuentas</strong>. Cualquier nombre de cuenta que elijas tiene que existir ya en tu plan de cuentas de Zoho Books. Las cuentas por cobrar / por pagar no se ofrecen — Zoho exige un contacto por línea para esas, y Ledyvas modela cada compra y venta como ya liquidada contra <em>Fondos sin depositar</em> (que después puedes reclasificar a tu banco real).</p>
+
+        <h2>Sincronización automática cada noche</h2>
+        <p>Marca <strong>Sincronizar automáticamente cada noche (últimos 120 días)</strong>. Mientras Ledyvas esté abierto, corre la sincronización una vez al día por su cuenta, cubriendo los últimos 120 días. Debajo del checkbox se ve la última corrida automática y cuántos asientos creó.</p>
+
+        <h2>Si anulas o editas un documento</h2>
+        <p>En la siguiente sincronización (manual o automática), Ledyvas compara cada documento ya sincronizado con su estado actual en Ledyvas:</p>
+        <ul>
+          <li><strong>Anulado en Ledyvas</strong> → el asiento correspondiente en Zoho Books se borra.</li>
+          <li><strong>Editado en Ledyvas</strong> (cambió la fecha, el total o el número de líneas) → se borra el asiento viejo y se crea uno nuevo.</li>
+        </ul>
+        <p>El panel de resultado lo informa como "Asientos rehechos" y "Asientos borrados".</p>
+
+        <h2>Preguntas frecuentes</h2>
+        <dl class="zb-faq">
+          <dt>¿Funciona con QuickBooks, Xero, Odoo, Alegra?</dt>
+          <dd>Sí — mediante exportación de archivos ("Exportar a Contabilidad"). Zoho Books es el único con sincronización nativa por API.</dd>
+
+          <dt>Ya sincronicé este mes. ¿Es seguro volver a sincronizar?</dt>
+          <dd>Sí. Ledyvas chequea cada referencia de documento localmente y en Zoho antes de crear nada — sin duplicados.</dd>
+
+          <dt>¿Dónde se guardan mis tokens de Zoho?</dt>
+          <dd>En la base de datos local de Ledyvas, en tu computadora, cifrada en reposo. Ledyvas nunca guarda la clave secreta del OAuth; esa vive solo en el servidor de Ledyvas.</dd>
+
+          <dt>¿Qué se escribe en Zoho Books?</dt>
+          <dd>Solo asientos en borrador y (opcionalmente) los proveedores/clientes que falten. Ledyvas solo <em>lee</em> tu plan de cuentas y los asientos existentes, para el chequeo de duplicados.</dd>
+
+          <dt>¿Puedo desconectar?</dt>
+          <dd>Sí, en cualquier momento, desde dentro de Ledyvas o desde tu cuenta de Zoho. Los asientos ya sincronizados quedan en Zoho Books.</dd>
+
+          <dt>¿Qué permiso (scope) OAuth pide?</dt>
+          <dd><code>ZohoBooks.fullaccess.all</code> — necesario para crear asientos y contactos, y para leer el plan de cuentas y los asientos existentes para la deduplicación.</dd>
+
+          <dt>¿Es un complemento gratuito?</dt>
+          <dd>La integración con Zoho Books es parte de <strong>Ledyvas Enterprise</strong>, disponible a través de un Distribuidor Oficial de Ledyvas. No se vende por separado en el marketplace.</dd>
+        </dl>
 
       </div>
     </div>
@@ -170,14 +216,13 @@
   <section class="section-tight bg-gray">
     <div class="container">
       <div class="section-head center" style="margin-left:auto;margin-right:auto;max-width:640px;">
-        <span class="eyebrow">¿Tiene dudas?</span>
-        <h2>Si algo no está cubierto en el manual</h2>
-        <p class="lede">Escríbanos a <a href="mailto:info@ledyvas.com">info@ledyvas.com</a> y le respondemos dentro de 48 horas laborables. También puede revisar las preguntas frecuentes en la sección Empresa.</p>
+        <span class="eyebrow">¿Sigues con dudas?</span>
+        <h2>Estamos para ayudarte</h2>
+        <p class="lede">Escribe a <a href="mailto:info@ledyvas.com">info@ledyvas.com</a> y te respondemos en 48 horas laborables. También puedes preguntarle al asistente de IA dentro de Ledyvas.</p>
         <div class="cta-row" style="justify-content:center;">
-          <a href="empresa.html#faq" class="btn btn-outline">Ver preguntas frecuentes</a>
+          <a href="documentacion.html" class="btn btn-outline">Documentación completa</a>
           <a href="contacto.html" class="btn btn-primary">Contactar soporte</a>
         </div>
-        <p style="margin-top:18px;font-size:14px;">¿Usa Zoho Books? <a href="ayuda-zoho-books.html">Guía de la integración Ledyvas + Zoho Books</a>.</p>
       </div>
     </div>
   </section>
