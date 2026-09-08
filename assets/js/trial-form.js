@@ -61,6 +61,52 @@
     // (con "Exportar a Contabilidad"). Se llega así desde distribuidores.html.
     const edition = new URLSearchParams(location.search).get("edition") === "enterprise" ? "enterprise" : "pro";
 
+    // Cuando se llega como trial de Enterprise, esta página (que es la de la
+    // versión pública "Pro") muestra precios de pago único que NO aplican.
+    // Ajustamos la copia: banner explicativo + ocultar las tarjetas de precio Pro.
+    if (edition === "enterprise") applyEnterpriseUI(lang);
+
+    function applyEnterpriseUI(lg) {
+      const B = {
+        es: {
+          html: 'Estás por descargar <b>Ledyvas Enterprise</b> — la versión con <b>Exportar a Contabilidad</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Probala 14 días gratis con tus datos. Después de la prueba se contrata por <b>suscripción mensual</b>, únicamente a través de un Distribuidor Oficial.',
+          link: "Ver el Programa de Distribución"
+        },
+        en: {
+          html: 'You are about to download <b>Ledyvas Enterprise</b> — the version with <b>Export to Accounting</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Try it free for 14 days with your own data. After the trial it is offered by <b>monthly subscription</b>, only through an Official Distributor.',
+          link: "See the Distribution Program"
+        },
+        it: {
+          html: 'Stai per scaricare <b>Ledyvas Enterprise</b> — la versione con <b>Esporta in Contabilità</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Provala 14 giorni gratis con i tuoi dati. Dopo la prova si attiva con <b>abbonamento mensile</b>, solo tramite un Distributore Ufficiale.',
+          link: "Vedi il Programma di Distribuzione"
+        },
+        fr: {
+          html: 'Vous êtes sur le point de télécharger <b>Ledyvas Enterprise</b> — la version avec <b>Exporter vers la comptabilité</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Essayez-la 14 jours gratuitement avec vos données. Après l\'essai, elle est proposée par <b>abonnement mensuel</b>, uniquement via un Distributeur Officiel.',
+          link: "Voir le Programme de Distribution"
+        },
+        pt: {
+          html: 'Você está prestes a baixar o <b>Ledyvas Enterprise</b> — a versão com <b>Exportar para Contabilidade</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Experimente 14 dias grátis com os seus dados. Depois da avaliação é contratado por <b>subscrição mensal</b>, apenas através de um Distribuidor Oficial.',
+          link: "Ver o Programa de Distribuição"
+        }
+      };
+      const c = B[lg] || B.es;
+      const main = document.querySelector("main");
+      if (main && !document.getElementById("edition-enterprise-banner")) {
+        const box = document.createElement("div");
+        box.id = "edition-enterprise-banner";
+        box.style.cssText = "background:#0B1F3A;color:#fff;padding:16px 20px;font-size:14.5px;line-height:1.55;text-align:center;";
+        box.innerHTML = '<div style="max-width:820px;margin:0 auto;">' + c.html +
+          ' &nbsp;<a href="/distribuidores.html?lang=' + lg + '" style="color:#C89B3C;font-weight:600;white-space:nowrap;">' + c.link + ' →</a></div>';
+        main.insertBefore(box, main.firstChild);
+      }
+      // ocultar las tarjetas que mencionan el precio de pago único de Pro (750 / 1850 USD)
+      document.querySelectorAll("main .card").forEach(function (card) {
+        if (/\b(750|1[.\s]?850|1850)\b/.test(card.textContent) || /\bUSD\b/.test(card.textContent)) {
+          card.style.display = "none";
+        }
+      });
+    }
+
     function openModal() {
       overlay.classList.add("show");
       form.classList.remove("hide");
