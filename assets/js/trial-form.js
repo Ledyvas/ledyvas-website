@@ -1,6 +1,9 @@
-// LEDYVAS — formulario de "Solicitar prueba gratis" (descargas.html y sus
-// 4 traducciones). Llama al Cloudflare Worker del servidor de licencias,
-// que emite el código de activación y lo manda por correo (Zoho Mail SMTP).
+// LEDYVAS — formulario de "Solicitar prueba gratis". Se usa en descargas.html
+// y sus 4 traducciones (en/download.html, it/download.html,
+// fr/telechargements.html, pt/downloads.html). Llama al Cloudflare Worker del
+// servidor de licencias, que emite el código de activación y lo manda por
+// correo. Si la página no trae el modal en el HTML, este script lo inyecta
+// (con textos según el idioma del <html lang>).
 
 (function () {
   const WORKER_URL = "https://ledyvas-license-server.ledyvas.workers.dev/trial/request";
@@ -11,85 +14,172 @@
       email_not_configured: "El envío de correos todavía no está activo. Escribinos a info@ledyvas.com y te mandamos el código a mano.",
       email_send_failed: "No pudimos enviar el correo. Probá de nuevo en un momento, o escribinos a info@ledyvas.com.",
       generic: "Algo salió mal. Probá de nuevo en un momento.",
-      downloadNow: "Descargar ahora"
+      downloadNow: "Descargar ahora",
+      modalTitle: "Solicitá tu prueba gratuita",
+      modalLede: "Te mandamos el instalador y tu código de activación por correo — sin costo, 14 días de acceso completo.",
+      fieldName: "Nombre",
+      namePlaceholder: "Tu nombre",
+      fieldEmail: "Email",
+      submit: "Enviarme el código",
+      formNote: "Vas a recibir un email con el link de descarga y el código de activación.",
+      successTitle: "¡Listo! Revisá tu correo",
+      successText: "Te mandamos el instalador y tu código de activación. Si no lo ves en unos minutos, revisá spam.",
+      closeAria: "Cerrar"
     },
     it: {
       invalid_email: "Quell'email non sembra valida — controllala e riprova.",
       email_not_configured: "L'invio di email non è ancora attivo. Scrivici a info@ledyvas.com e ti mandiamo il codice a mano.",
       email_send_failed: "Non siamo riusciti a inviare l'email. Riprova tra un momento, oppure scrivici a info@ledyvas.com.",
       generic: "Qualcosa è andato storto. Riprova tra un momento.",
-      downloadNow: "Scarica ora"
+      downloadNow: "Scarica ora",
+      modalTitle: "Richiedi la tua prova gratuita",
+      modalLede: "Ti mandiamo l'installer e il tuo codice di attivazione via email — senza costi, 14 giorni di accesso completo.",
+      fieldName: "Nome",
+      namePlaceholder: "Il tuo nome",
+      fieldEmail: "Email",
+      submit: "Inviami il codice",
+      formNote: "Riceverai un'email con il link di download e il codice di attivazione.",
+      successTitle: "Fatto! Controlla la tua email",
+      successText: "Ti abbiamo mandato l'installer e il tuo codice di attivazione. Se non lo vedi tra qualche minuto, controlla lo spam.",
+      closeAria: "Chiudi"
     },
     en: {
       invalid_email: "That email doesn't look valid — check it and try again.",
       email_not_configured: "Sending emails isn't active yet. Write to us at info@ledyvas.com and we'll send you the code by hand.",
       email_send_failed: "We couldn't send the email. Try again in a moment, or write to info@ledyvas.com.",
       generic: "Something went wrong. Try again in a moment.",
-      downloadNow: "Download now"
+      downloadNow: "Download now",
+      modalTitle: "Request your free trial",
+      modalLede: "We'll email you the installer and your activation code — free, 14 days of full access.",
+      fieldName: "Name",
+      namePlaceholder: "Your name",
+      fieldEmail: "Email",
+      submit: "Send me the code",
+      formNote: "You'll get an email with the download link and the activation code.",
+      successTitle: "Done! Check your email",
+      successText: "We sent you the installer and your activation code. If you don't see it in a few minutes, check your spam folder.",
+      closeAria: "Close"
     },
     fr: {
       invalid_email: "Cet email ne semble pas valide — vérifiez-le et réessayez.",
       email_not_configured: "L'envoi d'emails n'est pas encore actif. Écrivez-nous à info@ledyvas.com et on vous envoie le code à la main.",
       email_send_failed: "Nous n'avons pas pu envoyer l'email. Réessayez dans un instant, ou écrivez-nous à info@ledyvas.com.",
       generic: "Quelque chose s'est mal passé. Réessayez dans un instant.",
-      downloadNow: "Télécharger maintenant"
+      downloadNow: "Télécharger maintenant",
+      modalTitle: "Demandez votre essai gratuit",
+      modalLede: "Nous vous envoyons l'installateur et votre code d'activation par email — gratuit, 14 jours d'accès complet.",
+      fieldName: "Nom",
+      namePlaceholder: "Votre nom",
+      fieldEmail: "Email",
+      submit: "Envoyez-moi le code",
+      formNote: "Vous recevrez un email avec le lien de téléchargement et le code d'activation.",
+      successTitle: "C'est fait ! Vérifiez votre email",
+      successText: "Nous vous avons envoyé l'installateur et votre code d'activation. Si vous ne le voyez pas d'ici quelques minutes, vérifiez vos spams.",
+      closeAria: "Fermer"
     },
     pt: {
       invalid_email: "Esse email não parece válido — confira e tente de novo.",
       email_not_configured: "O envio de emails ainda não está ativo. Escreva para info@ledyvas.com e mandamos o código manualmente.",
       email_send_failed: "Não conseguimos enviar o email. Tente de novo em instantes, ou escreva para info@ledyvas.com.",
       generic: "Algo deu errado. Tente de novo em instantes.",
-      downloadNow: "Baixar agora"
+      downloadNow: "Baixar agora",
+      modalTitle: "Solicite a sua avaliação gratuita",
+      modalLede: "Enviamos o instalador e o seu código de ativação por email — sem custo, 14 dias de acesso completo.",
+      fieldName: "Nome",
+      namePlaceholder: "O seu nome",
+      fieldEmail: "Email",
+      submit: "Enviar-me o código",
+      formNote: "Vai receber um email com o link de download e o código de ativação.",
+      successTitle: "Pronto! Verifique o seu email",
+      successText: "Enviámos o instalador e o seu código de ativação. Se não o vir em alguns minutos, verifique o spam.",
+      closeAria: "Fechar"
     }
   };
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const overlay = document.getElementById("trial-modal-overlay");
-    if (!overlay) return;
+  const ENTERPRISE_BANNER = {
+    es: {
+      html: 'Estás por descargar <b>Ledyvas Enterprise</b> — la versión con <b>Exportar a Contabilidad</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Probala 14 días gratis con tus datos. Después de la prueba se contrata por <b>suscripción mensual</b>, únicamente a través de un Distribuidor Oficial.',
+      link: "Ver el Programa de Distribución"
+    },
+    en: {
+      html: 'You are about to download <b>Ledyvas Enterprise</b> — the version with <b>Export to Accounting</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Try it free for 14 days with your own data. After the trial it is offered by <b>monthly subscription</b>, only through an Official Distributor.',
+      link: "See the Distribution Program"
+    },
+    it: {
+      html: 'Stai per scaricare <b>Ledyvas Enterprise</b> — la versione con <b>Esporta in Contabilità</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Provala 14 giorni gratis con i tuoi dati. Dopo la prova si attiva con <b>abbonamento mensile</b>, solo tramite un Distributore Ufficiale.',
+      link: "Vedi il Programma di Distribuzione"
+    },
+    fr: {
+      html: 'Vous êtes sur le point de télécharger <b>Ledyvas Enterprise</b> — la version avec <b>Exporter vers la comptabilité</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Essayez-la 14 jours gratuitement avec vos données. Après l\'essai, elle est proposée par <b>abonnement mensuel</b>, uniquement via un Distributeur Officiel.',
+      link: "Voir le Programme de Distribution"
+    },
+    pt: {
+      html: 'Você está prestes a baixar o <b>Ledyvas Enterprise</b> — a versão com <b>Exportar para Contabilidade</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Experimente 14 dias grátis com os seus dados. Depois da avaliação é contratado por <b>subscrição mensal</b>, apenas através de um Distribuidor Oficial.',
+      link: "Ver o Programa de Distribuição"
+    }
+  };
 
-    const modal = overlay.querySelector(".trial-modal");
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  function buildOverlay(t) {
+    const wrap = document.createElement("div");
+    wrap.className = "trial-modal-overlay";
+    wrap.id = "trial-modal-overlay";
+    wrap.innerHTML =
+      '<div class="trial-modal">' +
+        '<button type="button" class="trial-modal-close" aria-label="' + esc(t.closeAria) + '">&times;</button>' +
+        '<form id="trial-form" class="trial-modal-form">' +
+          '<h3>' + esc(t.modalTitle) + '</h3>' +
+          '<p class="trial-modal-lede">' + esc(t.modalLede) + '</p>' +
+          '<div class="trial-modal-error" id="trial-form-error"></div>' +
+          '<div class="field"><label for="trial-name">' + esc(t.fieldName) + '</label>' +
+            '<input id="trial-name" name="name" type="text" placeholder="' + esc(t.namePlaceholder) + '" required></div>' +
+          '<div class="field"><label for="trial-email">' + esc(t.fieldEmail) + '</label>' +
+            '<input id="trial-email" name="email" type="email" placeholder="tu@empresa.com" required></div>' +
+          '<div class="honeypot-field" aria-hidden="true"><label for="trial-company">No completar</label>' +
+            '<input id="trial-company" name="company" type="text" tabindex="-1" autocomplete="off"></div>' +
+          '<button type="submit" class="btn btn-primary btn-lg">' + esc(t.submit) + '</button>' +
+          '<p class="form-note">' + esc(t.formNote) + '</p>' +
+        '</form>' +
+        '<div class="trial-modal-success" id="trial-form-success">' +
+          '<div class="icon-circle" style="margin-left:auto;margin-right:auto;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>' +
+          '<h3>' + esc(t.successTitle) + '</h3>' +
+          '<p>' + esc(t.successText) + '</p>' +
+          '<a href="#" id="trial-form-download-link" class="btn btn-gold btn-lg" target="_blank" rel="noopener" style="display:none;"></a>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(wrap);
+    return wrap;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const lang = (document.documentElement.getAttribute("lang") || "es").slice(0, 2).toLowerCase();
+    const t = TEXT[lang] || TEXT.es;
+
+    let overlay = document.getElementById("trial-modal-overlay");
+    if (!overlay) overlay = buildOverlay(t);
+
     const form = document.getElementById("trial-form");
+    if (!form) return;
     const errorBox = document.getElementById("trial-form-error");
     const successBox = document.getElementById("trial-form-success");
     const successDownloadLink = document.getElementById("trial-form-download-link");
     const submitButton = form.querySelector('button[type="submit"]');
 
-    const lang = (document.documentElement.getAttribute("lang") || "es").slice(0, 2).toLowerCase();
-    const t = TEXT[lang] || TEXT.es;
-
     // ?edition=enterprise -> el Worker manda el build de Ledyvas Enterprise
     // (con "Exportar a Contabilidad"). Se llega así desde distribuidores.html.
     const edition = new URLSearchParams(location.search).get("edition") === "enterprise" ? "enterprise" : "pro";
 
-    // Cuando se llega como trial de Enterprise, esta página (que es la de la
-    // versión pública "Pro") muestra precios de pago único que NO aplican.
-    // Ajustamos la copia: banner explicativo + ocultar las tarjetas de precio Pro.
+    // Esta página es la de la versión pública "Pro" y muestra precios de pago
+    // único que NO aplican a un trial de Enterprise: banner + ocultar tarjetas.
     if (edition === "enterprise") applyEnterpriseUI(lang);
 
     function applyEnterpriseUI(lg) {
-      const B = {
-        es: {
-          html: 'Estás por descargar <b>Ledyvas Enterprise</b> — la versión con <b>Exportar a Contabilidad</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Probala 14 días gratis con tus datos. Después de la prueba se contrata por <b>suscripción mensual</b>, únicamente a través de un Distribuidor Oficial.',
-          link: "Ver el Programa de Distribución"
-        },
-        en: {
-          html: 'You are about to download <b>Ledyvas Enterprise</b> — the version with <b>Export to Accounting</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Try it free for 14 days with your own data. After the trial it is offered by <b>monthly subscription</b>, only through an Official Distributor.',
-          link: "See the Distribution Program"
-        },
-        it: {
-          html: 'Stai per scaricare <b>Ledyvas Enterprise</b> — la versione con <b>Esporta in Contabilità</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Provala 14 giorni gratis con i tuoi dati. Dopo la prova si attiva con <b>abbonamento mensile</b>, solo tramite un Distributore Ufficiale.',
-          link: "Vedi il Programma di Distribuzione"
-        },
-        fr: {
-          html: 'Vous êtes sur le point de télécharger <b>Ledyvas Enterprise</b> — la version avec <b>Exporter vers la comptabilité</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Essayez-la 14 jours gratuitement avec vos données. Après l\'essai, elle est proposée par <b>abonnement mensuel</b>, uniquement via un Distributeur Officiel.',
-          link: "Voir le Programme de Distribution"
-        },
-        pt: {
-          html: 'Você está prestes a baixar o <b>Ledyvas Enterprise</b> — a versão com <b>Exportar para Contabilidade</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Experimente 14 dias grátis com os seus dados. Depois da avaliação é contratado por <b>subscrição mensal</b>, apenas através de um Distribuidor Oficial.',
-          link: "Ver o Programa de Distribuição"
-        }
-      };
-      const c = B[lg] || B.es;
+      const c = ENTERPRISE_BANNER[lg] || ENTERPRISE_BANNER.es;
       const main = document.querySelector("main");
       if (main && !document.getElementById("edition-enterprise-banner")) {
         const box = document.createElement("div");
@@ -99,7 +189,6 @@
           ' &nbsp;<a href="/distribuidores.html?lang=' + lg + '" style="color:#C89B3C;font-weight:600;white-space:nowrap;">' + c.link + ' →</a></div>';
         main.insertBefore(box, main.firstChild);
       }
-      // ocultar las tarjetas que mencionan el precio de pago único de Pro (750 / 1850 USD)
       document.querySelectorAll("main .card").forEach(function (card) {
         if (/\b(750|1[.\s]?850|1850)\b/.test(card.textContent) || /\bUSD\b/.test(card.textContent)) {
           card.style.display = "none";
