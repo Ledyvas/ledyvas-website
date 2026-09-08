@@ -111,7 +111,7 @@
       </div>
       <div>
         <div class="nav-side-title">Get started</div>
-        <a href="download.html" class="btn btn-gold btn-block">Download Ledyvas</a>
+        <a href="download.html?edition=enterprise" class="btn btn-gold btn-block">Download Ledyvas Enterprise</a>
         <div style="height:10px"></div>
         <a href="pricing.html" class="btn btn-outline-light btn-block">Buy now</a>
       </div>
@@ -151,6 +151,9 @@
           <li>Re-syncing a period is always safe.</li>
         </ul>
         <div class="callout">Tax (VAT / ITBIS) is <strong>not</strong> synced. Ledyvas does not store tax separately; your accountant applies tax in Zoho Books.</div>
+
+        <h2>Which version you need</h2>
+        <p>The Zoho Books integration is part of <strong>Ledyvas Enterprise</strong>. Download it from <a href="download.html?edition=enterprise">the Enterprise trial page</a> — 14 days free with your own data. After the trial, Ledyvas Enterprise is offered by monthly subscription, only through a Ledyvas Official Distributor. The "Sync with Zoho Books" screen appears under <strong>Quick Actions</strong> in that build.</p>
 
         <h2>How to connect</h2>
         <ol>
@@ -203,7 +206,7 @@
           <dd>Yes, anytime, from inside Ledyvas or from your Zoho account. Journals already synced stay in Zoho Books.</dd>
 
           <dt>Which OAuth scope does it request?</dt>
-          <dd><code>ZohoBooks.fullaccess.all</code> — needed to create journals and contacts, and to read the chart of accounts and existing journals for deduplication.</dd>
+          <dd><code>ZohoBooks.journals.ALL</code>, <code>ZohoBooks.contacts.ALL</code> and <code>ZohoBooks.settings.READ</code> — only what the integration uses: create/read/delete manual journals, create/read contacts, and read the chart of accounts and organization list. It does not request access to invoices, expenses, banking or any other Zoho Books data.</dd>
 
           <dt>Is this a free add-on?</dt>
           <dd>The Zoho Books integration is part of <strong>Ledyvas Enterprise</strong>, available through a Ledyvas Official Distributor. It is not sold separately on the marketplace.</dd>

@@ -111,7 +111,7 @@
       </div>
       <div>
         <div class="nav-side-title">Empieza ahora</div>
-        <a href="descargas.html" class="btn btn-gold btn-block">Descargar Ledyvas</a>
+        <a href="descargas.html?edition=enterprise" class="btn btn-gold btn-block">Descargar Ledyvas Enterprise</a>
         <div style="height:10px"></div>
         <a href="precios.html" class="btn btn-outline-light btn-block">Comprar ahora</a>
       </div>
@@ -151,6 +151,9 @@
           <li>Re-sincronizar un período es siempre seguro.</li>
         </ul>
         <div class="callout">El impuesto (IVA / ITBIS) <strong>no</strong> se sincroniza. Ledyvas no guarda el impuesto por separado; el contador lo aplica en Zoho Books.</div>
+
+        <h2>Qué versión necesitas</h2>
+        <p>La integración con Zoho Books es parte de <strong>Ledyvas Enterprise</strong>. Descárgala desde <a href="descargas.html?edition=enterprise">la página de prueba de Enterprise</a> — 14 días gratis con tus propios datos. Después de la prueba, Ledyvas Enterprise se contrata por suscripción mensual, únicamente a través de un Distribuidor Oficial de Ledyvas. La pantalla "Sincronizar con Zoho Books" aparece en <strong>Acciones Rápidas</strong> en ese build.</p>
 
         <h2>Cómo conectar</h2>
         <ol>
@@ -203,7 +206,7 @@
           <dd>Sí, en cualquier momento, desde dentro de Ledyvas o desde tu cuenta de Zoho. Los asientos ya sincronizados quedan en Zoho Books.</dd>
 
           <dt>¿Qué permiso (scope) OAuth pide?</dt>
-          <dd><code>ZohoBooks.fullaccess.all</code> — necesario para crear asientos y contactos, y para leer el plan de cuentas y los asientos existentes para la deduplicación.</dd>
+          <dd><code>ZohoBooks.journals.ALL</code>, <code>ZohoBooks.contacts.ALL</code> y <code>ZohoBooks.settings.READ</code> — solo lo que usa la integración: crear/leer/borrar asientos manuales, crear/leer contactos, y leer el plan de cuentas y la lista de organizaciones. No pide acceso a facturas, gastos, banca ni ningún otro dato de Zoho Books.</dd>
 
           <dt>¿Es un complemento gratuito?</dt>
           <dd>La integración con Zoho Books es parte de <strong>Ledyvas Enterprise</strong>, disponible a través de un Distribuidor Oficial de Ledyvas. No se vende por separado en el marketplace.</dd>
