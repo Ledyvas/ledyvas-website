@@ -11,22 +11,22 @@ module.exports = {
 
     establecimientos: {
       eyebrow: "Software para establecimientos",
-      title: "Software para establecimientos: cómo elegir el sistema de gestión de tu negocio | Ledyvas",
-      description: "Qué es un software de gestión para establecimientos, cuándo lo necesitás y cómo elegirlo: compras, inventario, ventas, caja y reportes para restaurantes, catering y comercios.",
+      title: "Software para establecimientos: cómo elegir el sistema de gestión de su negocio | Ledyvas",
+      description: "Qué es un software de gestión para establecimientos, cuándo lo necesita y cómo elegirlo: compras, inventario, ventas, caja y reportes para restaurantes, catering y comercios.",
       h1: "Software para establecimientos: qué es y cómo elegirlo",
-      lede: "Un software de gestión para establecimientos reúne compras, inventario, ventas, caja y reportes de tu local en un solo lugar. Esta guía te ayuda a entender qué debe hacer y a no equivocarte al elegir.",
+      lede: "Un software de gestión para establecimientos reúne compras, inventario, ventas, caja y reportes de su local en un solo lugar. Esta guía le ayuda a entender qué debe hacer y a no equivocarse al elegir.",
       body: `
       <h2>Qué es un software de gestión para establecimientos</h2>
-      <p>Es el sistema que centraliza la operación diaria de un local comercial —un restaurante, una tienda, un salón, un minimarket, una empresa de catering, una excursión turística— en una única plataforma. En vez de tener el stock en un cuaderno, las compras en el WhatsApp del proveedor y las ventas en la memoria del dueño, todo queda registrado y conectado: cuando entra una compra, sube el inventario; cuando hay una venta, baja; y al final del día sabés cuánto compraste, cuánto vendiste y cuánto te quedó.</p>
+      <p>Es el sistema que centraliza la operación diaria de un local comercial —un restaurante, una tienda, un salón, un minimarket, una empresa de catering, una excursión turística— en una única plataforma. En vez de tener el stock en un cuaderno, las compras en el WhatsApp del proveedor y las ventas en la memoria del dueño, todo queda registrado y conectado: cuando entra una compra, sube el inventario; cuando hay una venta, baja; y al final del día sabe cuánto compró, cuánto vendió y cuánto le quedó.</p>
 
-      <h2>Señales de que tu establecimiento ya lo necesita</h2>
+      <h2>Señales de que su establecimiento ya lo necesita</h2>
       <ul>
         <li>El Excel de inventario nunca coincide con lo que hay en la estantería.</li>
-        <li>Comprás "a ojo": a veces te sobra mercadería que se vence, a veces te falta justo lo que más se vende.</li>
-        <li>No sabés, al cerrar el día, si ganaste o perdiste plata.</li>
-        <li>Sospechás de robo hormiga pero no tenés cómo demostrarlo.</li>
+        <li>Compra "a ojo": a veces le sobra mercadería que se vence, a veces le falta justo lo que más se vende.</li>
+        <li>No sabe, al cerrar el día, si ganó o perdió dinero.</li>
+        <li>Sospecha de robo hormiga pero no tiene cómo demostrarlo.</li>
         <li>Cada vez que se enferma la persona de confianza, la operación se frena porque "solo ella sabe".</li>
-        <li>Tu contador te pide los números y tardás días en armarlos.</li>
+        <li>Su contador le pide los números y tarda días en armarlos.</li>
       </ul>
 
       <h2>Qué tiene que hacer un buen software para establecimientos</h2>
@@ -35,25 +35,25 @@ module.exports = {
         <li><strong>Compras y proveedores:</strong> registrar cada compra con su proveedor, su fecha y su costo, y que eso actualice el stock automáticamente.</li>
         <li><strong>Inventario en tiempo real:</strong> saber en cualquier momento cuánto hay de cada producto, con alertas de stock bajo.</li>
         <li><strong>Ventas y caja:</strong> registrar lo que sale y llevar el movimiento de caja del día.</li>
-        <li><strong>Costos y margen:</strong> ver el costo real de lo que vendés y el margen que te deja, no solo la facturación.</li>
+        <li><strong>Costos y margen:</strong> ver el costo real de lo que vende y el margen que le deja, no solo la facturación.</li>
         <li><strong>Cierre diario:</strong> un reporte de cada día con lo comprado, lo vendido, lo que quedó y las diferencias del conteo físico.</li>
         <li><strong>Multiusuario con permisos:</strong> que cada empleado vea solo lo suyo y quede registrado quién hizo cada movimiento.</li>
         <li><strong>Que funcione sin depender de internet permanente:</strong> si se cae la conexión, la caja no puede parar.</li>
-        <li><strong>Que puedas sacar tus datos:</strong> exportar a Excel y a tu software contable cuando quieras.</li>
+        <li><strong>Que pueda sacar sus datos:</strong> exportar a Excel y a su software contable cuando quiera.</li>
       </ul>
 
       <h2>Errores comunes al elegir</h2>
       <ol>
-        <li><strong>Elegir solo por el precio.</strong> El más barato suele ser el que más tiempo te hace perder configurándolo.</li>
-        <li><strong>Sistemas que necesitan un consultor para arrancar.</strong> Si no lo podés poner en marcha vos con la operación real en una semana, algo está mal.</li>
-        <li><strong>Mensualidad que crece.</strong> Empezás pagando poco y a los seis meses el plan que necesitás cuesta el triple.</li>
-        <li><strong>Que no exporte tus datos.</strong> Si mañana querés cambiar de sistema y no podés llevarte la información, quedás atrapado.</li>
+        <li><strong>Elegir solo por el precio.</strong> El más barato suele ser el que más tiempo le hace perder configurándolo.</li>
+        <li><strong>Sistemas que necesitan un consultor para arrancar.</strong> Si no lo puede poner en marcha usted con la operación real en una semana, algo está mal.</li>
+        <li><strong>Mensualidad que crece.</strong> Empieza pagando poco y a los seis meses el plan que necesita cuesta el triple.</li>
+        <li><strong>Que no exporte sus datos.</strong> Si mañana quiere cambiar de sistema y no puede llevarte la información, queda atrapado.</li>
       </ol>
 
       <h2>Cómo lo resuelve Ledyvas</h2>
-      <p>Ledyvas es un software de gestión para establecimientos que se instala en tu PC con Windows y funciona sin depender de una conexión permanente. Cubre compras, proveedores, productos, inventario, ventas, caja, producción y reportes, con usuarios y permisos. La base de datos es tuya y está cifrada.</p>
-      <p>Se paga <strong>una sola vez</strong> —no hay mensualidad— y exporta los datos ordenados a <strong>QuickBooks, Alegra, Zoho Books, Odoo y Xero</strong>, así tu contador recibe todo limpio. Sirve para restaurantes, bares, cafeterías, catering, tiendas y salones, y tiene un modo opcional para operadores de excursiones turísticas (cálculo por PAX, combustible de flotas, margen por destino) que se puede apagar.</p>
-      <p>Podés <a href="descargas.html">descargar la prueba gratis</a> y usarla sin límite de tiempo con tus datos reales antes de decidir.</p>
+      <p>Ledyvas es un software de gestión para establecimientos que se instala en su PC con Windows y funciona sin depender de una conexión permanente. Cubre compras, proveedores, productos, inventario, ventas, caja, producción y reportes, con usuarios y permisos. La base de datos es suya y está cifrada.</p>
+      <p>Se paga <strong>una sola vez</strong> —no hay mensualidad— y exporta los datos ordenados a <strong>QuickBooks, Alegra, Zoho Books, Odoo y Xero</strong>, así su contador recibe todo limpio. Sirve para restaurantes, bares, cafeterías, catering, tiendas y salones, y tiene un modo opcional para operadores de excursiones turísticas (cálculo por PAX, combustible de flotas, margen por destino) que se puede apagar.</p>
+      <p>Puede <a href="descargas.html">descargar la prueba gratis</a> y usarla sin límite de tiempo con sus datos reales antes de decidir.</p>
     `
     },
 
@@ -62,7 +62,7 @@ module.exports = {
       title: "Software de gestión para restaurantes y catering: compras, inventario y costos | Ledyvas",
       description: "Guía práctica de software para restaurantes, bares, cafeterías y empresas de catering: recetas y food cost, inventario de insumos, cierre de día, mermas y margen por plato.",
       h1: "Software de gestión para restaurantes y catering: guía práctica",
-      lede: "En un restaurante, la plata no se pierde en la caja: se pierde en la cocina. Esta guía explica qué controla un software de gestión para restaurantes y servicios de catering, y cómo te ayuda a saber tu costo real.",
+      lede: "En un restaurante, el dinero no se pierde en la caja: se pierde en la cocina. Esta guía explica qué controla un software de gestión para restaurantes y servicios de catering, y cómo le ayuda a saber su costo real.",
       body: `
       <h2>El problema real de un restaurante sin sistema</h2>
       <p>Un restaurante o una empresa de catering puede facturar mucho y ganar poco. El motivo casi siempre es el mismo: el <strong>food cost</strong> —lo que cuestan los insumos de cada plato o de cada evento— se lleva a ojo. Se compra de más y se vence; se compra de menos y falta en el peor momento; los insumos se van en mermas, en porciones mal medidas o en robo, y nadie lo ve porque no hay contra qué comparar. Al cierre del mes el dueño mira el banco y no entiende por qué no cuadra.</p>
@@ -71,31 +71,31 @@ module.exports = {
       <ul>
         <li><strong>Compras a proveedores:</strong> cada compra de insumos con su costo, que actualiza el inventario.</li>
         <li><strong>Recetas y escandallo:</strong> la lista de insumos de cada plato y su costo calculado.</li>
-        <li><strong>Producción:</strong> cuando cocinás un lote (una salsa, un pan, una masa), descuenta los ingredientes y suma el producto terminado.</li>
+        <li><strong>Producción:</strong> cuando cocina un lote (una salsa, un pan, una masa), descuenta los ingredientes y suma el producto terminado.</li>
         <li><strong>Inventario de insumos:</strong> stock real de cada ingrediente, en tiempo real.</li>
         <li><strong>Ventas y caja:</strong> lo que sale por el salón, por el evento de catering o por delivery, y el movimiento de caja del turno.</li>
         <li><strong>Cierre de día:</strong> el conteo físico contra el teórico, para ver la merma real.</li>
-        <li><strong>Combustible y reparto</strong>, si hacés delivery propio o llevás la comida a los eventos con vehículos.</li>
+        <li><strong>Combustible y reparto</strong>, si hace delivery propio o lleva la comida a los eventos con vehículos.</li>
       </ul>
 
       <h2>Recetas y food cost: el corazón del sistema</h2>
-      <p>La clave de un software de restaurante es la receta. Cargás una vez qué lleva cada plato —200 g de carne, 50 g de queso, un pan— y el sistema calcula su costo con los precios de compra actuales. Cuando vendés ese plato, descuenta esos insumos del inventario. Así, sin contar a mano, sabés:</p>
+      <p>La clave de un software de restaurante es la receta. Carga una vez qué lleva cada plato —200 g de carne, 50 g de queso, un pan— y el sistema calcula su costo con los precios de compra actuales. Cuando vende ese plato, descuenta esos insumos del inventario. Así, sin contar a mano, sabe:</p>
       <ul>
-        <li>Cuánto te cuesta cada plato y qué margen te deja.</li>
-        <li>Qué platos te hacen ganar y cuáles vendés casi sin ganancia.</li>
-        <li>Cuánto insumo deberías tener según lo que vendiste (el "teórico").</li>
+        <li>Cuánto le cuesta cada plato y qué margen le deja.</li>
+        <li>Qué platos le hacen ganar y cuáles vende casi sin ganancia.</li>
+        <li>Cuánto insumo deberías tener según lo que vendió (el "teórico").</li>
         <li>El costo por cubierto de un menú de catering antes de pasar el presupuesto.</li>
       </ul>
 
       <h2>El cierre de día: dónde aparece la merma</h2>
-      <p>Al final del turno hacés un conteo físico rápido de los insumos críticos. El sistema ya sabe cuánto deberías tener (lo que compraste menos lo que vendiste). La diferencia entre el conteo real y el teórico es tu <strong>merma</strong>: rotura, porciones mal servidas, regalos no registrados o robo. Verlo todos los días, aunque sea de tres o cuatro insumos, cambia la operación.</p>
+      <p>Al final del turno hace un conteo físico rápido de los insumos críticos. El sistema ya sabe cuánto deberías tener (lo que compró menos lo que vendió). La diferencia entre el conteo real y el teórico es su <strong>merma</strong>: rotura, porciones mal servidas, regalos no registrados o robo. Verlo todos los días, aunque sea de tres o cuatro insumos, cambia la operación.</p>
 
       <h2>Varios locales</h2>
-      <p>Si tenés más de un local, una franquicia o varias líneas (salón + catering), el sistema debería dejarte ver cada uno por separado y también consolidado, sin tener que sumar Excel a mano.</p>
+      <p>Si tiene más de un local, una franquicia o varias líneas (salón + catering), el sistema debería dejarte ver cada uno por separado y también consolidado, sin tener que sumar Excel a mano.</p>
 
       <h2>Cómo lo hace Ledyvas</h2>
       <p>Ledyvas para restaurantes y catering cubre compras, proveedores, recetas, producción, inventario de insumos, ventas, caja, control de combustible y cierre diario, con usuarios y permisos. Se instala en Windows, funciona sin depender de internet permanente y se paga una sola vez. Exporta a QuickBooks, Alegra, Zoho Books, Odoo y Xero, así el contador recibe todo ordenado.</p>
-      <p>Tiene además un modo para operadores de excursiones —donde la comida y la bebida se calculan por PAX del día— que se puede activar o dejar apagado. <a href="descargas.html">Descargá la prueba gratis</a> y probalo con la carta y los proveedores reales de tu restaurante o servicio de catering.</p>
+      <p>Tiene además un modo para operadores de excursiones —donde la comida y la bebida se calculan por PAX del día— que se puede activar o dejar apagado. <a href="descargas.html">Descargue la prueba gratis</a> y pruébelo con la carta y los proveedores reales de su restaurante o servicio de catering.</p>
     `
     },
 
@@ -107,13 +107,13 @@ module.exports = {
       lede: "Un operador de excursiones no gestiona como una tienda: todo se mueve por los PAX del día. Esta guía explica qué necesita un software pensado para ese negocio, incluido el catering a bordo.",
       body: `
       <h2>Por qué un operador de excursiones necesita otro tipo de software</h2>
-      <p>En una excursión, la comida, la bebida, los desechables y hasta el combustible de las lanchas y los buses se calculan <strong>por pasajero y por destino</strong>. Si mañana salen 120 PAX repartidos entre cuatro playas, cada playa necesita una cantidad distinta de cada insumo, y comprarla bien es la diferencia entre ganar y regalar el margen. Un software de tienda común no sabe hacer ese cálculo, y menos si además servís catering a bordo.</p>
+      <p>En una excursión, la comida, la bebida, los desechables y hasta el combustible de las lanchas y los buses se calculan <strong>por pasajero y por destino</strong>. Si mañana salen 120 PAX repartidos entre cuatro playas, cada playa necesita una cantidad distinta de cada insumo, y comprarla bien es la diferencia entre ganar y regalar el margen. Un software de tienda común no sabe hacer ese cálculo, y menos si además sirve catering a bordo.</p>
 
       <h2>Qué tiene que resolver</h2>
       <ul>
         <li><strong>Fórmula por PAX y por destino:</strong> definir cuánto de cada insumo lleva cada persona en cada destino, y que el sistema calcule la compra del día con solo cargar los PAX.</li>
-        <li><strong>Compra asistida:</strong> a partir de esa fórmula, una propuesta de compra que podés ajustar antes de confirmar.</li>
-        <li><strong>Catering a bordo:</strong> recetas de los menús que servís en la excursión, con su costo por cubierto.</li>
+        <li><strong>Compra asistida:</strong> a partir de esa fórmula, una propuesta de compra que puede ajustar antes de confirmar.</li>
+        <li><strong>Catering a bordo:</strong> recetas de los menús que sirve en la excursión, con su costo por cubierto.</li>
         <li><strong>Inventario del centro logístico y de las embarcaciones:</strong> lo que sale hacia cada destino y lo que vuelve.</li>
         <li><strong>Control de combustible por unidad:</strong> despacho a cada lancha o bus, devolución de lo que no se usó y consumo real por equipo.</li>
         <li><strong>Devoluciones:</strong> lo que un destino no consumió y vuelve, para comprar menos al día siguiente.</li>
@@ -121,17 +121,17 @@ module.exports = {
       </ul>
 
       <h2>El cálculo por PAX, explicado</h2>
-      <p>Cargás una vez la "fórmula": por ejemplo, 0,3 litros de bebida y 1 sándwich por persona en la Playa A, y valores distintos en la Playa B. Cada mañana ingresás los PAX de cada destino y el sistema te dice exactamente cuánto comprar de cada cosa, restando lo que ya tenés en inventario y lo que quedó de devoluciones. Comprás lo justo.</p>
+      <p>Carga una vez la "fórmula": por ejemplo, 0,3 litros de bebida y 1 sándwich por persona en la Playa A, y valores distintos en la Playa B. Cada mañana ingresa los PAX de cada destino y el sistema le dice exactamente cuánto comprar de cada cosa, restando lo que ya tiene en inventario y lo que quedó de devoluciones. Compra lo justo.</p>
 
       <h2>Combustible y flotas</h2>
       <p>El combustible de una flota de lanchas o buses es uno de los costos que más se escapa. El sistema registra el despacho a cada unidad, la devolución de lo que sobró y el consumo neto, y lo consolida por semana y por empresa. Sirve también para auditar y hasta para vender combustible a terceros con trazabilidad.</p>
 
       <h2>Margen por destino</h2>
-      <p>Al cruzar lo que se despachó a cada destino con lo que se vendió allí, sabés el costo, la venta y el margen de cada excursión —y el costo por PAX—, no un promedio general.</p>
+      <p>Al cruzar lo que se despachó a cada destino con lo que se vendió allí, sabe el costo, la venta y el margen de cada excursión —y el costo por PAX—, no un promedio general.</p>
 
       <h2>Cómo lo hace Ledyvas</h2>
-      <p>Ledyvas tiene un <strong>modo turismo</strong> con todo esto: fórmula por PAX y por destino, compra asistida, recetas para el catering a bordo, centro logístico, control de combustible por vehículo o embarcación, devoluciones, margen por destino y consolidado de flotas. Se activa desde la configuración; si además tenés un restaurante o una tienda, esas funciones conviven en el mismo sistema.</p>
-      <p>Se instala en Windows, se paga una sola vez y exporta a QuickBooks, Alegra, Zoho Books, Odoo y Xero. <a href="descargas.html">Descargá la prueba gratis</a> y armá la fórmula de tus destinos reales.</p>
+      <p>Ledyvas tiene un <strong>modo turismo</strong> con todo esto: fórmula por PAX y por destino, compra asistida, recetas para el catering a bordo, centro logístico, control de combustible por vehículo o embarcación, devoluciones, margen por destino y consolidado de flotas. Se activa desde la configuración; si además tiene un restaurante o una tienda, esas funciones conviven en el mismo sistema.</p>
+      <p>Se instala en Windows, se paga una sola vez y exporta a QuickBooks, Alegra, Zoho Books, Odoo y Xero. <a href="descargas.html">Descargue la prueba gratis</a> y arme la fórmula de sus destinos reales.</p>
     `
     }
   },

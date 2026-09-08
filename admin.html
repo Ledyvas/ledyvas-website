@@ -48,7 +48,7 @@
   <!-- Puerta de acceso -->
   <div class="adm-gate" id="adm-gate">
     <h2 style="margin:0 0 4px;font-size:18px">Acceso</h2>
-    <p class="adm-note">Pegá el ADMIN_SECRET del Worker. Se guarda solo en esta pestaña.</p>
+    <p class="adm-note">Pegue el ADMIN_SECRET del Worker. Se guarda solo en esta pestaña.</p>
     <input type="password" id="adm-tok" placeholder="ADMIN_SECRET" autocomplete="off">
     <button class="d-btn primary" id="adm-enter" style="width:100%">Entrar</button>
     <p class="adm-note" id="adm-gate-err" style="color:var(--bad,#dc2626)" hidden></p>
@@ -296,7 +296,7 @@
 
     if (rec.attachments && rec.attachments.length) {
       parts.push('<h4>Adjuntos</h4><p class="adm-note">' + rec.attachments.map(esc).join(", ") +
-        ' — se enviaron a tu correo con la solicitud (no se guardan acá).</p>');
+        ' — se enviaron a su correo con la solicitud (no se guardan acá).</p>');
     }
 
     body.innerHTML = parts.join("");
@@ -343,7 +343,7 @@
   // ---- eventos ----
   $("adm-enter").addEventListener("click", function () {
     token = ($("adm-tok").value || "").trim();
-    if (!token) { gateError("Pegá el token."); return; }
+    if (!token) { gateError("Pegue el token."); return; }
     sessionStorage.setItem(TOK_KEY, token);
     $("adm-gate-err").hidden = true;
     load();
