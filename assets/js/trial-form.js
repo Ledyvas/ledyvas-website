@@ -57,6 +57,10 @@
     const lang = (document.documentElement.getAttribute("lang") || "es").slice(0, 2).toLowerCase();
     const t = TEXT[lang] || TEXT.es;
 
+    // ?edition=enterprise -> el Worker manda el build de Ledyvas Enterprise
+    // (con "Exportar a Contabilidad"). Se llega así desde distribuidores.html.
+    const edition = new URLSearchParams(location.search).get("edition") === "enterprise" ? "enterprise" : "pro";
+
     function openModal() {
       overlay.classList.add("show");
       form.classList.remove("hide");
@@ -108,7 +112,7 @@
         const response = await fetch(WORKER_URL, {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ name, email, company, lang })
+          body: JSON.stringify({ name, email, company, lang, edition })
         });
         const data = await response.json().catch(() => ({ ok: false, error: "generic" }));
 
