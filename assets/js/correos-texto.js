@@ -31,7 +31,7 @@
   // [email] lo reemplaza la herramienta de envío por la dirección del destinatario
   // (igual que [nombre]/[empresa]). El enlace da la baja en un solo clic.
   var OPTOUT = {
-    es: "Dar de baja: https://ledyvas.com/unsubscribe.html?e=[email] — un solo clic, efecto inmediato; no te volvemos a escribir.",
+    es: "Dar de baja: https://ledyvas.com/unsubscribe.html?e=[email] — un solo clic, efecto inmediato; no volveremos a escribirle.",
     en: "Unsubscribe: https://ledyvas.com/unsubscribe.html?e=[email] — one click, effective immediately; we will not email you again.",
     it: "Annulla iscrizione: https://ledyvas.com/unsubscribe.html?e=[email] — un solo clic, effetto immediato; non ti scriveremo più.",
     fr: "Se désinscrire : https://ledyvas.com/unsubscribe.html?e=[email] — un clic, effet immédiat ; nous ne vous écrirons plus.",
@@ -40,34 +40,34 @@
 
   var DATA = {
     es: {
-      firstSubject: "Ledyvas — programa de partners con comisión recurrente (sin costo de entrada)",
+      firstSubject: "Ledyvas — programa de partners con comisión recurrente (sin coste de entrada)",
       first:
         "Hola [nombre],\n\n" +
-        "Te escribo desde el equipo de Alianzas de Ledyvas, un ERP para pymes, especializado en hostelería y turismo (restaurantes, catering, excursiones) pero también útil para comercio y cualquier negocio con inventario y varios puntos de venta.\n\n" +
-        "Ledyvas no compite con tu plataforma contable — trabaja por debajo de ella. Tu cliente lleva la operación diaria en Ledyvas (compras, inventario, ventas, caja, control de combustible y flotas, recetas y food cost) y al cierre exporta los datos limpios a Zoho Books, QuickBooks, Alegra, Odoo o Xero. La IA integrada le indica cuánto comprar.\n\n" +
-        "El programa funciona como el de partners de Zoho: no hay membresía ni costo de entrada. Das de alta a tu cliente, lo acompañás, y cobrás el 20% de su cuota mensual todos los meses, mientras siga siendo cliente. Ledyvas le cobra directamente por tarjeta y te paga tu comisión cada mes; vos no tocás el dinero del cliente ni adelantás nada.\n\n" +
-        "La diferencia con los gigantes: te asignamos un territorio de exclusividad, tu cliente paga una cuota fija (no cobramos por usuario) y el software está pensado para el negocio real de tus clientes — no un ERP genérico.\n\n" +
+        "Le escribo desde el equipo de Alianzas de Ledyvas, un ERP para pymes, especializado en hostelería y turismo (restaurantes, catering, excursiones) pero también útil para comercio y cualquier negocio con inventario y varios puntos de venta.\n\n" +
+        "Ledyvas no compite con su plataforma contable — trabaja por debajo de ella. Su cliente lleva la operación diaria en Ledyvas (compras, inventario, ventas, caja, control de combustible y flotas, recetas y food cost) y al cierre exporta los datos limpios a Zoho Books, QuickBooks, Alegra, Odoo o Xero. La IA integrada le indica cuánto comprar.\n\n" +
+        "El programa funciona como el de partners de Zoho: no hay cuota de alta ni coste de entrada. Usted da de alta a su cliente, lo acompaña y cobra el 20% de su cuota mensual todos los meses, mientras siga siendo cliente. Ledyvas le cobra directamente por tarjeta y le paga su comisión cada mes; usted no gestiona el dinero del cliente ni adelanta nada.\n\n" +
+        "La diferencia con los gigantes: le asignamos un territorio de exclusividad, su cliente paga una cuota fija (no cobramos por usuario) y el software está pensado para el negocio real de sus clientes — no un ERP genérico.\n\n" +
         "{{PRICE_PARA}}\n\n" +
-        "Al aprobarte, recibís una licencia de demostración para mostrarle Ledyvas a tus clientes, y ellos prueban 14 días gratis, descargable en www.ledyvas.com, antes de suscribirse. Condiciones completas: https://ledyvas.com/distribuidores\n\n" +
-        "¿Te interesa? Responde a este correo.\n\n" +
+        "Cuando se apruebe su solicitud, recibirá una licencia de demostración para mostrar Ledyvas a sus clientes, y ellos prueban 14 días gratis, descargable en www.ledyvas.com, antes de suscribirse. Condiciones completas: https://ledyvas.com/distribuidores\n\n" +
+        "¿Le interesa? Responda a este correo.\n\n" +
         "{{SIG}}\n\n{{OPTOUT}}",
       reminderSubject: "Re: Ledyvas — programa de partners con comisión recurrente",
       reminder:
         "Hola [nombre],\n\n" +
-        "Te dejo el resumen en tres líneas, por si el primer correo quedó enterrado:\n\n" +
+        "Le dejo el resumen en tres líneas, por si el primer correo quedó enterrado:\n\n" +
         "{{COMM_LINE}}\n" +
-        "· Ledyvas le cobra al cliente por tarjeta y te paga tu comisión cada mes. Vos das de alta y acompañás; el soporte técnico lo damos nosotros.\n" +
-        "· Territorio de exclusividad para [empresa] en tu zona.\n\n" +
-        "Todo está en https://ledyvas.com/distribuidores — al aprobarte recibís tu licencia de demostración, y tus clientes prueban 14 días gratis, descargables en www.ledyvas.com, antes de suscribirse.\n\n" +
-        "Si no es para vos, date de baja en un clic: https://ledyvas.com/unsubscribe.html?e=[email]. No te escribo más.\n\n" +
+        "· Ledyvas le cobra al cliente por tarjeta y le paga su comisión cada mes. Usted da de alta y acompaña; el soporte técnico lo damos nosotros.\n" +
+        "· Territorio de exclusividad para [empresa] en su zona.\n\n" +
+        "Todo está en https://ledyvas.com/distribuidores — cuando se apruebe su solicitud recibirá su licencia de demostración, y sus clientes prueban 14 días gratis, descargables en www.ledyvas.com, antes de suscribirse.\n\n" +
+        "Si no es para usted, dese de baja en un clic: https://ledyvas.com/unsubscribe.html?e=[email]. No volveré a escribirle.\n\n" +
         "{{SIG_SHORT}}",
       A: {
-        pricePara: "Cuotas al cliente final: Ledyvas Simple US$ 89 al mes, Ledyvas Completo (hostelería y turismo) US$ 169 al mes. Tu comisión es el 20% de cada cuota (US$ 17,80 y US$ 33,80 por cliente al mes), de forma recurrente.",
-        commLine: "· Sin membresía ni costo de entrada. Cobrás el 20% de la cuota mensual de cada cliente, de forma recurrente, mientras siga activo (US$ 17,80/mes por cliente Simple, US$ 33,80/mes por cliente Completo)."
+        pricePara: "Cuotas al cliente final: Ledyvas Simple US$ 89 al mes, Ledyvas Completo (hostelería y turismo) US$ 169 al mes. Su comisión es el 20% de cada cuota (US$ 17,80 y US$ 33,80 por cliente al mes), de forma recurrente.",
+        commLine: "· Sin cuota de alta ni coste de entrada. Cobra el 20% de la cuota mensual de cada cliente, de forma recurrente, mientras siga activo (US$ 17,80/mes por cliente Simple, US$ 33,80/mes por cliente Completo)."
       },
       B: {
-        pricePara: "Cuotas al cliente final: Ledyvas Simple US$ 29 al mes, Ledyvas Completo (hostelería y turismo) US$ 59 al mes. Tu comisión es el 20% de cada cuota (US$ 5,80 y US$ 11,80 por cliente al mes), de forma recurrente.",
-        commLine: "· Sin membresía ni costo de entrada. Cobrás el 20% de la cuota mensual de cada cliente, de forma recurrente, mientras siga activo (US$ 5,80/mes por cliente Simple, US$ 11,80/mes por cliente Completo)."
+        pricePara: "Cuotas al cliente final: Ledyvas Simple US$ 29 al mes, Ledyvas Completo (hostelería y turismo) US$ 59 al mes. Su comisión es el 20% de cada cuota (US$ 5,80 y US$ 11,80 por cliente al mes), de forma recurrente.",
+        commLine: "· Sin cuota de alta ni coste de entrada. Cobra el 20% de la cuota mensual de cada cliente, de forma recurrente, mientras siga activo (US$ 5,80/mes por cliente Simple, US$ 11,80/mes por cliente Completo)."
       }
     },
     en: {
