@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) con Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': (typeof localStorage !== 'undefined' && localStorage.getItem('ledyvas-cookie-consent') === 'accepted') ? 'granted' : 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<script>
+  gtag("js", new Date());
+  gtag("config", "G-DYMN29KT3X");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledyvas Luxury — ERP with native Zoho Books sync and DGII 606/607/608</title>
+<meta name="description" content="Ledyvas Luxury: a desktop ERP that connects natively to Zoho Books, handles VAT/ITBIS per document, and generates the DGII 606, 607 and 608 formats for the Dominican Republic. Built for businesses that work with their accountant.">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="canonical" href="https://ledyvas.com/en/luxury.html">
+<link rel="alternate" hreflang="es" href="https://ledyvas.com/luxury.html">
+<link rel="alternate" hreflang="en" href="https://ledyvas.com/en/luxury.html">
+<link rel="alternate" hreflang="it" href="https://ledyvas.com/it/luxury.html">
+<link rel="alternate" hreflang="fr" href="https://ledyvas.com/fr/luxury.html">
+<link rel="alternate" hreflang="pt" href="https://ledyvas.com/pt/luxury.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<div class="cookie-consent-banner" id="cookie-consent-banner" hidden>
+  <div class="cookie-consent-inner">
+    <p>We use cookies to understand how this site is used (Google Analytics). You can accept or reject this tracking. <a href="privacy.html">Learn more</a></p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookie-consent-reject" class="btn btn-outline">Reject</button>
+      <button type="button" id="cookie-consent-accept" class="btn btn-primary">Accept</button>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <nav class="nav-horizontal">
+      <a href="index.html">Home</a>
+      <a href="software.html">Software</a>
+      <a href="luxury.html">Luxury</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="download.html">Download</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn-outline">Request pricing</a>
+      <a href="download.html" class="btn btn-primary">Free trial</a>
+      <div class="lang-dropdown">
+      <button class="lang-dropdown-toggle" data-lang-toggle type="button" aria-haspopup="true" aria-expanded="false"><span class="fi fi-gb"></span> EN<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-dropdown-menu">
+    <a href="/luxury.html"><span class="fi fi-es"></span> ES</a>
+    <a href="/it/luxury.html"><span class="fi fi-it"></span> IT</a>
+    <a href="/fr/luxury.html"><span class="fi fi-fr"></span> FR</a>
+    <a href="/pt/luxury.html"><span class="fi fi-pt"></span> PT</a>
+      </div>
+    </div>
+    <div class="header-social-links">
+      <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas on LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+    <button class="hamburger" data-nav-toggle aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay">
+  <div class="nav-overlay-top">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <button class="hamburger" data-nav-toggle aria-label="Close menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-overlay-body">
+    <nav class="nav-links">
+      <a href="index.html">Home <small>01</small></a>
+      <a href="software.html">Software <small>02</small></a>
+      <a href="luxury.html">Luxury <small>03</small></a>
+      <a href="solutions.html">Solutions <small>04</small></a>
+      <a href="industries.html">Industries <small>05</small></a>
+      <a href="pricing.html">Pricing <small>06</small></a>
+      <a href="download.html">Download <small>07</small></a>
+      <a href="contact.html">Contact <small>08</small></a>
+    </nav>
+    <div class="nav-side">
+      <div>
+        <div class="nav-side-title">Language</div>
+        <div class="lang-switch">
+          <a href="/luxury.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-es"></span> ES</a>
+          <a href="/it/luxury.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-it"></span> IT</a>
+          <button class="active"><span class="fi fi-gb"></span> EN</button>
+          <a href="/fr/luxury.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-fr"></span> FR</a>
+          <a href="/pt/luxury.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-pt"></span> PT</a>
+        </div>
+      </div>
+      <div>
+        <div class="nav-side-title">Get started</div>
+        <a href="download.html" class="btn btn-gold btn-block">Try Ledyvas Luxury</a>
+        <div style="height:10px"></div>
+        <a href="contact.html" class="btn btn-outline-light btn-block">Request pricing</a>
+      </div>
+      <div>
+        <div class="nav-side-title">Contact</div>
+        <div class="nav-contact">
+          <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>
+          <span>Response within 48 business hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div>
+        <span class="eyebrow">Ledyvas Luxury</span>
+        <h1>The ERP that talks<br>to your accounting.</h1>
+        <p class="lede">Ledyvas Luxury runs your day-to-day operation and connects it <strong>natively to Zoho Books</strong>. It handles VAT / ITBIS per document and generates the <strong>DGII 606, 607 and 608</strong> formats for the Dominican Republic. Built for businesses that work hand in hand with their accountant.</p>
+        <div class="cta-row">
+          <a href="download.html" class="btn btn-primary btn-lg">14-day free trial</a>
+          <a href="contact.html" class="btn btn-outline btn-lg">Request pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What it is</span>
+        <h2>Operations and accounting, with no manual work in between</h2>
+        <p>Ledyvas Luxury is a desktop ERP (installed on the business PC, works offline most of the time). It records purchases, inventory, products, customers, suppliers, sales, accounts receivable and payable, and expenses. At month-end, instead of moving data by hand, it <strong>sends it straight to Zoho Books</strong>.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Native Zoho Books connector</h3>
+          <p>Connects to the client's Zoho Books account over the internet and posts journal entries, bills, expenses and payments <strong>on its own</strong> — no CSV export or import. It can sync automatically every night.</p>
+        </div>
+        <div class="card">
+          <h3>DGII 606 / 607 / 608</h3>
+          <p>Generates the monthly DGII file from purchases, sales and expenses already recorded, with the NCF fields in Purchase and Sale. Ready to upload to the Virtual Office. Submission and e-invoicing are handled by your certified software (PSFE).</p>
+        </div>
+        <div class="card">
+          <h3>VAT / ITBIS per document</h3>
+          <p>Every purchase and sale shows the subtotal, the tax and the total with tax — two clear figures. Tax never touches the margin.</p>
+        </div>
+        <div class="card">
+          <h3>Universal catalog</h3>
+          <p>Starts neutral and loads your industry's categories in one click: retail, services, workshop, factory, beauty, distribution, hospitality. Fits any business.</p>
+        </div>
+        <div class="card">
+          <h3>Built for the accountant</h3>
+          <p>Clean menu, Accounts Receivable / Payable, Petty Cash, Margin by Activity. A clear interface to review and close the month fast.</p>
+        </div>
+        <div class="card">
+          <h3>5 languages, unlimited users</h3>
+          <p>Spanish, Italian, English, French and Arabic (right-to-left interface). As many users as the business needs, each with a role. No per-user cost.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Straight talk</span>
+        <h2>What it does not do</h2>
+      </div>
+      <ul class="doc-toc">
+        <li>It does not do full accounting or the fiscal close — that's Zoho Books and your accountant. Ledyvas feeds Zoho.</li>
+        <li>It does not submit anything to the DGII or issue the electronic invoice (e-CF) — that's the certified e-invoicing software (PSFE).</li>
+        <li>It is not cloud-based and does not run across several networked PCs on the same data. Each install is standalone. A business with two locations takes two licenses.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How to get it</span>
+        <h2>Start with the free trial</h2>
+        <p>Download Ledyvas Luxury and try it for 14 days, no commitment. It's available through an Official Ledyvas Distributor or directly here. Pricing is by subscription (monthly or annual) and depends on the company's country of tax residence — <a href="contact.html">request it here</a> or write to <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>.</p>
+      </div>
+      <div class="cta-row">
+        <a href="download.html" class="btn btn-primary btn-lg">Download Ledyvas Luxury</a>
+        <a href="help-zoho-books.html" class="btn btn-outline btn-lg">How it works with Zoho Books</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The editions</span>
+        <h2>Where Luxury fits</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Ledyvas Pro</h3>
+          <p>The operational ERP, one-time payment, on the marketplaces. No accounting, no Zoho.</p>
+        </div>
+        <div class="card">
+          <h3>Ledyvas Enterprise</h3>
+          <p>Pro plus export to QuickBooks, Xero, Zoho, Odoo and Alegra through import files. Subscription, Official Distributors only.</p>
+        </div>
+        <div class="card">
+          <h3>Ledyvas Luxury</h3>
+          <p>The most complete. Enterprise plus <strong>native Zoho by API</strong>, DGII 606/607/608, VAT per document and the universal catalog.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+        <p>All-in-one business management software. Purchasing, sales, inventory, production and reports from a single platform.</p>
+        <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="luxury.html">Luxury</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="company.html">About us</a></li>
+          <li><a href="company.html#founder">Founder</a></li>
+          <li><a href="company.html#reviews">Reviews</a></li>
+          <li><a href="company.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="guides.html">Guides</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="help-zoho-books.html">Zoho Books help</a></li>
+          <li><a href="customer-portal.html">Customer Portal</a></li>
+          <li><a href="../distribuidores.html">Distribution Program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@ledyvas.com">info@ledyvas.com</a></li>
+          <li><span style="font-size:14px;">Response within 48 business hours</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledyvas. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms and Conditions</a>
+        <a href="eula.html">End User License (EULA)</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/luxury-chat.js"></script>
+</body>
+</html>
