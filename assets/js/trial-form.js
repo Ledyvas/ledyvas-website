@@ -119,30 +119,30 @@
     }
   };
 
-  const LUXURY_BANNER = {
+  const ULTIMATE_BANNER = {
     es: {
-      html: 'Estás por descargar <b>Ledyvas Luxury</b> — la edición con <b>conector nativo a Zoho Books</b> (sincroniza compras y ventas por la API, sin CSV) y la <b>localización fiscal de República Dominicana</b>: NCF, ITBIS por documento y reportes DGII 606 / 607 / 608. Probala 14 días gratis con tus datos. Después de la prueba se contrata por <b>suscripción</b>.',
-      link: "Ver Ledyvas Luxury"
+      html: 'Estás por descargar <b>Ledyvas Ultimate</b> — la edición con <b>conector nativo a Zoho Books</b> (sincroniza compras y ventas por la API, sin CSV) y la <b>localización fiscal de República Dominicana</b>: NCF, ITBIS por documento y reportes DGII 606 / 607 / 608. Probala 14 días gratis con tus datos. Después de la prueba se contrata por <b>suscripción</b>.',
+      link: "Ver Ledyvas Ultimate"
     },
     en: {
-      html: 'You are about to download <b>Ledyvas Luxury</b> — the edition with the <b>native Zoho Books connector</b> (syncs purchases and sales through the API, no CSV) and the <b>Dominican Republic fiscal localization</b>: NCF, per-document ITBIS and DGII 606 / 607 / 608 reports. Try it free for 14 days with your own data. After the trial it is offered by <b>subscription</b>.',
-      link: "See Ledyvas Luxury"
+      html: 'You are about to download <b>Ledyvas Ultimate</b> — the edition with the <b>native Zoho Books connector</b> (syncs purchases and sales through the API, no CSV) and the <b>Dominican Republic fiscal localization</b>: NCF, per-document ITBIS and DGII 606 / 607 / 608 reports. Try it free for 14 days with your own data. After the trial it is offered by <b>subscription</b>.',
+      link: "See Ledyvas Ultimate"
     },
     it: {
-      html: 'Stai per scaricare <b>Ledyvas Luxury</b> — l\'edizione con il <b>connettore nativo a Zoho Books</b> (sincronizza acquisti e vendite via API, senza CSV) e la <b>localizzazione fiscale della Repubblica Dominicana</b>: NCF, ITBIS per documento e report DGII 606 / 607 / 608. Provala 14 giorni gratis con i tuoi dati. Dopo la prova si attiva con <b>abbonamento</b>.',
-      link: "Vedi Ledyvas Luxury"
+      html: 'Stai per scaricare <b>Ledyvas Ultimate</b> — l\'edizione con il <b>connettore nativo a Zoho Books</b> (sincronizza acquisti e vendite via API, senza CSV) e la <b>localizzazione fiscale della Repubblica Dominicana</b>: NCF, ITBIS per documento e report DGII 606 / 607 / 608. Provala 14 giorni gratis con i tuoi dati. Dopo la prova si attiva con <b>abbonamento</b>.',
+      link: "Vedi Ledyvas Ultimate"
     },
     fr: {
-      html: 'Vous êtes sur le point de télécharger <b>Ledyvas Luxury</b> — l\'édition avec le <b>connecteur natif Zoho Books</b> (synchronise achats et ventes via l\'API, sans CSV) et la <b>localisation fiscale de la République dominicaine</b> : NCF, ITBIS par document et rapports DGII 606 / 607 / 608. Essayez-la 14 jours gratuitement avec vos données. Après l\'essai, elle est proposée par <b>abonnement</b>.',
-      link: "Voir Ledyvas Luxury"
+      html: 'Vous êtes sur le point de télécharger <b>Ledyvas Ultimate</b> — l\'édition avec le <b>connecteur natif Zoho Books</b> (synchronise achats et ventes via l\'API, sans CSV) et la <b>localisation fiscale de la République dominicaine</b> : NCF, ITBIS par document et rapports DGII 606 / 607 / 608. Essayez-la 14 jours gratuitement avec vos données. Après l\'essai, elle est proposée par <b>abonnement</b>.',
+      link: "Voir Ledyvas Ultimate"
     },
     pt: {
-      html: 'Você está prestes a baixar o <b>Ledyvas Luxury</b> — a edição com o <b>conector nativo ao Zoho Books</b> (sincroniza compras e vendas pela API, sem CSV) e a <b>localização fiscal da República Dominicana</b>: NCF, ITBIS por documento e relatórios DGII 606 / 607 / 608. Experimente 14 dias grátis com os seus dados. Depois da avaliação é contratado por <b>subscrição</b>.',
-      link: "Ver o Ledyvas Luxury"
+      html: 'Você está prestes a baixar o <b>Ledyvas Ultimate</b> — a edição com o <b>conector nativo ao Zoho Books</b> (sincroniza compras e vendas pela API, sem CSV) e a <b>localização fiscal da República Dominicana</b>: NCF, ITBIS por documento e relatórios DGII 606 / 607 / 608. Experimente 14 dias grátis com os seus dados. Depois da avaliação é contratado por <b>subscrição</b>.',
+      link: "Ver o Ledyvas Ultimate"
     }
   };
 
-  const LUXURY_PAGE = { es: "/luxury.html", en: "/en/luxury.html", it: "/it/luxury.html", fr: "/fr/luxury.html", pt: "/pt/luxury.html" };
+  const ULTIMATE_PAGE = { es: "/ultimate.html", en: "/en/ultimate.html", it: "/it/ultimate.html", fr: "/fr/ultimate.html", pt: "/pt/ultimate.html" };
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
@@ -196,19 +196,19 @@
     const submitButton = form.querySelector('button[type="submit"]');
 
     // ?edition=enterprise -> build de Ledyvas Enterprise (con "Exportar a Contabilidad").
-    // ?edition=luxury     -> build de Ledyvas Luxury (conector Zoho nativo + DGII).
-    // Se llega así desde distribuidores.html / luxury.html. Cualquier otra cosa -> "pro".
+    // ?edition=ultimate     -> build de Ledyvas Ultimate (conector Zoho nativo + DGII).
+    // Se llega así desde distribuidores.html / ultimate.html. Cualquier otra cosa -> "pro".
     const rawEd = new URLSearchParams(location.search).get("edition");
-    const edition = (rawEd === "enterprise" || rawEd === "luxury") ? rawEd : "pro";
+    const edition = (rawEd === "enterprise") ? "enterprise" : (rawEd === "ultimate" || rawEd === "luxury") ? "ultimate" : "pro";
 
     // Esta página es la de la versión pública "Pro" y muestra precios de pago
     // único que NO aplican a un trial de Enterprise/Luxury: banner + ocultar tarjetas.
-    if (edition === "enterprise" || edition === "luxury") applyEditionUI(edition, lang);
+    if (edition === "enterprise" || edition === "ultimate") applyEditionUI(edition, lang);
 
     function applyEditionUI(ed, lg) {
-      const isLux = ed === "luxury";
-      const c = (isLux ? LUXURY_BANNER : ENTERPRISE_BANNER)[lg] || (isLux ? LUXURY_BANNER : ENTERPRISE_BANNER).es;
-      const target = isLux ? ((LUXURY_PAGE[lg] || LUXURY_PAGE.es)) : ("/distribuidores.html?lang=" + lg);
+      const isUlt = ed === "ultimate";
+      const c = (isUlt ? ULTIMATE_BANNER : ENTERPRISE_BANNER)[lg] || (isUlt ? ULTIMATE_BANNER : ENTERPRISE_BANNER).es;
+      const target = isUlt ? ((ULTIMATE_PAGE[lg] || ULTIMATE_PAGE.es)) : ("/distribuidores.html?lang=" + lg);
       const main = document.querySelector("main");
       if (main && !document.getElementById("edition-banner")) {
         const box = document.createElement("div");

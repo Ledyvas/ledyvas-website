@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LEDYVAS LUXURY — Chat de la pagina luxury.html
+   LEDYVAS LUXURY — Chat de la pagina ultimate.html
    Widget flotante autocontenido: inyecta su propio CSS y su propio texto en
    5 idiomas (toma el idioma de <html lang="...">). Llama al Worker
    POST /luxury-chat (chat abierto, con limite diario por IP y global).
@@ -10,29 +10,29 @@
 
   var LANG = (document.documentElement.lang || "es").slice(0, 2).toLowerCase();
   var S = {
-    es: { button: "Preguntar sobre Luxury", title: "Asistente de Ledyvas Luxury", close: "Cerrar",
+    es: { button: "Preguntar sobre Luxury", title: "Asistente de Ledyvas Ultimate", close: "Cerrar",
       placeholder: "Escriba su pregunta...", send: "Enviar",
-      greeting: "Hola. Le puedo explicar qué hace Ledyvas Luxury, la integración con Zoho Books, los formatos DGII 606/607/608 y cómo probarlo. ¿Qué necesita saber?",
+      greeting: "Hola. Le puedo explicar qué hace Ledyvas Ultimate, la integración con Zoho Books, los formatos DGII 606/607/608 y cómo probarlo. ¿Qué necesita saber?",
       error: "No se pudo responder en este momento. Escríbanos a info@ledyvas.com.",
       disclaimer: "Asistente de IA. No da precios ni asesoramiento fiscal — para eso, info@ledyvas.com." },
-    en: { button: "Ask about Luxury", title: "Ledyvas Luxury assistant", close: "Close",
+    en: { button: "Ask about Luxury", title: "Ledyvas Ultimate assistant", close: "Close",
       placeholder: "Type your question...", send: "Send",
-      greeting: "Hi. I can explain what Ledyvas Luxury does, the Zoho Books integration, the DGII 606/607/608 formats, and how to try it. What would you like to know?",
+      greeting: "Hi. I can explain what Ledyvas Ultimate does, the Zoho Books integration, the DGII 606/607/608 formats, and how to try it. What would you like to know?",
       error: "Couldn't answer right now. Write to us at info@ledyvas.com.",
       disclaimer: "AI assistant. No pricing or tax advice — for that, info@ledyvas.com." },
-    it: { button: "Chiedi su Luxury", title: "Assistente Ledyvas Luxury", close: "Chiudi",
+    it: { button: "Chiedi su Luxury", title: "Assistente Ledyvas Ultimate", close: "Chiudi",
       placeholder: "Scrivi la tua domanda...", send: "Invia",
-      greeting: "Ciao. Posso spiegarti cosa fa Ledyvas Luxury, l'integrazione con Zoho Books, i formati DGII 606/607/608 e come provarlo. Cosa vuoi sapere?",
+      greeting: "Ciao. Posso spiegarti cosa fa Ledyvas Ultimate, l'integrazione con Zoho Books, i formati DGII 606/607/608 e come provarlo. Cosa vuoi sapere?",
       error: "Non è stato possibile rispondere ora. Scrivici a info@ledyvas.com.",
       disclaimer: "Assistente IA. Nessun prezzo né consulenza fiscale — per questo, info@ledyvas.com." },
-    fr: { button: "Questions sur Luxury", title: "Assistant Ledyvas Luxury", close: "Fermer",
+    fr: { button: "Questions sur Luxury", title: "Assistant Ledyvas Ultimate", close: "Fermer",
       placeholder: "Écrivez votre question...", send: "Envoyer",
-      greeting: "Bonjour. Je peux expliquer ce que fait Ledyvas Luxury, l'intégration avec Zoho Books, les formats DGII 606/607/608 et comment l'essayer. Que souhaitez-vous savoir ?",
+      greeting: "Bonjour. Je peux expliquer ce que fait Ledyvas Ultimate, l'intégration avec Zoho Books, les formats DGII 606/607/608 et comment l'essayer. Que souhaitez-vous savoir ?",
       error: "Impossible de répondre pour le moment. Écrivez-nous à info@ledyvas.com.",
       disclaimer: "Assistant IA. Pas de prix ni de conseil fiscal — pour cela, info@ledyvas.com." },
-    pt: { button: "Perguntar sobre Luxury", title: "Assistente Ledyvas Luxury", close: "Fechar",
+    pt: { button: "Perguntar sobre Luxury", title: "Assistente Ledyvas Ultimate", close: "Fechar",
       placeholder: "Escreva a sua pergunta...", send: "Enviar",
-      greeting: "Olá. Posso explicar o que o Ledyvas Luxury faz, a integração com o Zoho Books, os formatos DGII 606/607/608 e como testá-lo. O que gostaria de saber?",
+      greeting: "Olá. Posso explicar o que o Ledyvas Ultimate faz, a integração com o Zoho Books, os formatos DGII 606/607/608 e como testá-lo. O que gostaria de saber?",
       error: "Não foi possível responder agora. Escreva para info@ledyvas.com.",
       disclaimer: "Assistente de IA. Sem preços nem aconselhamento fiscal — para isso, info@ledyvas.com." }
   };

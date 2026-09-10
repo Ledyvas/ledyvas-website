@@ -5,12 +5,12 @@
      1. Cláusula 3 — precios desactualizados. Esquema vigente (ver el Excel de
         precios de Leo): Enterprise Contrato B (país en desarrollo) US$89/mes o
         US$890/año · Contrato A (desarrollado) US$249/mes o US$2.490/año — UNA
-        sola versión (sin corte Simple/Completo). Añadir Ledyvas Luxury como
+        sola versión (sin corte Simple/Completo). Añadir Ledyvas Ultimate como
         edición aparte: B US$149/mes o US$1.490/año · A US$399/mes o US$3.990/año.
      2. Cláusula nueva "Localización fiscal" (texto ES redactado, pendiente de
         que el abogado lo valide e integre; traducción a en/it/fr/pt después):
         «Localización fiscal. El módulo de cumplimiento fiscal para la República
-        Dominicana (NCF y reportes DGII 606/607/608) incluido en Ledyvas Luxury
+        Dominicana (NCF y reportes DGII 606/607/608) incluido en Ledyvas Ultimate
         es un ejemplo de localización fiscal nacional. Si un Distribuidor
         requiere una localización fiscal para el país de sus clientes (por
         ejemplo, facturación electrónica o reportes tributarios de otra
