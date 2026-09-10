@@ -20,7 +20,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ledyvas + Zoho Books — Help</title>
-<meta name="description" content="How to connect Ledyvas to Zoho Books, sync purchases and sales as draft journals, map your chart of accounts, and how OAuth tokens are handled.">
+<meta name="description" content="How to connect Ledyvas to Zoho Books: sync purchases and sales as journals or as documents (invoices, bills, expenses, payments, credit notes), map your chart of accounts, the DGII fiscal localization for the Dominican Republic, and how OAuth tokens are handled.">
 <link rel="icon" href="/assets/img/favicon.png">
 <link rel="canonical" href="https://ledyvas.com/en/help-zoho-books.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -133,7 +133,7 @@
       <div class="section-head center" style="margin-left:auto;margin-right:auto;">
         <span class="eyebrow">Integration help</span>
         <h1>Ledyvas + Zoho Books</h1>
-        <p class="lede" style="margin-left:auto;margin-right:auto;">Send the double-entry journals for your purchases and sales from Ledyvas straight into Zoho Books — no CSV, no manual keying. Entries land as drafts for your accountant to review.</p>
+        <p class="lede" style="margin-left:auto;margin-right:auto;">Send your purchases and sales from Ledyvas straight into Zoho Books through its API — no CSV, no manual keying. Choose <strong>Journals mode</strong> (double-entry journals) or <strong>Documents mode</strong> (invoices, bills, expenses, payments and credit notes). Everything lands as a draft for your accountant to review.</p>
       </div>
     </div>
   </section>
@@ -143,17 +143,22 @@
       <div class="zb-body">
 
         <h2>What it does</h2>
-        <p>Ledyvas is a desktop ERP for small businesses in hospitality, tourism and retail. Your team runs the day inside Ledyvas — purchases, inventory, sales, cash, fuel and fleet — and this integration pushes the accounting entries into Zoho Books through the Zoho Books API.</p>
+        <p>Ledyvas is a desktop ERP for small businesses in hospitality, tourism and retail. Your team runs the day inside Ledyvas — purchases, inventory, sales, cash, fuel and fleet — and this integration pushes the data into Zoho Books through the Zoho Books API, in whichever mode you choose:</p>
         <ul>
-          <li>Balanced double-entry <strong>journals</strong> for every purchase and sale, created as <strong>drafts</strong>.</li>
+          <li><strong>Journals mode</strong>: one balanced double-entry journal per purchase and sale, created as a <strong>draft</strong>.</li>
+          <li><strong>Documents mode</strong>: creates the matching <strong>invoice, bill or expense</strong>, plus customer and vendor <strong>payments</strong> and <strong>credit notes</strong> when the document is paid, voided or edited in Ledyvas.</li>
           <li>Optionally creates the <strong>vendor and customer contacts</strong> that are missing in Zoho Books.</li>
-          <li><strong>No duplicates</strong>: each document is matched by its reference, both in Ledyvas and against Zoho, before anything is created.</li>
-          <li>Re-syncing a period is always safe.</li>
+          <li><strong>No duplicates</strong>: each document is matched by its reference, both in Ledyvas and against Zoho, before anything is created. Re-syncing a period is always safe.</li>
+          <li>If you <strong>void or edit</strong> a document in Ledyvas, the matching record in Zoho Books is deleted or rebuilt on the next sync.</li>
         </ul>
-        <div class="callout">Tax (VAT / ITBIS) is <strong>not</strong> synced. Ledyvas does not store tax separately; your accountant applies tax in Zoho Books.</div>
+        <div class="callout">In <strong>Journals mode</strong>, tax (VAT / ITBIS) is not synced — your accountant applies it in Zoho Books. In <strong>Ledyvas Luxury</strong> with the Dominican Republic fiscal localization enabled, <strong>per-document ITBIS</strong> and the <strong>NCF</strong> do travel to Zoho Books (see below).</div>
 
         <h2>Which version you need</h2>
-        <p>The Zoho Books integration is part of <strong>Ledyvas Enterprise</strong>. Download it from <a href="download.html?edition=enterprise">the Enterprise trial page</a> — 14 days free with your own data. After the trial, Ledyvas Enterprise is offered by monthly subscription, only through a Ledyvas Official Distributor. The "Sync with Zoho Books" screen appears under <strong>Quick Actions</strong> in that build.</p>
+        <p>The Zoho Books connector is part of <strong>Ledyvas Enterprise</strong> and <strong>Ledyvas Luxury</strong>. The "Sync with Zoho Books" screen appears under <strong>Quick Actions</strong> in both builds. Both editions are subscription-based, through a Ledyvas Official Distributor or directly on ledyvas.com; there is a 14-day free trial with your own data.</p>
+        <ul>
+          <li><strong>Ledyvas Enterprise</strong> — Journals mode and Documents mode, no tax lines. For businesses outside the Dominican Republic or that don't need local fiscal compliance. <a href="download.html?edition=enterprise">Try Enterprise</a>.</li>
+          <li><strong>Ledyvas Luxury</strong> — everything Enterprise has, plus <strong>per-document ITBIS</strong>, the <strong>NCF</strong> (fiscal receipt number) on every purchase and sale, and the <strong>DGII 606 / 607 / 608</strong> reports for the Dominican Republic. <a href="download.html?edition=luxury">Try Luxury</a>.</li>
+        </ul>
 
         <h2>How to connect</h2>
         <ol>
@@ -166,27 +171,48 @@
 
         <h2>How to sync</h2>
         <ol>
+          <li>Choose the <strong>mode</strong>: Journals or Documents (in the sync settings). For Documents mode, set the purchase and sales tax rate Zoho Books should use.</li>
           <li>Choose a <strong>date range</strong> (From / To).</li>
           <li>Leave "Also create missing vendors and customers" ticked if you want Ledyvas to create them in Zoho Books.</li>
           <li>Optionally open <strong>Chart of accounts</strong> and map each category to a Zoho account (see below).</li>
           <li>Click <strong>Sync now</strong>.</li>
         </ol>
-        <p>The result panel shows how many journals were created, how many were skipped (already there), and how many contacts were created. The three cards at the bottom — <em>Transactions in the period / Already synced / To sync now</em> — refresh whenever you change the date range.</p>
+        <p>The result panel shows how many records were created, skipped (already there), rebuilt or deleted, and how many contacts were created. The three cards at the bottom — <em>Transactions in the period / Already synced / To sync now</em> — refresh whenever you change the date range.</p>
 
         <h2>Chart of accounts mapping</h2>
         <p>By default Ledyvas maps to the standard control accounts (Sales, Cost of goods sold, Other expenses, Undeposited funds) that already exist in a new Zoho Books organization, so <strong>the first sync works with no configuration</strong>.</p>
         <p>To send a category to a specific account, open <strong>Chart of accounts</strong>, pick the account from the dropdown next to each row, and click <strong>Save chart of accounts</strong>. Any account name you choose must already exist in your Zoho Books chart of accounts. Accounts receivable / accounts payable are not offered — Zoho requires a contact per line for those, and Ledyvas models each purchase and sale as already settled against <em>Undeposited funds</em> (which you can later reclassify to your real bank account).</p>
 
+        <h2>Documents mode</h2>
+        <p>In Documents mode, instead of a generic journal, Ledyvas creates the record that matches each operation in Zoho Books:</p>
+        <ul>
+          <li>Sale to a customer → <strong>Invoice</strong>.</li>
+          <li>Purchase from a vendor → <strong>Bill</strong>.</li>
+          <li>Expense → <strong>Expense</strong>.</li>
+          <li>A payment recorded in Ledyvas → a <strong>customer payment / vendor payment</strong> applied to the document.</li>
+          <li>A voided document that already had a payment → a <strong>credit note</strong>.</li>
+        </ul>
+        <p>Everything lands as a <strong>draft</strong>. If a document edited in Ledyvas already has a payment recorded in Zoho Books, Ledyvas leaves it untouched and reports it as a warning ("changes not applied") for your accountant to resolve with a credit note — it never leaves Zoho Books in an inconsistent state.</p>
+
+        <h2>Dominican Republic — DGII 606 / 607 / 608 <span style="font-weight:400;color:var(--muted,#666);">(Ledyvas Luxury)</span></h2>
+        <p>With the Dominican Republic fiscal localization enabled in <strong>Settings → Tax regime</strong>, Ledyvas Luxury:</p>
+        <ul>
+          <li>Records the <strong>NCF</strong> (fiscal receipt number) on every purchase and sale, and sends it to Zoho Books with the document.</li>
+          <li>Calculates and syncs <strong>per-document ITBIS</strong>.</li>
+          <li>Generates the <strong>606</strong> (purchases), <strong>607</strong> (sales) and <strong>608</strong> (voided NCF) files in <strong>TXT and Excel</strong>, ready to file with the DGII, from the <strong>DGII Reports</strong> screen.</li>
+        </ul>
+        <p>The Dominican Republic module is an example of a national fiscal localization. If you need another country's localization, write to <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>: we evaluate each request individually.</p>
+
         <h2>Automatic nightly sync</h2>
-        <p>Tick <strong>Sync automatically every night (last 120 days)</strong>. While Ledyvas is open, it runs the sync once a day on its own, covering the last 120 days. The last automatic run and how many journals it created are shown under the checkbox.</p>
+        <p>Tick <strong>Sync automatically every night (last 120 days)</strong>. While Ledyvas is open, it runs the sync once a day on its own, covering the last 120 days. The last automatic run and how many records it created are shown under the checkbox.</p>
 
         <h2>If you void or edit a document</h2>
         <p>On the next sync (manual or automatic), Ledyvas compares each already-synced document against its current state in Ledyvas:</p>
         <ul>
-          <li><strong>Voided in Ledyvas</strong> → the matching journal in Zoho Books is deleted.</li>
-          <li><strong>Edited in Ledyvas</strong> (date, total or line count changed) → the old journal is deleted and a new one is created.</li>
+          <li><strong>Voided in Ledyvas</strong> → the matching journal or document in Zoho Books is deleted (or a credit note is issued if it already had a payment).</li>
+          <li><strong>Edited in Ledyvas</strong> (date, total or line count changed) → the old record is deleted and a new one is created.</li>
         </ul>
-        <p>The result panel reports these as "Journals rebuilt" and "Journals deleted".</p>
+        <p>The result panel reports these as "rebuilt" and "deleted".</p>
 
         <h2>Frequently asked questions</h2>
         <dl class="zb-faq">
@@ -200,16 +226,26 @@
           <dd>In Ledyvas's local database on your computer, encrypted at rest. Ledyvas never stores the OAuth client secret; that lives only on the Ledyvas server.</dd>
 
           <dt>What gets written to Zoho Books?</dt>
-          <dd>Only draft journal entries and (optionally) missing vendor/customer contacts. Ledyvas only <em>reads</em> your chart of accounts and existing journals, for the duplicate check.</dd>
+          <dd>In Journals mode: only draft manual journals. In Documents mode: invoices, bills, expenses, payments and credit notes, also as drafts. In both cases, optionally, the missing vendor/customer contacts. Ledyvas only <em>reads</em> your chart of accounts, your organizations and existing documents (for the duplicate check).</dd>
 
           <dt>Can I disconnect?</dt>
-          <dd>Yes, anytime, from inside Ledyvas or from your Zoho account. Journals already synced stay in Zoho Books.</dd>
+          <dd>Yes, anytime, from inside Ledyvas or from your Zoho account. Anything already synced stays in Zoho Books.</dd>
 
-          <dt>Which OAuth scope does it request?</dt>
-          <dd><code>ZohoBooks.accountants.ALL</code>, <code>ZohoBooks.contacts.ALL</code> and <code>ZohoBooks.settings.READ</code> — only what the integration uses: create/read/delete manual journals, create/read contacts, and read the chart of accounts and organization list. It does not request access to invoices, expenses, banking or any other Zoho Books data.</dd>
+          <dt>Which OAuth scopes does it request?</dt>
+          <dd>The first connection requests these Zoho Books scopes, each for a specific reason:
+            <ul style="margin:8px 0 0;">
+              <li><code>ZohoBooks.settings.READ</code> — read the chart of accounts and the organization list (for account mapping and the organization picker).</li>
+              <li><code>ZohoBooks.contacts.ALL</code> — create the missing vendor/customer contacts.</li>
+              <li><code>ZohoBooks.accountants.ALL</code> — create, read and delete manual journals (Journals mode and the duplicate check).</li>
+              <li><code>ZohoBooks.bills.ALL</code>, <code>ZohoBooks.invoices.ALL</code>, <code>ZohoBooks.expenses.ALL</code>, <code>ZohoBooks.creditnotes.ALL</code>, <code>ZohoBooks.customerpayments.ALL</code>, <code>ZohoBooks.vendorpayments.ALL</code> — create, read and delete the corresponding documents in Documents mode, and record or reverse payments and credit notes when the source document is paid, voided or edited in Ledyvas.</li>
+            </ul>
+          </dd>
+
+          <dt>Does it sync tax (ITBIS / VAT)?</dt>
+          <dd>In Journals mode, no — your accountant applies it in Zoho Books. In <strong>Ledyvas Luxury</strong> with the Dominican Republic fiscal localization enabled, per-document ITBIS and the NCF do travel to Zoho Books, and Ledyvas also generates the DGII 606 / 607 / 608 reports.</dd>
 
           <dt>Is this a free add-on?</dt>
-          <dd>The Zoho Books integration is part of <strong>Ledyvas Enterprise</strong>, available through a Ledyvas Official Distributor. It is not sold separately on the marketplace.</dd>
+          <dd>The Zoho Books connector is part of <strong>Ledyvas Enterprise</strong> and <strong>Ledyvas Luxury</strong>, which are subscription products offered through a Ledyvas Official Distributor or on ledyvas.com. It is not sold separately on the marketplace.</dd>
         </dl>
 
       </div>

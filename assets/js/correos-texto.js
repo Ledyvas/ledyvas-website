@@ -37,6 +37,15 @@
     fr: "Se désinscrire : https://ledyvas.com/unsubscribe.html?e=[email] — un clic, effet immédiat ; nous ne vous écrirons plus.",
     pt: "Cancelar subscrição: https://ledyvas.com/unsubscribe.html?e=[email] — um clique, efeito imediato; não voltaremos a escrever-lhe."
   };
+  // Localización fiscal: el módulo DGII de RD es un EJEMPLO. Otras localizaciones se
+  // evalúan caso por caso (gratis o presupuestadas aparte, por escrito, sin fecha).
+  var FISCAL_LINE = {
+    es: "Para clientes en República Dominicana existe Ledyvas Luxury, con conector nativo a Zoho Books y los reportes DGII 606/607/608. Ese módulo fiscal es un ejemplo de localización nacional: si necesita la de otro país para sus clientes, la evaluamos caso por caso — puede incluirse sin coste o presupuestarse por separado, siempre acordado por escrito antes de empezar; los plazos dependen del volumen de solicitudes.",
+    en: "For clients in the Dominican Republic there is Ledyvas Luxury, with a native Zoho Books connector and the DGII 606/607/608 reports. That fiscal module is an example of a national localization: if you need another country's for your clients, we evaluate each request individually — it may be included at no cost or quoted separately, always agreed in writing before work starts; timelines depend on the volume of requests.",
+    it: "Per i clienti nella Repubblica Dominicana c'è Ledyvas Luxury, con connettore nativo a Zoho Books e i report DGII 606/607/608. Quel modulo fiscale è un esempio di localizzazione nazionale: se ti serve quella di un altro paese per i tuoi clienti, la valutiamo caso per caso — può essere inclusa senza costo o preventivata a parte, sempre concordata per iscritto prima di iniziare; i tempi dipendono dal volume delle richieste.",
+    fr: "Pour les clients en République dominicaine, il existe Ledyvas Luxury, avec un connecteur natif à Zoho Books et les rapports DGII 606/607/608. Ce module fiscal est un exemple de localisation nationale : si vous avez besoin de celle d'un autre pays pour vos clients, nous l'évaluons au cas par cas — elle peut être incluse sans frais ou chiffrée séparément, toujours convenue par écrit avant le début des travaux ; les délais dépendent du volume de demandes.",
+    pt: "Para clientes na República Dominicana existe o Ledyvas Luxury, com conector nativo ao Zoho Books e os relatórios DGII 606/607/608. Esse módulo fiscal é um exemplo de localização nacional: se precisar da de outro país para os seus clientes, avaliamos cada pedido individualmente — pode ser incluída sem custo ou orçamentada em separado, sempre acordada por escrito antes de começar; os prazos dependem do volume de pedidos."
+  };
 
   var DATA = {
     es: {
@@ -48,6 +57,7 @@
         "El programa funciona como el de partners de Zoho: no hay cuota de alta ni coste de entrada. Usted da de alta a su cliente, lo acompaña y cobra el 20% de su cuota mensual todos los meses, mientras siga siendo cliente. Ledyvas le cobra directamente por tarjeta y le paga su comisión cada mes; usted no gestiona el dinero del cliente ni adelanta nada.\n\n" +
         "La diferencia con los gigantes: le asignamos un territorio de exclusividad, su cliente paga una cuota fija (no cobramos por usuario) y el software está pensado para el negocio real de sus clientes — no un ERP genérico.\n\n" +
         "{{PRICE_PARA}}\n\n" +
+        "{{FISCAL_LINE}}\n\n" +
         "Cuando se apruebe su solicitud, recibirá una licencia de demostración para mostrar Ledyvas a sus clientes, y ellos prueban 14 días gratis, descargable en www.ledyvas.com, antes de suscribirse. Condiciones completas: https://ledyvas.com/distribuidores\n\n" +
         "¿Le interesa? Responda a este correo.\n\n" +
         "{{SIG}}\n\n{{OPTOUT}}",
@@ -79,6 +89,7 @@
         "The program works like Zoho's partner program: no membership, no entry cost. You onboard your client, support them, and earn 20% of their monthly fee every month, for as long as they stay a client. Ledyvas charges them directly by card and pays you your commission each month; you never handle the client's money or advance anything.\n\n" +
         "The difference from the giants: we assign you an exclusive territory, your client pays a flat fee (we don't charge per user), and the software is built for your clients' real business — not a generic ERP.\n\n" +
         "{{PRICE_PARA}}\n\n" +
+        "{{FISCAL_LINE}}\n\n" +
         "On approval, you receive a demo licence to show Ledyvas to your clients, and they try it free for 14 days — downloadable at www.ledyvas.com — before subscribing. Full terms: https://ledyvas.com/distribuidores\n\n" +
         "Interested? Just reply to this email.\n\n" +
         "{{SIG}}\n\n{{OPTOUT}}",
@@ -110,6 +121,7 @@
         "Il programma funziona come quello partner di Zoho: nessuna quota di adesione, nessun costo d'ingresso. Attivi il tuo cliente, lo assisti e incassi il 20% della sua quota mensile ogni mese, finché resta cliente. Ledyvas lo addebita direttamente con carta e ti paga la commissione ogni mese; tu non tocchi il denaro del cliente né anticipi nulla.\n\n" +
         "La differenza rispetto ai giganti: ti assegniamo un territorio in esclusiva, il tuo cliente paga una quota fissa (non addebitiamo per utente) e il software è pensato per l'attività reale dei tuoi clienti — non un ERP generico.\n\n" +
         "{{PRICE_PARA}}\n\n" +
+        "{{FISCAL_LINE}}\n\n" +
         "All'approvazione ricevi una licenza dimostrativa per mostrare Ledyvas ai tuoi clienti, e loro provano gratis per 14 giorni, scaricabile su www.ledyvas.com, prima di abbonarsi. Condizioni complete: https://ledyvas.com/distribuidores\n\n" +
         "Ti interessa? Rispondi a questa email.\n\n" +
         "{{SIG}}\n\n{{OPTOUT}}",
@@ -141,6 +153,7 @@
         "Le programme fonctionne comme celui des partenaires de Zoho : pas d'adhésion, pas de frais d'entrée. Vous intégrez votre client, vous l'accompagnez, et vous percevez 20 % de sa redevance mensuelle chaque mois, tant qu'il reste client. Ledyvas le facture directement par carte et vous verse votre commission chaque mois ; vous ne touchez jamais l'argent du client et n'avancez rien.\n\n" +
         "La différence avec les géants : nous vous attribuons un territoire exclusif, votre client paie une redevance fixe (nous ne facturons pas par utilisateur) et le logiciel est conçu pour l'activité réelle de vos clients — pas un ERP générique.\n\n" +
         "{{PRICE_PARA}}\n\n" +
+        "{{FISCAL_LINE}}\n\n" +
         "Une fois approuvé, vous recevez une licence de démonstration pour présenter Ledyvas à vos clients, et ceux-ci l'essaient gratuitement pendant 14 jours, téléchargeable sur www.ledyvas.com, avant de souscrire. Conditions complètes : https://ledyvas.com/distribuidores\n\n" +
         "Cela vous intéresse ? Répondez simplement à cet e-mail.\n\n" +
         "{{SIG}}\n\n{{OPTOUT}}",
@@ -172,6 +185,7 @@
         "O programa funciona como o de parceiros da Zoho: sem mensalidade de adesão, sem custo de entrada. Você ativa o seu cliente, acompanha-o e recebe 20% da mensalidade dele todos os meses, enquanto continuar cliente. A Ledyvas cobra-lhe diretamente por cartão e paga-lhe a comissão todos os meses; você nunca toca no dinheiro do cliente nem adianta nada.\n\n" +
         "A diferença face aos gigantes: atribuímos-lhe um território exclusivo, o seu cliente paga uma mensalidade fixa (não cobramos por utilizador) e o software foi pensado para o negócio real dos seus clientes — não um ERP genérico.\n\n" +
         "{{PRICE_PARA}}\n\n" +
+        "{{FISCAL_LINE}}\n\n" +
         "Ao ser aprovado, recebe uma licença de demonstração para mostrar a Ledyvas aos seus clientes, e eles testam 14 dias grátis, disponível em www.ledyvas.com, antes de subscrever. Condições completas: https://ledyvas.com/distribuidores\n\n" +
         "Tem interesse? Basta responder a este e-mail.\n\n" +
         "{{SIG}}\n\n{{OPTOUT}}",
@@ -211,6 +225,7 @@
       subject: L.firstSubject,
       body: L.first
         .replace("{{PRICE_PARA}}", t.pricePara)
+        .replace("{{FISCAL_LINE}}", FISCAL_LINE[lang] || FISCAL_LINE.es)
         .replace("{{SIG}}", SIG[lang] || SIG.es)
         .replace("{{OPTOUT}}", OPTOUT[lang] || OPTOUT.es)
     };

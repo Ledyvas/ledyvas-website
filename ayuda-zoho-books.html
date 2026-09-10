@@ -20,7 +20,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ledyvas + Zoho Books — Ayuda</title>
-<meta name="description" content="Cómo conectar Ledyvas con Zoho Books, sincronizar compras y ventas como asientos en borrador, mapear el plan de cuentas y cómo se manejan los tokens OAuth.">
+<meta name="description" content="Cómo conectar Ledyvas con Zoho Books: sincronizar compras y ventas como asientos o como documentos (facturas, gastos, pagos, notas de crédito), mapear el plan de cuentas, la localización fiscal DGII para República Dominicana y cómo se manejan los tokens OAuth.">
 <link rel="icon" href="/assets/img/favicon.png">
 <link rel="canonical" href="https://ledyvas.com/ayuda-zoho-books.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -133,7 +133,7 @@
       <div class="section-head center" style="margin-left:auto;margin-right:auto;">
         <span class="eyebrow">Ayuda de la integración</span>
         <h1>Ledyvas + Zoho Books</h1>
-        <p class="lede" style="margin-left:auto;margin-right:auto;">Manda los asientos de partida doble de tus compras y ventas de Ledyvas directamente a Zoho Books — sin CSV ni carga manual. Los asientos entran como borrador para que el contador los revise.</p>
+        <p class="lede" style="margin-left:auto;margin-right:auto;">Manda tus compras y ventas de Ledyvas directamente a Zoho Books por su API — sin CSV ni carga manual. Elige entre <strong>modo Asientos</strong> (asientos de partida doble) o <strong>modo Documentos</strong> (facturas, gastos, pagos y notas de crédito). Todo entra como borrador para que el contador lo revise.</p>
       </div>
     </div>
   </section>
@@ -143,17 +143,22 @@
       <div class="zb-body">
 
         <h2>Qué hace</h2>
-        <p>Ledyvas es un ERP de escritorio para pequeñas empresas de hostelería, turismo y comercio. Tu equipo lleva la operación del día dentro de Ledyvas — compras, inventario, ventas, caja, combustible y flotas — y esta integración empuja los asientos contables a Zoho Books a través de su API.</p>
+        <p>Ledyvas es un ERP de escritorio para pequeñas empresas de hostelería, turismo y comercio. Tu equipo lleva la operación del día dentro de Ledyvas — compras, inventario, ventas, caja, combustible y flotas — y esta integración empuja los datos a Zoho Books a través de su API, en el modo que elijas:</p>
         <ul>
-          <li><strong>Asientos</strong> de partida doble, balanceados, para cada compra y venta, creados como <strong>borrador</strong>.</li>
+          <li><strong>Modo Asientos</strong>: un asiento de partida doble, balanceado, por cada compra y venta, creado como <strong>borrador</strong>.</li>
+          <li><strong>Modo Documentos</strong>: crea la <strong>factura, el gasto o la factura de compra</strong> correspondiente, más los <strong>pagos</strong> de cliente y proveedor y las <strong>notas de crédito</strong> cuando el documento se cobra, se anula o se edita en Ledyvas.</li>
           <li>Opcionalmente crea los <strong>proveedores y clientes</strong> que falten en Zoho Books.</li>
-          <li><strong>Sin duplicados</strong>: cada documento se identifica por su referencia, en Ledyvas y contra Zoho, antes de crear nada.</li>
-          <li>Re-sincronizar un período es siempre seguro.</li>
+          <li><strong>Sin duplicados</strong>: cada documento se identifica por su referencia, en Ledyvas y contra Zoho, antes de crear nada. Re-sincronizar un período es siempre seguro.</li>
+          <li>Si <strong>anulas o editas</strong> un documento en Ledyvas, el registro correspondiente en Zoho Books se borra o se rehace en la siguiente sincronización.</li>
         </ul>
-        <div class="callout">El impuesto (IVA / ITBIS) <strong>no</strong> se sincroniza. Ledyvas no guarda el impuesto por separado; el contador lo aplica en Zoho Books.</div>
+        <div class="callout">En <strong>modo Asientos</strong>, el impuesto (IVA / ITBIS) no se sincroniza — el contador lo aplica en Zoho Books. En <strong>Ledyvas Luxury</strong> con la localización fiscal de República Dominicana activada, el <strong>ITBIS por documento</strong> y el <strong>NCF</strong> sí viajan a Zoho Books (ver más abajo).</div>
 
         <h2>Qué versión necesitas</h2>
-        <p>La integración con Zoho Books es parte de <strong>Ledyvas Enterprise</strong>. Descárgala desde <a href="descargas.html?edition=enterprise">la página de prueba de Enterprise</a> — 14 días gratis con tus propios datos. Después de la prueba, Ledyvas Enterprise se contrata por suscripción mensual, únicamente a través de un Distribuidor Oficial de Ledyvas. La pantalla "Sincronizar con Zoho Books" aparece en <strong>Acciones Rápidas</strong> en ese build.</p>
+        <p>El conector de Zoho Books forma parte de <strong>Ledyvas Enterprise</strong> y de <strong>Ledyvas Luxury</strong>. La pantalla "Sincronizar con Zoho Books" aparece en <strong>Acciones Rápidas</strong> en ambos builds. Ambas ediciones se contratan por suscripción, únicamente a través de un Distribuidor Oficial de Ledyvas o directamente en ledyvas.com; hay 14 días de prueba gratis con tus propios datos.</p>
+        <ul>
+          <li><strong>Ledyvas Enterprise</strong> — modo Asientos y modo Documentos, sin líneas de impuesto. Para empresas fuera de República Dominicana o que no necesitan cumplimiento fiscal local. <a href="descargas.html?edition=enterprise">Probar Enterprise</a>.</li>
+          <li><strong>Ledyvas Luxury</strong> — todo lo de Enterprise más el <strong>ITBIS por documento</strong>, el <strong>NCF</strong> (Comprobante Fiscal) en cada compra y venta, y los reportes <strong>DGII 606 / 607 / 608</strong> para República Dominicana. <a href="descargas.html?edition=luxury">Probar Luxury</a>.</li>
+        </ul>
 
         <h2>Cómo conectar</h2>
         <ol>
@@ -166,27 +171,48 @@
 
         <h2>Cómo sincronizar</h2>
         <ol>
+          <li>Elige el <strong>modo</strong>: Asientos o Documentos (en la configuración de la sincronización). Si eliges Documentos, indica la tasa de impuesto de compra y de venta que debe usar Zoho Books.</li>
           <li>Elige un <strong>rango de fechas</strong> (Desde / Hasta).</li>
           <li>Deja marcado "Crear también los proveedores y clientes que falten" si quieres que Ledyvas los cree en Zoho Books.</li>
           <li>Opcional: abre <strong>Plan de cuentas</strong> y mapea cada categoría a una cuenta de Zoho (ver abajo).</li>
           <li>Clic en <strong>Sincronizar ahora</strong>.</li>
         </ol>
-        <p>El panel de resultado muestra cuántos asientos se crearon, cuántos se omitieron (ya estaban) y cuántos contactos se crearon. Las tres tarjetas de abajo — <em>Transacciones del período / Ya sincronizadas / A sincronizar</em> — se actualizan al cambiar el rango de fechas.</p>
+        <p>El panel de resultado muestra cuántos registros se crearon, cuántos se omitieron (ya estaban), cuántos se rehicieron o borraron y cuántos contactos se crearon. Las tres tarjetas de abajo — <em>Transacciones del período / Ya sincronizadas / A sincronizar</em> — se actualizan al cambiar el rango de fechas.</p>
 
         <h2>Plan de cuentas</h2>
         <p>Por defecto Ledyvas usa las cuentas de control estándar (Ventas, Costes de productos vendidos, Otros gastos, Fondos sin depositar) que ya existen en una organización nueva de Zoho Books, así que <strong>la primera sincronización funciona sin configurar nada</strong>.</p>
         <p>Para mandar una categoría a una cuenta concreta, abre <strong>Plan de cuentas</strong>, elige la cuenta del desplegable de cada fila y clic en <strong>Guardar plan de cuentas</strong>. Cualquier nombre de cuenta que elijas tiene que existir ya en tu plan de cuentas de Zoho Books. Las cuentas por cobrar / por pagar no se ofrecen — Zoho exige un contacto por línea para esas, y Ledyvas modela cada compra y venta como ya liquidada contra <em>Fondos sin depositar</em> (que después puedes reclasificar a tu banco real).</p>
 
+        <h2>Modo Documentos</h2>
+        <p>En modo Documentos, en vez de un asiento genérico, Ledyvas crea en Zoho Books el registro que corresponde a cada operación:</p>
+        <ul>
+          <li>Venta a cliente → <strong>Factura</strong> (Invoice).</li>
+          <li>Compra a proveedor → <strong>Factura de compra</strong> (Bill).</li>
+          <li>Gasto → <strong>Gasto</strong> (Expense).</li>
+          <li>Cobro o pago registrado en Ledyvas → <strong>pago de cliente / pago a proveedor</strong> aplicado al documento.</li>
+          <li>Documento anulado que ya tenía un pago → <strong>nota de crédito</strong>.</li>
+        </ul>
+        <p>Todo entra como <strong>borrador</strong>. Si un documento editado en Ledyvas ya tiene un pago registrado en Zoho Books, Ledyvas no lo toca y lo informa como aviso ("cambios no aplicados") para que el contador lo resuelva con una nota de crédito — nunca deja Zoho Books en un estado inconsistente.</p>
+
+        <h2>República Dominicana — DGII 606 / 607 / 608 <span style="font-weight:400;color:var(--muted,#666);">(Ledyvas Luxury)</span></h2>
+        <p>Con la localización fiscal de República Dominicana activada en <strong>Configuración → Régimen fiscal</strong>, Ledyvas Luxury:</p>
+        <ul>
+          <li>Registra el <strong>NCF</strong> (Número de Comprobante Fiscal) en cada compra y venta, y lo envía a Zoho Books con el documento.</li>
+          <li>Calcula y sincroniza el <strong>ITBIS por documento</strong>.</li>
+          <li>Genera los archivos <strong>606</strong> (compras), <strong>607</strong> (ventas) y <strong>608</strong> (NCF anulados) en formato <strong>TXT y Excel</strong>, listos para presentar a la DGII, desde la pantalla <strong>Reportes DGII</strong>.</li>
+        </ul>
+        <p>El módulo de República Dominicana es un ejemplo de localización fiscal nacional. Si necesitas la localización de otro país, escríbenos a <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>: la evaluamos caso por caso.</p>
+
         <h2>Sincronización automática cada noche</h2>
-        <p>Marca <strong>Sincronizar automáticamente cada noche (últimos 120 días)</strong>. Mientras Ledyvas esté abierto, corre la sincronización una vez al día por su cuenta, cubriendo los últimos 120 días. Debajo del checkbox se ve la última corrida automática y cuántos asientos creó.</p>
+        <p>Marca <strong>Sincronizar automáticamente cada noche (últimos 120 días)</strong>. Mientras Ledyvas esté abierto, corre la sincronización una vez al día por su cuenta, cubriendo los últimos 120 días. Debajo del checkbox se ve la última corrida automática y cuántos registros creó.</p>
 
         <h2>Si anulas o editas un documento</h2>
         <p>En la siguiente sincronización (manual o automática), Ledyvas compara cada documento ya sincronizado con su estado actual en Ledyvas:</p>
         <ul>
-          <li><strong>Anulado en Ledyvas</strong> → el asiento correspondiente en Zoho Books se borra.</li>
-          <li><strong>Editado en Ledyvas</strong> (cambió la fecha, el total o el número de líneas) → se borra el asiento viejo y se crea uno nuevo.</li>
+          <li><strong>Anulado en Ledyvas</strong> → el asiento o documento correspondiente en Zoho Books se borra (o se le hace una nota de crédito si ya tenía un pago).</li>
+          <li><strong>Editado en Ledyvas</strong> (cambió la fecha, el total o el número de líneas) → se borra el registro viejo y se crea uno nuevo.</li>
         </ul>
-        <p>El panel de resultado lo informa como "Asientos rehechos" y "Asientos borrados".</p>
+        <p>El panel de resultado lo informa como "rehechos" y "borrados".</p>
 
         <h2>Preguntas frecuentes</h2>
         <dl class="zb-faq">
@@ -200,16 +226,26 @@
           <dd>En la base de datos local de Ledyvas, en tu computadora, cifrada en reposo. Ledyvas nunca guarda la clave secreta del OAuth; esa vive solo en el servidor de Ledyvas.</dd>
 
           <dt>¿Qué se escribe en Zoho Books?</dt>
-          <dd>Solo asientos en borrador y (opcionalmente) los proveedores/clientes que falten. Ledyvas solo <em>lee</em> tu plan de cuentas y los asientos existentes, para el chequeo de duplicados.</dd>
+          <dd>En modo Asientos: solo asientos manuales en borrador. En modo Documentos: facturas, facturas de compra, gastos, pagos y notas de crédito, también en borrador. En ambos casos, opcionalmente, los proveedores/clientes que falten. Ledyvas solo <em>lee</em> tu plan de cuentas, tus organizaciones y los documentos existentes (para el chequeo de duplicados).</dd>
 
           <dt>¿Puedo desconectar?</dt>
-          <dd>Sí, en cualquier momento, desde dentro de Ledyvas o desde tu cuenta de Zoho. Los asientos ya sincronizados quedan en Zoho Books.</dd>
+          <dd>Sí, en cualquier momento, desde dentro de Ledyvas o desde tu cuenta de Zoho. Lo ya sincronizado queda en Zoho Books.</dd>
 
-          <dt>¿Qué permiso (scope) OAuth pide?</dt>
-          <dd><code>ZohoBooks.accountants.ALL</code>, <code>ZohoBooks.contacts.ALL</code> y <code>ZohoBooks.settings.READ</code> — solo lo que usa la integración: crear/leer/borrar asientos manuales, crear/leer contactos, y leer el plan de cuentas y la lista de organizaciones. No pide acceso a facturas, gastos, banca ni ningún otro dato de Zoho Books.</dd>
+          <dt>¿Qué permisos (scopes) OAuth pide?</dt>
+          <dd>La primera conexión pide estos scopes de Zoho Books, cada uno por un motivo concreto:
+            <ul style="margin:8px 0 0;">
+              <li><code>ZohoBooks.settings.READ</code> — leer el plan de cuentas y la lista de organizaciones (para el mapeo de cuentas y el selector de organización).</li>
+              <li><code>ZohoBooks.contacts.ALL</code> — crear los contactos de proveedor/cliente que falten.</li>
+              <li><code>ZohoBooks.accountants.ALL</code> — crear, leer y borrar los asientos manuales (modo Asientos y chequeo de duplicados).</li>
+              <li><code>ZohoBooks.bills.ALL</code>, <code>ZohoBooks.invoices.ALL</code>, <code>ZohoBooks.expenses.ALL</code>, <code>ZohoBooks.creditnotes.ALL</code>, <code>ZohoBooks.customerpayments.ALL</code>, <code>ZohoBooks.vendorpayments.ALL</code> — crear, leer y borrar los documentos correspondientes en modo Documentos, y registrar o revertir pagos y notas de crédito cuando el documento de origen se cobra, se anula o se edita en Ledyvas.</li>
+            </ul>
+          </dd>
+
+          <dt>¿Sincroniza el impuesto (ITBIS / IVA)?</dt>
+          <dd>En modo Asientos, no — el contador lo aplica en Zoho Books. En <strong>Ledyvas Luxury</strong> con la localización fiscal de República Dominicana activada, el ITBIS por documento y el NCF sí viajan a Zoho Books, y Ledyvas genera además los reportes DGII 606 / 607 / 608.</dd>
 
           <dt>¿Es un complemento gratuito?</dt>
-          <dd>La integración con Zoho Books es parte de <strong>Ledyvas Enterprise</strong>, disponible a través de un Distribuidor Oficial de Ledyvas. No se vende por separado en el marketplace.</dd>
+          <dd>El conector de Zoho Books forma parte de <strong>Ledyvas Enterprise</strong> y <strong>Ledyvas Luxury</strong>, que se contratan por suscripción a través de un Distribuidor Oficial de Ledyvas o en ledyvas.com. No se vende por separado en el marketplace.</dd>
         </dl>
 
       </div>

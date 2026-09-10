@@ -1,4 +1,30 @@
 /* ==========================================================================
+   ⚠️ PENDIENTE DE ACTUALIZACIÓN + RE-VALIDACIÓN LEGAL (anotado 2026-09-10).
+   NO se tocó el texto vigente (sigue siendo el que validó el asesor legal el
+   2026-09-06). Cambios a introducir en la próxima revisión con el abogado:
+     1. Cláusula 3 — precios desactualizados. Esquema vigente (ver el Excel de
+        precios de Leo): Enterprise Contrato B (país en desarrollo) US$89/mes o
+        US$890/año · Contrato A (desarrollado) US$249/mes o US$2.490/año — UNA
+        sola versión (sin corte Simple/Completo). Añadir Ledyvas Luxury como
+        edición aparte: B US$149/mes o US$1.490/año · A US$399/mes o US$3.990/año.
+     2. Cláusula nueva "Localización fiscal" (texto ES redactado, pendiente de
+        que el abogado lo valide e integre; traducción a en/it/fr/pt después):
+        «Localización fiscal. El módulo de cumplimiento fiscal para la República
+        Dominicana (NCF y reportes DGII 606/607/608) incluido en Ledyvas Luxury
+        es un ejemplo de localización fiscal nacional. Si un Distribuidor
+        requiere una localización fiscal para el país de sus clientes (por
+        ejemplo, facturación electrónica o reportes tributarios de otra
+        jurisdicción), Ledyvas evaluará cada solicitud de forma individual.
+        Según su alcance, el desarrollo podrá incluirse sin coste adicional o
+        presupuestarse por separado; en ese caso, el importe y el plazo se
+        acordarán por escrito antes de iniciar el trabajo. Los plazos de entrega
+        dependen del volumen de solicitudes en curso y no constituyen un
+        compromiso de fecha.»
+     3. Verificación del país de residencia fiscal: dejar explícito que se
+        acredita con el ID fiscal + el documento de registro + (para Luxury) el
+        país de la organización de Zoho Books conectada, y que no se accede a
+        una tarifa más baja mediante una filial en otro país.
+   ==========================================================================
    LEDYVAS — Contrato de Distribuidor Oficial · Ledyvas Enterprise POR SUSCRIPCIÓN
    (reescrito 2026-09-06). Modelo estilo programa de partners de Zoho:
    el cliente final se SUSCRIBE por mes y le paga a Ledyvas directo por tarjeta;
