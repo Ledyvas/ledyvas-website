@@ -86,7 +86,7 @@
         "Hi [name],\n\n" +
         "I'm writing from the Ledyvas Alliances team. Ledyvas is an ERP for SMEs, specialised in hospitality and tourism (restaurants, catering, tours) but equally useful for retail and any business with inventory and several points of sale.\n\n" +
         "Ledyvas doesn't compete with your accounting platform — it works underneath it. Your client runs day-to-day operations in Ledyvas (purchases, inventory, sales, cash, fuel and fleet control, recipes and food cost) and at period close exports clean data to Zoho Books, QuickBooks, Alegra, Odoo or Xero. The built-in AI tells them how much to buy.\n\n" +
-        "The program works like Zoho's partner program: no membership, no entry cost. You onboard your client, support them, and earn 20% of their monthly fee every month, for as long as they stay a client. Ledyvas charges them directly by card and pays you your commission each month; you never handle the client's money or advance anything.\n\n" +
+        "The program works like Zoho's partner program: no membership, no entry cost. You onboard your client, support them, and earn 20% of their monthly fee every month, for as long as they stay a client. The client pays Ledyvas directly by card and Ledyvas pays you your commission each month; you never handle the client's money or advance anything.\n\n" +
         "The difference from the giants: we assign you an exclusive territory, your client pays a flat fee (we don't charge per user), and the software is built for your clients' real business — not a generic ERP.\n\n" +
         "{{PRICE_PARA}}\n\n" +
         "{{FISCAL_LINE}}\n\n" +
@@ -98,7 +98,7 @@
         "Hi [name],\n\n" +
         "Here's the summary in three lines, in case the first email got buried:\n\n" +
         "{{COMM_LINE}}\n" +
-        "· Ledyvas charges the client by card and pays you your commission each month. You onboard and support; we handle technical support.\n" +
+        "· The client pays Ledyvas by card and Ledyvas pays you your commission each month. You onboard and support; we handle technical support.\n" +
         "· Exclusive territory for [company] in your area.\n\n" +
         "Everything is at https://ledyvas.com/distribuidores — on approval you receive your demo licence, and your clients try it free for 14 days, downloadable at www.ledyvas.com, before subscribing.\n\n" +
         "If this isn't for you, unsubscribe in one click: https://ledyvas.com/unsubscribe.html?e=[email]. I won't email you again.\n\n" +
@@ -118,7 +118,7 @@
         "Ciao [nome],\n\n" +
         "ti scrivo dal team Alleanze di Ledyvas. Ledyvas è un ERP per PMI, specializzato in ristorazione e turismo (ristoranti, catering, escursioni) ma utile anche per il commercio e qualsiasi attività con magazzino e più punti vendita.\n\n" +
         "Ledyvas non compete con la tua piattaforma contabile — lavora sotto di essa. Il tuo cliente gestisce l'operatività quotidiana in Ledyvas (acquisti, magazzino, vendite, cassa, controllo carburante e flotte, ricette e food cost) e alla chiusura esporta dati puliti verso Zoho Books, QuickBooks, Alegra, Odoo o Xero. L'IA integrata gli indica quanto acquistare.\n\n" +
-        "Il programma funziona come quello partner di Zoho: nessuna quota di adesione, nessun costo d'ingresso. Attivi il tuo cliente, lo assisti e incassi il 20% della sua quota mensile ogni mese, finché resta cliente. Ledyvas lo addebita direttamente con carta e ti paga la commissione ogni mese; tu non tocchi il denaro del cliente né anticipi nulla.\n\n" +
+        "Il programma funziona come quello partner di Zoho: nessuna quota di adesione, nessun costo d'ingresso. Attivi il tuo cliente, lo assisti e incassi il 20% della sua quota mensile ogni mese, finché resta cliente. Il cliente paga Ledyvas direttamente con carta e Ledyvas ti paga la commissione ogni mese; tu non tocchi i soldi del cliente né anticipi nulla.\n\n" +
         "La differenza rispetto ai giganti: ti assegniamo un territorio in esclusiva, il tuo cliente paga una quota fissa (non addebitiamo per utente) e il software è pensato per l'attività reale dei tuoi clienti — non un ERP generico.\n\n" +
         "{{PRICE_PARA}}\n\n" +
         "{{FISCAL_LINE}}\n\n" +
@@ -130,7 +130,7 @@
         "Ciao [nome],\n\n" +
         "ecco il riassunto in tre righe, nel caso la prima email si fosse persa:\n\n" +
         "{{COMM_LINE}}\n" +
-        "· Ledyvas addebita il cliente con carta e ti paga la commissione ogni mese. Tu attivi e assisti; il supporto tecnico lo diamo noi.\n" +
+        "· Il cliente paga Ledyvas con carta e Ledyvas ti paga la commissione ogni mese. Tu attivi e assisti; il supporto tecnico lo diamo noi.\n" +
         "· Territorio in esclusiva per [azienda] nella tua zona.\n\n" +
         "Tutto è su https://ledyvas.com/distribuidores — all'approvazione ricevi la tua licenza dimostrativa, e i tuoi clienti provano gratis per 14 giorni, scaricabile su www.ledyvas.com, prima di abbonarsi.\n\n" +
         "Se non fa per te, annulla l'iscrizione con un clic: https://ledyvas.com/unsubscribe.html?e=[email]. Non ti scrivo più.\n\n" +
@@ -150,7 +150,7 @@
         "Bonjour [nom],\n\n" +
         "je vous écris de la part de l'équipe Alliances de Ledyvas. Ledyvas est un ERP pour PME, spécialisé dans l'hôtellerie-restauration et le tourisme (restaurants, traiteurs, excursions) mais tout aussi utile pour le commerce et toute activité avec stock et plusieurs points de vente.\n\n" +
         "Ledyvas ne concurrence pas votre plateforme comptable — il travaille en dessous. Votre client gère l'exploitation quotidienne dans Ledyvas (achats, stock, ventes, caisse, contrôle du carburant et des flottes, recettes et food cost) et, à la clôture, exporte des données propres vers Zoho Books, QuickBooks, Alegra, Odoo ou Xero. L'IA intégrée lui indique combien acheter.\n\n" +
-        "Le programme fonctionne comme celui des partenaires de Zoho : pas d'adhésion, pas de frais d'entrée. Vous intégrez votre client, vous l'accompagnez, et vous percevez 20 % de sa redevance mensuelle chaque mois, tant qu'il reste client. Ledyvas le facture directement par carte et vous verse votre commission chaque mois ; vous ne touchez jamais l'argent du client et n'avancez rien.\n\n" +
+        "Le programme fonctionne comme celui des partenaires de Zoho : pas d'adhésion, pas de frais d'entrée. Vous intégrez votre client, vous l'accompagnez, et vous percevez 20 % de sa redevance mensuelle chaque mois, tant qu'il reste client. Le client paie Ledyvas directement par carte et Ledyvas vous verse votre commission chaque mois ; vous ne touchez jamais l'argent du client et n'avancez rien.\n\n" +
         "La différence avec les géants : nous vous attribuons un territoire exclusif, votre client paie une redevance fixe (nous ne facturons pas par utilisateur) et le logiciel est conçu pour l'activité réelle de vos clients — pas un ERP générique.\n\n" +
         "{{PRICE_PARA}}\n\n" +
         "{{FISCAL_LINE}}\n\n" +
@@ -162,7 +162,7 @@
         "Bonjour [nom],\n\n" +
         "voici le résumé en trois lignes, au cas où le premier e-mail serait passé inaperçu :\n\n" +
         "{{COMM_LINE}}\n" +
-        "· Ledyvas facture le client par carte et vous verse votre commission chaque mois. Vous intégrez et accompagnez ; le support technique, c'est nous.\n" +
+        "· Le client paie Ledyvas par carte et Ledyvas vous verse votre commission chaque mois. Vous intégrez et accompagnez ; le support technique, c'est nous.\n" +
         "· Territoire exclusif pour [entreprise] dans votre zone.\n\n" +
         "Tout est sur https://ledyvas.com/distribuidores — une fois approuvé, vous recevez votre licence de démonstration, et vos clients l'essaient gratuitement pendant 14 jours, téléchargeable sur www.ledyvas.com, avant de souscrire.\n\n" +
         "Si ce n'est pas pour vous, désinscrivez-vous en un clic : https://ledyvas.com/unsubscribe.html?e=[email]. Je ne vous écrirai plus.\n\n" +
@@ -182,7 +182,7 @@
         "Olá [nome],\n\n" +
         "escrevo em nome da equipa de Alianças da Ledyvas. A Ledyvas é um ERP para PME, especializado em hotelaria e turismo (restaurantes, catering, excursões) mas igualmente útil para o comércio e qualquer negócio com inventário e vários pontos de venda.\n\n" +
         "A Ledyvas não compete com a sua plataforma de contabilidade — trabalha por baixo dela. O seu cliente faz a operação diária na Ledyvas (compras, inventário, vendas, caixa, controlo de combustível e frotas, receitas e food cost) e, no fecho, exporta dados limpos para o Zoho Books, QuickBooks, Alegra, Odoo ou Xero. A IA integrada indica-lhe quanto comprar.\n\n" +
-        "O programa funciona como o de parceiros da Zoho: sem mensalidade de adesão, sem custo de entrada. Você ativa o seu cliente, acompanha-o e recebe 20% da mensalidade dele todos os meses, enquanto continuar cliente. A Ledyvas cobra-lhe diretamente por cartão e paga-lhe a comissão todos os meses; você nunca toca no dinheiro do cliente nem adianta nada.\n\n" +
+        "O programa funciona como o de parceiros da Zoho: sem mensalidade de adesão, sem custo de entrada. Você ativa o seu cliente, acompanha-o e recebe 20% da mensalidade dele todos os meses, enquanto continuar cliente. O cliente paga à Ledyvas diretamente por cartão e a Ledyvas paga-lhe a comissão todos os meses; você nunca toca no dinheiro do cliente nem adianta nada.\n\n" +
         "A diferença face aos gigantes: atribuímos-lhe um território exclusivo, o seu cliente paga uma mensalidade fixa (não cobramos por utilizador) e o software foi pensado para o negócio real dos seus clientes — não um ERP genérico.\n\n" +
         "{{PRICE_PARA}}\n\n" +
         "{{FISCAL_LINE}}\n\n" +
@@ -194,7 +194,7 @@
         "Olá [nome],\n\n" +
         "deixo o resumo em três linhas, caso o primeiro e-mail se tenha perdido:\n\n" +
         "{{COMM_LINE}}\n" +
-        "· A Ledyvas cobra ao cliente por cartão e paga-lhe a comissão todos os meses. Você ativa e acompanha; o suporte técnico é connosco.\n" +
+        "· O cliente paga à Ledyvas por cartão e a Ledyvas paga-lhe a comissão todos os meses. Você ativa e acompanha; o suporte técnico é connosco.\n" +
         "· Território exclusivo para [empresa] na sua zona.\n\n" +
         "Está tudo em https://ledyvas.com/distribuidores — ao ser aprovado, recebe a sua licença de demonstração, e os seus clientes testam 14 dias grátis, disponível em www.ledyvas.com, antes de subscrever.\n\n" +
         "Se não é para si, cancele a subscrição com um clique: https://ledyvas.com/unsubscribe.html?e=[email]. Não volto a escrever-lhe.\n\n" +
