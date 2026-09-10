@@ -167,7 +167,7 @@
           <li>Aprueba el acceso. El navegador muestra <em>"Conectado"</em> y Ledyvas termina la configuración solo.</li>
           <li>Si tu cuenta de Zoho tiene más de una organización, elige a cuál sincronizar.</li>
         </ol>
-        <p>Ledyvas nunca ve tu contraseña de Zoho y nunca guarda la clave secreta del OAuth (esa vive solo en el servidor de Ledyvas). La conexión se puede revocar en cualquier momento desde Zoho, o desconectar desde dentro de Ledyvas.</p>
+        <p>Ledyvas nunca ve tu contraseña de Zoho y nunca guarda la clave secreta del OAuth (esa vive solo en el servidor de Ledyvas). Al desconectar desde dentro de Ledyvas se revoca el acceso en Zoho; también puede revocarlo desde su cuenta de Zoho en cualquier momento.</p>
 
         <h2>Cómo sincronizar</h2>
         <ol>
@@ -229,7 +229,7 @@
           <dd>En modo Asientos: solo asientos manuales en borrador. En modo Documentos: facturas, facturas de compra, gastos, pagos y notas de crédito, también en borrador. En ambos casos, opcionalmente, los proveedores/clientes que falten. Ledyvas solo <em>lee</em> tu plan de cuentas, tus organizaciones y los documentos existentes (para el chequeo de duplicados).</dd>
 
           <dt>¿Puedo desconectar?</dt>
-          <dd>Sí, en cualquier momento, desde dentro de Ledyvas o desde tu cuenta de Zoho. Lo ya sincronizado queda en Zoho Books.</dd>
+          <dd>Sí, cuando quieras. Al desconectar desde dentro de Ledyvas se revoca el token en Zoho (una llamada best-effort al endpoint <code>token/revoke</code> de Zoho) y se borra localmente; también puedes revocarlo desde tu cuenta de Zoho. Lo que ya se sincronizó queda en Zoho Books.</dd>
 
           <dt>¿Qué permisos (scopes) OAuth pide?</dt>
           <dd>La primera conexión pide estos scopes de Zoho Books, cada uno por un motivo concreto:

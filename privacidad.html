@@ -133,13 +133,20 @@
     <div class="container">
       <div class="legal">
 
-        <p class="legal-updated">Última actualización: 24 de julio de 2026</p>
+        <p class="legal-updated">Última actualización: 10 de septiembre de 2026</p>
 
         <h2>1. Quiénes somos</h2>
         <p>Ledyvas es un software de gestión empresarial desarrollado y distribuido por Leonardo Cosci. Para cualquier consulta sobre esta Política de Privacidad, puede escribirnos a <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>.</p>
 
         <h2>2. Qué datos maneja el software</h2>
-        <p>Ledyvas es un software de escritorio: la información que carga dentro del programa (clientes, productos, ventas, compras, etc.) se almacena localmente en su propia computadora o en el destino que usted elija (por ejemplo, un disco externo). No enviamos esa información a servidores de Ledyvas ni de terceros.</p>
+        <p>Ledyvas es un software de escritorio: de forma predeterminada, la información que carga dentro del programa (clientes, productos, ventas, compras, etc.) se almacena localmente en su propia computadora o en el destino que usted elija (por ejemplo, un disco externo), y no se envía a ningún lado.</p>
+        <p style="margin-top:12px;">Tres funciones opcionales envían datos fuera de su computadora, y solo cuando usted las activa:</p>
+        <ul>
+          <li><strong>Sincronización con Zoho Books</strong> (Ledyvas Enterprise y Ultimate). Si conecta una cuenta de Zoho Books, Ledyvas envía a <strong>Zoho Books</strong>, por su instrucción y a través de la API de Zoho, los datos contables que usted elige sincronizar: compras, ventas y gastos (fechas, importes, los nombres de proveedor/cliente que usted escribió y la cuenta contable a la que se asigna cada línea). El inicio de sesión usa OAuth: el paso de autorización pasa por un servidor de Ledyvas que guarda el secreto de la aplicación de Zoho y lo intercambia por un token de acceso; ese servidor solo transmite los tokens y <strong>no</strong> almacena sus datos contables. El token de actualización se guarda cifrado en la base de datos local de Ledyvas. Los datos que envía a Zoho Books quedan luego sujetos a la <a href="https://www.zoho.com/privacy.html" target="_blank" rel="noopener">política de privacidad de Zoho</a>. Puede desconectarse en cualquier momento, lo que revoca el acceso.</li>
+          <li><strong>Asistente de IA</strong> (ayuda opcional dentro de la app). Cuando le hace una pregunta al asistente, su mensaje se envía a un servidor de Ledyvas y de ahí a la API de Claude, de Anthropic, para generar la respuesta. No se usa para entrenar ningún modelo.</li>
+          <li><strong>Activación de licencia</strong>. Para activar y revalidar periódicamente su licencia, Ledyvas envía su clave de licencia y una huella del dispositivo (un hash derivado de su hardware) al servidor de licencias de Ledyvas.</li>
+        </ul>
+        <p style="margin-top:12px;">Ninguna de estas funciones envía su base de datos completa, y ninguna funciona sin una acción suya.</p>
 
         <h2>3. Datos que recopilamos nosotros</h2>
         <p>Recopilamos los datos que nos proporciona voluntariamente al contactarnos por email (por ejemplo, para soporte o para comprar una licencia): su nombre, correo electrónico y el contenido de su mensaje.</p>

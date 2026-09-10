@@ -167,7 +167,7 @@
           <li>Approve access. The browser shows <em>"Connected"</em>, and Ledyvas finishes the setup automatically.</li>
           <li>If your Zoho account has more than one organization, choose the one to sync to.</li>
         </ol>
-        <p>Ledyvas never sees your Zoho password, and never stores the OAuth client secret (that lives only on the Ledyvas server). The connection can be revoked at any time from Zoho, or disconnected from inside Ledyvas.</p>
+        <p>Ledyvas never sees your Zoho password, and never stores the OAuth client secret (that lives only on the Ledyvas server). Disconnecting from inside Ledyvas revokes the access at Zoho; you can also revoke it from your Zoho account at any time.</p>
 
         <h2>How to sync</h2>
         <ol>
@@ -229,7 +229,7 @@
           <dd>In Journals mode: only draft manual journals. In Documents mode: invoices, bills, expenses, payments and credit notes, also as drafts. In both cases, optionally, the missing vendor/customer contacts. Ledyvas only <em>reads</em> your chart of accounts, your organizations and existing documents (for the duplicate check).</dd>
 
           <dt>Can I disconnect?</dt>
-          <dd>Yes, anytime, from inside Ledyvas or from your Zoho account. Anything already synced stays in Zoho Books.</dd>
+          <dd>Yes, anytime. Disconnecting from inside Ledyvas revokes the token at Zoho (a best-effort call to Zoho's <code>token/revoke</code> endpoint) and clears it locally; you can also revoke it from your Zoho account. Anything already synced stays in Zoho Books.</dd>
 
           <dt>Which OAuth scopes does it request?</dt>
           <dd>The first connection requests these Zoho Books scopes, each for a specific reason:
