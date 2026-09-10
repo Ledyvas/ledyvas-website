@@ -54,7 +54,7 @@
         "Hola [nombre],\n\n" +
         "Le escribo desde el equipo de Alianzas de Ledyvas, un ERP para pymes, especializado en hostelería y turismo (restaurantes, catering, excursiones) pero también útil para comercio y cualquier negocio con inventario y varios puntos de venta.\n\n" +
         "Ledyvas no compite con su plataforma contable — trabaja por debajo de ella. Su cliente lleva la operación diaria en Ledyvas (compras, inventario, ventas, caja, control de combustible y flotas, recetas y food cost) y al cierre exporta los datos limpios a Zoho Books, QuickBooks, Alegra, Odoo o Xero. La IA integrada le indica cuánto comprar.\n\n" +
-        "El programa funciona como el de partners de Zoho: no hay cuota de alta ni coste de entrada. Usted da de alta a su cliente, lo acompaña y cobra el 20% de su cuota mensual todos los meses, mientras siga siendo cliente. Ledyvas le cobra directamente por tarjeta y le paga su comisión cada mes; usted no gestiona el dinero del cliente ni adelanta nada.\n\n" +
+        "El programa funciona como el de partners de Zoho: no hay cuota de alta ni coste de entrada. Usted da de alta a su cliente, lo acompaña y cobra el 20% de su cuota mensual todos los meses, mientras siga siendo cliente. El cliente paga a Ledyvas directamente por tarjeta y Ledyvas le paga su comisión cada mes; usted no gestiona el dinero del cliente ni adelanta nada.\n\n" +
         "La diferencia con los gigantes: le asignamos un territorio de exclusividad, su cliente paga una cuota fija (no cobramos por usuario) y el software está pensado para el negocio real de sus clientes — no un ERP genérico.\n\n" +
         "{{PRICE_PARA}}\n\n" +
         "{{FISCAL_LINE}}\n\n" +
@@ -66,7 +66,7 @@
         "Hola [nombre],\n\n" +
         "Le dejo el resumen en tres líneas, por si el primer correo quedó enterrado:\n\n" +
         "{{COMM_LINE}}\n" +
-        "· Ledyvas le cobra al cliente por tarjeta y le paga su comisión cada mes. Usted da de alta y acompaña; el soporte técnico lo damos nosotros.\n" +
+        "· El cliente paga a Ledyvas por tarjeta y Ledyvas le paga su comisión cada mes. Usted da de alta y acompaña; el soporte técnico lo damos nosotros.\n" +
         "· Territorio de exclusividad para [empresa] en su zona.\n\n" +
         "Todo está en https://ledyvas.com/distribuidores — cuando se apruebe su solicitud recibirá su licencia de demostración, y sus clientes prueban 14 días gratis, descargables en www.ledyvas.com, antes de suscribirse.\n\n" +
         "Si no es para usted, dese de baja en un clic: https://ledyvas.com/unsubscribe.html?e=[email]. No volveré a escribirle.\n\n" +
