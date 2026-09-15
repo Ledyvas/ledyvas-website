@@ -12,44 +12,36 @@
   // opts = claves i18n de las opciones (para select)
   // hint = clave i18n de la ayuda   req = obligatorio
 
+  // Simplificado (2026-09-15, a pedido de Leo: "hacerlo mas simple y directo").
+  // Antes tenia 24 campos, 21 obligatorios, incluyendo datos fiscales/legales
+  // (RNC, numero de registro, acta de constitucion, documento del representante)
+  // y datos bancarios de cobro -- todo eso solo hace falta para FIRMAR el
+  // contrato, no para evaluar si el candidato encaja. Leo revisa cada
+  // solicitud a mano en el panel de admin de todas formas, asi que esos datos
+  // se piden despues, al avanzar hacia el contrato (ver "f.laterNote" abajo).
+  // Campos que se sacaron del todo: companyAddress, fiscalCountry, regNumber,
+  // companyTaxId, incorpFile, repRole, repId, contactPerson (se fusiono con
+  // repName), payMethod, payDetails.
   var DISTRIBUIDOR = [
     { sec: "f.sec.company", fields: [
-      { n: "companyName",    k: "f.companyName",    type: "text", req: true },
-      { n: "entityType",     k: "f.entityType",     type: "select", opts: ["f.entity.srl", "f.entity.sa", "f.entity.autonomo", "f.entity.accountingFirm", "f.entity.reseller", "f.entity.other"], req: true },
-      { n: "companyAddress", k: "f.companyAddress", type: "text", req: true },
-      { n: "country",        k: "f.country",        type: "text", req: true },
-      { n: "website",        k: "f.website",        type: "url",  req: true }
-    ]},
-    { sec: "f.sec.fiscal", fields: [
-      { n: "fiscalCountry", k: "f.fiscalCountry", type: "text", hint: "f.fiscalCountry.hint", req: true },
-      { n: "regNumber",   k: "f.regNumber",   type: "text", hint: "f.regNumber.hint", req: true },
-      { n: "companyTaxId", k: "f.companyTaxId", type: "text", req: true },
-      { n: "incorpFile",  k: "f.incorpFile",  type: "file", hint: "f.incorpFile.hint", req: true }
-    ]},
-    { sec: "f.sec.rep", fields: [
-      { n: "repName", k: "f.repName", type: "text", req: true },
-      { n: "repRole", k: "f.repRole", type: "text", req: true },
-      { n: "repId",   k: "f.repId",   type: "text", req: true }
+      { n: "companyName", k: "f.companyName", type: "text", req: true },
+      { n: "entityType",  k: "f.entityType",  type: "select", opts: ["f.entity.srl", "f.entity.sa", "f.entity.autonomo", "f.entity.accountingFirm", "f.entity.reseller", "f.entity.other"], req: true },
+      { n: "country",     k: "f.country",     type: "text", req: true },
+      { n: "website",     k: "f.website",     type: "url",  req: true }
     ]},
     { sec: "f.sec.contact", fields: [
-      { n: "contactPerson", k: "f.contactPerson", type: "text" },
-      { n: "email",         k: "f.email",         type: "email", req: true },
-      { n: "phone",         k: "f.phone",         type: "tel",   req: true }
+      { n: "repName", k: "f.repName", type: "text",  req: true },
+      { n: "email",   k: "f.email",   type: "email", req: true },
+      { n: "phone",   k: "f.phone",   type: "tel",   req: true }
     ]},
     { sec: "f.sec.business", fields: [
-      { n: "yearsOperating", k: "f.yearsOperating", type: "number", req: true },
-      { n: "clientCount",    k: "f.clientCount",    type: "text",   req: true },
+      { n: "region",         k: "f.regionDist",     type: "text", req: true },
+      { n: "platform",       k: "f.platformsDist",  type: "text" },
+      { n: "yearsOperating", k: "f.yearsOperating", type: "number" },
+      { n: "clientCount",    k: "f.clientCount",    type: "text" },
       { n: "sectors",        k: "f.sectors",        type: "text" },
-      { n: "region",         k: "f.regionDist",     type: "text",   req: true },
-      { n: "platform",       k: "f.platformsDist",  type: "text",   req: true },
-      { n: "expectedVolume", k: "f.expectedVolume", type: "text" }
-    ]},
-    { sec: "f.sec.payment", fields: [
-      { n: "payMethod",  k: "f.payMethodCompany", type: "select", opts: ["f.pay.bank", "f.pay.wise", "f.pay.paypal"], req: true },
-      { n: "payDetails", k: "f.payDetailsCompany", type: "text", req: true }
-    ]},
-    { sec: "f.sec.refs", fields: [
-      { n: "refs", k: "f.refsCommercial", type: "textarea", hint: "f.refsCommercial.hint", req: true }
+      { n: "expectedVolume", k: "f.expectedVolume", type: "text" },
+      { n: "refs",           k: "f.refsCommercial", type: "textarea", hint: "f.refsCommercial.hint" }
     ]}
   ];
 
