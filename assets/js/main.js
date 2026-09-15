@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
         msg.style.fontSize = '13px';
         msg.style.textAlign = 'center';
         msg.style.marginTop = '10px';
-        msg.textContent = 'No se pudo enviar el mensaje. Probá de nuevo o escribinos directo a info@ledyvas.com.';
+        msg.textContent = 'No se pudo enviar el mensaje. Pruebe de nuevo o escríbanos directo a info@ledyvas.com.';
         if (note) note.insertAdjacentElement('afterend', msg);
         else form.appendChild(msg);
       }

@@ -10,20 +10,20 @@
 
   const TEXT = {
     es: {
-      invalid_email: "Ese email no parece válido — revisalo e intentá de nuevo.",
-      email_not_configured: "El envío de correos todavía no está activo. Escribinos a support@ledyvas.com y te mandamos el código a mano.",
-      email_send_failed: "No pudimos enviar el correo. Probá de nuevo en un momento, o escribinos a support@ledyvas.com.",
-      generic: "Algo salió mal. Probá de nuevo en un momento.",
+      invalid_email: "Ese email no parece válido — revíselo e inténtelo de nuevo.",
+      email_not_configured: "El envío de correos todavía no está activo. Escríbanos a support@ledyvas.com y le mandamos el código a mano.",
+      email_send_failed: "No pudimos enviar el correo. Inténtelo de nuevo en un momento, o escríbanos a support@ledyvas.com.",
+      generic: "Algo salió mal. Inténtelo de nuevo en un momento.",
       downloadNow: "Descargar ahora",
-      modalTitle: "Solicitá tu prueba gratuita",
-      modalLede: "Te mandamos el instalador y tu código de activación por correo — sin costo, 14 días de acceso completo.",
+      modalTitle: "Solicite su prueba gratuita",
+      modalLede: "Le mandamos el instalador y su código de activación por correo — sin costo, 14 días de acceso completo.",
       fieldName: "Nombre",
-      namePlaceholder: "Tu nombre",
+      namePlaceholder: "Su nombre",
       fieldEmail: "Email",
       submit: "Enviarme el código",
-      formNote: "Vas a recibir un email con el link de descarga y el código de activación.",
-      successTitle: "¡Listo! Revisá tu correo",
-      successText: "Te mandamos el instalador y tu código de activación. Si no lo ves en unos minutos, revisá spam.",
+      formNote: "Recibirá un email con el link de descarga y el código de activación.",
+      successTitle: "¡Listo! Revise su correo",
+      successText: "Le mandamos el instalador y su código de activación. Si no lo ve en unos minutos, revise spam.",
       closeAria: "Cerrar"
     },
     it: {
@@ -98,7 +98,7 @@
 
   const ENTERPRISE_BANNER = {
     es: {
-      html: 'Estás por descargar <b>Ledyvas Enterprise</b> — la versión con <b>Exportar a Contabilidad</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Probala 14 días gratis con tus datos. Después de la prueba se contrata por <b>suscripción mensual</b>, únicamente a través de un Partner.',
+      html: 'Está por descargar <b>Ledyvas Enterprise</b> — la versión con <b>Exportar a Contabilidad</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Pruébela 14 días gratis con sus datos. Después de la prueba se contrata por <b>suscripción mensual</b>, únicamente a través de un Partner.',
       link: "Ver Ledyvas Partners"
     },
     en: {
@@ -121,7 +121,7 @@
 
   const ULTIMATE_BANNER = {
     es: {
-      html: 'Estás por descargar <b>Ledyvas Ultimate</b> — la edición con <b>conector nativo a Zoho Books</b> (sincroniza compras y ventas por la API, sin CSV) y la <b>localización fiscal de República Dominicana</b>: NCF, ITBIS por documento y reportes DGII 606 / 607 / 608. Probala 14 días gratis con tus datos. Después de la prueba se contrata por <b>suscripción</b>.',
+      html: 'Está por descargar <b>Ledyvas Ultimate</b> — la edición con <b>conector nativo a Zoho Books</b> (sincroniza compras y ventas por la API, sin CSV) y la <b>localización fiscal de República Dominicana</b>: NCF, ITBIS por documento y reportes DGII 606 / 607 / 608. Pruébela 14 días gratis con sus datos. Después de la prueba se contrata por <b>suscripción</b>.',
       link: "Ver Ledyvas Ultimate"
     },
     en: {
