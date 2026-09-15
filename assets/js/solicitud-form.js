@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LEDYVAS — Estructura del formulario de solicitud de Distribuidor Oficial
+   LEDYVAS — Estructura del formulario de solicitud de Partner
    Solo la ESTRUCTURA (qué campos, en qué orden, de qué tipo). Los textos de
    las etiquetas están en distribuidores-i18n.js con las claves "f.*".
    Usado por distribuidores.html.

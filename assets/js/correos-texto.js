@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LEDYVAS — Correos de reclutamiento del Programa de Distribución (5 idiomas)
+   LEDYVAS — Correos de reclutamiento de Ledyvas Partners (5 idiomas)
    Uso interno (página privada correos-reclutamiento.html, noindex). Cada idioma
    tiene el primer contacto + el recordatorio; A y B solo cambian el párrafo de
    precios y la línea de comisión del recordatorio. Firma: "Equipo de Alianzas",

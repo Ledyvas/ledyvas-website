@@ -94,7 +94,7 @@
   var T = window.DistI18n;
   var C = window.ContratoTexto;
   var params = new URLSearchParams(location.search);
-  var role = C.role();   // único contrato: Distribuidor Oficial
+  var role = C.role();   // único contrato: Partner
   var token = params.get("t") || "";
   var tier = params.get("tier") || "";   // "alto" -> Contrato A · "resto" -> Contrato B · vacío -> combinada
 
@@ -188,7 +188,7 @@
   renderLang();
 
   renderContract();
-  // Sin token = vista de revisión (el Distribuidor lee el contrato antes de
+  // Sin token = vista de revisión (el Partner lee el contrato antes de
   // aplicar). El recuadro de firma solo aparece con el enlace de un solo uso
   // que Ledyvas envía tras aprobar la solicitud.
   if (token) {
