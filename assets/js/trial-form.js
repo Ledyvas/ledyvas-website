@@ -202,7 +202,7 @@
     const edition = (rawEd === "enterprise") ? "enterprise" : (rawEd === "ultimate" || rawEd === "luxury") ? "ultimate" : "pro";
 
     // Esta página es la de la versión pública "Pro" y muestra precios de pago
-    // único que NO aplican a un trial de Enterprise/Luxury: banner + ocultar tarjetas.
+    // único que NO aplican a un trial de Enterprise/Ultimate: banner + ocultar tarjetas.
     if (edition === "enterprise" || edition === "ultimate") applyEditionUI(edition, lang);
 
     function applyEditionUI(ed, lg) {
