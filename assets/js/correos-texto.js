@@ -15,18 +15,18 @@
   "use strict";
 
   var SIG = {
-    es: "Un saludo,\nEquipo de Alianzas · Ledyvas\ninfo@ledyvas.com · https://ledyvas.com\nLedyvas — Leonardo Cosci · Westland Residences, La Romana, República Dominicana",
-    en: "Best regards,\nAlliances team · Ledyvas\ninfo@ledyvas.com · https://ledyvas.com\nLedyvas — Leonardo Cosci · Westland Residences, La Romana, Dominican Republic",
-    it: "Un saluto,\nTeam Alleanze · Ledyvas\ninfo@ledyvas.com · https://ledyvas.com\nLedyvas — Leonardo Cosci · Westland Residences, La Romana, Repubblica Dominicana",
-    fr: "Cordialement,\nÉquipe Alliances · Ledyvas\ninfo@ledyvas.com · https://ledyvas.com\nLedyvas — Leonardo Cosci · Westland Residences, La Romana, République dominicaine",
-    pt: "Cumprimentos,\nEquipa de Alianças · Ledyvas\ninfo@ledyvas.com · https://ledyvas.com\nLedyvas — Leonardo Cosci · Westland Residences, La Romana, República Dominicana"
+    es: "Un saludo,\nEquipo de Alianzas · Ledyvas\npartners@ledyvas.com · https://ledyvas.com\nLedyvas — Leonardo Cosci · Westland Residences, La Romana, República Dominicana",
+    en: "Best regards,\nAlliances team · Ledyvas\npartners@ledyvas.com · https://ledyvas.com\nLedyvas — Leonardo Cosci · Westland Residences, La Romana, Dominican Republic",
+    it: "Un saluto,\nTeam Alleanze · Ledyvas\npartners@ledyvas.com · https://ledyvas.com\nLedyvas — Leonardo Cosci · Westland Residences, La Romana, Repubblica Dominicana",
+    fr: "Cordialement,\nÉquipe Alliances · Ledyvas\npartners@ledyvas.com · https://ledyvas.com\nLedyvas — Leonardo Cosci · Westland Residences, La Romana, République dominicaine",
+    pt: "Cumprimentos,\nEquipa de Alianças · Ledyvas\npartners@ledyvas.com · https://ledyvas.com\nLedyvas — Leonardo Cosci · Westland Residences, La Romana, República Dominicana"
   };
   var SIG_SHORT = {
-    es: "Un saludo,\nEquipo de Alianzas · Ledyvas\ninfo@ledyvas.com · https://ledyvas.com · Leonardo Cosci, Westland Residences, La Romana, República Dominicana",
-    en: "Best regards,\nAlliances team · Ledyvas\ninfo@ledyvas.com · https://ledyvas.com · Leonardo Cosci, Westland Residences, La Romana, Dominican Republic",
-    it: "Un saluto,\nTeam Alleanze · Ledyvas\ninfo@ledyvas.com · https://ledyvas.com · Leonardo Cosci, Westland Residences, La Romana, Repubblica Dominicana",
-    fr: "Cordialement,\nÉquipe Alliances · Ledyvas\ninfo@ledyvas.com · https://ledyvas.com · Leonardo Cosci, Westland Residences, La Romana, République dominicaine",
-    pt: "Cumprimentos,\nEquipa de Alianças · Ledyvas\ninfo@ledyvas.com · https://ledyvas.com · Leonardo Cosci, Westland Residences, La Romana, República Dominicana"
+    es: "Un saludo,\nEquipo de Alianzas · Ledyvas\npartners@ledyvas.com · https://ledyvas.com · Leonardo Cosci, Westland Residences, La Romana, República Dominicana",
+    en: "Best regards,\nAlliances team · Ledyvas\npartners@ledyvas.com · https://ledyvas.com · Leonardo Cosci, Westland Residences, La Romana, Dominican Republic",
+    it: "Un saluto,\nTeam Alleanze · Ledyvas\npartners@ledyvas.com · https://ledyvas.com · Leonardo Cosci, Westland Residences, La Romana, Repubblica Dominicana",
+    fr: "Cordialement,\nÉquipe Alliances · Ledyvas\npartners@ledyvas.com · https://ledyvas.com · Leonardo Cosci, Westland Residences, La Romana, République dominicaine",
+    pt: "Cumprimentos,\nEquipa de Alianças · Ledyvas\npartners@ledyvas.com · https://ledyvas.com · Leonardo Cosci, Westland Residences, La Romana, República Dominicana"
   };
   // [email] lo reemplaza la herramienta de envío por la dirección del destinatario
   // (igual que [nombre]/[empresa]). El enlace da la baja en un solo clic.

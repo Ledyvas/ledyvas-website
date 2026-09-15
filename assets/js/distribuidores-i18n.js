@@ -155,7 +155,7 @@
       "chat.greeting": "Hola. Pregúnteme lo que quiera sobre el programa: comisión recurrente, precios, cuota, territorio, la demo o cómo unirse.",
       "chat.placeholder": "Escriba su pregunta…",
       "chat.send": "Enviar",
-      "chat.error": "No se ha podido responder ahora. Inténtelo de nuevo o escriba a info@ledyvas.com.",
+      "chat.error": "No se ha podido responder ahora. Inténtelo de nuevo o escriba a partners@ledyvas.com.",
       "chat.close": "Cerrar",
       "chat.disclaimer": "Respuestas informativas. Las condiciones definitivas están en el contrato.",
 
@@ -465,7 +465,7 @@
       "chat.greeting": "Hi. Ask me anything about the program: recurring commission, prices, quota, territory, the demo, how to join.",
       "chat.placeholder": "Type your question…",
       "chat.send": "Send",
-      "chat.error": "Could not answer right now. Try again or write to info@ledyvas.com.",
+      "chat.error": "Could not answer right now. Try again or write to partners@ledyvas.com.",
       "chat.close": "Close",
       "chat.disclaimer": "Informational answers. The binding terms are in the contract.",
 
@@ -775,7 +775,7 @@
       "chat.greeting": "Ciao. Chiedimi quello che vuoi sul programma: commissione ricorrente, prezzi, obiettivo, territorio, la demo, come partecipare.",
       "chat.placeholder": "Scrivi la tua domanda…",
       "chat.send": "Invia",
-      "chat.error": "Non è stato possibile rispondere ora. Riprova o scrivi a info@ledyvas.com.",
+      "chat.error": "Non è stato possibile rispondere ora. Riprova o scrivi a partners@ledyvas.com.",
       "chat.close": "Chiudi",
       "chat.disclaimer": "Risposte informative. Le condizioni definitive sono nel contratto.",
 
@@ -1085,7 +1085,7 @@
       "chat.greeting": "Bonjour. Demandez-moi tout sur le programme : commission récurrente, prix, quota, territoire, la démo, comment rejoindre.",
       "chat.placeholder": "Écrivez votre question…",
       "chat.send": "Envoyer",
-      "chat.error": "Impossible de répondre pour le moment. Réessayez ou écrivez à info@ledyvas.com.",
+      "chat.error": "Impossible de répondre pour le moment. Réessayez ou écrivez à partners@ledyvas.com.",
       "chat.close": "Fermer",
       "chat.disclaimer": "Réponses informatives. Les conditions définitives figurent dans le contrat.",
 
@@ -1395,7 +1395,7 @@
       "chat.greeting": "Olá. Pergunte o que quiser sobre o programa: comissão recorrente, preços, quota, território, a demo, como participar.",
       "chat.placeholder": "Escreva a sua pergunta…",
       "chat.send": "Enviar",
-      "chat.error": "Não foi possível responder agora. Tente de novo ou escreva para info@ledyvas.com.",
+      "chat.error": "Não foi possível responder agora. Tente de novo ou escreva para partners@ledyvas.com.",
       "chat.close": "Fechar",
       "chat.disclaimer": "Respostas informativas. As condições definitivas estão no contrato.",
 

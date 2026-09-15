@@ -11,8 +11,8 @@
   const TEXT = {
     es: {
       invalid_email: "Ese email no parece válido — revisalo e intentá de nuevo.",
-      email_not_configured: "El envío de correos todavía no está activo. Escribinos a info@ledyvas.com y te mandamos el código a mano.",
-      email_send_failed: "No pudimos enviar el correo. Probá de nuevo en un momento, o escribinos a info@ledyvas.com.",
+      email_not_configured: "El envío de correos todavía no está activo. Escribinos a support@ledyvas.com y te mandamos el código a mano.",
+      email_send_failed: "No pudimos enviar el correo. Probá de nuevo en un momento, o escribinos a support@ledyvas.com.",
       generic: "Algo salió mal. Probá de nuevo en un momento.",
       downloadNow: "Descargar ahora",
       modalTitle: "Solicitá tu prueba gratuita",
@@ -28,8 +28,8 @@
     },
     it: {
       invalid_email: "Quell'email non sembra valida — controllala e riprova.",
-      email_not_configured: "L'invio di email non è ancora attivo. Scrivici a info@ledyvas.com e ti mandiamo il codice a mano.",
-      email_send_failed: "Non siamo riusciti a inviare l'email. Riprova tra un momento, oppure scrivici a info@ledyvas.com.",
+      email_not_configured: "L'invio di email non è ancora attivo. Scrivici a support@ledyvas.com e ti mandiamo il codice a mano.",
+      email_send_failed: "Non siamo riusciti a inviare l'email. Riprova tra un momento, oppure scrivici a support@ledyvas.com.",
       generic: "Qualcosa è andato storto. Riprova tra un momento.",
       downloadNow: "Scarica ora",
       modalTitle: "Richiedi la tua prova gratuita",
@@ -45,8 +45,8 @@
     },
     en: {
       invalid_email: "That email doesn't look valid — check it and try again.",
-      email_not_configured: "Sending emails isn't active yet. Write to us at info@ledyvas.com and we'll send you the code by hand.",
-      email_send_failed: "We couldn't send the email. Try again in a moment, or write to info@ledyvas.com.",
+      email_not_configured: "Sending emails isn't active yet. Write to us at support@ledyvas.com and we'll send you the code by hand.",
+      email_send_failed: "We couldn't send the email. Try again in a moment, or write to support@ledyvas.com.",
       generic: "Something went wrong. Try again in a moment.",
       downloadNow: "Download now",
       modalTitle: "Request your free trial",
@@ -62,8 +62,8 @@
     },
     fr: {
       invalid_email: "Cet email ne semble pas valide — vérifiez-le et réessayez.",
-      email_not_configured: "L'envoi d'emails n'est pas encore actif. Écrivez-nous à info@ledyvas.com et on vous envoie le code à la main.",
-      email_send_failed: "Nous n'avons pas pu envoyer l'email. Réessayez dans un instant, ou écrivez-nous à info@ledyvas.com.",
+      email_not_configured: "L'envoi d'emails n'est pas encore actif. Écrivez-nous à support@ledyvas.com et on vous envoie le code à la main.",
+      email_send_failed: "Nous n'avons pas pu envoyer l'email. Réessayez dans un instant, ou écrivez-nous à support@ledyvas.com.",
       generic: "Quelque chose s'est mal passé. Réessayez dans un instant.",
       downloadNow: "Télécharger maintenant",
       modalTitle: "Demandez votre essai gratuit",
@@ -79,8 +79,8 @@
     },
     pt: {
       invalid_email: "Esse email não parece válido — confira e tente de novo.",
-      email_not_configured: "O envio de emails ainda não está ativo. Escreva para info@ledyvas.com e mandamos o código manualmente.",
-      email_send_failed: "Não conseguimos enviar o email. Tente de novo em instantes, ou escreva para info@ledyvas.com.",
+      email_not_configured: "O envio de emails ainda não está ativo. Escreva para support@ledyvas.com e mandamos o código manualmente.",
+      email_send_failed: "Não conseguimos enviar o email. Tente de novo em instantes, ou escreva para support@ledyvas.com.",
       generic: "Algo deu errado. Tente de novo em instantes.",
       downloadNow: "Baixar agora",
       modalTitle: "Solicite a sua avaliação gratuita",
