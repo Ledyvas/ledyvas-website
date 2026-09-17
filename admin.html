@@ -71,7 +71,7 @@
           <thead>
             <tr>
               <th>Fecha</th><th>Empresa</th><th>País (fiscal)</th><th>Email</th>
-              <th>Evaluación IA</th><th>Estado</th><th>Acciones</th>
+              <th>Evaluación IA</th><th>Estado</th><th>Demo</th><th>Acciones</th>
             </tr>
           </thead>
           <tbody id="adm-apps"></tbody>
@@ -210,7 +210,7 @@
     var tb = $("adm-apps");
     tb.innerHTML = "";
     if (!list.length) {
-      tb.innerHTML = '<tr><td colspan="7"><div class="d-empty">Todavía no entró ninguna solicitud.</div></td></tr>';
+      tb.innerHTML = '<tr><td colspan="8"><div class="d-empty">Todavía no entró ninguna solicitud.</div></td></tr>';
       return;
     }
     list.forEach(function (a) {
@@ -231,6 +231,8 @@
       st.appendChild(badge(sm[0], sm[1]));
       tr.appendChild(st);
 
+      tr.appendChild(demoCell(a));
+
       var act = document.createElement("td");
       act.appendChild(actionBtn("Ver datos", function () { openDetail(a); }));
       if (a.status !== "contactado") act.appendChild(actionBtn("Contactado", function () { setStatus(a, "contactado"); }));
@@ -248,6 +250,99 @@
     b.textContent = label;
     b.addEventListener("click", fn);
     return b;
+  }
+
+  // ---- Demo de partners (2026-09-17, pedido de Leo: "se pone tambien la
+  // fecha de envio de la demo... si no vende se desactiva. esto es tu
+  // trabajo de ingegnero") -- una clave real (misma arquitectura que la
+  // licencia paga: atada a la huella de hardware al activarse, revisada
+  // por el servidor en cada uso), con vencimiento propio que Leo elige y
+  // puede renovar o cortar en cualquier momento desde acá. ----
+  function demoCell(a) {
+    var td = document.createElement("td");
+    if (!a.demoLicenseKey) {
+      td.appendChild(actionBtn("Enviar demo", function () { issueDemo(a); }));
+      return td;
+    }
+    var expired = a.demoExpiresAt && Date.now() > a.demoExpiresAt;
+    var label = a.demoStatus === "deactivated" ? "Desactivada" : (expired ? "Vencida" : "Activa");
+    var kind = label === "Activa" ? "active" : (label === "Vencida" ? "expired" : "never");
+    var wrap = document.createElement("div");
+    wrap.appendChild(badge(label, kind));
+    var info = document.createElement("div");
+    info.className = "adm-note";
+    info.style.fontSize = "11px";
+    info.textContent = "Enviada " + fmtDay(a.demoSentAt) + " · vence " + fmtDay(a.demoExpiresAt);
+    wrap.appendChild(info);
+    wrap.appendChild(actionBtn("Renovar", function () { renewDemo(a); }));
+    if (label !== "Desactivada") {
+      var deact = actionBtn("Desactivar", function () { deactivateDemo(a); });
+      deact.style.color = "var(--bad,#dc2626)";
+      wrap.appendChild(deact);
+    }
+    td.appendChild(wrap);
+    return td;
+  }
+
+  function issueDemo(a) {
+    var days = window.prompt("¿Por cuántos días activa la demo para " + (a.company || a.email || "este partner") + "?", "30");
+    if (days === null) return;
+    days = parseInt(days, 10);
+    if (!days || days < 1) { toast("Número de días inválido."); return; }
+    api("/admin/issueDemo", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ applicationId: a.id, receivedAt: a.receivedAt, customerName: a.company || a.email, days: days })
+    }).then(function (res) {
+      if (res.status === 200 && res.body.ok) {
+        a.demoLicenseKey = res.body.licenseKey;
+        a.demoSentAt = Date.now();
+        a.demoExpiresAt = res.body.demoExpiresAt;
+        a.demoStatus = "active";
+        renderApps();
+        toast("Demo emitida: " + res.body.licenseKey + " (vence " + fmtDay(res.body.demoExpiresAt) + ")");
+      } else {
+        toast("No se pudo emitir la demo (" + (res.body.error || res.status) + ")");
+      }
+    }).catch(function () { toast("Error de red."); });
+  }
+
+  function renewDemo(a) {
+    var days = window.prompt("¿Por cuántos días más renovás la demo de " + (a.company || a.email || "este partner") + "?", "30");
+    if (days === null) return;
+    days = parseInt(days, 10);
+    if (!days || days < 1) { toast("Número de días inválido."); return; }
+    api("/admin/renewDemo", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ licenseKey: a.demoLicenseKey, applicationId: a.id, receivedAt: a.receivedAt, days: days })
+    }).then(function (res) {
+      if (res.status === 200 && res.body.ok) {
+        a.demoExpiresAt = res.body.demoExpiresAt;
+        a.demoStatus = "active";
+        renderApps();
+        toast("Demo renovada hasta " + fmtDay(res.body.demoExpiresAt));
+      } else {
+        toast("No se pudo renovar (" + (res.body.error || res.status) + ")");
+      }
+    }).catch(function () { toast("Error de red."); });
+  }
+
+  function deactivateDemo(a) {
+    if (!window.confirm("¿Desactivar la demo de " + (a.company || a.email || "este partner") + "? Va a dejar de poder usar Ledyvas de inmediato.")) return;
+    api("/admin/deactivateDemo", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ licenseKey: a.demoLicenseKey, applicationId: a.id, receivedAt: a.receivedAt })
+    }).then(function (res) {
+      if (res.status === 200 && res.body.ok) {
+        a.demoStatus = "deactivated";
+        renderApps();
+        toast("Demo desactivada.");
+      } else {
+        toast("No se pudo desactivar (" + (res.body.error || res.status) + ")");
+      }
+    }).catch(function () { toast("Error de red."); });
   }
 
   function setStatus(a, status) {
