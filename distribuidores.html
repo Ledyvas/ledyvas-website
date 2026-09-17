@@ -216,7 +216,7 @@
   function applyStaticI18n() {
     document.documentElement.lang = T.lang();
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      el.textContent = T.t(el.getAttribute("data-i18n"));
+      el.innerHTML = T.t(el.getAttribute("data-i18n"));
     });
   }
 
