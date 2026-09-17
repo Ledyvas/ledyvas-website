@@ -74,6 +74,25 @@
     <div class="d-card-note" data-i18n="panel.commNote"></div>
   </div>
 
+  <div class="d-card">
+    <div class="d-card-head"><h2 data-i18n="panel.invoice.t"></h2></div>
+    <div style="padding:6px 20px 20px">
+      <p data-i18n="panel.invoice.d"></p>
+      <div class="d-form-grid" style="margin-top:14px">
+        <div class="d-field"><label data-i18n="panel.invoice.fieldEmail"></label><input type="email" id="inv-email" required></div>
+        <div class="d-field"><label data-i18n="panel.invoice.fieldInvoiceNumber"></label><input type="text" id="inv-number" required></div>
+        <div class="d-field"><label data-i18n="panel.invoice.fieldPeriod"></label><input type="month" id="inv-period" required></div>
+        <div class="d-field"><label data-i18n="panel.invoice.fieldAmount"></label><input type="number" id="inv-amount" min="0.01" step="0.01" required></div>
+        <div class="d-field"><label data-i18n="panel.invoice.fieldPaymentMethod"></label><input type="text" id="inv-payment"></div>
+        <div class="d-field wide"><label data-i18n="panel.invoice.fieldNotes"></label><textarea id="inv-notes" rows="2"></textarea></div>
+      </div>
+      <div class="d-form-foot">
+        <button type="button" class="d-btn primary" id="inv-submit" data-i18n="panel.invoice.submitBtn"></button>
+        <span id="inv-msg" class="d-form-error" style="display:none"></span>
+      </div>
+    </div>
+  </div>
+
   <p class="d-foot">
     <span data-i18n="panel.help"></span><br>
     <a href="/" data-i18n="back"></a>
@@ -193,6 +212,68 @@
       tb.appendChild(tr);
     });
   }
+
+  // ------------------------------------------------------------------
+  // FACTURA DE COMISION (clausula 6 del contrato, 2026-09-17). Envia la
+  // factura al Worker (POST /invoices), que la guarda en KV y avisa a
+  // Ledyvas por correo. El Partner se identifica por su codigo (hoy
+  // DATA.distributor.code — despues del 27-sep esto sale del token real).
+  // ------------------------------------------------------------------
+  var WORKER = "https://ledyvas-license-server.ledyvas.workers.dev";
+
+  function invMsg(text, isError) {
+    var el = document.getElementById("inv-msg");
+    el.textContent = text;
+    el.style.color = isError ? "" : "var(--good, #16a34a)";
+    el.style.display = text ? "inline" : "none";
+  }
+
+  function submitInvoice() {
+    var email = (document.getElementById("inv-email").value || "").trim();
+    var invoiceNumber = (document.getElementById("inv-number").value || "").trim();
+    var period = (document.getElementById("inv-period").value || "").trim();
+    var amount = parseFloat(document.getElementById("inv-amount").value);
+    var paymentMethod = (document.getElementById("inv-payment").value || "").trim();
+    var notes = (document.getElementById("inv-notes").value || "").trim();
+
+    if (!email || !invoiceNumber || !period || !amount || amount <= 0) {
+      invMsg(T.t("panel.invoice.missingFields"), true);
+      return;
+    }
+
+    var btn = document.getElementById("inv-submit");
+    btn.disabled = true;
+    invMsg("");
+
+    fetch(WORKER + "/invoices", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        partnerName: DATA.distributor.name,
+        partnerCode: DATA.distributor.code,
+        email: email, invoiceNumber: invoiceNumber, period: period,
+        amount: amount, currency: "USD", paymentMethod: paymentMethod, notes: notes,
+        lang: T.lang()
+      })
+    }).then(function (r) { return r.json().then(function (j) { return { status: r.status, body: j }; }); })
+      .then(function (res) {
+        btn.disabled = false;
+        if (res.status === 200 && res.body.ok) {
+          invMsg(T.t("panel.invoice.success"), false);
+          document.getElementById("inv-number").value = "";
+          document.getElementById("inv-amount").value = "";
+          document.getElementById("inv-notes").value = "";
+        } else {
+          invMsg(T.t("panel.invoice.error"), true);
+        }
+      }).catch(function () {
+        btn.disabled = false;
+        invMsg(T.t("panel.invoice.error"), true);
+      });
+  }
+
+  document.getElementById("inv-submit").addEventListener("click", submitInvoice);
+  document.getElementById("inv-period").value = new Date().toISOString().slice(0, 7);
 
   applyStaticI18n();
   renderLang();

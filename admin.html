@@ -85,10 +85,27 @@
     </div>
 
     <div class="d-card">
-      <div class="d-card-head"><h2>Partners activos</h2></div>
-      <p style="padding:6px 20px 20px;color:var(--gray-500,#6b7280);font-size:14px">
-        El alta de distribuidores (firma del contrato, código, comisiones y pagos) se gestiona por separado y empieza después del 27-sep-2026. Hasta entonces esta pantalla solo recibe y ordena las solicitudes.
+      <div class="d-card-head">
+        <h2>Facturas de comisión <span id="adm-inv-count" style="color:var(--gray-500,#6b7280);font-weight:500"></span></h2>
+        <div class="d-card-actions">
+          <button class="d-btn adm-refresh" id="adm-inv-reload">Actualizar</button>
+        </div>
+      </div>
+      <p style="padding:0 20px 12px;color:var(--gray-500,#6b7280);font-size:13.5px">
+        Facturas que los Partners envían desde su panel (cláusula 6 del contrato). Pendiente de pago total: <b id="adm-inv-pending">—</b>.
+        El alta formal de distribuidores (firma del contrato, código) se gestiona por separado y empieza después del 27-sep-2026.
       </p>
+      <div class="d-table-scroll">
+        <table class="d-table">
+          <thead>
+            <tr>
+              <th>Fecha</th><th>Partner</th><th>N.º factura</th><th>Período</th>
+              <th class="num">Monto</th><th>Estado</th><th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="adm-invoices"></tbody>
+        </table>
+      </div>
     </div>
 
   </div>
@@ -334,11 +351,83 @@
       $("adm-gate").hidden = true;
       $("adm-app").hidden = false;
       renderKpis(); renderCountries(); renderApps();
+      loadInvoices();
     }).catch(function () { toast("Error de red. ¿Worker arriba?"); });
   }
 
   function showGate() { $("adm-gate").hidden = false; $("adm-app").hidden = true; }
   function gateError(msg) { var e = $("adm-gate-err"); e.textContent = msg; e.hidden = false; }
+
+  // ---- Facturas de comisión (clausula 6 del contrato, 2026-09-17) ----
+  var INV_DATA = null;
+  var INV_SMAP = { recibida: ["Recibida", "trial"], pagada: ["Pagada", "active"], rechazada: ["Rechazada", "expired"] };
+
+  function money(n) {
+    var v = Number(n || 0);
+    return "US$ " + v.toLocaleString("es", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function loadInvoices() {
+    api("/admin/invoices").then(function (res) {
+      if (res.status !== 200 || !res.body.ok) { toast("Error al cargar facturas (" + (res.body.error || res.status) + ")"); return; }
+      INV_DATA = res.body;
+      renderInvoices();
+    }).catch(function () { toast("Error de red al cargar facturas."); });
+  }
+
+  function renderInvoices() {
+    var list = (INV_DATA && INV_DATA.invoices) || [];
+    $("adm-inv-count").textContent = "(" + list.length + ")";
+    $("adm-inv-pending").textContent = money(INV_DATA ? INV_DATA.totalPendingUsd : 0);
+    var tb = $("adm-invoices");
+    tb.innerHTML = "";
+    if (!list.length) {
+      tb.innerHTML = '<tr><td colspan="7"><div class="d-empty">Todavía no llegó ninguna factura.</div></td></tr>';
+      return;
+    }
+    list.forEach(function (inv) {
+      var tr = document.createElement("tr");
+      function td(txt) { var e = document.createElement("td"); e.textContent = txt; return e; }
+      tr.appendChild(td(fmtDay(inv.receivedAt)));
+      tr.appendChild(td((inv.partnerName || "—") + (inv.partnerCode ? " (" + inv.partnerCode + ")" : "")));
+      tr.appendChild(td(inv.invoiceNumber || "—"));
+      tr.appendChild(td(inv.period || "—"));
+      var tdAmount = document.createElement("td"); tdAmount.className = "num"; tdAmount.textContent = money(inv.amount);
+      tr.appendChild(tdAmount);
+
+      var st = document.createElement("td");
+      var sm = INV_SMAP[inv.status || "recibida"] || ["Recibida", "trial"];
+      st.appendChild(badge(sm[0], sm[1]));
+      tr.appendChild(st);
+
+      var act = document.createElement("td");
+      if (inv.status !== "pagada") act.appendChild(actionBtn("Pagada", function () { setInvoiceStatus(inv, "pagada"); }));
+      if (inv.status !== "rechazada") { var r = actionBtn("Rechazar", function () { setInvoiceStatus(inv, "rechazada"); }); r.style.color = "var(--bad,#dc2626)"; act.appendChild(r); }
+      if (inv.status !== "recibida") act.appendChild(actionBtn("Reabrir", function () { setInvoiceStatus(inv, "recibida"); }));
+      tr.appendChild(act);
+
+      tb.appendChild(tr);
+    });
+  }
+
+  function setInvoiceStatus(inv, status) {
+    api("/admin/invoices", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ id: inv.id, receivedAt: inv.receivedAt, status: status })
+    }).then(function (res) {
+      if (res.status === 200 && res.body.ok) {
+        inv.status = status;
+        var pendingDelta = 0;
+        INV_DATA.totalPendingUsd = (INV_DATA.invoices || []).filter(function (i) { return (i.status || "recibida") === "recibida"; })
+          .reduce(function (s, i) { return s + (Number(i.amount) || 0); }, 0);
+        renderInvoices();
+        toast("Factura: " + (INV_SMAP[status] ? INV_SMAP[status][0] : status));
+      } else {
+        toast("No se pudo cambiar el estado (" + (res.body.error || res.status) + ")");
+      }
+    }).catch(function () { toast("Error de red."); });
+  }
 
   // ---- eventos ----
   $("adm-enter").addEventListener("click", function () {
@@ -350,6 +439,7 @@
   });
   $("adm-tok").addEventListener("keydown", function (e) { if (e.key === "Enter") $("adm-enter").click(); });
   $("adm-reload").addEventListener("click", load);
+  $("adm-inv-reload").addEventListener("click", loadInvoices);
   $("adm-export").addEventListener("click", exportCsv);
   $("adm-modal-close").addEventListener("click", function () { $("adm-modal-bg").classList.remove("open"); });
   $("adm-modal-bg").addEventListener("click", function (e) { if (e.target === this) this.classList.remove("open"); });
