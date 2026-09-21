@@ -1447,7 +1447,20 @@ module.exports = {
   "Ledyvas warns you before confirming in how many recipes and Formula lines it's used. If you delete it, it's removed from there and those recipes recalculate their cost. If the product has real purchases/sales, it isn't deleted: it's deactivated.": "ينبّهك Ledyvas قبل التأكيد إلى عدد الوصفات وبنود المعادلة التي يُستخدم فيها. وإذا حذفته فإنه يُزال من هناك وتعيد تلك الوصفات حساب تكلفتها. وإذا كان للمنتج مشتريات/مبيعات فعلية، فلا يُحذف: بل يُعطَّل.",
   "Just starting out?": "هل أنت في البداية؟",
   "If what you need is the step-by-step guide to using Ledyvas day to day, start with the User Manual.": "إذا كنت تحتاج إلى دليل الاستخدام اليومي خطوة بخطوة، فابدأ بدليل المستخدم.",
-  "View User Manual": "عرض دليل المستخدم"
+  "View User Manual": "عرض دليل المستخدم",
+  "Last updated: September 21, 2026": "آخر تحديث: 21 سبتمبر 2026",
+  "This policy applies to every purchase of Ledyvas — a one-time license (Ledyvas Professional) or a monthly or annual subscription (Ledyvas Enterprise, Ledyvas Ultimate) — regardless of the platform used to purchase it (website, Gumroad, Paddle, PayPro Global, or any other authorized channel).": "تنطبق هذه السياسة على كل عملية شراء لـ Ledyvas — سواء كانت ترخيصًا بدفعة واحدة (Ledyvas Professional) أو اشتراكًا شهريًا أو سنويًا (Ledyvas Enterprise وLedyvas Ultimate) — أيًا كانت المنصة المستخدمة في الشراء (الموقع الإلكتروني أو Gumroad أو Paddle أو PayPro Global أو أي قناة معتمدة أخرى).",
+  "2. Free trial and final sales": "2. التجربة المجانية والمبيعات النهائية",
+  "Ledyvas offers a": "يقدّم Ledyvas",
+  "with all features (no credit card required), so you can decide with full confidence whether it is right for your business. For this reason, purchases made after the trial are": "بجميع الميزات (دون الحاجة إلى بطاقة ائتمان)، لتقرر بثقة تامة ما إذا كان مناسبًا لنشاطك. ولهذا السبب، فإن عمليات الشراء التي تتم بعد التجربة",
+  "final": "نهائية",
+  ": once you buy a license or a monthly or annual subscription, it is not refundable for a change of mind, for not having used the software, or for a partial period. Ledyvas is delivered immediately as complete digital access (license code + installer).": ": فبمجرد شرائك ترخيصًا أو اشتراكًا شهريًا أو سنويًا، لا يمكن استرداد مبلغه بسبب تغيير الرأي، أو لعدم استخدام البرنامج، أو عن فترة جزئية. ويُسلَّم Ledyvas فورًا كوصول رقمي كامل (رمز الترخيص + المثبّت).",
+  "3. When a refund applies": "3. متى ينطبق الاسترداد",
+  "We refund your purchase": "نسترد قيمة مشترياتك",
+  "only if the software fails": "فقط إذا تعطّل البرنامج",
+  ": that is, if Ledyvas does not work as described and we cannot resolve the problem after you report it to us. In that case we refund the license or the subscription period you paid for. No refund applies in any other case.": ": أي إذا لم يعمل Ledyvas كما هو موصوف ولم نتمكن من حل المشكلة بعد إبلاغك لنا بها. وفي هذه الحالة نسترد قيمة الترخيص أو فترة الاشتراك التي دفعتها. ولا ينطبق الاسترداد في أي حالة أخرى.",
+  "Where the law or the payment provider that processed your purchase requires a refund (for example, in cases of fraud or an unauthorized payment), it will be handled as required. Nothing in this policy limits rights you have under mandatory law.": "إذا اشترط القانون أو مزوّد الدفع الذي عالج عملية شرائك إجراء استرداد (مثلًا في حالات الاحتيال أو الدفع غير المصرَّح به)، فسيُعالَج وفق ما هو مطلوب. ولا شيء في هذه السياسة يحدّ من الحقوق التي تتمتع بها بموجب القانون الإلزامي.",
+  "as soon as you detect the problem, with your name, the email used for the purchase, the purchase platform (website, Gumroad, Paddle, PayPro Global, etc.), and a description of the failure (Ledyvas version, what happened, and a screenshot or error message if possible). We will first try to fix it; if we cannot resolve it, we will process the refund.": "بمجرد اكتشافك للمشكلة، مع ذكر اسمك والبريد الإلكتروني المستخدم في الشراء ومنصة الشراء (الموقع الإلكتروني أو Gumroad أو Paddle أو PayPro Global وغيرها) ووصف للعطل (إصدار Ledyvas وما حدث، ولقطة شاشة أو رسالة الخطأ إن أمكن). سنحاول أولًا إصلاحه؛ وإذا لم نتمكن من حلّه فسنعالج الاسترداد."
  },
  "boiler": {
   "We use cookies to understand how this site is used (Google Analytics). You can accept or reject this tracking.": "نستخدم ملفات تعريف الارتباط لفهم كيفية استخدام هذا الموقع (Google Analytics). يمكنك قبول هذا التتبع أو رفضه.",
