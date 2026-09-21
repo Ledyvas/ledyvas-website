@@ -5,7 +5,12 @@ const path = require("path");
 
 const ROOT = __dirname;
 const T = require("./ar-translations.js");
-const PAGES = ["index", "software", "solutions", "industries", "pricing", "download", "contact", "company", "ultimate"];
+const PAGES = ["index", "software", "solutions", "industries", "pricing", "download", "contact", "company", "ultimate",
+  "customer-portal", "documentation", "eula", "privacy", "refund-policy", "terms", "help-zoho-books",
+  "guides", "guide-business-management-software", "guide-restaurant-management-software", "guide-tour-operator-software",
+  "user-manual", "professional-manual"];
+const LEGAL = ["eula", "privacy", "refund-policy", "terms"];
+const LEGAL_NOTE = '<p style="background:#FFF8E6;border:1px solid #E8D39A;border-radius:8px;padding:12px 16px;margin:0 0 24px;font-size:14px;line-height:1.7;color:#5A4A1B;">هذه الترجمة العربية مقدَّمة للتيسير فقط وليست ملزمة قانونيًا؛ وفي حال وجود أي تعارض تسود <a href="/en/' + "@@PAGE@@" + '.html">النسخة الإنجليزية</a>.</p>';
 const OUT = path.join(ROOT, "ar");
 fs.mkdirSync(OUT, { recursive: true });
 
@@ -108,6 +113,11 @@ ${menu}
     return `href="/en/${file}${hash || ""}"`;
   });
 
+  // 6b) nota de traducción de cortesía en páginas legales
+  if (LEGAL.includes(page)) {
+    html = html.replace(/(<main[^>]*>)/, "$1" + LEGAL_NOTE.replace("@@PAGE@@", page));
+  }
+
   // 7) flechas "→" restantes
   html = html.replace(/→/g, "←");
 
@@ -115,7 +125,7 @@ ${menu}
   fs.writeFileSync(outName, html);
 
   // control: textos en inglés sin traducir dentro de <main>
-  const mainPart = (html.match(/<main>[\s\S]*?<\/main>/) || [""])[0];
+  const mainPart = (html.match(/<main[^>]*>[\s\S]*?<\/main>/) || [""])[0];
   const re = />([^<>]+)</g; let x;
   while ((x = re.exec(mainPart))) {
     const s = x[1].replace(/\s+/g, " ").trim();

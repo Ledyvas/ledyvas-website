@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': (typeof localStorage !== 'undefined' && localStorage.getItem('ledyvas-cookie-consent') === 'accepted') ? 'granted' : 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<script>
+  gtag("js", new Date());
+  gtag("config", "G-DYMN29KT3X");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الدليل الاحترافي الكامل — Ledyvas</title>
+<meta name="description" content="التوثيق الاحترافي لـ Ledyvas: البنية وقاعدة البيانات المشفّرة والترخيص وتدفق البيانات ومحرك المعادلة لكل راكب وقواعد العمل في كل وحدة بالتفصيل.">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="canonical" href="https://ledyvas.com/ar/professional-manual.html">
+<link rel="alternate" hreflang="es" href="https://ledyvas.com/manual-profesional.html">
+<link rel="alternate" hreflang="it" href="https://ledyvas.com/it/manuale-professionale.html">
+<link rel="alternate" hreflang="en" href="https://ledyvas.com/en/professional-manual.html">
+<link rel="alternate" hreflang="fr" href="https://ledyvas.com/fr/manuel-professionnel.html">
+<link rel="alternate" hreflang="pt" href="https://ledyvas.com/pt/manual-profissional.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  .manual-layout { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; padding: 40px 0 80px; }
+  .manual-toc { position: sticky; top: calc(var(--header-h, 84px) + 20px); font-size: 14px; max-height: calc(100vh - 120px); overflow-y: auto; }
+  .manual-toc h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin: 0 0 12px; }
+  .manual-toc a { display: block; padding: 5px 0 5px 12px; color: var(--gray-700); border-left: 2px solid var(--gray-300); line-height: 1.35; text-decoration: none; }
+  .manual-toc a:hover { color: var(--royal); border-left-color: var(--royal); }
+  .manual-body { max-width: 760px; }
+  .manual-body h2 { font-size: 1.6rem; margin: 52px 0 14px; scroll-margin-top: 100px; padding-top: 8px; border-top: 1px solid var(--gray-300); }
+  .manual-body h2:first-of-type { border-top: 0; margin-top: 0; }
+  .manual-body h3 { font-size: 1.12rem; margin: 28px 0 8px; color: var(--navy); }
+  .manual-body p { color: var(--gray-700); line-height: 1.7; margin: 0 0 14px; }
+  .manual-body ul, .manual-body ol { color: var(--gray-700); line-height: 1.7; margin: 0 0 16px; padding-left: 22px; }
+  .manual-body li { margin-bottom: 6px; }
+  .manual-body strong { color: var(--navy); font-weight: 600; }
+  .manual-body code { background: var(--gray-100); border: 1px solid var(--gray-300); border-radius: 4px; padding: 1px 5px; font-size: 0.9em; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; color: var(--navy); }
+  .callout { border-left: 3px solid var(--gold); background: var(--gray-100); border-radius: 6px; padding: 14px 18px; margin: 18px 0; }
+  .callout p { margin: 0; color: var(--gray-700); }
+  .callout.warn { border-left-color: #c0392b; }
+  .callout strong { display: block; margin-bottom: 4px; }
+  .manual-body table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14.5px; }
+  .manual-body th, .manual-body td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--gray-300); vertical-align: top; }
+  .manual-body th { color: var(--navy); font-weight: 600; }
+  .manual-intro-note { font-size: 14px; color: var(--gray-500); margin-bottom: 24px; }
+  @media (max-width: 900px) {
+    .manual-layout { grid-template-columns: 1fr; gap: 0; }
+    .manual-toc { position: static; max-height: none; margin-bottom: 32px; border: 1px solid var(--gray-300); border-radius: 8px; padding: 18px; }
+  }
+</style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ledyvas">
+<meta property="og:locale" content="ar">
+<meta property="og:url" content="https://ledyvas.com/ar/professional-manual.html">
+<meta property="og:title" content="الدليل الاحترافي الكامل — Ledyvas">
+<meta property="og:description" content="التوثيق الاحترافي لـ Ledyvas: البنية وقاعدة البيانات المشفّرة والترخيص وتدفق البيانات ومحرك المعادلة لكل راكب وقواعد العمل في كل وحدة بالتفصيل.">
+<meta property="og:image" content="https://ledyvas.com/assets/img/og/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="الدليل الاحترافي الكامل — Ledyvas">
+<meta name="twitter:description" content="التوثيق الاحترافي لـ Ledyvas: البنية وقاعدة البيانات المشفّرة والترخيص وتدفق البيانات ومحرك المعادلة لكل راكب وقواعد العمل في كل وحدة بالتفصيل.">
+<meta name="twitter:image" content="https://ledyvas.com/assets/img/og/og-en.png">
+</head>
+<body>
+
+<div class="cookie-consent-banner" id="cookie-consent-banner" hidden>
+  <div class="cookie-consent-inner">
+    <p>نستخدم ملفات تعريف الارتباط لفهم كيفية استخدام هذا الموقع (Google Analytics). يمكنك قبول هذا التتبع أو رفضه. <a href="privacy.html">اعرف المزيد</a></p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookie-consent-reject" class="btn btn-outline">رفض</button>
+      <button type="button" id="cookie-consent-accept" class="btn btn-primary">قبول</button>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <nav class="nav-horizontal">
+      <a href="index.html">الرئيسية</a>
+      <a href="software.html">البرنامج</a>
+      <a href="solutions.html">الحلول</a>
+      <a href="industries.html">القطاعات</a>
+      <a href="pricing.html">الأسعار</a>
+      <a href="download.html">التنزيل</a>
+      <a href="company.html">الشركة</a>
+      <a href="contact.html">اتصل بنا</a>
+    </nav>
+    <div class="header-actions">
+      <a href="pricing.html" class="btn btn-outline">اشترِ الآن</a>
+      <a href="download.html" class="btn btn-primary">تجربة مجانية</a>
+      <div class="lang-dropdown">
+      <button class="lang-dropdown-toggle" data-lang-toggle type="button" aria-haspopup="true" aria-expanded="false"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-dropdown-menu">
+    <a href="/manual-profesional.html"><span class="fi fi-es"></span> ES</a>
+    <a href="/it/manuale-professionale.html"><span class="fi fi-it"></span> IT</a>
+    <a href="/en/professional-manual.html"><span class="fi fi-gb"></span> EN</a>
+    <a href="/fr/manuel-professionnel.html"><span class="fi fi-fr"></span> FR</a>
+    <a href="/pt/manual-profissional.html"><span class="fi fi-pt"></span> PT</a>
+      </div>
+    </div>
+    <div class="header-social-links">
+      <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas على LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+    <button class="hamburger" data-nav-toggle aria-label="فتح القائمة"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay">
+  <div class="nav-overlay-top">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <button class="hamburger" data-nav-toggle aria-label="إغلاق القائمة"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-overlay-body">
+    <nav class="nav-links">
+      <a href="index.html">الرئيسية <small>01</small></a>
+      <a href="software.html">البرنامج <small>02</small></a>
+      <a href="solutions.html">الحلول <small>03</small></a>
+      <a href="industries.html">القطاعات <small>04</small></a>
+      <a href="pricing.html">الأسعار <small>05</small></a>
+      <a href="download.html">التنزيل <small>06</small></a>
+      <a href="company.html">الشركة <small>07</small></a>
+      <a href="contact.html">اتصل بنا <small>08</small></a>
+    </nav>
+    <div class="nav-side">
+      <div>
+        <div class="nav-side-title">اللغة</div>
+        <div class="lang-switch">
+          <a href="/manual-profesional.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-es"></span> ES</a>
+          <a href="/it/manuale-professionale.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-it"></span> IT</a>
+          <a href="/en/professional-manual.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-gb"></span> EN</a>
+          <a href="/fr/manuel-professionnel.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-fr"></span> FR</a>
+          <a href="/pt/manual-profissional.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-pt"></span> PT</a>
+          <button class="active"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR</button>
+        </div>
+      </div>
+      <div>
+        <div class="nav-side-title">ابدأ الآن</div>
+        <a href="download.html" class="btn btn-gold btn-block">حمّل Ledyvas</a>
+        <div style="height:10px"></div>
+        <a href="pricing.html" class="btn btn-outline-light btn-block">اشترِ الآن</a>
+      </div>
+      <div>
+        <div class="nav-side-title">اتصل بنا</div>
+        <div class="nav-contact">
+          <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>
+          <span>الرد خلال 48 ساعة عمل</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+        <span class="eyebrow">التوثيق</span>
+        <h1>الدليل المهني الكامل</h1>
+        <p class="lede" style="margin-left:auto;margin-right:auto;">المنطق الداخلي لـ Ledyvas: البنية والأمان وتدفق البيانات الكامل ومحرك المعادلة لكل راكب وقواعد العمل في كل وحدة. لمن يدير النظام أو يحتاج إلى فهم سبب خروج الأرقام على هذا النحو.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="manual-layout">
+
+        <aside class="manual-toc">
+          <h4>المحتويات</h4>
+          <a href="#architecture">1. البنية العامة</a>
+          <a href="#license">2. الترخيص والتشفير</a>
+          <a href="#data">3. قاعدة البيانات والترحيلات</a>
+          <a href="#catalog">4. الكتالوج والعلاقات</a>
+          <a href="#formula">5. محرك المعادلة لكل راكب</a>
+          <a href="#purchase">6. الشراء: كيف يدخل المخزون</a>
+          <a href="#logistics">7. المركز اللوجستي والمبيعات</a>
+          <a href="#consumer-sale">8. البيع للمستهلك ومخزون الموزّع</a>
+          <a href="#special-categories">9. المشروبات والمستلزمات أحادية الاستخدام والوقود</a>
+          <a href="#drums">10. براميل الوقود</a>
+          <a href="#daily-control">11. المراقبة اليومية</a>
+          <a href="#consolidated">12. كيف يُحسب كل عرض مجمّع</a>
+          <a href="#recipes">13. الوصفات والإنتاج</a>
+          <a href="#fleet">14. المعدات وتجميع الأسطول</a>
+          <a href="#users">15. تعدد المستخدمين والأدوار والصلاحيات</a>
+          <a href="#negative-stock">16. المخزون السالب: قرار تصميم</a>
+          <a href="#maintenance">17. النسخ الاحتياطي والحذف الشامل</a>
+          <a href="#i18n">18. اللغات والعملة</a>
+          <a href="#assistant">19. المساعد الذكي</a>
+          <a href="#invariants">20. قواعد العمل الأساسية</a>
+          <a href="#faq">21. أسئلة تقنية شائعة</a>
+        </aside>
+
+        <div class="manual-body">
+          <p class="manual-intro-note">يشرح هذا الدليل الأجزاء الداخلية: <em>لماذا</em> و <em>كيف</em>. أما للاطلاع على دليل الاستخدام خطوة بخطوة، فراجع <a href="user-manual.html">دليل المستخدم</a>.</p>
+
+          <h2 id="architecture">1. البنية العامة</h2>
+          <p>Ledyvas تطبيق مكتبي مبني على Electron. يعمل 100% على جهاز العميل — ولا يوجد خادم تطبيقات ولا قاعدة بيانات سحابية. الشيء الوحيد الذي يستعلم عنه Ledyvas عبر الإنترنت هو خادم الترخيص (Cloudflare Worker)، ومن وقت لآخر فقط.</p>
+          <ul>
+            <li><strong>العملية الرئيسية:</strong> تشغّل التطبيق وتتحقق من الترخيص وتفتح قاعدة البيانات وتربط كل وحدة قبل عرض الواجهة.</li>
+            <li><strong>الواجهة:</strong> HTML/CSS/JavaScript دون إطار عمل. كل شاشة عرض يُحمَّل عند الطلب أثناء التنقل.</li>
+            <li><strong>جسر واحد:</strong> لا تلمس الواجهة قاعدة البيانات مباشرة أبدًا. كل شيء يمر عبر طبقة خدمات فيها التحقق والمعاملات والحسابات.</li>
+            <li><strong>الوضع المحمول:</strong> تعيش قاعدة البيانات في مجلد <code>Data</code> بجوار الملف التنفيذي. يمكنك نسخ المجلد كله إلى حاسوب آخر أو إلى قرص خارجي.</li>
+          </ul>
+
+          <h2 id="license">2. الترخيص والتشفير</h2>
+          <p>يُفعَّل Ledyvas برمز ترخيص لدى خادم الترخيص. يستخدم التحقق <strong>توقيعًا تشفيريًا غير متماثل</strong> (Ed25519): المفتاح الخاص موجود على الخادم فقط، ولذلك لا يستطيع التطبيق تزوير ترخيص حتى لو فكّ أحدهم تجميعه.</p>
+          <ul>
+            <li><strong>المهلة دون اتصال:</strong> بعد التفعيل يعمل Ledyvas عدة أيام دون اتصال. ويعيد التحقق في الخلفية كلما توفر الإنترنت. ولا يطلب التطبيق إعادة الاتصال إلا إذا انتهت المهلة ولا يوجد اتصال.</li>
+            <li><strong>النقل:</strong> يمكن نقل الترخيص إلى جهاز آخر. ويفرض الخادم <strong>جهازًا نشطًا واحدًا في كل مرة</strong> (بصمة الجهاز)؛ والتفعيل على حاسوب جديد يعطّل السابق.</li>
+            <li><strong>قاعدة البيانات المشفّرة:</strong> ملف <code>opshield.db</code> مشفّر. يُشتق المفتاح من رمز الترخيص بخوارزمية PBKDF2 بـ 210,000 تكرار (معيار OWASP). وإذا سُرق الحاسوب المحمول، فلا أحد يفتح قاعدة البيانات دون الترخيص. ولأن المفتاح يسافر مع الترخيص لا مع العتاد، فإن الترخيص نفسه بعد إعادة تفعيله على حاسوب آخر يفتح الملف نفسه — ولهذا يمكنك نقل المجلد بين الحواسيب.</li>
+          </ul>
+
+          <h2 id="data">3. قاعدة البيانات والترحيلات</h2>
+          <p>يستخدم Ledyvas ملف SQLite واحدًا. ويتطور المخطط عبر <strong>ترحيلات مرقّمة ومرتبة</strong>: كل تحديث للتطبيق يأتي بترحيلات جديدة تُطبَّق من تلقاء نفسها، مرة واحدة، عند أول تشغيل، داخل معاملة خاصة بها. والترحيل الذي طُبّق من قبل لا يُعدَّل أبدًا؛ بل يُضاف ترحيل جديد.</p>
+          <p>عند التشغيل يجري Ledyvas أيضًا نقطة تفتيش لسجل الكتابة المسبقة (WAL) ويكررها في الخلفية من وقت لآخر — وهذا يمنع ملف العمل من التضخم بلا حدود أثناء الجلسات الطويلة.</p>
+
+          <h2 id="catalog">4. الكتالوج والعلاقات</h2>
+          <p>الكتالوج أساس كل شيء. يُدخل مرة واحدة ويُشار إليه في كل عملية لاحقة <strong>بمعرّفه الداخلي الثابت</strong>لا باسمه أبدًا — ولهذا يمكنك إعادة تسمية منتج أو وجهة أو فئة في أي وقت دون كسر السجل التاريخي.</p>
+          <table>
+            <tr><th>الكيان</th><th>الدور</th><th>يرتبط بـ</th></tr>
+            <tr><td>المنتج</td><td>صنف يُشترى أو يُباع أو يُنتج. له فئة وفئة فرعية ووحدة وتكلفة وباركود.</td><td>المشتريات والمبيعات والوصفات والمعادلة والمخزون</td></tr>
+            <tr><td>الفئة / الفئة الفرعية</td><td>تصنّف المنتج. وتحدد التجميع في الشراء/المخزون و«العائلة» التي ينتمي إليها (أغذية ومشروبات ومستلزمات أحادية الاستخدام ووقود…).</td><td>المنتج والمعادلة والعروض المجمّعة</td></tr>
+            <tr><td>المورّد</td><td>من تشتري منه. يمكن أن تكون له قائمة منتجات موردة مع التكلفة (مرجع).</td><td>الشراء</td></tr>
+            <tr><td>العميل</td><td>من تبيع له. وإذا كان «موزّعًا» فله مخزونه الخاص.</td><td>البيع للمستهلك والوجهة</td></tr>
+            <tr><td>الوجهة</td><td>نقطة توزيع. يمكن أن يكون لها عميل موزّع مرتبط وسعر بيع لكل راكب.</td><td>المعادلة والمركز اللوجستي وهامش الربح حسب الوجهة</td></tr>
+            <tr><td>المعدات</td><td>مركبة أو قارب. النوع (قارب/بري) والمجموعة (الشركة/مستأجر).</td><td>الوقود وتجميع الأسطول</td></tr>
+          </table>
+
+          <h2 id="formula">5. محرك المعادلة لكل راكب</h2>
+          <p>فقط مع تفعيل وضع الرحلات. تترجم المعادلة «كم شخصًا ستخدم» إلى «كم تشتري وترسل».</p>
+          <ol>
+            <li>تُضبط <strong>مصفوفة القيم</strong> : لكل توليفة منتج × وجهة، كم يستهلك شخص واحد (مثلًا 0.25 كغ أرز لكل راكب في الوجهة X).</li>
+            <li>يُدخل كل يوم <strong>عدد الركاب PAX</strong> لكل وجهة.</li>
+            <li>يحسب التشغيل، لكل سطر (وجهة × منتج): <code>المطلوب = القيمة × عدد الركاب</code>.</li>
+            <li>من المطلوب تُطرح ثلاثة تعديلات تُدخل لكل وجهة: <strong>المخزون الموجود</strong> (ما تملكه الوجهة أصلًا)، <strong>الإرجاع</strong> (ما أعادته) و <strong>مخزون الشاطئ</strong> (الجرد الفعلي في النقطة). والنتيجة هي <strong>الصرف</strong> لذلك السطر (لا يكون سالبًا أبدًا).</li>
+            <li>ولمعرفة كم <em>يجب شراؤه</em> في المجموع، يُجمع صرف كل وجهات كل منتج (مع تقريب كل سطر إلى الأعلى، لأنه لا يمكن تسليم كسر إلى مطعم) ويُطرح <strong>مخزون المستودع</strong> (المخزون المشترك الموجود أصلًا في المركز اللوجستي) مرة واحدة.</li>
+          </ol>
+          <p><strong>الشراء المساعد أ (الأغذية) وب (المشروبات)</strong> يجريان هذا الحساب فقط — إنهما اقتراح. لا يولّدان أي شراء فعلي ولا يمسان أي مخزون. <strong>الشراء</strong> هي الوحيدة التي تؤكد.</p>
+          <div class="callout">
+            <p><strong>المستلزمات أحادية الاستخدام (الأدوات المتلفة) حسب الوجهة</strong>تُحسب المستلزمات أحادية الاستخدام ضمن معادلة الأغذية وتُرسل حسب الوجهة تمامًا كالأغذية، مع أنها تُتبَّع في المخزون المادي مع المشروبات والوقود.</p>
+          </div>
+
+          <h2 id="purchase">6. الشراء: كيف يدخل المخزون</h2>
+          <p>شاشة الشراء هي <strong>النقطة الوحيدة</strong> في النظام التي تولّد شراءً فعليًا. عند التأكيد، داخل معاملة ذرية واحدة:</p>
+          <ol>
+            <li>يُدرج مستند الشراء (المورّد والتاريخ والبنود).</li>
+            <li>تُضاف الكمية إلى <code>current_stock</code>لكل منتج، بشكل متزامن.</li>
+            <li>تُسجَّل حركة في السجل (<code>stock_movements</code>) بالمنتج والكمية والتكلفة والتاريخ والمستخدم — تتبّع كامل.</li>
+            <li>تتزامن وحدة المراقبة اليومية لذلك اليوم/الفئة.</li>
+            <li>إذا كان المنتج من المشروبات أو المستلزمات أحادية الاستخدام أو الوقود، فإنه ينتقل من تلقاء نفسه إلى التتبع الداخلي لتلك الفئات داخل المركز اللوجستي.</li>
+          </ol>
+          <p>إلغاء الشراء أو تعديله يعكس كل ما سبق في التاريخ الأصلي للمستند، لا في تاريخ اليوم. ولا <strong>يمنع</strong> Ledyvas الإلغاء حتى لو نزل المخزون إلى السالب (انظر القسم 16).</p>
+          <div class="callout warn">
+            <p><strong>الشراء ليس بيعًا</strong>الشراء يجعل البضائع <em>تدخل</em>. التوزيع على الوجهات عملية مستقلة (المركز اللوجستي). يمكنك شراء 1000 وإرسال 700.</p>
+          </div>
+
+          <h2 id="logistics">7. المركز اللوجستي والمبيعات</h2>
+          <p>المركز اللوجستي هو <strong>المستودع الوحيد</strong> في النظام. ومنه تبيع/ترسل إلى الوجهات. ولكل قسم بيع (البيع للمطاعم = أغذية + مستلزمات أحادية الاستخدام؛ البيع للقوارب = مشروبات) <strong>عدد ركابه الخاص</strong>المستقل عن عدد ركاب الشراء — فلا يستبدل أحدهما الآخر (الشراء والبيع عمليتان منفصلتان).</p>
+          <p>عند تأكيد البيع، لكل وجهة فيها شيء محسوب يُنشأ <strong>تحويل فعلي</strong> : يخصم <code>current_stock</code>، ويضيف إلى مخزون العميل الموزّع لتلك الوجهة، ويسجل الحركة — كل ذلك داخل معاملة واحدة (وإذا فشلت وجهة واحدة يُعكس كل شيء). ويستخدم الصرف لكل وجهة المعادلة نفسها، معدَّلة بالمخزون الموجود / المرتجع / مخزون الشاطئ، كما في الشراء.</p>
+          <p>يتحقق البيع من المخزون وينبّه إلى ما ينقص، لكنه <strong>لا يمنع التأكيد</strong> — فلا يتعطل التشغيل.</p>
+
+          <h2 id="consumer-sale">8. البيع للمستهلك ومخزون الموزّع</h2>
+          <p>لكل عميل مصنَّف «موزّعًا» رصيد مخزون خاص به (<code>reseller_stock</code>). يُضاف إليه عندما يرسل إليه المركز اللوجستي، ويُخصم منه عندما يبيع ذلك الموزّع للعميل النهائي في شاشة البيع للمستهلك.</p>
+          <ul>
+            <li>تأكيد بيع من المركز اللوجستي يُنشئ تلقائيًا <strong>مسودة</strong> بيعًا للمستهلك لكل وجهة. المسودة موجودة ويمكن تعديلها، لكنها لا تخصم المخزون إلا عند تأكيدها صراحةً.</li>
+            <li>لا تحمل بنود مشروبات القوارب سعر بيع خاصًا بها (يُسجَّل رسم الباقة لكل راكب مرة واحدة فقط في جانب الأغذية، لتفادي احتساب الإيراد مرتين). وتظهر كسجل تكلفة، لا كخسارة.</li>
+            <li><strong>إعادة البيع</strong> مجرد تقرير بما أُرسل فعلًا — ولا تولّد أي حركة.</li>
+          </ul>
+
+          <h2 id="special-categories">9. المشروبات والمستلزمات أحادية الاستخدام والوقود</h2>
+          <p>هذه العائلات الثلاث <strong>ليس لها مستودع أو شاشة منفصلة</strong>. إنها تعيش داخل المركز اللوجستي بتتبّع مخزون خاص بها:</p>
+          <ul>
+            <li>تنتقل إلى ذلك التتبع من تلقاء نفسها عند تأكيد عملية شراء (بدلًا من الإضافة إلى مخزون المنتج العام).</li>
+            <li>من المركز اللوجستي تسجّل مبيعاتها وتعديلاتها ومخرجاتها/استهلاكها ومرتجعاتها، ولكل منها نوع حركة وسجل خاص.</li>
+            <li>تُقسَّم المشروبات إلى كحولية / غير كحولية.</li>
+            <li>يجمع عرض «مرتجعات اليوم» كل المرتجعات (المشروبات بحسب المجموعة الفرعية والمستلزمات والوقود) في مكان واحد، ويخفّض ذلك المخزون المرتجع تلقائيًا اقتراح شراء اليوم التالي.</li>
+          </ul>
+          <p>في العروض المجمّعة، هذه العائلات <strong>لا تُوزَّع على الوجهات</strong>: تُحمَّل كتكلفة عامة (باستثناء المستلزمات أحادية الاستخدام التي تُرسل حسب الوجهة — انظر القسم 5).</p>
+
+          <h2 id="drums">10. براميل الوقود</h2>
+          <p>للأنشطة التي، إضافة إلى المخزون بالغالون، تتعامل مع الوقود/الزيت في براميل مادية (5 و7 و9 و10 و18 غالونًا). وهو مخزون موازٍ <strong>يتزامن من تلقاء نفسه</strong> مع المخزون بالغالون — فلا شيء يُدخل مرتين أبدًا.</p>
+          <table>
+            <tr><th>العملية</th><th>الأثر</th></tr>
+            <tr><td>الشراء</td><td>يضيف براميل (بحسب السعة والكمية الدقيقة، أو باقتراح تقسيم أمثل بالنظر إلى الغالونات التي تحتاجها) ويضيف الغالونات المكافئة إلى المخزون العام.</td></tr>
+            <tr><td>البيع / الصرف</td><td>يخرج براميل بتعيينها لمعدة، ويخصم الغالونات من المخزون.</td></tr>
+            <tr><td>الإرجاع</td><td>كامل (يضيف الكمية كلها)، أو جزئي (يضيف الغالونات الفعلية التي يحتويها)، أو فارغ (لا يضيف وقودًا، بل يعيد الحاوية فقط).</td></tr>
+            <tr><td>التعديل</td><td>يصحّح العدد بعد جرد فعلي. يطلب القيمة الصحيحة بحسب السعة/الحالة وسببًا، ويُدقَّق.</td></tr>
+          </table>
+          <p>وله إقفال يومي خاص (<code>الافتتاح + المشتريات − المباع + المرتجع = الإقفال</code>) وسجل كامل. يمكن تبديل العرض بين الغالونات واللترات؛ أما ما يُخزَّن في قاعدة البيانات فلا تتغير وحدته أبدًا.</p>
+
+          <h2 id="daily-control">11. المراقبة اليومية</h2>
+          <p>إنها طبقة <strong>مطابقة</strong> منفصلة عن المخزون الفعلي. تسجّل، لكل يوم/فئة/منتج: الافتتاح والمشتريات والصرف (لكل معدة/وجهة) والمرتجعات والجرد الفعلي.</p>
+          <p><code>الإقفال المحسوب = الافتتاح + المشتريات − (المصروف − المرتجع)</code>. وإذا أُدخل جرد فعلي، فهو الرقم المتحقَّق منه ويُستخدم <strong>كافتتاح لليوم التالي</strong> — وهكذا يُصحِّح الفرق بين النظري والفعلي نفسه ولا يُرحَّل.</p>
+          <p>المشتريات والصرف الفعليان يزامنان المراقبة اليومية تلقائيًا؛ ويمكن أيضًا تعديلها يدويًا.</p>
+
+          <h2 id="consolidated">12. كيف يُحسب كل عرض مجمّع</h2>
+          <h3>الملخص اليومي / المجمّع التشغيلي</h3>
+          <p>يبقى عمود <strong>إجمالي</strong> التكلفة التشغيلية للنشاط في الفترة: الشراء الفعلي المؤكد (بحسب الفئة، مع فصل خانتي البنزين/الزيت) مضافًا إليه <strong>التكاليف اليدوية القابلة للضبط</strong> بحسب الفئة (إيجار ورواتب وعمولات وغيرها — تُدار في الإعدادات، وليست قائمة ثابتة). ويعرض أيضًا: عدد الركاب للفترة، وإجمالي الإنفاق، والتكلفة لكل راكب، وجدولًا إحصائيًا <strong>متوسط الركاب حسب الوجهة</strong> (متوسط الركاب المباعين يوميًا لكل وجهة، مع احتساب أيام البيع الفعلي فقط). هذا الجدول للاطلاع فقط — ولا يدخل في أي حساب للتكلفة.</p>
+          <h3>هامش الربح حسب الوجهة</h3>
+          <p>في وضع الرحلات فقط. التكلفة والمبيعات والهامش لكل وجهة، <strong>فقط</strong> لما مرّ عبر المركز اللوجستي (تحويلات فعلية). تُجمَّد التكلفة في كل تحويل؛ وتستخدم المبيعات السعر المخزَّن في التحويل. لا تظهر المشروبات والوقود لكل وجهة (بل تُعرض منفصلة باسم «تكاليف أخرى للفترة»).</p>
+          <h3>تجميع الأسطول</h3>
+          <p>استهلاك الوقود لكل معدة. في الوضع الأسبوعي يُستخدم متوسط مرجّح بالكمية (فيوم الاستهلاك الكثيف يزن أكثر من الخفيف). المبالغ بالعملة المحلية أو بالدولار الأمريكي بحسب السعر المضبوط.</p>
+
+          <div class="callout">
+            <p><strong>التصدير إلى المحاسبة — في Ledyvas Enterprise فقط</strong>شاشة في Ledyvas Enterprise (الإصدار المتاح عبر قناة شركاء Ledyvas) تولّد، لنطاق تواريخ، ملفات جاهزة للاستيراد في <strong>QuickBooks Online/Desktop وAlegra وZoho Books وOdoo</strong>: ملف CSV للعمليات، وCSV بنكي (3 أعمدة بإشارة)، وIIF أصلي لـ QuickBooks Desktop، وقيد يومي مزدوج، والبيانات الرئيسية للموردين/العملاء/المنتجات. المصادر: <code>المشتريات</code>, <code>إعادة البيع</code> (المؤكدة)، والوقود <code>المبيعات</code>، والتكاليف التشغيلية اليدوية القابلة للضبط، والوقود المُدخل يدويًا من شاشة الوقود. لا تُدرج التكلفة التشغيلية اليدوية إلا إذا وقعت فترتها كاملةً داخل النطاق المصدَّر. وتطابق الإجماليات الملخص اليومي / المجمّع التشغيلي للفترة نفسها تمامًا. أما الرقم الضريبي والهاتف والبريد وعنوان الموردين/العملاء فتخرج كما هي مخزَّنة في Ledyvas (فارغة إن لم تُملأ قط). وبعض الحقول قوائم مغلقة خاصة بالمنصة (مثل «البلدية/المقاطعة» في Alegra) — لا يمكن تعبئتها تلقائيًا من الملف، ويختارها المستخدم يدويًا في المستورد.</p>
+            <p><strong>الصيغة لكل ملف:</strong> <code>asientos.csv</code> = قيد مزدوج (الأعمدة id وDate وEntry وAccount code وAccount وDebit وCredit وDescription وCounterparty وCurrency وStatus وNumber وJournal). يتعرّف Odoo من تلقاء نفسه على عمود <code>id</code> (المعرّف الخارجي) ويستخدمه لتجميع بنود كل قيد يومي في حركة واحدة. وحقل <code>Status</code> هو <code>مسودة</code>: تصل القيود اليومية كمسودة ويقوم المستخدم بنشرها في منصته. <code>Number</code> عدد صحيح واحد لكل قيد يومي (يشترطه Zoho باسم «Journal Number Suffix»)؛ <code>Journal</code> يحمل «Operaciones misceláneas» (يشترطه Odoo كحقل Journal). وفي ملف Odoo يمتد كل قيد على عدة صفوف ويحمل الأول فقط التاريخ/الدفتر/العملة — وتترك الصفوف التالية تلك الأعمدة فارغة، فيجمع Odoo البنود في حركة واحدة. <code>banco.csv</code> = 3 أعمدة (Date وDescription وAmount بإشارة) لمستورد البنك في QuickBooks Online وAlegra. <code>transacciones-detalle.csv</code> لا يُستورد في أي منصة: إنه جدول تحليلي (صف لكل منتج في كل عملية شراء/بيع) لمراجعة التكاليف في Excel.</p>
+            <p><strong>أسماء الحسابات:</strong> <code>asientos.csv</code> وملف IIF يشيران إلى بنود دليل الحسابات بالاسم. الافتراضيات حسابات Zoho Books الإسبانية القياسية (<em>Ventas</em>, <em>Costes de productos vendidos</em>, <em>Otros gastos</em>، و <em>Fondos sin depositar</em> كطرف مقابل لكل عملية شراء/بيع)، وهي موجودة جاهزة. والطرف المقابل ليس «Cuentas por pagar/cobrar» — فحسابات Zoho هذه تشترط مورّدًا/عميلًا لكل سطر بعملة مطابقة، ولا يحتفظ Ledyvas بذمم دائنة/مدينة. وأي حساب يعيّنه المستخدم في «دليل الحسابات» يجب أن يكون موجودًا في المنصة المستهدفة قبل الاستيراد، وإلا رُفض السطر. وفي QuickBooks يستخدم IIF فعلًا <em>Accounts Payable</em> / <em>Accounts Receivable</em> (BILL / INVOICE)، وهي حسابات نظام.</p>
+            <p><strong>Zoho Books:</strong> تمر العمليات عبر <code>asientos.csv</code> في المحاسب ← القيود اليدوية ← قائمة «⋯» ← استيراد ← خيار «Journals» (وليس «رصيد العميل/المورّد المطبَّق»). وفي «Map fields»: <em>Reference Number</em> = Asiento (يجمع البنود)، <em>Journal Number Suffix</em> = Número (عمود في الملف، عدد صحيح واحد لكل قيد — يشترطه Zoho رقميًا)، <em>Contact Name</em> = فارغ (إن رُبط، يشترط Zoho أن تكون كل جهة اتصال موجودة بعملة مطابقة). ولا يقبل مستورد Zoho Banking <code>banco.csv</code> (إذ يشترط المدين والدائن في عمودين منفصلين).</p>
+            <p><strong>Odoo:</strong> جرى التحقق منه مباشرة على Odoo 19 حقيقي (توطين جمهورية الدومينيكان، بالإسبانية) — استُورد 19 قيدًا يوميًا وكانت متوازنة. المحاسبة ← القيود اليومية ← الترس ← استيراد ← <code>asientos.csv</code>. وفي لوحة <em>Format</em> ، اضبط يدويًا قبل الربط: <em>Thousands separator</em> = «No separator»، <em>Decimal separator</em> = «Dot» (يميل Odoo إلى اكتشافهما بالعكس). الربط (أسماء الحقول كما تظهر في Odoo بالإسبانية): <em>id</em> = <em>External ID</em> (يربطه Odoo تلقائيًا — اتركه، فهو يجمّع بنود كل قيد)، Fecha = <em>Fecha</em>، Asiento = <em>Número</em>، Cuenta = <em>Apuntes contables / Cuenta</em>، Débito/Crédito = <em>Apuntes contables / Débito</em> و <em>/ Crédito</em>، Concepto = <em>Apuntes contables / Etiqueta</em>, <strong>Diario = <em>Diario</em></strong> (يُربط عادةً تلقائيًا)، و <em>Código de cuenta / Contraparte / Moneda / Estado / Número</em> = اتركها دون ربط (وإذا ربط Odoo «Moneda» أو «Número» تلقائيًا، فأزلهما بعلامة X — فهما تسببان أخطاء). يجب أن يظهر في «Test» «Everything seems valid» قبل «Import». والحقل <em>Journal</em> يحمل «Operaciones misceláneas» (دفتر متنوع في توطين جمهورية الدومينيكان)؛ أما Odoo الإسباني العادي فيسميه «Operaciones varias» — وإذا لم يجد «Test» الدفتر، فاستخدم «See possible values» واضبط الاسم الحقيقي في «دليل الحسابات» في Ledyvas. وعلى عكس Zoho، فإن أسماء الحسابات الافتراضية لا تطابق دليل Odoo تقريبًا أبدًا: اضبط اسم الحساب المكافئ بدقة في «دليل الحسابات» في Ledyvas قبل التصدير، أو أنشئ تلك الحسابات في Odoo. وتُسجَّل المبالغ بعملة شركة Odoo (الأرقام صحيحة، وتتغير تسمية العملة فقط؛ ولعملة أخرى فعّلها في Odoo واربط عمود «Moneda»). وتصل القيود اليومية كمسودات.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>موصّل Zoho Books الأصلي — في Ledyvas Ultimate فقط</strong> على عكس تصدير الملفات في Enterprise، يتصل Ultimate مباشرة بواجهة Zoho Books البرمجية عبر OAuth (يمنح المستخدم الإذن مرة واحدة من الإعدادات ← المزامنة مع Zoho Books؛ ويمر تبادل الرمز عبر خادم جسر تابع لـ Ledyvas لا يخزّن أي بيانات محاسبية، بل يمرّر الرمز فقط). وله وضعان: <strong>القيود اليومية</strong> (قيد مزدوج واحد لكل مستند، بالبنية نفسها <code>asientos.csv</code> لكن مرسَلًا مباشرة عبر الواجهة البرمجية) و <strong>المستندات</strong> (ينشئ فواتير مبيعات/فواتير موردين/مصروفات حقيقية في Zoho، مع المدفوعات وإشعارات الدائن عند الاقتضاء). كل شيء يصل كمسودة. وهو غير مكرِّر: يُعرَّف كل مستند برقم مرجعه، فلا يكرر المزامنة مرتين أي شيء؛ وإذا أُلغي مستند أو عُدِّل بعد المزامنة، يُحذف القيد/المستند المقابل في Zoho ويُعاد بناؤه في المزامنة التالية. مزامنة تلقائية قابلة للضبط كل ليلة (آخر 120 يومًا).</p>
+            <p><strong>الضريبة لكل مستند:</strong> في وضع المستندات، تحمل كل عملية شراء/بيع بند ضريبتها (المجموع الفرعي + الضريبة + الإجمالي) — فلا يتغير الهامش، بل يُضاف تفصيل الضريبة الذي يشترطه Zoho للفواتير الحقيقية.</p>
+            <p><strong>DGII 606/607/608:</strong> مع تفعيل نظام «جمهورية الدومينيكان» الضريبي في الإعدادات، تظهر حقول NCF في المشتريات/المبيعات إلى جانب شاشة «تقارير DGII» التي تولّد ملفات الشهر الثلاثة (المشتريات والمبيعات والإيصالات الملغاة) بصيغة TXT وExcel، جاهزة للمكتب الافتراضي. ويُعدّ Ledyvas الملف فقط — أما التقديم إلى DGII وإصدار الفاتورة الإلكترونية (e-CF) فيتولاه برنامج الفوترة الإلكترونية المعتمد لدى العميل (PSFE).</p>
+            <p><strong>وحدات أخرى في Ultimate فقط:</strong> الذمم المدينة/الدائنة (متابعة أي المشتريات/المبيعات مدفوعة)، والصندوق الصغير (يذهب كل مصروف إلى Zoho كمصروف)، وهامش الربح حسب النشاط (الربحية حسب خط العمل، أكثر مرونة من هامش الربح حسب الوجهة)، وكتالوج شامل (يبدأ محايدًا ويحمّل قالب الفئات للمهنة بنقرة واحدة: تجزئة أو خدمات أو ورشة أو مصنع أو تجميل أو توزيع أو ضيافة)، وواجهة عربية كاملة (من اليمين إلى اليسار) إضافة إلى لغات Enterprise.</p>
+          </div>
+
+          <h2 id="recipes">13. الوصفات والإنتاج</h2>
+          <p>تحدد الوصفة، لمنتج نهائي، كم يلزم من كل مكوّن. ويمكن أن يكون المكوّن بوحدة مختلفة عن وحدة المنتج في الكتالوج (غرامات في الوصفة وكيلوغرامات في المنتجات) — ويحوّل Ledyvas تلقائيًا بحسب عائلة الوحدة (وزن، حجم) قبل حساب التكلفة والاستهلاك.</p>
+          <p>عند <strong>الإنتاج</strong>، داخل معاملة:</p>
+          <ol>
+            <li>يُخصم كل مكوّن من المخزون بالكمية المحوّلة × الدفعات.</li>
+            <li>يُضاف المنتج النهائي (الحصص × الدفعات).</li>
+            <li>يبقى عمود <strong>تُعاد حساب تكلفة المنتج النهائي</strong> كمتوسط مرجّح بين المخزون الموجود أصلًا (بتكلفته السابقة) وما أُنتج للتو (بتكلفة الحصة في الوصفة). وإذا لم تكن للوصفة مكونات محسوبة التكلفة، فلا تُستبدل التكلفة الفعلية السابقة.</li>
+          </ol>
+          <p>وهكذا تكون للمنتج النهائي دائمًا تكلفة فعلية: قيمته صحيحة في المخزون ويمكن بيعه دون أن يمنعه التحقق بسبب تكلفة صفرية.</p>
+
+          <h2 id="fleet">14. المعدات وتجميع الأسطول</h2>
+          <p>المعدات هي سجل المركبات/القوارب. لكل منها رمز تلقائي ونوع (قارب/بري) ومجموعة (الشركة / مستأجر). وتُستخدم لإسناد عمليات صرف الوقود ومبيعاته لكل وحدة، وهي التي تغذّي تجميع الأسطول (انظر القسم 12).</p>
+
+          <h2 id="users">15. تعدد المستخدمين والأدوار والصلاحيات</h2>
+          <p>لدى Ledyvas نظام مستخدمين بخمسة أدوار: الإدارة والمشتريات والمبيعات والمستودع والمحاسبة. ولا تُخزَّن كلمات المرور إلا على هيئة تجزئة (scrypt)، ولا تُخزَّن نصًا صريحًا أبدًا.</p>
+          <div class="callout">
+            <p><strong>الوضع الحر (دون تسجيل دخول)</strong>بقرار من المالك، فإن Ledyvas اليوم <em>لا يطلب اسم مستخدم ولا كلمة مرور</em> للدخول — بل يُفتح مباشرة بصلاحية كاملة. ومفهوم «المستخدم الحالي» والأدوار ما زال موجودًا: فهو يخدم «تبديل المستخدم» (الذي يصفّي الشاشات المعروضة في القائمة) وتسجيل من نفّذ كل عملية. ولا توجد شاشة تسجيل دخول تعيق الاستخدام.</p>
+          </div>
+
+          <h2 id="negative-stock">16. المخزون السالب: قرار تصميم</h2>
+          <p>Ledyvas <strong>لا يمنع أبدًا</strong> تأكيد بيع أو صرف أو إنتاج أو إلغاء شراء بسبب نقص المخزون. إنه قرار صريح: عدم مقاطعة تشغيل النشاط. والمخزون السالب ليس خطأً في البرنامج — بل يُصحَّح بواسطة <strong>ضبط المخزون</strong> الزر الموجود في ذلك الصف (في المنتجات أو المخزون)، الذي يطلب القيمة الصحيحة وسببًا ويدقّقه.</p>
+          <p>الاستثناء الوحيد: <strong>الإرجاع</strong> البضائع من موزّع يُتحقق فعلًا من أنه لا يعيد أكثر مما استلمه (فهذا لا معنى له فعليًا).</p>
+
+          <h2 id="maintenance">17. النسخ الاحتياطي والحذف الشامل</h2>
+          <p><strong>النسخ الاحتياطي</strong> (في الشاشة الرئيسية): يحفظ نسخة كاملة من ملف قاعدة البيانات بنقرة واحدة.</p>
+          <p><strong>الحذف الشامل</strong> (في الشاشة الرئيسية، «وضع الاختبار»): يحذف المشتريات والمبيعات والتحويلات <strong>من تاريخ مختار فصاعدًا</strong> — لا قبل ذلك التاريخ أبدًا، ولا الكتالوج أبدًا (المنتجات والعملاء والموردون والوجهات). ويطلب كتابة «DELETE ALL». ويُحذف كل مستند بالآلية نفسها الخاصة بالإلغاء الفردي، فتظل عمليات عكس المخزون متسقة. وهو مخصص لمسح بيانات الاختبار قبل التشغيل الفعلي.</p>
+
+          <h2 id="i18n">18. اللغات والعملة</h2>
+          <p>Ledyvas مترجم إلى الإسبانية والإيطالية والإنجليزية والفرنسية والبرتغالية (والعربية اعتبارًا من الإصدار 0.1.9). تتغير اللغة فورًا بالأعلام دون إعادة تشغيل. وتُضبط عملة النشاط في الإعدادات وتحكم كل مبلغ؛ ويُستخدم سعر الصرف مقابل الدولار الأمريكي (القابل للضبط) في تقارير الأسطول.</p>
+
+          <h2 id="assistant">19. المساعد الذكي</h2>
+          <p>يجيب المساعد داخل التطبيق عن أسئلة الاستخدام. البنية:</p>
+          <ul>
+            <li>يرسل التطبيق السؤال (والسجل الحديث) مع ترخيصه وبصمة العتاد إلى خادم الترخيص.</li>
+            <li>يتحقق الخادم من الترخيص، ويطبّق حدًا قدره 40 سؤالًا في اليوم لكل ترخيص (شبكة أمان للتكلفة)، وعندها فقط يستدعي النموذج اللغوي.</li>
+            <li><strong>مفتاح مزوّد الذكاء الاصطناعي لا يكون أبدًا في التطبيق أو المثبّت</strong> — بل يعيش فقط كسر على الخادم.</li>
+            <li>يجيب المساعد دائمًا باللغة التي يُكتب بها، من بين اللغات المدعومة.</li>
+          </ul>
+
+          <h2 id="invariants">20. قواعد العمل الأساسية</h2>
+          <ul>
+            <li><strong>الشراء ≠ البيع.</strong> الشراء يضيف المخزون فقط. والتوزيع على الوجهات مستقل.</li>
+            <li><strong>مستودع واحد.</strong> المركز اللوجستي. لا يوجد مستودع منفصل أو «مستودع تابع».</li>
+            <li><strong>الشراء المساعد يحسب فقط.</strong> لا يولّد أبدًا شراءً فعليًا.</li>
+            <li><strong>معرّفات ثابتة.</strong> كل شيء يُشار إليه بالمعرّف الداخلي؛ ويمكن تغيير الأسماء دون كسر أي شيء.</li>
+            <li><strong>كل حركة مخزون مدقَّقة</strong> في السجل، بالتاريخ الحقيقي للمستند (لا تاريخ اليوم).</li>
+            <li><strong>المخزون لا يوقف التشغيل أبدًا</strong> (باستثناء مرتجع الموزّع).</li>
+            <li><strong>الجرد الفعلي هو الحَكَم.</strong> في المراقبة اليومية، يصحّح العدّ الحقيقي العدّ النظري ويُرحَّل كافتتاح لليوم التالي.</li>
+          </ul>
+
+          <h2 id="faq">21. أسئلة تقنية شائعة</h2>
+          <h3>هل يمكنني نقل التثبيت إلى حاسوب آخر؟</h3>
+          <p>نعم. انسخ المجلد كله (البرنامج + مجلد <code>Data</code> وفعّل الترخيص على الجهاز الجديد. ينتقل الترخيص من تلقاء نفسه (ويُعطَّل السابق). ولأن مفتاح التشفير مشتق من الترخيص، تُفتح قاعدة البيانات على الحاسوب الجديد.</p>
+          <h3>هل البيانات في السحابة؟</h3>
+          <p>لا. كل شيء على جهازك، في ملف مشفّر. خذ نسخًا احتياطية كثيرًا.</p>
+          <h3>لماذا كان المنتج المصنَّع بقيمة صفر وأصبح الآن غير ذلك؟</h3>
+          <p>أصبح الإنتاج يحسب التكلفة الفعلية للمنتج النهائي (متوسط مرجّح). وكان ذلك من قبل يُدخل يدويًا.</p>
+          <h3>لماذا يعرض البيع للمطاعم الآن المستلزمات أحادية الاستخدام؟</h3>
+          <p>تُرسل المستلزمات أحادية الاستخدام حسب الوجهة تمامًا كالأغذية. وتحتاج إلى تحميل قيمتها في المعادلة (الشراء المساعد أ) وتكلفتها في المنتجات.</p>
+          <h3>ماذا يحدث إذا حذفت منتجًا موجودًا في وصفة؟</h3>
+          <p>ينبّهك Ledyvas قبل التأكيد إلى عدد الوصفات وبنود المعادلة التي يُستخدم فيها. وإذا حذفته فإنه يُزال من هناك وتعيد تلك الوصفات حساب تكلفتها. وإذا كان للمنتج مشتريات/مبيعات فعلية، فلا يُحذف: بل يُعطَّل.</p>
+          <h3>إذا كان هناك شيء غير مغطى هنا</h3>
+          <p>اكتب إلى <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-gray">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;max-width:640px;">
+        <span class="eyebrow">هل أنت في البداية؟</span>
+        <h2>دليل المستخدم</h2>
+        <p class="lede">إذا كنت تحتاج إلى دليل الاستخدام اليومي خطوة بخطوة، فابدأ بدليل المستخدم.</p>
+        <div class="cta-row" style="justify-content:center;">
+          <a href="user-manual.html" class="btn btn-primary">عرض دليل المستخدم</a>
+          <a href="contact.html" class="btn btn-outline">تواصل مع الدعم</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+        <p>برنامج متكامل لإدارة الأعمال. المشتريات والمبيعات والمخزون والإنتاج والتقارير من منصة واحدة.</p>
+        <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>المنتج</h4>
+        <ul>
+          <li><a href="software.html">البرنامج</a></li>
+          <li><a href="solutions.html">الحلول</a></li>
+          <li><a href="industries.html">القطاعات</a></li>
+          <li><a href="pricing.html">الأسعار</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الشركة</h4>
+        <ul>
+          <li><a href="company.html">من نحن</a></li>
+          <li><a href="company.html#founder">المؤسس</a></li>
+          <li><a href="company.html#reviews">آراء العملاء</a></li>
+          <li><a href="company.html#faq">الأسئلة الشائعة</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الموارد</h4>
+        <ul>
+          <li><a href="guides.html">الأدلة</a></li>
+          <li><a href="download.html">التنزيل</a></li>
+          <li><a href="documentation.html">التوثيق</a></li>
+          <li><a href="customer-portal.html">بوابة العملاء</a></li>
+          <li><a href="../distribuidores.html">شركاء Ledyvas</a></li>
+          <li><a href="download.html">تجربة مجانية</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>اتصل بنا</h4>
+        <ul>
+          <li><a href="mailto:info@ledyvas.com">info@ledyvas.com</a></li>
+          <li><span style="font-size:14px;">الرد خلال 48 ساعة عمل</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledyvas. جميع الحقوق محفوظة.</span>
+      <div class="footer-legal">
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="terms.html">الشروط والأحكام</a>
+        <a href="eula.html">ترخيص المستخدم النهائي (EULA)</a>
+        <a href="refund-policy.html">سياسة الاسترداد</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

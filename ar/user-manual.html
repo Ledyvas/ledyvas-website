@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': (typeof localStorage !== 'undefined' && localStorage.getItem('ledyvas-cookie-consent') === 'accepted') ? 'granted' : 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<script>
+  gtag("js", new Date());
+  gtag("config", "G-DYMN29KT3X");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل المستخدم — Ledyvas</title>
+<meta name="description" content="دليل مستخدم Ledyvas: كيف تثبّت وتفعّل وتستخدم كل وحدة خطوة بخطوة، مع مثال ليوم عمل كامل وأكثر الأسئلة شيوعًا.">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="canonical" href="https://ledyvas.com/ar/user-manual.html">
+<link rel="alternate" hreflang="es" href="https://ledyvas.com/manual-usuario.html">
+<link rel="alternate" hreflang="it" href="https://ledyvas.com/it/manuale-utente.html">
+<link rel="alternate" hreflang="en" href="https://ledyvas.com/en/user-manual.html">
+<link rel="alternate" hreflang="fr" href="https://ledyvas.com/fr/manuel-utilisateur.html">
+<link rel="alternate" hreflang="pt" href="https://ledyvas.com/pt/manual-do-usuario.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  .manual-layout { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; padding: 40px 0 80px; }
+  .manual-toc { position: sticky; top: calc(var(--header-h, 84px) + 20px); font-size: 14px; max-height: calc(100vh - 120px); overflow-y: auto; }
+  .manual-toc h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin: 0 0 12px; }
+  .manual-toc a { display: block; padding: 5px 0 5px 12px; color: var(--gray-700); border-left: 2px solid var(--gray-300); line-height: 1.35; text-decoration: none; }
+  .manual-toc a:hover { color: var(--royal); border-left-color: var(--royal); }
+  .manual-body { max-width: 760px; }
+  .manual-body h2 { font-size: 1.6rem; margin: 52px 0 14px; scroll-margin-top: 100px; padding-top: 8px; border-top: 1px solid var(--gray-300); }
+  .manual-body h2:first-of-type { border-top: 0; margin-top: 0; }
+  .manual-body h3 { font-size: 1.12rem; margin: 28px 0 8px; color: var(--navy); }
+  .manual-body p { color: var(--gray-700); line-height: 1.7; margin: 0 0 14px; }
+  .manual-body ul, .manual-body ol { color: var(--gray-700); line-height: 1.7; margin: 0 0 16px; padding-left: 22px; }
+  .manual-body li { margin-bottom: 6px; }
+  .manual-body strong { color: var(--navy); font-weight: 600; }
+  .manual-body ol.steps { counter-reset: step; list-style: none; padding-left: 0; }
+  .manual-body ol.steps > li { counter-increment: step; position: relative; padding-left: 40px; margin-bottom: 12px; }
+  .manual-body ol.steps > li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--royal); color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .callout { border-left: 3px solid var(--gold); background: var(--gray-100); border-radius: 6px; padding: 14px 18px; margin: 18px 0; }
+  .callout p { margin: 0; color: var(--gray-700); }
+  .callout.warn { border-left-color: #c0392b; }
+  .callout strong { display: block; margin-bottom: 4px; }
+  .manual-body table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14.5px; }
+  .manual-body th, .manual-body td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--gray-300); vertical-align: top; }
+  .manual-body th { color: var(--navy); font-weight: 600; }
+  .manual-intro-note { font-size: 14px; color: var(--gray-500); margin-bottom: 24px; }
+  @media (max-width: 900px) {
+    .manual-layout { grid-template-columns: 1fr; gap: 0; }
+    .manual-toc { position: static; max-height: none; margin-bottom: 32px; border: 1px solid var(--gray-300); border-radius: 8px; padding: 18px; }
+  }
+</style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ledyvas">
+<meta property="og:locale" content="ar">
+<meta property="og:url" content="https://ledyvas.com/ar/user-manual.html">
+<meta property="og:title" content="دليل المستخدم — Ledyvas">
+<meta property="og:description" content="دليل مستخدم Ledyvas: كيف تثبّت وتفعّل وتستخدم كل وحدة خطوة بخطوة، مع مثال ليوم عمل كامل وأكثر الأسئلة شيوعًا.">
+<meta property="og:image" content="https://ledyvas.com/assets/img/og/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="دليل المستخدم — Ledyvas">
+<meta name="twitter:description" content="دليل مستخدم Ledyvas: كيف تثبّت وتفعّل وتستخدم كل وحدة خطوة بخطوة، مع مثال ليوم عمل كامل وأكثر الأسئلة شيوعًا.">
+<meta name="twitter:image" content="https://ledyvas.com/assets/img/og/og-en.png">
+</head>
+<body>
+
+<div class="cookie-consent-banner" id="cookie-consent-banner" hidden>
+  <div class="cookie-consent-inner">
+    <p>نستخدم ملفات تعريف الارتباط لفهم كيفية استخدام هذا الموقع (Google Analytics). يمكنك قبول هذا التتبع أو رفضه. <a href="privacy.html">اعرف المزيد</a></p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookie-consent-reject" class="btn btn-outline">رفض</button>
+      <button type="button" id="cookie-consent-accept" class="btn btn-primary">قبول</button>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <nav class="nav-horizontal">
+      <a href="index.html">الرئيسية</a>
+      <a href="software.html">البرنامج</a>
+      <a href="solutions.html">الحلول</a>
+      <a href="industries.html">القطاعات</a>
+      <a href="pricing.html">الأسعار</a>
+      <a href="download.html">التنزيل</a>
+      <a href="company.html">الشركة</a>
+      <a href="contact.html">اتصل بنا</a>
+    </nav>
+    <div class="header-actions">
+      <a href="pricing.html" class="btn btn-outline">اشترِ الآن</a>
+      <a href="download.html" class="btn btn-primary">تجربة مجانية</a>
+      <div class="lang-dropdown">
+      <button class="lang-dropdown-toggle" data-lang-toggle type="button" aria-haspopup="true" aria-expanded="false"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-dropdown-menu">
+    <a href="/manual-usuario.html"><span class="fi fi-es"></span> ES</a>
+    <a href="/it/manuale-utente.html"><span class="fi fi-it"></span> IT</a>
+    <a href="/en/user-manual.html"><span class="fi fi-gb"></span> EN</a>
+    <a href="/fr/manuel-utilisateur.html"><span class="fi fi-fr"></span> FR</a>
+    <a href="/pt/manual-do-usuario.html"><span class="fi fi-pt"></span> PT</a>
+      </div>
+    </div>
+    <div class="header-social-links">
+      <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas على LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+    <button class="hamburger" data-nav-toggle aria-label="فتح القائمة"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay">
+  <div class="nav-overlay-top">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <button class="hamburger" data-nav-toggle aria-label="إغلاق القائمة"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-overlay-body">
+    <nav class="nav-links">
+      <a href="index.html">الرئيسية <small>01</small></a>
+      <a href="software.html">البرنامج <small>02</small></a>
+      <a href="solutions.html">الحلول <small>03</small></a>
+      <a href="industries.html">القطاعات <small>04</small></a>
+      <a href="pricing.html">الأسعار <small>05</small></a>
+      <a href="download.html">التنزيل <small>06</small></a>
+      <a href="company.html">الشركة <small>07</small></a>
+      <a href="contact.html">اتصل بنا <small>08</small></a>
+    </nav>
+    <div class="nav-side">
+      <div>
+        <div class="nav-side-title">اللغة</div>
+        <div class="lang-switch">
+          <a href="/manual-usuario.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-es"></span> ES</a>
+          <a href="/it/manuale-utente.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-it"></span> IT</a>
+          <a href="/en/user-manual.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-gb"></span> EN</a>
+          <a href="/fr/manuel-utilisateur.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-fr"></span> FR</a>
+          <a href="/pt/manual-do-usuario.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-pt"></span> PT</a>
+          <button class="active"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR</button>
+        </div>
+      </div>
+      <div>
+        <div class="nav-side-title">ابدأ الآن</div>
+        <a href="download.html" class="btn btn-gold btn-block">حمّل Ledyvas</a>
+        <div style="height:10px"></div>
+        <a href="pricing.html" class="btn btn-outline-light btn-block">اشترِ الآن</a>
+      </div>
+      <div>
+        <div class="nav-side-title">اتصل بنا</div>
+        <div class="nav-contact">
+          <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>
+          <span>الرد خلال 48 ساعة عمل</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+        <span class="eyebrow">التوثيق</span>
+        <h1>دليل المستخدم</h1>
+        <p class="lede" style="margin-left:auto;margin-right:auto;">كيف تثبّت وتفعّل وتستخدم كل وحدة في Ledyvas، خطوة بخطوة. وفي النهاية مثال كامل ليوم عمل وأكثر الأسئلة شيوعًا.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="manual-layout">
+
+        <aside class="manual-toc">
+          <h4>المحتويات</h4>
+          <a href="#install">1. التثبيت والتشغيل الأول</a>
+          <a href="#access">2. فتح Ledyvas والمستخدمون</a>
+          <a href="#language">3. اللغة والعملة ووضع النشاط</a>
+          <a href="#catalog">4. الكتالوج: المنتجات والموردون والعملاء والوجهات</a>
+          <a href="#assisted">5. الشراء المساعد أ وب</a>
+          <a href="#purchase">6. الشراء (هنا تشتري فعلًا)</a>
+          <a href="#logistics">7. المركز اللوجستي</a>
+          <a href="#consumer-sale">8. البيع للمستهلك</a>
+          <a href="#resale">9. إعادة البيع</a>
+          <a href="#inventory">10. المخزون</a>
+          <a href="#daily-control">11. المراقبة اليومية</a>
+          <a href="#fuel">12. الوقود والبراميل</a>
+          <a href="#equipment">13. المعدات وتجميع الأسطول</a>
+          <a href="#consolidated">14. العروض المجمّعة</a>
+          <a href="#recipes">15. الوصفات والإنتاج</a>
+          <a href="#price-comparison">16. مقارنة الأسعار</a>
+          <a href="#reports">17. التقارير وذكاء الأعمال</a>
+          <a href="#settings">18. الإعدادات</a>
+          <a href="#maintenance">19. النسخ الاحتياطي والحذف الشامل</a>
+          <a href="#assistant">20. المساعد الذكي</a>
+          <a href="#example-day">21. يوم عمل كامل كمثال</a>
+          <a href="#faq">22. الأسئلة الشائعة</a>
+        </aside>
+
+        <div class="manual-body">
+          <p class="manual-intro-note">نوصي بقراءة هذا الدليل وLedyvas مفتوح إلى جانبك، مجرّبًا كل خطوة أثناء القراءة. لا يحتاج Ledyvas إلى معرفة تقنية: كل شاشة مصمّمة بحيث يستطيع أي فرد من الفريق استخدامها بعد تدريب بسيط.</p>
+
+          <h2 id="install">1. التثبيت والتشغيل الأول</h2>
+          <p>Ledyvas برنامج مكتبي لنظام Windows. يُنزَّل من <a href="download.html">ledyvas.com/download</a> كملف واحد.</p>
+          <ol class="steps">
+            <li>التنزيل <strong>Ledyvas</strong> من صفحة التنزيل.</li>
+            <li>افتح الملف الذي نزّلته. إذا أظهر Windows تحذير «ناشر غير معروف»، فاختر <strong>مزيد من المعلومات ← تشغيل على أي حال</strong> (Ledyvas آمن؛ يظهر التحذير لأننا لا نملك بعد شهادة توقيع مدفوعة).</li>
+            <li>في المرة الأولى يطلب Ledyvas <strong>رمز الترخيص</strong> الذي تلقيته عند الشراء (أو رمز النسخة التجريبية المجانية). الصقه وانقر <strong>تفعيل</strong>. تحتاج إلى الإنترنت في هذه الخطوة فقط.</li>
+            <li>انتهى الأمر. يُفتح Ledyvas ويمكنك البدء بإدخال بياناتك.</li>
+          </ol>
+          <div class="callout">
+            <p><strong>حول الترخيص</strong>بعد التفعيل، يعمل Ledyvas دون اتصال معظم الوقت. ويُعيد التحقق من نفسه في الخلفية كلما توفر الإنترنت (مع مهلة سماح لعدة أيام). وإذا ظهرت رسالة «مطلوب اتصال بالإنترنت»، فاتصل وانقر <strong>إعادة المحاولة</strong>. ويمكن نقل الترخيص إلى حاسوب آخر متى شئت (ترخيص واحد نشط في كل مرة).</p>
+          </div>
+          <p>تُخزَّن كل بياناتك في مجلد <strong>Data</strong> بجوار البرنامج، في ملف مشفّر. لا أحد يستطيع فتحه دون ترخيصك.</p>
+
+          <h2 id="access">2. فتح Ledyvas والمستخدمون</h2>
+          <p>Ledyvas <strong>لا يطلب اسم مستخدم ولا كلمة مرور</strong> للدخول. يُفتح مباشرة، بصلاحية كاملة على النظام كله (دور الإدارة).</p>
+          <h3>ماذا لو كان في فريقي عدة أشخاص بصلاحيات مختلفة؟</h3>
+          <p>يمكنك إنشاء مستخدم لكل موظف، مع <strong>دور</strong> يحدد الشاشات التي يراها في القائمة. تُنشأ المستخدمون في <strong>الإعدادات ← المستخدمون</strong>.</p>
+          <table>
+            <tr><th>الدور</th><th>ما يراه في القائمة</th></tr>
+            <tr><td>الإدارة</td><td>النظام كله، دون قيود.</td></tr>
+            <tr><td>المشتريات</td><td>الشراء والموردون والشراء المساعد.</td></tr>
+            <tr><td>المبيعات</td><td>المركز اللوجستي والعملاء والبيع للمستهلك.</td></tr>
+            <tr><td>المستودع</td><td>المنتجات والمخزون والمراقبة اليومية.</td></tr>
+            <tr><td>المحاسبة</td><td>التقارير والعروض المجمّعة.</td></tr>
+          </table>
+          <p>لعرض التطبيق بدور معيّن، انقر على <strong>القائمة التي تحمل اسمك</strong> في أعلى اليمين واختر <strong>تبديل المستخدم</strong>. يتم التغيير فورًا ولا يطلب كلمة مرور أيضًا. لا توجد شاشة تسجيل دخول تعيق الاستخدام في أي وقت.</p>
+
+          <h2 id="language">3. اللغة والعملة ووضع النشاط</h2>
+          <p><strong>اللغة:</strong> يتوفر Ledyvas بالإسبانية والإيطالية والإنجليزية والفرنسية والبرتغالية (والعربية اعتبارًا من الإصدار 0.1.9). غيّرها بواسطة <strong>أزرار الأعلام</strong> في أعلى الشاشة، في أي وقت ودون إعادة تشغيل.</p>
+          <p><strong>العملة:</strong> تُضبط في <strong>الإعدادات</strong>. تستخدم كل المبالغ في النظام هذه العملة. وفي تقارير الأسطول يمكنك أيضًا رؤية الإجماليات بالدولار الأمريكي، بسعر صرف تحدده أنت.</p>
+          <p><strong>وضع النشاط (وضع الرحلات / السياحة):</strong> في الإعدادات يمكنك تشغيل وضع الرحلات أو إيقافه.</p>
+          <ul>
+            <li><strong>مفعّل:</strong> يضيف Ledyvas مفاهيم النشاط السياحي — الوجهات الاثنتا عشرة الرسمية، والمعادلة لكل راكب (PAX)، والشراء المساعد أ وب، وتقرير هامش الربح حسب الوجهة.</li>
+            <li><strong>موقوف:</strong> يعمل Ledyvas كنظام ERP عام للمشتريات والمخزون والمبيعات لأي نشاط تجاري (أزياء أو أدوات أو صيدلية أو مستحضرات تجميل أو أي شيء).</li>
+          </ul>
+
+          <h2 id="catalog">4. الكتالوج: المنتجات والموردون والعملاء والوجهات</h2>
+          <p>قبل شراء أو بيع أي شيء، أدخل المعلومات الأساسية للنشاط مرة واحدة. ثم يُعاد استخدامها في كل مكان آخر.</p>
+
+          <h3>المنتجات</h3>
+          <p>كل صنف يشتريه نشاطك أو يبيعه أو ينتجه.</p>
+          <ol class="steps">
+            <li>القائمة الجانبية ← <strong>المنتجات</strong> ← <strong>جديد</strong> زر.</li>
+            <li>املأ الاسم والفئة والفئة الفرعية ووحدة القياس (وحدة أو كيلو أو صندوق أو غالون…) والتكلفة.</li>
+            <li>إذا كان لديك قارئ باركود، فامسح الرمز مباشرة داخل الحقل — يعمل كما لو كتبته.</li>
+            <li>احفظ.</li>
+          </ol>
+          <p>تُنظَّم المنتجات تلقائيًا بحسب <strong>الفئة ← الفئة الفرعية</strong> في القائمة، مع مجاميع فرعية. ولكل صف ثلاثة أزرار: <strong>تعديل</strong>, <strong>ضبط المخزون</strong> و <strong>حذف</strong>.</p>
+          <ul>
+            <li><strong>ضبط المخزون:</strong> يصحّح الرقم يدويًا بعد جرد فعلي. يطلب القيمة الصحيحة وسببًا، ويُسجَّل في سجل الحركات — فلا يضيع سبب التغيير أبدًا.</li>
+            <li><strong>حذف:</strong> قبل التأكيد ينبّهك Ledyvas إلى <em>أين</em> يُستخدم ذلك المنتج (في كم وصفة، وفي كم سطر من المعادلة، وفي أسعار الوجهات) وإلى أن حذفه يزيله من هناك. وإذا كان للمنتج مشتريات أو مبيعات فعلية، فلا يُحذف نهائيًا: بل <strong>يُعطَّل</strong> (يُوسم «غير نشط») حتى لا ينكسر السجل المحاسبي.</li>
+          </ul>
+
+          <h3>الموردون</h3>
+          <p>القائمة الجانبية ← <strong>الموردون</strong> ← <strong>جديد</strong>. املأ بيانات الاتصال. وفي قسم <strong>«المنتجات الموردة»</strong> يمكنك إدراج ما تشتريه من ذلك المورّد وبأي تكلفة — مرجع كي تتذكر ممن تشتري كل شيء.</p>
+
+          <h3>العملاء</h3>
+          <p>القائمة الجانبية ← <strong>العملاء</strong> ← <strong>جديد</strong>. هم الأشخاص أو الأنشطة التي تبيع لها في النهاية. حدّد <strong>«موزّع/بائع بالتجزئة»</strong> إذا كان ذلك العميل يستلم توزيعات ويحتفظ بمخزونه الخاص (فمثلًا، لكل وجهة من وجهاتك عادةً عميل موزّع مرتبط بها).</p>
+
+          <h3>الوجهات</h3>
+          <p>النقاط التي يوزّع إليها نشاطك البضائع (مطاعم وشواطئ وعملاء نهائيون).</p>
+          <ul>
+            <li>يمكنك <strong>أعد تسمية</strong> أي وجهة في أي وقت دون فقدان سجل المبيعات السابقة.</li>
+            <li>مع وضع الرحلات، توجد 12 وجهة رسمية للأغذية. أما المشروبات فتستخدم مجموعة منفصلة (منظمة بحسب القارب أو نوع الرحلة) — تُختار بواسطة محدد <strong>النطاق</strong> عند إنشاء وجهة أو تعديلها.</li>
+            <li>بدون وضع الرحلات، تنشئ الوجهات التي تحتاجها.</li>
+          </ul>
+
+          <h2 id="assisted">5. الشراء المساعد أ وب</h2>
+          <p class="manual-intro-note">فقط مع تفعيل وضع الرحلات. موجودة في <strong>الوصول السريع</strong>أسفل القائمة الرئيسية.</p>
+          <p>الشراء المساعد <strong>أ (الأغذية)</strong> و <strong>ب (المشروبات)</strong> يساعدانك على حساب كمية الشراء تلقائيًا بحسب عدد الأشخاص الذين ستخدمهم.</p>
+          <ol class="steps">
+            <li>افتح الشراء المساعد أ (أو ب).</li>
+            <li>اختر التاريخ.</li>
+            <li>أدخل <strong>عدد الركاب PAX</strong> (عدد الأشخاص) لكل وجهة في ذلك اليوم.</li>
+            <li>اضبط مرة واحدة مصفوفة <strong>«القيمة لكل منتج × وجهة»</strong> (كم يستهلك شخص واحد من كل منتج في كل وجهة). يمكنك لصق كتلة منسوخة مباشرة من Excel، حتى عدة صفوف وأعمدة دفعة واحدة.</li>
+            <li>يحسب Ledyvas الكمية المطلوبة من كل منتج.</li>
+          </ol>
+          <p>ويمكنك أيضًا أن تُدخل لكل وجهة <strong>المخزون الموجود / المرتجع / مخزون الشاطئ</strong> — ما تملكه الوجهة بالفعل، كي لا تشتري أو ترسل أكثر من اللازم.</p>
+          <div class="callout warn">
+            <p><strong>مهم</strong>الشراء المساعد <em>يحسب اقتراحًا فقط</em>. لا يشتري شيئًا ولا يمس المخزون. وللشراء الفعلي، انتقل إلى شاشة <strong>الشراء</strong> (الخطوة 6)، التي تجلب ذلك الاقتراح من تلقاء نفسها عند فتحها.</p>
+          </div>
+
+          <h2 id="purchase">6. الشراء (هنا تشتري فعلًا)</h2>
+          <p>هذا هو <strong>المكان الوحيد في النظام</strong> الذي تُؤكَّد فيه عملية الشراء فعلًا ويُضاف فيه مخزون حقيقي.</p>
+          <ol class="steps">
+            <li>القائمة الجانبية ← <strong>الشراء</strong>. اختر التاريخ.</li>
+            <li>إذا كنت تستخدم وضع الرحلات، فإن Ledyvas يجلب مسبقًا الاقتراح المحسوب في الشراء المساعد أ وب، مجمّعًا بحسب الفئة والفئة الفرعية مع مجاميع فرعية.</li>
+            <li>راجع القائمة. يمكنك تغيير أي كمية يدويًا، أو إزالة منتج لا تريد شراءه، أو إضافة منتج جديد لم يكن موجودًا (بالبحث بالاسم أو بمسح الباركود).</li>
+            <li>يمكنك لصق كتلة أسعار منسوخة مباشرة من Excel — حتى بصيغة المحاسبة (برمز العملة وشرطات للأصفار).</li>
+            <li>عندما يصبح كل شيء كما تريد، انقر <strong>تأكيد وإنشاء الشراء</strong>.</li>
+          </ol>
+          <p>بمجرد التأكيد يظهر إشعار <strong>«تم تأكيد الشراء»</strong> ويرتفع مخزون كل منتج فعلًا — ويظهر فورًا في المخزون والمنتجات. وإذا أخطأت، فألغِ الشراء من قسم <strong>«المشتريات المؤكدة في هذا التاريخ»</strong> في الشاشة نفسها، وسيُصحَّح المخزون تلقائيًا.</p>
+          <div class="callout">
+            <p><strong>الشراء ليس بيعًا</strong>الشراء يجعل البضائع <em>تدخل</em>فقط. أما توزيعها على الوجهات فخطوة منفصلة (المركز اللوجستي). يمكنك شراء 1000 وحدة وإرسال 700 فقط، وتبقى 300 في المخزون.</p>
+          </div>
+
+          <h2 id="logistics">7. المركز اللوجستي</h2>
+          <p>من هنا تبيع البضائع وترسلها إلى الوجهات. وهو المستودع الوحيد في النظام — ولا يوجد مستودع منفصل. وله عدة أقسام في الشاشة نفسها.</p>
+
+          <h3>البيع للمطاعم (الأغذية والمستلزمات أحادية الاستخدام)</h3>
+          <ol class="steps">
+            <li>افتح <strong>المركز اللوجستي</strong>.</li>
+            <li>أدخل (أو راجع) <strong>عدد الركاب PAX</strong> لكل وجهة. يحسب Ledyvas كم يجب إرساله من كل منتج انطلاقًا من المعادلة.</li>
+            <li>أدخل، عند الاقتضاء، المخزون الموجود / المرتجع / مخزون الشاطئ لكل وجهة، لخصم ما لم يعد يحتاج إلى إرسال.</li>
+            <li>راجع بطاقة كل وجهة بتفاصيل المنتج والكمية.</li>
+            <li>انقر على <strong>تأكيد البيع</strong>.</li>
+          </ol>
+          <p>عند التأكيد، يُنشأ تسليم فعلي إلى كل وجهة ويُخصم المخزون. ويظهر إشعار <strong>«تم تأكيد البيع»</strong> . وإذا لم يكن لدى منتج ما مخزون كافٍ (لأنه لم يُشترَ بعد)، فإن Ledyvas يخبرك بالضبط أيها ينقص قبل أن يسمح لك بالتأكيد — ويمكنك <strong>التأكيد رغم ذلك</strong> إن أردت (سينزل المخزون إلى ما دون الصفر حتى تشتري).</p>
+
+          <h3>البيع للقوارب (المشروبات)</h3>
+          <p>الآلية نفسها الخاصة بالأغذية، لكن لمجموعة وجهات المشروبات.</p>
+
+          <h3>المشروبات والمستلزمات أحادية الاستخدام والوقود</h3>
+          <p>لا يوجد مستودع أو شاشة منفصلة لهذه الفئات. كل شيء موجود داخل المركز اللوجستي، بتتبّع مخزون خاص بها: تنتقل إليه من تلقاء نفسها عند تأكيد عملية شراء. ومن المركز اللوجستي نفسه تسجّل مبيعاتها وتعديلات مخزونها ومخرجاتها/استهلاكها ومرتجعاتها، مع سجل حركات خاص بها. وتنقسم المشروبات إلى <strong>كحولية / غير كحولية</strong>. وهناك عرض <strong>«مرتجعات اليوم»</strong> يجمع كل المرتجعات (المشروبات والمستلزمات والوقود) في مكان واحد.</p>
+
+          <h3>الحركات اليدوية</h3>
+          <p>لأي تعديل مخزون لمرة واحدة لا يمر عبر الحساب التلقائي (إدخال أو إخراج أو تحويل أو تصحيح منفرد)، سجّله مباشرة هنا.</p>
+          <p>لكل قسم زر <strong>طباعة</strong> و <strong>لقطة شاشة</strong> خاص به — فإذا طبعت من المطاعم لا يخرج مختلطًا بالمشروبات أو الوقود.</p>
+
+          <h2 id="consumer-sale">8. البيع للمستهلك</h2>
+          <p>البيع النهائي من الوجهة إلى العميل أو السائح، بسعره وهامشه الخاص.</p>
+          <ul>
+            <li>يمكن <strong>إنشاؤه تلقائيًا كمسودة</strong> مما أُرسل فعلًا في المركز اللوجستي. تراجع الكميات والسعر وتؤكد.</li>
+            <li>أو يُدخل يدويًا: تختار الموزّع وتضيف المنتجات (يدويًا أو بالمسح) وتحدد السعر وتؤكد.</li>
+          </ul>
+          <p>لا تحمل بنود مشروبات القوارب سعر بيع خاصًا بها — إذ يُسجَّل رسم الباقة لكل راكب مرة واحدة فقط في جانب الأغذية، لتفادي احتساب الإيراد مرتين. وتظهر باسم <strong>«مشمولة في باقة المركز اللوجستي»</strong>، لا كخسارة.</p>
+
+          <h2 id="resale">9. إعادة البيع</h2>
+          <p>يعرض التوزيع المنفَّذ فعلًا من المركز اللوجستي إلى الوجهات، مجمّعًا بحسب الفئة. وهو <strong>للقراءة فقط / تقرير</strong> — لا يولّد أي حركة جديدة.</p>
+
+          <h2 id="inventory">10. المخزون</h2>
+          <p>المخزون الحالي لكل منتج، مجمّعًا بحسب الفئة والفئة الفرعية مع مجاميع فرعية (بنفس معايير الشراء). ويشمل مخزون المشروبات والمستلزمات أحادية الاستخدام والوقود المتتبَّع داخل المركز اللوجستي.</p>
+          <p>الصفوف ذات <strong>سالبة</strong> كمية أو تكلفة تُعلَّم بالأحمر. وتُصحَّح بواسطة <strong>ضبط المخزون</strong> الموجود في ذلك الصف، تمامًا كما في المنتجات.</p>
+
+          <h2 id="daily-control">11. المراقبة اليومية</h2>
+          <p>الإقفال اليومي بحسب الفئة: <strong>الافتتاح + المشتريات − الصرف + المرتجع = الإقفال</strong>، ويُقارَن بالجرد الفعلي.</p>
+          <ol class="steps">
+            <li>اختر التاريخ والفئة.</li>
+            <li>يبقى عمود <strong>المنتج</strong> ثابتًا على اليسار أثناء انتقالك بين الأعمدة الأخرى.</li>
+            <li>في نهاية اليوم، املأ <strong>الجرد الفعلي</strong> (ما عددته يدويًا). يستخدم Ledyvas هذا الرقم المتحقَّق منه كافتتاح لليوم التالي.</li>
+          </ol>
+
+          <h2 id="fuel">12. الوقود والبراميل</h2>
+          <p>داخل <strong>المراقبة اليومية ← الوقود</strong>.</p>
+          <h3>الوقود العام (بالغالون)</h3>
+          <ul>
+            <li>في الجدول العلوي، أدخل كمية الوقود التي دخلت في ذلك اليوم (عمود المشتريات) وسعر اليوم.</li>
+            <li>في الجدول السفلي، أدخل ما بيع/صُرف لكل معدة (مركبة أو قارب) وما أُعيد منه إن بقي شيء.</li>
+            <li>بواسطة محدد <strong>غالون / لتر</strong> يمكنك رؤية كل شيء بالوحدة التي تفضّلها — وهذا للراحة فقط، إذ يحتفظ Ledyvas دائمًا بالرقم الحقيقي داخليًا.</li>
+          </ul>
+          <h3>البراميل</h3>
+          <p>للأنشطة التي تتعامل مع الوقود أو الزيت في براميل مادية (5 و7 و9 و10 و18 غالونًا)، إضافة إلى المخزون العام بالغالون. تتيح لك:</p>
+          <ul>
+            <li><strong>الشراء</strong> البراميل: بحسب السعة والكمية الدقيقة، أو بطلب اقتراح من Ledyvas لعدد الغالونات التي تحتاجها وأفضل طريقة لتقسيمها إلى براميل.</li>
+            <li><strong>البيع / الصرف</strong> إلى مركبة أو قارب أو معدة محددة.</li>
+            <li><strong>الإرجاع</strong>: كامل أو جزئي (مع ذكر الغالونات الفعلية التي يحتويها) أو فارغ.</li>
+            <li><strong>التعديل</strong>: لتصحيح العدد بعد جرد فعلي. يطلب القيمة الصحيحة بحسب السعة/الحالة وسببًا، مثل ضبط المخزون.</li>
+          </ul>
+          <p>وله إقفال يومي خاص (<strong>الافتتاح + المشتريات − المباع + المرتجع = الإقفال</strong>) وسجل حركات كامل. ويتزامن كل شيء من تلقاء نفسه مع المخزون العام بالغالون — فلا شيء يُدخل مرتين.</p>
+
+          <h2 id="equipment">13. المعدات وتجميع الأسطول</h2>
+          <h3>المعدات</h3>
+          <p>قائمة مركبات وقوارب الشركة، المملوكة أو المستأجرة.</p>
+          <ol class="steps">
+            <li>القائمة الجانبية ← <strong>المعدات</strong> ← <strong>جديد</strong>. يعيّن Ledyvas رمزًا تلقائيًا.</li>
+            <li>اختر النوع (<strong>قارب</strong> أو <strong>بري</strong>) والمجموعة (<strong>الشركة</strong> أو <strong>مستأجرة</strong>).</li>
+          </ol>
+          <p>تُستخدم المعدات لتعيين عمليات صرف الوقود ومبيعاته لكل وحدة.</p>
+          <h3>تجميع الأسطول</h3>
+          <p>تقرير باستهلاك الوقود لكل معدة، في وضع <strong>يومي</strong> أو <strong>أسبوعي</strong> (مع متوسط التكلفة اليومي وتفصيل الوقود بحسب متوسط السعر المرجّح). يمكنك رؤية المبالغ بالعملة المحلية أو بالدولار الأمريكي بحسب سعر الصرف المضبوط.</p>
+
+          <h2 id="consolidated">14. العروض المجمّعة</h2>
+          <table>
+            <tr><th>الشاشة</th><th>ما تعرضه</th></tr>
+            <tr><td>الملخص اليومي</td><td>إجمالي التكلفة التشغيلية للنشاط ليوم واحد: المشتريات الفعلية + التكاليف اليدوية بحسب الفئة.</td></tr>
+            <tr><td>المجمّع التشغيلي</td><td>الشيء نفسه لفترة مختارة، مع مخططات بحسب الفئة، وعدد الركاب للفترة، وإجمالي الإنفاق، والتكلفة لكل راكب. ويشمل جدولًا إحصائيًا <strong>«متوسط الركاب حسب الوجهة»</strong> (متوسط الركاب المباعين يوميًا لكل وجهة، لأيام البيع الفعلي فقط).</td></tr>
+            <tr><td>هامش الربح حسب الوجهة <span style="color:var(--gray-500);">(في وضع الرحلات فقط)</span></td><td>التكلفة والمبيعات والهامش لكل وجهة، لما مرّ عبر المركز اللوجستي فقط. المشروبات والمستلزمات أحادية الاستخدام والوقود لا تُوزَّع على الوجهات: بل تُحمَّل بشكل منفصل كتكلفة عامة.</td></tr>
+            <tr><td>المجمّع التشغيلي ← التكاليف اليدوية</td><td>تُضبط فئات التكلفة (إيجار ورواتب وعمولات وغيرها) بحرية في الإعدادات: يمكن إعادة تسميتها أو إضافتها أو حذفها. وليست قائمة ثابتة.</td></tr>
+          </table>
+
+          <h2 id="recipes">15. الوصفات والإنتاج</h2>
+          <p>للأنشطة التي تصنّع أو تحضّر منتجات من منتجات أخرى (طبق بعدة مكونات أو صلصة أو خبز…).</p>
+          <h3>الوصفات</h3>
+          <p>تحدد كم يدخل من كل مكوّن في منتج نهائي. ويمكن كتابة المكوّن بوحدة مختلفة عن وحدة المنتج في الكتالوج (غرامات في الوصفة وكيلوغرامات في المنتجات) — ويحوّل Ledyvas تلقائيًا. ولكل وصفة نقطة ملوّنة بحسب الفئة للتمييز بينها بنظرة واحدة.</p>
+          <h3>الإنتاج</h3>
+          <ol class="steps">
+            <li>القائمة الجانبية (الوصول السريع) ← <strong>الإنتاج</strong>.</li>
+            <li>اختر الوصفة وعدد الدفعات المراد إنتاجها (أو عدد الأشخاص الذين ستخدمهم ويحسب Ledyvas الدفعات).</li>
+            <li>انقر على <strong>أنتج</strong>.</li>
+          </ol>
+          <p>عند الإنتاج، يخصم Ledyvas المكونات من المخزون، ويضيف المنتج النهائي، ويحسب <strong>التكلفة الفعلية</strong> للمنتج النهائي (متوسط مرجّح بين ما كان موجودًا وما أُنتج للتو). وهكذا تكون قيمة المنتج النهائي صحيحة في المخزون ويمكن بيعه دون مشكلات.</p>
+
+          <h2 id="price-comparison">16. مقارنة الأسعار</h2>
+          <p>تُدخل عدة موردين وأسعارهم لقائمة من المنتجات. يحدد Ledyvas الأرخص لكل منتج وللإجمالي، ويعرض <strong>نسبة الفرق المئوية</strong> — أي كم توفّر باختيار الأرخص.</p>
+
+          <h2 id="reports">17. التقارير وذكاء الأعمال</h2>
+          <p><strong>التقارير:</strong> قوائم تاريخية قابلة للتصدير للمشتريات والمبيعات والمخزون وغيرها.</p>
+          <p><strong>ذكاء الأعمال:</strong> تحليلات واتجاهات على البيانات نفسها (الاستهلاك التاريخي والتوقعات)، مصمّمة لقرارات العمل، لا لإدخال البيانات.</p>
+          <div class="callout">
+            <p><strong>التصدير إلى المحاسبة — في Ledyvas Enterprise فقط</strong>لا يتولى Ledyvas المحاسبة أو الضرائب — فهذه مهمة برنامج المحاسبة لديك. يحتوي Ledyvas Enterprise (الإصدار الذي تحصل عليه عبر شريك لـ Ledyvas، لا ذلك المباع في الأسواق) على شاشة تولّد تلقائيًا ملفات جاهزة للاستيراد في <strong>QuickBooks وAlegra وZoho Books وOdoo</strong> (المشتريات والمبيعات والبنك والقيود اليومية، والبيانات الرئيسية للموردين/العملاء/المنتجات)، مع ملف <code>LEEME.txt</code> يتضمن خطوات الاستيراد الدقيقة لكل منصة. وفي الأثناء، استخدم التقارير ← التصدير إلى Excel وسلّمه لمحاسبك.</p>
+            <p>ثلاثة أمور يجب معرفتها:</p>
+            <ul>
+              <li>لا يخرج الرقم الضريبي وهاتف وبريد وعنوان الموردين/العملاء كاملًا إلا إذا أدخلته في Ledyvas. وبعض الحقول الخاصة بكل منصة (البلدية في Alegra) قائمة مغلقة تختارها يدويًا عند الاستيراد.</li>
+              <li>في <strong>Zoho Books</strong> و <strong>Odoo</strong>، تمر العمليات عبر ملف <code>asientos.csv</code> (في Zoho: المحاسب ← القيود اليدوية ← استيراد ← «Journals»؛ وفي Odoo: المحاسبة ← القيود اليومية ← استيراد)، لا عبر <code>banco.csv</code>. وتصل القيود اليومية على شكل <strong>مسودة</strong> لتراجعها قبل النشر.</li>
+              <li>تستخدم القيود اليومية أسماء حسابات من دليل الحسابات. افتراضيًا يستخدم Ledyvas 5 حسابات قياسية موجودة أصلًا في Zoho؛ أما في <strong>Odoo</strong> تلك الأسماء نادرًا ما تطابق دليل حساباتك — قبل التصدير، افتح «دليل الحسابات» في Ledyvas واضبط الاسم الدقيق لكل حساب في Odoo. ويحتاج Odoo أيضًا إلى «دفتر يومية»: يحمل الملف افتراضيًا «Operaciones misceláneas» (وإذا لم يجده Odoo لديك، فاستخدم «See possible values» في المستورد واضبط ذلك الاسم في «دليل الحسابات»). وفي لوحة «Format» في مستورد Odoo، اضبط فاصل الآلاف = «No separator» والفاصل العشري = «Dot» قبل الربط.</li>
+            </ul>
+          </div>
+
+          <h2 id="settings">18. الإعدادات</h2>
+          <p>من هنا تدير:</p>
+          <ul>
+            <li><strong>وضع الرحلات / السياحة</strong> (تشغيل / إيقاف).</li>
+            <li> <strong>عملة النشاط</strong> وسعر الصرف مقابل الدولار الأمريكي.</li>
+            <li>المنتج <strong>الفئات والفئات الفرعية</strong>: إعادة التسمية والإضافة والحذف.</li>
+            <li> <strong>التكاليف التشغيلية اليدوية</strong> المعروضة في المجمّع التشغيلي: إعادة تسمية وإضافة وحذف بحرية.</li>
+            <li> <strong>مستخدمو الشركة</strong> (الاسم والدور).</li>
+          </ul>
+
+          <h2 id="maintenance">19. النسخ الاحتياطي والحذف الشامل</h2>
+          <p>كلتا الأداتين في <strong>الرئيسية</strong> .</p>
+          <h3>النسخ الاحتياطي</h3>
+          <p>يحفظ نسخة كاملة من قاعدة بياناتك بنقرة واحدة. افعل ذلك كثيرًا، خاصةً قبل إدخال كمية كبيرة من المعلومات.</p>
+          <h3>الحذف الشامل (وضع الاختبار)</h3>
+          <p>يحذف المشتريات والمبيعات والتحويلات <strong>من تاريخ تختاره فصاعدًا</strong> — لا قبل ذلك التاريخ أبدًا، ولا الكتالوج أبدًا (المنتجات والعملاء والموردون والوجهات). ويطلب منك كتابة <strong>«DELETE ALL»</strong> للتأكيد. وهو مخصص لمسح بيانات الاختبار قبل بدء التشغيل الفعلي، لا للاستخدام اليومي.</p>
+
+          <h2 id="assistant">20. المساعد الذكي</h2>
+          <p>في أسفل اليمين يوجد زر المساعد الذكي. يمكنك أن تسأله أي شيء عن كيفية استخدام Ledyvas — بأي لغة من لغات Ledyvas، وسيجيبك باللغة نفسها. وله حد 40 سؤالًا في اليوم لكل ترخيص، كشبكة أمان للتكلفة، لا كقيد استخدام عادي.</p>
+
+          <h2 id="example-day">21. يوم عمل كامل كمثال</h2>
+          <p>يوم نموذجي لنشاط بوضع الرحلات:</p>
+          <ol class="steps">
+            <li><strong>في الصباح</strong> — في الشراء المساعد أ وب: أدخل عدد ركاب اليوم لكل وجهة. يحسب Ledyvas اقتراح الشراء.</li>
+            <li>في <strong>الشراء</strong>: يُفتح والاقتراح محمَّل مسبقًا. تراجعه وتعدّل ما يلزم وتنقر <strong>تأكيد وإنشاء الشراء</strong>. يرتفع المخزون.</li>
+            <li>في <strong>المركز اللوجستي ← البيع للمطاعم</strong>: راجع عدد الركاب، وأكّد البيع لكل وجهة. يُخصم المخزون.</li>
+            <li>كرّر في <strong>البيع للقوارب</strong> للمشروبات، وأدخل وقود اليوم في قسم الوقود.</li>
+            <li><strong>خلال اليوم</strong> — في <strong>البيع للمستهلك</strong>: أكّد مسودات المبيعات التي أُنشئت تلقائيًا، أو أدخل المبيعات يدويًا.</li>
+            <li><strong>عند الإقفال</strong> — في <strong>المراقبة اليومية</strong>: أدخل الجرد الفعلي لكل فئة.</li>
+            <li>راجع نتيجة اليوم في <strong>الملخص اليومي</strong> و <strong>هامش الربح حسب الوجهة</strong>.</li>
+            <li>شغّل <strong>النسخ الاحتياطي</strong> من الشاشة الرئيسية.</li>
+          </ol>
+
+          <h2 id="faq">22. الأسئلة الشائعة</h2>
+          <h3>اشتريت لكن المخزون لا يظهر</h3>
+          <p>تأكد من أنك نقرت <strong>«تأكيد وإنشاء الشراء»</strong> في شاشة الشراء، وليس فقط أضفت السطر. إدخال عدد الركاب ورؤية الاقتراح لا يشتري شيئًا.</p>
+          <h3>مخزوني يظهر بالأحمر أو بالسالب</h3>
+          <p>لا يمنع Ledyvas تأكيد بيع أو صرف أو إنتاج أو إلغاء شراء حتى لو نزل المخزون إلى السالب — فهذا قرار تصميم كي لا يتعطل التشغيل، وليس خطأ. صحّح الرقم بواسطة <strong>ضبط المخزون</strong> الزر الموجود في ذلك الصف.</p>
+          <h3>ما الفرق بين الشراء والشراء المساعد؟</h3>
+          <p>الشراء المساعد <em>يحسب فقط</em> اقتراحًا بحسب عدد الركاب. أما الشراء فهو الذي <em>يشتري فعلًا</em> ويضيف المخزون.</p>
+          <h3>هل يمكنني استخدام Ledyvas لنشاط غير سياحي؟</h3>
+          <p>نعم. أوقف وضع الرحلات في الإعدادات ويعمل Ledyvas كنظام ERP عام للمشتريات والمخزون والمبيعات لأي نشاط تجاري.</p>
+          <h3>كيف أغيّر اللغة؟</h3>
+          <p>بأزرار الأعلام في أعلى الشاشة. يتم التغيير فورًا ودون إعادة تشغيل.</p>
+          <h3>يطلب التطبيق اتصالًا بالإنترنت</h3>
+          <p>يعيد Ledyvas التحقق من الترخيص من وقت لآخر. اتصل بالإنترنت وانقر <strong>إعادة المحاولة</strong>. لديك عدة أيام من المهلة دون اتصال.</p>
+          <h3>كيف أضيف موظفًا بصلاحيات محدودة؟</h3>
+          <p>الإعدادات ← المستخدمون ← أنشئ المستخدم بدوره. ثم، من القائمة التي تحمل اسمك (أعلى اليمين)، «تبديل المستخدم».</p>
+          <h3>كيف أحذف بيانات الاختبار قبل البدء الفعلي؟</h3>
+          <p>الرئيسية ← الحذف الشامل ← اختر تاريخ بدء الحذف ← اكتب «DELETE ALL».</p>
+          <h3>إذا كان هناك شيء غير مغطى هنا</h3>
+          <p>اكتب لنا على <a href="mailto:info@ledyvas.com">info@ledyvas.com</a> وسنردّ خلال 48 ساعة عمل، أو اسأل المساعد الذكي داخل التطبيق.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-gray">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;max-width:640px;">
+        <span class="eyebrow">هل تحتاج إلى مزيد من التفاصيل؟</span>
+        <h2>الدليل المهني الكامل</h2>
+        <p class="lede">إذا كنت تدير Ledyvas أو تحتاج إلى فهم المنطق الداخلي لكل وحدة بعمق أكبر، فإن الدليل الاحترافي يغطي البنية وتدفق البيانات وقواعد العمل بالتفصيل.</p>
+        <div class="cta-row" style="justify-content:center;">
+          <a href="professional-manual.html" class="btn btn-primary">عرض الدليل الاحترافي</a>
+          <a href="contact.html" class="btn btn-outline">تواصل مع الدعم</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+        <p>برنامج متكامل لإدارة الأعمال. المشتريات والمبيعات والمخزون والإنتاج والتقارير من منصة واحدة.</p>
+        <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>المنتج</h4>
+        <ul>
+          <li><a href="software.html">البرنامج</a></li>
+          <li><a href="solutions.html">الحلول</a></li>
+          <li><a href="industries.html">القطاعات</a></li>
+          <li><a href="pricing.html">الأسعار</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الشركة</h4>
+        <ul>
+          <li><a href="company.html">من نحن</a></li>
+          <li><a href="company.html#founder">المؤسس</a></li>
+          <li><a href="company.html#reviews">آراء العملاء</a></li>
+          <li><a href="company.html#faq">الأسئلة الشائعة</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الموارد</h4>
+        <ul>
+          <li><a href="guides.html">الأدلة</a></li>
+          <li><a href="download.html">التنزيل</a></li>
+          <li><a href="documentation.html">التوثيق</a></li>
+          <li><a href="customer-portal.html">بوابة العملاء</a></li>
+          <li><a href="../distribuidores.html">شركاء Ledyvas</a></li>
+          <li><a href="download.html">تجربة مجانية</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>اتصل بنا</h4>
+        <ul>
+          <li><a href="mailto:info@ledyvas.com">info@ledyvas.com</a></li>
+          <li><span style="font-size:14px;">الرد خلال 48 ساعة عمل</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledyvas. جميع الحقوق محفوظة.</span>
+      <div class="footer-legal">
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="terms.html">الشروط والأحكام</a>
+        <a href="eula.html">ترخيص المستخدم النهائي (EULA)</a>
+        <a href="refund-policy.html">سياسة الاسترداد</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
