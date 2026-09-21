@@ -72,11 +72,11 @@
         "Si no es para usted, dese de baja en un clic: https://ledyvas.com/unsubscribe.html?e=[email]. No volveré a escribirle.\n\n" +
         "{{SIG_SHORT}}",
       A: {
-        pricePara: "La cuota mensual del cliente y, con ella, su comisión, dependen del país de residencia fiscal de su empresa. El importe exacto se le comunica junto con el formulario de adhesión, según el documento registrado. Su comisión es siempre el 20% de cada cuota, de forma recurrente.",
+        pricePara: "La cuota del cliente es la misma en todos los países, sin distinción por región. El importe exacto se le comunica junto con el formulario de adhesión. Su comisión es siempre el 20% de cada cuota, de forma recurrente.",
         commLine: "· Sin cuota de alta ni coste de entrada. Cobra el 20% de la cuota mensual de cada cliente, de forma recurrente, mientras siga activo."
       },
       B: {
-        pricePara: "La cuota mensual del cliente y, con ella, su comisión, dependen del país de residencia fiscal de su empresa. El importe exacto se le comunica junto con el formulario de adhesión, según el documento registrado. Su comisión es siempre el 20% de cada cuota, de forma recurrente.",
+        pricePara: "La cuota del cliente es la misma en todos los países, sin distinción por región. El importe exacto se le comunica junto con el formulario de adhesión. Su comisión es siempre el 20% de cada cuota, de forma recurrente.",
         commLine: "· Sin cuota de alta ni coste de entrada. Cobra el 20% de la cuota mensual de cada cliente, de forma recurrente, mientras siga activo."
       }
     },
@@ -104,11 +104,11 @@
         "If this isn't for you, unsubscribe in one click: https://ledyvas.com/unsubscribe.html?e=[email]. I won't email you again.\n\n" +
         "{{SIG_SHORT}}",
       A: {
-        pricePara: "The client's monthly fee — and with it your commission — depend on your company's country of fiscal residence. The exact amount is sent to you with the adhesion form, based on your registered document. Your commission is always 20% of each fee, recurring.",
+        pricePara: "The client's fee is the same in every country — no regional pricing. The exact amount is sent to you with the adhesion form. Your commission is always 20% of each fee, recurring.",
         commLine: "· No membership, no entry cost. You earn 20% of each client's monthly fee, recurring, for as long as they stay active."
       },
       B: {
-        pricePara: "The client's monthly fee — and with it your commission — depend on your company's country of fiscal residence. The exact amount is sent to you with the adhesion form, based on your registered document. Your commission is always 20% of each fee, recurring.",
+        pricePara: "The client's fee is the same in every country — no regional pricing. The exact amount is sent to you with the adhesion form. Your commission is always 20% of each fee, recurring.",
         commLine: "· No membership, no entry cost. You earn 20% of each client's monthly fee, recurring, for as long as they stay active."
       }
     },
@@ -136,11 +136,11 @@
         "Se non fa per te, annulla l'iscrizione con un clic: https://ledyvas.com/unsubscribe.html?e=[email]. Non ti scrivo più.\n\n" +
         "{{SIG_SHORT}}",
       A: {
-        pricePara: "La quota mensile del cliente — e con essa la tua commissione — dipendono dal paese di residenza fiscale della tua azienda. L'importo esatto ti viene comunicato insieme al modulo di adesione, in base al documento registrato. La tua commissione è sempre il 20% di ogni quota, in modo ricorrente.",
+        pricePara: "La quota del cliente è la stessa in tutti i paesi, senza distinzione per area geografica. L'importo esatto ti viene comunicato insieme al modulo di adesione. La tua commissione è sempre il 20% di ogni quota, in modo ricorrente.",
         commLine: "· Nessuna quota di adesione, nessun costo d'ingresso. Incassi il 20% della quota mensile di ogni cliente, in modo ricorrente, finché resta attivo."
       },
       B: {
-        pricePara: "La quota mensile del cliente — e con essa la tua commissione — dipendono dal paese di residenza fiscale della tua azienda. L'importo esatto ti viene comunicato insieme al modulo di adesione, in base al documento registrato. La tua commissione è sempre il 20% di ogni quota, in modo ricorrente.",
+        pricePara: "La quota del cliente è la stessa in tutti i paesi, senza distinzione per area geografica. L'importo esatto ti viene comunicato insieme al modulo di adesione. La tua commissione è sempre il 20% di ogni quota, in modo ricorrente.",
         commLine: "· Nessuna quota di adesione, nessun costo d'ingresso. Incassi il 20% della quota mensile di ogni cliente, in modo ricorrente, finché resta attivo."
       }
     },
@@ -168,11 +168,11 @@
         "Si ce n'est pas pour vous, désinscrivez-vous en un clic : https://ledyvas.com/unsubscribe.html?e=[email]. Je ne vous écrirai plus.\n\n" +
         "{{SIG_SHORT}}",
       A: {
-        pricePara: "La redevance mensuelle du client — et donc votre commission — dépendent du pays de résidence fiscale de votre entreprise. Le montant exact vous est communiqué avec le formulaire d'adhésion, d'après le document enregistré. Votre commission est toujours de 20 % de chaque redevance, de façon récurrente.",
+        pricePara: "La redevance du client est la même dans tous les pays, sans distinction de région. Le montant exact vous est communiqué avec le formulaire d'adhésion. Votre commission est toujours de 20 % de chaque redevance, de façon récurrente.",
         commLine: "· Pas d'adhésion, pas de frais d'entrée. Vous percevez 20 % de la redevance mensuelle de chaque client, de façon récurrente, tant qu'il reste actif."
       },
       B: {
-        pricePara: "La redevance mensuelle du client — et donc votre commission — dépendent du pays de résidence fiscale de votre entreprise. Le montant exact vous est communiqué avec le formulaire d'adhésion, d'après le document enregistré. Votre commission est toujours de 20 % de chaque redevance, de façon récurrente.",
+        pricePara: "La redevance du client est la même dans tous les pays, sans distinction de région. Le montant exact vous est communiqué avec le formulaire d'adhésion. Votre commission est toujours de 20 % de chaque redevance, de façon récurrente.",
         commLine: "· Pas d'adhésion, pas de frais d'entrée. Vous percevez 20 % de la redevance mensuelle de chaque client, de façon récurrente, tant qu'il reste actif."
       }
     },
@@ -200,11 +200,11 @@
         "Se não é para si, cancele a subscrição com um clique: https://ledyvas.com/unsubscribe.html?e=[email]. Não volto a escrever-lhe.\n\n" +
         "{{SIG_SHORT}}",
       A: {
-        pricePara: "A mensalidade do cliente — e com ela a sua comissão — dependem do país de residência fiscal da sua empresa. O valor exato é-lhe comunicado com o formulário de adesão, conforme o documento registado. A sua comissão é sempre 20% de cada mensalidade, de forma recorrente.",
+        pricePara: "A mensalidade do cliente é a mesma em todos os países, sem distinção de região. O valor exato é-lhe comunicado com o formulário de adesão. A sua comissão é sempre 20% de cada mensalidade, de forma recorrente.",
         commLine: "· Sem mensalidade de adesão, sem custo de entrada. Recebe 20% da mensalidade de cada cliente, de forma recorrente, enquanto se mantiver ativo."
       },
       B: {
-        pricePara: "A mensalidade do cliente — e com ela a sua comissão — dependem do país de residência fiscal da sua empresa. O valor exato é-lhe comunicado com o formulário de adesão, conforme o documento registado. A sua comissão é sempre 20% de cada mensalidade, de forma recorrente.",
+        pricePara: "A mensalidade do cliente é a mesma em todos os países, sem distinção de região. O valor exato é-lhe comunicado com o formulário de adesão. A sua comissão é sempre 20% de cada mensalidade, de forma recorrente.",
         commLine: "· Sem mensalidade de adesão, sem custo de entrada. Recebe 20% da mensalidade de cada cliente, de forma recorrente, enquanto se mantiver ativo."
       }
     }
