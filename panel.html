@@ -133,11 +133,11 @@
 
   function money(n) {
     var v = Number(n || 0);
-    var s = v.toLocaleString(T.lang() === "en" ? "en-US" : T.lang(), { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    var s = v.toLocaleString((T.lang() === "en" || T.lang() === "ar") ? "en-US" : T.lang(), { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     return T.t("money") + " " + s;
   }
   function fmtDate(iso) {
-    try { return new Date(iso + "T00:00:00").toLocaleDateString(T.lang() === "en" ? "en-GB" : T.lang(), { day: "2-digit", month: "short", year: "numeric" }); }
+    try { return new Date(iso + "T00:00:00").toLocaleDateString((T.lang() === "en" || T.lang() === "ar") ? "en-GB" : T.lang(), { day: "2-digit", month: "short", year: "numeric" }); }
     catch (e) { return iso; }
   }
 

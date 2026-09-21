@@ -113,6 +113,9 @@ ${menu}
     return `href="/en/${file}${hash || ""}"`;
   });
 
+  // 6a) el enlace a Partners abre la pagina de distribuidores directamente en arabe
+  html = html.split('href="../distribuidores.html"').join('href="../distribuidores.html?lang=ar"');
+
   // 6b) nota de traducción de cortesía en páginas legales
   if (LEGAL.includes(page)) {
     html = html.replace(/(<main[^>]*>)/, "$1" + LEGAL_NOTE.replace("@@PAGE@@", page));

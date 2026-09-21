@@ -907,7 +907,10 @@ form.contact-form { background: var(--gray-50); border: 1px solid var(--gray-300
 
 /* ===== Árabe (RTL) — /ar/ ===== */
 html[lang="ar"] body { font-family: "Noto Sans Arabic", var(--font-sans); }
-.ar-flag { width: 20px; height: 14px; object-fit: cover; border-radius: 2px; vertical-align: -2px; }
+/* display:inline-block: la regla global img{display:block} la ponia ENCIMA del texto "AR" en el menu de idiomas (un <a> en bloque). */
+.ar-flag { display: inline-block; width: 20px; height: 14px; object-fit: cover; border-radius: 2px; vertical-align: -2px; margin-right: 4px; }
+html[dir="rtl"] .ar-flag { margin-right: 0; margin-left: 4px; }
+html[dir="rtl"] .lang-dropdown-toggle .fi, html[dir="rtl"] .lang-dropdown-menu .fi, html[dir="rtl"] .lang-switch .fi { margin-right: 0; margin-left: 4px; }
 html[dir="rtl"] .header-actions .hamburger { margin-left: 0; margin-right: 4px; }
 html[dir="rtl"] .nav-links a:hover, html[dir="rtl"] .nav-links a.active { padding-left: 0; padding-right: 10px; }
 html[dir="rtl"] .doc-toc li, html[dir="rtl"] .legal ul li { padding-left: 0; padding-right: 20px; }

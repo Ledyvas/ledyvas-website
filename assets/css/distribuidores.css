@@ -363,3 +363,21 @@ table.d-table tbody tr:hover { background: var(--gray-50); }
   .sc-fab-label { display: none; }
   .sc-fab { padding: 12px; }
 }
+
+/* ==========================================================================
+   Arabe (RTL) — 2026-09-21. distribuidores-i18n.js pone <html dir="rtl"> cuando el idioma es "ar".
+   ========================================================================== */
+html[dir="rtl"] body { font-family: "Noto Sans Arabic", var(--font-sans); }
+html[dir="rtl"] table.d-table th { text-align: right; }
+html[dir="rtl"] table.d-table td.num, html[dir="rtl"] table.d-table th.num { text-align: left; }
+html[dir="rtl"] .d-steps li { padding-left: 0; padding-right: 42px; }
+html[dir="rtl"] .d-steps li::before { left: auto; right: 0; }
+html[dir="rtl"] .d-req { margin-left: 0; margin-right: 2px; }
+html[dir="rtl"] .d-note { border-left: none; border-right: 3px solid var(--gray-300); }
+html[dir="rtl"] .d-note[style*="border-left-color"] { border-right-color: var(--royal); }
+html[dir="rtl"] [style*="margin-left:8px"] { margin-left: 0 !important; margin-right: 8px !important; }
+html[dir="rtl"] [style*="padding-left:20px"] { padding-left: 0 !important; padding-right: 20px !important; }
+html[dir="rtl"] .sc-user { border-bottom-right-radius: 12px; border-bottom-left-radius: 4px; }
+html[dir="rtl"] .sc-bot { border-bottom-left-radius: 12px; border-bottom-right-radius: 4px; }
+html[dir="rtl"] input[type="email"], html[dir="rtl"] input[type="url"], html[dir="rtl"] input[type="tel"] { direction: ltr; text-align: right; }
+html[dir="rtl"] .d-quicknav a.d-quicknav-apply { margin-left: 0; margin-right: 4px; }

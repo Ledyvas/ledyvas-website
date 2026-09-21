@@ -138,7 +138,9 @@
   }
 
   function renderContract() {
-    var lang = T.lang();
+    // El contrato NO tiene version arabe (prevalece el espanol validado por el asesor legal): a quien lo lee
+    // en arabe se le muestra la traduccion de cortesia en ingles, con su aviso de que el espanol prevalece.
+    var lang = (T.lang() === "ar") ? "en" : T.lang();
     var meta = C.meta(lang);
 
     document.getElementById("ct-draft").textContent = meta.draft;
@@ -186,7 +188,7 @@
       //   → el Worker verifica el token (un solo uso), registra fecha/hora/IP,
       //     guarda el PDF del contrato firmado, activa el código y manda el
       //     email con el link /panel?t=<token-del-panel>.
-      var when = new Date().toLocaleString(T.lang() === "en" ? "en-GB" : T.lang());
+      var when = new Date().toLocaleString((T.lang() === "en" || T.lang() === "ar") ? "en-GB" : T.lang());
       document.getElementById("ct-done-msg").textContent =
         T.t("sig.done.d", { email: "—" });
       document.getElementById("ct-record").textContent =
