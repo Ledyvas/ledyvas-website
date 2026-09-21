@@ -904,3 +904,18 @@ form.contact-form { background: var(--gray-50); border: 1px solid var(--gray-300
 .payment-badge svg { flex: none; }
 .payment-badge-paddle { border-left-color: #6E4CFF; }
 .payment-badge-microsoft { border-left-color: #F25022; }
+
+/* ===== Árabe (RTL) — /ar/ ===== */
+html[lang="ar"] body { font-family: "Noto Sans Arabic", var(--font-sans); }
+.ar-flag { width: 20px; height: 14px; object-fit: cover; border-radius: 2px; vertical-align: -2px; }
+html[dir="rtl"] .header-actions .hamburger { margin-left: 0; margin-right: 4px; }
+html[dir="rtl"] .nav-links a:hover, html[dir="rtl"] .nav-links a.active { padding-left: 0; padding-right: 10px; }
+html[dir="rtl"] .doc-toc li, html[dir="rtl"] .legal ul li { padding-left: 0; padding-right: 20px; }
+html[dir="rtl"] .doc-toc li::before, html[dir="rtl"] .legal ul li::before { left: auto; right: 0; }
+html[dir="rtl"] .price-features { text-align: right; }
+html[dir="rtl"] .price-value sup { margin-left: 0; margin-right: 4px; }
+html[dir="rtl"] .faq-q .plus { margin-left: 0; margin-right: 20px; }
+html[dir="rtl"] .trial-modal-close { right: auto; left: 16px; }
+html[dir="rtl"] .lang-dropdown-menu { right: auto; left: 0; }
+html[dir="rtl"] input, html[dir="rtl"] textarea { text-align: right; }
+html[dir="rtl"] input[type="email"], html[dir="rtl"] a[href^="mailto:"] { direction: ltr; unicode-bidi: plaintext; }

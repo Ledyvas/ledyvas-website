@@ -109,4 +109,49 @@
   <url><loc>https://ledyvas.com/pt/termos.html</loc><priority>0.2</priority></url>
   <url><loc>https://ledyvas.com/pt/eula.html</loc><priority>0.2</priority></url>
   <url><loc>https://ledyvas.com/pt/reembolsos.html</loc><priority>0.2</priority></url>
+  <url>
+    <loc>https://ledyvas.com/ar/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ledyvas.com/ar/software.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ledyvas.com/ar/solutions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ledyvas.com/ar/industries.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ledyvas.com/ar/pricing.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ledyvas.com/ar/download.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ledyvas.com/ar/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ledyvas.com/ar/company.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ledyvas.com/ar/ultimate.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

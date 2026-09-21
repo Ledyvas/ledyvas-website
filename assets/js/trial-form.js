@@ -182,7 +182,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    const lang = (document.documentElement.getAttribute("lang") || "es").slice(0, 2).toLowerCase();
+    const rawLang = (document.documentElement.getAttribute("lang") || "es").slice(0, 2).toLowerCase();
+    const lang = rawLang === "ar" ? "en" : rawLang; // el formulario y los correos de prueba aún no tienen árabe: se usa inglés
     const t = TEXT[lang] || TEXT.es;
 
     let overlay = document.getElementById("trial-modal-overlay");
