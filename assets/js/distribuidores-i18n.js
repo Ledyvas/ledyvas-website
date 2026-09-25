@@ -56,7 +56,7 @@
 
       "panel.kpi.commTotal": "Comisión acumulada",
 
-      "panel.kpi.quota": "Cuota de permanencia (10 en 180 días)",
+      "panel.kpi.quota": "Cuota de permanencia (7 en 180 días)",
 
       "pub.title": "Conviértase en Partner de Ledyvas",
       "pub.lead": "Empresas, despachos contables y consultoras de software llevan Ledyvas Enterprise, Ledyvas Ultimate o Ledyvas Professional a las pymes de su ciudad, con territorio exclusivo para Enterprise y Ultimate. El cliente se suscribe cada mes (Enterprise/Ultimate) o compra con un solo pago (Professional); usted cobra el 20% de cada cuota mientras el cliente siga activo, o el 20% de cada venta de Professional. Sin cuota de alta, sin adelantar capital. Puede nombrar a sus propios comerciales dentro de su zona.",
@@ -248,7 +248,7 @@
 
       "panel.kpi.commTotal": "Commission to date",
 
-      "panel.kpi.quota": "Territory quota (10 in 180 days)",
+      "panel.kpi.quota": "Territory quota (7 in 180 days)",
 
       "pub.title": "Become an Official Ledyvas Partner",
       "pub.lead": "Companies, accounting firms and software consultancies bring Ledyvas Enterprise, Ledyvas Ultimate or Ledyvas Professional to the SMEs in their city, with an exclusive territory for Enterprise and Ultimate. The client subscribes monthly (Enterprise/Ultimate) or buys with a single payment (Professional); you earn 20% of each fee for as long as the client stays active, or 20% of each Professional sale. No membership, no upfront capital. You can appoint your own salespeople within your area.",
@@ -440,7 +440,7 @@
 
       "panel.kpi.commTotal": "Commissione maturata",
 
-      "panel.kpi.quota": "Quota di territorio (10 in 180 giorni)",
+      "panel.kpi.quota": "Quota di territorio (7 in 180 giorni)",
 
       "pub.title": "Diventa Partner di Ledyvas",
       "pub.lead": "Aziende, studi contabili e consulenti software portano Ledyvas Enterprise, Ledyvas Ultimate o Ledyvas Professional alle PMI della loro città, con territorio esclusivo per Enterprise e Ultimate. Il cliente si abbona al mese (Enterprise/Ultimate) o acquista con un pagamento unico (Professional); tu guadagni il 20% di ogni quota finché il cliente resta attivo, o il 20% di ogni vendita di Professional. Nessuna quota di adesione, nessun capitale anticipato. Puoi nominare i tuoi venditori nella tua zona.",
@@ -632,7 +632,7 @@
 
       "panel.kpi.commTotal": "Commission cumulée",
 
-      "panel.kpi.quota": "Quota de territoire (10 en 180 jours)",
+      "panel.kpi.quota": "Quota de territoire (7 en 180 jours)",
 
       "pub.title": "Devenez Partner de Ledyvas",
       "pub.lead": "Entreprises, cabinets comptables et consultants logiciels apportent Ledyvas Enterprise, Ledyvas Ultimate ou Ledyvas Professional aux PME de leur ville, avec un territoire exclusif pour Enterprise et Ultimate. Le client s'abonne au mois (Enterprise/Ultimate) ou achète en un seul paiement (Professional) ; vous touchez 20 % de chaque redevance tant que le client reste actif, ou 20 % de chaque vente de Professional. Sans adhésion, sans capital avancé. Vous pouvez nommer vos propres vendeurs sur votre zone.",
@@ -824,7 +824,7 @@
 
       "panel.kpi.commTotal": "Comissão acumulada",
 
-      "panel.kpi.quota": "Quota de território (10 em 180 dias)",
+      "panel.kpi.quota": "Quota de território (7 em 180 dias)",
 
       "pub.title": "Torne-se Partner do Ledyvas",
       "pub.lead": "Empresas, escritórios de contabilidade e consultoras de software levam o Ledyvas Enterprise, o Ledyvas Ultimate ou o Ledyvas Professional às PME da sua cidade, com território exclusivo para Enterprise e Ultimate. O cliente subscreve por mês (Enterprise/Ultimate) ou compra com um único pagamento (Professional); você ganha 20% de cada mensalidade enquanto o cliente se mantiver ativo, ou 20% de cada venda de Professional. Sem adesão, sem adiantar capital. Pode nomear os seus próprios vendedores na sua zona.",
@@ -1011,7 +1011,7 @@
       "panel.kpi.trials": "العملاء في فترة التجربة",
       "panel.kpi.commMonth": "عمولتك لهذا الشهر",
       "panel.kpi.commTotal": "العمولة المتراكمة",
-      "panel.kpi.quota": "حصة الاستمرار (10 خلال 180 يوماً)",
+      "panel.kpi.quota": "حصة الاستمرار (7 خلال 180 يوماً)",
       "pub.title": "كن شريكاً لـ Ledyvas",
       "pub.lead": "تقدّم الشركات ومكاتب المحاسبة واستشاريو البرمجيات نسخ Ledyvas Enterprise وLedyvas Ultimate وLedyvas Professional إلى المنشآت الصغيرة والمتوسطة في مدينتهم، مع منطقة حصرية لنسختي Enterprise وUltimate. يشترك العميل شهرياً (Enterprise/Ultimate) أو يشتري بدفعة واحدة (Professional)؛ وتتقاضى أنت 20% من كل قسط ما دام العميل نشطاً، أو 20% من كل عملية بيع لنسخة Professional. بلا رسوم انضمام ودون تمويل مسبق. ويمكنك تعيين مندوبي مبيعات خاصين بك داخل منطقتك.",
       "pub.nav.oferta": "العرض",
