@@ -267,9 +267,70 @@ header.site-header {
   border-radius: 2px;
 }
 
+/* Desplegable de Apps (Ledyvas Smart List / Food Cost / Nutrition Coach) en el
+   menú horizontal — solo CSS, sin JS, igual que el resto del sitio estático. */
+.nav-apps-dropdown { position: relative; }
+.nav-apps-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-700);
+  padding: 6px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.nav-apps-toggle:hover { color: var(--royal); }
+.nav-apps-toggle svg { transition: transform 0.2s ease; }
+.nav-apps-dropdown:hover .nav-apps-toggle svg,
+.nav-apps-dropdown:focus-within .nav-apps-toggle svg { transform: rotate(180deg); }
+.nav-apps-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  padding: 6px;
+  margin-top: 14px;
+  display: none;
+  z-index: 200;
+}
+/* Franja invisible que une el botón con el menú, para que el hover no se
+   pierda al bajar el mouse por el hueco de 14px de arriba. */
+.nav-apps-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  width: 220px;
+  height: 14px;
+}
+.nav-apps-dropdown:hover .nav-apps-menu,
+.nav-apps-dropdown:focus-within .nav-apps-menu { display: block; }
+.nav-apps-menu a {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--gray-700);
+  white-space: nowrap;
+}
+.nav-apps-menu a:hover { background: var(--gray-100); color: var(--royal); }
+
 /* Menu horizontal (escritorio) — el hamburguesa queda solo para pantallas
-   angostas, donde 8 enlaces no entran en el header. */
-.nav-horizontal { display: none; align-items: center; gap: 24px; margin: 0 auto; }
+   angostas, donde 10 enlaces no entran en el header. */
+.nav-horizontal { display: none; align-items: center; gap: 18px; margin: 0 auto; }
 .nav-horizontal a {
   font-size: 14px;
   font-weight: 600;
