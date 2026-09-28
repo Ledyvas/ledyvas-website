@@ -178,6 +178,7 @@ header.site-header {
   border-bottom: 1px solid rgba(11, 31, 58, 0.06);
 }
 .header-inner {
+  max-width: 1480px; /* la cabecera es más ancha que el contenido: logo + menú + botones caben en una línea */
   height: var(--header-h);
   display: flex;
   align-items: center;
@@ -894,9 +895,20 @@ form.contact-form { background: var(--gray-50); border: 1px solid var(--gray-300
 }
 
 @media (min-width: 1100px) {
+  .lang-dropdown { display: block; }
+}
+/* Menú horizontal solo cuando cabe completo (logo + menú + botones); si no, menú hamburguesa */
+@media (min-width: 1360px) {
   .nav-horizontal { display: flex; }
   .header-actions .hamburger { display: none; }
-  .lang-dropdown { display: block; }
+}
+@media (min-width: 1360px) and (max-width: 1599px) {
+  .header-inner { gap: 16px; }
+  .nav-horizontal { gap: 14px; }
+  .nav-horizontal a, .nav-apps-toggle { font-size: 13.5px; }
+  .header-actions { gap: 10px; }
+  .header-actions .btn { padding: 11px 16px; font-size: 13.5px; }
+  .brand img { height: 46px; }
 }
 
 @media (max-width: 980px) {
@@ -983,3 +995,9 @@ html[dir="rtl"] .trial-modal-close { right: auto; left: 16px; }
 html[dir="rtl"] .lang-dropdown-menu { right: auto; left: 0; }
 html[dir="rtl"] input, html[dir="rtl"] textarea { text-align: right; }
 html[dir="rtl"] input[type="email"], html[dir="rtl"] a[href^="mailto:"] { direction: ltr; unicode-bidi: plaintext; }
+
+/* ---------- Ledyvas Analytics Métrica (página de producto) ---------- */
+.product-shot img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--gray-300); box-shadow: 0 24px 50px -18px rgba(12, 35, 80, 0.35); }
+.product-split { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; }
+.card.card-metrica { border-color: var(--gold); box-shadow: 0 14px 34px -14px rgba(212, 163, 61, 0.45); }
+@media (min-width: 992px) { .product-split { grid-template-columns: 0.8fr 1.2fr; } }
