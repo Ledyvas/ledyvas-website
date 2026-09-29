@@ -7,10 +7,11 @@
  */
 (function () {
   var PRODUCTS = {
-    metrica: '', // ID de producto de Ledyvas Analytics Métrica en PayPro (lo da Nika)
-    pro: ''      // ID de producto de Ledyvas Professional, venta directa US$ 749 (lo da Nika)
+    metrica: '138565', // Ledyvas Analytics Métrica, US$ 499
+    pro: '138564',     // Ledyvas Professional, venta directa US$ 749
+    bundle: '138566'   // Paquete Ledyvas Pro + Métrica, US$ 1,099
   };
-  var SECRET_KEY = '';
+  var SECRET_KEY = 'exfo=742'; // parámetro de PayPro (Nika, 29/9/2026) para abrir el pago en ventana sobre la página
   var CHECKOUT = 'https://store.payproglobal.com/checkout';
   var NOT_PARTNER = ['PH30'];
 
@@ -44,7 +45,7 @@
     var p = ['products[1][id]=' + encodeURIComponent(id), 'language=' + encodeURIComponent(lang), 'currency=USD'];
     var code = partnerCode();
     if (code) p.push('coupon-code-to-add=' + encodeURIComponent(code), 'x-partner=' + encodeURIComponent(code));
-    if (SECRET_KEY) p.push('secret-key=' + encodeURIComponent(SECRET_KEY));
+    if (SECRET_KEY) p.push(SECRET_KEY);
     return CHECKOUT + '?' + p.join('&');
   }
 
