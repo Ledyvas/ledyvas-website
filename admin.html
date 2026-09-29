@@ -108,6 +108,20 @@
       </div>
     </div>
 
+    <div class="d-card">
+      <div class="d-card-head">
+        <h2>Datos de pago de Partners <span id="adm-pay-count" style="color:var(--gray-500,#6b7280);font-weight:500"></span></h2>
+        <div class="d-card-actions"><button class="d-btn adm-refresh" id="adm-pay-reload">Actualizar</button></div>
+      </div>
+      <p style="padding:0 20px 12px;color:var(--gray-500,#6b7280);font-size:13.5px">Última versión que cada Partner cargó en su panel. Se guardan solo en el servidor.</p>
+      <div class="d-table-scroll">
+        <table class="d-table">
+          <thead><tr><th>Fecha</th><th>Partner</th><th>Método</th><th>Titular</th><th>Banco</th><th>Cuenta / IBAN</th><th>SWIFT / ABA</th><th>PayPal / Wise</th><th>País</th><th>Email</th></tr></thead>
+          <tbody id="adm-pay"></tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
 
   <p class="d-foot"><a href="/">Volver a ledyvas.com</a></p>
@@ -447,11 +461,30 @@
       $("adm-app").hidden = false;
       renderKpis(); renderCountries(); renderApps();
       loadInvoices();
+      loadPay();
     }).catch(function () { toast("Error de red. ¿Worker arriba?"); });
   }
 
   function showGate() { $("adm-gate").hidden = false; $("adm-app").hidden = true; }
   function gateError(msg) { var e = $("adm-gate-err"); e.textContent = msg; e.hidden = false; }
+
+  // ---- Datos de pago de Partners (2026-09-29) ----
+  var PAY_M = { iban: "IBAN / SWIFT", us_account: "Cuenta EE. UU.", paypal: "PayPal", wise: "Wise" };
+  function loadPay() {
+    api("/admin/payment-details").then(function (res) {
+      if (res.status !== 200 || !res.body.ok) { toast("Error al cargar datos de pago (" + (res.body.error || res.status) + ")"); return; }
+      var list = res.body.items || [], tb = $("adm-pay");
+      $("adm-pay-count").textContent = "(" + list.length + ")";
+      tb.innerHTML = "";
+      if (!list.length) { tb.innerHTML = '<tr><td colspan="10"><div class="d-empty">Ningún Partner cargó datos de pago todavía.</div></td></tr>'; return; }
+      list.forEach(function (p) {
+        var tr = document.createElement("tr");
+        [fmtDay(p.receivedAt), (p.partnerName || "—") + " (" + p.partnerCode + ")", PAY_M[p.method] || p.method, p.holder, p.bankName, p.account, p.routing, p.walletEmail, p.country, p.email]
+          .forEach(function (t) { var e = document.createElement("td"); e.textContent = t || "—"; tr.appendChild(e); });
+        tb.appendChild(tr);
+      });
+    }).catch(function () { toast("Error de red al cargar datos de pago."); });
+  }
 
   // ---- Facturas de comisión (clausula 6 del contrato, 2026-09-17) ----
   var INV_DATA = null;
@@ -535,6 +568,7 @@
   $("adm-tok").addEventListener("keydown", function (e) { if (e.key === "Enter") $("adm-enter").click(); });
   $("adm-reload").addEventListener("click", load);
   $("adm-inv-reload").addEventListener("click", loadInvoices);
+  $("adm-pay-reload").addEventListener("click", loadPay);
   $("adm-export").addEventListener("click", exportCsv);
   $("adm-modal-close").addEventListener("click", function () { $("adm-modal-bg").classList.remove("open"); });
   $("adm-modal-bg").addEventListener("click", function (e) { if (e.target === this) this.classList.remove("open"); });

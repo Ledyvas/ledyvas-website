@@ -93,6 +93,35 @@
     </div>
   </div>
 
+  <div class="d-card" id="pay-card">
+    <div class="d-card-head"><h2 data-i18n="panel.pay.t"></h2></div>
+    <div style="padding:6px 20px 20px">
+      <p data-i18n="panel.pay.d"></p>
+      <div class="d-form-grid" style="margin-top:14px">
+        <div class="d-field"><label data-i18n="panel.pay.email"></label><input type="email" id="pay-email" required></div>
+        <div class="d-field"><label data-i18n="panel.pay.method"></label>
+          <select id="pay-method">
+            <option value="iban" data-i18n="panel.pay.m.iban"></option>
+            <option value="us_account" data-i18n="panel.pay.m.us"></option>
+            <option value="paypal" data-i18n="panel.pay.m.paypal"></option>
+            <option value="wise" data-i18n="panel.pay.m.wise"></option>
+          </select></div>
+        <div class="d-field"><label data-i18n="panel.pay.holder"></label><input type="text" id="pay-holder" required></div>
+        <div class="d-field"><label data-i18n="panel.pay.country"></label><input type="text" id="pay-country"></div>
+        <div class="d-field pay-bank"><label data-i18n="panel.pay.bank"></label><input type="text" id="pay-bank"></div>
+        <div class="d-field pay-bank"><label data-i18n="panel.pay.account"></label><input type="text" id="pay-account" autocomplete="off" dir="ltr"></div>
+        <div class="d-field pay-bank"><label data-i18n="panel.pay.routing"></label><input type="text" id="pay-routing" autocomplete="off" dir="ltr"></div>
+        <div class="d-field pay-wallet" style="display:none"><label data-i18n="panel.pay.wallet"></label><input type="email" id="pay-wallet" dir="ltr"></div>
+        <div class="d-field wide"><label data-i18n="panel.pay.address"></label><input type="text" id="pay-address"></div>
+        <div class="d-field wide"><label data-i18n="panel.pay.notes"></label><textarea id="pay-notes" rows="2"></textarea></div>
+      </div>
+      <div class="d-form-foot">
+        <button type="button" class="d-btn primary" id="pay-submit" data-i18n="panel.pay.submit"></button>
+        <span id="pay-msg" class="d-form-error" style="display:none"></span>
+      </div>
+    </div>
+  </div>
+
   <p class="d-foot">
     <span data-i18n="panel.help"></span><br>
     <a href="/" data-i18n="back"></a>
@@ -274,6 +303,42 @@
 
   document.getElementById("inv-submit").addEventListener("click", submitInvoice);
   document.getElementById("inv-period").value = new Date().toISOString().slice(0, 7);
+
+  // ---- Datos de pago del Partner (2026-09-29): se guardan solo en el servidor ----
+  function payMsg(text, isError) {
+    var el = document.getElementById("pay-msg");
+    el.textContent = text; el.style.display = text ? "inline" : "none";
+    el.style.color = isError ? "" : "var(--good, #067647)";
+  }
+  function payToggle() {
+    var m = document.getElementById("pay-method").value, wallet = (m === "paypal" || m === "wise");
+    document.querySelectorAll(".pay-bank").forEach(function (e) { e.style.display = wallet ? "none" : ""; });
+    document.querySelectorAll(".pay-wallet").forEach(function (e) { e.style.display = wallet ? "" : "none"; });
+  }
+  function submitPay() {
+    var v = function (id) { return (document.getElementById(id).value || "").trim(); };
+    var m = v("pay-method"), wallet = (m === "paypal" || m === "wise");
+    var okEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    if (!okEmail.test(v("pay-email")) || !v("pay-holder") || (wallet ? !okEmail.test(v("pay-wallet")) : (!v("pay-bank") || !v("pay-account") || !v("pay-routing")))) {
+      payMsg(T.t("panel.pay.missing"), true); return;
+    }
+    var btn = document.getElementById("pay-submit"); btn.disabled = true; payMsg("");
+    fetch(WORKER + "/partner/payment-details", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        partnerName: DATA.distributor.name, partnerCode: DATA.distributor.code,
+        email: v("pay-email"), method: m, holder: v("pay-holder"), country: v("pay-country"),
+        bankName: wallet ? "" : v("pay-bank"), account: wallet ? "" : v("pay-account"), routing: wallet ? "" : v("pay-routing"),
+        walletEmail: wallet ? v("pay-wallet") : "", address: v("pay-address"), notes: v("pay-notes"), lang: T.lang()
+      })
+    }).then(function (r) { return r.json().then(function (j) { return { status: r.status, body: j }; }); })
+      .then(function (res) { btn.disabled = false; payMsg(res.status === 200 && res.body.ok ? T.t("panel.pay.ok") : T.t("panel.pay.error"), !(res.status === 200 && res.body.ok)); })
+      .catch(function () { btn.disabled = false; payMsg(T.t("panel.pay.error"), true); });
+  }
+  document.getElementById("pay-method").addEventListener("change", payToggle);
+  document.getElementById("pay-submit").addEventListener("click", submitPay);
+  payToggle();
 
   applyStaticI18n();
   renderLang();
