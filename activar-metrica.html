@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Activar Ledyvas Analytics Métrica</title>
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  .act-wrap { max-width: 640px; margin: 0 auto; padding: 40px 16px 64px; }
+  .act-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 28px; }
+  .act-top img { height: 40px; }
+  .act-top select { padding: 6px 10px; border-radius: 8px; border: 1px solid #d0d5dd; font: inherit; }
+  .act-card { background: #fff; border: 1px solid #e4e7ec; border-radius: 14px; padding: 28px; box-shadow: 0 4px 18px rgba(15,23,42,.06); }
+  .act-card h1 { font-size: 1.6rem; margin: 0 0 8px; }
+  .act-card ol { padding-inline-start: 20px; margin: 16px 0 22px; }
+  .act-card li { margin: 6px 0; }
+  .act-card label { display: block; font-weight: 600; margin: 16px 0 6px; }
+  .act-card input { width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid #d0d5dd; border-radius: 10px; font: inherit; }
+  #machine { font-family: Consolas, monospace; letter-spacing: 1px; text-transform: uppercase; direction: ltr; }
+  .act-hint { color: #667085; font-size: .9rem; margin-top: 4px; }
+  .act-msg { margin-top: 16px; padding: 12px 14px; border-radius: 10px; display: none; }
+  .act-msg.err { display: block; background: #fef3f2; color: #b42318; }
+  .act-key { display: none; margin-top: 18px; }
+  .act-key textarea { width: 100%; box-sizing: border-box; min-height: 110px; font-family: Consolas, monospace; font-size: 13px; padding: 12px; border-radius: 10px; border: 1px solid #d0d5dd; direction: ltr; text-align: left; }
+  .act-ok { background: #ecfdf3; color: #067647; padding: 12px 14px; border-radius: 10px; margin-bottom: 12px; }
+  .act-card .btn { margin-top: 18px; }
+  [dir="rtl"] .act-card { text-align: right; }
+</style>
+</head>
+<body>
+<div class="act-wrap">
+  <div class="act-top">
+    <a href="/metrica.html" id="home"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <select id="lang" aria-label="Language">
+      <option value="es">Español</option><option value="en">English</option><option value="it">Italiano</option>
+      <option value="fr">Français</option><option value="pt">Português</option><option value="ar">العربية</option>
+    </select>
+  </div>
+  <div class="act-card">
+    <h1 data-t="title"></h1>
+    <p data-t="intro"></p>
+    <ol><li data-t="s1"></li><li data-t="s2"></li><li data-t="s3"></li></ol>
+    <form id="f">
+      <label for="machine" data-t="machine"></label>
+      <input id="machine" autocomplete="off" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="24" required>
+      <label for="name" data-t="name"></label>
+      <input id="name" autocomplete="organization" maxlength="80">
+      <div class="act-hint" data-t="nameHint"></div>
+      <button class="btn btn-primary btn-lg" type="submit" id="go" data-t="btn"></button>
+    </form>
+    <div class="act-msg" id="msg"></div>
+    <div class="act-key" id="keybox">
+      <div class="act-ok" data-t="ok"></div>
+      <textarea id="key" readonly></textarea>
+      <button class="btn btn-outline" type="button" id="copy" data-t="copy"></button>
+      <p class="act-hint" data-t="how"></p>
+    </div>
+  </div>
+  <p class="act-hint" style="text-align:center;margin-top:18px;" data-t="help"></p>
+</div>
+<script>
+(function () {
+  var API = 'https://ledyvas-license-server.ledyvas.workers.dev/metrica/activate';
+  var T = {
+    es: { title: 'Activa tu licencia de Métrica', intro: 'Tu compra está confirmada. Solo falta atar la licencia a tu computadora.', s1: 'Instala y abre Ledyvas Analytics Métrica.', s2: 'Ve a Configuración › Sistema › Licencia y copia tu código de equipo.', s3: 'Pégalo aquí y pulsa "Obtener mi clave".', machine: 'Código de equipo', name: 'Nombre del negocio (aparece en la licencia)', nameHint: 'Opcional. Si lo dejas vacío se usa el nombre de la compra.', btn: 'Obtener mi clave', ok: '¡Listo! Esta es tu clave. También te la enviamos por correo.', copy: 'Copiar clave', copied: 'Copiada', how: 'En Métrica: Configuración › Sistema › Licencia › pega la clave › "Activar licencia".', help: '¿Ayuda? info@ledyvas.com', wait: 'Un momento…', e_bad_link: 'El enlace no es válido. Ábrelo desde el correo de compra.', e_bad_machine: 'El código de equipo no es válido: son 16 letras o números.', e_other_machine: 'Esta compra ya está activada en otra computadora. Escríbenos a info@ledyvas.com con tu n.º de pedido.', e_revoked: 'Esta compra fue reembolsada o anulada.', e_rate_limited: 'Demasiados intentos. Prueba de nuevo mañana.', e_net: 'No hay conexión. Revisa internet y vuelve a intentarlo.' },
+    en: { title: 'Activate your Métrica license', intro: 'Your purchase is confirmed. You just need to link the license to your computer.', s1: 'Install and open Ledyvas Analytics Métrica.', s2: 'Go to Settings › System › License and copy your machine code.', s3: 'Paste it here and click "Get my key".', machine: 'Machine code', name: 'Business name (shown on the license)', nameHint: 'Optional. If empty, the name from your purchase is used.', btn: 'Get my key', ok: 'Done! This is your key. We also emailed it to you.', copy: 'Copy key', copied: 'Copied', how: 'In Métrica: Settings › System › License › paste the key › "Activate license".', help: 'Need help? info@ledyvas.com', wait: 'One moment…', e_bad_link: 'This link is not valid. Open it from your purchase email.', e_bad_machine: 'The machine code is not valid: it has 16 letters or numbers.', e_other_machine: 'This purchase is already activated on another computer. Write to info@ledyvas.com with your order number.', e_revoked: 'This purchase was refunded or cancelled.', e_rate_limited: 'Too many attempts. Please try again tomorrow.', e_net: 'No connection. Check your internet and try again.' },
+    it: { title: 'Attiva la tua licenza di Métrica', intro: 'Il tuo acquisto è confermato. Manca solo collegare la licenza al tuo computer.', s1: 'Installa e apri Ledyvas Analytics Métrica.', s2: 'Vai su Impostazioni › Sistema › Licenza e copia il tuo codice macchina.', s3: 'Incollalo qui e premi "Ottieni la mia chiave".', machine: 'Codice macchina', name: 'Nome dell\'attività (appare sulla licenza)', nameHint: 'Facoltativo. Se vuoto, si usa il nome dell\'acquisto.', btn: 'Ottieni la mia chiave', ok: 'Fatto! Questa è la tua chiave. Te l\'abbiamo inviata anche per email.', copy: 'Copia chiave', copied: 'Copiata', how: 'In Métrica: Impostazioni › Sistema › Licenza › incolla la chiave › "Attiva licenza".', help: 'Serve aiuto? info@ledyvas.com', wait: 'Un momento…', e_bad_link: 'Il link non è valido. Aprilo dall\'email di acquisto.', e_bad_machine: 'Il codice macchina non è valido: sono 16 lettere o numeri.', e_other_machine: 'Questo acquisto è già attivato su un altro computer. Scrivici a info@ledyvas.com con il numero d\'ordine.', e_revoked: 'Questo acquisto è stato rimborsato o annullato.', e_rate_limited: 'Troppi tentativi. Riprova domani.', e_net: 'Nessuna connessione. Controlla internet e riprova.' },
+    fr: { title: 'Activez votre licence Métrica', intro: 'Votre achat est confirmé. Il reste à lier la licence à votre ordinateur.', s1: 'Installez et ouvrez Ledyvas Analytics Métrica.', s2: 'Allez dans Paramètres › Système › Licence et copiez votre code machine.', s3: 'Collez-le ici et cliquez sur « Obtenir ma clé ».', machine: 'Code machine', name: 'Nom de l\'établissement (affiché sur la licence)', nameHint: 'Facultatif. S\'il est vide, le nom de l\'achat est utilisé.', btn: 'Obtenir ma clé', ok: 'C\'est fait ! Voici votre clé. Nous vous l\'avons aussi envoyée par e-mail.', copy: 'Copier la clé', copied: 'Copiée', how: 'Dans Métrica : Paramètres › Système › Licence › collez la clé › « Activer la licence ».', help: 'Besoin d\'aide ? info@ledyvas.com', wait: 'Un instant…', e_bad_link: 'Ce lien n\'est pas valide. Ouvrez-le depuis l\'e-mail d\'achat.', e_bad_machine: 'Le code machine n\'est pas valide : il comporte 16 lettres ou chiffres.', e_other_machine: 'Cet achat est déjà activé sur un autre ordinateur. Écrivez à info@ledyvas.com avec votre numéro de commande.', e_revoked: 'Cet achat a été remboursé ou annulé.', e_rate_limited: 'Trop de tentatives. Réessayez demain.', e_net: 'Pas de connexion. Vérifiez internet et réessayez.' },
+    pt: { title: 'Ative sua licença do Métrica', intro: 'Sua compra está confirmada. Só falta vincular a licença ao seu computador.', s1: 'Instale e abra o Ledyvas Analytics Métrica.', s2: 'Vá em Configurações › Sistema › Licença e copie o seu código do equipamento.', s3: 'Cole-o aqui e clique em "Obter minha chave".', machine: 'Código do equipamento', name: 'Nome do negócio (aparece na licença)', nameHint: 'Opcional. Se ficar vazio, usamos o nome da compra.', btn: 'Obter minha chave', ok: 'Pronto! Esta é a sua chave. Também a enviamos por e-mail.', copy: 'Copiar chave', copied: 'Copiada', how: 'No Métrica: Configurações › Sistema › Licença › cole a chave › "Ativar licença".', help: 'Precisa de ajuda? info@ledyvas.com', wait: 'Um momento…', e_bad_link: 'O link não é válido. Abra-o pelo e-mail da compra.', e_bad_machine: 'O código do equipamento não é válido: são 16 letras ou números.', e_other_machine: 'Esta compra já está ativada em outro computador. Escreva para info@ledyvas.com com o número do pedido.', e_revoked: 'Esta compra foi reembolsada ou cancelada.', e_rate_limited: 'Muitas tentativas. Tente de novo amanhã.', e_net: 'Sem conexão. Verifique a internet e tente de novo.' },
+    ar: { title: 'فعّل ترخيص Métrica', intro: 'تم تأكيد عملية الشراء. بقي فقط ربط الترخيص بحاسوبك.', s1: 'ثبّت Ledyvas Analytics Métrica وافتحه.', s2: 'انتقل إلى الإعدادات › النظام › الترخيص وانسخ رمز الجهاز.', s3: 'الصقه هنا واضغط "احصل على مفتاحي".', machine: 'رمز الجهاز', name: 'اسم المنشأة (يظهر في الترخيص)', nameHint: 'اختياري. إذا تُرك فارغًا يُستخدم اسم الشراء.', btn: 'احصل على مفتاحي', ok: 'تم! هذا مفتاحك. أرسلناه إليك أيضًا بالبريد الإلكتروني.', copy: 'نسخ المفتاح', copied: 'تم النسخ', how: 'في Métrica: الإعدادات › النظام › الترخيص › الصق المفتاح › "تفعيل الترخيص".', help: 'تحتاج مساعدة؟ info@ledyvas.com', wait: 'لحظة…', e_bad_link: 'الرابط غير صالح. افتحه من رسالة الشراء.', e_bad_machine: 'رمز الجهاز غير صالح: يتكون من 16 حرفًا أو رقمًا.', e_other_machine: 'هذه العملية مفعّلة بالفعل على حاسوب آخر. راسلنا على info@ledyvas.com برقم الطلب.', e_revoked: 'تم استرداد هذه العملية أو إلغاؤها.', e_rate_limited: 'محاولات كثيرة. حاول مجددًا غدًا.', e_net: 'لا يوجد اتصال. تحقق من الإنترنت وحاول مجددًا.' }
+  };
+  var HOME = { es: '/metrica.html', en: '/en/metrica.html', it: '/it/metrica.html', fr: '/fr/metrica.html', pt: '/pt/metrica.html', ar: '/ar/metrica.html' };
+  var q = new URLSearchParams(location.search);
+  var order = q.get('o') || '', token = q.get('t') || '';
+  var nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+  var lang = T[q.get('l')] ? q.get('l') : (T[nav] ? nav : 'en');
+  var $ = function (id) { return document.getElementById(id); };
+  function apply() {
+    var t = T[lang];
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.title = t.title;
+    [].forEach.call(document.querySelectorAll('[data-t]'), function (el) { el.textContent = t[el.getAttribute('data-t')]; });
+    $('lang').value = lang;
+    $('home').href = HOME[lang];
+    if (!order || !token) showErr('bad_link');
+  }
+  function showErr(code) { var m = $('msg'); m.className = 'act-msg err'; m.textContent = T[lang]['e_' + code] || T[lang].e_net; }
+  $('lang').addEventListener('change', function () { lang = this.value; apply(); });
+  $('f').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var go = $('go'); go.disabled = true; go.textContent = T[lang].wait; $('msg').className = 'act-msg';
+    fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ o: order, t: token, machine: $('machine').value, name: $('name').value, lang: lang }) })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.ok && d.key) { $('key').value = d.key; $('keybox').style.display = 'block'; $('f').style.display = 'none'; }
+        else showErr(d && d.error);
+      })
+      .catch(function () { showErr('net'); })
+      .then(function () { go.disabled = false; go.textContent = T[lang].btn; });
+  });
+  $('copy').addEventListener('click', function () {
+    var k = $('key'); k.select();
+    (navigator.clipboard ? navigator.clipboard.writeText(k.value) : Promise.reject()).catch(function () { document.execCommand('copy'); });
+    this.textContent = T[lang].copied;
+  });
+  apply();
+})();
+</script>
+</body>
+</html>
