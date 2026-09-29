@@ -28,13 +28,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-<script>
-  Paddle.Initialize({ token: "live_d35d123e6fae2f6f950e93cdd82" });
-  function openPaddleCheckout(priceId) {
-    Paddle.Checkout.open({ items: [{ priceId: priceId, quantity: 1 }] });
-  }
-</script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ledyvas">
 <meta property="og:locale" content="es">
@@ -142,7 +135,7 @@
         <div class="nav-side-title">Empieza ahora</div>
         <a href="descargas.html" class="btn btn-gold btn-block">Descargar Ledyvas</a>
         <div style="height:10px"></div>
-        <a href="precios.html" class="btn btn-outline-light btn-block">Comprar ahora (Gumroad)</a>
+        <a href="precios.html" class="btn btn-outline-light btn-block">Comprar ahora</a>
       </div>
       <div>
         <div class="nav-side-title">Contacto</div>
@@ -190,11 +183,8 @@
           </ul>
           <a href="descargas.html" class="btn btn-primary btn-lg btn-block">Descargar Ledyvas</a>
           <div style="height:12px"></div>
-          <a href="https://ledyvas.gumroad.com/l/buktve" target="_blank" rel="noopener" class="btn btn-outline btn-lg btn-block">Comprar ahora (Gumroad)</a>
-          <p class="payment-alt-label">También disponible en:</p>
-          <div class="payment-badges-row">
-            <button type="button" onclick="openPaddleCheckout('pri_01m2k0d2bx1cmy9e9bgpmaw0q3')" class="payment-badge payment-badge-paddle">Paddle</button>
-          </div>
+          <button type="button" class="btn btn-gold btn-lg btn-block" disabled data-paypro-product="pro" data-price="US$ 749">Comprar — muy pronto</button>
+          <div class="pay-methods"><span class="pay-methods-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Pago seguro con PayPro Global</span><div class="pay-methods-logos"><span class="pm pm-visa" aria-label="Visa"><svg viewBox="0 0 48 16" width="44" height="15"><text x="2" y="13" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" font-style="italic" fill="#1A1F71">VISA</text></svg></span><span class="pm" aria-label="Mastercard"><svg viewBox="0 0 34 21" width="32" height="20"><circle cx="12" cy="10.5" r="8.5" fill="#EB001B"/><circle cx="22" cy="10.5" r="8.5" fill="#F79E1B" fill-opacity=".9"/></svg></span><span class="pm" aria-label="American Express"><svg viewBox="0 0 44 18" width="42" height="17"><rect width="44" height="18" rx="3" fill="#2E77BC"/><text x="22" y="12.6" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="800" fill="#fff">AMEX</text></svg></span><span class="pm" aria-label="PayPal"><svg viewBox="0 0 58 16" width="54" height="15"><text x="1" y="13" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" font-style="italic"><tspan fill="#003087">Pay</tspan><tspan fill="#009CDE">Pal</tspan></text></svg></span></div></div>
         </div>
         <div class="price-card" id="metrica">
           <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div>

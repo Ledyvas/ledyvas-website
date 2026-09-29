@@ -7,7 +7,8 @@
  */
 (function () {
   var PRODUCTS = {
-    metrica: '' // ID de producto de Ledyvas Analytics Métrica en PayPro (lo da Nika)
+    metrica: '', // ID de producto de Ledyvas Analytics Métrica en PayPro (lo da Nika)
+    pro: ''      // ID de producto de Ledyvas Professional, venta directa US$ 749 (lo da Nika)
   };
   var SECRET_KEY = '';
   var CHECKOUT = 'https://store.payproglobal.com/checkout';
