@@ -1001,3 +1001,13 @@ html[dir="rtl"] input[type="email"], html[dir="rtl"] a[href^="mailto:"] { direct
 .product-split { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; }
 .card.card-metrica { border-color: var(--gold); box-shadow: 0 14px 34px -14px rgba(212, 163, 61, 0.45); }
 @media (min-width: 992px) { .product-split { grid-template-columns: 0.8fr 1.2fr; } }
+
+/* Métodos de pago (PayPro Global) */
+.pay-methods { margin-top: 16px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.pay-methods-label { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--gray-500); }
+.pay-methods-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.pay-methods .pm { display: inline-flex; align-items: center; justify-content: center; height: 30px; min-width: 54px; padding: 0 8px; background: var(--white); border: 1px solid var(--gray-300); border-radius: 6px; }
+.pay-methods .pm svg { display: block; }
+.section-head + .cta-row + .pay-methods, .cta-row + .pay-methods { align-items: flex-start; }
+.btn[disabled] { opacity: .6; cursor: not-allowed; pointer-events: none; }
+.pay-methods .pm, .pay-methods .pm svg { direction: ltr; }
