@@ -11,8 +11,6 @@
     pro: '138564',     // Ledyvas Professional, venta directa US$ 749
     bundle: '138566'   // Paquete Ledyvas Pro + Métrica, US$ 1,099
   };
-  var SUPPORT_ID = '138589'; // Soporte anual de Métrica (US$ 99/año; 12 meses gratis, luego se cobra solo). Va junto a Métrica y al paquete.
-  var WITH_SUPPORT = { '138565': 1, '138566': 1 };
   var SECRET_KEY = 'exfo=742'; // parámetro de PayPro (Nika, 29/9/2026) para abrir el pago en ventana sobre la página
   var CHECKOUT = 'https://store.payproglobal.com/checkout';
   var NOT_PARTNER = ['PH30'];
@@ -45,7 +43,6 @@
 
   function checkoutUrl(id) {
     var p = ['products[1][id]=' + encodeURIComponent(id), 'language=' + encodeURIComponent(lang), 'currency=USD'];
-    if (WITH_SUPPORT[id]) p.push('products[2][id]=' + encodeURIComponent(SUPPORT_ID));
     var code = partnerCode();
     if (code) p.push('coupon-code-to-add=' + encodeURIComponent(code), 'x-partner=' + encodeURIComponent(code));
     if (SECRET_KEY) p.push(SECRET_KEY);
