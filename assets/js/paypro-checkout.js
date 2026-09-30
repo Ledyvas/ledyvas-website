@@ -7,9 +7,9 @@
  */
 (function () {
   var PRODUCTS = {
-    metrica: '138565', // Ledyvas Analytics Métrica, US$ 499
+    metrica: '138565', // Ledyvas Analytics Métrica, US$ 599
     pro: '138564',     // Ledyvas Professional, venta directa US$ 749
-    bundle: '138566'   // Paquete Ledyvas Pro + Métrica, US$ 1,099
+    bundle: '138566'   // Paquete Ledyvas Pro + Métrica, US$ 1,199
   };
   var SUPPORT_ID = '138589'; // Soporte anual de Métrica (US$ 99/año; 12 meses gratis, luego se cobra solo). Va junto a Métrica y al paquete.
   var WITH_SUPPORT = { '138565': 1, '138566': 1 };
