@@ -7,8 +7,7 @@ const ROOT = __dirname;
 const T = require("./ar-translations.js");
 const PAGES = ["index", "software", "solutions", "industries", "pricing", "download", "contact", "company", "ultimate",
   "customer-portal", "documentation", "eula", "privacy", "refund-policy", "terms", "help-zoho-books",
-  "guides", "guide-business-management-software", "guide-restaurant-management-software", "guide-tour-operator-software",
-  "user-manual", "professional-manual"];
+  "guides", "guide-business-management-software", "guide-restaurant-management-software", "guide-tour-operator-software"];
 const LEGAL = ["eula", "privacy", "refund-policy", "terms"];
 const LEGAL_NOTE = '<p style="background:#FFF8E6;border:1px solid #E8D39A;border-radius:8px;padding:12px 16px;margin:0 0 24px;font-size:14px;line-height:1.7;color:#5A4A1B;">هذه الترجمة العربية مقدَّمة للتيسير فقط وليست ملزمة قانونيًا؛ وفي حال وجود أي تعارض تسود <a href="/en/' + "@@PAGE@@" + '.html">النسخة الإنجليزية</a>.</p>';
 const OUT = path.join(ROOT, "ar");

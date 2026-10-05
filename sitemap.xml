@@ -11,8 +11,6 @@
   <url><loc>https://ledyvas.com/empresa.html</loc><priority>0.6</priority></url>
   <url><loc>https://ledyvas.com/contacto.html</loc><priority>0.6</priority></url>
   <url><loc>https://ledyvas.com/documentacion.html</loc><priority>0.5</priority></url>
-  <url><loc>https://ledyvas.com/manual-usuario.html</loc><priority>0.3</priority></url>
-  <url><loc>https://ledyvas.com/manual-profesional.html</loc><priority>0.3</priority></url>
   <url><loc>https://ledyvas.com/ayuda-zoho-books.html</loc><priority>0.4</priority></url>
   <url><loc>https://ledyvas.com/portal-cliente.html</loc><priority>0.4</priority></url>
   <url><loc>https://ledyvas.com/donde-comprar.html</loc><priority>0.5</priority></url>
@@ -52,8 +50,6 @@
   <url><loc>https://ledyvas.com/it/azienda.html</loc><priority>0.5</priority></url>
   <url><loc>https://ledyvas.com/it/contatti.html</loc><priority>0.5</priority></url>
   <url><loc>https://ledyvas.com/it/documentazione.html</loc><priority>0.4</priority></url>
-  <url><loc>https://ledyvas.com/it/manuale-utente.html</loc><priority>0.3</priority></url>
-  <url><loc>https://ledyvas.com/it/manuale-professionale.html</loc><priority>0.3</priority></url>
   <url><loc>https://ledyvas.com/it/portale-cliente.html</loc><priority>0.3</priority></url>
   <url><loc>https://ledyvas.com/it/privacy.html</loc><priority>0.2</priority></url>
   <url><loc>https://ledyvas.com/it/termini.html</loc><priority>0.2</priority></url>
@@ -70,8 +66,6 @@
   <url><loc>https://ledyvas.com/en/company.html</loc><priority>0.5</priority></url>
   <url><loc>https://ledyvas.com/en/contact.html</loc><priority>0.5</priority></url>
   <url><loc>https://ledyvas.com/en/documentation.html</loc><priority>0.4</priority></url>
-  <url><loc>https://ledyvas.com/en/user-manual.html</loc><priority>0.3</priority></url>
-  <url><loc>https://ledyvas.com/en/professional-manual.html</loc><priority>0.3</priority></url>
   <url><loc>https://ledyvas.com/en/help-zoho-books.html</loc><priority>0.4</priority></url>
   <url><loc>https://ledyvas.com/en/customer-portal.html</loc><priority>0.3</priority></url>
   <url><loc>https://ledyvas.com/en/privacy.html</loc><priority>0.2</priority></url>
@@ -89,8 +83,6 @@
   <url><loc>https://ledyvas.com/fr/entreprise.html</loc><priority>0.5</priority></url>
   <url><loc>https://ledyvas.com/fr/contact.html</loc><priority>0.5</priority></url>
   <url><loc>https://ledyvas.com/fr/documentation.html</loc><priority>0.4</priority></url>
-  <url><loc>https://ledyvas.com/fr/manuel-utilisateur.html</loc><priority>0.3</priority></url>
-  <url><loc>https://ledyvas.com/fr/manuel-professionnel.html</loc><priority>0.3</priority></url>
   <url><loc>https://ledyvas.com/fr/portail-client.html</loc><priority>0.3</priority></url>
   <url><loc>https://ledyvas.com/fr/confidentialite.html</loc><priority>0.2</priority></url>
   <url><loc>https://ledyvas.com/fr/conditions.html</loc><priority>0.2</priority></url>
@@ -107,8 +99,6 @@
   <url><loc>https://ledyvas.com/pt/empresa.html</loc><priority>0.5</priority></url>
   <url><loc>https://ledyvas.com/pt/contato.html</loc><priority>0.5</priority></url>
   <url><loc>https://ledyvas.com/pt/documentacao.html</loc><priority>0.4</priority></url>
-  <url><loc>https://ledyvas.com/pt/manual-do-usuario.html</loc><priority>0.3</priority></url>
-  <url><loc>https://ledyvas.com/pt/manual-profissional.html</loc><priority>0.3</priority></url>
   <url><loc>https://ledyvas.com/pt/portal-cliente.html</loc><priority>0.3</priority></url>
   <url><loc>https://ledyvas.com/pt/privacidade.html</loc><priority>0.2</priority></url>
   <url><loc>https://ledyvas.com/pt/termos.html</loc><priority>0.2</priority></url>
@@ -216,16 +206,6 @@
   </url>
   <url>
     <loc>https://ledyvas.com/ar/guide-tour-operator-software.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ledyvas.com/ar/user-manual.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ledyvas.com/ar/professional-manual.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
