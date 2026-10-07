@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) con Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': (typeof localStorage !== 'undefined' && localStorage.getItem('ledyvas-cookie-consent') === 'accepted') ? 'granted' : 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<script>
+  gtag("js", new Date());
+  gtag("config", "G-DYMN29KT3X");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledyvas + QuickBooks Online — المساعدة</title>
+<meta name="description" content="كيفية ربط Ledyvas بـ QuickBooks Online: مزامنة المشتريات والمبيعات كقيود أو كمستندات (فواتير شراء وبيع ومصروفات ودفعات)، ودليل الحسابات والضريبة والمزامنة التلقائية.">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="canonical" href="https://ledyvas.com/ar/help-quickbooks-online.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  .zb-body h2 { margin-top: 40px; scroll-margin-top: 100px; }
+  .zb-body h3 { margin-top: 24px; }
+  .zb-body ol, .zb-body ul { line-height: 1.7; }
+  .zb-body .callout { background: var(--gray); border-left: 3px solid var(--gold); padding: 14px 18px; border-radius: 8px; margin: 18px 0; }
+  .zb-faq dt { font-weight: 700; margin-top: 18px; }
+  .zb-faq dd { margin: 6px 0 0; color: var(--muted, #555); }
+  .manual-layout { display: grid; grid-template-columns: 230px 1fr; gap: 48px; align-items: start; }
+  .manual-toc { position: sticky; top: calc(var(--header-h, 84px) + 20px); font-size: 14px; max-height: calc(100vh - 120px); overflow-y: auto; }
+  .manual-toc h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin: 0 0 12px; }
+  .manual-toc a { display: block; padding: 5px 0 5px 12px; color: var(--gray-700); border-left: 2px solid var(--gray-300); line-height: 1.35; text-decoration: none; }
+  .manual-toc a:hover { color: var(--royal); border-left-color: var(--royal); }
+  @media (max-width: 900px) {
+    .manual-layout { grid-template-columns: 1fr; gap: 0; }
+    .manual-toc { position: static; max-height: none; margin-bottom: 32px; border: 1px solid var(--gray-300); border-radius: 8px; padding: 18px; }
+  }
+</style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ledyvas">
+<meta property="og:locale" content="ar">
+<meta property="og:url" content="https://ledyvas.com/ar/help-quickbooks-online.html">
+<meta property="og:title" content="Ledyvas + QuickBooks Online — المساعدة">
+<meta property="og:description" content="كيفية ربط Ledyvas بـ QuickBooks Online: مزامنة المشتريات والمبيعات كقيود أو كمستندات (فواتير شراء وبيع ومصروفات ودفعات)، ودليل الحسابات والضريبة والمزامنة التلقائية.">
+<meta property="og:image" content="https://ledyvas.com/assets/img/og/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ledyvas + QuickBooks Online — المساعدة">
+<meta name="twitter:description" content="كيفية ربط Ledyvas بـ QuickBooks Online: مزامنة المشتريات والمبيعات كقيود أو كمستندات (فواتير شراء وبيع ومصروفات ودفعات)، ودليل الحسابات والضريبة والمزامنة التلقائية.">
+<meta name="twitter:image" content="https://ledyvas.com/assets/img/og/og-en.png">
+</head>
+<body>
+
+<div class="cookie-consent-banner" id="cookie-consent-banner" hidden>
+  <div class="cookie-consent-inner">
+    <p>نستخدم ملفات تعريف الارتباط لفهم كيفية استخدام هذا الموقع (Google Analytics). يمكنك قبول هذا التتبع أو رفضه. <a href="privacy.html">اعرف المزيد</a></p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookie-consent-reject" class="btn btn-outline">رفض</button>
+      <button type="button" id="cookie-consent-accept" class="btn btn-primary">قبول</button>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <nav class="nav-horizontal">
+      <a href="index.html">الرئيسية</a>
+      <a href="software.html">البرنامج</a>
+      <div class="nav-apps-dropdown">
+        <button type="button" class="nav-apps-toggle">التطبيقات <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-apps-menu">
+        <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List</a>
+        <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost</a>
+        <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach</a>
+        </div>
+      </div>
+      <a href="metrica.html">Métrica</a>
+      <a href="solutions.html">الحلول</a>
+      <a href="industries.html">القطاعات</a>
+      <a href="pricing.html">الأسعار</a>
+      <a href="download.html">التنزيل</a>
+      <a href="company.html">الشركة</a>
+      <a href="../distribuidores.html?lang=ar">شركاء</a>
+      <a href="contact.html">اتصل بنا</a>
+      <a href="use-cases.html">حالات الاستخدام</a>
+    </nav>
+    <div class="header-actions">
+      <a href="pricing.html" class="btn btn-outline">اشترِ الآن</a>
+      <a href="download.html" class="btn btn-primary">تجربة مجانية</a>
+      <div class="lang-dropdown">
+      <button class="lang-dropdown-toggle" data-lang-toggle type="button" aria-haspopup="true" aria-expanded="false"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-dropdown-menu">
+    <a href="/ayuda-quickbooks-online.html"><span class="fi fi-es"></span> ES</a>
+    <a href="/it/documentazione.html"><span class="fi fi-it"></span> IT</a>
+    <a href="/en/help-quickbooks-online.html"><span class="fi fi-gb"></span> EN</a>
+    <a href="/fr/documentation.html"><span class="fi fi-fr"></span> FR</a>
+    <a href="/pt/documentacao.html"><span class="fi fi-pt"></span> PT</a>
+      </div>
+    </div>
+    <div class="header-social-links">
+      <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas على LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+    <button class="hamburger" data-nav-toggle aria-label="فتح القائمة"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay">
+  <div class="nav-overlay-top">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <button class="hamburger" data-nav-toggle aria-label="إغلاق القائمة"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-overlay-body">
+    <nav class="nav-links">
+      <a href="index.html">الرئيسية <small>01</small></a>
+      <a href="software.html">البرنامج <small>02</small></a>
+      <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List <small>03</small></a>
+      <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost <small>04</small></a>
+      <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach <small>05</small></a>
+      <a href="metrica.html">Métrica <small>06</small></a>
+      <a href="solutions.html">الحلول <small>07</small></a>
+      <a href="industries.html">القطاعات <small>08</small></a>
+      <a href="pricing.html">الأسعار <small>09</small></a>
+      <a href="download.html">التنزيل <small>10</small></a>
+      <a href="company.html">الشركة <small>11</small></a>
+      <a href="../distribuidores.html?lang=ar">شركاء <small>12</small></a>
+      <a href="contact.html">اتصل بنا <small>13</small></a>
+      <a href="use-cases.html">حالات الاستخدام <small>14</small></a>
+    </nav>
+    <div class="nav-side">
+      <div>
+        <div class="nav-side-title">اللغة</div>
+        <div class="lang-switch">
+          <a href="/ayuda-quickbooks-online.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-es"></span> ES</a>
+          <a href="/it/documentazione.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-it"></span> IT</a>
+          <a href="/en/help-quickbooks-online.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-gb"></span> EN</a>
+          <a href="/fr/documentation.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-fr"></span> FR</a>
+          <a href="/pt/documentacao.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-pt"></span> PT</a>
+          <button class="active"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR</button>
+        </div>
+      </div>
+      <div>
+        <div class="nav-side-title">ابدأ الآن</div>
+        <a href="download.html?edition=enterprise" class="btn btn-gold btn-block">Download Ledyvas Enterprise</a>
+        <div style="height:10px"></div>
+        <a href="pricing.html" class="btn btn-outline-light btn-block">اشترِ الآن</a>
+      </div>
+      <div>
+        <div class="nav-side-title">اتصل بنا</div>
+        <div class="nav-contact">
+          <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>
+          <span>الرد خلال 48 ساعة عمل</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+        <span class="eyebrow">مساعدة التكامل</span>
+        <h1>Ledyvas + QuickBooks Online</h1>
+        <p class="lede" style="margin-left:auto;margin-right:auto;">أرسل مشترياتك ومبيعاتك من Ledyvas مباشرةً إلى QuickBooks Online عبر واجهته البرمجية — دون ملفات أو إدخال يدوي. اختر <strong>وضع القيود</strong> (قيد مزدوج) أو <strong>وضع المستندات</strong> (فواتير شراء وبيع ومصروفات ودفعات). لا يحتوي QuickBooks Online على مسودات: كل ما يُرسَل يُرحَّل فورًا.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="manual-layout">
+
+        <aside class="manual-toc">
+          <h4>المحتويات</h4>
+          <a href="#what-it-does">ماذا يفعل</a>
+          <a href="#edition">أي إصدار تحتاج</a>
+          <a href="#connect">كيفية الاتصال</a>
+          <a href="#sync">كيفية المزامنة</a>
+          <a href="#chart">دليل الحسابات</a>
+          <a href="#documents">وضع المستندات</a>
+          <a href="#tax">الضريبة</a>
+          <a href="#auto-sync">المزامنة التلقائية الليلية</a>
+          <a href="#void-edit">إذا ألغيت مستندًا أو عدّلته</a>
+          <a href="#faq">الأسئلة الشائعة</a>
+        </aside>
+
+      <div class="zb-body" style="max-width:760px;">
+
+        <h2 id="what-it-does">ماذا يفعل</h2>
+        <p>Ledyvas نظام ERP مكتبي لأعمال السياحة والضيافة والتموين والتجارة. يدير فريقك العمليات اليومية داخل Ledyvas — المشتريات والمخزون والمبيعات والنقد والوقود والأساطيل — ويرسل هذا التكامل البيانات إلى QuickBooks Online عبر واجهته البرمجية (API) بالوضع الذي تختاره:</p>
+        <ul>
+          <li><strong>وضع القيود</strong>: قيد مزدوج متوازن واحد لكل عملية شراء وبيع ومصروف.</li>
+          <li><strong>وضع المستندات</strong>: ينشئ <strong>فاتورة الشراء</strong> (Bill) أو <strong>فاتورة البيع</strong> (Invoice) أو <strong>المصروف</strong> (Expense) المقابل، ويسجّل <strong>دفعات</strong> العملاء والموردين عندما يكون المستند محصّلًا أو مدفوعًا في Ledyvas.</li>
+          <li>ينشئ <strong>العملاء والموردين</strong> غير الموجودين في QuickBooks.</li>
+          <li><strong>دون تكرار</strong>: يُعرَّف كل مستند برقمه، في Ledyvas ومقابل QuickBooks، قبل إنشاء أي شيء. إعادة مزامنة الفترة آمنة.</li>
+          <li>إذا <strong>ألغيت أو عدّلت</strong> مستندًا في Ledyvas، يُحذف السجل المقابل في QuickBooks أو يُعاد إنشاؤه في المزامنة التالية.</li>
+        </ul>
+        <div class="callout"><strong>مهم:</strong> على عكس منصات أخرى، لا يحتوي QuickBooks Online على <strong>مسودات</strong>. كل ما يرسله Ledyvas يُرحَّل فورًا. راجع الفترة على الشاشة قبل الضغط على «مزامنة الآن».</div>
+
+        <h2 id="edition">أي إصدار تحتاج</h2>
+        <p>الاتصال بـ QuickBooks Online جزء من <strong>Ledyvas Enterprise</strong> و<strong>Ledyvas Ultimate</strong>. تظهر شاشة «المزامنة مع QuickBooks Online» ضمن <strong>الإجراءات السريعة</strong>. كلا الإصدارين بنظام الاشتراك ويُتاحان فقط عبر شريك Ledyvas معتمد.</p>
+        <ul>
+          <li><strong>Ledyvas Enterprise</strong> مخصص للسياحة والضيافة والتموين. إضافةً إلى هذا الاتصال، يصدّر ملفات محاسبية (بما فيها ملف IIF لنسخة <strong>QuickBooks Desktop</strong> المثبّتة، التي لا تستخدم هذا الاتصال).</li>
+          <li><strong>Ledyvas Ultimate</strong> مخصص للمحاسبة والضرائب: الضريبة لكل مستند، والذمم المدينة والدائنة، والتقارير الضريبية DGII لجمهورية الدومينيكان.</li>
+        </ul>
+
+        <h2 id="connect">كيفية الاتصال</h2>
+        <ol>
+          <li>في Ledyvas افتح <strong>الإجراءات السريعة ← المزامنة مع QuickBooks Online</strong>.</li>
+          <li>اضغط <strong>الاتصال بـ QuickBooks Online</strong>. سيُفتح المتصفح.</li>
+          <li>سجّل الدخول إلى Intuit واختر شركة QuickBooks المراد ربطها. يجب أن تكون مسؤولًا عن تلك الشركة. <strong>لا يرى Ledyvas كلمة مرورك أبدًا</strong>.</li>
+          <li>وافق على الإذن وعد إلى Ledyvas: تعرض الشاشة «متصل بـ» واسم شركتك.</li>
+        </ol>
+        <p>الاتصال لكل شركة. إذا ربطت لاحقًا شركة QuickBooks مختلفة، يمسح Ledyvas ربط الحسابات وإعدادات الشركة السابقة، لأن الرموز الداخلية تختلف بين الشركات.</p>
+
+        <h2 id="sync">كيفية المزامنة</h2>
+        <ol>
+          <li>اختر الفترة بـ <strong>من</strong> و<strong>إلى</strong> واضغط <strong>تحديث</strong>. يعرض Ledyvas عدد المعاملات، وكم منها تمت مزامنته، وكم بقي.</li>
+          <li>اختر الوضع: <strong>القيود</strong> أو <strong>المستندات</strong>.</li>
+          <li>اضغط <strong>مزامنة الآن</strong>. عند الانتهاء ترى النتيجة: ما أُنشئ وما تُخطّي (موجود مسبقًا) وما حُذف أو أُعيد إنشاؤه، والصفوف التي بها مشاكل مع الرسالة التي أعادها QuickBooks.</li>
+        </ol>
+        <p>إعادة مزامنة الفترة نفسها لا تكرّر شيئًا: يتعرّف Ledyvas على كل مستند من رقمه.</p>
+
+        <h2 id="chart">دليل الحسابات</h2>
+        <p>يقرأ Ledyvas دليل حسابات QuickBooks لديك ويعيّن كل فئة شراء وبيع ومصروف إلى حساب من النوع الصحيح (تكلفة المبيعات، الإيرادات، المصروفات). يمكنك تركه تلقائيًا أو فتح <strong>دليل الحسابات (اختياري)</strong> واختيار حساب لكل فئة.</p>
+        <p>في وضع القيود يذهب الطرف المقابل إلى <strong>Undeposited Funds</strong>. لا يستخدم Ledyvas الذمم المدينة أو الدائنة في القيود لأن QuickBooks يشترط تحديد عميل أو مورد في هذه الأسطر.</p>
+
+        <h2 id="documents">وضع المستندات</h2>
+        <ul>
+          <li>الشراء ← <strong>Bill</strong> مع موردها.</li>
+          <li>البيع ← <strong>Invoice</strong> مع عميله. يشترط QuickBooks منتجًا أو خدمة في كل سطر: ينشئ Ledyvas خدمة لكل حساب إيرادات باسم «Ledyvas - » متبوعًا بالحساب.</li>
+          <li>المصروف وتحميل الوقود اليدوي ← <strong>Expense</strong>. يشترط QuickBooks حساب <strong>بنك أو بطاقة</strong> لسداده: اخترْه على الشاشة؛ وإن لم تختر، يستخدم Ledyvas أول حساب بنكي. وإن لم يوجد، يُرسَل المصروف كقيد.</li>
+          <li>مستند محصّل أو مدفوع في Ledyvas ← تُسجَّل <strong>الدفعة</strong> (Payment أو Bill Payment) مرة واحدة، بالرصيد المفتوح في QuickBooks. دفعة الشراء تحتاج حسابًا بنكيًا.</li>
+        </ul>
+
+        <h2 id="tax">الضريبة</h2>
+        <p>في <strong>وضع المستندات</strong> تختار رمز ضريبة للمبيعات وآخر للمشتريات من الرموز الموجودة في QuickBooks. يُطبَّق فقط على المستندات التي تحمل ضريبة في Ledyvas. إذا كان للمستند ضريبة ولم تختر رمزًا، يخرج بلا ضريبة وينبّه Ledyvas إلى ذلك في النتيجة.</p>
+        <p>في <strong>وضع القيود</strong> تُرسَل الضريبة إلى حساب ضريبة من دليل حساباتك إن وجد (مثل «Sales Tax Payable»)؛ وإلا يخرج القيد بدون هذا السطر مع تنبيه.</p>
+
+        <h2 id="auto-sync">المزامنة التلقائية الليلية</h2>
+        <p>فعّل <strong>المزامنة تلقائيًا كل ليلة</strong> فيزامن Ledyvas آخر 120 يومًا من تلقاء نفسه، ما دام التطبيق مفتوحًا. ويعرض تاريخ ونتيجة آخر مزامنة تلقائية.</p>
+
+        <h2 id="void-edit">إذا ألغيت مستندًا أو عدّلته</h2>
+        <ul>
+          <li>عند <strong>إلغاء</strong> مستند في Ledyvas، تحذفه المزامنة التالية في QuickBooks مع الدفعة التي سجّلها Ledyvas له.</li>
+          <li>عند <strong>تعديله</strong>، يُحذف المستند السابق ويُنشأ من جديد بالبيانات الجديدة.</li>
+          <li>إذا كان للمستند دفعة <strong>لم</strong> ينشئها Ledyvas (مثلًا سجّلها محاسبك)، لا يلمسها Ledyvas وينبّهك لتصحيحها في QuickBooks.</li>
+        </ul>
+
+        <h2 id="faq">الأسئلة الشائعة</h2>
+        <dl class="zb-faq">
+          <dt>ما الأذونات التي يطلبها من QuickBooks؟</dt>
+          <dd>إذن المحاسبة فقط (<code>com.intuit.quickbooks.accounting</code>)، لقراءة دليل الحسابات وإنشاء العملاء والموردين والمستندات وتسجيل الدفعات. لا يطلب الوصول إلى مدفوعات البطاقات أو الرواتب.</dd>
+
+          <dt>أين تُحفظ بياناتي وبيانات الاعتماد؟</dt>
+          <dd>تبقى بيانات عملك على حاسوبك. للاتصال، تمر خطوة التفويض عبر خادم Ledyvas الذي يحتفظ بسرّ التطبيق ويسلّم رمز وصول؛ ولا يخزّن هذا الخادم بياناتك المحاسبية. يُحفظ الرمز مشفّرًا في قاعدة بيانات Ledyvas المحلية. مزيد من التفاصيل في <a href="privacy.html">سياسة الخصوصية</a>.</dd>
+
+          <dt>هل يمكنني قطع الاتصال؟</dt>
+          <dd>نعم، في أي وقت. قطع الاتصال من Ledyvas يحذف الوصول المخزّن ويوقف إرسال البيانات. ولسحب الإذن أيضًا في QuickBooks، أزل تطبيق Ledyvas من حسابك في QuickBooks (التطبيقات المتصلة). ما سبقت مزامنته يبقى في QuickBooks.</dd>
+
+          <dt>مع أي شركات QuickBooks يعمل؟</dt>
+          <dd>QuickBooks Online في الولايات المتحدة. لا يستخدم QuickBooks Desktop هذا الاتصال؛ لتلك النسخة يولّد Ledyvas Enterprise ملف IIF من <strong>التصدير إلى المحاسبة</strong>.</dd>
+
+          <dt>هل هي إضافة مجانية؟</dt>
+          <dd>الاتصال جزء من <strong>Ledyvas Enterprise</strong> و<strong>Ledyvas Ultimate</strong>، وهما اشتراكان عبر شريك Ledyvas معتمد.</dd>
+        </dl>
+
+        <p style="font-size:13px;color:var(--muted,#666);margin-top:28px;">QuickBooks علامة تجارية مسجّلة لشركة Intuit Inc. Ledyvas منتج مستقل: لا يرتبط بـ Intuit ولا تؤيده.</p>
+
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-gray">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;max-width:640px;">
+        <span class="eyebrow">هل لديك أسئلة أخرى؟</span>
+        <h2>نحن هنا لمساعدتك</h2>
+        <p class="lede">راسلنا على <a href="mailto:info@ledyvas.com">info@ledyvas.com</a> ونردّ خلال 48 ساعة عمل. يمكنك أيضًا سؤال المساعد الذكي داخل Ledyvas.</p>
+        <div class="cta-row" style="justify-content:center;">
+          <a href="documentation.html" class="btn btn-outline">التوثيق الكامل</a>
+          <a href="contact.html" class="btn btn-primary">التواصل مع الدعم</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+        <p>برنامج متكامل لإدارة الأعمال. المشتريات والمبيعات والمخزون والإنتاج والتقارير من منصة واحدة.</p>
+        <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>المنتج</h4>
+        <ul>
+          <li><a href="software.html">البرنامج</a></li>
+          <li><a href="metrica.html">Ledyvas Analytics Métrica</a></li>
+          <li><a href="solutions.html">الحلول</a></li>
+          <li><a href="industries.html">القطاعات</a></li>
+          <li><a href="pricing.html">الأسعار</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الشركة</h4>
+        <ul>
+          <li><a href="company.html">من نحن</a></li>
+          <li><a href="company.html#founder">المؤسس</a></li>
+          <li><a href="company.html#reviews">آراء العملاء</a></li>
+          <li><a href="company.html#faq">الأسئلة الشائعة</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الموارد</h4>
+        <ul>
+          <li><a href="guides.html">الأدلة</a></li>
+          <li><a href="download.html">التنزيل</a></li>
+          <li><a href="documentation.html">التوثيق</a></li>
+          <li><a href="customer-portal.html">بوابة العملاء</a></li>
+          <li><a href="../distribuidores.html?lang=ar">شركاء Ledyvas</a></li>
+          <li><a href="https://ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food (تطبيقات)</a></li>
+          <li><a href="download.html">تجربة مجانية</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>اتصل بنا</h4>
+        <ul>
+          <li><a href="mailto:info@ledyvas.com">info@ledyvas.com</a></li>
+          <li><span style="font-size:14px;">الرد خلال 48 ساعة عمل</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledyvas. جميع الحقوق محفوظة.</span>
+      <div class="footer-legal">
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="terms.html">الشروط والأحكام</a>
+        <a href="eula.html">ترخيص المستخدم النهائي (EULA)</a>
+        <a href="refund-policy.html">سياسة الاسترداد</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

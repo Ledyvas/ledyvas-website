@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) con Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': (typeof localStorage !== 'undefined' && localStorage.getItem('ledyvas-cookie-consent') === 'accepted') ? 'granted' : 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<script>
+  gtag("js", new Date());
+  gtag("config", "G-DYMN29KT3X");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledyvas + QuickBooks Online — Help</title>
+<meta name="description" content="How to connect Ledyvas to QuickBooks Online: sync purchases and sales as journal entries or as documents (bills, invoices, expenses and payments), the chart of accounts, tax and the nightly automatic sync.">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="canonical" href="https://ledyvas.com/en/help-quickbooks-online.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  .zb-body h2 { margin-top: 40px; scroll-margin-top: 100px; }
+  .zb-body h3 { margin-top: 24px; }
+  .zb-body ol, .zb-body ul { line-height: 1.7; }
+  .zb-body .callout { background: var(--gray); border-left: 3px solid var(--gold); padding: 14px 18px; border-radius: 8px; margin: 18px 0; }
+  .zb-faq dt { font-weight: 700; margin-top: 18px; }
+  .zb-faq dd { margin: 6px 0 0; color: var(--muted, #555); }
+  .manual-layout { display: grid; grid-template-columns: 230px 1fr; gap: 48px; align-items: start; }
+  .manual-toc { position: sticky; top: calc(var(--header-h, 84px) + 20px); font-size: 14px; max-height: calc(100vh - 120px); overflow-y: auto; }
+  .manual-toc h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin: 0 0 12px; }
+  .manual-toc a { display: block; padding: 5px 0 5px 12px; color: var(--gray-700); border-left: 2px solid var(--gray-300); line-height: 1.35; text-decoration: none; }
+  .manual-toc a:hover { color: var(--royal); border-left-color: var(--royal); }
+  @media (max-width: 900px) {
+    .manual-layout { grid-template-columns: 1fr; gap: 0; }
+    .manual-toc { position: static; max-height: none; margin-bottom: 32px; border: 1px solid var(--gray-300); border-radius: 8px; padding: 18px; }
+  }
+</style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ledyvas">
+<meta property="og:locale" content="en">
+<meta property="og:url" content="https://ledyvas.com/en/help-quickbooks-online.html">
+<meta property="og:title" content="Ledyvas + QuickBooks Online — Help">
+<meta property="og:description" content="How to connect Ledyvas to QuickBooks Online: sync purchases and sales as journal entries or as documents (bills, invoices, expenses and payments), the chart of accounts, tax and the nightly automatic sync.">
+<meta property="og:image" content="https://ledyvas.com/assets/img/og/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ledyvas + QuickBooks Online — Help">
+<meta name="twitter:description" content="How to connect Ledyvas to QuickBooks Online: sync purchases and sales as journal entries or as documents (bills, invoices, expenses and payments), the chart of accounts, tax and the nightly automatic sync.">
+<meta name="twitter:image" content="https://ledyvas.com/assets/img/og/og-en.png">
+</head>
+<body>
+
+<div class="cookie-consent-banner" id="cookie-consent-banner" hidden>
+  <div class="cookie-consent-inner">
+    <p>We use cookies to understand how this site is used (Google Analytics). You can accept or reject this tracking. <a href="privacy.html">Learn more</a></p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookie-consent-reject" class="btn btn-outline">Reject</button>
+      <button type="button" id="cookie-consent-accept" class="btn btn-primary">Accept</button>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <nav class="nav-horizontal">
+      <a href="index.html">Home</a>
+      <a href="software.html">Software</a>
+      <div class="nav-apps-dropdown">
+        <button type="button" class="nav-apps-toggle">Apps <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-apps-menu">
+        <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List</a>
+        <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost</a>
+        <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach</a>
+        </div>
+      </div>
+      <a href="metrica.html">Métrica</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="download.html">Download</a>
+      <a href="company.html">Company</a>
+      <a href="../distribuidores.html">Partners</a>
+      <a href="contact.html">Contact</a>
+      <a href="use-cases.html">Use cases</a>
+    </nav>
+    <div class="header-actions">
+      <a href="pricing.html" class="btn btn-outline">Buy now</a>
+      <a href="download.html" class="btn btn-primary">Free trial</a>
+      <div class="lang-dropdown">
+      <button class="lang-dropdown-toggle" data-lang-toggle type="button" aria-haspopup="true" aria-expanded="false"><span class="fi fi-gb"></span> EN<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-dropdown-menu">
+    <a href="/ayuda-quickbooks-online.html"><span class="fi fi-es"></span> ES</a>
+    <a href="/it/documentazione.html"><span class="fi fi-it"></span> IT</a>
+    <a href="/fr/documentation.html"><span class="fi fi-fr"></span> FR</a>
+    <a href="/pt/documentacao.html"><span class="fi fi-pt"></span> PT</a>
+    <a href="/ar/documentation.html"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR</a>
+      </div>
+    </div>
+    <div class="header-social-links">
+      <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas en LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+    <button class="hamburger" data-nav-toggle aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay">
+  <div class="nav-overlay-top">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <button class="hamburger" data-nav-toggle aria-label="Close menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-overlay-body">
+    <nav class="nav-links">
+      <a href="index.html">Home <small>01</small></a>
+      <a href="software.html">Software <small>02</small></a>
+      <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List <small>03</small></a>
+      <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost <small>04</small></a>
+      <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach <small>05</small></a>
+      <a href="metrica.html">Métrica <small>06</small></a>
+      <a href="solutions.html">Solutions <small>07</small></a>
+      <a href="industries.html">Industries <small>08</small></a>
+      <a href="pricing.html">Pricing <small>09</small></a>
+      <a href="download.html">Download <small>10</small></a>
+      <a href="company.html">Company <small>11</small></a>
+      <a href="../distribuidores.html">Partners <small>12</small></a>
+      <a href="contact.html">Contact <small>13</small></a>
+      <a href="use-cases.html">Use cases <small>14</small></a>
+    </nav>
+    <div class="nav-side">
+      <div>
+        <div class="nav-side-title">Language</div>
+        <div class="lang-switch">
+          <a href="/ayuda-quickbooks-online.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-es"></span> ES</a>
+          <a href="/it/documentazione.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-it"></span> IT</a>
+          <button class="active"><span class="fi fi-gb"></span> EN</button>
+          <a href="/fr/documentation.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-fr"></span> FR</a>
+          <a href="/pt/documentacao.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-pt"></span> PT</a>
+          <a href="/ar/documentation.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR</a>
+        </div>
+      </div>
+      <div>
+        <div class="nav-side-title">Get started</div>
+        <a href="download.html?edition=enterprise" class="btn btn-gold btn-block">Download Ledyvas Enterprise</a>
+        <div style="height:10px"></div>
+        <a href="pricing.html" class="btn btn-outline-light btn-block">Buy now</a>
+      </div>
+      <div>
+        <div class="nav-side-title">Contact</div>
+        <div class="nav-contact">
+          <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>
+          <span>Response within 48 business hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+        <span class="eyebrow">Integration help</span>
+        <h1>Ledyvas + QuickBooks Online</h1>
+        <p class="lede" style="margin-left:auto;margin-right:auto;">Send your Ledyvas purchases and sales straight to QuickBooks Online through its API — no files, no manual entry. Choose <strong>Journal entries mode</strong> (double-entry) or <strong>Documents mode</strong> (bills, invoices, expenses and payments). QuickBooks Online has no drafts: whatever is sent is posted immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="manual-layout">
+
+        <aside class="manual-toc">
+          <h4>Contents</h4>
+          <a href="#what-it-does">What it does</a>
+          <a href="#edition">Which edition you need</a>
+          <a href="#connect">How to connect</a>
+          <a href="#sync">How to sync</a>
+          <a href="#chart">Chart of accounts</a>
+          <a href="#documents">Documents mode</a>
+          <a href="#tax">Tax</a>
+          <a href="#auto-sync">Nightly automatic sync</a>
+          <a href="#void-edit">If you void or edit a document</a>
+          <a href="#faq">FAQ</a>
+        </aside>
+
+      <div class="zb-body" style="max-width:760px;">
+
+        <h2 id="what-it-does">What it does</h2>
+        <p>Ledyvas is a desktop ERP for tourism, hospitality, catering and trade businesses. Your team runs the day's operations inside Ledyvas — purchases, inventory, sales, cash, fuel and fleets — and this integration sends the data to QuickBooks Online through its API, in the mode you choose:</p>
+        <ul>
+          <li><strong>Journal entries mode</strong>: one balanced double-entry journal entry per purchase, sale and expense.</li>
+          <li><strong>Documents mode</strong>: creates the matching <strong>bill</strong>, <strong>invoice</strong> or <strong>expense</strong>, and records customer and vendor <strong>payments</strong> when the document is already collected or paid in Ledyvas.</li>
+          <li>Creates the <strong>customers and vendors</strong> that are missing in QuickBooks.</li>
+          <li><strong>No duplicates</strong>: every document is identified by its number, in Ledyvas and against QuickBooks, before anything is created. Syncing a period again is safe.</li>
+          <li>If you <strong>void or edit</strong> a document in Ledyvas, the matching record in QuickBooks is deleted or rebuilt on the next sync.</li>
+        </ul>
+        <div class="callout"><strong>Important:</strong> unlike other platforms, QuickBooks Online has <strong>no drafts</strong>. Everything Ledyvas sends is posted immediately. Review the period on screen before pressing "Sync now".</div>
+
+        <h2 id="edition">Which edition you need</h2>
+        <p>The QuickBooks Online connection is part of <strong>Ledyvas Enterprise</strong> and <strong>Ledyvas Ultimate</strong>. The "Sync with QuickBooks Online" screen appears under <strong>Quick Actions</strong>. Both editions are subscriptions, available only through an Official Ledyvas Partner.</p>
+        <ul>
+          <li><strong>Ledyvas Enterprise</strong> is built for tourism, hospitality and catering. Besides this connection, it exports accounting files (including the IIF file for <strong>QuickBooks Desktop</strong>, the installed version, which does not use this connection).</li>
+          <li><strong>Ledyvas Ultimate</strong> is built for accounting and taxes: tax per document, accounts receivable and payable, and the DGII tax reports for the Dominican Republic.</li>
+        </ul>
+
+        <h2 id="connect">How to connect</h2>
+        <ol>
+          <li>In Ledyvas, open <strong>Quick Actions → Sync with QuickBooks Online</strong>.</li>
+          <li>Press <strong>Connect to QuickBooks Online</strong>. Your browser opens.</li>
+          <li>Sign in to Intuit and choose the QuickBooks company to connect. You must be an administrator of that company. <strong>Ledyvas never sees your password</strong>.</li>
+          <li>Accept the permission and return to Ledyvas: the screen shows "Connected to" and your company name.</li>
+        </ol>
+        <p>The connection is per company. If you later connect a different QuickBooks company, Ledyvas clears the previous company's account mapping and settings, because internal codes differ between companies.</p>
+
+        <h2 id="sync">How to sync</h2>
+        <ol>
+          <li>Pick the period with <strong>From</strong> and <strong>To</strong> and press <strong>Refresh</strong>. Ledyvas shows how many transactions there are, how many were already synced and how many are pending.</li>
+          <li>Choose the mode: <strong>Journal entries</strong> or <strong>Documents</strong>.</li>
+          <li>Press <strong>Sync now</strong>. When it finishes you see the result: created, skipped (already there), deleted or rebuilt, and the rows with problems with the message QuickBooks returned.</li>
+        </ol>
+        <p>Syncing the same period again duplicates nothing: Ledyvas recognises each document by its number.</p>
+
+        <h2 id="chart">Chart of accounts</h2>
+        <p>Ledyvas reads your QuickBooks chart of accounts and assigns each purchase, sales and expense category to an account of the right type (cost of goods sold, income, expenses). You can leave it automatic or open <strong>Chart of accounts (optional)</strong> and pick an account for each category.</p>
+        <p>In Journal entries mode, the counterpart goes to <strong>Undeposited Funds</strong>. Ledyvas does not use Accounts Receivable or Accounts Payable in journal entries because QuickBooks requires a customer or vendor on those lines.</p>
+
+        <h2 id="documents">Documents mode</h2>
+        <ul>
+          <li>Purchase → <strong>Bill</strong> with its vendor.</li>
+          <li>Sale → <strong>Invoice</strong> with its customer. QuickBooks requires a product or service on every line: Ledyvas creates one service per income account, named "Ledyvas - " plus the account.</li>
+          <li>Expense and manual fuel load → <strong>Expense</strong>. QuickBooks requires a <strong>bank or credit card</strong> account to pay it: choose it on screen; if you choose none, Ledyvas uses the first bank account. If there is none, that expense is sent as a journal entry.</li>
+          <li>Document already collected or paid in Ledyvas → the <strong>payment</strong> (Payment or Bill Payment) is recorded once, for the balance QuickBooks has open. A purchase payment needs a bank account.</li>
+        </ul>
+
+        <h2 id="tax">Tax</h2>
+        <p>In <strong>Documents mode</strong> you pick one tax code for sales and one for purchases, from those already in your QuickBooks. It applies only to documents that carry tax in Ledyvas. If a document has tax and you chose no code, it goes out without tax and Ledyvas flags it in the result.</p>
+        <p>In <strong>Journal entries mode</strong>, tax is sent to a tax account from your chart of accounts, if there is one (for example "Sales Tax Payable"); if not, the entry goes out without that line and you are warned.</p>
+
+        <h2 id="auto-sync">Nightly automatic sync</h2>
+        <p>Turn on <strong>Sync automatically every night</strong> and Ledyvas syncs the last 120 days on its own, while the app is open. It shows the date and result of the last automatic sync.</p>
+
+        <h2 id="void-edit">If you void or edit a document</h2>
+        <ul>
+          <li>When you <strong>void</strong> a document in Ledyvas, the next sync deletes it in QuickBooks, together with the payment Ledyvas recorded for it.</li>
+          <li>When you <strong>edit</strong> it, the previous document is deleted and created again with the new data.</li>
+          <li>If the document has a payment that Ledyvas did <strong>not</strong> create (for example, one your accountant recorded), Ledyvas leaves it alone and warns you so you can fix it in QuickBooks.</li>
+        </ul>
+
+        <h2 id="faq">FAQ</h2>
+        <dl class="zb-faq">
+          <dt>What permissions does it ask QuickBooks for?</dt>
+          <dd>Only the accounting permission (<code>com.intuit.quickbooks.accounting</code>), to read the chart of accounts, create customers, vendors and documents, and record payments. It does not ask for card payments or payroll access.</dd>
+
+          <dt>Where are my data and credentials stored?</dt>
+          <dd>Your business data stays on your computer. To connect, the authorization step passes through a Ledyvas server that holds the application secret and hands back a token; that server does not store your accounting data. The token is kept encrypted in Ledyvas's local database. More detail in the <a href="privacy.html">privacy policy</a>.</dd>
+
+          <dt>Can I disconnect?</dt>
+          <dd>Yes, any time. Disconnecting from Ledyvas deletes the stored access and stops sending data. To also withdraw the permission in QuickBooks, remove the Ledyvas app from your QuickBooks account (connected apps). Whatever was already synced stays in QuickBooks.</dd>
+
+          <dt>Which QuickBooks companies does it work with?</dt>
+          <dd>QuickBooks Online in the United States. QuickBooks Desktop does not use this connection; for that version, Ledyvas Enterprise generates an IIF file from <strong>Export to Accounting</strong>.</dd>
+
+          <dt>Is it a free add-on?</dt>
+          <dd>The connection is part of <strong>Ledyvas Enterprise</strong> and <strong>Ledyvas Ultimate</strong>, which are subscriptions through an Official Ledyvas Partner.</dd>
+        </dl>
+
+        <p style="font-size:13px;color:var(--muted,#666);margin-top:28px;">QuickBooks is a registered trademark of Intuit Inc. Ledyvas is an independent product: it is not affiliated with or endorsed by Intuit.</p>
+
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-gray">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;max-width:640px;">
+        <span class="eyebrow">Still have questions?</span>
+        <h2>We're here to help</h2>
+        <p class="lede">Write to <a href="mailto:info@ledyvas.com">info@ledyvas.com</a> and we reply within 48 business hours. You can also ask the AI assistant inside Ledyvas.</p>
+        <div class="cta-row" style="justify-content:center;">
+          <a href="documentation.html" class="btn btn-outline">Full documentation</a>
+          <a href="contact.html" class="btn btn-primary">Contact support</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+        <p>All-in-one business management software. Purchasing, sales, inventory, production and reports from a single platform.</p>
+        <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="metrica.html">Ledyvas Analytics Métrica</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="company.html">About us</a></li>
+          <li><a href="company.html#founder">Founder</a></li>
+          <li><a href="company.html#reviews">Reviews</a></li>
+          <li><a href="company.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="guides.html">Guides</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="customer-portal.html">Customer Portal</a></li>
+          <li><a href="../distribuidores.html">Ledyvas Partners</a></li>
+          <li><a href="https://ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food (apps)</a></li>
+          <li><a href="download.html">Free trial</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@ledyvas.com">info@ledyvas.com</a></li>
+          <li><span style="font-size:14px;">Response within 48 business hours</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledyvas. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms and Conditions</a>
+        <a href="eula.html">End User License (EULA)</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

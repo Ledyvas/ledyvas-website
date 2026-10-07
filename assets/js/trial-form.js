@@ -98,46 +98,46 @@
 
   const ENTERPRISE_BANNER = {
     es: {
-      html: 'Está por descargar <b>Ledyvas Enterprise</b> — la versión con <b>Exportar a Contabilidad</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Pruébela 14 días gratis con sus datos. Después de la prueba se contrata por <b>suscripción mensual</b>, únicamente a través de un Partner.',
+      html: 'Está por descargar <b>Ledyvas Enterprise</b> — el ERP para turismo, hostelería y catering, con <b>conexión directa por API a QuickBooks Online, Zoho Books y Odoo</b> y <b>Exportar a Contabilidad</b> (QuickBooks Desktop, Xero, Alegra). Pruébela 14 días gratis con sus datos. Después de la prueba se contrata por <b>suscripción mensual</b>, únicamente a través de un Partner.',
       link: "Ver Ledyvas Partners"
     },
     en: {
-      html: 'You are about to download <b>Ledyvas Enterprise</b> — the version with <b>Export to Accounting</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Try it free for 14 days with your own data. After the trial it is offered by <b>monthly subscription</b>, only through a Partner.',
+      html: 'You are about to download <b>Ledyvas Enterprise</b> — the ERP for tourism, hospitality and catering, with a <b>direct API connection to QuickBooks Online, Zoho Books and Odoo</b> and <b>Export to Accounting</b> (QuickBooks Desktop, Xero, Alegra). Try it free for 14 days with your own data. After the trial it is offered by <b>monthly subscription</b>, only through a Partner.',
       link: "See Ledyvas Partners"
     },
     it: {
-      html: 'Stai per scaricare <b>Ledyvas Enterprise</b> — la versione con <b>Esporta in Contabilità</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Provala 14 giorni gratis con i tuoi dati. Dopo la prova si attiva con <b>abbonamento mensile</b>, solo tramite un Partner.',
+      html: 'Stai per scaricare <b>Ledyvas Enterprise</b> — l\'ERP per turismo, ospitalità e catering, con <b>connessione diretta via API a QuickBooks Online, Zoho Books e Odoo</b> ed <b>Esporta in Contabilità</b> (QuickBooks Desktop, Xero, Alegra). Provala 14 giorni gratis con i tuoi dati. Dopo la prova si attiva con <b>abbonamento mensile</b>, solo tramite un Partner.',
       link: "Vedi Ledyvas Partners"
     },
     fr: {
-      html: 'Vous êtes sur le point de télécharger <b>Ledyvas Enterprise</b> — la version avec <b>Exporter vers la comptabilité</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Essayez-la 14 jours gratuitement avec vos données. Après l\'essai, elle est proposée par <b>abonnement mensuel</b>, uniquement via un Partner.',
+      html: 'Vous êtes sur le point de télécharger <b>Ledyvas Enterprise</b> — l\'ERP du tourisme, de l\'hôtellerie et de la restauration collective, avec <b>connexion directe par API à QuickBooks Online, Zoho Books et Odoo</b> et <b>Exporter vers la comptabilité</b> (QuickBooks Desktop, Xero, Alegra). Essayez-la 14 jours gratuitement avec vos données. Après l\'essai, elle est proposée par <b>abonnement mensuel</b>, uniquement via un Partner.',
       link: "Voir Ledyvas Partners"
     },
     pt: {
-      html: 'Você está prestes a baixar o <b>Ledyvas Enterprise</b> — a versão com <b>Exportar para Contabilidade</b> (QuickBooks, Alegra, Zoho Books, Odoo, Xero). Experimente 14 dias grátis com os seus dados. Depois da avaliação é contratado por <b>subscrição mensal</b>, apenas através de um Partner.',
+      html: 'Você está prestes a baixar o <b>Ledyvas Enterprise</b> — o ERP para turismo, hotelaria e catering, com <b>conexão direta por API ao QuickBooks Online, Zoho Books e Odoo</b> e <b>Exportar para Contabilidade</b> (QuickBooks Desktop, Xero, Alegra). Experimente 14 dias grátis com os seus dados. Depois da avaliação é contratado por <b>subscrição mensal</b>, apenas através de um Partner.',
       link: "Ver o Ledyvas Partners"
     }
   };
 
   const ULTIMATE_BANNER = {
     es: {
-      html: 'Está por descargar <b>Ledyvas Ultimate</b> — la edición con <b>conector nativo a Zoho Books</b> (sincroniza compras y ventas por la API, sin CSV) y la <b>localización fiscal de República Dominicana</b>: NCF, ITBIS por documento y reportes DGII 606 / 607 / 608. Pruébela 14 días gratis con sus datos. Después de la prueba se contrata por <b>suscripción</b>.',
+      html: 'Está por descargar <b>Ledyvas Ultimate</b> — la edición de contabilidad e impuestos, con <b>conexión directa por API a QuickBooks Online, Zoho Books y Odoo</b> (sincroniza compras y ventas, sin CSV), impuesto por documento y la <b>localización fiscal de República Dominicana</b>: NCF y reportes DGII 606 / 607 / 608. Pruébela 14 días gratis con sus datos. Después de la prueba se contrata por <b>suscripción</b>.',
       link: "Ver Ledyvas Ultimate"
     },
     en: {
-      html: 'You are about to download <b>Ledyvas Ultimate</b> — the edition with the <b>native Zoho Books connector</b> (syncs purchases and sales through the API, no CSV) and the <b>Dominican Republic fiscal localization</b>: NCF, per-document ITBIS and DGII 606 / 607 / 608 reports. Try it free for 14 days with your own data. After the trial it is offered by <b>subscription</b>.',
+      html: 'You are about to download <b>Ledyvas Ultimate</b> — the accounting and tax edition, with a <b>direct API connection to QuickBooks Online, Zoho Books and Odoo</b> (syncs purchases and sales, no CSV), tax per document and the <b>Dominican Republic fiscal localization</b>: NCF and DGII 606 / 607 / 608 reports. Try it free for 14 days with your own data. After the trial it is offered by <b>subscription</b>.',
       link: "See Ledyvas Ultimate"
     },
     it: {
-      html: 'Stai per scaricare <b>Ledyvas Ultimate</b> — l\'edizione con il <b>connettore nativo a Zoho Books</b> (sincronizza acquisti e vendite via API, senza CSV) e la <b>localizzazione fiscale della Repubblica Dominicana</b>: NCF, ITBIS per documento e report DGII 606 / 607 / 608. Provala 14 giorni gratis con i tuoi dati. Dopo la prova si attiva con <b>abbonamento</b>.',
+      html: 'Stai per scaricare <b>Ledyvas Ultimate</b> — l\'edizione di contabilità e imposte, con <b>connessione diretta via API a QuickBooks Online, Zoho Books e Odoo</b> (sincronizza acquisti e vendite, senza CSV), imposta per documento e la <b>localizzazione fiscale della Repubblica Dominicana</b>: NCF e report DGII 606 / 607 / 608. Provala 14 giorni gratis con i tuoi dati. Dopo la prova si attiva con <b>abbonamento</b>.',
       link: "Vedi Ledyvas Ultimate"
     },
     fr: {
-      html: 'Vous êtes sur le point de télécharger <b>Ledyvas Ultimate</b> — l\'édition avec le <b>connecteur natif Zoho Books</b> (synchronise achats et ventes via l\'API, sans CSV) et la <b>localisation fiscale de la République dominicaine</b> : NCF, ITBIS par document et rapports DGII 606 / 607 / 608. Essayez-la 14 jours gratuitement avec vos données. Après l\'essai, elle est proposée par <b>abonnement</b>.',
+      html: 'Vous êtes sur le point de télécharger <b>Ledyvas Ultimate</b> — l\'édition comptabilité et taxes, avec <b>connexion directe par API à QuickBooks Online, Zoho Books et Odoo</b> (synchronise achats et ventes, sans CSV), taxe par document et la <b>localisation fiscale de la République dominicaine</b> : NCF et rapports DGII 606 / 607 / 608. Essayez-la 14 jours gratuitement avec vos données. Après l\'essai, elle est proposée par <b>abonnement</b>.',
       link: "Voir Ledyvas Ultimate"
     },
     pt: {
-      html: 'Você está prestes a baixar o <b>Ledyvas Ultimate</b> — a edição com o <b>conector nativo ao Zoho Books</b> (sincroniza compras e vendas pela API, sem CSV) e a <b>localização fiscal da República Dominicana</b>: NCF, ITBIS por documento e relatórios DGII 606 / 607 / 608. Experimente 14 dias grátis com os seus dados. Depois da avaliação é contratado por <b>subscrição</b>.',
+      html: 'Você está prestes a baixar o <b>Ledyvas Ultimate</b> — a edição de contabilidade e impostos, com <b>conexão direta por API ao QuickBooks Online, Zoho Books e Odoo</b> (sincroniza compras e vendas, sem CSV), imposto por documento e a <b>localização fiscal da República Dominicana</b>: NCF e relatórios DGII 606 / 607 / 608. Experimente 14 dias grátis com os seus dados. Depois da avaliação é contratado por <b>subscrição</b>.',
       link: "Ver o Ledyvas Ultimate"
     }
   };

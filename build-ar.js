@@ -1,3 +1,4 @@
+// NOTA 2026-10-07: ar/ edited directly (help-quickbooks-online, help-odoo, guides, pricing, ultimate...). Do NOT re-run without adding the new English strings to ar-translations.js, or they revert to English.
 // Genera /ar/*.html (sitio en árabe, RTL) a partir de las páginas /en/ y ar-translations.js.
 // Uso: node build-ar.js   (re-ejecutable: sobrescribe ar/*.html)
 const fs = require("fs");

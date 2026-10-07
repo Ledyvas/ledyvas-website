@@ -12,6 +12,8 @@
   <url><loc>https://ledyvas.com/contacto.html</loc><priority>0.6</priority></url>
   <url><loc>https://ledyvas.com/documentacion.html</loc><priority>0.5</priority></url>
   <url><loc>https://ledyvas.com/ayuda-zoho-books.html</loc><priority>0.4</priority></url>
+  <url><loc>https://ledyvas.com/ayuda-quickbooks-online.html</loc><priority>0.4</priority></url>
+  <url><loc>https://ledyvas.com/ayuda-odoo.html</loc><priority>0.4</priority></url>
   <url><loc>https://ledyvas.com/portal-cliente.html</loc><priority>0.4</priority></url>
   <url><loc>https://ledyvas.com/donde-comprar.html</loc><priority>0.5</priority></url>
   <url><loc>https://ledyvas.com/privacidad.html</loc><priority>0.2</priority></url>
@@ -67,6 +69,8 @@
   <url><loc>https://ledyvas.com/en/contact.html</loc><priority>0.5</priority></url>
   <url><loc>https://ledyvas.com/en/documentation.html</loc><priority>0.4</priority></url>
   <url><loc>https://ledyvas.com/en/help-zoho-books.html</loc><priority>0.4</priority></url>
+  <url><loc>https://ledyvas.com/en/help-quickbooks-online.html</loc><priority>0.4</priority></url>
+  <url><loc>https://ledyvas.com/en/help-odoo.html</loc><priority>0.4</priority></url>
   <url><loc>https://ledyvas.com/en/customer-portal.html</loc><priority>0.3</priority></url>
   <url><loc>https://ledyvas.com/en/privacy.html</loc><priority>0.2</priority></url>
   <url><loc>https://ledyvas.com/en/terms.html</loc><priority>0.2</priority></url>
@@ -186,6 +190,16 @@
   </url>
   <url>
     <loc>https://ledyvas.com/ar/help-zoho-books.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ledyvas.com/ar/help-quickbooks-online.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ledyvas.com/ar/help-odoo.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

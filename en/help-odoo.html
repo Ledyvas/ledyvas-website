@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) con Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': (typeof localStorage !== 'undefined' && localStorage.getItem('ledyvas-cookie-consent') === 'accepted') ? 'granted' : 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<script>
+  gtag("js", new Date());
+  gtag("config", "G-DYMN29KT3X");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledyvas + Odoo — Help</title>
+<meta name="description" content="How to connect Ledyvas to Odoo: sync purchases and sales as journal entries or as documents (vendor bills, customer invoices and expenses), Odoo requirements, chart of accounts, tax and the nightly automatic sync.">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="canonical" href="https://ledyvas.com/en/help-odoo.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  .zb-body h2 { margin-top: 40px; scroll-margin-top: 100px; }
+  .zb-body h3 { margin-top: 24px; }
+  .zb-body ol, .zb-body ul { line-height: 1.7; }
+  .zb-body .callout { background: var(--gray); border-left: 3px solid var(--gold); padding: 14px 18px; border-radius: 8px; margin: 18px 0; }
+  .zb-faq dt { font-weight: 700; margin-top: 18px; }
+  .zb-faq dd { margin: 6px 0 0; color: var(--muted, #555); }
+  .manual-layout { display: grid; grid-template-columns: 230px 1fr; gap: 48px; align-items: start; }
+  .manual-toc { position: sticky; top: calc(var(--header-h, 84px) + 20px); font-size: 14px; max-height: calc(100vh - 120px); overflow-y: auto; }
+  .manual-toc h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin: 0 0 12px; }
+  .manual-toc a { display: block; padding: 5px 0 5px 12px; color: var(--gray-700); border-left: 2px solid var(--gray-300); line-height: 1.35; text-decoration: none; }
+  .manual-toc a:hover { color: var(--royal); border-left-color: var(--royal); }
+  @media (max-width: 900px) {
+    .manual-layout { grid-template-columns: 1fr; gap: 0; }
+    .manual-toc { position: static; max-height: none; margin-bottom: 32px; border: 1px solid var(--gray-300); border-radius: 8px; padding: 18px; }
+  }
+</style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ledyvas">
+<meta property="og:locale" content="en">
+<meta property="og:url" content="https://ledyvas.com/en/help-odoo.html">
+<meta property="og:title" content="Ledyvas + Odoo — Help">
+<meta property="og:description" content="How to connect Ledyvas to Odoo: sync purchases and sales as journal entries or as documents (vendor bills, customer invoices and expenses), Odoo requirements, chart of accounts, tax and the nightly automatic sync.">
+<meta property="og:image" content="https://ledyvas.com/assets/img/og/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ledyvas + Odoo — Help">
+<meta name="twitter:description" content="How to connect Ledyvas to Odoo: sync purchases and sales as journal entries or as documents (vendor bills, customer invoices and expenses), Odoo requirements, chart of accounts, tax and the nightly automatic sync.">
+<meta name="twitter:image" content="https://ledyvas.com/assets/img/og/og-en.png">
+</head>
+<body>
+
+<div class="cookie-consent-banner" id="cookie-consent-banner" hidden>
+  <div class="cookie-consent-inner">
+    <p>We use cookies to understand how this site is used (Google Analytics). You can accept or reject this tracking. <a href="privacy.html">Learn more</a></p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookie-consent-reject" class="btn btn-outline">Reject</button>
+      <button type="button" id="cookie-consent-accept" class="btn btn-primary">Accept</button>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <nav class="nav-horizontal">
+      <a href="index.html">Home</a>
+      <a href="software.html">Software</a>
+      <div class="nav-apps-dropdown">
+        <button type="button" class="nav-apps-toggle">Apps <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-apps-menu">
+        <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List</a>
+        <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost</a>
+        <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach</a>
+        </div>
+      </div>
+      <a href="metrica.html">Métrica</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="download.html">Download</a>
+      <a href="company.html">Company</a>
+      <a href="../distribuidores.html">Partners</a>
+      <a href="contact.html">Contact</a>
+      <a href="use-cases.html">Use cases</a>
+    </nav>
+    <div class="header-actions">
+      <a href="pricing.html" class="btn btn-outline">Buy now</a>
+      <a href="download.html" class="btn btn-primary">Free trial</a>
+      <div class="lang-dropdown">
+      <button class="lang-dropdown-toggle" data-lang-toggle type="button" aria-haspopup="true" aria-expanded="false"><span class="fi fi-gb"></span> EN<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-dropdown-menu">
+    <a href="/ayuda-odoo.html"><span class="fi fi-es"></span> ES</a>
+    <a href="/it/documentazione.html"><span class="fi fi-it"></span> IT</a>
+    <a href="/fr/documentation.html"><span class="fi fi-fr"></span> FR</a>
+    <a href="/pt/documentacao.html"><span class="fi fi-pt"></span> PT</a>
+    <a href="/ar/documentation.html"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR</a>
+      </div>
+    </div>
+    <div class="header-social-links">
+      <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas en LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+    <button class="hamburger" data-nav-toggle aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay">
+  <div class="nav-overlay-top">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <button class="hamburger" data-nav-toggle aria-label="Close menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-overlay-body">
+    <nav class="nav-links">
+      <a href="index.html">Home <small>01</small></a>
+      <a href="software.html">Software <small>02</small></a>
+      <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List <small>03</small></a>
+      <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost <small>04</small></a>
+      <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach <small>05</small></a>
+      <a href="metrica.html">Métrica <small>06</small></a>
+      <a href="solutions.html">Solutions <small>07</small></a>
+      <a href="industries.html">Industries <small>08</small></a>
+      <a href="pricing.html">Pricing <small>09</small></a>
+      <a href="download.html">Download <small>10</small></a>
+      <a href="company.html">Company <small>11</small></a>
+      <a href="../distribuidores.html">Partners <small>12</small></a>
+      <a href="contact.html">Contact <small>13</small></a>
+      <a href="use-cases.html">Use cases <small>14</small></a>
+    </nav>
+    <div class="nav-side">
+      <div>
+        <div class="nav-side-title">Language</div>
+        <div class="lang-switch">
+          <a href="/ayuda-odoo.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-es"></span> ES</a>
+          <a href="/it/documentazione.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-it"></span> IT</a>
+          <button class="active"><span class="fi fi-gb"></span> EN</button>
+          <a href="/fr/documentation.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-fr"></span> FR</a>
+          <a href="/pt/documentacao.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-pt"></span> PT</a>
+          <a href="/ar/documentation.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR</a>
+        </div>
+      </div>
+      <div>
+        <div class="nav-side-title">Get started</div>
+        <a href="download.html?edition=enterprise" class="btn btn-gold btn-block">Download Ledyvas Enterprise</a>
+        <div style="height:10px"></div>
+        <a href="pricing.html" class="btn btn-outline-light btn-block">Buy now</a>
+      </div>
+      <div>
+        <div class="nav-side-title">Contact</div>
+        <div class="nav-contact">
+          <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>
+          <span>Response within 48 business hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+        <span class="eyebrow">Integration help</span>
+        <h1>Ledyvas + Odoo</h1>
+        <p class="lede" style="margin-left:auto;margin-right:auto;">Send your Ledyvas purchases and sales straight to Odoo Accounting through its API — no CSV, no manual entry. Choose <strong>Journal entries mode</strong> or <strong>Documents mode</strong> (vendor bills, customer invoices and expenses). Everything arrives as a draft for your accountant to review.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="manual-layout">
+
+        <aside class="manual-toc">
+          <h4>Contents</h4>
+          <a href="#what-it-does">What it does</a>
+          <a href="#requirements">Odoo requirements</a>
+          <a href="#connect">How to connect</a>
+          <a href="#sync">How to sync</a>
+          <a href="#chart">Chart of accounts</a>
+          <a href="#documents">Documents mode</a>
+          <a href="#tax">Tax</a>
+          <a href="#auto-sync">Nightly automatic sync</a>
+          <a href="#void-edit">If you void or edit a document</a>
+          <a href="#faq">FAQ</a>
+        </aside>
+
+      <div class="zb-body" style="max-width:760px;">
+
+        <h2 id="what-it-does">What it does</h2>
+        <p>Ledyvas is a desktop ERP for tourism, hospitality, catering and trade businesses. Your team runs the day's operations inside Ledyvas — purchases, inventory, sales, cash, fuel and fleets — and this integration sends the data to Odoo through its external API, in the mode you choose:</p>
+        <ul>
+          <li><strong>Journal entries mode</strong>: one <strong>draft</strong> journal entry per purchase, sale and expense.</li>
+          <li><strong>Documents mode</strong>: creates the matching <strong>vendor bill</strong>, <strong>customer invoice</strong> or <strong>expense</strong>, also as drafts, and records <strong>payments</strong> when the document is already collected or paid in Ledyvas.</li>
+          <li>Optionally creates the <strong>vendors and customers</strong> that are missing in Odoo.</li>
+          <li><strong>No duplicates</strong>: every document is identified by its reference before anything is created. Syncing a period again is safe.</li>
+        </ul>
+        <div class="callout">Invoices that are already collected or paid in Ledyvas are <strong>confirmed</strong> in Odoo, because Odoo only lets you register a payment on a confirmed invoice. Everything else arrives as a draft.</div>
+
+        <h2 id="requirements">Odoo requirements</h2>
+        <ul>
+          <li><strong>Odoo 19</strong> with <strong>external API</strong> access. On Odoo Online, the external API is available with the <strong>Custom</strong> plan; on Odoo.sh or self-hosted installs it is always available.</li>
+          <li>The Odoo <strong>Accounting</strong> app installed, with your chart of accounts set up.</li>
+          <li>An <strong>API key</strong> for a user with accounting permissions.</li>
+        </ul>
+        <p>The connection is part of <strong>Ledyvas Enterprise</strong> and <strong>Ledyvas Ultimate</strong>. The "Sync with Odoo" screen appears under <strong>Quick Actions</strong>. Both editions are subscriptions, available only through an Official Ledyvas Partner.</p>
+
+        <h2 id="connect">How to connect</h2>
+        <ol>
+          <li>In Odoo: <strong>Preferences → Security → API Keys → New key</strong>. Copy the key.</li>
+          <li>In Ledyvas, open <strong>Quick Actions → Sync with Odoo</strong>.</li>
+          <li>Enter your <strong>Odoo address</strong> and paste the <strong>API key</strong>. If your Odoo has several databases, say which one.</li>
+          <li>Press <strong>Connect to Odoo</strong>. If Odoo has several companies, choose the one to use.</li>
+        </ol>
+        <p>Ledyvas connects directly to your Odoo; it does not go through any Ledyvas server. The key is stored <strong>encrypted</strong> on your computer and is never shown on screen.</p>
+
+        <h2 id="sync">How to sync</h2>
+        <ol>
+          <li>Pick the period with <strong>From</strong> and <strong>To</strong> and press <strong>Refresh</strong>. Ledyvas shows how many transactions there are, how many were already synced and how many are pending.</li>
+          <li>Choose the mode: <strong>Journal entries</strong> or <strong>Documents</strong>.</li>
+          <li>Press <strong>Sync now</strong>. When it finishes you see the result and, if something failed, the message Odoo returned.</li>
+        </ol>
+        <p>Syncing the same period again duplicates nothing: Ledyvas recognises each document by its reference.</p>
+
+        <h2 id="chart">Chart of accounts</h2>
+        <p>Ledyvas reads the Odoo chart of accounts and assigns each purchase, sales and expense category to an account of the right type. You can leave it on <strong>(automatic)</strong> or open <strong>Chart of accounts (optional)</strong> and pick an account from your chart for each category.</p>
+
+        <h2 id="documents">Documents mode</h2>
+        <ul>
+          <li>Purchase → <strong>vendor bill</strong>.</li>
+          <li>Sale → <strong>customer invoice</strong>.</li>
+          <li>Expense and manual fuel load → expense <strong>journal entry</strong>.</li>
+          <li>Document already collected or paid in Ledyvas → it is confirmed in Odoo and the <strong>payment</strong> is recorded once. For that, choose the <strong>bank or cash journal</strong> for payments.</li>
+        </ul>
+
+        <h2 id="tax">Tax</h2>
+        <p>You choose the sales tax and the purchase tax (ITBIS, VAT, GST…) from those already in your Odoo. It applies to the lines of documents that carry tax in Ledyvas. If a document has tax and you chose none, it goes out without tax and Ledyvas flags it in the result.</p>
+
+        <h2 id="auto-sync">Nightly automatic sync</h2>
+        <p>Turn on <strong>Sync automatically every night</strong> and Ledyvas syncs the last 120 days on its own, while the app is open.</p>
+
+        <h2 id="void-edit">If you void or edit a document</h2>
+        <ul>
+          <li>A document still in <strong>draft</strong> in Odoo is deleted and rebuilt with the new data.</li>
+          <li>A document already <strong>confirmed</strong> cannot be deleted in Odoo: Ledyvas cancels it or credits it with a credit note.</li>
+          <li>If the document already has <strong>payments</strong> in Odoo, Ledyvas leaves it alone and warns you: fix it in Odoo with a credit note.</li>
+        </ul>
+
+        <h2 id="faq">FAQ</h2>
+        <dl class="zb-faq">
+          <dt>Does it work with Odoo Community or Odoo before 19?</dt>
+          <dd>The connection uses the Odoo 19 external API. Earlier versions are not supported. If you use Odoo Online, check that your plan includes external API access (Custom plan).</dd>
+
+          <dt>Where are my data and key stored?</dt>
+          <dd>Your business data stays on your computer. Ledyvas connects directly to your Odoo and the API key is kept encrypted in the local database; it does not go through any Ledyvas server. More detail in the <a href="privacy.html">privacy policy</a>.</dd>
+
+          <dt>Can I disconnect?</dt>
+          <dd>Yes, any time. Disconnecting deletes the key stored in Ledyvas. To also invalidate it in Odoo, delete the key under <strong>Preferences → Security → API Keys</strong>. Whatever was already synced stays in Odoo.</dd>
+
+          <dt>What does Ledyvas create in my Odoo?</dt>
+          <dd>In Journal entries mode: draft journal entries. In Documents mode: vendor bills, customer invoices and expenses, also as drafts, and the payments of invoices already collected or paid. Optionally, the vendors and customers that are missing. Ledyvas only reads your chart of accounts, taxes, journals and existing documents (to avoid duplicates).</dd>
+
+          <dt>Is it a free add-on?</dt>
+          <dd>The connection is part of <strong>Ledyvas Enterprise</strong> and <strong>Ledyvas Ultimate</strong>, which are subscriptions through an Official Ledyvas Partner.</dd>
+        </dl>
+
+        <p style="font-size:13px;color:var(--muted,#666);margin-top:28px;">Odoo is a trademark of Odoo S.A. Ledyvas is an independent product: it is not affiliated with or endorsed by Odoo.</p>
+
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-gray">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;max-width:640px;">
+        <span class="eyebrow">Still have questions?</span>
+        <h2>We're here to help</h2>
+        <p class="lede">Write to <a href="mailto:info@ledyvas.com">info@ledyvas.com</a> and we reply within 48 business hours. You can also ask the AI assistant inside Ledyvas.</p>
+        <div class="cta-row" style="justify-content:center;">
+          <a href="documentation.html" class="btn btn-outline">Full documentation</a>
+          <a href="contact.html" class="btn btn-primary">Contact support</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+        <p>All-in-one business management software. Purchasing, sales, inventory, production and reports from a single platform.</p>
+        <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="metrica.html">Ledyvas Analytics Métrica</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="company.html">About us</a></li>
+          <li><a href="company.html#founder">Founder</a></li>
+          <li><a href="company.html#reviews">Reviews</a></li>
+          <li><a href="company.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="guides.html">Guides</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="customer-portal.html">Customer Portal</a></li>
+          <li><a href="../distribuidores.html">Ledyvas Partners</a></li>
+          <li><a href="https://ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food (apps)</a></li>
+          <li><a href="download.html">Free trial</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@ledyvas.com">info@ledyvas.com</a></li>
+          <li><span style="font-size:14px;">Response within 48 business hours</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledyvas. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms and Conditions</a>
+        <a href="eula.html">End User License (EULA)</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
