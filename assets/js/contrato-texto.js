@@ -1,4 +1,11 @@
 /* ==========================================================================
+   ✅ NUEVO PRODUCTO 2026-10-12: Ledyvas Financial CFO (suscripción, vía Partners)
+   Tarifas de lanzamiento (decididas por Leo): US$129/mes o US$1.290/año; paquete CFO + Ultimate
+   US$159/mes o US$1.590/año. Comisión 20% recurrente como Enterprise/Ultimate. Cláusulas 1, 2, 3,
+   4, 5, 8, 9 y 14 en es/en/it/fr/pt. De paso: precio de Professional vía Promotor corregido a
+   US$749 (mismo precio directo y por Partner), antes decía US$649.
+   ========================================================================== */
+/* ==========================================================================
    ✅ NUEVO PRODUCTO 2026-09-28: Ledyvas Analytics Métrica
    Leo decidió venderlo de pago único a US$ 599 (mismo precio directo y por
    Promotor, sin precio de canal distinto por ahora). Se suma al programa como
