@@ -26,8 +26,6 @@
 </head>
 <body>
 
-<div class="d-preview" data-i18n="previewBanner"></div>
-
 <header class="d-header">
   <div class="d-wrap">
     <div>
@@ -143,7 +141,9 @@
     var lang = (T.lang() === "ar") ? "en" : T.lang();
     var meta = C.meta(lang);
 
-    document.getElementById("ct-draft").textContent = meta.draft;
+    var drEl = document.getElementById("ct-draft");
+    drEl.textContent = meta.draft;
+    drEl.hidden = !meta.draft; drEl.style.display = meta.draft ? "" : "none";
     var tierTag = (tier === "alto") ? "  ·  Contrato A (ingreso alto)"
                 : (tier === "resto") ? "  ·  Contrato B"
                 : "";
