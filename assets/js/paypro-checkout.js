@@ -9,7 +9,11 @@
   var PRODUCTS = {
     metrica: '138565', // Ledyvas Analytics Métrica, US$ 599
     pro: '138564',     // Ledyvas Professional, venta directa US$ 749
-    bundle: '138566'   // Paquete Ledyvas Pro + Métrica, US$ 1,199
+    bundle: '138566',  // Paquete Ledyvas Pro + Métrica, US$ 1,199
+    cfo_month: '139005',        // Ledyvas Financial CFO mensual, US$ 129
+    cfo_year: '139006',         // Ledyvas Financial CFO anual, US$ 1,290
+    cfo_bundle_month: '139007', // Paquete CFO + Ultimate mensual, US$ 159
+    cfo_bundle_year: '139008'   // Paquete CFO + Ultimate anual, US$ 1,590
   };
   var SUPPORT_ID = '138589'; // Soporte anual de Métrica (US$ 99/año; 12 meses gratis, luego se cobra solo). Va junto a Métrica y al paquete.
   var WITH_SUPPORT = { '138565': 1, '138566': 1 };
