@@ -1,5 +1,5 @@
 /*
- * Ledyvas — botón de compra con PayPro Global (ventana de pago sobre la misma página).
+ * Ledyvas, botón de compra con PayPro Global (ventana de pago sobre la misma página).
  * Para activar un producto: poner su ID de PayPro en PRODUCTS. Mientras esté vacío,
  * el botón sigue como "muy pronto" (desactivado).
  * SECRET_KEY: parámetro de seguridad que da PayPro para abrir el pago dentro de la página.
@@ -98,7 +98,7 @@
       if (!id) return; // sigue "muy pronto"
       btn.disabled = false;
       btn.removeAttribute('disabled');
-      if (btn.getAttribute('data-buy-label') !== 'keep') btn.textContent = t.buy + (btn.getAttribute('data-price') ? ' — ' + btn.getAttribute('data-price') : '');
+      if (btn.getAttribute('data-buy-label') !== 'keep') btn.textContent = t.buy + (btn.getAttribute('data-price') ? ', ' + btn.getAttribute('data-price') : '');
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         var url = checkoutUrl(id);

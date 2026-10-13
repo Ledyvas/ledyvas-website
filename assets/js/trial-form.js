@@ -1,4 +1,4 @@
-// LEDYVAS — formulario de "Solicitar prueba gratis". Se usa en descargas.html
+// LEDYVAS, formulario de "Solicitar prueba gratis". Se usa en descargas.html
 // y sus 4 traducciones (en/download.html, it/download.html,
 // fr/telechargements.html, pt/downloads.html). Llama al Cloudflare Worker del
 // servidor de licencias, que emite el código de activación y lo manda por
@@ -10,13 +10,13 @@
 
   const TEXT = {
     es: {
-      invalid_email: "Ese email no parece válido — revíselo e inténtelo de nuevo.",
+      invalid_email: "Ese email no parece válido, revíselo e inténtelo de nuevo.",
       email_not_configured: "El envío de correos todavía no está activo. Escríbanos a support@ledyvas.com y le mandamos el código a mano.",
       email_send_failed: "No pudimos enviar el correo. Inténtelo de nuevo en un momento, o escríbanos a support@ledyvas.com.",
       generic: "Algo salió mal. Inténtelo de nuevo en un momento.",
       downloadNow: "Descargar ahora",
       modalTitle: "Solicite su prueba gratuita",
-      modalLede: "Le mandamos el instalador y su código de activación por correo — sin costo, 14 días de acceso completo.",
+      modalLede: "Le mandamos el instalador y su código de activación por correo, sin costo, 14 días de acceso completo.",
       fieldName: "Nombre",
       namePlaceholder: "Su nombre",
       fieldEmail: "Email",
@@ -27,13 +27,13 @@
       closeAria: "Cerrar"
     },
     it: {
-      invalid_email: "Quell'email non sembra valida — controllala e riprova.",
+      invalid_email: "Quell'email non sembra valida, controllala e riprova.",
       email_not_configured: "L'invio di email non è ancora attivo. Scrivici a support@ledyvas.com e ti mandiamo il codice a mano.",
       email_send_failed: "Non siamo riusciti a inviare l'email. Riprova tra un momento, oppure scrivici a support@ledyvas.com.",
       generic: "Qualcosa è andato storto. Riprova tra un momento.",
       downloadNow: "Scarica ora",
       modalTitle: "Richiedi la tua prova gratuita",
-      modalLede: "Ti mandiamo l'installer e il tuo codice di attivazione via email — senza costi, 14 giorni di accesso completo.",
+      modalLede: "Ti mandiamo l'installer e il tuo codice di attivazione via email, senza costi, 14 giorni di accesso completo.",
       fieldName: "Nome",
       namePlaceholder: "Il tuo nome",
       fieldEmail: "Email",
@@ -44,13 +44,13 @@
       closeAria: "Chiudi"
     },
     en: {
-      invalid_email: "That email doesn't look valid — check it and try again.",
+      invalid_email: "That email doesn't look valid, check it and try again.",
       email_not_configured: "Sending emails isn't active yet. Write to us at support@ledyvas.com and we'll send you the code by hand.",
       email_send_failed: "We couldn't send the email. Try again in a moment, or write to support@ledyvas.com.",
       generic: "Something went wrong. Try again in a moment.",
       downloadNow: "Download now",
       modalTitle: "Request your free trial",
-      modalLede: "We'll email you the installer and your activation code — free, 14 days of full access.",
+      modalLede: "We'll email you the installer and your activation code, free, 14 days of full access.",
       fieldName: "Name",
       namePlaceholder: "Your name",
       fieldEmail: "Email",
@@ -61,13 +61,13 @@
       closeAria: "Close"
     },
     fr: {
-      invalid_email: "Cet email ne semble pas valide — vérifiez-le et réessayez.",
+      invalid_email: "Cet email ne semble pas valide, vérifiez-le et réessayez.",
       email_not_configured: "L'envoi d'emails n'est pas encore actif. Écrivez-nous à support@ledyvas.com et on vous envoie le code à la main.",
       email_send_failed: "Nous n'avons pas pu envoyer l'email. Réessayez dans un instant, ou écrivez-nous à support@ledyvas.com.",
       generic: "Quelque chose s'est mal passé. Réessayez dans un instant.",
       downloadNow: "Télécharger maintenant",
       modalTitle: "Demandez votre essai gratuit",
-      modalLede: "Nous vous envoyons l'installateur et votre code d'activation par email — gratuit, 14 jours d'accès complet.",
+      modalLede: "Nous vous envoyons l'installateur et votre code d'activation par email, gratuit, 14 jours d'accès complet.",
       fieldName: "Nom",
       namePlaceholder: "Votre nom",
       fieldEmail: "Email",
@@ -78,13 +78,13 @@
       closeAria: "Fermer"
     },
     pt: {
-      invalid_email: "Esse email não parece válido — confira e tente de novo.",
+      invalid_email: "Esse email não parece válido, confira e tente de novo.",
       email_not_configured: "O envio de emails ainda não está ativo. Escreva para support@ledyvas.com e mandamos o código manualmente.",
       email_send_failed: "Não conseguimos enviar o email. Tente de novo em instantes, ou escreva para support@ledyvas.com.",
       generic: "Algo deu errado. Tente de novo em instantes.",
       downloadNow: "Baixar agora",
       modalTitle: "Solicite a sua avaliação gratuita",
-      modalLede: "Enviamos o instalador e o seu código de ativação por email — sem custo, 14 dias de acesso completo.",
+      modalLede: "Enviamos o instalador e o seu código de ativação por email, sem custo, 14 dias de acesso completo.",
       fieldName: "Nome",
       namePlaceholder: "O seu nome",
       fieldEmail: "Email",
@@ -98,46 +98,46 @@
 
   const ENTERPRISE_BANNER = {
     es: {
-      html: 'Está por descargar <b>Ledyvas Enterprise</b> — el ERP para turismo, hostelería y catering, con <b>conexión directa por API a QuickBooks Online, Zoho Books y Odoo</b> y <b>Exportar a Contabilidad</b> (QuickBooks Desktop, Xero, Alegra). Pruébela 14 días gratis con sus datos. Después de la prueba se contrata por <b>suscripción mensual</b>, únicamente a través de un Partner.',
+      html: 'Está por descargar <b>Ledyvas Enterprise</b>, el ERP para turismo, hostelería y catering, con <b>conexión directa por API a QuickBooks Online, Zoho Books y Odoo</b> y <b>Exportar a Contabilidad</b> (QuickBooks Desktop, Xero, Alegra). Pruébela 14 días gratis con sus datos. Después de la prueba se contrata por <b>suscripción mensual</b>, únicamente a través de un Partner.',
       link: "Ver Ledyvas Partners"
     },
     en: {
-      html: 'You are about to download <b>Ledyvas Enterprise</b> — the ERP for tourism, hospitality and catering, with a <b>direct API connection to QuickBooks Online, Zoho Books and Odoo</b> and <b>Export to Accounting</b> (QuickBooks Desktop, Xero, Alegra). Try it free for 14 days with your own data. After the trial it is offered by <b>monthly subscription</b>, only through a Partner.',
+      html: 'You are about to download <b>Ledyvas Enterprise</b>, the ERP for tourism, hospitality and catering, with a <b>direct API connection to QuickBooks Online, Zoho Books and Odoo</b> and <b>Export to Accounting</b> (QuickBooks Desktop, Xero, Alegra). Try it free for 14 days with your own data. After the trial it is offered by <b>monthly subscription</b>, only through a Partner.',
       link: "See Ledyvas Partners"
     },
     it: {
-      html: 'Stai per scaricare <b>Ledyvas Enterprise</b> — l\'ERP per turismo, ospitalità e catering, con <b>connessione diretta via API a QuickBooks Online, Zoho Books e Odoo</b> ed <b>Esporta in Contabilità</b> (QuickBooks Desktop, Xero, Alegra). Provala 14 giorni gratis con i tuoi dati. Dopo la prova si attiva con <b>abbonamento mensile</b>, solo tramite un Partner.',
+      html: 'Stai per scaricare <b>Ledyvas Enterprise</b>, l\'ERP per turismo, ospitalità e catering, con <b>connessione diretta via API a QuickBooks Online, Zoho Books e Odoo</b> ed <b>Esporta in Contabilità</b> (QuickBooks Desktop, Xero, Alegra). Provala 14 giorni gratis con i tuoi dati. Dopo la prova si attiva con <b>abbonamento mensile</b>, solo tramite un Partner.',
       link: "Vedi Ledyvas Partners"
     },
     fr: {
-      html: 'Vous êtes sur le point de télécharger <b>Ledyvas Enterprise</b> — l\'ERP du tourisme, de l\'hôtellerie et de la restauration collective, avec <b>connexion directe par API à QuickBooks Online, Zoho Books et Odoo</b> et <b>Exporter vers la comptabilité</b> (QuickBooks Desktop, Xero, Alegra). Essayez-la 14 jours gratuitement avec vos données. Après l\'essai, elle est proposée par <b>abonnement mensuel</b>, uniquement via un Partner.',
+      html: 'Vous êtes sur le point de télécharger <b>Ledyvas Enterprise</b>, l\'ERP du tourisme, de l\'hôtellerie et de la restauration collective, avec <b>connexion directe par API à QuickBooks Online, Zoho Books et Odoo</b> et <b>Exporter vers la comptabilité</b> (QuickBooks Desktop, Xero, Alegra). Essayez-la 14 jours gratuitement avec vos données. Après l\'essai, elle est proposée par <b>abonnement mensuel</b>, uniquement via un Partner.',
       link: "Voir Ledyvas Partners"
     },
     pt: {
-      html: 'Você está prestes a baixar o <b>Ledyvas Enterprise</b> — o ERP para turismo, hotelaria e catering, com <b>conexão direta por API ao QuickBooks Online, Zoho Books e Odoo</b> e <b>Exportar para Contabilidade</b> (QuickBooks Desktop, Xero, Alegra). Experimente 14 dias grátis com os seus dados. Depois da avaliação é contratado por <b>subscrição mensal</b>, apenas através de um Partner.',
+      html: 'Você está prestes a baixar o <b>Ledyvas Enterprise</b>, o ERP para turismo, hotelaria e catering, com <b>conexão direta por API ao QuickBooks Online, Zoho Books e Odoo</b> e <b>Exportar para Contabilidade</b> (QuickBooks Desktop, Xero, Alegra). Experimente 14 dias grátis com os seus dados. Depois da avaliação é contratado por <b>subscrição mensal</b>, apenas através de um Partner.',
       link: "Ver o Ledyvas Partners"
     }
   };
 
   const ULTIMATE_BANNER = {
     es: {
-      html: 'Está por descargar <b>Ledyvas Ultimate</b> — la edición de contabilidad e impuestos, con <b>conexión directa por API a QuickBooks Online, Zoho Books y Odoo</b> (sincroniza compras y ventas, sin CSV), impuesto por documento y la <b>localización fiscal de República Dominicana</b>: NCF y reportes DGII 606 / 607 / 608. Pruébela 14 días gratis con sus datos. Después de la prueba se contrata por <b>suscripción</b>.',
+      html: 'Está por descargar <b>Ledyvas Ultimate</b>, la edición de contabilidad e impuestos, con <b>conexión directa por API a QuickBooks Online, Zoho Books y Odoo</b> (sincroniza compras y ventas, sin CSV), impuesto por documento y la <b>localización fiscal de República Dominicana</b>: NCF y reportes DGII 606 / 607 / 608. Pruébela 14 días gratis con sus datos. Después de la prueba se contrata por <b>suscripción</b>.',
       link: "Ver Ledyvas Ultimate"
     },
     en: {
-      html: 'You are about to download <b>Ledyvas Ultimate</b> — the accounting and tax edition, with a <b>direct API connection to QuickBooks Online, Zoho Books and Odoo</b> (syncs purchases and sales, no CSV), tax per document and the <b>Dominican Republic fiscal localization</b>: NCF and DGII 606 / 607 / 608 reports. Try it free for 14 days with your own data. After the trial it is offered by <b>subscription</b>.',
+      html: 'You are about to download <b>Ledyvas Ultimate</b>, the accounting and tax edition, with a <b>direct API connection to QuickBooks Online, Zoho Books and Odoo</b> (syncs purchases and sales, no CSV), tax per document and the <b>Dominican Republic fiscal localization</b>: NCF and DGII 606 / 607 / 608 reports. Try it free for 14 days with your own data. After the trial it is offered by <b>subscription</b>.',
       link: "See Ledyvas Ultimate"
     },
     it: {
-      html: 'Stai per scaricare <b>Ledyvas Ultimate</b> — l\'edizione di contabilità e imposte, con <b>connessione diretta via API a QuickBooks Online, Zoho Books e Odoo</b> (sincronizza acquisti e vendite, senza CSV), imposta per documento e la <b>localizzazione fiscale della Repubblica Dominicana</b>: NCF e report DGII 606 / 607 / 608. Provala 14 giorni gratis con i tuoi dati. Dopo la prova si attiva con <b>abbonamento</b>.',
+      html: 'Stai per scaricare <b>Ledyvas Ultimate</b>, l\'edizione di contabilità e imposte, con <b>connessione diretta via API a QuickBooks Online, Zoho Books e Odoo</b> (sincronizza acquisti e vendite, senza CSV), imposta per documento e la <b>localizzazione fiscale della Repubblica Dominicana</b>: NCF e report DGII 606 / 607 / 608. Provala 14 giorni gratis con i tuoi dati. Dopo la prova si attiva con <b>abbonamento</b>.',
       link: "Vedi Ledyvas Ultimate"
     },
     fr: {
-      html: 'Vous êtes sur le point de télécharger <b>Ledyvas Ultimate</b> — l\'édition comptabilité et taxes, avec <b>connexion directe par API à QuickBooks Online, Zoho Books et Odoo</b> (synchronise achats et ventes, sans CSV), taxe par document et la <b>localisation fiscale de la République dominicaine</b> : NCF et rapports DGII 606 / 607 / 608. Essayez-la 14 jours gratuitement avec vos données. Après l\'essai, elle est proposée par <b>abonnement</b>.',
+      html: 'Vous êtes sur le point de télécharger <b>Ledyvas Ultimate</b>, l\'édition comptabilité et taxes, avec <b>connexion directe par API à QuickBooks Online, Zoho Books et Odoo</b> (synchronise achats et ventes, sans CSV), taxe par document et la <b>localisation fiscale de la République dominicaine</b> : NCF et rapports DGII 606 / 607 / 608. Essayez-la 14 jours gratuitement avec vos données. Après l\'essai, elle est proposée par <b>abonnement</b>.',
       link: "Voir Ledyvas Ultimate"
     },
     pt: {
-      html: 'Você está prestes a baixar o <b>Ledyvas Ultimate</b> — a edição de contabilidade e impostos, com <b>conexão direta por API ao QuickBooks Online, Zoho Books e Odoo</b> (sincroniza compras e vendas, sem CSV), imposto por documento e a <b>localização fiscal da República Dominicana</b>: NCF e relatórios DGII 606 / 607 / 608. Experimente 14 dias grátis com os seus dados. Depois da avaliação é contratado por <b>subscrição</b>.',
+      html: 'Você está prestes a baixar o <b>Ledyvas Ultimate</b>, a edição de contabilidade e impostos, com <b>conexão direta por API ao QuickBooks Online, Zoho Books e Odoo</b> (sincroniza compras e vendas, sem CSV), imposto por documento e a <b>localização fiscal da República Dominicana</b>: NCF e relatórios DGII 606 / 607 / 608. Experimente 14 dias grátis com os seus dados. Depois da avaliação é contratado por <b>subscrição</b>.',
       link: "Ver o Ledyvas Ultimate"
     }
   };

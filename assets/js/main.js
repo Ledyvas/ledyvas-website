@@ -1,4 +1,4 @@
-// LEDYVAS — interacciones del sitio
+// LEDYVAS, interacciones del sitio
 
 document.addEventListener('DOMContentLoaded', () => {
   // Banner de consentimiento de cookies (GDPR / Consent Mode v2).
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Selector de idioma (visual — el sitio es solo español por ahora)
+  // Selector de idioma (visual, el sitio es solo español por ahora)
   document.querySelectorAll('.lang-switch button').forEach((btn) => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.lang-switch button').forEach((b) => b.classList.remove('active'));
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Selector de idioma — escritorio (dropdown en el header)
+  // Selector de idioma, escritorio (dropdown en el header)
   document.querySelectorAll('.lang-dropdown').forEach((dropdown) => {
     const toggle = dropdown.querySelector('[data-lang-toggle]');
     if (!toggle) return;

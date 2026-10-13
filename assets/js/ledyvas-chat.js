@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LEDYVAS — Asistente web (paginas Software y Metrica, 6 idiomas)
+   LEDYVAS, Asistente web (paginas Software y Metrica, 6 idiomas)
    Widget flotante autocontenido: inyecta su propio CSS y su propio texto en
    6 idiomas (toma el idioma de <html lang="...">). Llama al Worker POST /web-chat
    (handleWebChat en ledyvas-license-server/worker.js).

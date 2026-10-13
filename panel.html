@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Panel del Partner — Ledyvas</title>
+<title>Panel del Partner | Ledyvas</title>
 <link rel="icon" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +14,13 @@
 <meta property="og:site_name" content="Ledyvas">
 <meta property="og:locale" content="es">
 <meta property="og:url" content="https://ledyvas.com/panel.html">
-<meta property="og:title" content="Panel del Partner — Ledyvas">
+<meta property="og:title" content="Panel del Partner | Ledyvas">
 <meta property="og:description" content="Ledyvas: software de gestión empresarial todo en uno.">
 <meta property="og:image" content="https://ledyvas.com/assets/img/og/og-es.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Panel del Partner — Ledyvas">
+<meta name="twitter:title" content="Panel del Partner | Ledyvas">
 <meta name="twitter:description" content="Ledyvas: software de gestión empresarial todo en uno.">
 <meta name="twitter:image" content="https://ledyvas.com/assets/img/og/og-es.png">
 </head>
@@ -137,7 +137,7 @@
   var T = window.DistI18n;
 
   // ------------------------------------------------------------------
-  // DATOS — hoy son de ejemplo. Después del 27-sep esto se reemplaza por:
+  // DATOS, hoy son de ejemplo. Después del 27-sep esto se reemplaza por:
   //   fetch("https://<worker>/panel?t=" + token).then(r => r.json())
   // El Worker de licencias ya ve cada descarga/venta/activación; sólo hay
   // que exponerlas agregadas por código de distribuidor.
@@ -176,7 +176,7 @@
   function applyStaticI18n() {
     document.documentElement.lang = T.lang();
     document.querySelectorAll("[data-i18n]").forEach(function (el) { el.textContent = T.t(el.getAttribute("data-i18n")); });
-    document.title = T.t("panel.title") + " — Ledyvas";
+    document.title = T.t("panel.title") + ", Ledyvas";
   }
 
   function renderLang() {
@@ -249,7 +249,7 @@
   // FACTURA DE COMISION (clausula 6 del contrato, 2026-09-17). Envia la
   // factura al Worker (POST /invoices), que la guarda en KV y avisa a
   // Ledyvas por correo. El Partner se identifica por su codigo (hoy
-  // DATA.distributor.code — despues del 27-sep esto sale del token real).
+  // DATA.distributor.code, despues del 27-sep esto sale del token real).
   // ------------------------------------------------------------------
   var WORKER = "https://ledyvas-license-server.ledyvas.workers.dev";
 

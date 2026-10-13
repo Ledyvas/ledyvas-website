@@ -17,7 +17,7 @@ module.exports = {
       lede: "Un software de gestión para establecimientos reúne compras, inventario, ventas, caja y reportes de su local en un solo lugar. Esta guía le ayuda a entender qué debe hacer y a no equivocarse al elegir.",
       body: `
       <h2>Qué es un software de gestión para establecimientos</h2>
-      <p>Es el sistema que centraliza la operación diaria de un local comercial —un restaurante, una tienda, un salón, un minimarket, una empresa de catering, una excursión turística— en una única plataforma. En vez de tener el stock en un cuaderno, las compras en el WhatsApp del proveedor y las ventas en la memoria del dueño, todo queda registrado y conectado: cuando entra una compra, sube el inventario; cuando hay una venta, baja; y al final del día sabe cuánto compró, cuánto vendió y cuánto le quedó.</p>
+      <p>Es el sistema que centraliza la operación diaria de un local comercial, un restaurante, una tienda, un salón, un minimarket, una empresa de catering, una excursión turística, en una única plataforma. En vez de tener el stock en un cuaderno, las compras en el WhatsApp del proveedor y las ventas en la memoria del dueño, todo queda registrado y conectado: cuando entra una compra, sube el inventario; cuando hay una venta, baja; y al final del día sabe cuánto compró, cuánto vendió y cuánto le quedó.</p>
 
       <h2>Señales de que su establecimiento ya lo necesita</h2>
       <ul>
@@ -52,7 +52,7 @@ module.exports = {
 
       <h2>Cómo lo resuelve Ledyvas</h2>
       <p>Ledyvas es un software de gestión para establecimientos que se instala en su PC con Windows y funciona sin depender de una conexión permanente. Cubre compras, proveedores, productos, inventario, ventas, caja, producción y reportes, con usuarios y permisos. La base de datos es suya y está cifrada.</p>
-      <p>Se paga <strong>una sola vez</strong> —no hay mensualidad— y deja los datos ordenados para su contador (las ediciones Enterprise y Ultimate, por partners, se conectan además con <strong>QuickBooks Online, Zoho Books y Odoo</strong>). Sirve para restaurantes, bares, cafeterías, catering, tiendas y salones, y tiene un modo opcional para operadores de excursiones turísticas (cálculo por PAX, combustible de flotas, margen por destino) que se puede apagar.</p>
+      <p>Se paga <strong>una sola vez</strong>, no hay mensualidad, y deja los datos ordenados para su contador (las ediciones Enterprise y Ultimate, por partners, se conectan además con <strong>QuickBooks Online, Zoho Books y Odoo</strong>). Sirve para restaurantes, bares, cafeterías, catering, tiendas y salones, y tiene un modo opcional para operadores de excursiones turísticas (cálculo por PAX, combustible de flotas, margen por destino) que se puede apagar.</p>
       <p>Puede <a href="descargas.html">descargar la prueba gratis</a> y usarla sin límite de tiempo con sus datos reales antes de decidir.</p>
     `
     },
@@ -65,7 +65,7 @@ module.exports = {
       lede: "En un restaurante, el dinero no se pierde en la caja: se pierde en la cocina. Esta guía explica qué controla un software de gestión para restaurantes y servicios de catering, y cómo le ayuda a saber su costo real.",
       body: `
       <h2>El problema real de un restaurante sin sistema</h2>
-      <p>Un restaurante o una empresa de catering puede facturar mucho y ganar poco. El motivo casi siempre es el mismo: el <strong>food cost</strong> —lo que cuestan los insumos de cada plato o de cada evento— se lleva a ojo. Se compra de más y se vence; se compra de menos y falta en el peor momento; los insumos se van en mermas, en porciones mal medidas o en robo, y nadie lo ve porque no hay contra qué comparar. Al cierre del mes el dueño mira el banco y no entiende por qué no cuadra.</p>
+      <p>Un restaurante o una empresa de catering puede facturar mucho y ganar poco. El motivo casi siempre es el mismo: el <strong>food cost</strong>, lo que cuestan los insumos de cada plato o de cada evento, se lleva a ojo. Se compra de más y se vence; se compra de menos y falta en el peor momento; los insumos se van en mermas, en porciones mal medidas o en robo, y nadie lo ve porque no hay contra qué comparar. Al cierre del mes el dueño mira el banco y no entiende por qué no cuadra.</p>
 
       <h2>Qué controla un buen software para restaurantes</h2>
       <ul>
@@ -79,7 +79,7 @@ module.exports = {
       </ul>
 
       <h2>Recetas y food cost: el corazón del sistema</h2>
-      <p>La clave de un software de restaurante es la receta. Carga una vez qué lleva cada plato —200 g de carne, 50 g de queso, un pan— y el sistema calcula su costo con los precios de compra actuales. Cuando vende ese plato, descuenta esos insumos del inventario. Así, sin contar a mano, sabe:</p>
+      <p>La clave de un software de restaurante es la receta. Carga una vez qué lleva cada plato, 200 g de carne, 50 g de queso, un pan, y el sistema calcula su costo con los precios de compra actuales. Cuando vende ese plato, descuenta esos insumos del inventario. Así, sin contar a mano, sabe:</p>
       <ul>
         <li>Cuánto le cuesta cada plato y qué margen le deja.</li>
         <li>Qué platos le hacen ganar y cuáles vende casi sin ganancia.</li>
@@ -95,7 +95,7 @@ module.exports = {
 
       <h2>Cómo lo hace Ledyvas</h2>
       <p>Ledyvas para restaurantes y catering cubre compras, proveedores, recetas, producción, inventario de insumos, ventas, caja, control de combustible y cierre diario, con usuarios y permisos. Se instala en Windows, funciona sin depender de internet permanente y se paga una sola vez. Los datos quedan ordenados para el contador; las ediciones Enterprise y Ultimate (por partners) se conectan además con QuickBooks Online, Zoho Books y Odoo.</p>
-      <p>Tiene además un modo para operadores de excursiones —donde la comida y la bebida se calculan por PAX del día— que se puede activar o dejar apagado. <a href="descargas.html">Descargue la prueba gratis</a> y pruébelo con la carta y los proveedores reales de su restaurante o servicio de catering.</p>
+      <p>Tiene además un modo para operadores de excursiones, donde la comida y la bebida se calculan por PAX del día, que se puede activar o dejar apagado. <a href="descargas.html">Descargue la prueba gratis</a> y pruébelo con la carta y los proveedores reales de su restaurante o servicio de catering.</p>
     `
     },
 
@@ -127,7 +127,7 @@ module.exports = {
       <p>El combustible de una flota de lanchas o buses es uno de los costos que más se escapa. El sistema registra el despacho a cada unidad, la devolución de lo que sobró y el consumo neto, y lo consolida por semana y por empresa. Sirve también para auditar y hasta para vender combustible a terceros con trazabilidad.</p>
 
       <h2>Margen por destino</h2>
-      <p>Al cruzar lo que se despachó a cada destino con lo que se vendió allí, sabe el costo, la venta y el margen de cada excursión —y el costo por PAX—, no un promedio general.</p>
+      <p>Al cruzar lo que se despachó a cada destino con lo que se vendió allí, sabe el costo, la venta y el margen de cada excursión, y el costo por PAX, no un promedio general.</p>
 
       <h2>Cómo lo hace Ledyvas</h2>
       <p>Ledyvas tiene un <strong>modo turismo</strong> con todo esto: fórmula por PAX y por destino, compra asistida, recetas para el catering a bordo, centro logístico, control de combustible por vehículo o embarcación, devoluciones, margen por destino y consolidado de flotas. Se activa desde la configuración; si además tiene un restaurante o una tienda, esas funciones conviven en el mismo sistema.</p>
@@ -148,7 +148,7 @@ module.exports = {
       lede: "Management software brings the purchasing, inventory, sales, cash and reports of your venue into one place. This guide helps you understand what it must do and how to choose without regrets.",
       body: `
       <h2>What business management software is</h2>
-      <p>It's the system that centralises the daily operation of a business —a restaurant, a shop, a salon, a minimarket, a catering company, a tour excursion— in a single platform. Instead of stock in a notebook, purchases in the supplier's WhatsApp and sales in the owner's head, everything is recorded and connected: a purchase raises the inventory, a sale lowers it, and at the end of the day you know what you bought, what you sold and what you kept.</p>
+      <p>It's the system that centralises the daily operation of a business, a restaurant, a shop, a salon, a minimarket, a catering company, a tour excursion, in a single platform. Instead of stock in a notebook, purchases in the supplier's WhatsApp and sales in the owner's head, everything is recorded and connected: a purchase raises the inventory, a sale lowers it, and at the end of the day you know what you bought, what you sold and what you kept.</p>
 
       <h2>Signs your venue already needs it</h2>
       <ul>
@@ -183,7 +183,7 @@ module.exports = {
 
       <h2>How Ledyvas solves it</h2>
       <p>Ledyvas is business management software that installs on your Windows PC and works without a permanent connection. It covers purchasing, suppliers, products, inventory, sales, cash, production and reports, with users and permissions. The database is yours and encrypted.</p>
-      <p>You pay <strong>once</strong> —no monthly fee— and it keeps your data tidy for your accountant (the Enterprise and Ultimate editions, via partners, also connect to <strong>QuickBooks Online, Zoho Books and Odoo</strong>). It works for restaurants, bars, cafés, catering, shops and salons, and has an optional mode for tour operators (per-PAX calculation, fleet fuel, margin by destination) that can be turned off.</p>
+      <p>You pay <strong>once</strong>, no monthly fee, and it keeps your data tidy for your accountant (the Enterprise and Ultimate editions, via partners, also connect to <strong>QuickBooks Online, Zoho Books and Odoo</strong>). It works for restaurants, bars, cafés, catering, shops and salons, and has an optional mode for tour operators (per-PAX calculation, fleet fuel, margin by destination) that can be turned off.</p>
       <p>You can <a href="download.html">download the free trial</a> and use it with no time limit on your real data before deciding.</p>
     `
     },
@@ -196,7 +196,7 @@ module.exports = {
       lede: "In a restaurant, money isn't lost at the till: it's lost in the kitchen. This guide explains what restaurant and catering management software controls, and how it helps you know your real cost.",
       body: `
       <h2>The real problem of a restaurant with no system</h2>
-      <p>A restaurant or a catering company can have high revenue and low profit. The reason is almost always the same: the <strong>food cost</strong> —what the ingredients of each dish or each event cost— is estimated by eye. You over-buy and it expires; you under-buy and run out at the worst moment; ingredients disappear in waste, mis-portioning or theft, and nobody sees it because there's nothing to compare against. At month end the owner looks at the bank and can't understand why it doesn't add up.</p>
+      <p>A restaurant or a catering company can have high revenue and low profit. The reason is almost always the same: the <strong>food cost</strong>, what the ingredients of each dish or each event cost, is estimated by eye. You over-buy and it expires; you under-buy and run out at the worst moment; ingredients disappear in waste, mis-portioning or theft, and nobody sees it because there's nothing to compare against. At month end the owner looks at the bank and can't understand why it doesn't add up.</p>
 
       <h2>What good restaurant software controls</h2>
       <ul>
@@ -210,7 +210,7 @@ module.exports = {
       </ul>
 
       <h2>Recipes and food cost: the heart of the system</h2>
-      <p>The key to restaurant software is the recipe. You enter once what each dish contains —200 g of meat, 50 g of cheese, one bun— and the system calculates its cost from current purchase prices. When you sell that dish, it deducts those ingredients from inventory. So, without counting by hand, you know:</p>
+      <p>The key to restaurant software is the recipe. You enter once what each dish contains, 200 g of meat, 50 g of cheese, one bun, and the system calculates its cost from current purchase prices. When you sell that dish, it deducts those ingredients from inventory. So, without counting by hand, you know:</p>
       <ul>
         <li>How much each dish costs you and what margin it leaves.</li>
         <li>Which dishes make you money and which you sell at almost no profit.</li>
@@ -226,7 +226,7 @@ module.exports = {
 
       <h2>How Ledyvas does it</h2>
       <p>Ledyvas for restaurants and catering covers purchasing, suppliers, recipes, production, ingredient inventory, sales, cash, fuel control and daily close, with users and permissions. It installs on Windows, works without a permanent connection and is paid once. Your data stays tidy for your accountant; the Enterprise and Ultimate editions (via partners) also connect to QuickBooks Online, Zoho Books and Odoo.</p>
-      <p>It also has a mode for tour operators —where food and drink are calculated per PAX of the day— that can be turned on or off. <a href="download.html">Download the free trial</a> and try it with the real menu and suppliers of your restaurant or catering service.</p>
+      <p>It also has a mode for tour operators, where food and drink are calculated per PAX of the day, that can be turned on or off. <a href="download.html">Download the free trial</a> and try it with the real menu and suppliers of your restaurant or catering service.</p>
     `
     },
 
@@ -238,7 +238,7 @@ module.exports = {
       lede: "A tour operator doesn't run like a shop: everything moves with the day's PAX. This guide explains what software built for that business needs, including onboard catering.",
       body: `
       <h2>Why a tour operator needs a different kind of software</h2>
-      <p>On an excursion, the food, the drink, the disposables and even the fuel for the boats and buses are calculated <strong>per passenger and per destination</strong>. If 120 PAX go out tomorrow split across four beaches, each beach needs a different amount of each supply, and buying it right is the difference between making a margin and giving it away. Ordinary shop software can't do that calculation —let alone if you also serve catering onboard.</p>
+      <p>On an excursion, the food, the drink, the disposables and even the fuel for the boats and buses are calculated <strong>per passenger and per destination</strong>. If 120 PAX go out tomorrow split across four beaches, each beach needs a different amount of each supply, and buying it right is the difference between making a margin and giving it away. Ordinary shop software can't do that calculation, let alone if you also serve catering onboard.</p>
 
       <h2>What it has to solve</h2>
       <ul>
@@ -258,7 +258,7 @@ module.exports = {
       <p>Fuel for a fleet of boats or buses is one of the costs that leaks the most. The system records dispatch to each unit, the return of what was left and net consumption, and consolidates it by week and by company. It also serves for auditing and even for selling fuel to third parties with traceability.</p>
 
       <h2>Margin by destination</h2>
-      <p>By cross-checking what was dispatched to each destination against what was sold there, you know the cost, the sale and the margin of each excursion —and the cost per PAX— not a general average.</p>
+      <p>By cross-checking what was dispatched to each destination against what was sold there, you know the cost, the sale and the margin of each excursion, and the cost per PAX, not a general average.</p>
 
       <h2>How Ledyvas does it</h2>
       <p>Ledyvas has a <strong>tourism mode</strong> with all of this: formula per PAX and per destination, assisted purchasing, recipes for onboard catering, logistics hub, per-vehicle and per-boat fuel control, returns, margin by destination and fleet consolidation. It's enabled from settings; if you also have a restaurant or a shop, those functions live in the same system.</p>
@@ -279,7 +279,7 @@ module.exports = {
       lede: "Un software gestionale riunisce acquisti, magazzino, vendite, cassa e report del tuo locale in un unico posto. Questa guida ti aiuta a capire cosa deve fare e a non sbagliare la scelta.",
       body: `
       <h2>Cos'è un software gestionale per attività</h2>
-      <p>È il sistema che centralizza l'operatività quotidiana di un'attività —un ristorante, un negozio, un salone, un minimarket, un'azienda di catering, un'escursione turistica— in un'unica piattaforma. Invece del magazzino su un quaderno, gli acquisti nel WhatsApp del fornitore e le vendite nella testa del titolare, tutto è registrato e collegato: un acquisto aumenta il magazzino, una vendita lo diminuisce, e a fine giornata sai quanto hai comprato, quanto hai venduto e quanto ti è rimasto.</p>
+      <p>È il sistema che centralizza l'operatività quotidiana di un'attività, un ristorante, un negozio, un salone, un minimarket, un'azienda di catering, un'escursione turistica, in un'unica piattaforma. Invece del magazzino su un quaderno, gli acquisti nel WhatsApp del fornitore e le vendite nella testa del titolare, tutto è registrato e collegato: un acquisto aumenta il magazzino, una vendita lo diminuisce, e a fine giornata sai quanto hai comprato, quanto hai venduto e quanto ti è rimasto.</p>
 
       <h2>Segnali che al tuo locale serve già</h2>
       <ul>
@@ -314,7 +314,7 @@ module.exports = {
 
       <h2>Come lo risolve Ledyvas</h2>
       <p>Ledyvas è un software gestionale che si installa sul tuo PC Windows e funziona senza connessione permanente. Copre acquisti, fornitori, prodotti, magazzino, vendite, cassa, produzione e report, con utenti e permessi. Il database è tuo ed è cifrato.</p>
-      <p>Si paga <strong>una sola volta</strong> —niente canone— e tiene i dati in ordine per il commercialista (le edizioni Enterprise e Ultimate, tramite partner, si collegano anche a <strong>QuickBooks Online, Zoho Books e Odoo</strong>). Va bene per ristoranti, bar, caffetterie, catering, negozi e saloni, e ha una modalità opzionale per tour operator (calcolo per PAX, carburante delle flotte, margine per destinazione) che si può disattivare.</p>
+      <p>Si paga <strong>una sola volta</strong>, niente canone, e tiene i dati in ordine per il commercialista (le edizioni Enterprise e Ultimate, tramite partner, si collegano anche a <strong>QuickBooks Online, Zoho Books e Odoo</strong>). Va bene per ristoranti, bar, caffetterie, catering, negozi e saloni, e ha una modalità opzionale per tour operator (calcolo per PAX, carburante delle flotte, margine per destinazione) che si può disattivare.</p>
       <p>Puoi <a href="download.html">scaricare la prova gratuita</a> e usarla senza limiti di tempo con i tuoi dati reali prima di decidere.</p>
     `
     },
@@ -327,7 +327,7 @@ module.exports = {
       lede: "In un ristorante i soldi non si perdono in cassa: si perdono in cucina. Questa guida spiega cosa controlla un software per ristoranti e servizi di catering e come ti aiuta a sapere il costo reale.",
       body: `
       <h2>Il vero problema di un ristorante senza sistema</h2>
-      <p>Un ristorante o un'azienda di catering può avere un fatturato alto e un utile basso. Il motivo è quasi sempre lo stesso: il <strong>food cost</strong> —quanto costano gli ingredienti di ogni piatto o di ogni evento— si stima a occhio. Compri troppo e scade; compri poco e manca nel momento peggiore; gli ingredienti se ne vanno in scarti, porzioni sbagliate o furti, e nessuno se ne accorge perché non c'è nulla con cui confrontare. A fine mese il titolare guarda la banca e non capisce perché non torna.</p>
+      <p>Un ristorante o un'azienda di catering può avere un fatturato alto e un utile basso. Il motivo è quasi sempre lo stesso: il <strong>food cost</strong>, quanto costano gli ingredienti di ogni piatto o di ogni evento, si stima a occhio. Compri troppo e scade; compri poco e manca nel momento peggiore; gli ingredienti se ne vanno in scarti, porzioni sbagliate o furti, e nessuno se ne accorge perché non c'è nulla con cui confrontare. A fine mese il titolare guarda la banca e non capisce perché non torna.</p>
 
       <h2>Cosa controlla un buon software per ristoranti</h2>
       <ul>
@@ -341,7 +341,7 @@ module.exports = {
       </ul>
 
       <h2>Ricette e food cost: il cuore del sistema</h2>
-      <p>La chiave di un software per ristoranti è la ricetta. Inserisci una volta cosa contiene ogni piatto —200 g di carne, 50 g di formaggio, un panino— e il sistema calcola il costo con i prezzi di acquisto attuali. Quando vendi quel piatto, scala quegli ingredienti dal magazzino. Così, senza contare a mano, sai:</p>
+      <p>La chiave di un software per ristoranti è la ricetta. Inserisci una volta cosa contiene ogni piatto, 200 g di carne, 50 g di formaggio, un panino, e il sistema calcola il costo con i prezzi di acquisto attuali. Quando vendi quel piatto, scala quegli ingredienti dal magazzino. Così, senza contare a mano, sai:</p>
       <ul>
         <li>Quanto ti costa ogni piatto e che margine lascia.</li>
         <li>Quali piatti ti fanno guadagnare e quali vendi quasi senza utile.</li>
@@ -357,7 +357,7 @@ module.exports = {
 
       <h2>Come lo fa Ledyvas</h2>
       <p>Ledyvas per ristoranti e catering copre acquisti, fornitori, ricette, produzione, magazzino ingredienti, vendite, cassa, controllo del carburante e chiusura giornaliera, con utenti e permessi. Si installa su Windows, funziona senza connessione permanente e si paga una sola volta. I dati restano in ordine per il commercialista; le edizioni Enterprise e Ultimate (tramite partner) si collegano anche a QuickBooks Online, Zoho Books e Odoo.</p>
-      <p>Ha anche una modalità per tour operator —dove cibo e bevande si calcolano per PAX del giorno— che si può attivare o lasciare spenta. <a href="download.html">Scarica la prova gratuita</a> e provala con il menù e i fornitori reali del tuo ristorante o servizio di catering.</p>
+      <p>Ha anche una modalità per tour operator, dove cibo e bevande si calcolano per PAX del giorno, che si può attivare o lasciare spenta. <a href="download.html">Scarica la prova gratuita</a> e provala con il menù e i fornitori reali del tuo ristorante o servizio di catering.</p>
     `
     },
 
@@ -389,7 +389,7 @@ module.exports = {
       <p>Il carburante di una flotta di barche o bus è uno dei costi che sfugge di più. Il sistema registra l'erogazione a ogni unità, il reso di ciò che è avanzato e il consumo netto, e lo consolida per settimana e per azienda. Serve anche per l'audit e persino per vendere carburante a terzi con tracciabilità.</p>
 
       <h2>Margine per destinazione</h2>
-      <p>Incrociando ciò che è stato erogato a ogni destinazione con ciò che è stato venduto lì, sai il costo, la vendita e il margine di ogni escursione —e il costo per PAX— non una media generale.</p>
+      <p>Incrociando ciò che è stato erogato a ogni destinazione con ciò che è stato venduto lì, sai il costo, la vendita e il margine di ogni escursione, e il costo per PAX, non una media generale.</p>
 
       <h2>Come lo fa Ledyvas</h2>
       <p>Ledyvas ha una <strong>modalità turismo</strong> con tutto questo: formula per PAX e per destinazione, acquisto assistito, ricette per il catering a bordo, centro logistico, controllo del carburante per veicolo e imbarcazione, resi, margine per destinazione e consolidato delle flotte. Si attiva dalle impostazioni; se hai anche un ristorante o un negozio, quelle funzioni convivono nello stesso sistema.</p>
@@ -410,7 +410,7 @@ module.exports = {
       lede: "Un logiciel de gestion réunit les achats, le stock, les ventes, la caisse et les rapports de votre établissement au même endroit. Ce guide vous aide à comprendre ce qu'il doit faire et à choisir sans regret.",
       body: `
       <h2>Ce qu'est un logiciel de gestion d'entreprise</h2>
-      <p>C'est le système qui centralise l'activité quotidienne d'un établissement —un restaurant, un commerce, un salon, une supérette, un traiteur, une excursion touristique— sur une seule plateforme. Au lieu du stock dans un cahier, des achats dans le WhatsApp du fournisseur et des ventes dans la tête du gérant, tout est enregistré et relié : un achat augmente le stock, une vente le diminue, et en fin de journée vous savez ce que vous avez acheté, vendu et gardé.</p>
+      <p>C'est le système qui centralise l'activité quotidienne d'un établissement, un restaurant, un commerce, un salon, une supérette, un traiteur, une excursion touristique, sur une seule plateforme. Au lieu du stock dans un cahier, des achats dans le WhatsApp du fournisseur et des ventes dans la tête du gérant, tout est enregistré et relié : un achat augmente le stock, une vente le diminue, et en fin de journée vous savez ce que vous avez acheté, vendu et gardé.</p>
 
       <h2>Les signes que votre établissement en a déjà besoin</h2>
       <ul>
@@ -445,7 +445,7 @@ module.exports = {
 
       <h2>Comment Ledyvas le résout</h2>
       <p>Ledyvas est un logiciel de gestion qui s'installe sur votre PC Windows et fonctionne sans connexion permanente. Il couvre les achats, les fournisseurs, les produits, le stock, les ventes, la caisse, la production et les rapports, avec utilisateurs et permissions. La base de données vous appartient et est chiffrée.</p>
-      <p>Il se paie <strong>une seule fois</strong> —pas d'abonnement— et garde vos données en ordre pour votre comptable (les éditions Enterprise et Ultimate, via partenaires, se connectent aussi à <strong>QuickBooks Online, Zoho Books et Odoo</strong>). Il convient aux restaurants, bars, cafés, traiteurs, commerces et salons, et dispose d'un mode optionnel pour les organisateurs d'excursions (calcul par PAX, carburant des flottes, marge par destination) que l'on peut désactiver.</p>
+      <p>Il se paie <strong>une seule fois</strong>, pas d'abonnement, et garde vos données en ordre pour votre comptable (les éditions Enterprise et Ultimate, via partenaires, se connectent aussi à <strong>QuickBooks Online, Zoho Books et Odoo</strong>). Il convient aux restaurants, bars, cafés, traiteurs, commerces et salons, et dispose d'un mode optionnel pour les organisateurs d'excursions (calcul par PAX, carburant des flottes, marge par destination) que l'on peut désactiver.</p>
       <p>Vous pouvez <a href="telechargements.html">télécharger l'essai gratuit</a> et l'utiliser sans limite de temps avec vos données réelles avant de décider.</p>
     `
     },
@@ -458,7 +458,7 @@ module.exports = {
       lede: "Dans un restaurant, l'argent ne se perd pas à la caisse : il se perd en cuisine. Ce guide explique ce que contrôle un logiciel pour restaurants et traiteurs et comment il vous aide à connaître votre coût réel.",
       body: `
       <h2>Le vrai problème d'un restaurant sans système</h2>
-      <p>Un restaurant ou un traiteur peut avoir un gros chiffre d'affaires et peu de bénéfice. La raison est presque toujours la même : le <strong>food cost</strong> —ce que coûtent les ingrédients de chaque plat ou de chaque événement— est estimé à l'œil. Vous achetez trop et cela périme ; vous achetez trop peu et il manque au pire moment ; les ingrédients partent en pertes, en portions mal calibrées ou en vol, et personne ne le voit car il n'y a rien à quoi comparer. En fin de mois, le gérant regarde la banque et ne comprend pas pourquoi ça ne tombe pas juste.</p>
+      <p>Un restaurant ou un traiteur peut avoir un gros chiffre d'affaires et peu de bénéfice. La raison est presque toujours la même : le <strong>food cost</strong>, ce que coûtent les ingrédients de chaque plat ou de chaque événement, est estimé à l'œil. Vous achetez trop et cela périme ; vous achetez trop peu et il manque au pire moment ; les ingrédients partent en pertes, en portions mal calibrées ou en vol, et personne ne le voit car il n'y a rien à quoi comparer. En fin de mois, le gérant regarde la banque et ne comprend pas pourquoi ça ne tombe pas juste.</p>
 
       <h2>Ce que contrôle un bon logiciel pour restaurants</h2>
       <ul>
@@ -472,7 +472,7 @@ module.exports = {
       </ul>
 
       <h2>Recettes et food cost : le cœur du système</h2>
-      <p>La clé d'un logiciel pour restaurant, c'est la recette. Vous saisissez une fois ce que contient chaque plat —200 g de viande, 50 g de fromage, un pain— et le système calcule son coût avec les prix d'achat actuels. Quand vous vendez ce plat, il déduit ces ingrédients du stock. Ainsi, sans compter à la main, vous savez :</p>
+      <p>La clé d'un logiciel pour restaurant, c'est la recette. Vous saisissez une fois ce que contient chaque plat, 200 g de viande, 50 g de fromage, un pain, et le système calcule son coût avec les prix d'achat actuels. Quand vous vendez ce plat, il déduit ces ingrédients du stock. Ainsi, sans compter à la main, vous savez :</p>
       <ul>
         <li>Combien vous coûte chaque plat et quelle marge il laisse.</li>
         <li>Quels plats vous font gagner et lesquels vous vendez presque sans bénéfice.</li>
@@ -488,7 +488,7 @@ module.exports = {
 
       <h2>Comment Ledyvas le fait</h2>
       <p>Ledyvas pour restaurants et traiteurs couvre les achats, les fournisseurs, les recettes, la production, le stock d'ingrédients, les ventes, la caisse, le contrôle du carburant et la clôture de journée, avec utilisateurs et permissions. Il s'installe sous Windows, fonctionne sans connexion permanente et se paie une seule fois. Vos données restent en ordre pour le comptable ; les éditions Enterprise et Ultimate (via partenaires) se connectent aussi à QuickBooks Online, Zoho Books et Odoo.</p>
-      <p>Il dispose aussi d'un mode pour organisateurs d'excursions —où la nourriture et les boissons se calculent par PAX du jour— que l'on peut activer ou laisser désactivé. <a href="telechargements.html">Téléchargez l'essai gratuit</a> et testez-le avec la carte et les fournisseurs réels de votre restaurant ou service traiteur.</p>
+      <p>Il dispose aussi d'un mode pour organisateurs d'excursions, où la nourriture et les boissons se calculent par PAX du jour, que l'on peut activer ou laisser désactivé. <a href="telechargements.html">Téléchargez l'essai gratuit</a> et testez-le avec la carte et les fournisseurs réels de votre restaurant ou service traiteur.</p>
     `
     },
 
@@ -500,7 +500,7 @@ module.exports = {
       lede: "Un organisateur d'excursions ne gère pas comme un commerce : tout bouge avec les PAX du jour. Ce guide explique ce dont a besoin un logiciel pensé pour ce métier, traiteur à bord compris.",
       body: `
       <h2>Pourquoi un organisateur d'excursions a besoin d'un autre type de logiciel</h2>
-      <p>Sur une excursion, la nourriture, les boissons, le jetable et même le carburant des bateaux et des bus se calculent <strong>par passager et par destination</strong>. Si 120 PAX partent demain répartis sur quatre plages, chaque plage a besoin d'une quantité différente de chaque fourniture, et bien l'acheter fait la différence entre gagner et donner la marge. Un logiciel de commerce ne sait pas faire ce calcul — encore moins si vous servez aussi un traiteur à bord.</p>
+      <p>Sur une excursion, la nourriture, les boissons, le jetable et même le carburant des bateaux et des bus se calculent <strong>par passager et par destination</strong>. Si 120 PAX partent demain répartis sur quatre plages, chaque plage a besoin d'une quantité différente de chaque fourniture, et bien l'acheter fait la différence entre gagner et donner la marge. Un logiciel de commerce ne sait pas faire ce calcul, encore moins si vous servez aussi un traiteur à bord.</p>
 
       <h2>Ce qu'il doit résoudre</h2>
       <ul>
@@ -520,7 +520,7 @@ module.exports = {
       <p>Le carburant d'une flotte de bateaux ou de bus est l'un des coûts qui fuit le plus. Le système enregistre la distribution à chaque unité, le retour de ce qui restait et la consommation nette, et le consolide par semaine et par entreprise. Il sert aussi à l'audit et même à vendre du carburant à des tiers avec traçabilité.</p>
 
       <h2>Marge par destination</h2>
-      <p>En croisant ce qui a été distribué à chaque destination avec ce qui y a été vendu, vous connaissez le coût, la vente et la marge de chaque excursion —et le coût par PAX— pas une moyenne générale.</p>
+      <p>En croisant ce qui a été distribué à chaque destination avec ce qui y a été vendu, vous connaissez le coût, la vente et la marge de chaque excursion, et le coût par PAX, pas une moyenne générale.</p>
 
       <h2>Comment Ledyvas le fait</h2>
       <p>Ledyvas dispose d'un <strong>mode tourisme</strong> avec tout cela : formule par PAX et par destination, achat assisté, recettes pour le traiteur à bord, centre logistique, contrôle du carburant par véhicule et par bateau, retours, marge par destination et consolidation des flottes. Il s'active dans les réglages ; si vous avez aussi un restaurant ou un commerce, ces fonctions cohabitent dans le même système.</p>
@@ -541,7 +541,7 @@ module.exports = {
       lede: "Um software de gestão reúne as compras, o stock, as vendas, a caixa e os relatórios do seu estabelecimento num só lugar. Este guia ajuda-o a perceber o que ele deve fazer e a escolher sem arrependimentos.",
       body: `
       <h2>O que é um software de gestão para estabelecimentos</h2>
-      <p>É o sistema que centraliza a operação diária de um estabelecimento —um restaurante, uma loja, um salão, um minimercado, uma empresa de catering, uma excursão turística— numa única plataforma. Em vez de ter o stock num caderno, as compras no WhatsApp do fornecedor e as vendas na cabeça do dono, tudo fica registado e ligado: uma compra sobe o stock, uma venda desce, e no fim do dia sabe quanto comprou, quanto vendeu e quanto ficou.</p>
+      <p>É o sistema que centraliza a operação diária de um estabelecimento, um restaurante, uma loja, um salão, um minimercado, uma empresa de catering, uma excursão turística, numa única plataforma. Em vez de ter o stock num caderno, as compras no WhatsApp do fornecedor e as vendas na cabeça do dono, tudo fica registado e ligado: uma compra sobe o stock, uma venda desce, e no fim do dia sabe quanto comprou, quanto vendeu e quanto ficou.</p>
 
       <h2>Sinais de que o seu estabelecimento já precisa</h2>
       <ul>
@@ -576,7 +576,7 @@ module.exports = {
 
       <h2>Como a Ledyvas resolve</h2>
       <p>A Ledyvas é um software de gestão que se instala no seu PC com Windows e funciona sem ligação permanente. Cobre compras, fornecedores, produtos, stock, vendas, caixa, produção e relatórios, com utilizadores e permissões. A base de dados é sua e está cifrada.</p>
-      <p>Paga-se <strong>uma única vez</strong> —sem mensalidade— e mantém os dados organizados para o seu contabilista (as edições Enterprise e Ultimate, via parceiros, ligam-se também ao <strong>QuickBooks Online, Zoho Books e Odoo</strong>). Serve para restaurantes, bares, cafés, catering, lojas e salões, e tem um modo opcional para operadores de excursões (cálculo por PAX, combustível das frotas, margem por destino) que se pode desligar.</p>
+      <p>Paga-se <strong>uma única vez</strong>, sem mensalidade, e mantém os dados organizados para o seu contabilista (as edições Enterprise e Ultimate, via parceiros, ligam-se também ao <strong>QuickBooks Online, Zoho Books e Odoo</strong>). Serve para restaurantes, bares, cafés, catering, lojas e salões, e tem um modo opcional para operadores de excursões (cálculo por PAX, combustível das frotas, margem por destino) que se pode desligar.</p>
       <p>Pode <a href="downloads.html">descarregar o teste grátis</a> e usá-lo sem limite de tempo com os seus dados reais antes de decidir.</p>
     `
     },
@@ -589,7 +589,7 @@ module.exports = {
       lede: "Num restaurante, o dinheiro não se perde na caixa: perde-se na cozinha. Este guia explica o que controla um software para restaurantes e serviços de catering e como o ajuda a saber o custo real.",
       body: `
       <h2>O verdadeiro problema de um restaurante sem sistema</h2>
-      <p>Um restaurante ou uma empresa de catering pode ter faturação alta e lucro baixo. O motivo é quase sempre o mesmo: o <strong>food cost</strong> —quanto custam os ingredientes de cada prato ou de cada evento— é estimado a olho. Compra a mais e vence; compra a menos e falta no pior momento; os ingredientes vão-se em quebras, doses mal medidas ou furto, e ninguém vê porque não há com que comparar. No fecho do mês o dono olha para o banco e não percebe porque não bate certo.</p>
+      <p>Um restaurante ou uma empresa de catering pode ter faturação alta e lucro baixo. O motivo é quase sempre o mesmo: o <strong>food cost</strong>, quanto custam os ingredientes de cada prato ou de cada evento, é estimado a olho. Compra a mais e vence; compra a menos e falta no pior momento; os ingredientes vão-se em quebras, doses mal medidas ou furto, e ninguém vê porque não há com que comparar. No fecho do mês o dono olha para o banco e não percebe porque não bate certo.</p>
 
       <h2>O que um bom software para restaurantes controla</h2>
       <ul>
@@ -603,7 +603,7 @@ module.exports = {
       </ul>
 
       <h2>Receitas e food cost: o coração do sistema</h2>
-      <p>A chave de um software para restaurante é a receita. Introduz uma vez o que cada prato leva —200 g de carne, 50 g de queijo, um pão— e o sistema calcula o seu custo com os preços de compra atuais. Quando vende esse prato, desconta esses ingredientes do stock. Assim, sem contar à mão, sabe:</p>
+      <p>A chave de um software para restaurante é a receita. Introduz uma vez o que cada prato leva, 200 g de carne, 50 g de queijo, um pão, e o sistema calcula o seu custo com os preços de compra atuais. Quando vende esse prato, desconta esses ingredientes do stock. Assim, sem contar à mão, sabe:</p>
       <ul>
         <li>Quanto lhe custa cada prato e que margem deixa.</li>
         <li>Que pratos o fazem ganhar e quais vende quase sem lucro.</li>
@@ -619,7 +619,7 @@ module.exports = {
 
       <h2>Como a Ledyvas faz</h2>
       <p>A Ledyvas para restaurantes e catering cobre compras, fornecedores, receitas, produção, stock de ingredientes, vendas, caixa, controlo de combustível e fecho diário, com utilizadores e permissões. Instala-se em Windows, funciona sem ligação permanente e paga-se uma única vez. Os dados ficam organizados para o contabilista; as edições Enterprise e Ultimate (via parceiros) ligam-se também ao QuickBooks Online, Zoho Books e Odoo.</p>
-      <p>Tem ainda um modo para operadores de excursões —onde a comida e a bebida se calculam por PAX do dia— que se pode ativar ou deixar desligado. <a href="downloads.html">Descarregue o teste grátis</a> e experimente com a carta e os fornecedores reais do seu restaurante ou serviço de catering.</p>
+      <p>Tem ainda um modo para operadores de excursões, onde a comida e a bebida se calculam por PAX do dia, que se pode ativar ou deixar desligado. <a href="downloads.html">Descarregue o teste grátis</a> e experimente com a carta e os fornecedores reais do seu restaurante ou serviço de catering.</p>
     `
     },
 
@@ -651,7 +651,7 @@ module.exports = {
       <p>O combustível de uma frota de barcos ou autocarros é um dos custos que mais foge. O sistema regista o despacho a cada unidade, a devolução do que sobrou e o consumo líquido, e consolida-o por semana e por empresa. Serve também para auditar e até para vender combustível a terceiros com rastreabilidade.</p>
 
       <h2>Margem por destino</h2>
-      <p>Ao cruzar o que foi despachado para cada destino com o que foi vendido lá, sabe o custo, a venda e a margem de cada excursão —e o custo por PAX— não uma média geral.</p>
+      <p>Ao cruzar o que foi despachado para cada destino com o que foi vendido lá, sabe o custo, a venda e a margem de cada excursão, e o custo por PAX, não uma média geral.</p>
 
       <h2>Como a Ledyvas faz</h2>
       <p>A Ledyvas tem um <strong>modo turismo</strong> com tudo isto: fórmula por PAX e por destino, compra assistida, receitas para o catering a bordo, centro logístico, controlo de combustível por viatura e embarcação, devoluções, margem por destino e consolidado de frotas. Ativa-se nas definições; se também tiver um restaurante ou uma loja, essas funções convivem no mesmo sistema.</p>

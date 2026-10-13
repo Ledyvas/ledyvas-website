@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Ledyvas — generador de las páginas de Guías (SEO), 5 idiomas
+   Ledyvas, generador de las páginas de Guías (SEO), 5 idiomas
    node build-guias.js
    - ES: guias.html + guia-*.html en la raíz
    - EN/IT/FR/PT: en/guides.html + en/guide-*.html, etc.

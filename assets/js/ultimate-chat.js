@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LEDYVAS ULTIMATE — Chat de la pagina ultimate.html
+   LEDYVAS ULTIMATE, Chat de la pagina ultimate.html
    Widget flotante autocontenido: inyecta su propio CSS y su propio texto en
    5 idiomas (toma el idioma de <html lang="...">). Llama al Worker
    POST /luxury-chat (nombre historico del endpoint, de antes del rename
@@ -17,27 +17,27 @@
       placeholder: "Escriba su pregunta...", send: "Enviar",
       greeting: "Hola. Le puedo explicar qué hace Ledyvas Ultimate, las integraciones con QuickBooks Online, Zoho Books y Odoo, los formatos DGII 606/607/608 y cómo probarlo. ¿Qué necesita saber?",
       error: "No se pudo responder en este momento. Escríbanos a sales@ledyvas.com.",
-      disclaimer: "Asistente de IA. No da precios ni asesoramiento fiscal — para eso, sales@ledyvas.com." },
+      disclaimer: "Asistente de IA. No da precios ni asesoramiento fiscal, para eso, sales@ledyvas.com." },
     en: { button: "Ask about Ultimate", title: "Ledyvas Ultimate assistant", close: "Close",
       placeholder: "Type your question...", send: "Send",
       greeting: "Hi. I can explain what Ledyvas Ultimate does, the QuickBooks Online, Zoho Books and Odoo integrations, the DGII 606/607/608 formats, and how to try it. What would you like to know?",
       error: "Couldn't answer right now. Write to us at sales@ledyvas.com.",
-      disclaimer: "AI assistant. No pricing or tax advice — for that, sales@ledyvas.com." },
+      disclaimer: "AI assistant. No pricing or tax advice, for that, sales@ledyvas.com." },
     it: { button: "Chiedi su Ultimate", title: "Assistente Ledyvas Ultimate", close: "Chiudi",
       placeholder: "Scrivi la tua domanda...", send: "Invia",
       greeting: "Ciao. Posso spiegarti cosa fa Ledyvas Ultimate, le integrazioni con QuickBooks Online, Zoho Books e Odoo, i formati DGII 606/607/608 e come provarlo. Cosa vuoi sapere?",
       error: "Non è stato possibile rispondere ora. Scrivici a sales@ledyvas.com.",
-      disclaimer: "Assistente IA. Nessun prezzo né consulenza fiscale — per questo, sales@ledyvas.com." },
+      disclaimer: "Assistente IA. Nessun prezzo né consulenza fiscale, per questo, sales@ledyvas.com." },
     fr: { button: "Questions sur Ultimate", title: "Assistant Ledyvas Ultimate", close: "Fermer",
       placeholder: "Écrivez votre question...", send: "Envoyer",
       greeting: "Bonjour. Je peux expliquer ce que fait Ledyvas Ultimate, les intégrations avec QuickBooks Online, Zoho Books et Odoo, les formats DGII 606/607/608 et comment l'essayer. Que souhaitez-vous savoir ?",
       error: "Impossible de répondre pour le moment. Écrivez-nous à sales@ledyvas.com.",
-      disclaimer: "Assistant IA. Pas de prix ni de conseil fiscal — pour cela, sales@ledyvas.com." },
+      disclaimer: "Assistant IA. Pas de prix ni de conseil fiscal, pour cela, sales@ledyvas.com." },
     pt: { button: "Perguntar sobre Ultimate", title: "Assistente Ledyvas Ultimate", close: "Fechar",
       placeholder: "Escreva a sua pergunta...", send: "Enviar",
       greeting: "Olá. Posso explicar o que o Ledyvas Ultimate faz, as integrações com o QuickBooks Online, Zoho Books e Odoo, os formatos DGII 606/607/608 e como testá-lo. O que gostaria de saber?",
       error: "Não foi possível responder agora. Escreva para sales@ledyvas.com.",
-      disclaimer: "Assistente de IA. Sem preços nem aconselhamento fiscal — para isso, sales@ledyvas.com." }
+      disclaimer: "Assistente de IA. Sem preços nem aconselhamento fiscal, para isso, sales@ledyvas.com." }
   };
   var T = S[LANG] || S.es;
 

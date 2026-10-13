@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LEDYVAS — Chat del programa de socios (distribuidores.html)
+   LEDYVAS, Chat del programa de socios (distribuidores.html)
    Widget flotante que responde preguntas sobre el programa vía el Worker
    (POST /socios-chat). 5 idiomas (usa window.DistI18n). Autocontenido.
    ========================================================================== */
