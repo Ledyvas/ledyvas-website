@@ -143,7 +143,7 @@
   };
 
   var TITLES = {
-    distribuidor: { es: "Contrato de Partner — Ledyvas Enterprise (suscripción)", en: "Partner Agreement — Ledyvas Enterprise (subscription)", it: "Contratto di Partner — Ledyvas Enterprise (abbonamento)", fr: "Contrat de Partner — Ledyvas Enterprise (abonnement)", pt: "Contrato de Partner — Ledyvas Enterprise (subscrição)" }
+    distribuidor: { es: "Contrato de Partner — Ledyvas (Enterprise, Ultimate, Financial CFO, Professional y Métrica)", en: "Partner Agreement — Ledyvas (Enterprise, Ultimate, Financial CFO, Professional and Métrica)", it: "Contratto di Partner — Ledyvas (Enterprise, Ultimate, Financial CFO, Professional e Métrica)", fr: "Contrat de Partner — Ledyvas (Enterprise, Ultimate, Financial CFO, Professional et Métrica)", pt: "Contrato de Partner — Ledyvas (Enterprise, Ultimate, Financial CFO, Professional e Métrica)" }
   };
 
   var PARTIES = {
