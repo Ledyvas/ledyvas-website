@@ -50,6 +50,8 @@
     <div style="padding:6px 20px 20px">
       <p data-i18n="panel.download.d"></p>
       <p style="margin-top:12px"><a class="d-btn primary" id="pnl-download" href="https://pub-8dcad4b6608142179f9dfe39891860d0.r2.dev/Ledyvas-Ultimate-Setup-0.2.1.exe" data-i18n="panel.download.btn"></a></p>
+      <p style="margin-top:16px" data-i18n="panel.download.cfoD"></p>
+      <p style="margin-top:12px"><a class="d-btn" id="pnl-download-cfo" href="https://pub-8dcad4b6608142179f9dfe39891860d0.r2.dev/Ledyvas-Financial-CFO-Setup.exe" data-i18n="panel.download.cfoBtn"></a></p>
     </div>
   </div>
 
@@ -142,11 +144,12 @@
   // ------------------------------------------------------------------
   var token = new URLSearchParams(location.search).get("t") || "DEMO-TOKEN";
 
-  // Ejemplo (comisión 20%: US$7,80 Enterprise / US$11,80 Ultimate por cliente al mes).
+  // Ejemplo (comisión 20%: US$7,80 Enterprise / US$11,80 Ultimate / US$25,80 Financial CFO por cliente al mes).
   var DATA = {
     distributor: { name: "María Reyes", code: "MARIA-DR" },
-    kpis: { activeSubs: 6, trials: 2, commMonth: 62.80, commTotal: 156.60, quota: "5 / 7" },
+    kpis: { activeSubs: 7, trials: 2, commMonth: 88.60, commTotal: 182.40, quota: "6 / 7" },
     clients: [
+      { date: "2026-10-12", product: "cfo",        status: "active",  day: null, activity: "2026-10-12", commission: 25.80 },
       { date: "2026-09-02", product: "ultimate",   status: "active",  day: null, activity: "2026-09-05", commission: 11.80 },
       { date: "2026-09-01", product: "enterprise", status: "trial",   day: 9,    activity: "2026-09-05", commission: 0 },
       { date: "2026-08-28", product: "ultimate",   status: "active",  day: null, activity: "2026-09-04", commission: 11.80 },
