@@ -305,16 +305,15 @@ header.site-header {
   display: none;
   z-index: 200;
 }
-/* Franja invisible que une el botón con el menú, para que el hover no se
-   pierda al bajar el mouse por el hueco de 14px de arriba. */
-.nav-apps-dropdown::after {
+/* Franja invisible que une el botón con su menú abierto (14px de hueco). Va en el menú,
+   no en el contenedor: así no tapa el botón del menú vecino (Software y Apps). */
+.nav-apps-menu::before {
   content: "";
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 100%;
-  width: 220px;
-  height: 14px;
+  left: 0;
+  right: 0;
+  top: -16px;
+  height: 16px;
 }
 .nav-apps-dropdown:hover .nav-apps-menu,
 .nav-apps-dropdown:focus-within .nav-apps-menu { display: block; }
