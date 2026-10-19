@@ -207,6 +207,7 @@
           <a href="#dgii">República Dominicana, DGII</a>
           <a href="#auto-sync">Sincronización automática</a>
           <a href="#anular-editar">Si anulas o editas un documento</a>
+          <a href="#cfo">Financial CFO (solo lectura)</a>
           <a href="#faq">Preguntas frecuentes</a>
         </aside>
 
@@ -284,10 +285,24 @@
         </ul>
         <p>El panel de resultado lo informa como "rehechos" y "borrados".</p>
 
+        <h2 id="cfo">Ledyvas Financial CFO (solo lectura)</h2>
+        <p><a href="financial-cfo.html">Ledyvas Financial CFO</a> también se conecta a Zoho Books, pero solo para <strong>leer</strong>: nunca crea, cambia ni borra nada en Zoho Books. Pide a Zoho dos permisos de solo lectura:</p>
+        <ul>
+          <li><code>ZohoBooks.settings.READ</code>, la organización y el plan de cuentas.</li>
+          <li><code>ZohoBooks.accountants.READ</code>, los movimientos de cada cuenta, para armar el estado de resultados mensual y el balance.</li>
+        </ul>
+        <ol>
+          <li>En el CFO, abre <strong>Importar → Conexiones → Zoho Books → Conectar</strong> y aprueba el acceso en Zoho.</li>
+          <li>Si tienes varias organizaciones, el CFO usa la marcada como predeterminada en Zoho.</li>
+          <li>Pulsa <strong>Actualizar</strong>: la primera vez lee hasta 36 meses, después los últimos 3.</li>
+          <li>Con <strong>Actualizar automáticamente cada noche</strong> marcado, se actualiza solo a las 03:00, o al abrir el programa si el PC estaba apagado.</li>
+        </ol>
+        <p>Los datos van de Zoho Books directo a tu PC y se guardan cifrados allí; no pasan por ningún servidor de Ledyvas. <strong>Desconectar</strong> en el CFO también anula el acceso en Zoho.</p>
+
         <h2 id="faq">Preguntas frecuentes</h2>
         <dl class="zb-faq">
           <dt>¿Funciona con QuickBooks, Xero, Odoo, Alegra?</dt>
-          <dd>Sí, mediante exportación de archivos ("Exportar a Contabilidad"). Zoho Books es el único con sincronización nativa por API.</dd>
+          <dd>Ledyvas Enterprise y Ultimate también se conectan directo con Odoo y QuickBooks Online. Ledyvas Enterprise además exporta archivos para QuickBooks, Xero y Alegra ("Exportar a Contabilidad").</dd>
 
           <dt>Ya sincronicé este mes. ¿Es seguro volver a sincronizar?</dt>
           <dd>Sí. Ledyvas chequea cada referencia de documento localmente y en Zoho antes de crear nada, sin duplicados.</dd>
