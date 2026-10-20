@@ -84,7 +84,8 @@
         <a href="professional.html">Professional</a>
         <a href="enterprise.html">Enterprise</a>
         <a href="ultimate.html">Ultimate</a>
-        <a href="financial-cfo.html">Financial CFO</a>
+        <a href="financial-cfo.html">CFO</a>
+        <a href="budget-forecast.html">Budget &amp; Forecast</a>
         </div>
       </div>
       <div class="nav-apps-dropdown">
@@ -142,15 +143,16 @@
       <a href="professional.html">Professional <small>07</small></a>
       <a href="enterprise.html">Enterprise <small>08</small></a>
       <a href="ultimate.html">Ultimate <small>09</small></a>
-      <a href="financial-cfo.html">Financial CFO <small>10</small></a>
-      <a href="solutions.html">الحلول <small>11</small></a>
-      <a href="industries.html">القطاعات <small>12</small></a>
-      <a href="pricing.html">الأسعار <small>13</small></a>
-      <a href="download.html">التنزيل <small>14</small></a>
-      <a href="company.html">الشركة <small>15</small></a>
-      <a href="../distribuidores.html?lang=ar">شركاء <small>16</small></a>
-      <a href="contact.html">اتصل بنا <small>17</small></a>
-      <a href="use-cases.html">حالات الاستخدام <small>18</small></a>
+      <a href="financial-cfo.html">CFO <small>10</small></a>
+      <a href="budget-forecast.html">Budget &amp; Forecast <small>11</small></a>
+      <a href="solutions.html">الحلول <small>12</small></a>
+      <a href="industries.html">القطاعات <small>13</small></a>
+      <a href="pricing.html">الأسعار <small>14</small></a>
+      <a href="download.html">التنزيل <small>15</small></a>
+      <a href="company.html">الشركة <small>16</small></a>
+      <a href="../distribuidores.html?lang=ar">شركاء <small>17</small></a>
+      <a href="contact.html">اتصل بنا <small>18</small></a>
+      <a href="use-cases.html">حالات الاستخدام <small>19</small></a>
     </nav>
     <div class="nav-side">
       <div>
@@ -208,6 +210,7 @@
           <a href="#dgii">جمهورية الدومينيكان، DGII</a>
           <a href="#auto-sync">المزامنة التلقائية الليلية</a>
           <a href="#void-edit">إذا ألغيت مستندًا أو عدّلته</a>
+          <a href="#cfo">CFO (قراءة فقط)</a>
           <a href="#faq">الأسئلة الشائعة</a>
         </aside>
 
@@ -225,7 +228,7 @@
         <div class="callout">في <strong>وضع القيود اليومية</strong>، لا تُزامَن الضريبة (VAT / ITBIS), يطبّقها محاسبك في Zoho Books. وفي <strong>Ledyvas Ultimate</strong> مع تفعيل التوطين الضريبي لجمهورية الدومينيكان، <strong>ضريبة ITBIS لكل مستند</strong> و <strong>NCF</strong> تنتقلان فعلًا إلى Zoho Books (انظر أدناه).</div>
 
         <h2 id="version">أي إصدار تحتاج</h2>
-        <p>موصّل Zoho Books جزء من <strong>Ledyvas Enterprise</strong> و <strong>Ledyvas Ultimate</strong>وتظهر شاشة «المزامنة مع Zoho Books» ضمن <strong>الإجراءات السريعة</strong> في كلا الإصدارين. كلا الإصدارين بالاشتراك، عبر شريك لـ Ledyvas أو مباشرةً على ledyvas.com؛ وتتوفر تجربة مجانية لمدة 14 يومًا ببياناتك الخاصة.</p>
+        <p>موصّل Zoho Books جزء من <strong>Ledyvas Enterprise</strong> و <strong>Ledyvas Ultimate</strong>وتظهر شاشة «المزامنة مع Zoho Books» ضمن <strong>الإجراءات السريعة</strong> في كلا الإصدارين. يُشترى كلا الإصدارين من ledyvas.com، باشتراك شهري أو سنوي أو بدفعة واحدة؛ وتتوفر تجربة مجانية لمدة 14 يومًا ببياناتك الخاصة.</p>
         <ul>
           <li><strong>Ledyvas Enterprise</strong>, وضع القيود اليومية ووضع المستندات، دون بنود ضريبية. للأعمال خارج جمهورية الدومينيكان أو التي لا تحتاج إلى امتثال ضريبي محلي. <a href="download.html?edition=enterprise">جرّب Enterprise</a>.</li>
           <li><strong>Ledyvas Ultimate</strong>, كل ما يتضمنه Enterprise، بالإضافة إلى <strong>ضريبة ITBIS لكل مستند</strong>، <strong>NCF</strong> (رقم الإيصال الضريبي) على كل عملية شراء وبيع، وتقارير <strong>DGII 606 / 607 / 608</strong> الخاصة بجمهورية الدومينيكان. <a href="download.html?edition=ultimate">جرّب Ultimate</a>.</li>
@@ -285,6 +288,20 @@
         </ul>
         <p>تعرض لوحة النتيجة هذه الحالات باسم «أُعيد بناؤه» و«حُذف».</p>
 
+        <h2 id="cfo">Ledyvas CFO (قراءة فقط)</h2>
+        <p>يتصل <a href="financial-cfo.html">Ledyvas CFO</a> أيضًا بـ Zoho Books، ولكن <strong>للقراءة</strong> فقط: لا يُنشئ أي شيء في Zoho Books ولا يغيّره ولا يحذفه أبدًا. ويطلب من Zoho إذنَي قراءة فقط:</p>
+        <ul>
+          <li><code>ZohoBooks.settings.READ</code>، المؤسسة ودليل الحسابات.</li>
+          <li><code>ZohoBooks.accountants.READ</code>، حركات كل حساب، لإعداد قائمة الدخل الشهرية والميزانية العمومية.</li>
+        </ul>
+        <ol>
+          <li>في CFO، افتح <strong>استيراد ← الاتصالات ← Zoho Books ← ربط</strong> ووافق على الوصول في Zoho.</li>
+          <li>إذا كانت لديك عدة مؤسسات، يستخدم CFO المؤسسة المحددة كافتراضية في Zoho.</li>
+          <li>اضغط <strong>تحديث</strong>: في المرة الأولى يقرأ حتى 36 شهرًا، وبعدها آخر 3 أشهر.</li>
+          <li>عند تفعيل <strong>التحديث التلقائي كل ليلة</strong>، يتحدّث تلقائيًا في الساعة 03:00، أو عند فتح البرنامج إذا كان الكمبيوتر مطفأً.</li>
+        </ol>
+        <p>تنتقل البيانات من Zoho Books مباشرة إلى جهازك وتُحفظ فيه مشفّرة؛ ولا تمر عبر أي خادم من خوادم Ledyvas. كما يؤدي <strong>قطع الاتصال</strong> في CFO إلى إلغاء الوصول في Zoho أيضًا.</p>
+
         <h2 id="faq">الأسئلة الشائعة</h2>
         <dl class="zb-faq">
           <dt>هل يعمل مع QuickBooks وXero وOdoo وAlegra؟</dt>
@@ -316,7 +333,7 @@
           <dd>في وضع القيود اليومية، لا، يطبّقها محاسبك في Zoho Books. وفي <strong>Ledyvas Ultimate</strong> مع تفعيل التوطين الضريبي لجمهورية الدومينيكان، تنتقل ضريبة ITBIS لكل مستند ورقم NCF فعلًا إلى Zoho Books، كما يُنشئ Ledyvas تقارير DGII 606 / 607 / 608.</dd>
 
           <dt>هل هذه إضافة مجانية؟</dt>
-          <dd>موصّل Zoho Books جزء من <strong>Ledyvas Enterprise</strong> و <strong>Ledyvas Ultimate</strong>، وهما منتجان بالاشتراك يُقدَّمان عبر شريك لـ Ledyvas أو على ledyvas.com. ولا تُباع بشكل منفصل في السوق.</dd>
+          <dd>موصّل Zoho Books جزء من <strong>Ledyvas Enterprise</strong> و <strong>Ledyvas Ultimate</strong>، ويُشتريان من ledyvas.com باشتراك شهري أو سنوي أو بدفعة واحدة. ولا تُباع بشكل منفصل في السوق.</dd>
         </dl>
 
       </div>
@@ -356,7 +373,8 @@
           <li><a href="professional.html">Professional</a></li>
           <li><a href="enterprise.html">Enterprise</a></li>
           <li><a href="ultimate.html">Ultimate</a></li>
-          <li><a href="financial-cfo.html">Financial CFO</a></li>
+          <li><a href="financial-cfo.html">CFO</a></li>
+          <li><a href="budget-forecast.html">Budget &amp; Forecast</a></li>
           <li><a href="solutions.html">الحلول</a></li>
           <li><a href="industries.html">القطاعات</a></li>
           <li><a href="pricing.html">الأسعار</a></li>
@@ -369,6 +387,7 @@
           <li><a href="company.html#founder">المؤسس</a></li>
           <li><a href="company.html#reviews">آراء العملاء</a></li>
           <li><a href="company.html#faq">الأسئلة الشائعة</a></li>
+          <li><a href="affiliates.html">التسويق بالعمولة 20 %</a></li>
           <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
       </div>

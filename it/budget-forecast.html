@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="it">
+<head>
+<!-- Google tag (gtag.js) con Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': (typeof localStorage !== 'undefined' && localStorage.getItem('ledyvas-cookie-consent') === 'accepted') ? 'granted' : 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<script>
+  gtag("js", new Date());
+  gtag("config", "G-DYMN29KT3X");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledyvas Budget &amp; Forecast | Budget annuale e previsione di chiusura mese per mese</title>
+<meta name="description" content="Ledyvas Budget &amp; Forecast: budget annuale per conto, previsione di chiusura che si ricalcola con ogni mese reale e scostamenti con semaforo. Tassi di cambio che definisci tu. Si installa sul tuo PC. Canone mensile, annuale o pagamento unico.">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="canonical" href="https://ledyvas.com/it/budget-forecast.html">
+<link rel="alternate" hreflang="es" href="https://ledyvas.com/budget-forecast.html">
+<link rel="alternate" hreflang="en" href="https://ledyvas.com/en/budget-forecast.html">
+<link rel="alternate" hreflang="it" href="https://ledyvas.com/it/budget-forecast.html">
+<link rel="alternate" hreflang="fr" href="https://ledyvas.com/fr/budget-forecast.html">
+<link rel="alternate" hreflang="pt" href="https://ledyvas.com/pt/budget-forecast.html">
+<link rel="alternate" hreflang="ar" href="https://ledyvas.com/ar/budget-forecast.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261014b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ledyvas">
+<meta property="og:locale" content="it">
+<meta property="og:url" content="https://ledyvas.com/it/budget-forecast.html">
+<meta property="og:title" content="Ledyvas Budget &amp; Forecast | Budget annuale e previsione di chiusura mese per mese">
+<meta property="og:description" content="Ledyvas Budget &amp; Forecast: budget annuale per conto, previsione di chiusura che si ricalcola con ogni mese reale e scostamenti con semaforo. Tassi di cambio che definisci tu. Si installa sul tuo PC. Canone mensile, annuale o pagamento unico.">
+<meta property="og:image" content="https://ledyvas.com/assets/img/budget-forecast-inicio.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ledyvas Budget &amp; Forecast | Budget annuale e previsione di chiusura mese per mese">
+<meta name="twitter:description" content="Ledyvas Budget &amp; Forecast: budget annuale per conto, previsione di chiusura che si ricalcola con ogni mese reale e scostamenti con semaforo. Tassi di cambio che definisci tu. Si installa sul tuo PC. Canone mensile, annuale o pagamento unico.">
+<meta name="twitter:image" content="https://ledyvas.com/assets/img/budget-forecast-inicio.jpg">
+</head>
+<body>
+
+<div class="cookie-consent-banner" id="cookie-consent-banner" hidden>
+  <div class="cookie-consent-inner">
+    <p>Utilizziamo cookie per capire come viene usato questo sito (Google Analytics). Puoi accettare o rifiutare questo tracciamento. <a href="privacy.html">Maggiori informazioni</a></p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookie-consent-reject" class="btn btn-outline">Rifiuta</button>
+      <button type="button" id="cookie-consent-accept" class="btn btn-primary">Accetta</button>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <nav class="nav-horizontal">
+      <a href="index.html">Home</a>
+      <div class="nav-apps-dropdown">
+        <a href="software.html" class="nav-apps-toggle">Software <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <div class="nav-apps-menu">
+        <a href="software.html">Tutto il software</a>
+        <a href="professional.html">Professional</a>
+        <a href="enterprise.html">Enterprise</a>
+        <a href="ultimate.html">Ultimate</a>
+        <a href="financial-cfo.html">CFO</a>
+        <a href="budget-forecast.html">Budget &amp; Forecast</a>
+        </div>
+      </div>
+      <div class="nav-apps-dropdown">
+        <button type="button" class="nav-apps-toggle">Apps <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-apps-menu">
+        <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List</a>
+        <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost</a>
+        <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach</a>
+        </div>
+      </div>
+      <a href="metrica.html">Métrica</a>
+      <a href="ultimate.html">Ultimate</a>
+      <a href="soluzioni.html">Soluzioni</a>
+      <a href="settori.html">Settori</a>
+      <a href="prezzi.html">Prezzi</a>
+      <a href="download.html">Download</a>
+      <a href="../distribuidores.html">Partners</a>
+      <a href="contatti.html">Contatti</a>
+      <a href="casi-d-uso.html">Casi d'uso</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#precio" class="btn btn-outline">Vedi il prezzo</a>
+      <a href="https://pub-8dcad4b6608142179f9dfe39891860d0.r2.dev/Ledyvas-Budget-Forecast-Setup.exe" class="btn btn-primary">Prova gratuita</a>
+      <div class="lang-dropdown">
+      <button class="lang-dropdown-toggle" data-lang-toggle type="button" aria-haspopup="true" aria-expanded="false"><span class="fi fi-it"></span> IT<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-dropdown-menu">
+    <a href="/budget-forecast.html"><span class="fi fi-es"></span> ES</a>
+    <a href="/en/budget-forecast.html"><span class="fi fi-gb"></span> EN</a>
+    <a href="/fr/budget-forecast.html"><span class="fi fi-fr"></span> FR</a>
+    <a href="/pt/budget-forecast.html"><span class="fi fi-pt"></span> PT</a>
+    <a href="/ar/budget-forecast.html"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR</a>
+      </div>
+    </div>
+    <div class="header-social-links">
+      <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas su LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+    <button class="hamburger" data-nav-toggle aria-label="Apri menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay">
+  <div class="nav-overlay-top">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <button class="hamburger" data-nav-toggle aria-label="Chiudi menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-overlay-body">
+    <nav class="nav-links">
+      <a href="index.html">Home <small>01</small></a>
+      <a href="software.html">Software <small>02</small></a>
+      <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List <small>03</small></a>
+      <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost <small>04</small></a>
+      <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach <small>05</small></a>
+      <a href="metrica.html">Métrica <small>06</small></a>
+      <a href="professional.html">Professional <small>07</small></a>
+      <a href="enterprise.html">Enterprise <small>08</small></a>
+      <a href="ultimate.html">Ultimate <small>09</small></a>
+      <a href="financial-cfo.html">CFO <small>10</small></a>
+      <a href="budget-forecast.html">Budget &amp; Forecast <small>11</small></a>
+      <a href="soluzioni.html">Soluzioni <small>12</small></a>
+      <a href="settori.html">Settori <small>13</small></a>
+      <a href="prezzi.html">Prezzi <small>14</small></a>
+      <a href="download.html">Download <small>15</small></a>
+      <a href="../distribuidores.html">Partners <small>16</small></a>
+      <a href="contatti.html">Contatti <small>17</small></a>
+      <a href="casi-d-uso.html">Casi d'uso <small>18</small></a>
+    </nav>
+    <div class="nav-side">
+      <div>
+        <div class="nav-side-title">Lingua</div>
+        <div class="lang-switch">
+          <a href="/budget-forecast.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-es"></span> ES</a>
+          <button class="active"><span class="fi fi-it"></span> IT</button>
+          <a href="/en/budget-forecast.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-gb"></span> EN</a>
+          <a href="/fr/budget-forecast.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-fr"></span> FR</a>
+          <a href="/pt/budget-forecast.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-pt"></span> PT</a>
+          <a href="/ar/budget-forecast.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR</a>
+        </div>
+      </div>
+      <div>
+        <div class="nav-side-title">Inizia ora</div>
+        <a href="https://pub-8dcad4b6608142179f9dfe39891860d0.r2.dev/Ledyvas-Budget-Forecast-Setup.exe" class="btn btn-gold btn-block">Prova Ledyvas Budget &amp; Forecast</a>
+        <div style="height:10px"></div>
+        <a href="#precio" class="btn btn-outline-light btn-block">Vedi il prezzo</a>
+      </div>
+      <div>
+        <div class="nav-side-title">Contatti</div>
+        <div class="nav-contact">
+          <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>
+          <span>Risposta entro 48 ore lavorative</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div>
+        <span class="eyebrow">Ledyvas Budget &amp; Forecast</span>
+        <h1>Budget e previsione,<br>mese per mese.</h1>
+        <p class="lede">Ledyvas Budget &amp; Forecast ti aiuta a costruire il budget annuale per conto e a sapere, ogni mese, come chiuderà l'anno. I mesi con dati reali restano fissi, i mesi mancanti li proietti tu, e il programma ti mostra in quali conti ti stai scostando dal budget. <strong>Canone mensile, annuale o pagamento unico.</strong></p>
+        <div class="cta-row">
+          <a href="https://pub-8dcad4b6608142179f9dfe39891860d0.r2.dev/Ledyvas-Budget-Forecast-Setup.exe" class="btn btn-primary btn-lg">Prova gratis 14 giorni</a>
+          <a href="#precio" class="btn btn-outline btn-lg">Vedi il prezzo</a>
+        </div>
+      </div>
+      <div class="product-shot"><img src="/assets/img/budget-forecast-inicio.jpg" alt="Schermata Budget vs Previsione di chiusura di Ledyvas Budget &amp; Forecast con ricavi, costi, risultato e scostamenti per conto" width="1440" height="815" loading="eager"></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">A cosa serve</span>
+        <h2>Pianificare l'anno, seguirlo ogni mese e correggere in tempo</h2>
+        <p>Ledyvas Budget &amp; Forecast è un programma desktop per Windows: si installa sul PC dell'azienda e i dati restano lì, cifrati. Risponde a tre domande: quanto pensiamo di guadagnare quest'anno, come chiuderà davvero e dove ci stiamo scostando dal piano.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Budget annuale per conto</h3>
+          <p>Una tabella per conto e per mese, come in Excel, con il consuntivo dell'anno precedente sotto ogni cella. Puoi partire dal consuntivo dell'anno precedente più una percentuale, copiare un'altra versione o importarlo da Excel. Se scrivi il totale dell'anno, viene ripartito secondo la stagionalità.</p>
+        </div>
+        <div class="card">
+          <h3>Budget approvato</h3>
+          <p>Quando lo approvi, il budget resta fisso come riferimento e non si modifica per errore. Ogni modifica precedente resta registrata nello storico.</p>
+        </div>
+        <div class="card">
+          <h3>Previsione per conto</h3>
+          <p>I mesi che hanno già dati reali si bloccano da soli. I mesi mancanti li proietti tu o si compilano con un clic: tendenza degli ultimi 3 mesi, budget più o meno una percentuale, oppure ritorno al budget.</p>
+        </div>
+        <div class="card">
+          <h3>Budget vs Previsione di chiusura</h3>
+          <p>Ricavi, costi e risultato dell'anno: quanto previsto a budget rispetto a come chiuderà. Semaforo per conto secondo la tolleranza che fissi tu e avviso quando i costi previsti superano il budget.</p>
+        </div>
+        <div class="card">
+          <h3>Budget vs Consuntivo</h3>
+          <p>Lo scostamento di ogni conto in denaro e in percentuale, del mese o da inizio anno, con quelli sfavorevoli evidenziati.</p>
+        </div>
+        <div class="card">
+          <h3>Tassi di cambio</h3>
+          <p>Vedi i report in un'altra valuta con i tassi che carichi tu, a mano o da Excel. Per i mesi futuri usa l'ultimo tasso o un tasso stimato che fissi tu. Se manca un tasso, il mese resta senza dati: non si inventa mai.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-gray">
+    <div class="container page-hero-inner">
+      <div>
+        <div class="section-head">
+          <span class="eyebrow">Come funziona</span>
+          <h2>Ogni mese, la previsione si aggiorna da sola</h2>
+          <p>Quando arrivano i dati reali di un mese, quel mese si blocca e la previsione di chiusura si ricalcola: mesi reali più la proiezione dei mesi mancanti. Un mese concluso senza dati reali resta aperto finché non li carichi: il programma non inventa cifre.</p>
+        </div>
+        <ul class="doc-toc">
+          <li>Importa il conto economico della tua contabilità in Excel o CSV.</li>
+          <li>Oppure collegalo in sola lettura a QuickBooks Online, Zoho Books, Odoo, Xero o Alegra.</li>
+          <li>Esporta qualsiasi schermata in Excel o CSV.</li>
+          <li>6 lingue e un'azienda dimostrativa per vederlo in funzione.</li>
+        </ul>
+      </div>
+      <div class="product-shot"><img src="/assets/img/budget-forecast-prevision.jpg" alt="Schermata Previsione per conto di Ledyvas Budget &amp; Forecast con mesi reali bloccati e mesi aperti da proiettare" width="1440" height="815" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-navy">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Perché Ledyvas</span>
+        <h2>Di solito, e cosa fa Budget &amp; Forecast</h2>
+      </div>
+      <div class="compare">
+        <div class="compare-row compare-head"><div class="compare-cell old">Di solito</div><div class="compare-cell new">Con Budget &amp; Forecast</div></div>
+        <div class="compare-row"><div class="compare-cell old"><span class="compare-tag">Di solito</span>Il budget vive in un Excel con dieci versioni e formule rotte.</div><div class="compare-cell new"><span class="compare-tag">Con Budget &amp; Forecast</span>Una tabella per conto e per mese, con il consuntivo dell'anno precedente sotto ogni cella.</div></div>
+        <div class="compare-row"><div class="compare-cell old"><span class="compare-tag">Di solito</span>Il budget approvato si modifica senza volerlo e nessuno sa chi l'ha cambiato.</div><div class="compare-cell new"><span class="compare-tag">Con Budget &amp; Forecast</span>Una volta approvato resta fisso, e ogni modifica precedente resta nello storico.</div></div>
+        <div class="compare-row"><div class="compare-cell old"><span class="compare-tag">Di solito</span>Il confronto con il piano si fa quando l'anno è già finito.</div><div class="compare-cell new"><span class="compare-tag">Con Budget &amp; Forecast</span>Ogni mese sai come chiuderà l'anno e in quali conti ti stai scostando.</div></div>
+        <div class="compare-row"><div class="compare-cell old"><span class="compare-tag">Di solito</span>I vuoti si riempiono con ipotesi che nessuno vede.</div><div class="compare-cell new"><span class="compare-tag">Con Budget &amp; Forecast</span>Non inventa mai: se manca un dato, lo mostra come senza dati.</div></div>
+        <div class="compare-row"><div class="compare-cell old"><span class="compare-tag">Di solito</span>Un'altra valuta, con tassi di cambio che non controlli.</div><div class="compare-cell new"><span class="compare-tag">Con Budget &amp; Forecast</span>I tassi li carichi tu, a mano o da Excel.</div></div>
+        <div class="compare-row"><div class="compare-cell old"><span class="compare-tag">Di solito</span>Le tue cifre viaggiano verso server di terzi.</div><div class="compare-cell new"><span class="compare-tag">Con Budget &amp; Forecast</span>Restano sul tuo PC, cifrate.</div></div>
+      </div>
+      <div class="compare-close">
+        <p>Ci sono opzioni più economiche. La domanda è quanto ti costa ciò che non fanno.</p>
+        <a class="btn btn-gold" href="#precio">Vedi il prezzo</a>
+      </div>
+    </div>
+  </section>
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Trasparenza</span>
+        <h2>Cosa non fa</h2>
+      </div>
+      <ul class="doc-toc">
+        <li>Non tiene la contabilità: non registra scritture né emette fatture. Legge i dati che la tua contabilità ha già.</li>
+        <li>Non è in cloud e non funziona con più PC in rete sugli stessi dati: ogni licenza è per 1 PC.</li>
+        <li>Non inventa dati: se manca il consuntivo di un mese o un tasso di cambio, lo mostra come senza dati.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <span class="eyebrow">La linea finanza di Ledyvas</span>
+          <h2>Ledyvas CFO</h2>
+          <p>Per la direzione: indicatori, avvisi e un Piano d'Azione ogni mese sui dati della tua contabilità. È un programma a parte e si acquista separatamente.</p>
+        </div>
+        <div class="cta-row">
+          <a href="financial-cfo.html" class="btn btn-gold btn-lg">Scopri Ledyvas CFO</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-gray" id="precio">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+        <span class="eyebrow">Prezzo</span>
+        <h2>Scegli come pagare</h2>
+        <p style="margin-left:auto;margin-right:auto;">Lo stesso prezzo in tutti i Paesi, in dollari statunitensi (USD). Provalo gratis per 14 giorni sul tuo PC prima di acquistare.</p>
+      </div>
+      <div class="price-cards-grid price-cards-3">
+        <div class="price-card">
+          <span class="price-card-tier-label">Canone mensile</span>
+          <div class="price-row">
+            <div class="price-value">59<sup>USD</sup></div>
+          </div>
+          <div class="price-per">al mese</div>
+          <div class="price-note">Si paga ogni mese.</div>
+          <button type="button" class="btn btn-gold btn-lg btn-block" disabled data-paypro-product="budget-forecast-mensual">Acquista, a breve</button>
+        </div>
+        <div class="price-card price-card-featured">
+          <span class="price-card-tier-label">Canone annuale</span>
+          <div class="price-row">
+            <div class="price-value">590<sup>USD</sup></div>
+          </div>
+          <div class="price-per">all'anno</div>
+          <div class="price-note">Equivale a 10 canoni mensili: 2 mesi gratis.</div>
+          <button type="button" class="btn btn-gold btn-lg btn-block" disabled data-paypro-product="budget-forecast-anual">Acquista, a breve</button>
+        </div>
+        <div class="price-card">
+          <span class="price-card-tier-label">Pagamento unico</span>
+          <div class="price-row">
+            <div class="price-value">699<sup>USD</sup></div>
+          </div>
+          <div class="price-per">una sola volta</div>
+          <div class="price-note">Licenza permanente per 1 PC.</div>
+          <button type="button" class="btn btn-gold btn-lg btn-block" disabled data-paypro-product="budget-forecast-unico">Acquista, a breve</button>
+        </div>
+      </div>
+      <div class="lic-steps">
+        <h3>Come ricevi la tua licenza</h3>
+        <ol>
+          <li><strong>Acquisti e paghi online.</strong> Non ti chiediamo nessun altro dato.</li>
+          <li><strong>Ricevi subito il tuo codice di attivazione,</strong> a schermo e via email.</li>
+          <li><strong>Lo incolli nel programma.</strong> La prima volta serve internet per associarlo al tuo PC; poi funziona senza internet.</li>
+        </ol>
+      </div>
+      <div class="cta-row" style="justify-content:center;margin-top:30px;">
+        <a href="https://pub-8dcad4b6608142179f9dfe39891860d0.r2.dev/Ledyvas-Budget-Forecast-Setup.exe" class="btn btn-primary btn-lg">Scarica la prova gratuita (14 giorni)</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">La suite Ledyvas</span>
+        <h2>Sei programmi, ciascuno con la sua funzione</h2>
+        <p>Ogni programma si installa sul tuo PC e si acquista separatamente. Usa solo quelli che ti servono.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Ledyvas Analytics Métrica</h3>
+          <p>La redditività di ogni giorno in ristoranti, bar, hotel ed escursioni: costo delle ricette, sprechi, COGS % e Prime Cost a partire dalle vendite del tuo POS.</p>
+          <p><a href="metrica.html">Vedi il programma e il suo prezzo →</a></p>
+        </div>
+        <div class="card">
+          <h3>Ledyvas Professional</h3>
+          <p>L'ERP desktop per l'operatività: acquisti, magazzino, ricette, produzione, vendite e report, con il modulo Escursioni / Turismo.</p>
+          <p><a href="professional.html">Vedi il programma e il suo prezzo →</a></p>
+        </div>
+        <div class="card">
+          <h3>Ledyvas Enterprise</h3>
+          <p>Tutto Professional più collegamento diretto via API a QuickBooks Online, Zoho Books e Odoo, imposta per documento ed esportazione di file contabili.</p>
+          <p><a href="enterprise.html">Vedi il programma e il suo prezzo →</a></p>
+        </div>
+        <div class="card">
+          <h3>Ledyvas Ultimate</h3>
+          <p>Contabilità e imposte che arrivano da sole: imposta per documento, collegamento diretto via API a QuickBooks Online, Zoho Books e Odoo e formati DGII 606, 607 e 608.</p>
+          <p><a href="ultimate.html">Vedi il programma e il suo prezzo →</a></p>
+        </div>
+        <div class="card" style="border-color:var(--gold);">
+          <h3>Ledyvas Budget &amp; Forecast</h3>
+          <p>Il budget annuale per conto, la previsione di chiusura che si ricalcola con ogni mese reale e gli scostamenti con semaforo.</p>
+          <p style="font-weight:600;color:var(--gold);">Stai guardando questo programma</p>
+        </div>
+        <div class="card">
+          <h3>Ledyvas CFO</h3>
+          <p>Il cruscotto del direttore finanziario sui dati della tua contabilità: indicatori, avvisi e un Piano d'Azione ogni mese.</p>
+          <p><a href="financial-cfo.html">Vedi il programma e il suo prezzo →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+        <p>Software di gestione aziendale tutto in uno. Acquisti, vendite, magazzino, produzione e report da un'unica piattaforma.</p>
+        <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>Prodotto</h4>
+        <ul>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="metrica.html">Ledyvas Analytics Métrica</a></li>
+          <li><a href="professional.html">Professional</a></li>
+          <li><a href="enterprise.html">Enterprise</a></li>
+          <li><a href="ultimate.html">Ultimate</a></li>
+          <li><a href="financial-cfo.html">CFO</a></li>
+          <li><a href="budget-forecast.html">Budget &amp; Forecast</a></li>
+          <li><a href="soluzioni.html">Soluzioni</a></li>
+          <li><a href="settori.html">Settori</a></li>
+          <li><a href="prezzi.html">Prezzi</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Azienda</h4>
+        <ul>
+          <li><a href="azienda.html">Chi siamo</a></li>
+          <li><a href="azienda.html#fondatore">Fondatore</a></li>
+          <li><a href="azienda.html#recensioni">Recensioni</a></li>
+          <li><a href="azienda.html#faq">Domande frequenti</a></li>
+          <li><a href="affiliati.html">Affiliati 20 %</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Risorse</h4>
+        <ul>
+          <li><a href="guide.html">Guide</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="documentazione.html">Documentazione</a></li>
+          <li><a href="portale-cliente.html">Portale cliente</a></li>
+          <li><a href="../distribuidores.html">Ledyvas Partners</a></li>
+          <li><a href="https://ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food (app)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <ul>
+          <li><a href="mailto:info@ledyvas.com">info@ledyvas.com</a></li>
+          <li><span style="font-size:14px;">Risposta entro 48h lavorative</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledyvas. Tutti i diritti riservati.</span>
+      <div class="footer-legal">
+        <a href="privacy.html">Informativa sulla privacy</a>
+        <a href="termini.html">Termini e condizioni</a>
+        <a href="eula.html">Licenza d'uso (EULA)</a>
+        <a href="rimborsi.html">Politica di rimborso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/ledyvas-chat.js"></script>
+</body>
+</html>

@@ -52,7 +52,7 @@ module.exports = {
 
       <h2>Cómo lo resuelve Ledyvas</h2>
       <p>Ledyvas es un software de gestión para establecimientos que se instala en su PC con Windows y funciona sin depender de una conexión permanente. Cubre compras, proveedores, productos, inventario, ventas, caja, producción y reportes, con usuarios y permisos. La base de datos es suya y está cifrada.</p>
-      <p>Se paga <strong>una sola vez</strong>, no hay mensualidad, y deja los datos ordenados para su contador (las ediciones Enterprise y Ultimate, por partners, se conectan además con <strong>QuickBooks Online, Zoho Books y Odoo</strong>). Sirve para restaurantes, bares, cafeterías, catering, tiendas y salones, y tiene un modo opcional para operadores de excursiones turísticas (cálculo por PAX, combustible de flotas, margen por destino) que se puede apagar.</p>
+      <p>Puede pagarlo con cuota mensual, anual o en un <strong>pago único</strong>, y deja los datos ordenados para su contador (Enterprise y Ultimate se conectan además por API con <strong>QuickBooks Online, Zoho Books y Odoo</strong>). Sirve para restaurantes, bares, cafeterías, catering, tiendas y salones, y tiene un modo opcional para operadores de excursiones turísticas (cálculo por PAX, combustible de flotas, margen por destino) que se puede apagar.</p>
       <p>Puede <a href="descargas.html">descargar la prueba gratis</a> y usarla sin límite de tiempo con sus datos reales antes de decidir.</p>
     `
     },
@@ -94,7 +94,7 @@ module.exports = {
       <p>Si tiene más de un local, una franquicia o varias líneas (salón + catering), el sistema debería dejarte ver cada uno por separado y también consolidado, sin tener que sumar Excel a mano.</p>
 
       <h2>Cómo lo hace Ledyvas</h2>
-      <p>Ledyvas para restaurantes y catering cubre compras, proveedores, recetas, producción, inventario de insumos, ventas, caja, control de combustible y cierre diario, con usuarios y permisos. Se instala en Windows, funciona sin depender de internet permanente y se paga una sola vez. Los datos quedan ordenados para el contador; las ediciones Enterprise y Ultimate (por partners) se conectan además con QuickBooks Online, Zoho Books y Odoo.</p>
+      <p>Ledyvas para restaurantes y catering cubre compras, proveedores, recetas, producción, inventario de insumos, ventas, caja, control de combustible y cierre diario, con usuarios y permisos. Se instala en Windows, funciona sin depender de internet permanente y puede pagarlo con cuota mensual, anual o en un pago único. Los datos quedan ordenados para el contador; Enterprise y Ultimate se conectan además por API con QuickBooks Online, Zoho Books y Odoo.</p>
       <p>Tiene además un modo para operadores de excursiones, donde la comida y la bebida se calculan por PAX del día, que se puede activar o dejar apagado. <a href="descargas.html">Descargue la prueba gratis</a> y pruébelo con la carta y los proveedores reales de su restaurante o servicio de catering.</p>
     `
     },
@@ -131,7 +131,7 @@ module.exports = {
 
       <h2>Cómo lo hace Ledyvas</h2>
       <p>Ledyvas tiene un <strong>modo turismo</strong> con todo esto: fórmula por PAX y por destino, compra asistida, recetas para el catering a bordo, centro logístico, control de combustible por vehículo o embarcación, devoluciones, margen por destino y consolidado de flotas. Se activa desde la configuración; si además tiene un restaurante o una tienda, esas funciones conviven en el mismo sistema.</p>
-      <p>Se instala en Windows, se paga una sola vez; las ediciones Enterprise y Ultimate (por partners) se conectan además con QuickBooks Online, Zoho Books y Odoo. <a href="descargas.html">Descargue la prueba gratis</a> y arme la fórmula de sus destinos reales.</p>
+      <p>Se instala en Windows y puede pagarlo con cuota mensual, anual o en un pago único; Enterprise y Ultimate se conectan además por API con QuickBooks Online, Zoho Books y Odoo. <a href="descargas.html">Descargue la prueba gratis</a> y arme la fórmula de sus destinos reales.</p>
     `
     }
   },
@@ -183,7 +183,7 @@ module.exports = {
 
       <h2>How Ledyvas solves it</h2>
       <p>Ledyvas is business management software that installs on your Windows PC and works without a permanent connection. It covers purchasing, suppliers, products, inventory, sales, cash, production and reports, with users and permissions. The database is yours and encrypted.</p>
-      <p>You pay <strong>once</strong>, no monthly fee, and it keeps your data tidy for your accountant (the Enterprise and Ultimate editions, via partners, also connect to <strong>QuickBooks Online, Zoho Books and Odoo</strong>). It works for restaurants, bars, cafés, catering, shops and salons, and has an optional mode for tour operators (per-PAX calculation, fleet fuel, margin by destination) that can be turned off.</p>
+      <p>You can pay with a monthly fee, an annual fee or a <strong>one-time payment</strong>, and it keeps your data tidy for your accountant (Enterprise and Ultimate also connect by API to <strong>QuickBooks Online, Zoho Books and Odoo</strong>). It works for restaurants, bars, cafés, catering, shops and salons, and has an optional mode for tour operators (per-PAX calculation, fleet fuel, margin by destination) that can be turned off.</p>
       <p>You can <a href="download.html">download the free trial</a> and use it with no time limit on your real data before deciding.</p>
     `
     },
@@ -225,7 +225,7 @@ module.exports = {
       <p>If you have more than one site, a franchise or several lines (dining room + catering), the system should let you see each one separately and also consolidated, without adding up spreadsheets by hand.</p>
 
       <h2>How Ledyvas does it</h2>
-      <p>Ledyvas for restaurants and catering covers purchasing, suppliers, recipes, production, ingredient inventory, sales, cash, fuel control and daily close, with users and permissions. It installs on Windows, works without a permanent connection and is paid once. Your data stays tidy for your accountant; the Enterprise and Ultimate editions (via partners) also connect to QuickBooks Online, Zoho Books and Odoo.</p>
+      <p>Ledyvas for restaurants and catering covers purchasing, suppliers, recipes, production, ingredient inventory, sales, cash, fuel control and daily close, with users and permissions. It installs on Windows, works without a permanent connection and you can pay with a monthly fee, an annual fee or a one-time payment. Your data stays tidy for your accountant; Enterprise and Ultimate also connect by API to QuickBooks Online, Zoho Books and Odoo.</p>
       <p>It also has a mode for tour operators, where food and drink are calculated per PAX of the day, that can be turned on or off. <a href="download.html">Download the free trial</a> and try it with the real menu and suppliers of your restaurant or catering service.</p>
     `
     },
@@ -262,7 +262,7 @@ module.exports = {
 
       <h2>How Ledyvas does it</h2>
       <p>Ledyvas has a <strong>tourism mode</strong> with all of this: formula per PAX and per destination, assisted purchasing, recipes for onboard catering, logistics hub, per-vehicle and per-boat fuel control, returns, margin by destination and fleet consolidation. It's enabled from settings; if you also have a restaurant or a shop, those functions live in the same system.</p>
-      <p>It installs on Windows, is paid once; the Enterprise and Ultimate editions (via partners) also connect to QuickBooks Online, Zoho Books and Odoo. <a href="download.html">Download the free trial</a> and build the formula for your real destinations.</p>
+      <p>It installs on Windows and you can pay with a monthly fee, an annual fee or a one-time payment; Enterprise and Ultimate also connect by API to QuickBooks Online, Zoho Books and Odoo. <a href="download.html">Download the free trial</a> and build the formula for your real destinations.</p>
     `
     }
   },
@@ -314,7 +314,7 @@ module.exports = {
 
       <h2>Come lo risolve Ledyvas</h2>
       <p>Ledyvas è un software gestionale che si installa sul tuo PC Windows e funziona senza connessione permanente. Copre acquisti, fornitori, prodotti, magazzino, vendite, cassa, produzione e report, con utenti e permessi. Il database è tuo ed è cifrato.</p>
-      <p>Si paga <strong>una sola volta</strong>, niente canone, e tiene i dati in ordine per il commercialista (le edizioni Enterprise e Ultimate, tramite partner, si collegano anche a <strong>QuickBooks Online, Zoho Books e Odoo</strong>). Va bene per ristoranti, bar, caffetterie, catering, negozi e saloni, e ha una modalità opzionale per tour operator (calcolo per PAX, carburante delle flotte, margine per destinazione) che si può disattivare.</p>
+      <p>Puoi pagarlo con canone mensile, annuale o con un <strong>pagamento unico</strong>, e tiene i dati in ordine per il commercialista (Enterprise e Ultimate si collegano anche via API a <strong>QuickBooks Online, Zoho Books e Odoo</strong>). Va bene per ristoranti, bar, caffetterie, catering, negozi e saloni, e ha una modalità opzionale per tour operator (calcolo per PAX, carburante delle flotte, margine per destinazione) che si può disattivare.</p>
       <p>Puoi <a href="download.html">scaricare la prova gratuita</a> e usarla senza limiti di tempo con i tuoi dati reali prima di decidere.</p>
     `
     },
@@ -356,7 +356,7 @@ module.exports = {
       <p>Se hai più di un locale, un franchising o più linee (sala + catering), il sistema dovrebbe farti vedere ciascuno separatamente e anche consolidato, senza sommare fogli di calcolo a mano.</p>
 
       <h2>Come lo fa Ledyvas</h2>
-      <p>Ledyvas per ristoranti e catering copre acquisti, fornitori, ricette, produzione, magazzino ingredienti, vendite, cassa, controllo del carburante e chiusura giornaliera, con utenti e permessi. Si installa su Windows, funziona senza connessione permanente e si paga una sola volta. I dati restano in ordine per il commercialista; le edizioni Enterprise e Ultimate (tramite partner) si collegano anche a QuickBooks Online, Zoho Books e Odoo.</p>
+      <p>Ledyvas per ristoranti e catering copre acquisti, fornitori, ricette, produzione, magazzino ingredienti, vendite, cassa, controllo del carburante e chiusura giornaliera, con utenti e permessi. Si installa su Windows, funziona senza connessione permanente e puoi pagarlo con canone mensile, annuale o con un pagamento unico. I dati restano in ordine per il commercialista; Enterprise e Ultimate si collegano anche via API a QuickBooks Online, Zoho Books e Odoo.</p>
       <p>Ha anche una modalità per tour operator, dove cibo e bevande si calcolano per PAX del giorno, che si può attivare o lasciare spenta. <a href="download.html">Scarica la prova gratuita</a> e provala con il menù e i fornitori reali del tuo ristorante o servizio di catering.</p>
     `
     },
@@ -393,7 +393,7 @@ module.exports = {
 
       <h2>Come lo fa Ledyvas</h2>
       <p>Ledyvas ha una <strong>modalità turismo</strong> con tutto questo: formula per PAX e per destinazione, acquisto assistito, ricette per il catering a bordo, centro logistico, controllo del carburante per veicolo e imbarcazione, resi, margine per destinazione e consolidato delle flotte. Si attiva dalle impostazioni; se hai anche un ristorante o un negozio, quelle funzioni convivono nello stesso sistema.</p>
-      <p>Si installa su Windows, si paga una sola volta; le edizioni Enterprise e Ultimate (tramite partner) si collegano anche a QuickBooks Online, Zoho Books e Odoo. <a href="download.html">Scarica la prova gratuita</a> e costruisci la formula delle tue destinazioni reali.</p>
+      <p>Si installa su Windows e puoi pagarlo con canone mensile, annuale o con un pagamento unico; Enterprise e Ultimate si collegano anche via API a QuickBooks Online, Zoho Books e Odoo. <a href="download.html">Scarica la prova gratuita</a> e costruisci la formula delle tue destinazioni reali.</p>
     `
     }
   },
@@ -445,7 +445,7 @@ module.exports = {
 
       <h2>Comment Ledyvas le résout</h2>
       <p>Ledyvas est un logiciel de gestion qui s'installe sur votre PC Windows et fonctionne sans connexion permanente. Il couvre les achats, les fournisseurs, les produits, le stock, les ventes, la caisse, la production et les rapports, avec utilisateurs et permissions. La base de données vous appartient et est chiffrée.</p>
-      <p>Il se paie <strong>une seule fois</strong>, pas d'abonnement, et garde vos données en ordre pour votre comptable (les éditions Enterprise et Ultimate, via partenaires, se connectent aussi à <strong>QuickBooks Online, Zoho Books et Odoo</strong>). Il convient aux restaurants, bars, cafés, traiteurs, commerces et salons, et dispose d'un mode optionnel pour les organisateurs d'excursions (calcul par PAX, carburant des flottes, marge par destination) que l'on peut désactiver.</p>
+      <p>Vous pouvez le payer par abonnement mensuel, abonnement annuel ou <strong>paiement unique</strong>, et il garde vos données en ordre pour votre comptable (Enterprise et Ultimate se connectent aussi par API à <strong>QuickBooks Online, Zoho Books et Odoo</strong>). Il convient aux restaurants, bars, cafés, traiteurs, commerces et salons, et dispose d'un mode optionnel pour les organisateurs d'excursions (calcul par PAX, carburant des flottes, marge par destination) que l'on peut désactiver.</p>
       <p>Vous pouvez <a href="telechargements.html">télécharger l'essai gratuit</a> et l'utiliser sans limite de temps avec vos données réelles avant de décider.</p>
     `
     },
@@ -487,7 +487,7 @@ module.exports = {
       <p>Si vous avez plusieurs établissements, une franchise ou plusieurs activités (salle + traiteur), le système doit vous laisser voir chacun séparément et aussi consolidé, sans additionner des tableurs à la main.</p>
 
       <h2>Comment Ledyvas le fait</h2>
-      <p>Ledyvas pour restaurants et traiteurs couvre les achats, les fournisseurs, les recettes, la production, le stock d'ingrédients, les ventes, la caisse, le contrôle du carburant et la clôture de journée, avec utilisateurs et permissions. Il s'installe sous Windows, fonctionne sans connexion permanente et se paie une seule fois. Vos données restent en ordre pour le comptable ; les éditions Enterprise et Ultimate (via partenaires) se connectent aussi à QuickBooks Online, Zoho Books et Odoo.</p>
+      <p>Ledyvas pour restaurants et traiteurs couvre les achats, les fournisseurs, les recettes, la production, le stock d'ingrédients, les ventes, la caisse, le contrôle du carburant et la clôture de journée, avec utilisateurs et permissions. Il s'installe sous Windows, fonctionne sans connexion permanente et vous pouvez le payer par abonnement mensuel, abonnement annuel ou paiement unique. Vos données restent en ordre pour le comptable ; Enterprise et Ultimate se connectent aussi par API à QuickBooks Online, Zoho Books et Odoo.</p>
       <p>Il dispose aussi d'un mode pour organisateurs d'excursions, où la nourriture et les boissons se calculent par PAX du jour, que l'on peut activer ou laisser désactivé. <a href="telechargements.html">Téléchargez l'essai gratuit</a> et testez-le avec la carte et les fournisseurs réels de votre restaurant ou service traiteur.</p>
     `
     },
@@ -524,7 +524,7 @@ module.exports = {
 
       <h2>Comment Ledyvas le fait</h2>
       <p>Ledyvas dispose d'un <strong>mode tourisme</strong> avec tout cela : formule par PAX et par destination, achat assisté, recettes pour le traiteur à bord, centre logistique, contrôle du carburant par véhicule et par bateau, retours, marge par destination et consolidation des flottes. Il s'active dans les réglages ; si vous avez aussi un restaurant ou un commerce, ces fonctions cohabitent dans le même système.</p>
-      <p>Il s'installe sous Windows, se paie une seule fois ; les éditions Enterprise et Ultimate (via partenaires) se connectent aussi à QuickBooks Online, Zoho Books et Odoo. <a href="telechargements.html">Téléchargez l'essai gratuit</a> et construisez la formule de vos destinations réelles.</p>
+      <p>Il s'installe sous Windows et vous pouvez le payer par abonnement mensuel, abonnement annuel ou paiement unique ; Enterprise et Ultimate se connectent aussi par API à QuickBooks Online, Zoho Books et Odoo. <a href="telechargements.html">Téléchargez l'essai gratuit</a> et construisez la formule de vos destinations réelles.</p>
     `
     }
   },
@@ -576,7 +576,7 @@ module.exports = {
 
       <h2>Como a Ledyvas resolve</h2>
       <p>A Ledyvas é um software de gestão que se instala no seu PC com Windows e funciona sem ligação permanente. Cobre compras, fornecedores, produtos, stock, vendas, caixa, produção e relatórios, com utilizadores e permissões. A base de dados é sua e está cifrada.</p>
-      <p>Paga-se <strong>uma única vez</strong>, sem mensalidade, e mantém os dados organizados para o seu contabilista (as edições Enterprise e Ultimate, via parceiros, ligam-se também ao <strong>QuickBooks Online, Zoho Books e Odoo</strong>). Serve para restaurantes, bares, cafés, catering, lojas e salões, e tem um modo opcional para operadores de excursões (cálculo por PAX, combustível das frotas, margem por destino) que se pode desligar.</p>
+      <p>Pode pagá-lo com quota mensal, anual ou num <strong>pagamento único</strong>, e mantém os dados organizados para o seu contabilista (o Enterprise e o Ultimate ligam-se também por API ao <strong>QuickBooks Online, Zoho Books e Odoo</strong>). Serve para restaurantes, bares, cafés, catering, lojas e salões, e tem um modo opcional para operadores de excursões (cálculo por PAX, combustível das frotas, margem por destino) que se pode desligar.</p>
       <p>Pode <a href="downloads.html">descarregar o teste grátis</a> e usá-lo sem limite de tempo com os seus dados reais antes de decidir.</p>
     `
     },
@@ -618,7 +618,7 @@ module.exports = {
       <p>Se tem mais do que um estabelecimento, uma franquia ou várias linhas (sala + catering), o sistema deve deixá-lo ver cada um em separado e também consolidado, sem somar folhas de cálculo à mão.</p>
 
       <h2>Como a Ledyvas faz</h2>
-      <p>A Ledyvas para restaurantes e catering cobre compras, fornecedores, receitas, produção, stock de ingredientes, vendas, caixa, controlo de combustível e fecho diário, com utilizadores e permissões. Instala-se em Windows, funciona sem ligação permanente e paga-se uma única vez. Os dados ficam organizados para o contabilista; as edições Enterprise e Ultimate (via parceiros) ligam-se também ao QuickBooks Online, Zoho Books e Odoo.</p>
+      <p>A Ledyvas para restaurantes e catering cobre compras, fornecedores, receitas, produção, stock de ingredientes, vendas, caixa, controlo de combustível e fecho diário, com utilizadores e permissões. Instala-se em Windows, funciona sem ligação permanente e pode pagá-lo com quota mensal, anual ou num pagamento único. Os dados ficam organizados para o contabilista; o Enterprise e o Ultimate ligam-se também por API ao QuickBooks Online, Zoho Books e Odoo.</p>
       <p>Tem ainda um modo para operadores de excursões, onde a comida e a bebida se calculam por PAX do dia, que se pode ativar ou deixar desligado. <a href="downloads.html">Descarregue o teste grátis</a> e experimente com a carta e os fornecedores reais do seu restaurante ou serviço de catering.</p>
     `
     },
@@ -655,7 +655,7 @@ module.exports = {
 
       <h2>Como a Ledyvas faz</h2>
       <p>A Ledyvas tem um <strong>modo turismo</strong> com tudo isto: fórmula por PAX e por destino, compra assistida, receitas para o catering a bordo, centro logístico, controlo de combustível por viatura e embarcação, devoluções, margem por destino e consolidado de frotas. Ativa-se nas definições; se também tiver um restaurante ou uma loja, essas funções convivem no mesmo sistema.</p>
-      <p>Instala-se em Windows, paga-se uma única vez; as edições Enterprise e Ultimate (via parceiros) ligam-se também ao QuickBooks Online, Zoho Books e Odoo. <a href="downloads.html">Descarregue o teste grátis</a> e monte a fórmula dos seus destinos reais.</p>
+      <p>Instala-se em Windows e pode pagá-lo com quota mensal, anual ou num pagamento único; o Enterprise e o Ultimate ligam-se também por API ao QuickBooks Online, Zoho Books e Odoo. <a href="downloads.html">Descarregue o teste grátis</a> e monte a fórmula dos seus destinos reais.</p>
     `
     }
   }
