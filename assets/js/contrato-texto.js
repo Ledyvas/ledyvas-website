@@ -5,7 +5,7 @@
    lanzamiento. Cláusulas 1, 3, 5, 8, 9 y 14.
    ========================================================================== */
 /* ==========================================================================
-   ✅ NUEVO PRODUCTO 2026-10-12: Ledyvas Financial CFO (suscripción, vía Partners)
+   ✅ NUEVO PRODUCTO 2026-10-12: Ledyvas CFO (suscripción, vía Partners)
    Tarifas de lanzamiento (decididas por Leo): US$129/mes o US$1.290/año; paquete CFO + Ultimate
    US$159/mes o US$1.590/año. Comisión 20% recurrente como Enterprise/Ultimate. Cláusulas 1, 2, 3,
    4, 5, 8, 9 y 14 en es/en/it/fr/pt. De paso: precio de Professional vía Promotor corregido a
@@ -148,7 +148,7 @@
   };
 
   var TITLES = {
-    distribuidor: { es: "Contrato de Partner, Ledyvas (Enterprise, Ultimate, Financial CFO, Professional y Métrica)", en: "Partner Agreement, Ledyvas (Enterprise, Ultimate, Financial CFO, Professional and Métrica)", it: "Contratto di Partner, Ledyvas (Enterprise, Ultimate, Financial CFO, Professional e Métrica)", fr: "Contrat de Partner, Ledyvas (Enterprise, Ultimate, Financial CFO, Professional et Métrica)", pt: "Contrato de Partner, Ledyvas (Enterprise, Ultimate, Financial CFO, Professional e Métrica)" }
+    distribuidor: { es: "Contrato de Partner, Ledyvas (Métrica, Professional, Enterprise, Ultimate, Budget & Forecast y CFO)", en: "Partner Agreement, Ledyvas (Métrica, Professional, Enterprise, Ultimate, Budget & Forecast and CFO)", it: "Contratto di Partner, Ledyvas (Métrica, Professional, Enterprise, Ultimate, Budget & Forecast e CFO)", fr: "Contrat de Partner, Ledyvas (Métrica, Professional, Enterprise, Ultimate, Budget & Forecast et CFO)", pt: "Contrato de Partner, Ledyvas (Métrica, Professional, Enterprise, Ultimate, Budget & Forecast e CFO)" }
   };
 
   var PARTIES = {
