@@ -6,12 +6,22 @@
  * Si está vacío, el pago se abre en una pestaña nueva (funciona igual).
  */
 (function () {
-  var PRODUCTS = {
-    metrica: '138565', // Ledyvas Analytics Métrica, US$ 599
-    pro: '138564',     // Ledyvas Professional, venta directa US$ 749
-    bundle: '138566'   // Paquete Ledyvas Pro + Métrica, US$ 1,199
+  // Suite Ledyvas (20/10/2026): 3 productos de PayPro con la opción «Programa».
+  // Botón data-paypro-product="<programa>-<mensual|anual|unico>" → producto + grupo de opciones + opción.
+  // SUITE_ON = false: los botones siguen «muy pronto» (los productos aún no están activos en PayPro).
+  var SUITE_ON = false;
+  var SUITE = {
+    mensual: { id: '139176', group: '127934', items: { metrica: '121130', professional: '121131', enterprise: '121132', ultimate: '121133', 'budget-forecast': '121134', 'financial-cfo': '121135' } },
+    anual: { id: '139190', group: '127937', items: { metrica: '121136', professional: '121137', enterprise: '121138', ultimate: '121139', 'budget-forecast': '121140', 'financial-cfo': '121141' } },
+    unico: { id: '139191', group: '', items: { metrica: '121142', professional: '121143', enterprise: '121144', ultimate: '121145', 'budget-forecast': '121146', 'financial-cfo': '121147' } }
   };
-  var SUPPORT_ID = '138589'; // Soporte anual de Métrica (US$ 99/año; 12 meses gratis, luego se cobra solo). Va junto a Métrica y al paquete.
+  // Productos de antes (enlaces de Partners como el de Eleonora): siguen igual.
+  var PRODUCTS = {
+    metrica: '138565', // Ledyvas Analytics Métrica
+    pro: '138564',     // Ledyvas Professional, venta directa
+    bundle: '138566'   // Paquete Ledyvas Pro + Métrica
+  };
+  var SUPPORT_ID = '138589'; // Soporte anual de Métrica (productos de antes)
   var WITH_SUPPORT = { '138565': 1, '138566': 1 };
   var SECRET_KEY = 'exfo=742'; // parámetro de PayPro (Nika, 29/9/2026) para abrir el pago en ventana sobre la página
   var CHECKOUT = 'https://store.payproglobal.com/checkout';
@@ -43,8 +53,16 @@
     return '';
   }
 
-  function checkoutUrl(id) {
+  function suiteFor(key) {
+    var m = /^(.+)-(mensual|anual|unico)$/.exec(key || '');
+    if (!SUITE_ON || !m || !SUITE[m[2]]) return null;
+    var s = SUITE[m[2]], item = s.items[m[1]];
+    return item && s.group ? { id: s.id, group: s.group, item: item } : null;
+  }
+
+  function checkoutUrl(id, opt) {
     var p = ['products[1][id]=' + encodeURIComponent(id), 'language=' + encodeURIComponent(lang), 'currency=USD'];
+    if (opt) p.push('products[1][option-groups][' + encodeURIComponent(opt.group) + ']=' + encodeURIComponent(opt.item));
     if (WITH_SUPPORT[id]) p.push('products[2][id]=' + encodeURIComponent(SUPPORT_ID));
     var code = partnerCode();
     if (code) p.push('coupon-code-to-add=' + encodeURIComponent(code), 'x-partner=' + encodeURIComponent(code));
@@ -94,14 +112,16 @@
       el.parentNode.insertBefore(n, el.nextSibling);
     });
     [].forEach.call(document.querySelectorAll('[data-paypro-product]'), function (btn) {
-      var id = PRODUCTS[btn.getAttribute('data-paypro-product')] || '';
+      var key = btn.getAttribute('data-paypro-product');
+      var opt = suiteFor(key);
+      var id = opt ? opt.id : (PRODUCTS[key] || '');
       if (!id) return; // sigue "muy pronto"
       btn.disabled = false;
       btn.removeAttribute('disabled');
       if (btn.getAttribute('data-buy-label') !== 'keep') btn.textContent = t.buy + (btn.getAttribute('data-price') ? ', ' + btn.getAttribute('data-price') : '');
       btn.addEventListener('click', function (e) {
         e.preventDefault();
-        var url = checkoutUrl(id);
+        var url = checkoutUrl(id, opt);
         if (SECRET_KEY) openModal(url);
         else window.open(url, '_blank', 'noopener');
       });
