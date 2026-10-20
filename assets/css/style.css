@@ -1044,3 +1044,12 @@ html[dir="rtl"] input[type="email"], html[dir="rtl"] a[href^="mailto:"] { direct
   .compare-cell::before { left: 18px; top: 34px; }
   .bg-navy .compare-close p { font-size: 18px; }
 }
+
+/* ---------- Cómo recibe su licencia ---------- */
+.lic-steps { max-width: 860px; margin: 34px auto 0; padding: 24px 28px; background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius-md); }
+.lic-steps h3 { font-size: 17px; margin: 0 0 14px; color: var(--navy); }
+.lic-steps ol { margin: 0; padding: 0; list-style: none; counter-reset: lic; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.lic-steps li { counter-increment: lic; position: relative; padding-left: 40px; font-size: 14.5px; line-height: 1.55; color: var(--gray-700); }
+.lic-steps li::before { content: counter(lic); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--gold); color: var(--white); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+.lic-steps li strong { color: var(--navy); }
+@media (max-width: 760px) { .lic-steps ol { grid-template-columns: 1fr; } .lic-steps { padding: 20px; } }
