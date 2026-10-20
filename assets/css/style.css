@@ -1016,3 +1016,31 @@ html[dir="rtl"] input[type="email"], html[dir="rtl"] a[href^="mailto:"] { direct
 .price-cards-3 .price-value { font-size: 3.2rem; }
 .price-cards-3 .price-note { margin-bottom: 22px; flex: 1; }
 .price-per { font-size: 15px; font-weight: 600; color: var(--royal); margin-bottom: 10px; }
+
+/* ---------- Comparación: lo habitual / con Ledyvas ---------- */
+.compare { border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-lg); overflow: hidden; }
+.compare-row { display: grid; grid-template-columns: 1fr 1fr; }
+.compare-row + .compare-row { border-top: 1px solid rgba(255,255,255,0.08); }
+.compare-cell { position: relative; padding: 18px 26px 18px 54px; font-size: 15.5px; line-height: 1.55; }
+.compare-cell.old { color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.02); }
+.compare-cell.new { color: var(--white); background: rgba(255,255,255,0.07); font-weight: 500; }
+.compare-cell::before { content: ""; position: absolute; left: 24px; top: 25px; width: 14px; height: 14px; border-radius: 50%; }
+.compare-cell.old::before { border: 1.5px solid rgba(255,255,255,0.35); }
+.compare-cell.new::before { background: var(--gold); box-shadow: 0 0 0 4px rgba(200,155,60,0.18); }
+.compare-head .compare-cell { padding-top: 14px; padding-bottom: 14px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.compare-head .compare-cell::before { display: none; }
+.compare-head .compare-cell { padding-left: 26px; }
+.compare-head .compare-cell.new { color: var(--gold-light); }
+.compare-tag { display: none; }
+.compare-close { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 36px; flex-wrap: wrap; }
+.bg-navy .compare-close p { margin: 0; font-size: 21px; line-height: 1.4; color: var(--white); font-weight: 600; max-width: 640px; }
+@media (max-width: 760px) {
+  .compare-row { grid-template-columns: 1fr; }
+  .compare-head { display: none; }
+  .compare-row + .compare-row { border-top: 1px solid rgba(255,255,255,0.16); }
+  .compare-tag { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; color: rgba(255,255,255,0.5); }
+  .compare-cell.new .compare-tag { color: var(--gold-light); }
+  .compare-cell { padding: 14px 18px 14px 46px; }
+  .compare-cell::before { left: 18px; top: 34px; }
+  .bg-navy .compare-close p { font-size: 18px; }
+}
