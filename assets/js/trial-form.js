@@ -204,7 +204,7 @@
 
     // Esta página es la de la versión pública "Pro" y muestra precios de pago
     // único que NO aplican a un trial de Enterprise/Ultimate: banner + ocultar tarjetas.
-    if (edition === "enterprise" || edition === "ultimate") applyEditionUI(edition, lang);
+    // 20/10/2026: todas las apps se venden directo en la web; ya no se muestra el aviso de "solo por Partners".
 
     function applyEditionUI(ed, lg) {
       const isUlt = ed === "ultimate";
@@ -247,6 +247,8 @@
         openModal();
       });
     });
+    // Desde la lista de apps: descargas.html?edition=...&prueba=1 abre el formulario directamente.
+    if (new URLSearchParams(location.search).get("prueba") === "1") openModal();
 
     overlay.querySelectorAll(".trial-modal-close").forEach((btn) => {
       btn.addEventListener("click", closeModal);

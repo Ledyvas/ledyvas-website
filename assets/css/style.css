@@ -1010,3 +1010,9 @@ html[dir="rtl"] input[type="email"], html[dir="rtl"] a[href^="mailto:"] { direct
 .section-head + .cta-row + .pay-methods, .cta-row + .pay-methods { align-items: flex-start; }
 .btn[disabled] { opacity: .6; cursor: not-allowed; pointer-events: none; }
 .pay-methods .pm, .pay-methods .pm svg { direction: ltr; }
+
+/* Precio por app: tres opciones (mensual, anual, pago único) */
+.price-cards-3 .price-card { max-width: 330px; padding: 36px 28px; display: flex; flex-direction: column; }
+.price-cards-3 .price-value { font-size: 3.2rem; }
+.price-cards-3 .price-note { margin-bottom: 22px; flex: 1; }
+.price-per { font-size: 15px; font-weight: 600; color: var(--royal); margin-bottom: 10px; }
