@@ -8,12 +8,12 @@
 (function () {
   // Suite Ledyvas (20/10/2026): 3 productos de PayPro con la opción «Programa».
   // Botón data-paypro-product="<programa>-<mensual|anual|unico>" → producto + grupo de opciones + opción.
-  // SUITE_ON = false: los botones siguen «muy pronto» (los productos aún no están activos en PayPro).
-  var SUITE_ON = false;
+  // Productos activos en PayPro desde el 21/10/2026.
+  var SUITE_ON = true;
   var SUITE = {
     mensual: { id: '139176', group: '127934', items: { metrica: '121130', professional: '121131', enterprise: '121132', ultimate: '121133', 'budget-forecast': '121134', 'financial-cfo': '121135' } },
     anual: { id: '139190', group: '127937', items: { metrica: '121136', professional: '121137', enterprise: '121138', ultimate: '121139', 'budget-forecast': '121140', 'financial-cfo': '121141' } },
-    unico: { id: '139191', group: '', items: { metrica: '121142', professional: '121143', enterprise: '121144', ultimate: '121145', 'budget-forecast': '121146', 'financial-cfo': '121147' } }
+    unico: { id: '139191', group: '127941', items: { metrica: '121142', professional: '121143', enterprise: '121144', ultimate: '121145', 'budget-forecast': '121146', 'financial-cfo': '121147' } }
   };
   // Productos de antes (enlaces de Partners como el de Eleonora): siguen igual.
   var PRODUCTS = {
