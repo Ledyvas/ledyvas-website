@@ -55,6 +55,7 @@
       <a href="#panel" data-i18n="pub.nav.panel"></a>
       <a href="#condiciones" data-i18n="pub.nav.condiciones"></a>
       <a href="#faq" data-i18n="pub.nav.faq"></a>
+      <a href="contrato.html?rol=distribuidor" data-contract-link data-i18n="pub.viewContract"></a>
       <a href="?rol=distribuidor" class="d-quicknav-apply" data-i18n="pub.apply"></a>
     </nav>
 
@@ -63,6 +64,7 @@
         <h3 data-i18n="pub.role.distribuidor.t"></h3>
         <p data-i18n="pub.role.distribuidor.d"></p>
         <a class="d-btn primary" href="?rol=distribuidor" data-i18n="pub.apply"></a>
+        <a class="d-btn" href="contrato.html?rol=distribuidor" data-contract-link data-i18n="pub.viewContract"></a>
       </div>
     </div>
 
@@ -481,6 +483,9 @@
 
   // ---- boot ----
   applyStaticI18n();
+  document.querySelectorAll("[data-contract-link]").forEach(function (el) {
+    el.setAttribute("href", "contrato.html?rol=distribuidor&lang=" + encodeURIComponent(T.lang()));
+  });
   renderLang();
 
   if (role) {
