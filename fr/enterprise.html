@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
+<script>(function(){var t=null;try{t=localStorage.getItem('ledyvas-theme')}catch(e){}if(t!=='light'&&t!=='dark'){try{t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){t='light'}}document.documentElement.setAttribute('data-theme',t)})();</script>
 <!-- Google tag (gtag.js) con Consent Mode v2 -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -32,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261014b">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261026">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ledyvas">
 <meta property="og:locale" content="fr">
@@ -81,6 +82,7 @@
         <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List</a>
         <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost</a>
         <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach</a>
+        <span class="nav-apps-note">Essai gratuit de 5 jours</span>
         </div>
       </div>
       <a href="metrica.html">Métrica</a>
@@ -126,6 +128,7 @@
       <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List <small>03</small></a>
       <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost <small>04</small></a>
       <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach <small>05</small></a>
+      <span class="nav-apps-note nav-apps-note-overlay">Essai gratuit de 5 jours</span>
       <a href="metrica.html">Métrica <small>06</small></a>
       <a href="professional.html">Professional <small>07</small></a>
       <a href="enterprise.html">Enterprise <small>08</small></a>
@@ -179,6 +182,7 @@
         <div class="cta-row">
           <a href="telechargements.html?edition=enterprise&amp;prueba=1" class="btn btn-primary btn-lg">Essayer 14 jours gratuitement</a>
           <a href="#precio" class="btn btn-outline btn-lg">Voir le prix</a>
+          <a href="#casos-de-uso" class="btn btn-outline btn-lg">Voir les cas d'usage</a>
         </div>
       </div>
       <div class="product-shot"><img src="/assets/img/enterprise-consolidado.jpg" alt="Consolidé opérationnel de Ledyvas Enterprise avec coûts des aliments, des boissons et du carburant, marge et PAX" width="1440" height="832" loading="eager"></div>
@@ -214,7 +218,7 @@
         </div>
         <div class="card">
           <h3>6 langues, utilisateurs illimités</h3>
-          <p>Espagnol, anglais, italien, français, portugais et arabe (de droite à gauche). Utilisateurs avec rôles, sans coût par utilisateur.</p>
+          <p>Espagnol, anglais, italien, français, portugais et arabe (de droite à gauche). Utilisateurs avec rôles, sans coût par utilisateur. Thème clair et sombre, impression, PDF, capture d'écran, export et import de données Excel.</p>
         </div>
       </div>
     </div>
@@ -285,7 +289,7 @@
             <div class="price-value">749<sup>USD</sup></div>
           </div>
           <div class="price-per">une seule fois</div>
-          <div class="price-note">Licence permanente pour 1 PC.</div>
+          <div class="price-note">Licence permanente pour 1 PC. Mises à jour gratuites la première année.</div>
           <button type="button" class="btn btn-gold btn-lg btn-block" disabled data-paypro-product="enterprise-unico">Acheter, très bientôt</button>
         </div>
       </div>
@@ -302,6 +306,35 @@
       </div>
     </div>
   </section>
+  <!-- casos-de-uso:start -->
+  <section class="section-tight bg-gray" id="casos-de-uso" style="scroll-margin-top:90px;">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Cas d&#x27;usage</span>
+        <h2>Exemples d&#x27;utilisation par secteur</h2>
+        <p>Scénarios illustratifs montrant comment différents types d&#x27;entreprises peuvent utiliser Ledyvas.</p>
+      </div>
+      <div class="grid-3"><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">Enterprise · États-Unis et Émirats arabes unis · USD / AED</p><h3>Restaurant gastronomique avec ingrédients importés</h3><p>Pour les factures fournisseurs en plusieurs devises (ingrédients d&#x27;Europe, du Japon ou d&#x27;Asie), Ledyvas gère les taux de change dans toute l&#x27;interface. Les connecteurs QuickBooks Online, Zoho Books et Odoo transmettent les données comptables sans ressaisie.</p><p style="margin-top:8px;"><strong>Fonctions :</strong> Multidevise, connecteurs comptables (QuickBooks Online, Zoho Books, Odoo).</p></div><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">Enterprise · États-Unis · USD</p><h3>Opérateur d'excursions et de bateaux avec QuickBooks Online</h3><p>L'équipe saisit PAX, destinations, flotte et carburant dans Ledyvas pendant que le comptable travaille dans QuickBooks Online. Achats, ventes et dépenses montent par API sous forme de factures d'achat, factures de vente, dépenses et paiements, avec la taxe par document et sans ressaisie. Chaque document est identifié par son numéro : synchroniser deux fois ne duplique rien.</p><p style="margin-top:8px;"><strong>Fonctions:</strong> Mode Excursion, QuickBooks Online (API), taxe par document.</p></div><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">Enterprise · France et Espagne · EUR</p><h3>Restauration collective et hôtellerie avec Odoo</h3><p>Achats, recettes, production et stocks se gèrent dans Ledyvas. Odoo reçoit par son API les factures fournisseurs et clients en brouillon, que le comptable relit et confirme. Nécessite Odoo 19 avec accès à l'API externe.</p><p style="margin-top:8px;"><strong>Fonctions:</strong> Recettes et production, Odoo (API), brouillons pour le comptable.</p></div></div>
+    </div>
+  </section>
+  <!-- casos-de-uso:end -->
+
+  <!-- pregunte-ia:start -->
+  <section class="section-tight" id="pregunte-ia">
+    <div class="container">
+      <div class="card" style="max-width:760px;margin:0 auto;text-align:center;">
+        <div class="icon-circle" style="margin:0 auto 14px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Demandez à l&#x27;assistant IA</h3>
+        <p>Touchez une question et l&#x27;assistant vous répond tout de suite, ou écrivez la vôtre.</p>
+        <div class="cta-row" style="justify-content:center;flex-wrap:wrap;margin-top:14px;">
+          <button type="button" class="btn btn-outline" data-ask="Comment Enterprise se connecte-t-il à QuickBooks Online, Zoho Books et Odoo ?">Comment Enterprise se connecte-t-il à QuickBooks Online, Zoho Books et Odoo ?</button>
+          <button type="button" class="btn btn-outline" data-ask="Quelle est la différence entre Professional et Enterprise ?">Quelle est la différence entre Professional et Enterprise ?</button>
+          <button type="button" class="btn btn-outline" data-ask="Mon comptable utilise Xero ou Alegra : Enterprise lui convient-il ?">Mon comptable utilise Xero ou Alegra : Enterprise lui convient-il ?</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- pregunte-ia:end -->
 
   <section class="section-tight">
     <div class="container">
@@ -411,8 +444,8 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js"></script>
+<script src="/assets/js/main.js?v=20261026"></script>
 <script src="/assets/js/paypro-checkout.js" defer></script>
-<script src="/assets/js/ledyvas-chat.js"></script>
+<script src="/assets/js/ledyvas-chat.js?v=20261026"></script>
 </body>
 </html>

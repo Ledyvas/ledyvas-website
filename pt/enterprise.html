@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt">
 <head>
+<script>(function(){var t=null;try{t=localStorage.getItem('ledyvas-theme')}catch(e){}if(t!=='light'&&t!=='dark'){try{t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){t='light'}}document.documentElement.setAttribute('data-theme',t)})();</script>
 <!-- Google tag (gtag.js) con Consent Mode v2 -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -32,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261014b">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261026">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ledyvas">
 <meta property="og:locale" content="pt">
@@ -81,6 +82,7 @@
         <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List</a>
         <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost</a>
         <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach</a>
+        <span class="nav-apps-note">Teste grátis de 5 dias</span>
         </div>
       </div>
       <a href="metrica.html">Métrica</a>
@@ -126,6 +128,7 @@
       <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List <small>03</small></a>
       <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost <small>04</small></a>
       <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach <small>05</small></a>
+      <span class="nav-apps-note nav-apps-note-overlay">Teste grátis de 5 dias</span>
       <a href="metrica.html">Métrica <small>06</small></a>
       <a href="professional.html">Professional <small>07</small></a>
       <a href="enterprise.html">Enterprise <small>08</small></a>
@@ -180,6 +183,7 @@
         <div class="cta-row">
           <a href="downloads.html?edition=enterprise&amp;prueba=1" class="btn btn-primary btn-lg">Experimentar grátis 14 dias</a>
           <a href="#precio" class="btn btn-outline btn-lg">Ver o preço</a>
+          <a href="#casos-de-uso" class="btn btn-outline btn-lg">Ver casos de uso</a>
         </div>
       </div>
       <div class="product-shot"><img src="/assets/img/enterprise-consolidado.jpg" alt="Consolidado operacional do Ledyvas Enterprise com custos de alimentos, bebidas e combustível, margem e PAX" width="1440" height="832" loading="eager"></div>
@@ -217,7 +221,7 @@
         </div>
         <div class="card">
           <h3>6 idiomas, utilizadores ilimitados</h3>
-          <p>Espanhol, inglês, italiano, francês, português e árabe (da direita para a esquerda). Utilizadores com perfis, sem custo por utilizador.</p>
+          <p>Espanhol, inglês, italiano, francês, português e árabe (da direita para a esquerda). Utilizadores com perfis, sem custo por utilizador. Tema claro e escuro, impressão, PDF, captura de ecrã, exportação e importação de dados em Excel.</p>
         </div>
       </div>
     </div>
@@ -290,7 +294,7 @@
             <div class="price-value">749<sup>USD</sup></div>
           </div>
           <div class="price-per">uma só vez</div>
-          <div class="price-note">Licença permanente para 1 PC.</div>
+          <div class="price-note">Licença permanente para 1 PC. Atualizações gratuitas no primeiro ano.</div>
           <button type="button" class="btn btn-gold btn-lg btn-block" disabled data-paypro-product="enterprise-unico">Comprar, muito em breve</button>
         </div>
       </div>
@@ -307,6 +311,35 @@
       </div>
     </div>
   </section>
+  <!-- casos-de-uso:start -->
+  <section class="section-tight bg-gray" id="casos-de-uso" style="scroll-margin-top:90px;">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Casos de uso</span>
+        <h2>Exemplos de uso por setor</h2>
+        <p>Cenários ilustrativos de como diferentes tipos de negócio podem usar o Ledyvas.</p>
+      </div>
+      <div class="grid-3"><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">Enterprise · Estados Unidos e Emirados Árabes Unidos · USD / AED</p><h3>Restaurante de alta gastronomia com ingredientes importados</h3><p>Para notas de fornecedores em várias moedas (ingredientes da Europa, do Japão ou da Ásia), o Ledyvas trata as taxas de câmbio em toda a interface. Os conectores com o QuickBooks Online, o Zoho Books e o Odoo enviam os dados contábeis sem redigitação.</p><p style="margin-top:8px;"><strong>Funções:</strong> Multimoeda, conectores contábeis (QuickBooks Online, Zoho Books, Odoo).</p></div><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">Enterprise · Estados Unidos · USD</p><h3>Operador de passeios e barcos com QuickBooks Online</h3><p>A equipa regista PAX, destinos, frota e combustível no Ledyvas enquanto o contabilista trabalha no QuickBooks Online. Compras, vendas e despesas sobem por API como faturas de compra, faturas de venda, despesas e pagamentos, com o imposto por documento e sem voltar a digitar. Cada documento é identificado pelo seu número: sincronizar duas vezes não duplica nada.</p><p style="margin-top:8px;"><strong>Funções:</strong> Modo Excursão, QuickBooks Online (API), imposto por documento.</p></div><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">Enterprise · França e Espanha · EUR</p><h3>Catering e hotelaria com Odoo</h3><p>Compras, receitas, produção e stock fazem-se no Ledyvas. O Odoo recebe, pela sua API, as faturas de fornecedor e de cliente como rascunho, para o contabilista rever e confirmar. Requer Odoo 19 com acesso à API externa.</p><p style="margin-top:8px;"><strong>Funções:</strong> Receitas e produção, Odoo (API), rascunhos para o contabilista.</p></div></div>
+    </div>
+  </section>
+  <!-- casos-de-uso:end -->
+
+  <!-- pregunte-ia:start -->
+  <section class="section-tight" id="pregunte-ia">
+    <div class="container">
+      <div class="card" style="max-width:760px;margin:0 auto;text-align:center;">
+        <div class="icon-circle" style="margin:0 auto 14px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Pergunte ao assistente de IA</h3>
+        <p>Toque numa pergunta e o assistente responde na hora, ou escreva a sua.</p>
+        <div class="cta-row" style="justify-content:center;flex-wrap:wrap;margin-top:14px;">
+          <button type="button" class="btn btn-outline" data-ask="Como é que o Enterprise se liga ao QuickBooks Online, Zoho Books e Odoo?">Como é que o Enterprise se liga ao QuickBooks Online, Zoho Books e Odoo?</button>
+          <button type="button" class="btn btn-outline" data-ask="Qual é a diferença entre o Professional e o Enterprise?">Qual é a diferença entre o Professional e o Enterprise?</button>
+          <button type="button" class="btn btn-outline" data-ask="O meu contabilista usa Xero ou Alegra: o Enterprise serve?">O meu contabilista usa Xero ou Alegra: o Enterprise serve?</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- pregunte-ia:end -->
 
   <section class="section-tight">
     <div class="container">
@@ -417,8 +450,8 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js"></script>
+<script src="/assets/js/main.js?v=20261026"></script>
 <script src="/assets/js/paypro-checkout.js" defer></script>
-<script src="/assets/js/ledyvas-chat.js"></script>
+<script src="/assets/js/ledyvas-chat.js?v=20261026"></script>
 </body>
 </html>

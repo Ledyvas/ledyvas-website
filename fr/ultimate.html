@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
+<script>(function(){var t=null;try{t=localStorage.getItem('ledyvas-theme')}catch(e){}if(t!=='light'&&t!=='dark'){try{t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){t='light'}}document.documentElement.setAttribute('data-theme',t)})();</script>
 <!-- Google tag (gtag.js) con Consent Mode v2 -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -32,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261014b">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261026">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ledyvas">
 <meta property="og:locale" content="fr">
@@ -81,6 +82,7 @@
         <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List</a>
         <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost</a>
         <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach</a>
+        <span class="nav-apps-note">Essai gratuit de 5 jours</span>
         </div>
       </div>
       <a href="metrica.html">Métrica</a>
@@ -126,6 +128,7 @@
       <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List <small>03</small></a>
       <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost <small>04</small></a>
       <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach <small>05</small></a>
+      <span class="nav-apps-note nav-apps-note-overlay">Essai gratuit de 5 jours</span>
       <a href="metrica.html">Métrica <small>06</small></a>
       <a href="professional.html">Professional <small>07</small></a>
       <a href="enterprise.html">Enterprise <small>08</small></a>
@@ -215,7 +218,7 @@
         </div>
         <div class="card">
           <h3>5 langues, utilisateurs illimités</h3>
-          <p>Espagnol, italien, anglais, français et arabe (interface de droite à gauche). Tous les utilisateurs dont l'entreprise a besoin, chacun avec son rôle. Sans coût par utilisateur.</p>
+          <p>Espagnol, italien, anglais, français et arabe (interface de droite à gauche). Tous les utilisateurs dont l'entreprise a besoin, chacun avec son rôle. Sans coût par utilisateur. Thème clair et sombre, impression, PDF, capture d'écran, export et import de données Excel.</p>
         </div>
       </div>
     </div>
@@ -296,7 +299,7 @@
             <div class="price-value">749<sup>USD</sup></div>
           </div>
           <div class="price-per">une seule fois</div>
-          <div class="price-note">Licence permanente pour 1 PC.</div>
+          <div class="price-note">Licence permanente pour 1 PC. Mises à jour gratuites la première année.</div>
           <button type="button" class="btn btn-gold btn-lg btn-block" disabled data-paypro-product="ultimate-unico">Acheter, très bientôt</button>
         </div>
       </div>
@@ -325,6 +328,23 @@
     </div>
   </section>
   <!-- casos-de-uso:end -->
+
+  <!-- pregunte-ia:start -->
+  <section class="section-tight" id="pregunte-ia">
+    <div class="container">
+      <div class="card" style="max-width:760px;margin:0 auto;text-align:center;">
+        <div class="icon-circle" style="margin:0 auto 14px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Demandez à l&#x27;assistant IA</h3>
+        <p>Touchez une question et l&#x27;assistant vous répond tout de suite, ou écrivez la vôtre.</p>
+        <div class="cta-row" style="justify-content:center;flex-wrap:wrap;margin-top:14px;">
+          <button type="button" class="btn btn-outline" data-ask="Ultimate génère-t-il les formats DGII 606, 607 et 608 ?">Ultimate génère-t-il les formats DGII 606, 607 et 608 ?</button>
+          <button type="button" class="btn btn-outline" data-ask="Quelle est la différence entre Enterprise et Ultimate ?">Quelle est la différence entre Enterprise et Ultimate ?</button>
+          <button type="button" class="btn btn-outline" data-ask="Ultimate convient-il à un cabinet comptable ?">Ultimate convient-il à un cabinet comptable ?</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- pregunte-ia:end -->
 
   <section class="section-tight">
     <div class="container">
@@ -434,8 +454,8 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js"></script>
+<script src="/assets/js/main.js?v=20261026"></script>
 <script src="/assets/js/paypro-checkout.js" defer></script>
-<script src="/assets/js/ultimate-chat.js"></script>
+<script src="/assets/js/ultimate-chat.js?v=20261026"></script>
 </body>
 </html>

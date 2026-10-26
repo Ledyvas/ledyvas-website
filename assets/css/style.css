@@ -1053,3 +1053,69 @@ html[dir="rtl"] input[type="email"], html[dir="rtl"] a[href^="mailto:"] { direct
 .lic-steps li::before { content: counter(lic); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--gold); color: var(--white); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
 .lic-steps li strong { color: var(--navy); }
 @media (max-width: 760px) { .lic-steps ol { grid-template-columns: 1fr; } .lic-steps { padding: 20px; } }
+
+/* ---------- Tema claro / oscuro (26/10/2026) ----------
+   main.js pone el botón en el header; el <head> de cada página aplica
+   data-theme antes de pintar (elección guardada o la del sistema). */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgba(30, 79, 175, 0.08);
+  color: var(--royal);
+  transition: background .2s, color .2s, transform .2s;
+}
+.theme-toggle:hover { background: var(--royal); color: #fff; transform: translateY(-2px); }
+.theme-toggle svg { width: 17px; height: 17px; }
+.theme-toggle .ic-sun { display: none; }
+html[data-theme="dark"] .theme-toggle .ic-sun { display: block; }
+html[data-theme="dark"] .theme-toggle .ic-moon { display: none; }
+
+/* Nota de prueba gratis en el menú Apps */
+.nav-apps-note { display: block; padding: 8px 14px 4px; font-size: 12px; font-weight: 600; color: var(--gold); }
+.nav-apps-note-overlay { padding: 6px 0 12px; font-size: 13px; color: var(--gold-light); }
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --royal: #5B86E5;
+  --royal-light: #86A6EE;
+  --gray-900: #E8EDF5;
+  --gray-700: #C3CBD8;
+  --gray-500: #9AA5B6;
+  --gray-300: #33415A;
+  --gray-100: #13213A;
+  --gray-50: #101C31;
+  --surface: #17263F;
+  --page: #0C1628;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+html[data-theme="dark"] body { background: var(--page); color: var(--gray-900); }
+html[data-theme="dark"] h1, html[data-theme="dark"] h2, html[data-theme="dark"] h3, html[data-theme="dark"] h4,
+html[data-theme="dark"] .brand-text .name, html[data-theme="dark"] .hero-logo-name, html[data-theme="dark"] .price-value,
+html[data-theme="dark"] .faq-q, html[data-theme="dark"] .lic-steps h3, html[data-theme="dark"] .lic-steps li strong,
+html[data-theme="dark"] .footer-col h4, html[data-theme="dark"] .nav-horizontal a.active, html[data-theme="dark"] .btn-outline,
+html[data-theme="dark"] .lang-dropdown-toggle, html[data-theme="dark"] .trial-modal-close:hover { color: #F1F4FA; }
+html[data-theme="dark"] .card, html[data-theme="dark"] .price-card, html[data-theme="dark"] .lic-steps,
+html[data-theme="dark"] .req-item, html[data-theme="dark"] .payment-badge, html[data-theme="dark"] .pay-methods .pm,
+html[data-theme="dark"] .trial-modal, html[data-theme="dark"] .lang-dropdown-toggle, html[data-theme="dark"] .lang-dropdown-menu,
+html[data-theme="dark"] .nav-apps-menu, html[data-theme="dark"] .hamburger, html[data-theme="dark"] .app-screenshot-frame,
+html[data-theme="dark"] .sector-card .icon-circle, html[data-theme="dark"] .sector-card-photo,
+html[data-theme="dark"] .sector-card-photo .icon-circle,
+html[data-theme="dark"] .field input, html[data-theme="dark"] .field textarea, html[data-theme="dark"] .field select { background: var(--surface); color: var(--gray-900); }
+html[data-theme="dark"] header.site-header { background: rgba(12, 22, 40, 0.9); }
+html[data-theme="dark"] .hero { background: linear-gradient(180deg, var(--gray-50) 0%, var(--page) 100%); }
+html[data-theme="dark"] .hamburger span { background: #E8EDF5; }
+html[data-theme="dark"] .nav-overlay .hamburger span { background: #fff; }
+html[data-theme="dark"] .btn-outline { border-color: rgba(255, 255, 255, 0.28); }
+html[data-theme="dark"] .bg-navy, html[data-theme="dark"] .bg-navy-photo { background-color: #081222; }
+html[data-theme="dark"] .theme-toggle, html[data-theme="dark"] .header-social-links a { background: rgba(255, 255, 255, 0.08); color: #E8EDF5; }
+html[data-theme="dark"] .lxc-panel, html[data-theme="dark"] .lxc-disclaimer, html[data-theme="dark"] .lxc-bot { background: var(--surface) !important; color: var(--gray-900) !important; }
+html[data-theme="dark"] .lxc-input { background: var(--page); color: var(--gray-900); border-color: var(--gray-300); }

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
+<script>(function(){var t=null;try{t=localStorage.getItem('ledyvas-theme')}catch(e){}if(t!=='light'&&t!=='dark'){try{t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){t='light'}}document.documentElement.setAttribute('data-theme',t)})();</script>
 <!-- Google tag (gtag.js) con Consent Mode v2 -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -33,7 +34,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261014b">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261026">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ledyvas">
 <meta property="og:locale" content="ar">
@@ -82,6 +83,7 @@
         <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List</a>
         <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost</a>
         <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach</a>
+        <span class="nav-apps-note">تجربة مجانية لمدة 5 أيام</span>
         </div>
       </div>
       <a href="metrica.html">Métrica</a>
@@ -127,6 +129,7 @@
       <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List <small>03</small></a>
       <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost <small>04</small></a>
       <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach <small>05</small></a>
+      <span class="nav-apps-note nav-apps-note-overlay">تجربة مجانية لمدة 5 أيام</span>
       <a href="metrica.html">Métrica <small>06</small></a>
       <a href="professional.html">Professional <small>07</small></a>
       <a href="enterprise.html">Enterprise <small>08</small></a>
@@ -181,6 +184,7 @@
         <div class="cta-row">
           <a href="https://pub-8dcad4b6608142179f9dfe39891860d0.r2.dev/Ledyvas-Financial-CFO-Setup.exe" class="btn btn-primary btn-lg">جرّبه مجانًا لمدة 14 يومًا</a>
           <a href="#precio" class="btn btn-outline btn-lg">عرض السعر</a>
+          <a href="#casos-de-uso" class="btn btn-outline btn-lg">عرض حالات الاستخدام</a>
         </div>
       </div>
       <div class="product-shot"><img src="/assets/img/cfo-dashboard-ar.jpg" alt="الملخص التنفيذي في Ledyvas CFO مع المبيعات وEBITDA والهامش وصافي الربح والتدفق النقدي" width="1440" height="900" loading="eager"></div>
@@ -218,7 +222,7 @@
         </div>
         <div class="card">
           <h3>6 لغات و156 عملة</h3>
-          <p>الإسبانية والإنجليزية والإيطالية والفرنسية والبرتغالية والعربية (من اليمين إلى اليسار). مظهر فاتح وداكن، طباعة وPDF ولقطة شاشة وتصدير.</p>
+          <p>الإسبانية والإنجليزية والإيطالية والفرنسية والبرتغالية والعربية (من اليمين إلى اليسار). مظهر فاتح وداكن، وطباعة، وPDF، ولقطة شاشة، وتصدير البيانات واستيرادها بصيغة Excel.</p>
         </div>
       </div>
     </div>
@@ -242,6 +246,30 @@
         <div class="card">
           <h3>برامج Ledyvas</h3>
           <p>يقرأ تصدير Enterprise وUltimate وتقارير Métrica في Excel (الأرباح والخسائر والملخص التنفيذي).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-gray" id="consulta-remota">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">الاطلاع الآمن عن بُعد</span>
+        <h2>أرقامك على هاتفك، دون المرور عبر Ledyvas</h2>
+        <p>إذا فعّلتها، فبعد التحديث الليلي يحفظ Ledyvas CFO ملخصًا للقراءة فقط في ملف PDF مشفّر ومحمي بكلمة مرورك، داخل مجلد تزامنه سحابتك الخاصة. وتفتحه على هاتفك بكلمة مرورك.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>في سحابتك الخاصة</h3>
+          <p>أنت تختار مجلد OneDrive أو Google Drive أو Dropbox. لا تمر البيانات عبر أي خادم لـ Ledyvas.</p>
+        </div>
+        <div class="card">
+          <h3>مشفّر ومحمي بكلمة مرور</h3>
+          <p>ملف PDF مشفّر بمعيار AES-256. لا يفتحه إلا من لديه كلمة المرور التي تحددها، من 8 أحرف على الأقل.</p>
+        </div>
+        <div class="card">
+          <h3>للقراءة فقط</h3>
+          <p>المؤشرات والتنبيهات واتجاه 12 شهرًا. لا يمكن تعديل أي شيء من الخارج. يُنشأ على حاسوبك بعد التحديث الليلي، أو عند فتح البرنامج إذا كان الحاسوب مطفأً.</p>
         </div>
       </div>
     </div>
@@ -330,7 +358,7 @@
             <div class="price-value">949<sup>USD</sup></div>
           </div>
           <div class="price-per">مرة واحدة</div>
-          <div class="price-note">ترخيص دائم لجهاز كمبيوتر واحد.</div>
+          <div class="price-note">ترخيص دائم لجهاز كمبيوتر واحد. تحديثات مجانية في السنة الأولى.</div>
           <button type="button" class="btn btn-gold btn-lg btn-block" disabled data-paypro-product="financial-cfo-unico">شراء، قريبًا</button>
         </div>
       </div>
@@ -347,6 +375,35 @@
       </div>
     </div>
   </section>
+  <!-- casos-de-uso:start -->
+  <section class="section-tight bg-gray" id="casos-de-uso" style="scroll-margin-top:90px;">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">حالات الاستخدام</span>
+        <h2>أمثلة استخدام حسب القطاع</h2>
+        <p>سيناريوهات توضيحية لكيفية استخدام أنواع مختلفة من الأعمال لـ Ledyvas.</p>
+      </div>
+      <div class="grid-3"><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">CFO · دبي (الإمارات) · AED</p><h3>مجموعة مطاعم تستخدم Zoho Books</h3><p>يقرأ CFO حسابات Zoho Books للقراءة فقط، ويعرض ربحية كل مطعم على حدة. والتنبيهات مرتبة من الأخطر إلى الأقل خطورة.</p><p style="margin-top:8px;"><strong>الوظائف:</strong> ربط Zoho Books (قراءة فقط)، الربحية حسب النشاط أو الفرع، المؤشرات والتنبيهات.</p></div><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">CFO · الرياض (السعودية) · SAR</p><h3>شركة تموين تستخدم Odoo</h3><p>تُستورد الميزانية الحالية من Excel وتُقارن بالنتائج الفعلية كل شهر، وتُظهر السيناريوهات أثر ارتفاع تكلفة المواد على النتيجة.</p><p style="margin-top:8px;"><strong>الوظائف:</strong> ربط Odoo (قراءة فقط)، الميزانية مقابل الفعلي، التوقعات والسيناريوهات.</p></div><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">CFO · الدوحة (قطر) · QAR</p><h3>مكتب محاسبة شريك لـ Ledyvas</h3><p>بصفته شريكًا لـ Ledyvas، يربط المكتب CFO بحسابات Xero لكل عميل للقراءة فقط، ويسلّم كل شهر خطة عمل مع الأثر المالي المقدّر لكل إجراء.</p><p style="margin-top:8px;"><strong>الوظائف:</strong> ربط Xero (قراءة فقط)، خطة العمل، تقرير PDF.</p></div></div>
+    </div>
+  </section>
+  <!-- casos-de-uso:end -->
+
+  <!-- pregunte-ia:start -->
+  <section class="section-tight" id="pregunte-ia">
+    <div class="container">
+      <div class="card" style="max-width:760px;margin:0 auto;text-align:center;">
+        <div class="icon-circle" style="margin:0 auto 14px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>اسأل مساعد الذكاء الاصطناعي</h3>
+        <p>اضغط على سؤال وسيجيبك المساعد فورًا، أو اكتب سؤالك.</p>
+        <div class="cta-row" style="justify-content:center;flex-wrap:wrap;margin-top:14px;">
+          <button type="button" class="btn btn-outline" data-ask="من أي أنظمة محاسبة يقرأ Ledyvas CFO البيانات؟">من أي أنظمة محاسبة يقرأ Ledyvas CFO البيانات؟</button>
+          <button type="button" class="btn btn-outline" data-ask="ما هي خطة عمل Ledyvas؟">ما هي خطة عمل Ledyvas؟</button>
+          <button type="button" class="btn btn-outline" data-ask="كيف يعمل الاطلاع الآمن عن بُعد؟">كيف يعمل الاطلاع الآمن عن بُعد؟</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- pregunte-ia:end -->
 
   <section class="section-tight">
     <div class="container">
@@ -458,8 +515,8 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js"></script>
+<script src="/assets/js/main.js?v=20261026"></script>
 <script src="/assets/js/paypro-checkout.js" defer></script>
-<script src="/assets/js/ledyvas-chat.js"></script>
+<script src="/assets/js/ledyvas-chat.js?v=20261026"></script>
 </body>
 </html>

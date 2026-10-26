@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es">
 <head>
+<script>(function(){var t=null;try{t=localStorage.getItem('ledyvas-theme')}catch(e){}if(t!=='light'&&t!=='dark'){try{t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){t='light'}}document.documentElement.setAttribute('data-theme',t)})();</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -31,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
-<link rel="stylesheet" href="assets/css/style.css?v=20261014b">
+<link rel="stylesheet" href="assets/css/style.css?v=20261026">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ledyvas">
 <meta property="og:locale" content="es">
@@ -80,6 +81,7 @@
         <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List</a>
         <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost</a>
         <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach</a>
+        <span class="nav-apps-note">Prueba gratis de 5 días</span>
         </div>
       </div>
       <a href="metrica.html">Métrica</a>
@@ -125,6 +127,7 @@
       <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List <small>03</small></a>
       <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost <small>04</small></a>
       <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach <small>05</small></a>
+      <span class="nav-apps-note nav-apps-note-overlay">Prueba gratis de 5 días</span>
       <a href="metrica.html">Métrica <small>06</small></a>
       <a href="professional.html">Professional <small>07</small></a>
       <a href="enterprise.html">Enterprise <small>08</small></a>
@@ -179,6 +182,7 @@
         <div class="cta-row">
           <a href="https://pub-8dcad4b6608142179f9dfe39891860d0.r2.dev/Ledyvas-Financial-CFO-Setup.exe" class="btn btn-primary btn-lg">Probar gratis 14 días</a>
           <a href="#precio" class="btn btn-outline btn-lg">Ver el precio</a>
+          <a href="#casos-de-uso" class="btn btn-outline btn-lg">Ver casos de uso</a>
         </div>
       </div>
       <div class="product-shot"><img src="/assets/img/cfo-dashboard-es.jpg" alt="Resumen ejecutivo de Ledyvas CFO con ventas, EBITDA, margen, utilidad neta y flujo de caja" width="1440" height="900" loading="eager"></div>
@@ -216,7 +220,7 @@
         </div>
         <div class="card">
           <h3>6 idiomas, 156 monedas</h3>
-          <p>Español, inglés, italiano, francés, portugués y árabe (de derecha a izquierda). Tema claro y oscuro, impresión, PDF, captura y exportación.</p>
+          <p>Español, inglés, italiano, francés, portugués y árabe (de derecha a izquierda). Tema claro y oscuro, impresión, PDF, captura de pantalla, exportación e importación de datos en Excel.</p>
         </div>
       </div>
     </div>
@@ -240,6 +244,30 @@
         <div class="card">
           <h3>Los programas Ledyvas</h3>
           <p>Lee la exportación de Enterprise y Ultimate y los reportes de Métrica en Excel (P&amp;L y Resumen ejecutivo).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-gray" id="consulta-remota">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Consulta Remota Segura</span>
+        <h2>Sus cifras en el móvil, sin pasar por Ledyvas</h2>
+        <p>Si la activa, después de la actualización de cada noche Ledyvas CFO guarda un resumen de solo lectura en un PDF cifrado y protegido con su contraseña, dentro de una carpeta que su propia nube sincroniza. Lo abre en el móvil con su contraseña.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>En su propia nube</h3>
+          <p>Usted elige la carpeta de OneDrive, Google Drive o Dropbox. Los datos no pasan por ningún servidor de Ledyvas.</p>
+        </div>
+        <div class="card">
+          <h3>Cifrado y con contraseña</h3>
+          <p>PDF cifrado con AES-256. Solo lo abre quien tiene la contraseña que usted fija, de al menos 8 caracteres.</p>
+        </div>
+        <div class="card">
+          <h3>Solo lectura</h3>
+          <p>Indicadores, alertas y la tendencia de 12 meses. Desde fuera no se puede modificar nada. Se genera en su PC después de la actualización de cada noche, o al abrir el programa si la PC estuvo apagada.</p>
         </div>
       </div>
     </div>
@@ -328,7 +356,7 @@
             <div class="price-value">949<sup>USD</sup></div>
           </div>
           <div class="price-per">una sola vez</div>
-          <div class="price-note">Licencia permanente para 1 PC.</div>
+          <div class="price-note">Licencia permanente para 1 PC. Actualizaciones gratis el primer año.</div>
           <button type="button" class="btn btn-gold btn-lg btn-block" disabled data-paypro-product="financial-cfo-unico">Comprar, muy pronto</button>
         </div>
       </div>
@@ -345,6 +373,35 @@
       </div>
     </div>
   </section>
+  <!-- casos-de-uso:start -->
+  <section class="section-tight bg-gray" id="casos-de-uso" style="scroll-margin-top:90px;">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Casos de uso</span>
+        <h2>Ejemplos de uso por sector</h2>
+        <p>Escenarios ilustrativos de cómo distintos tipos de negocio pueden usar Ledyvas.</p>
+      </div>
+      <div class="grid-3"><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">CFO · Valencia (España) · EUR</p><h3>Gestoría que asesora a restaurantes</h3><p>Como Partner de Ledyvas, la gestoría conecta CFO a la contabilidad de cada cliente en QuickBooks Online, solo en lectura. Cada mes entrega un Plan de Acción con el dinero en juego y las alertas ordenadas de la más grave a la menos grave.</p><p style="margin-top:8px;"><strong>Funciones:</strong> conexión QuickBooks Online (solo lectura), indicadores y alertas, Plan de Acción, informe PDF.</p></div><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">CFO + Ultimate · Punta Cana (República Dominicana) · DOP / USD</p><h3>Hotel con tres restaurantes y bar de playa</h3><p>CFO lee el libro de asientos que exporta Ledyvas Ultimate y muestra la rentabilidad de cada punto de venta por separado. La caja de 13 semanas anticipa los meses de temporada baja.</p><p style="margin-top:8px;"><strong>Funciones:</strong> libro de asientos de Ultimate, rentabilidad por línea o local, caja de 13 semanas y 12 meses.</p></div><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">CFO + Métrica · Bogotá (Colombia) · COP</p><h3>Restaurante con contabilidad en Alegra</h3><p>La contabilidad llega desde Alegra y el costo teórico desde los reportes de Métrica. CFO compara el costo teórico con el real, muestra cuánto vale la diferencia y sigue el presupuesto contra lo real cada mes.</p><p style="margin-top:8px;"><strong>Funciones:</strong> conexión Alegra (solo lectura), Costos y Mermas, Presupuesto vs Real.</p></div></div>
+    </div>
+  </section>
+  <!-- casos-de-uso:end -->
+
+  <!-- pregunte-ia:start -->
+  <section class="section-tight" id="pregunte-ia">
+    <div class="container">
+      <div class="card" style="max-width:760px;margin:0 auto;text-align:center;">
+        <div class="icon-circle" style="margin:0 auto 14px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Pregunte al asistente de IA</h3>
+        <p>Toque una pregunta y el asistente le responde al momento, o escriba la suya.</p>
+        <div class="cta-row" style="justify-content:center;flex-wrap:wrap;margin-top:14px;">
+          <button type="button" class="btn btn-outline" data-ask="¿De qué contabilidades lee datos Ledyvas CFO?">¿De qué contabilidades lee datos Ledyvas CFO?</button>
+          <button type="button" class="btn btn-outline" data-ask="¿Qué es el Plan de Acción Ledyvas?">¿Qué es el Plan de Acción Ledyvas?</button>
+          <button type="button" class="btn btn-outline" data-ask="¿Cómo funciona la Consulta Remota Segura?">¿Cómo funciona la Consulta Remota Segura?</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- pregunte-ia:end -->
 
   <section class="section-tight">
     <div class="container">
@@ -459,8 +516,8 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=20261026"></script>
 <script src="assets/js/paypro-checkout.js" defer></script>
-<script src="assets/js/ledyvas-chat.js"></script>
+<script src="assets/js/ledyvas-chat.js?v=20261026"></script>
 </body>
 </html>

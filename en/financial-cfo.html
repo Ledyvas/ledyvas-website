@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script>(function(){var t=null;try{t=localStorage.getItem('ledyvas-theme')}catch(e){}if(t!=='light'&&t!=='dark'){try{t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){t='light'}}document.documentElement.setAttribute('data-theme',t)})();</script>
 <!-- Google tag (gtag.js) con Consent Mode v2 -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -32,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261014b">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261026">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ledyvas">
 <meta property="og:locale" content="en">
@@ -81,6 +82,7 @@
         <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List</a>
         <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost</a>
         <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach</a>
+        <span class="nav-apps-note">5-day free trial</span>
         </div>
       </div>
       <a href="metrica.html">Métrica</a>
@@ -126,6 +128,7 @@
       <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List <small>03</small></a>
       <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost <small>04</small></a>
       <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach <small>05</small></a>
+      <span class="nav-apps-note nav-apps-note-overlay">5-day free trial</span>
       <a href="metrica.html">Métrica <small>06</small></a>
       <a href="professional.html">Professional <small>07</small></a>
       <a href="enterprise.html">Enterprise <small>08</small></a>
@@ -180,6 +183,7 @@
         <div class="cta-row">
           <a href="https://pub-8dcad4b6608142179f9dfe39891860d0.r2.dev/Ledyvas-Financial-CFO-Setup.exe" class="btn btn-primary btn-lg">Try free for 14 days</a>
           <a href="#precio" class="btn btn-outline btn-lg">See the price</a>
+          <a href="#casos-de-uso" class="btn btn-outline btn-lg">See use cases</a>
         </div>
       </div>
       <div class="product-shot"><img src="/assets/img/cfo-dashboard-en.jpg" alt="Ledyvas CFO executive summary with sales, EBITDA, margin, net income and cash flow" width="1440" height="900" loading="eager"></div>
@@ -217,7 +221,7 @@
         </div>
         <div class="card">
           <h3>6 languages, 156 currencies</h3>
-          <p>Spanish, English, Italian, French, Portuguese and Arabic (right to left). Light and dark theme, print, PDF, screenshot and export.</p>
+          <p>Spanish, English, Italian, French, Portuguese and Arabic (right to left). Light and dark theme, printing, PDF, screenshot, and data export and import in Excel.</p>
         </div>
       </div>
     </div>
@@ -241,6 +245,30 @@
         <div class="card">
           <h3>Ledyvas programs</h3>
           <p>Reads the export from Enterprise and Ultimate and the Métrica reports in Excel (P&amp;L and Executive summary).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight bg-gray" id="consulta-remota">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Secure Remote View</span>
+        <h2>Your figures on your phone, without going through Ledyvas</h2>
+        <p>If you turn it on, after each nightly update Ledyvas CFO saves a read-only summary in an encrypted, password-protected PDF, inside a folder that your own cloud syncs. You open it on your phone with your password.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>In your own cloud</h3>
+          <p>You choose the OneDrive, Google Drive or Dropbox folder. The data does not go through any Ledyvas server.</p>
+        </div>
+        <div class="card">
+          <h3>Encrypted and password-protected</h3>
+          <p>PDF encrypted with AES-256. Only someone with the password you set, at least 8 characters long, can open it.</p>
+        </div>
+        <div class="card">
+          <h3>Read-only</h3>
+          <p>Indicators, alerts and the 12-month trend. Nothing can be changed from outside. It is generated on your PC after each nightly update, or when you open the program if the PC was off.</p>
         </div>
       </div>
     </div>
@@ -329,7 +357,7 @@
             <div class="price-value">949<sup>USD</sup></div>
           </div>
           <div class="price-per">once</div>
-          <div class="price-note">Permanent license for 1 PC.</div>
+          <div class="price-note">Permanent license for 1 PC. Free updates for the first year.</div>
           <button type="button" class="btn btn-gold btn-lg btn-block" disabled data-paypro-product="financial-cfo-unico">Buy, coming soon</button>
         </div>
       </div>
@@ -346,6 +374,35 @@
       </div>
     </div>
   </section>
+  <!-- casos-de-uso:start -->
+  <section class="section-tight bg-gray" id="casos-de-uso" style="scroll-margin-top:90px;">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Use cases</span>
+        <h2>Examples by industry</h2>
+        <p>Illustrative scenarios showing how different types of businesses can use Ledyvas.</p>
+      </div>
+      <div class="grid-3"><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">CFO · London (UK) · GBP</p><h3>Group of three restaurants on Xero</h3><p>CFO reads Xero in read-only mode and shows the profitability of each restaurant separately, without spreading shared costs. Alerts are sorted from most to least serious, each with its month and indicator.</p><p style="margin-top:8px;"><strong>Features:</strong> Xero connection (read-only), profitability by line or location, indicators and alerts.</p></div><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">CFO · Miami (USA) · USD</p><h3>Boat tour operator on QuickBooks Online</h3><p>Seasonality makes cash tight in summer. The 13-week cash view shows the gap in advance, and the loan simulator compares instalments before buying a new boat.</p><p style="margin-top:8px;"><strong>Features:</strong> QuickBooks Online connection (read-only), 13-week cash, loans, NPV and IRR.</p></div><div class="card"><p style="font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--royal);margin-bottom:6px;">CFO · Toronto (Canada) · CAD</p><h3>Bakery chain on Odoo</h3><p>The existing budget is imported from Excel and compared with actual results every month. Forecast and scenarios show what happens if flour or labour costs rise.</p><p style="margin-top:8px;"><strong>Features:</strong> Odoo connection (read-only), Budget vs Actual, forecast and scenarios.</p></div></div>
+    </div>
+  </section>
+  <!-- casos-de-uso:end -->
+
+  <!-- pregunte-ia:start -->
+  <section class="section-tight" id="pregunte-ia">
+    <div class="container">
+      <div class="card" style="max-width:760px;margin:0 auto;text-align:center;">
+        <div class="icon-circle" style="margin:0 auto 14px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Ask the AI assistant</h3>
+        <p>Tap a question and the assistant answers right away, or type your own.</p>
+        <div class="cta-row" style="justify-content:center;flex-wrap:wrap;margin-top:14px;">
+          <button type="button" class="btn btn-outline" data-ask="Which accounting systems does Ledyvas CFO read data from?">Which accounting systems does Ledyvas CFO read data from?</button>
+          <button type="button" class="btn btn-outline" data-ask="What is the Ledyvas Action Plan?">What is the Ledyvas Action Plan?</button>
+          <button type="button" class="btn btn-outline" data-ask="How does the Secure Remote View work?">How does the Secure Remote View work?</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- pregunte-ia:end -->
 
   <section class="section-tight">
     <div class="container">
@@ -459,8 +516,8 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js"></script>
+<script src="/assets/js/main.js?v=20261026"></script>
 <script src="/assets/js/paypro-checkout.js" defer></script>
-<script src="/assets/js/ledyvas-chat.js"></script>
+<script src="/assets/js/ledyvas-chat.js?v=20261026"></script>
 </body>
 </html>

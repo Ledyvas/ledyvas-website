@@ -160,3 +160,62 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Tema claro / oscuro (26/10/2026): botón en el header. Recuerda la elección
+// en localStorage (si el navegador lo permite); sin elección, sigue al sistema.
+(function () {
+  var KEY = 'ledyvas-theme';
+  var root = document.documentElement;
+  var LABEL = {
+    es: 'Cambiar entre tema claro y oscuro', en: 'Switch between light and dark theme',
+    fr: 'Basculer entre thème clair et sombre', it: 'Passa dal tema chiaro a quello scuro e viceversa',
+    pt: 'Alternar entre tema claro e escuro', ar: 'التبديل بين المظهر الفاتح والداكن'
+  };
+  function stored() { try { var v = localStorage.getItem(KEY); return v === 'light' || v === 'dark' ? v : null; } catch (e) { return null; } }
+  function system() { try { return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; } catch (e) { return 'light'; } }
+  function apply(t) { root.setAttribute('data-theme', t); }
+  function init() {
+    var holder = document.querySelector('header .header-social-links');
+    if (!holder) return;
+    if (!root.getAttribute('data-theme')) apply(stored() || system());
+    if (holder.querySelector('.theme-toggle')) return;
+    var lang = (root.lang || 'es').slice(0, 2).toLowerCase();
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'theme-toggle';
+    btn.setAttribute('aria-label', LABEL[lang] || LABEL.en);
+    btn.title = LABEL[lang] || LABEL.en;
+    btn.innerHTML = '<svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>' +
+      '<svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      apply(next);
+      try { localStorage.setItem(KEY, next); } catch (e) {}
+    });
+    holder.insertBefore(btn, holder.firstChild);
+    try {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (ev) {
+        if (!stored()) apply(ev.matches ? 'dark' : 'light');
+      });
+    } catch (e) {}
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+
+// Preguntas sugeridas (botones data-ask): abren el asistente y envían la pregunta.
+document.addEventListener('click', function (e) {
+  var b = e.target && e.target.closest ? e.target.closest('[data-ask]') : null;
+  if (!b) return;
+  var chat = document.querySelector('.lxc-root');
+  if (!chat) return;
+  var input = chat.querySelector('.lxc-input');
+  var form = chat.querySelector('.lxc-form');
+  var fab = chat.querySelector('.lxc-fab');
+  if (!chat.classList.contains('lxc-open') && fab) fab.click();
+  if (!input || !form) return;
+  input.value = b.getAttribute('data-ask') || '';
+  setTimeout(function () {
+    if (form.requestSubmit) form.requestSubmit();
+    else form.dispatchEvent(new Event('submit', { cancelable: true }));
+  }, 80);
+});

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LEDYVAS, Asistente web (paginas Software y Metrica, 6 idiomas)
+   LEDYVAS, Asistente web (paginas de los programas, 6 idiomas)
    Widget flotante autocontenido: inyecta su propio CSS y su propio texto en
    6 idiomas (toma el idioma de <html lang="...">). Llama al Worker POST /web-chat
    (handleWebChat en ledyvas-license-server/worker.js).
@@ -12,32 +12,32 @@
   var S = {
     es: { button: "Preguntar a Ledyvas", title: "Asistente de Ledyvas", close: "Cerrar",
       placeholder: "Escriba su pregunta...", send: "Enviar",
-      greeting: "Hola. Le puedo explicar cómo funciona Ledyvas Professional y Ledyvas Métrica, para quién es cada uno, cómo probarlos y cuánto cuestan. ¿Qué necesita saber?",
+      greeting: "Hola. Le puedo explicar cómo funciona cada programa de la suite Ledyvas (Professional, Enterprise, Ultimate, Analytics Métrica, CFO y Budget & Forecast), para quién es cada uno, cómo probarlos y cuánto cuestan. ¿Qué necesita saber?",
       error: "No se pudo responder en este momento. Escríbanos a info@ledyvas.com.",
       disclaimer: "Asistente de IA. Puede equivocarse; para dudas puntuales escriba a info@ledyvas.com." },
     en: { button: "Ask Ledyvas", title: "Ledyvas assistant", close: "Close",
       placeholder: "Type your question...", send: "Send",
-      greeting: "Hi. I can explain how Ledyvas Professional and Ledyvas Métrica work, who each one is for, how to try them and what they cost. What would you like to know?",
+      greeting: "Hi. I can explain how each program in the Ledyvas suite works (Professional, Enterprise, Ultimate, Analytics Métrica, CFO and Budget & Forecast), who each one is for, how to try them and what they cost. What would you like to know?",
       error: "I couldn't answer right now. Please write to info@ledyvas.com.",
       disclaimer: "AI assistant. It can make mistakes; for specific questions write to info@ledyvas.com." },
     it: { button: "Chiedi a Ledyvas", title: "Assistente Ledyvas", close: "Chiudi",
       placeholder: "Scriva la sua domanda...", send: "Invia",
-      greeting: "Buongiorno. Posso spiegarle come funzionano Ledyvas Professional e Ledyvas Métrica, per chi sono, come provarli e quanto costano. Cosa desidera sapere?",
+      greeting: "Buongiorno. Posso spiegarle come funziona ogni programma della suite Ledyvas (Professional, Enterprise, Ultimate, Analytics Métrica, CFO e Budget & Forecast), per chi è ciascuno, come provarli e quanto costano. Cosa desidera sapere?",
       error: "Al momento non è stato possibile rispondere. Ci scriva a info@ledyvas.com.",
       disclaimer: "Assistente IA. Può sbagliare; per dubbi specifici scriva a info@ledyvas.com." },
     fr: { button: "Poser une question", title: "Assistant Ledyvas", close: "Fermer",
       placeholder: "Écrivez votre question...", send: "Envoyer",
-      greeting: "Bonjour. Je peux vous expliquer le fonctionnement de Ledyvas Professional et de Ledyvas Métrica, à qui ils s'adressent, comment les essayer et leur prix. Que souhaitez-vous savoir ?",
+      greeting: "Bonjour. Je peux vous expliquer le fonctionnement de chaque programme de la suite Ledyvas (Professional, Enterprise, Ultimate, Analytics Métrica, CFO et Budget & Forecast), à qui chacun s'adresse, comment les essayer et leur prix. Que souhaitez-vous savoir ?",
       error: "Impossible de répondre pour le moment. Écrivez-nous à info@ledyvas.com.",
       disclaimer: "Assistant IA. Il peut se tromper ; pour une question précise, écrivez à info@ledyvas.com." },
     pt: { button: "Perguntar ao Ledyvas", title: "Assistente Ledyvas", close: "Fechar",
       placeholder: "Escreva a sua pergunta...", send: "Enviar",
-      greeting: "Olá. Posso explicar como funcionam o Ledyvas Professional e o Ledyvas Métrica, para quem é cada um, como testá-los e quanto custam. O que gostaria de saber?",
+      greeting: "Olá. Posso explicar como funciona cada programa da suite Ledyvas (Professional, Enterprise, Ultimate, Analytics Métrica, CFO e Budget & Forecast), para quem é cada um, como testá-los e quanto custam. O que gostaria de saber?",
       error: "Não foi possível responder agora. Escreva para info@ledyvas.com.",
       disclaimer: "Assistente de IA. Pode errar; para dúvidas específicas escreva para info@ledyvas.com." },
     ar: { button: "اسأل Ledyvas", title: "مساعد Ledyvas", close: "إغلاق",
       placeholder: "اكتب سؤالك...", send: "إرسال",
-      greeting: "مرحبًا. يمكنني أن أشرح لك كيف يعمل Ledyvas Professional وLedyvas Métrica، ولمن يناسب كل منهما، وكيفية تجربتهما وسعرهما. ماذا تود أن تعرف؟",
+      greeting: "مرحبًا. يمكنني أن أشرح لك كيف يعمل كل برنامج من مجموعة Ledyvas (Professional وEnterprise وUltimate وAnalytics Métrica وCFO وBudget & Forecast)، ولمن يناسب كل منها، وكيفية تجربتها وسعرها. ماذا تود أن تعرف؟",
       error: "تعذّر الرد الآن. راسلنا على info@ledyvas.com.",
       disclaimer: "مساعد بالذكاء الاصطناعي. قد يخطئ؛ للاستفسارات المحددة راسل info@ledyvas.com." }
   };
