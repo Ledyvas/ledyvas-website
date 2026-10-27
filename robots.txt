@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /distribuidores.html
 Disallow: /contrato.html
 Disallow: /correos-reclutamiento.html
 Disallow: /unsubscribe.html
