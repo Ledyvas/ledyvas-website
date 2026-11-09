@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var t=null;try{t=localStorage.getItem('ledyvas-theme')}catch(e){}if(t!=='light'&&t!=='dark'){try{t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){t='light'}}document.documentElement.setAttribute('data-theme',t)})();</script>
+<!-- Google tag (gtag.js) con Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': (typeof localStorage !== 'undefined' && localStorage.getItem('ledyvas-cookie-consent') === 'accepted') ? 'granted' : 'denied'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYMN29KT3X"></script>
+<script>
+  gtag("js", new Date());
+  gtag("config", "G-DYMN29KT3X");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledyvas MasterFlow | How much to order and when, from each supplier</title>
+<meta name="description" content="Ledyvas MasterFlow: daily purchase suggestions, orders by supplier, goods in transit and a stockout-risk dashboard. Reads Odoo, QuickBooks Online and Zoho Inventory, read-only.">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="canonical" href="https://ledyvas.com/en/masterflow">
+<link rel="alternate" hreflang="es" href="https://ledyvas.com/masterflow">
+<link rel="alternate" hreflang="en" href="https://ledyvas.com/en/masterflow">
+<link rel="alternate" hreflang="fr" href="https://ledyvas.com/fr/masterflow">
+<link rel="alternate" hreflang="it" href="https://ledyvas.com/it/masterflow">
+<link rel="alternate" hreflang="pt" href="https://ledyvas.com/pt/masterflow">
+<link rel="alternate" hreflang="ar" href="https://ledyvas.com/ar/masterflow">
+<link rel="alternate" hreflang="x-default" href="https://ledyvas.com/masterflow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261026">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ledyvas">
+<meta property="og:locale" content="en">
+<meta property="og:url" content="https://ledyvas.com/en/masterflow">
+<meta property="og:title" content="Ledyvas MasterFlow | How much to order and when, from each supplier">
+<meta property="og:description" content="Ledyvas MasterFlow: daily purchase suggestions, orders by supplier, goods in transit and a stockout-risk dashboard. Reads Odoo, QuickBooks Online and Zoho Inventory, read-only.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ledyvas MasterFlow | How much to order and when, from each supplier">
+<meta name="twitter:description" content="Ledyvas MasterFlow: daily purchase suggestions, orders by supplier, goods in transit and a stockout-risk dashboard. Reads Odoo, QuickBooks Online and Zoho Inventory, read-only.">
+</head>
+<body>
+
+<div class="cookie-consent-banner" id="cookie-consent-banner" hidden>
+  <div class="cookie-consent-inner">
+    <p>We use cookies to understand how this site is used (Google Analytics). You can accept or reject this tracking. <a href="privacy.html">Learn more</a></p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookie-consent-reject" class="btn btn-outline">Reject</button>
+      <button type="button" id="cookie-consent-accept" class="btn btn-primary">Accept</button>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <nav class="nav-horizontal">
+      <a href="index.html">Home</a>
+      <div class="nav-apps-dropdown">
+        <a href="software.html" class="nav-apps-toggle">Software <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <div class="nav-apps-menu">
+        <a href="software.html">All software</a>
+        <a href="professional.html">Professional</a>
+        <a href="enterprise.html">Enterprise</a>
+        <a href="ultimate.html">Ultimate</a>
+        <a href="financial-cfo.html">CFO</a>
+        <a href="budget-forecast.html">Budget &amp; Forecast</a>
+        <a href="masterflow.html">MasterFlow</a>
+        </div>
+      </div>
+      <div class="nav-apps-dropdown">
+        <button type="button" class="nav-apps-toggle">Apps <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-apps-menu">
+        <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List</a>
+        <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost</a>
+        <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach</a>
+        <span class="nav-apps-note">5-day free trial</span>
+        </div>
+      </div>
+      <a href="metrica.html">Métrica</a>
+      <a href="ultimate.html">Ultimate</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="download.html">Download</a>
+      <a href="../distribuidores.html">Partners</a>
+      <a href="contact.html">Contact</a>
+      <a href="use-cases.html">Use cases</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#precio" class="btn btn-outline">See the price</a>
+      <a href="https://ledyvas-license-server.ledyvas.workers.dev/d/Ledyvas-MasterFlow-Setup.exe" class="btn btn-primary">Free trial</a>
+      <div class="lang-dropdown">
+      <button class="lang-dropdown-toggle" data-lang-toggle type="button" aria-haspopup="true" aria-expanded="false"><span class="fi fi-gb"></span> EN<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-dropdown-menu">
+    <a href="/masterflow.html"><span class="fi fi-es"></span> ES</a>
+    <a href="/it/masterflow.html"><span class="fi fi-it"></span> IT</a>
+    <a href="/fr/masterflow.html"><span class="fi fi-fr"></span> FR</a>
+    <a href="/pt/masterflow.html"><span class="fi fi-pt"></span> PT</a>
+    <a href="/ar/masterflow.html"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR</a>
+      </div>
+    </div>
+    <div class="header-social-links">
+      <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" aria-label="Ledyvas on LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+    <button class="hamburger" data-nav-toggle aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay">
+  <div class="nav-overlay-top">
+    <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+    <button class="hamburger" data-nav-toggle aria-label="Close menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-overlay-body">
+    <nav class="nav-links">
+      <a href="index.html">Home <small>01</small></a>
+      <a href="software.html">Software <small>02</small></a>
+      <a href="https://list.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Smart List <small>03</small></a>
+      <a href="https://food.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food Cost <small>04</small></a>
+      <a href="https://nutrition.ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Nutrition Coach <small>05</small></a>
+      <span class="nav-apps-note nav-apps-note-overlay">5-day free trial</span>
+      <a href="metrica.html">Métrica <small>06</small></a>
+      <a href="professional.html">Professional <small>07</small></a>
+      <a href="enterprise.html">Enterprise <small>08</small></a>
+      <a href="ultimate.html">Ultimate <small>09</small></a>
+      <a href="financial-cfo.html">CFO <small>10</small></a>
+      <a href="budget-forecast.html">Budget &amp; Forecast <small>11</small></a>
+      <a href="masterflow.html">MasterFlow <small>12</small></a>
+      <a href="solutions.html">Solutions <small>13</small></a>
+      <a href="industries.html">Industries <small>14</small></a>
+      <a href="pricing.html">Pricing <small>15</small></a>
+      <a href="download.html">Download <small>16</small></a>
+      <a href="../distribuidores.html">Partners <small>17</small></a>
+      <a href="contact.html">Contact <small>18</small></a>
+      <a href="use-cases.html">Use cases <small>19</small></a>
+    </nav>
+    <div class="nav-side">
+      <div>
+        <div class="nav-side-title">Language</div>
+        <div class="lang-switch">
+          <a href="/masterflow.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-es"></span> ES</a>
+          <a href="/it/masterflow.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-it"></span> IT</a>
+          <button class="active"><span class="fi fi-gb"></span> EN</button>
+          <a href="/fr/masterflow.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-fr"></span> FR</a>
+          <a href="/pt/masterflow.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><span class="fi fi-pt"></span> PT</a>
+          <a href="/ar/masterflow.html" class="btn" style="padding:8px 14px;font-size:13px;border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.75);"><img class="ar-flag" src="/assets/img/flag-arab-league.svg" alt="" width="20" height="14"> AR</a>
+        </div>
+      </div>
+      <div>
+        <div class="nav-side-title">Get started</div>
+        <a href="https://ledyvas-license-server.ledyvas.workers.dev/d/Ledyvas-MasterFlow-Setup.exe" class="btn btn-gold btn-block">Try Ledyvas MasterFlow</a>
+        <div style="height:10px"></div>
+        <a href="#precio" class="btn btn-outline-light btn-block">See the price</a>
+      </div>
+      <div>
+        <div class="nav-side-title">Contact</div>
+        <div class="nav-contact">
+          <a href="mailto:info@ledyvas.com">info@ledyvas.com</a>
+          <span>Response within 48 business hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section class="page-hero">
+  <div class="container">
+    <div>
+      <span class="eyebrow">Ledyvas MasterFlow</span>
+      <h1>How much to order and when,<br>from each supplier.</h1>
+      <p class="lede">Ledyvas MasterFlow works out every day what you should buy so you don't run out of stock or overfill the storeroom. You approve, and the program builds one purchase order per supplier. <strong>Monthly fee, annual fee or one-time payment.</strong></p>
+      <div class="cta-row">
+        <a href="https://ledyvas-license-server.ledyvas.workers.dev/d/Ledyvas-MasterFlow-Setup.exe" class="btn btn-primary btn-lg">Try it free for 14 days</a>
+        <a href="#precio" class="btn btn-outline btn-lg">See the price</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What it&#x27;s for</span>
+      <h2>Buy just enough, on time</h2>
+      <p>Ledyvas MasterFlow is a Windows desktop program: it is installed on the company PC and the data stays there, encrypted. It answers three questions: what to order today, from which supplier and how much.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card"><h3>Daily suggestions</h3><p>What you should order today. You approve, reject or change the quantity of each line.</p></div>
+      <div class="card"><h3>Purchase orders</h3><p>One order per supplier, numbered (PO-YYYY-0001), as PDF, Excel, a file to import into your ERP, or by email to the supplier. It tracks goods in transit and receipt.</p></div>
+      <div class="card"><h3>Dashboard</h3><p>Products at risk of running out, days of coverage and purchases by arrival week, in transit and planned.</p></div>
+      <div class="card"><h3>Master data</h3><p>Per product: purchase unit, lead time, safety stock, minimum order and case size. Imported from Excel or CSV.</p></div>
+      <div class="card"><h3>Recipes</h3><p>For restaurants and hotels: dish sales become ingredient consumption, with waste, and go into the purchase calculation.</p></div>
+      <div class="card"><h3>Connection to your ERP</h3><p>Reads products, suppliers, costs, stock and sales from Odoo, QuickBooks Online or Zoho Inventory, read-only, once a day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight bg-gray">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>A clear calculation, no black boxes</h2>
+      <p>Average daily sales = sales of the last 90 days ÷ days with stock (days without stock don&#x27;t count). Reorder point = average daily sales × lead time + safety stock. When stock plus goods in transit falls below that point, MasterFlow suggests an order, rounded to the supplier&#x27;s case size and minimum order.</p>
+    </div>
+    <ul class="doc-toc">
+      <li>Import products and sales history from Excel or CSV, with templates.</li>
+      <li>Or connect it read-only to Odoo, QuickBooks Online or Zoho Inventory.</li>
+      <li>The Dashboard exports to Excel with a sheet that Ledyvas CFO can import into its cash projection.</li>
+      <li>Built-in AI assistant, no key of your own: it answers with your figures (uses the internet).</li>
+      <li>6 languages and a demo company to see it working.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Honesty</span>
+      <h2>What it doesn&#x27;t do</h2>
+    </div>
+    <ul class="doc-toc">
+      <li>It doesn&#x27;t keep the accounts or invoice, and it changes nothing in your ERP: it only reads.</li>
+      <li>It isn&#x27;t cloud-based and doesn&#x27;t run on several networked PCs over the same data: each license is for 1 PC.</li>
+      <li>It doesn&#x27;t make up data: if something is missing, it doesn&#x27;t calculate that line and tells you.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <span class="eyebrow">The Ledyvas operations line</span>
+        <h2>Professional, Enterprise and Ultimate</h2>
+        <p>To control purchasing, storeroom, recipes and sales. MasterFlow is a separate program, sold separately.</p>
+      </div>
+      <div class="cta-row"><a href="software.html" class="btn btn-gold btn-lg">See the programs</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight bg-gray" id="precio">
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+        <span class="eyebrow">Price</span>
+        <h2>Choose how to pay</h2>
+        <p style="margin-left:auto;margin-right:auto;">The same price in every country, in US dollars (USD). Try it free for 14 days on your PC before you buy.</p>
+      </div>
+      <div class="price-cards-grid price-cards-3">
+        <div class="price-card">
+          <span class="price-card-tier-label">Monthly fee</span>
+          <div class="price-row">
+            <div class="price-value">59<sup>USD</sup></div>
+          </div>
+          <div class="price-per">per month</div>
+          <div class="price-note">Paid every month.</div>
+          <button type="button" class="btn btn-gold btn-lg btn-block" disabled data-paypro-product="masterflow-mensual">Buy, coming soon</button>
+        </div>
+        <div class="price-card price-card-featured">
+          <span class="price-card-tier-label">Annual fee</span>
+          <div class="price-row">
+            <div class="price-value">590<sup>USD</sup></div>
+          </div>
+          <div class="price-per">per year</div>
+          <div class="price-note">Equal to 10 monthly fees: 2 months free.</div>
+          <button type="button" class="btn btn-gold btn-lg btn-block" disabled data-paypro-product="masterflow-anual">Buy, coming soon</button>
+        </div>
+        <div class="price-card">
+          <span class="price-card-tier-label">One-time payment</span>
+          <div class="price-row">
+            <div class="price-value">749<sup>USD</sup></div>
+          </div>
+          <div class="price-per">once</div>
+          <div class="price-note">Permanent license for 1 PC. Free updates for the first year.</div>
+          <button type="button" class="btn btn-gold btn-lg btn-block" disabled data-paypro-product="masterflow-unico">Buy, coming soon</button>
+        </div>
+      </div>
+      <div class="lic-steps">
+        <h3>How you receive your license</h3>
+        <ol>
+          <li><strong>Buy and pay online.</strong> We don't ask you for any other details.</li>
+          <li><strong>You receive your activation code instantly,</strong> on screen and by email.</li>
+          <li><strong>Paste it into the program.</strong> The first time, it needs internet to link it to your PC; after that it works without internet.</li>
+        </ol>
+      </div>
+      <div class="cta-row" style="justify-content:center;margin-top:30px;">
+        <a href="https://ledyvas-license-server.ledyvas.workers.dev/d/Ledyvas-MasterFlow-Setup.exe" class="btn btn-primary btn-lg">Download free trial (14 days)</a>
+      </div>
+    </div>
+  </section>
+
+<section class="section-tight">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The Ledyvas suite</span>
+        <h2>Six programs, each with its own job</h2>
+        <p>Each program installs on your PC and is purchased separately. Use only the ones you need.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Ledyvas Analytics Métrica</h3>
+          <p>The profitability of every day in restaurants, bars, hotels and excursions: recipe cost, waste, COGS % and Prime Cost from your POS sales.</p>
+          <p><a href="metrica.html">See the program and its price →</a></p>
+        </div>
+        <div class="card">
+          <h3>Ledyvas Professional</h3>
+          <p>The desktop ERP for operations: purchasing, inventory, recipes, production, sales and reports, with the Excursion / Tourism module.</p>
+          <p><a href="professional.html">See the program and its price →</a></p>
+        </div>
+        <div class="card">
+          <h3>Ledyvas Enterprise</h3>
+          <p>Everything in Professional plus a direct API connection to QuickBooks Online, Zoho Books and Odoo, tax per document and accounting file export.</p>
+          <p><a href="enterprise.html">See the program and its price →</a></p>
+        </div>
+        <div class="card">
+          <h3>Ledyvas Ultimate</h3>
+          <p>Accounting and taxes that arrive on their own: tax per document, direct API connection to QuickBooks Online, Zoho Books and Odoo, and DGII 606, 607 and 608 formats.</p>
+          <p><a href="ultimate.html">See the program and its price →</a></p>
+        </div>
+        <div class="card" style="border-color:var(--gold);">
+          <h3>Ledyvas Budget &amp; Forecast</h3>
+          <p>The annual budget by account, the year-end forecast that is recalculated with each actual month, and deviations with a traffic light.</p>
+          <p style="font-weight:600;color:var(--gold);">You are viewing this program</p>
+        </div>
+        <div class="card">
+          <h3>Ledyvas CFO</h3>
+          <p>The finance director's dashboard on your accounting data: indicators, alerts and an Action Plan every month.</p>
+          <p><a href="financial-cfo.html">See the program and its price →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="/assets/img/logo-icon.png" alt="Ledyvas"></a>
+        <p>All-in-one business management software. Purchasing, sales, inventory, production and reports from a single platform.</p>
+        <a href="https://www.linkedin.com/company/ledyvas/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="metrica.html">Ledyvas Analytics Métrica</a></li>
+          <li><a href="professional.html">Professional</a></li>
+          <li><a href="enterprise.html">Enterprise</a></li>
+          <li><a href="ultimate.html">Ultimate</a></li>
+          <li><a href="financial-cfo.html">CFO</a></li>
+          <li><a href="budget-forecast.html">Budget &amp; Forecast</a></li>
+          <li><a href="masterflow.html">MasterFlow</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="company.html">About us</a></li>
+          <li><a href="company.html#founder">Founder</a></li>
+          <li><a href="company.html#reviews">Reviews</a></li>
+          <li><a href="company.html#faq">FAQ</a></li>
+          <li><a href="affiliates.html">Affiliates 20%</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="guides.html">Guides</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="help-zoho-books.html">Zoho Books help</a></li>
+          <li><a href="help-quickbooks-online.html">QuickBooks Online help</a></li>
+          <li><a href="help-odoo.html">Odoo help</a></li>
+          <li><a href="customer-portal.html">Customer Portal</a></li>
+          <li><a href="../distribuidores.html">Ledyvas Partners</a></li>
+          <li><a href="https://ledyvasfood.com" target="_blank" rel="noopener">Ledyvas Food (apps)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@ledyvas.com">info@ledyvas.com</a></li>
+          <li><span style="font-size:14px;">Response within 48 business hours</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledyvas. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms and Conditions</a>
+        <a href="eula.html">End User License (EULA)</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js?v=20261026"></script>
+<script src="/assets/js/paypro-checkout.js" defer></script>
+<script src="/assets/js/ledyvas-chat.js?v=20261026"></script>
+</body>
+</html>
